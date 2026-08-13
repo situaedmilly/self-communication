@@ -1,8 +1,10 @@
 # SELFCOMMUNICATION Structural Reality Reconciliation — SS-02
 
 ```text
-artifact_status: DOCTRINE_RECONCILIATION_CANDIDATE
-seal_status: FOUNDER_SEAL_PENDING
+artifact_status: SEALED_DOCTRINE_RECONCILIATION
+seal_status: SEALED
+sealed_date: 2026-08-13
+seal_authority: FOUNDER_AUTHORIZATION
 protocol_class_status: CANDIDATE_PROTOCOL_CLASSES
 canonical_schema: NOT_RATIFIED
 implementation_authority: NONE
@@ -16,20 +18,22 @@ autonomous_mutation: FORBIDDEN
 
 ## 1. Purpose and non-effect
 
-This reconciliation records the architectural consequence of SELFSTRUCT SS-02:
+This sealed reconciliation records the architectural consequence of SELFSTRUCT SS-02:
 SELFCOMMUNICATION can no longer be modeled only as prose, commands, or generic
 human/agent messages. A later authorized SELFCOMMUNICATION layer may need to
 carry witnessed structural state while preserving its provenance, epistemic
 tier, authority, chronology, lineage, and failure semantics.
 
-This candidate changes doctrine and memory only. It does not authorize code,
-network transport, a canonical communication schema, a PROSELFCOL, multi-node
-exchange, ÆTHERNET construction, StructuralIR promotion, SELFgraph writes,
-runtime mutation, autonomous reconciliation, or autonomous mutation.
+This seal ratifies the semantic and governance doctrine recorded here. It does
+not authorize code, network transport, a canonical communication schema, a
+PROSELFCOL, multi-node exchange, ÆTHERNET construction, StructuralIR promotion,
+SELFgraph writes, runtime mutation, autonomous reconciliation, or autonomous
+mutation. The existing memory-extension note remains governed by its
+append/supersede rules and is not part of this seal commit.
 
-Founder seal of this artifact would adopt only the distinctions, candidate
-requirements, and authority ceilings written here. Every implementation or
-ratification gate would remain separately closed.
+This Founder seal adopts only the distinctions, candidate requirements, and
+authority ceilings written here. Every implementation or ratification gate
+remains separately closed.
 
 ## 2. Verified input reality
 
@@ -420,22 +424,32 @@ scope but was incomplete: it did not distinguish structural communication or
 bind future transport to SELFSTRUCT tiers, provenance, chronology, and failure
 semantics.
 
-This candidate adds those distinctions without changing an archive, the mutable
-latest pointer, an implementation, a transport, a runtime, SELFSTRUCT, SELFgraph,
-OURSELF, OURSELFSERVERCLOUD authority, or ÆTHERNET build status.
+This sealed reconciliation adds those distinctions without changing an archive,
+the mutable latest pointer, an implementation, a transport, a runtime,
+SELFSTRUCT, SELFgraph, OURSELF, OURSELFSERVERCLOUD authority, or ÆTHERNET build
+status.
 
 Any prior design that equates SELFCOMMUNICATION or PROSELFCOL directly with a
-specific network or messaging technology is non-governing under this candidate.
+specific network or messaging technology is non-governing under this seal.
 Technology selection remains a later adapter/transport decision and cannot
 replace communication semantics.
 
-## 15. Founder seal boundary
+External analytical material, including `Downloads/SELFvereignty.md`, remains
+reference material only. Its direct mappings between ProSelfCols and Matrix or
+other technologies are not imported into SELFCOMMUNICATION law. Any promotion of
+those mappings requires a separate Founder adjudication.
 
-Founder review may either:
+## 15. Seal record and continuing boundary
 
-1. seal this reconciliation as governing communication doctrine while leaving
-   every implementation and protocol gate closed; or
-2. return it for correction without changing current operational authority.
+```text
+FOUNDER AUTHORIZATION — SEAL SELFCOMMUNICATION STRUCTURAL REALITY RECONCILIATION v0.1
+STATUS: APPROVED FOR SEAL
+SEALED_DATE: 2026-08-13
+SELFCOMMUNICATION_STRUCTURAL_REALITY_RECONCILIATION = SEALED
+```
+
+The Founder disposition seals this reconciliation as governing communication
+doctrine while leaving every implementation and protocol gate closed.
 
 Seal of this document must not be interpreted as authorization to implement,
 transmit, federate, promote, reconcile, adjudicate, or mutate.

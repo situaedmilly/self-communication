@@ -21,9 +21,10 @@ structural communication. The existing Git-backed INSELFACTION channel remains
 an operational handoff mechanism; it is not thereby authorized to transport
 SELFSTRUCT output as structural communication.
 
-The Founder-pending
+The sealed
 [SS-02 structural reality reconciliation](doctrine/SELFCOMMUNICATION-STRUCTURAL-REALITY-RECONCILIATION-v0.1.md)
-records the candidate requirements for future provenance-bound structural
-packets. It does not ratify a schema or protocol class, implement network
-transport, authorize multi-node exchange, promote StructuralIR, write SELFgraph,
-build ÆTHERNET, reconcile autonomously, or mutate runtime state.
+governs the semantics and boundaries of any future provenance-bound structural
+exchange above transport. It does not ratify a schema or protocol class,
+implement network transport, authorize multi-node exchange, promote
+StructuralIR, write SELFgraph, build ÆTHERNET, reconcile autonomously, or mutate
+runtime state.
