@@ -1,61 +1,59 @@
 {
   "schema": "interaction-pointer.v0.2",
-  "updated_at": "2026-08-13T22:20:00Z",
+  "updated_at": "2026-08-13T23:12:00Z",
   "session": "MOBILECHALL",
   "latest_inselfaction": {
-    "id": "ISA-20260813-RC0001-SPR04-002",
-    "path": "inselfactions/ISA-20260813-RC0001-SPR04-002.json",
-    "title": "SP-R04 — RC-0001 SemanticProgram v0.4, bounded repair of Cold Review 003",
-    "continues": "ISA-20260813-RC0001-CR003-001"
+    "id": "ISA-20260813-E3-COVERAGE-OPENED-005",
+    "path": "inselfactions/ISA-20260813-E3-COVERAGE-OPENED-005.json",
+    "title": "E3 COVERAGE opened \u2014 harness ready, corpus absent",
+    "supersedes": null
   },
   "source": {
     "repository": "RUORA",
     "source_remote": "selfpi:mirrors/RUORA.git",
-    "visibility": "LOCAL MIRROR — NOT RECEIVER-RESOLVABLE",
+    "visibility": "LOCAL MIRROR \u2014 NOT RECEIVER-RESOLVABLE",
     "path": "/Users/millysituated/RUORA",
-    "branch": "main",
-    "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
+    "branch": "analysis/e3-real-transcript-coverage",
+    "commit": "6037df18db746879ce9f8ad662c4cf338d53fae0",
     "artifacts_tracked_in_git": false,
     "review_status": "BLOCKED_SOURCE_UNRESOLVABLE",
-    "custody_warning": "The RC-0001 corpus is UNTRACKED — contained in no commit, on no remote. Artifacts are addressable only by SHA-256 against the local working tree. Clearing this requires founder authorisation to commit the corpus, which every movement in this cascade has expressly withheld."
+    "custody_warning": "The RC-0001 corpus is UNTRACKED \u2014 contained in no commit, on no remote. Artifacts are addressable only by SHA-256 against the local working tree. Clearing this requires founder authorisation to commit the corpus, which every movement in this cascade has expressly withheld.",
+    "based_on": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false
   },
   "standing": {
-    "semanticprogram": "v0.4 · CANDIDATE_READY_FOR_COLD_REVIEW_004",
+    "semanticprogram": "v0.4 \u00b7 CANDIDATE_READY_FOR_COLD_REVIEW_004",
     "candidate_sha256": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
-    "cold_review_003": "CHANGES_REQUIRED — DISCHARGED by SP-R04",
-    "cr3_b01": "REPAIR IMPLEMENTED · AUTHOR-SIDE COUNTEREXAMPLE PASS · INDEPENDENT CLOSURE NOT ESTABLISHED",
+    "cold_review_003": "CHANGES_REQUIRED \u2014 DISCHARGED by SP-R04",
+    "cr3_b01": "REPAIR IMPLEMENTED \u00b7 AUTHOR-SIDE COUNTEREXAMPLE PASS \u00b7 INDEPENDENT CLOSURE NOT ESTABLISHED",
     "cold_review_004": "NOT AUTHORISED",
     "reality_compiler": "NOT PROVEN",
     "seal": "NOT GRANTED",
     "implementation": "NOT AUTHORISED",
-    "docket": "3 OPEN · 0 PARTIALLY_DECIDED · 5 OPERATIVELY_DECIDED — all FOUNDER_DECISION_REQUIRED",
-    "blocking": "No independent review of v0.4 exists. Cold Review 004 requires a separate founder act."
+    "docket": "3 OPEN \u00b7 0 PARTIALLY_DECIDED \u00b7 5 OPERATIVELY_DECIDED \u2014 all FOUNDER_DECISION_REQUIRED",
+    "blocking": "No independent review of v0.4 exists. Cold Review 004 requires a separate founder act.",
+    "e3_coverage": "UNMEASURED \u2014 CORPUS ABSENT",
+    "assertions": 223
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Authorise or decline Cold Review 004 against v0.4"
+    "act_required": "Supply real transcripts and authorise their use, or select a different frontier"
   },
   "open_items": [
     {
-      "inselfaction": "ISA-20260813-E3-EXTENSION-VERIFIED-004",
-      "subject": "ConsciousConversation E3 extension",
+      "inselfaction": "ISA-20260813-E3-COVERAGE-OPENED-005",
+      "subject": "E3 coverage measurement",
       "next_authority": "MILASOPHAHR",
-      "act_required": "Select the next frontier",
-      "status": "CLOSED — VERIFIED EXTENSION, merged and tagged"
+      "act_required": "Supply real transcripts and authorise their use",
+      "status": "BLOCKED \u2014 no corpus exists; none was fabricated"
     },
     {
       "inselfaction": "ISA-20260813-RC0001-CR003-001",
       "subject": "RC-0001 SemanticProgram v0.3 cold review",
       "next_authority": "MILASOPHAHR",
       "act_required": "Authorise or decline a bounded SP-R04 revision",
-      "status": "DISCHARGED — SP-R04 authorised and executed; superseded by ISA-20260813-RC0001-SPR04-002"
-    },
-    {
-      "inselfaction": "ISA-20260813-RC0001-SPR04-002",
-      "subject": "RC-0001 SemanticProgram v0.4",
-      "next_authority": "MILASOPHAHR",
-      "act_required": "Authorise or decline Cold Review 004",
-      "status": "OPEN — candidate repaired, wholly unreviewed; review_status BLOCKED_SOURCE_UNRESOLVABLE"
+      "status": "CHANGES_REQUIRED \u2014 STILL OPEN"
     }
   ],
   "history": [
@@ -64,11 +62,13 @@
     "ISA-20260813-E3-INGESTION-002",
     "ISA-20260813-E3-AUTHENTICITY-003",
     "ISA-20260813-E3-EXTENSION-VERIFIED-004",
-    "ISA-20260813-RC0001-SPR04-002"
+    "ISA-20260813-RC0001-SPR04-002",
+    "ISA-20260813-E3-COVERAGE-OPENED-005"
   ],
-  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
+  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission \u2014 it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
   "channel_invariants": [
-    "INV-ISX-REVIEW-RESOLVABILITY — an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: review_status = BLOCKED_SOURCE_UNRESOLVABLE.",
-    "INV-E3-CANDIDATE-AUTHENTICITY — an adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations. Candidate metadata may identify a detection result; it may never prove one occurred."
+    "INV-ISX-REVIEW-RESOLVABILITY \u2014 an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: review_status = BLOCKED_SOURCE_UNRESOLVABLE.",
+    "INV-E3-CANDIDATE-AUTHENTICITY \u2014 an adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations. Candidate metadata may identify a detection result; it may never prove one occurred.",
+    "INV-E3-COVERAGE-NO-RETROFIT \u2014 an evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation."
   ]
 }

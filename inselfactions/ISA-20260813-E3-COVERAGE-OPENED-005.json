@@ -1,0 +1,158 @@
+{
+  "inselfaction_id": "ISA-20260813-E3-COVERAGE-OPENED-005",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T23:12:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260813-E3-EXTENSION-VERIFIED-004",
+  "operation": {
+    "title": "Open E3 COVERAGE \u2014 measurement layer around a frozen core",
+    "phase": "E3 COVERAGE (not E3 authority)",
+    "premise": "We are done proving E3 can be trusted. This phase finds out whether E3 can see.",
+    "authority_change": "NONE. This transmission transfers no review authority and requests no disposition."
+  },
+  "headline": {
+    "status": "HARNESS READY / CORPUS ABSENT / UNMEASURED",
+    "critical": "NO CORPUS WAS FABRICATED. reports/baseline-e3-coverage.json reads NO_CORPUS / UNMEASURED \u2014 not 0%, not 100%. The baseline miss profile RUORA asked for cannot be produced until real transcripts exist.",
+    "why": "Measuring against synthetic fixtures would optimise the detector against its own imagination. A number produced that way is worse than no number, because it looks like knowledge.",
+    "blocking": "Corpus acquisition is an authority act, not an engineering step."
+  },
+  "delivered": {
+    "coverage/README.md": "Phase law: partition discipline, no-global-score, the unlicensed bucket, annotation discipline, data tiers.",
+    "coverage/schema/e3-annotation.v0.1.schema.json": "Span-level annotation contract. Deliberately has NO property for detector output, classification, or any score \u2014 an annotation that could assert its own result is the E3 forgery defect one layer up.",
+    "coverage/harness.py": "Loads partitions, runs the FROZEN detector per span, computes per-rule TP/FP/FN, emits the report.",
+    "coverage/corpus/{discovery,validation,holdout}/": "Empty, each with the partition law recorded.",
+    "coverage/reports/baseline-e3-coverage.json": "NO_CORPUS / UNMEASURED.",
+    "coverage/proof/test_coverage_harness.py": "12 assertions."
+  },
+  "core_frozen": {
+    "rule": "No edit to kernel/e3.py in this phase.",
+    "mechanism": "harness.assert_detector_unchanged() compares kernel/e3.py byte-for-byte against the digest recorded at e3-extension-verified-v0.1 and refuses to measure on any difference.",
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "proven_by": [
+      "COV-01",
+      "COV-02 (a modified detector is refused)",
+      "COV-02b (restored byte-for-byte)"
+    ],
+    "rationale": "A baseline taken against a detector someone already adjusted is not a baseline."
+  },
+  "laws_established": [
+    {
+      "id": "INV-E3-COVERAGE-NO-RETROFIT",
+      "status": "ADOPTED for this phase; unratified as doctrine",
+      "statement": "An evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation.",
+      "enforcement": "Mechanical proxy \u2014 the loader refuses a span appearing in two partitions (COV-05), and a span cited as motivation while sitting in a validating partition is detectable as a retrofit (COV-11). The harness cannot know intent; it enforces disjointness."
+    },
+    {
+      "id": "PARTITION-PERMANENCE",
+      "statement": "A span belongs to exactly one partition, permanently. discovery may inform detector changes; validation and holdout never do.",
+      "rationale": "Moving a span would launder a discovery example into a validator."
+    },
+    {
+      "id": "NO-GLOBAL-COLLAPSE",
+      "statement": "Per-rule precision and recall only. No F1 anywhere in the report; COV-07 asserts its absence.",
+      "rationale": "A detector that finds refusals perfectly and misses every correction scores well globally and is blind in the way that matters. Rules with no evidence either way are marked measured=false rather than scored (COV-08)."
+    },
+    {
+      "id": "UNLICENSED-ACCUMULATES",
+      "statement": "OBSERVED_BUT_UNLICENSED_EVENT records a witnessed behaviour that no event class represents, and creates NO rule (COV-09).",
+      "rationale": "One sighting is an anecdote. A rule minted from an anecdote is the detector inventing its own ontology \u2014 the thing the E3 authority boundary exists to prevent."
+    }
+  ],
+  "hypothesis_not_finding": {
+    "observation": "While proving the harness, the synthetic probe in COV-07 used \"You've got me backwards there.\" \u2014 a plain correction that E3D-001 does not match. This suggests the lexical rules may be narrow against natural phrasing.",
+    "status": "HYPOTHESIS, NOT A MEASUREMENT",
+    "why_flagged": "It came from a fixture written to exercise the harness, not from a transcript. Recorded in coverage/README.md so it is not later mistaken for evidence.",
+    "requirement": "Must be re-derived from real spans in the discovery partition before it informs any rule change."
+  },
+  "data_tiers": {
+    "raw_transcript": "restricted \u2014 never committed to this repository",
+    "annotation_artifact": "pseudonymized",
+    "coverage_metrics": "safe aggregate",
+    "failure_exemplars": "minimally sufficient excerpts, capped at 120 characters"
+  },
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "analysis/e3-real-transcript-coverage",
+    "source_commit": "6037df18db746879ce9f8ad662c4cf338d53fae0",
+    "based_on": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/94c2f75...6037df1"
+  },
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "self_integrity_conditions_met": "11/11",
+    "e3_extension": "VERIFIED EXTENSION",
+    "e3_conditions_met": "13/13",
+    "e3_coverage": "UNMEASURED \u2014 CORPUS ABSENT",
+    "assertions_total": 223,
+    "unchanged_from_predecessor": "All authority standing is carried forward unaltered. Coverage is NOT in MANDATORY_SUITES and does not gate the verified extension."
+  },
+  "result": {
+    "suites": {
+      "baseline_integrity": "6/6",
+      "laws": "27/27",
+      "journey": "26/26",
+      "schema": "30/30",
+      "adversarial_p0": "18/18",
+      "sql": "5 migrations parsed",
+      "live_postgres": "32/32",
+      "e3_adversarial": "24/24",
+      "e3_wiring": "13/13",
+      "e3_authenticity": "12/12",
+      "e3_live_postgres": "23/23",
+      "e3_disposition": "PASS",
+      "e3_coverage_harness": "12/12"
+    },
+    "gate_evidence": "proof/evidence/e3-coverage-phase-gate.txt",
+    "gate_exit_code": 0
+  },
+  "unresolved": [
+    {
+      "id": "U-013",
+      "item": "No transcript corpus exists. Every per-rule number is unobtainable until real spans are supplied and their use authorised.",
+      "status": "BLOCKING E3 COVERAGE"
+    },
+    {
+      "id": "U-014",
+      "item": "Blind annotation requires an annotator who has not seen detector output. No annotator, protocol, or inter-annotator agreement measure is established.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-015",
+      "item": "Multi-turn labels (depends_on_prior_turns) are representable in the schema but the harness scores single spans only; E3D-004 cannot be measured by it.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-012",
+      "item": "E3 is verified as an authority boundary, not as a useful detector. That remains true and is precisely what this phase exists to change.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-011",
+      "item": "No rule-set digest is pinned, so a rule edited without a version bump would make historical adjudications unreplayable.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-010",
+      "item": "Cross-layer coupling: db/005 names E3D-004 as the exceptional structural rule.",
+      "status": "OPEN \u2014 accepted as deliberate"
+    }
+  ],
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Supply real transcripts and authorise their use, OR decide the corpus does not yet exist and select a different frontier.",
+    "specifics": [
+      "Which conversations count as ConsciousConversation transcripts \u2014 this engineering session is NOT one, and was deliberately not ingested.",
+      "Consent and handling for raw transcript material.",
+      "Who annotates, blind to detector output.",
+      "How spans are assigned to discovery / validation / holdout, once and permanently."
+    ],
+    "note": "Nothing downstream can proceed on measurement without this. The RC-0001 item (ISA-20260813-RC0001-CR003-001) remains separately open."
+  }
+}
