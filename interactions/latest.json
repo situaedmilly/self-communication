@@ -1,68 +1,64 @@
 {
   "schema": "interaction-pointer.v0.2",
-  "updated_at": "2026-08-13T20:34:00Z",
+  "updated_at": "2026-08-13T21:28:00Z",
   "session": "CONVORUNTIME",
-
   "latest_inselfaction": {
-    "id": "ISA-20260813-E3-INGESTION-002",
-    "path": "inselfactions/ISA-20260813-E3-INGESTION-002.json",
-    "title": "E3 ingestion seam — source made receiver-resolvable",
-    "supersedes": "ISA-20260813-E3-INGESTION-001"
+    "id": "ISA-20260813-E3-AUTHENTICITY-003",
+    "path": "inselfactions/ISA-20260813-E3-AUTHENTICITY-003.json",
+    "title": "E3 candidate authenticity \u2014 RUORA review blocker closed",
+    "supersedes": "ISA-20260813-E3-INGESTION-002"
   },
-
   "source": {
     "repository": "conscious-conversation",
     "source_remote": "situaedmilly/conscious-conversation",
     "visibility": "PRIVATE",
     "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
     "branch": "feature/e3-candidate-adjudication",
-    "commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
+    "commit": "0373e086ae059a7852e645fe1dcf5ccfc80b747d",
     "baseline_tag": "self-integrity-verified-v0.1",
     "baseline_commit": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
-    "delta_compare": "https://github.com/situaedmilly/conscious-conversation/compare/1f246be...72070ab",
-    "merged_to_main": false
+    "delta_compare": "https://github.com/situaedmilly/conscious-conversation/compare/1f246be...0373e08",
+    "merged_to_main": false,
+    "prior_reviewed_commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
+    "surgical_delta_since_review": "https://github.com/situaedmilly/conscious-conversation/compare/72070ab...0373e08"
   },
-
   "standing": {
     "kernel_gate": "OPEN",
     "self_integrity": "VERIFIED",
     "e3_extension": "OUTSIDE SEAL",
-    "ruora_review": "UNBLOCKED",
-    "assertions": 195,
-    "blocking": "E3 condition 11 — baseline delta explicitly reviewed (not machine-satisfiable)"
+    "ruora_review": "AWAITING RE-REVIEW",
+    "assertions": 211,
+    "blocking": "E3 condition 11 \u2014 baseline delta explicitly reviewed (not machine-satisfiable)"
   },
-
   "next_authority": {
     "selfsystem": "RUORA",
-    "act_required": "Founder review of the declared baseline delta, now independently resolvable"
+    "act_required": "Surgical re-review of 72070ab...0373e08 against INV-E3-CANDIDATE-AUTHENTICITY"
   },
-
   "open_items": [
     {
-      "inselfaction": "ISA-20260813-E3-INGESTION-002",
+      "inselfaction": "ISA-20260813-E3-AUTHENTICITY-003",
       "subject": "ConsciousConversation E3 extension",
       "next_authority": "RUORA",
-      "act_required": "Founder review of the declared baseline delta",
-      "status": "AWAITING REVIEW"
+      "act_required": "Surgical re-review of 72070ab...0373e08, then disposition on E3 condition 11",
+      "status": "AWAITING RE-REVIEW"
     },
     {
       "inselfaction": "ISA-20260813-RC0001-CR003-001",
       "subject": "RC-0001 SemanticProgram v0.3 cold review",
       "next_authority": "MILASOPHAHR",
       "act_required": "Authorise or decline a bounded SP-R04 revision",
-      "status": "CHANGES_REQUIRED — NOT superseded by pointer succession"
+      "status": "CHANGES_REQUIRED \u2014 NOT superseded by pointer succession"
     }
   ],
-
   "history": [
     "ISA-20260813-E3-INGESTION-001",
     "ISA-20260813-RC0001-CR003-001",
-    "ISA-20260813-E3-INGESTION-002"
+    "ISA-20260813-E3-INGESTION-002",
+    "ISA-20260813-E3-AUTHENTICITY-003"
   ],
-
-  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
-
+  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission \u2014 it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
   "channel_invariants": [
-    "INV-ISX-REVIEW-RESOLVABILITY — an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: review_status = BLOCKED_SOURCE_UNRESOLVABLE."
+    "INV-ISX-REVIEW-RESOLVABILITY \u2014 an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: review_status = BLOCKED_SOURCE_UNRESOLVABLE.",
+    "INV-E3-CANDIDATE-AUTHENTICITY \u2014 an adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations. Candidate metadata may identify a detection result; it may never prove one occurred."
   ]
 }

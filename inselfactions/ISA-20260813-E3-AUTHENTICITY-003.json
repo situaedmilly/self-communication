@@ -1,0 +1,161 @@
+{
+  "inselfaction_id": "ISA-20260813-E3-AUTHENTICITY-003",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T21:28:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": "ISA-20260813-E3-INGESTION-002",
+
+  "responds_to": {
+    "review": "RUORA disposition on ISA-20260813-E3-INGESTION-002",
+    "verdict_received": "CHANGES REQUIRED",
+    "blocker_received": "INV-E3-CANDIDATE-AUTHENTICITY missing",
+    "review_outcome_on_prior_scope": "The _witness() baseline delta PASSED the narrow review: provenance-only, no epistemic authority gained. The blocker was downstream in the pre-existing E3 adjudication design, exposed only because the real published source was audited instead of the handoff summary."
+  },
+
+  "defect": {
+    "id": "E3-FORGERY",
+    "raised_by": "RUORA review",
+    "independently_reproduced_by_emitter": true,
+    "statement": "adjudicate() verified metadata consistency and ledger provenance but never re-derived the detection event from persisted text. A candidate could CLAIM rule E3D-001 over an episode reading 'I like pizza.' and reach ADMIT_E3 -> evidence edge -> standing VERIFIED.",
+    "reproduction": {
+      "episode_verbatim": "I like pizza.",
+      "detector_output": "NO CANDIDATES",
+      "forged_candidate": { "rule_id": "E3D-001", "candidate_type": "CORRECTS_SYSTEM_QUOTE", "turn_id": "turn_WHATEVER", "observation.event": "REFUSES_REQUEST" },
+      "result_before_repair": "ADMIT_E3 / E3 / edge created / standing VERIFIED"
+    },
+    "principle": "The ledger proves WHERE the episode happened. It does not prove THAT the rule fired.",
+    "why_the_suite_permitted_it": "The E3 adversarial fixture manufactured rule_id=E3D-001 over episodes whose verbatim was the literal string 'placeholder', then expected ADMIT_E3 from later specimens. The fixture itself was the forgery."
+  },
+
+  "law_established": {
+    "id": "INV-E3-CANDIDATE-AUTHENTICITY",
+    "status": "ENFORCED in kernel; unratified as doctrine",
+    "statement": "An adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations under the declared detector/rule version. Candidate metadata may IDENTIFY a detection result. It may never serve as PROOF that detection occurred."
+  },
+
+  "repair": {
+    "kernel/e3.py": [
+      "replay_rule() re-runs the declared rule's own patterns against the authoritative persisted verbatim.",
+      "E3D-004 (structural) reconstructs from >=2 E3D-001 matches across >=2 distinct persisted turns.",
+      "E3D-007, which has no replay procedure, FAILS CLOSED with RULE_REPLAY_UNSUPPORTED.",
+      "Candidate turn_id must equal the ledger turn_id of its source (TURN_MISMATCH).",
+      "observation.event must equal the rule's candidate_type (OBSERVATION_EVENT_MISMATCH).",
+      "matched_excerpt added; verified as a substring of the source (EXCERPT_NOT_IN_SOURCE).",
+      "detect() takes turn_id from the LEDGER, not its caller, and skips unledgered episodes — the detector cannot name a turn either."
+    ],
+    "db/005_e3_authenticity.sql": [
+      "matched_excerpt column on cc.e3_candidates.",
+      "Trigger binding a claimed span to its source episode verbatim.",
+      "Trigger requiring ADMIT_E3 to rest on a source-bound span for lexical rules."
+    ],
+    "new_reason_codes": ["DETECTION_NOT_REPRODUCIBLE", "TURN_MISMATCH", "OBSERVATION_EVENT_MISMATCH", "EXCERPT_NOT_IN_SOURCE", "RULE_REPLAY_UNSUPPORTED"]
+  },
+
+  "fixture_corrections_disclosed": {
+    "why_disclosed": "A corrected fixture changes what a previously-green suite was actually proving. Silently repairing them would convert a real coverage gap into an invisible one.",
+    "corrected": [
+      "proof/test_e3_adversarial.py — fixture() episodes carried verbatim 'placeholder' while candidate() declared E3D-001 over them. Sources now genuinely satisfy the rule; ledger records the matching turn_id.",
+      "proof/test_e3_adversarial.py — the two LIFE-scope specimens now use source text that both fires E3D-001 and contains a life-claim, which is the real shape of that case.",
+      "proof/test_e3_live_postgres.py — ADMIT_E3 rows were built with no source binding; seed episodes and candidates now carry genuine correction text and a bound excerpt."
+    ],
+    "no_check_was_weakened": true
+  },
+
+  "enforcement_asymmetry_declared": {
+    "full_replay": "kernel/e3.py only",
+    "ddl_layer": "db/005 enforces the weaker, rule-agnostic property that a claimed span must occur in its source. DDL cannot replay without duplicating the rule set, which would be a worse drift hazard than the gap it closes.",
+    "known_drift_hazard": "One rule id (E3D-004) appears in DDL. Adding another structural rule to kernel/e3.py without amending that list would make it un-admittable at the database layer."
+  },
+
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "feature/e3-candidate-adjudication",
+    "source_commit": "0373e086ae059a7852e645fe1dcf5ccfc80b747d",
+    "source_commit_short": "0373e08",
+    "prior_reviewed_commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
+    "baseline": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+    "baseline_tag": "self-integrity-verified-v0.1",
+    "merged_to_main": false,
+    "tagged": false
+  },
+
+  "resolvable_references": {
+    "surgical_delta_since_review": "https://github.com/situaedmilly/conscious-conversation/compare/72070ab...0373e08",
+    "full_delta_from_baseline": "https://github.com/situaedmilly/conscious-conversation/compare/1f246be...0373e08",
+    "refs_verified_on_remote": [
+      { "ref": "refs/heads/main", "sha": "1f246be2b1c4b99bb0d15c16d46da14fbc860694" },
+      { "ref": "refs/heads/feature/e3-candidate-adjudication", "sha": "0373e086ae059a7852e645fe1dcf5ccfc80b747d" },
+      { "ref": "refs/tags/self-integrity-verified-v0.1", "peels_to": "1f246be2b1c4b99bb0d15c16d46da14fbc860694" }
+    ],
+    "primary_review_artifacts": [
+      "kernel/e3.py — replay_rule() and the adjudicate() checks preceding scope",
+      "db/005_e3_authenticity.sql",
+      "proof/test_e3_authenticity.py — the frozen counterexample",
+      "proof/evidence/BASELINE-DELTA.md — INV-E3-CANDIDATE-AUTHENTICITY section"
+    ]
+  },
+
+  "result": {
+    "assertions_total": 211,
+    "assertions_previous": 195,
+    "suites": {
+      "baseline_integrity": "6/6", "laws": "27/27", "journey": "26/26",
+      "schema": "30/30", "adversarial_p0": "18/18", "sql": "5 migrations parsed",
+      "live_postgres": "32/32", "e3_adversarial": "24/24",
+      "e3_wiring": "13/13", "e3_authenticity": "12/12", "e3_live_postgres": "23/23"
+    },
+    "live_postgres": "PostgreSQL 16.14, schema dropped and rebuilt from clean across all five migrations before the run",
+    "gate_evidence": "proof/evidence/e3-authenticity-gate.txt",
+    "gate_exit_code": 0
+  },
+
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "self_integrity_conditions_met": "11/11",
+    "e3_extension": "OUTSIDE SEAL",
+    "e3_conditions_met": "12/13",
+    "e3_blocking_condition": "11. baseline delta explicitly reviewed — NOT MACHINE-SATISFIABLE",
+    "ruora_review": "AWAITING RE-REVIEW",
+    "ruora_review_previous": "CHANGES REQUIRED",
+    "merge_authorised": false,
+    "tag_authorised": false
+  },
+
+  "findings": [
+    { "id": "F-008", "severity": "blocking defect, repaired", "finding": "E3 forgery path — candidate metadata accepted as proof of detection.", "disposition": "INV-E3-CANDIDATE-AUTHENTICITY enforced by rule replay; counterexample frozen in proof/test_e3_authenticity.py (12 specimens)." },
+    { "id": "F-009", "severity": "coverage defect, repaired", "finding": "Three fixture sets manufactured the forgery, so a 195-green suite was partly proving nothing about authenticity.", "disposition": "Corrected and disclosed. No check weakened." },
+    { "id": "F-010", "severity": "process, confirmed", "finding": "The defect was invisible to the handoff summary and visible only in the published source.", "disposition": "Confirms INV-ISX-REVIEW-RESOLVABILITY was worth adopting. A trust relay would not have surfaced this." }
+  ],
+
+  "constraints_observed": [
+    "Tunables unchanged: K_ADMISSION, depth thresholds, cost weights, P(a|h), STRUCTURAL_GAIN.",
+    "CONTRADICTION remains BLOCKED. Richer evidence was not treated as licence to reopen it.",
+    "kernel/laws.py unmodified — still byte-identical to sealed digest ad35dcd0e1838da6.",
+    "No merge, no tag. main remains at 1f246be.",
+    "Schema dropped and rebuilt from clean before the live run; no incremental-migration artefacts."
+  ],
+
+  "unresolved": [
+    { "id": "U-001", "item": "E3 condition 11 — baseline delta explicitly reviewed", "status": "BLOCKING E3 EXTENSION", "note": "Re-review requested. The surgical delta is 72070ab...0373e08." },
+    { "id": "U-002", "item": "E3D-007 (ANSWERS_DIFFERENT_QUESTION) unimplemented; now explicitly fails closed at adjudication rather than being silently unreachable.", "status": "OPEN" },
+    { "id": "U-003", "item": "Detector rules E3D-001..006 are deterministic regex over verbatim; coverage and false-negative rate unmeasured.", "status": "OPEN" },
+    { "id": "U-004", "item": "Unvalidated tunables remain unfalsified.", "status": "OPEN" },
+    { "id": "U-005", "item": "INV-CC-REVELATION-CEILING remains PROPOSED and is not mechanically enforceable.", "status": "OPEN" },
+    { "id": "U-006", "item": "No chamber seal law ratified for conscious-conversation.", "status": "OPEN" },
+    { "id": "U-007", "item": "Multi-node/cross-session: RLS, durable idempotency keys, identity drift unwritten.", "status": "OPEN" },
+    { "id": "U-009", "item": "INV-ISX-REVIEW-RESOLVABILITY is adopted for this channel but not mechanically enforced — no emitter check refuses a review-transferring INSELFACTION with a null remote.", "status": "OPEN" },
+    { "id": "U-010", "item": "Rule-id drift hazard between kernel/e3.py structural rules and the E3D-004 literal in db/005.", "status": "OPEN" },
+    { "id": "U-011", "item": "Replay assumes detector rule definitions are immutable for a given detector_id. A rule set edited without a version bump would make historical adjudications unreplayable. No rule-set digest is pinned.", "status": "OPEN" }
+  ],
+
+  "next_authority": {
+    "selfsystem": "RUORA",
+    "act_required": "Surgical re-review of 72070ab...0373e08 against INV-E3-CANDIDATE-AUTHENTICITY, then disposition on E3 condition 11.",
+    "on_approval": "E3 EXTENSION moves OUTSIDE SEAL -> VERIFIED EXTENSION; merge and tag become authorised.",
+    "on_rejection": "Branch remains unmerged; main is unaffected at 1f246be."
+  }
+}
