@@ -1,0 +1,154 @@
+{
+  "inselfaction_id": "ISA-20260813-E3-COVERAGE-PROTOCOL-006",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T00:05:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260813-E3-COVERAGE-OPENED-005",
+  "operation": {
+    "title": "Harden the E3 coverage protocol before data arrives",
+    "phase": "E3 COVERAGE",
+    "authority_change": "NONE. Transfers no review authority, requests no disposition."
+  },
+  "headline": {
+    "corpus_status": "STILL ABSENT",
+    "critical": "No corpus was supplied and no derivation authority was granted in the directing message. None was fabricated and no source was ingested. E3 COVERAGE: UNMEASURED \u2014 CORPUS ABSENT is unchanged and remains correct.",
+    "what_was_done": "The protocol instructions in that message were implementable without a corpus. Hardening the measurement rules before data arrives is when it is cheap; after data arrives, every rule is contestable as post-hoc."
+  },
+  "protocol_hardened": {
+    "first_measurement_threshold": {
+      "MIN_TURNS": 100,
+      "MIN_CONVERSATIONS": 10,
+      "behaviour": "Below either, the report reads INSUFFICIENT_CORPUS / UNMEASURED with NO per-rule rates at all.",
+      "rationale": "Rates computed under threshold would dress noise as topology.",
+      "proven_by": [
+        "COV-12",
+        "COV-13",
+        "COV-14"
+      ]
+    },
+    "first_pass_discovery_only": {
+      "behaviour": "Only discovery spans count toward the threshold; validation and holdout are not burned while the annotation ontology is still unproven against real conversation.",
+      "proven_by": [
+        "COV-15"
+      ]
+    },
+    "none_is_required": {
+      "behaviour": "An empty human_labels array is REFUSED. Nothing-witnessed must be an explicit NONE label.",
+      "rationale": "An omitted array cannot be distinguished from an unannotated span, and a corpus biased toward positives makes precision meaningless. A NONE span the detector fires on is a counted false activation.",
+      "proven_by": [
+        "COV-17",
+        "COV-18"
+      ]
+    },
+    "synthetic_fixtures_refused": {
+      "behaviour": "A span marked SYNTHETIC_FIXTURE is rejected by the loader.",
+      "rationale": "Proof fixtures remain regression specimens. The question is what the detector sees in language it did not help manufacture.",
+      "proven_by": [
+        "COV-16"
+      ]
+    },
+    "evidence_span": "Annotations now record the exact substring the annotator witnessed the event in, comparable against the detector's matched_excerpt.",
+    "miss_taxonomy": {
+      "categories": [
+        "REGEX_DEFICIENCY",
+        "RULE_DEFICIENCY",
+        "ONTOLOGY_DEFICIENCY",
+        "DELIBERATE_NON_INFERENCE"
+      ],
+      "significance": "The fourth is not a defect. Coverage is not maximisation \u2014 a detector that sees everything has begun interpreting. expected_disposition marks it and those spans are reported separately.",
+      "proven_by": [
+        "COV-19"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "F-011",
+      "severity": "test defect, corrected",
+      "finding": "Four earlier shape specimens (COV-07..COV-10) tested report structure against tiny span sets and began tripping the new threshold gate.",
+      "disposition": "Padded to threshold rather than exempted from it. Exempting them would have created a second, weaker measurement path."
+    },
+    {
+      "id": "F-012",
+      "severity": "test defect, corrected",
+      "finding": "COV-05 (partition overlap) used an empty human_labels array as its fixture. After the NONE law it began failing for the empty-labels reason, so it would have passed while no longer testing partition overlap at all.",
+      "disposition": "Fixture given a real NONE label so the test exercises the law it names."
+    },
+    {
+      "id": "F-013",
+      "severity": "documentation, corrected",
+      "finding": "coverage/README.md still stated that an empty human_labels array is a valid 'nothing witnessed' label, directly contradicting the new refusal, and still advertised 12 assertions.",
+      "disposition": "Corrected. A README contradicting the code it documents is the stale-scope-note failure in another place."
+    }
+  ],
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "analysis/e3-real-transcript-coverage",
+    "source_commit": "98b5d39945e4474bd045396da4152b0317d9407c",
+    "based_on": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/6037df1...98b5d39"
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "verified": "kernel/e3.py remains byte-identical to the digest at e3-extension-verified-v0.1 (COV-01, COV-02)."
+  },
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "self_integrity_conditions_met": "11/11",
+    "e3_extension": "VERIFIED EXTENSION",
+    "e3_conditions_met": "13/13",
+    "e3_coverage": "UNMEASURED \u2014 CORPUS ABSENT",
+    "coverage_harness_assertions": "20/20",
+    "assertions_total": 231,
+    "unchanged": "All authority standing carried forward unaltered."
+  },
+  "unresolved": [
+    {
+      "id": "U-013",
+      "item": "No transcript corpus exists. 100 node turns across >=10 conversations are required before any coverage conclusion.",
+      "status": "BLOCKING E3 COVERAGE"
+    },
+    {
+      "id": "U-014",
+      "item": "No annotator, blind-annotation protocol, or inter-annotator agreement measure is established.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-015",
+      "item": "The harness scores single spans; E3D-004 (multi-turn) still cannot be measured by it.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-016",
+      "item": "MIN_TURNS=100 and MIN_CONVERSATIONS=10 are the directing authority's judgement, not a derived statistic. No power analysis backs them.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-012",
+      "item": "E3 is verified as an authority boundary, not as a useful detector.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-011",
+      "item": "No rule-set digest is pinned.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-010",
+      "item": "db/005 names E3D-004 as the exceptional structural rule.",
+      "status": "OPEN \u2014 accepted as deliberate"
+    }
+  ],
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Supply a real transcript corpus, OR authorise derivation of a privacy-safe corpus from a specific named source, OR select a different frontier.",
+    "note": "The directing message described this act but did not perform it. Nothing on measurement can proceed without it. The RC-0001 item remains separately open."
+  }
+}
