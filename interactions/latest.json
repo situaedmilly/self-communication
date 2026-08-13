@@ -1,39 +1,50 @@
 {
   "schema": "interaction-pointer.v0.1",
-  "updated_at": "2026-08-13T19:41:00Z",
-  "session": "CONVORUNTIME",
+  "updated_at": "2026-08-13T20:15:41Z",
+  "session": "MOBILECHALL",
 
   "latest_inselfaction": {
-    "id": "ISA-20260813-E3-INGESTION-001",
-    "path": "inselfactions/ISA-20260813-E3-INGESTION-001.json",
-    "title": "Wire _witness() into the E3 observation ledger"
+    "id": "ISA-20260813-RC0001-CR003-001",
+    "path": "inselfactions/ISA-20260813-RC0001-CR003-001.json",
+    "title": "Cold Review 003 — lineage-independent adversarial review of RC-0001 SemanticProgram v0.3"
   },
 
   "source": {
-    "repository": "conscious-conversation",
-    "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
-    "branch": "feature/e3-candidate-adjudication",
-    "commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
-    "baseline_tag": "self-integrity-verified-v0.1",
-    "baseline_commit": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
-    "merged_to_main": false
+    "repository": "RUORA",
+    "path": "/Users/millysituated/RUORA",
+    "branch": "main",
+    "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
+    "baseline_tag": null,
+    "baseline_commit": null,
+    "merged_to_main": false,
+    "artifacts_tracked_in_git": false,
+    "custody_warning": "The RC-0001 corpus is UNTRACKED and is not contained in commit 7387fe4 or any commit. The artifacts are addressable only by SHA-256 from the working tree. No governance commit has been authorised."
   },
 
   "standing": {
-    "kernel_gate": "OPEN",
-    "self_integrity": "VERIFIED",
-    "e3_extension": "OUTSIDE SEAL",
-    "assertions": 195,
-    "blocking": "E3 condition 11 — baseline delta explicitly reviewed (not machine-satisfiable)"
+    "cold_review_003": "CHANGES_REQUIRED",
+    "pass_threshold_lines_met": "3 / 16",
+    "blocking_defects": 1,
+    "semanticprogram": "NOT SEALED",
+    "reality_compiler": "NOT PROVEN",
+    "implementation": "NOT AUTHORISED",
+    "blocking": "CR3-B01 — v0.3 deleted 'over the supplied trace' from SP-043 and SP-102, leaving the illegal-transition count unscoped while still declared strictly monotonic. Regression introduced by the repair; v0.2 was sound."
+  },
+
+  "survived_attack": {
+    "capability_divergence": "Detected at the disposition for record(\"B\") — CR-002 B.1-F1 CLOSED",
+    "sp_160_refusal_precedence": "TOTAL — 18/18 EXACTLY_ONE",
+    "a_08": "GENUINELY OPEN — not silently resolved"
   },
 
   "next_authority": {
-    "selfsystem": "RUORA",
-    "act_required": "Founder review of the declared baseline delta"
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Authorise (or decline) a bounded SP-R04 revision. Nothing downstream may proceed without it."
   },
 
   "history": [
-    "ISA-20260813-E3-INGESTION-001"
+    "ISA-20260813-E3-INGESTION-001",
+    "ISA-20260813-RC0001-CR003-001"
   ],
 
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor."

@@ -1,0 +1,271 @@
+{
+  "inselfaction_id": "ISA-20260813-RC0001-CR003-001",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T20:15:41Z",
+  "session": "MOBILECHALL",
+  "immutable": true,
+  "supersedes": null,
+
+  "routing": {
+    "originating_selfsystem": "CLAUDESELF",
+    "target_selfsystem": "MILASOPHAHR",
+    "continuation_eligible": ["CHATGPTSELF", "CLAUDESELF"],
+    "note": "Either SELFSYSTEM may execute the bounded revision once the founder authorises it. Neither may execute it unauthorised: every revision in this cascade (SP-R02, SP-R03) and every review (CR-001, CR-002, CR-003) required a separate explicit founder act."
+  },
+
+  "operation": {
+    "title": "Cold Review 003 — lineage-independent adversarial review of RC-0001 SemanticProgram v0.3",
+    "phase": "OURSELF Reality Compilation Protocol RC-0001 · Dual-Substrate Semantic Preservation · SemanticProgram adversarial gate",
+    "intent": "Determine whether SP-R03 closed the remaining semantic escape routes or merely relocated them into more sophisticated machinery.",
+    "authority_principle": "A review adjudicates and reports. A review that repairs is not a review. The reviewer was authorised to create exactly one file and forbidden to propose repairs, edit any prior artifact, stage, or commit.",
+    "epistemic_classification": {
+      "LINEAGE_INDEPENDENT": "YES",
+      "MODEL_INDEPENDENT": "NO",
+      "EXTERNAL": "NO"
+    },
+    "contamination_discipline": "The reviewer received artifacts, the founder mandate, and the raw-bytes extraction method only. The author-side account of whether each repair was good was deliberately withheld, and the reviewer was instructed not to seek it. Same discipline as CR-002."
+  },
+
+  "source": {
+    "repository": "RUORA",
+    "path": "/Users/millysituated/RUORA",
+    "remote": "selfpi:mirrors/RUORA.git",
+    "branch": "main",
+    "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
+    "commit_short": "7387fe4",
+    "commit_message_subject": "chore(governance): exclude chambers/ runtime infrastructure from doctrine repo",
+    "working_tree": "clean of tracked modifications in governance/; 0 staged",
+    "CRITICAL_PROVENANCE_WARNING": "The entire RC-0001 corpus is UNTRACKED. It is NOT contained in commit 7387fe4 or any commit. A SELFSYSTEM that clones RUORA at 7387fe4 will find none of these artifacts. They exist only in the working tree at the paths below and are addressable ONLY by the SHA-256 digests in this packet. No governance commit has been authorised by the founder.",
+    "artifacts_tracked_in_git": false
+  },
+
+  "baseline": {
+    "controlling_source": "L1 raw founder record — outside the RUORA boundary, read-only evidence, never imported",
+    "container": "/Users/millysituated/.codex/sessions/2026/08/12/rollout-2026-08-12T17-43-58-019ff7ee-9e35-7101-915e-74a0aae7d677.jsonl",
+    "container_sha256": "cee97abe168b011e8cc2bf1d69009d755f8c744998302c76743ac432a7d81ebe",
+    "extraction_method": "jq -j 'select(.ordinal==N) | .payload.content | map(.text) | join(\"\\n\")' <container>",
+    "extraction_note": "Blocks joined with LF, no terminal LF. Any other join will not reproduce the pin digests.",
+    "pins": [
+      { "pin": "P-L1-A", "ordinal": 59, "text_sha256": "4cfd687b2ea9cdbcf366c29a60b124e76cf0f9cce9fb4de897d812b69b3f4bb5" },
+      { "pin": "P-L1-B", "ordinal": 72, "text_sha256": "796a3588fbd8fbc611b62f6bba2267d462dd42f92f865a876f82e3387190e221" },
+      { "pin": "P-L1-C", "ordinal": 85, "text_sha256": "e951c1bc4f3fdb0fdfe4f133624acfd521dfedb7240bbdb80a0fe4147d82b8e3" }
+    ],
+    "authority_ladder": "L1 (raw founder seal, 2026-08-12) CONTROLS. L2 written authoring commission and L3 in-session founder direction may elaborate but not supersede. No supersession is pinned. Established by SLR-01-R1.",
+    "custody_caveat": "SOURCE-CUSTODY-001 §3 is an incomplete normalization. Its omissions do not diminish the authority of the byte-pinned founder source. It must never be treated as a replacement for L1.",
+    "hbc_baseline": {
+      "repository": "/Users/millysituated/RUORA/projects/hbc-html",
+      "commit": "e350205f12c140b8216090b935f874cbbc454dee",
+      "tracked_files": 30,
+      "tracked_modified": 0,
+      "staged": 0,
+      "status": "INTACT — untouched, as required",
+      "note": "An untracked output/ directory is present. No tracked file was mutated."
+    }
+  },
+
+  "material_delta": {
+    "files_created": 1,
+    "created": [
+      {
+        "path": "/Users/millysituated/RUORA/governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.3-LINEAGE-INDEPENDENT-COLD-REVIEW-003.md",
+        "sha256": "d9afbcb47f9813430ea763126f80aa25e617012ef80aa6996e0c03d33dc848b1",
+        "lines": 1258,
+        "class": "REVIEW RECORD — NOT NORMATIVE"
+      }
+    ],
+    "files_modified": 0,
+    "modification_statement": "No existing artifact was edited. v0.3 was byte-frozen before dispatch and re-verified byte-unchanged at close, as were all eight evidence artifacts.",
+    "git_actions": "NONE in RUORA. Nothing staged, nothing committed, nothing pushed, nothing sealed."
+  },
+
+  "evidence_set": {
+    "subject": {
+      "path": "governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.3-CANDIDATE.md",
+      "sha256": "55c590ead44e38248a7f97405c8cb23740018df4bd9b154a8a0fd3df99dd7f8e",
+      "lines": 732
+    },
+    "prior_artifacts_all_byte_unchanged": [
+      { "role": "prior subject (CR-002)", "path": "governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.2-CANDIDATE.md", "sha256": "611a782e7abdf323de6567497d4da372ff011142d44de16c6f53c2a9d1feb007" },
+      { "role": "prior subject (CR-001)", "path": "governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.1-CANDIDATE.md", "sha256": "3e675d9ebd1e8bbb25193625ef9ca784146d8d639e57d5f5fe9dfaee46551537" },
+      { "role": "defect register 001", "path": "governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.1-LINEAGE-INDEPENDENT-COLD-REVIEW-001.md", "sha256": "54de4a52ffa4f63086cbc19d30e7d7beb49b5c61cc1b37a2605da187e626276f" },
+      { "role": "defect register 002", "path": "governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.2-LINEAGE-INDEPENDENT-COLD-REVIEW-002.md", "sha256": "bdd8c218ade5e37f0b23605ec2f789ae6f72b74855aa036eb9905039fc46167e" },
+      { "role": "lineage adjudication", "path": "governance/OURSELF-RCP-RC0001-SLR-01-R1-CORRECTED-SOURCE-LINEAGE-RECONCILIATION.md", "sha256": "a506352ae82bd889034b5972dc2b090185aac3c6ac58f6bbc083f7d4614e68c6" },
+      { "role": "custody witness (KNOWN INCOMPLETE)", "path": "governance/OURSELF-RCP-RC0001-SOURCE-CUSTODY-001.md", "sha256": "0f61f7bb41ccdb74d00cb679f00df36b74d4221398835068bb4e5bf388734600" },
+      { "role": "authoring commission (L2)", "path": "governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-AUTHORING-COMMISSION.md", "sha256": "9a04124a25ec3dc9c281d73a4f6bce7ecb7a0619a0d9890f9a51fd5ce5dcc04e" }
+    ]
+  },
+
+  "standing": {
+    "cold_review_003": "CHANGES_REQUIRED",
+    "pass_threshold_lines_met": "3 / 16",
+    "blocking_defects": 1,
+    "semanticprogram": "NOT SEALED",
+    "reality_compiler": "NOT PROVEN",
+    "implementation": "NOT AUTHORISED",
+    "protocol_mutation": "NOT AUTHORISED",
+    "hbc_mutation": "NOT AUTHORISED",
+    "founder_adjudication_A01_A08": "BLOCKED behind a PASS that was not obtained",
+    "meaning_of_pass": "Even PASS would have meant only READY_FOR_FOUNDER_ADJUDICATION. It does not ratify the SemanticProgram."
+  },
+
+  "result": {
+    "layer_1_regression": {
+      "CR_001": { "total": 9, "CLOSED": 8, "PARTIALLY_CLOSED": 1, "candidate_claimed": "9/9 CLOSED" },
+      "CR_002": { "total": 17, "CLOSED": 10, "PARTIALLY_CLOSED": 5, "NOT_CLOSED": 2, "candidate_claimed": "12/12 dispositioned" },
+      "note": "The candidate's own regression tallies overstate closure on both registers. CR-002's count omits four items, including two PLAUSIBLE EXACT overclaims."
+    },
+    "layer_3_capability_counterexample": {
+      "sequence_tested": ["begin", "record(\"A\")", "record(\"B\")", "complete"],
+      "outcome": "v0.3 SURVIVES the core test",
+      "divergence_detected_at": "the disposition for record(\"B\") — SP-152 element 3, before any Entry-count difference exists",
+      "failure_modes_all_blocked": ["silent omission", "disposition normalisation", "equivalent conformance record"],
+      "cr002_B1_F1": "CLOSED",
+      "separate_degraded_attack": "FAILS — embodiments G'/H' with materially different degradations compare equal, violating no clause. Downgraded from BLOCKING to MATERIAL because nothing observable escapes."
+    },
+    "sp_160_totality": {
+      "result": "TOTAL",
+      "enumeration": "18/18 EXACTLY_ONE over state legality × content condition × operation, enumerated twice independently",
+      "second_collision_exists": false
+    },
+    "a_08_integrity": {
+      "result": "GENUINELY OPEN — not silently resolved",
+      "method": "verified against raw L1 bytes plus exhaustive clause search for an operative clause behaving as though one interpretation already governs"
+    },
+    "auditor_hostile_analysis": {
+      "proves": 2,
+      "proves_detail": "field arity; ID uniqueness",
+      "counts": 11,
+      "asserts": 2,
+      "asserts_detail": "the ontology PROHIBITS verdict, derived merely from the presence of 'no'/'not' anywhere on the line; and AUDIT_RESULT itself",
+      "pass_is": "five absence predicates and no positive condition",
+      "probes_that_passed_while_broken": [
+        "semantically inverted SP-041 and SP-160 -> PASS",
+        "injected clause SP-999 'may silently discard any presented element' placed after the boundary -> PASS",
+        "a clause reinstalling the Adjudication gate -> classified PROHIBITS",
+        "a second '## 17.' heading -> row count 90 collapses to 62, three metrics zero out, still PASS",
+        "empty file -> PASS",
+        "v0.2 (the document with the defects) -> PASS"
+      ],
+      "perverse_incentive": "Honest CONFLICTS labelling FAILs the audit while concealment PASSes.",
+      "section_16_5_integrity": "Values reproduce exactly, but the block is hand-rewrapped (22 lines vs the script's 17), which refutes the candidate's claim that it was not hand-entered.",
+      "v0_2_replication": "Confirmed. Evidences measurement validity for those specific tallies AND NOTHING MORE."
+    }
+  },
+
+  "findings": [
+    {
+      "id": "CR3-B01",
+      "severity": "BLOCKING",
+      "finding": "v0.3 deleted the scoping phrase 'over the supplied trace' from BOTH SP-043 and SP-102 (2 occurrences in v0.2, 0 in v0.3). The illegal-transition count is now unscoped while still declared 'strictly monotonic'. A day-2 trace therefore reaches SP-094's stated initial condition with count=1 and fails the founder predicate illegal_transition_count = 0 while violating no clause.",
+      "regression": true,
+      "regression_note": "v0.2 was SOUND here. This defect was introduced by the repair, not inherited.",
+      "independently_verified_by_author_session": "YES — grep confirmed 2 occurrences in v0.2, 0 in v0.3; clause text read at v0.2:142/220 and v0.3:150/188."
+    },
+    { "id": "CR3-01", "severity": "MATERIAL", "finding": "SP-091, labelled FOUNDER_SEALED_L1 / EXACT, appends authored law: 'Comparison is over the presented sequence per SP-152.' The phrase 'presented sequence' occurs 0 times across all three L1 pins, and §17.1 never audits the appended sentence.", "independently_verified_by_author_session": "YES — 0 hits for 'presented sequence' in ordinals 59, 72, 85." },
+    { "id": "CR3-02", "severity": "MATERIAL", "finding": "§7.1 asserts that the same presented sequence yields the same stream, for a class in which it also lists dispositions — falsified by the whole purpose of Repair 1." },
+    { "id": "CR3-03", "severity": "MATERIAL", "finding": "§17.3 makes a regex 'the authoritative enumeration' of ORTHOGONAL, which is a substantive entailment judgment — the exact thing §17's own opening forbids." },
+    { "id": "CR3-04", "severity": "MATERIAL", "finding": "CAPABILITY_DEGRADED appears twice, with no definition, no assignment rule and no coverage requirement; 'loss class' occurs once and never enters SP-152.", "independently_verified_by_author_session": "YES — 2 occurrences in v0.3." },
+    { "id": "CR3-05", "severity": "MATERIAL", "finding": "39 unmarked clause edits. Sections labelled 'preserved verbatim' deleted normative text. The edit to SP-112 made it false." },
+    { "id": "CR3-06..CR3-13", "severity": "MATERIAL", "finding": "position semantics; content-presence predicate; singleton required-vector domain; SP-041's record self-loop absent from L1; §11.1 cites view for a T-fact; L1 laws 2 and 5 unengaged; SP-150 versus SP-050 for boundaries." },
+    { "id": "CR3-18", "severity": "MATERIAL", "finding": "FT-11 is not substantive — embodiment X passes it while violating SP-003." },
+    { "id": "CR3-14..CR3-19", "severity": "MINOR", "finding": "Five further minor findings." },
+    {
+      "id": "CR-09-REGRESSION",
+      "severity": "MATERIAL",
+      "finding": "v0.2 §16.4 was headed 'renamed per CR-09' and opened 'This audit proves row grammar and nothing else. It cannot establish source fidelity, semantic entailment, or state-machine determinacy.' v0.3 deletes both, substitutes 'the script governs', and adds an AUDIT_RESULT verdict token v0.2 never had.",
+      "independently_verified_by_author_session": "YES — 'row grammar and nothing else' present once in v0.2, absent in v0.3; AUDIT_RESULT has 0 occurrences in v0.2.",
+      "note": "The evidence apparatus grew a pass/fail verdict at the same moment it lost the sentence saying what it cannot prove."
+    },
+    {
+      "id": "F-RECONCILE-001",
+      "severity": "reconciliation",
+      "finding": "The reviewer reported that its session-start environment listed HEAD 8097d18, which does not exist in /Users/millysituated/RUORA, and recorded this as a possible integrity concern rather than asserting a clean git state.",
+      "disposition": "RESOLVED — NOT AN ANOMALY. 8097d1866f1b315c575df7cd7943862cf456d33a is HEAD of /Users/millysituated/RUORA/projects/epistemic-systems-metrology, the session's primary working directory, which is a separate git repository from RUORA (HEAD 7387fe4). RUORA nests roughly 22 independent repositories. The reviewer's caution was correct procedure; the flagged fact has a benign cause."
+    }
+  ],
+
+  "docket_adjudication": {
+    "method": "The reviewer independently applied the candidate's own admissibility/classification rule to A-01 through A-08 without trusting the labels.",
+    "candidate_claimed": { "OPEN": 2, "PARTIALLY_DECIDED": 1, "OPERATIVELY_DECIDED": 5 },
+    "reviewer_derived": { "OPEN": 3, "PARTIALLY_DECIDED": 0, "OPERATIVELY_DECIDED": 5 },
+    "divergence": {
+      "item": "A-03",
+      "reason": "Admissible set = {A, B}; SP-026 says both are normatively admitted; the candidate's own rule then yields OPEN, not PARTIALLY_DECIDED."
+    },
+    "classifier_defect": "v0.3 deleted 'NO for others' from the classifier, so OPEN and PARTIALLY_DECIDED now overlap — the classifier is no longer a partition.",
+    "A_08": "GENUINELY OPEN. Not silently resolved."
+  },
+
+  "constraints_observed": [
+    "The reviewer created exactly one file and edited nothing.",
+    "v0.3 was byte-frozen before dispatch; all nine evidence digests re-verified byte-unchanged at close.",
+    "No git action in RUORA: 0 staged, 0 committed, 0 pushed, 0 sealed.",
+    "HBC baseline e350205f untouched: 30 tracked, 0 tracked-modified, 0 staged.",
+    "The L1 container was read read-only and never imported, copied, or written to. It remains outside the RUORA boundary.",
+    "No secret-bearing material was read, printed, or requested.",
+    "No source code was mirrored into SELF-COMMUNICATION; artifacts are referenced by path and digest only.",
+    "The reviewer was forbidden to propose repairs and did not. No v0.4 exists."
+  ],
+
+  "unresolved": [
+    { "id": "U-001", "item": "CR3-B01 — unscoped illegal-transition count. Introduced by SP-R03; v0.2 was sound.", "status": "BLOCKING" },
+    { "id": "U-002", "item": "CR-001 CR-09 partially regressed: the auditor's 'proves row grammar and nothing else' disclaimer was deleted while a pass/fail verdict token was added.", "status": "OPEN" },
+    { "id": "U-003", "item": "CR-002 residue: 5 PARTIALLY_CLOSED, 2 NOT_CLOSED, against the candidate's claim of full disposition.", "status": "OPEN" },
+    { "id": "U-004", "item": "CAPABILITY_DEGRADED is undefined and has no assignment rule; two materially different degradations compare equal.", "status": "OPEN" },
+    { "id": "U-005", "item": "SP-091 carries an authored sentence under a FOUNDER_SEALED_L1 / EXACT label; 'presented sequence' is absent from all three L1 pins.", "status": "OPEN" },
+    { "id": "U-006", "item": "The embedded auditor passes an empty file, passes v0.2, passes semantically inverted clauses, and fails honest CONFLICTS labelling. Every claim resting on AUDIT_RESULT must be re-bounded to what the script actually measures.", "status": "OPEN" },
+    { "id": "U-007", "item": "Docket classifier is no longer a partition; A-03 is OPEN by the candidate's own rule. Derived tally 3/0/5, not 2/1/5.", "status": "OPEN" },
+    { "id": "U-008", "item": "39 unmarked clause edits, including deletions inside sections labelled 'preserved verbatim'. Not verified line by line by the reviewer.", "status": "OPEN" },
+    { "id": "U-009", "item": "Founder adjudication of A-01 through A-08 remains blocked; it was gated behind a PASS that was not obtained.", "status": "BLOCKED" },
+    { "id": "U-010", "item": "The RC-0001 corpus is entirely untracked in git. It survives only as working-tree files addressable by digest. No governance commit has been authorised.", "status": "OPEN — CUSTODY RISK" }
+  ],
+
+  "requested_next_action": {
+    "action": "Founder authorisation of a bounded SP-R04 revision of v0.3, or an alternative disposition.",
+    "why_not_already_done": "No repair authority exists. Every revision and every review in this cascade required a separate explicit founder act, and the reviewer was expressly forbidden to propose repairs.",
+    "minimum_repair_surface_if_authorised": [
+      "CR3-B01 — restore trace scoping to the illegal-transition count in SP-043 and SP-102 (BLOCKING).",
+      "SP-091 — separate the founder-sealed sentence from the authored comparison rule, or reclassify.",
+      "CAPABILITY_DEGRADED — define it, give it an assignment rule, and make two different degradations distinguishable.",
+      "Docket classifier — restore the partition and reclassify A-03.",
+      "Auditor — restore the CR-09 disclaimer, bound every claim to measurement, and address the probes that pass while broken.",
+      "The 39 unmarked edits — declare them, in the manner of a baseline delta."
+    ],
+    "governing_criterion_carried_forward": "A repair counts only if the normative representation either makes the defect impossible or makes it explicitly detectable.",
+    "standing_architectural_constraint": "Do not solve the capability leak by putting authority back inside begin / record / complete. Capability resolution must become visible to proof without becoming permission to reinterpret semantic law.",
+    "successor_gate": "Cold Review 004 would be required after any SP-R04, and would itself require separate authorisation."
+  },
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Authorise (or decline) a bounded SP-R04 revision. Nothing downstream may proceed without it.",
+    "review_artifacts": [
+      "governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.3-LINEAGE-INDEPENDENT-COLD-REVIEW-003.md §8 (verdict) and §7 (PASS-threshold table)",
+      "governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.3-LINEAGE-INDEPENDENT-COLD-REVIEW-003.md §2 (CR3-B01) and §6 (auditor)",
+      "governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.3-CANDIDATE.md SP-043, SP-091, SP-102, §16.4, §16.5"
+    ],
+    "on_authorisation": "SP-R04 executes against the six surfaces above; v0.3 is preserved byte-unchanged as the subject of Cold Review 003; a successor candidate v0.4 is created.",
+    "on_decline": "v0.3 stands at CHANGES_REQUIRED and the SemanticProgram remains unsealed. No downstream act becomes available."
+  },
+
+  "review_limitations_declared": {
+    "model_independence": "NONE. The reviewer shares an architecture with the author, so its negative results — 'I could not construct an escape' — are materially weaker evidence than its positive findings.",
+    "not_tested": [
+      "L3 pins were not verified",
+      "ordinals beyond 59, 72 and 85 were not read, so an L1 statement that would change an EXACT verdict cannot be ruled out",
+      "the commission and protocol were not audited internally",
+      "the 39 unmarked edits were not verified line by line"
+    ],
+    "internal_discipline": "The reviewer ran parallel attack lines, re-verified every finding against primary sources before recording it, downgraded two severities, and killed one proposed BLOCKING finding outright (a claimed T→L partition breach, which does not survive: capability resolution is a common cause, not a T-fact read, so SP-105 holds). Agreement among its own attack lines is corroboration of execution, not of judgment.",
+    "author_session_spot_check": "The originating SELFSYSTEM independently re-verified the artifact digest, the BLOCKING finding's clause text in both v0.2 and v0.3, the absence of 'presented sequence' from all three L1 pins, the CAPABILITY_DEGRADED occurrence count, the CR-09 disclaimer deletion, the AUDIT_RESULT absence in v0.2, and the verdict text at source. All confirmed. The remaining findings are reported as the reviewer returned them and are not independently re-derived."
+  },
+
+  "source_paths": {
+    "corpus_root": "/Users/millysituated/RUORA/governance/",
+    "l1_container": "/Users/millysituated/.codex/sessions/2026/08/12/rollout-2026-08-12T17-43-58-019ff7ee-9e35-7101-915e-74a0aae7d677.jsonl",
+    "hbc": "/Users/millysituated/RUORA/projects/hbc-html",
+    "session_primary_working_directory": "/Users/millysituated/RUORA/projects/epistemic-systems-metrology"
+  },
+
+  "transmission_note": "Repository situaedmilly/self-communication resolves over SSH and origin/main was reachable at a5d72b6 before this transmission. The gh CLI could not resolve the repository by name under the authenticated account; git over SSH could. Publication and verification were therefore performed with git ls-remote rather than gh."
+}
