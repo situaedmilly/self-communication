@@ -1,0 +1,97 @@
+{
+  "inselfaction_id": "ISA-20260813-RC0001-BLOCKCLASS-003",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T23:40:00Z",
+  "session": "MOBILECHALL",
+  "immutable": true,
+  "supersedes": null,
+  "continues": "ISA-20260813-RC0001-SPR04-002",
+
+  "operation": {
+    "title": "Blocker classification — the exact meaning of BLOCKED_SOURCE_UNRESOLVABLE on ISA-20260813-RC0001-SPR04-002",
+    "authority": "Read-only adjudication of an existing status label. No artifact modified; v0.4 untouched.",
+    "question_put": "What source question is unresolved, which clauses depend on it, and is it (A) missing source evidence, (B) conflicting founder sources, (C) an ambiguity already docketed A-01–A-08, (D) a commission/source contradiction, (E) a question the SemanticProgram has no authority to answer, or (F) a review-status label instructing the eventual reviewer to return BLOCKED?"
+  },
+
+  "classification": {
+    "answer": "NONE OF A–F AS PUT. The correct category is a seventh: CHANNEL CUSTODY / TRANSPORT RESOLVABILITY.",
+    "what_it_actually_is": "BLOCKED_SOURCE_UNRESOLVABLE is a property of the HANDOFF PACKET, not of the SemanticProgram. INV-ISX-REVIEW-RESOLVABILITY requires that an INSELFACTION transferring review authority expose the reviewed source through a receiver-resolvable immutable reference. The RC-0001 corpus is untracked in git — contained in no commit, on no remote — so no such reference can be constructed. The invariant's own trigger condition is 'if the source chamber has no accessible remote', which is a statement about repositories, not about founder propositions.",
+    "source_question_unresolved": "NONE. There is no unresolved founder or source question behind this label.",
+    "clauses_depending_on_it": "ZERO. No SP clause, no FT row, no docket item, and no acceptance predicate of v0.4 depends on it. It is not a semantic dependency of any kind.",
+    "why_the_misreading_was_reasonable": "The label was placed in the packet's `source` block, alongside fields that do describe founder source lineage — L1 pins, the authority ladder, the custody caveat. A transport status sitting among provenance fields reads as a provenance status. The naming collision is the author's, not the reader's.",
+    "propagation_note": "The same `review_status` value and the RC-0001 `custody_warning` text were subsequently copied into the source block of ISA-20260813-E3-COVERAGE-OPENED-005 by another session, where they now describe a different subject. This is recorded as an observation about the channel, not as a finding against that movement."
+  },
+
+  "effect_on_cr3_b01": {
+    "verdict": "ORTHOGONAL. The block does not touch CR3-B01.",
+    "reasoning": "CR3-B01's repair restores a scoping phrase that was authored in v0.2, deleted in v0.3, and is reinstated on authored grounds in v0.4 (SP-043, SP-102, SP-094). No founder-sealed meaning, commission law, or unresolved founder decision was required to make it. The SP-R04 packet already recorded this and expressly did NOT return BLOCKED_BY_FOUNDER_OR_SOURCE_DECISION.",
+    "consequence": "The founder's conditional branch 'if the source block affects CR3-B01 → HOLD CR004 → source/founder adjudication' does NOT fire."
+  },
+
+  "adjacent_finding_surfaced_by_this_inquiry": {
+    "id": "BC-001",
+    "severity": "MATERIAL — disclosure, not a block",
+    "finding": "Although the transport block is orthogonal, the inquiry surfaced one place where a founder SILENCE is genuinely load-bearing for CR3-B01. L1 mentions the illegal-transition count exactly ONCE across all three pins — at L1-72:120, `illegal_transition_count = 0`, inside the worked trace — and nowhere scopes it. Verified mechanically: zero occurrences of reset / per-run / cumulative / across-runs in any pin.",
+    "implication": "v0.4's decision that the count is derived over one presented sequence and has no existence outside it is an AUTHORED answer to a question L1 leaves open. It is correctly labelled — SP-043 is AUTHOR-PROPOSED / DERIVED / ELABORATES — but it is NOT docketed among A-01…A-08.",
+    "why_it_matters": "v0.3's opposite reading (an unscoped cumulative count) was equally consistent with L1's silence, and it produced the BLOCKING defect. The scoping choice is therefore outcome-determining and rests on founder silence. A lineage-independent reviewer may reasonably argue it belongs on the docket as a founder decision rather than standing as authored elaboration.",
+    "not_acted_on": "No docket item was created and no clause was changed. The authorised act was to identify and report, not to modify v0.4. Creating A-09 would be a revision.",
+    "category_if_docketed": "C — an ambiguity of the kind A-01…A-08 already collect."
+  },
+
+  "operative_consequence": {
+    "statement": "The block does not gate whether Cold Review 004 may proceed. It gates WHO may conduct it.",
+    "local_reviewer": "UNAFFECTED. A reviewer on this machine resolves every artifact by SHA-256 against the working tree. This is exactly how Cold Reviews 001, 002 and 003 were all conducted; each independently recomputed the digests and matched. Nothing about v0.4 is less reviewable than v0.3 was.",
+    "external_or_remote_reviewer": "GENUINELY BLOCKED. A reviewer without filesystem access to this machine cannot obtain the subject at all. The independence ladder's next rung — EXTERNAL, the one rung no review in this cascade has yet reached — is blocked by custody, not by semantics.",
+    "therefore": "The founder's second branch applies: the block is orthogonal and reviewable surfaces remain. CR004 is lawful with a local lineage-independent reviewer. Its mandate need carry no source-blocked question, because there is none."
+  },
+
+  "status_reconciliation": {
+    "question": "Is v0.4 actually READY_FOR_COLD_REVIEW_004 in the ordinary sense?",
+    "answer": "YES, for the review that is actually available. The two statuses are not in conflict once the label is read correctly: CANDIDATE_READY_FOR_COLD_REVIEW_004 describes the revision; BLOCKED_SOURCE_UNRESOLVABLE describes the packet's transport. They are orthogonal claims about different objects.",
+    "recommended_label_correction": "Future RC-0001 packets should carry this under a `transport` or `custody` key rather than `source.review_status`, so a transport property cannot be read as a provenance property. Not applied retroactively: ISA-20260813-RC0001-SPR04-002 is immutable and is not edited. This record is its correction."
+  },
+
+  "channel_defect_found": {
+    "id": "BC-002",
+    "severity": "MATERIAL",
+    "finding": "The pointer at interactions/latest.json no longer lists ISA-20260813-RC0001-SPR04-002 in `open_items`, although it remains in `history`. It also reverted ISA-20260813-RC0001-CR003-001 to 'CHANGES_REQUIRED — STILL OPEN', which is stale: SP-R04 was authorised and executed, discharging it.",
+    "impact": "The pointer's own law states that open_items 'is the field to read before assuming nothing is pending'. As written, a reader consulting it would conclude RC-0001 is awaiting authorisation for a revision that has already been performed, and would see no pending item for v0.4 at all.",
+    "cause": "Concurrent pointer writes by separate sessions. Not attributed as fault: the pointer is mutable by design and each writer reconstructed it from its own view.",
+    "remedy_applied": "This transmission restores the RC-0001 items to open_items and preserves the concurrent E3 item unchanged. No predecessor archive was edited."
+  },
+
+  "verification": {
+    "method": "Every claim below was recomputed rather than recalled.",
+    "v0_4_untouched": {
+      "sha256": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
+      "matches_publication": true,
+      "git_status": "?? untracked",
+      "commits_containing_it": 0
+    },
+    "l1_container_sha256": "cee97abe168b011e8cc2bf1d69009d755f8c744998302c76743ac432a7d81ebe",
+    "l1_count_occurrences": { "ordinal_59": "line 50 '+ invalid transition law'", "ordinal_72": "line 120 'illegal_transition_count = 0'", "ordinal_85": "line 104 'illegal transition behavior'" },
+    "l1_scoping_terms_found": 0,
+    "ruora": { "branch": "main", "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8", "staged": 0 },
+    "artifacts_modified_by_this_movement": 0
+  },
+
+  "requested_next_action": {
+    "primary": "Authorise Cold Review 004 against v0.4 with a LOCAL lineage-independent reviewer. The source block does not impede it and its mandate needs no BLOCKED carve-out.",
+    "carry_into_that_mandate": "BC-001 — instruct the reviewer to test whether the presented-sequence scoping of the illegal-transition count is a legitimate authored elaboration or a founder decision that must be docketed. It is the one surface where CR3-B01's correctness rests on a founder silence.",
+    "separate_and_independent": "If EXTERNAL review is ever wanted — the rung above lineage-independence, which nothing in this cascade has reached — the corpus must first be committed and pushed to a receiver-resolvable remote. That requires a founder authorisation to commit that every movement so far has withheld, and it is a decision about custody, not about the SemanticProgram."
+  },
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Authorise or decline Cold Review 004 (local, lineage-independent); separately, decide whether the RC-0001 corpus should be committed to make external review possible."
+  },
+
+  "constraints_observed": [
+    "v0.4 not modified — verified by digest before and after.",
+    "No clause authored, no docket item created, no revision performed.",
+    "No predecessor INSELFACTION edited; this record corrects by succession.",
+    "Nothing staged or committed in RUORA.",
+    "L1 container read read-only; never imported or copied.",
+    "No secret-bearing material read, printed, or requested."
+  ]
+}
