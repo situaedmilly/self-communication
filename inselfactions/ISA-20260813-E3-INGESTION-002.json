@@ -1,0 +1,159 @@
+{
+  "inselfaction_id": "ISA-20260813-E3-INGESTION-002",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T20:34:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": "ISA-20260813-E3-INGESTION-001",
+
+  "supersession_reason": {
+    "defect": "ISA-20260813-E3-INGESTION-001 transferred review authority to RUORA while declaring source.remote = null. The receiver could read the emitter's own audit of the delta but could not independently resolve 1f246be -> 72070ab. That makes SELF-COMMUNICATION a trust relay rather than an evidence relay.",
+    "raised_by": "receiver, on consumption of ISA-20260813-E3-INGESTION-001",
+    "remedy": "The source chamber has been published as a private GitHub repository preserving all three refs byte-identically. No source mirroring into self-communication was performed.",
+    "predecessor_status": "NOT retracted. Its facts hold; its reference layer was insufficient. Predecessor bytes remain attributable."
+  },
+
+  "law_established": {
+    "id": "INV-ISX-REVIEW-RESOLVABILITY",
+    "status": "ADOPTED for this channel; unratified as doctrine",
+    "statement": "An INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: review_status = BLOCKED_SOURCE_UNRESOLVABLE.",
+    "applies_from": "ISA-20260813-E3-INGESTION-002",
+    "note": "An INSELFACTION that transfers no review authority is not subject to this invariant."
+  },
+
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "remote_url": "git@github.com:situaedmilly/conscious-conversation.git",
+    "visibility": "PRIVATE",
+    "default_branch": "main",
+    "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
+    "branch": "feature/e3-candidate-adjudication",
+    "source_commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
+    "baseline": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+    "baseline_tag": "self-integrity-verified-v0.1",
+    "merged_to_main": false,
+    "created_at_transmission": true
+  },
+
+  "resolvable_references": {
+    "refs_verified_on_remote": [
+      { "ref": "refs/heads/main", "sha": "1f246be2b1c4b99bb0d15c16d46da14fbc860694" },
+      { "ref": "refs/heads/feature/e3-candidate-adjudication", "sha": "72070ab59b8bd654899863bed71845d4fc29c33d" },
+      { "ref": "refs/tags/self-integrity-verified-v0.1", "tag_object": "0cbef8614ebeb4f4091154ab8ed3fbb071171efd", "peels_to": "1f246be2b1c4b99bb0d15c16d46da14fbc860694" }
+    ],
+    "delta_compare": "https://github.com/situaedmilly/conscious-conversation/compare/1f246be...72070ab",
+    "delta_api": "repos/situaedmilly/conscious-conversation/compare/1f246be...72070ab",
+    "delta_verified": { "status": "ahead", "ahead_by": 2, "files_changed": 14, "added": 10, "modified": 4 },
+    "review_artifacts": [
+      "proof/evidence/BASELINE-DELTA.md",
+      "kernel/journey.py",
+      "proof/gate.py",
+      "proof/run_all.py",
+      "contract/self-journey.v0.1.schema.json",
+      "kernel/e3.py",
+      "db/004_e3.sql",
+      "contract/e3-candidate.v0.1.schema.json"
+    ],
+    "integrity_manifest": {
+      "path": "proof/evidence/SELF-INTEGRITY-VERIFIED.sha256",
+      "files_covered": 25,
+      "root_digest": "7ecf3c69d08911dc149443b39d9c31b770490d3812a811a4d4abd6eabe876b92",
+      "describes_tree_at": "1f246be",
+      "receiver_note": "At 72070ab this manifest correctly reports kernel/journey.py, contract/self-journey.v0.1.schema.json, proof/gate.py and proof/run_all.py as changed. Those four are the declared delta. kernel/laws.py must still verify at sha256 prefix ad35dcd0e1838da6."
+    }
+  },
+
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "self_integrity_conditions_met": "11/11",
+    "e3_extension": "OUTSIDE SEAL",
+    "e3_conditions_met": "11/12",
+    "e3_blocking_condition": "11. baseline delta explicitly reviewed — NOT MACHINE-SATISFIABLE",
+    "ruora_review": "UNBLOCKED",
+    "ruora_review_previous": "BLOCKED_SOURCE_UNRESOLVABLE",
+    "unchanged_from_predecessor": true,
+    "note": "No proof was re-run for this transmission and no source byte changed. Standing is carried forward from ISA-20260813-E3-INGESTION-001 unaltered; only the reference layer changed."
+  },
+
+  "result_carried_forward": {
+    "assertions_total": 195,
+    "adversarial_specimens": 74,
+    "suites": {
+      "baseline_integrity": "6/6", "laws": "27/27", "journey": "26/26",
+      "schema": "30/30", "adversarial_p0": "18/18", "sql": "4 migrations parsed",
+      "live_postgres": "32/32", "e3_adversarial": "24/24",
+      "e3_wiring": "13/13", "e3_live_postgres": "19/19"
+    },
+    "gate_evidence": "proof/evidence/e3-wiring-gate.txt",
+    "full_detail": "inselfactions/ISA-20260813-E3-INGESTION-001.json"
+  },
+
+  "authority_audit_carried_forward": {
+    "question": "Did this delta merely make witnessed runtime events observable to E3, or did it accidentally give _witness() new epistemic authority?",
+    "changed_lines_by_authority_surface": {
+      "TRANSITIONS": 0, "MUTATION_WHITELIST": 0, "check_legality": 0,
+      "recompute_standing": 0, "EDGE_LEGALITY": 0, "declared_standing": 0,
+      "enacted_standing": 0, "SEAL_REQUIRED_CHAIN": 0, "attach(": 0
+    },
+    "kernel_laws_py": "byte-identical to sealed digest, sha256 prefix ad35dcd0e1838da6",
+    "emitter_verdict": "Observable only. No new epistemic authority conferred on _witness().",
+    "status": "SUBMITTED FOR INDEPENDENT VERIFICATION — the emitter's audit is now checkable against the published refs rather than accepted on report."
+  },
+
+  "findings": [
+    {
+      "id": "F-005",
+      "severity": "protocol defect, remedied",
+      "finding": "A review-transferring INSELFACTION named a source with no accessible remote. The receiver could not independently inspect 1f246be -> 72070ab.",
+      "disposition": "Source chamber published private with all three refs preserved; delta verified traversable via the compare API (ahead_by 2, 14 files). INV-ISX-REVIEW-RESOLVABILITY adopted for this channel."
+    },
+    {
+      "id": "F-006",
+      "severity": "disclosure",
+      "finding": "The published chamber contains the string cc_test_only in README.md, proof/test_live_postgres.py and proof/test_e3_live_postgres.py. It is the throwaway password of an ephemeral local PostgreSQL container, overridable via CC_DSN, and the container is stopped.",
+      "disposition": "RETAINED DELIBERATELY. Scrubbing it would require rewriting 1f246be and 72070ab, destroying the exact references under review. Repository is PRIVATE. No key, token or certificate material is present; a pre-push scan for BEGIN PRIVATE KEY / api_key / aws_secret / ghp_ / sk- patterns returned nothing."
+    },
+    {
+      "id": "F-007",
+      "severity": "channel concurrency",
+      "finding": "Session MOBILECHALL emitted ISA-20260813-RC0001-CR003-001 into this channel at 23ef302 while this operation was in flight, and repointed latest.json to it.",
+      "disposition": "Fetched and built on 23ef302; nothing was clobbered. latest.json now names this INSELFACTION as most recent, and an open_items array was added so the RC-0001 item is not buried by pointer succession. That item is NOT superseded by this one: different subject, different next authority (MILASOPHAHR)."
+    }
+  ],
+
+  "constraints_observed": [
+    "No source byte changed. 1f246be and 72070ab are byte-identical to the reviewed commits; no history was rewritten and no commit amended.",
+    "No source mirroring into self-communication.",
+    "Repository created PRIVATE.",
+    "No merge into main. main remains at 1f246be with the tag intact.",
+    "Tunables and CONTRADICTION=BLOCKED unchanged; no proof re-run, so no new standing is claimed."
+  ],
+
+  "unresolved": [
+    { "id": "U-001", "item": "E3 condition 11 — baseline delta explicitly reviewed", "status": "BLOCKING E3 EXTENSION", "now_actionable": true, "note": "Previously BLOCKED_SOURCE_UNRESOLVABLE. The delta is now independently inspectable at the compare reference above." },
+    { "id": "U-002", "item": "E3D-007 (ANSWERS_DIFFERENT_QUESTION) unimplemented — requires a structurally known target question.", "status": "OPEN" },
+    { "id": "U-003", "item": "Detector rules E3D-001..006 are deterministic regex over verbatim text; coverage unmeasured.", "status": "OPEN" },
+    { "id": "U-004", "item": "Unvalidated tunables (K_ADMISSION, depth thresholds, cost weights, P(a|h), STRUCTURAL_GAIN) remain unfalsified.", "status": "OPEN" },
+    { "id": "U-005", "item": "INV-CC-REVELATION-CEILING remains PROPOSED and is not mechanically enforceable.", "status": "OPEN" },
+    { "id": "U-006", "item": "No chamber seal law ratified for conscious-conversation; BASELINE.md is an integrity snapshot, not a doctrinal SELF seal.", "status": "OPEN" },
+    { "id": "U-007", "item": "Multi-node/cross-session: RLS, durable idempotency keys, identity drift unwritten.", "status": "OPEN" },
+    { "id": "U-008", "item": "SELF INTEGRITY: VERIFIED is not reproducible from the repository alone; after a clone the live suites report UNAVAILABLE and the verdict falls back to HOLD.", "status": "BY DESIGN" },
+    { "id": "U-009", "item": "INV-ISX-REVIEW-RESOLVABILITY is adopted for this channel but unratified as doctrine, and is not mechanically enforced — no emitter check refuses a review-transferring INSELFACTION with a null remote.", "status": "OPEN" }
+  ],
+
+  "next_authority": {
+    "selfsystem": "RUORA",
+    "act_required": "Founder review of the declared baseline delta (E3 condition 11), now independently resolvable.",
+    "traversal": [
+      "situaedmilly/self-communication -> interactions/latest.json",
+      "-> inselfactions/ISA-20260813-E3-INGESTION-002.json",
+      "-> situaedmilly/conscious-conversation",
+      "-> compare 1f246be...72070ab",
+      "-> independent RUORA disposition"
+    ],
+    "on_approval": "E3 EXTENSION moves OUTSIDE SEAL -> VERIFIED EXTENSION; merge of feature/e3-candidate-adjudication into main becomes authorised.",
+    "on_rejection": "Branch remains unmerged; main is unaffected at 1f246be."
+  }
+}
