@@ -1,0 +1,155 @@
+{
+  "inselfaction_id": "ISA-20260813-E3-EXTENSION-VERIFIED-004",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T22:06:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": "ISA-20260813-E3-AUTHENTICITY-003",
+
+  "responds_to": {
+    "review": "RUORA disposition on ISA-20260813-E3-AUTHENTICITY-003",
+    "verdict_received": "PASSED",
+    "authorisation_received": "AUTHORIZED TO MERGE",
+    "reviewed_commit": "0373e086ae059a7852e645fe1dcf5ccfc80b747d",
+    "prior_review": "72070ab — CHANGES REQUIRED (INV-E3-CANDIDATE-AUTHENTICITY missing)"
+  },
+
+  "transition_performed": {
+    "type": "merge + tag",
+    "merge": "feature/e3-candidate-adjudication @ 0373e08 -> main, fast-forward only",
+    "fast_forward_exact": true,
+    "significance": "main is byte-identical to the reviewed commit. The reviewed tree IS the merged tree; no merge commit interposed a tree nobody reviewed.",
+    "tag_created": "e3-extension-verified-v0.1",
+    "genesis_tag_untouched": true
+  },
+
+  "read_back_from_git": {
+    "note": "Read after push, not predicted beforehand, per RUORA instruction.",
+    "main_sha": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+    "tag_object_sha": "9b359a52f700f643c322ea61da202c14a142789a",
+    "tag_peels_to": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+    "reviewed_commit": "0373e086ae059a7852e645fe1dcf5ccfc80b747d",
+    "genesis_tag": "self-integrity-verified-v0.1",
+    "genesis_tag_object": "0cbef8614ebeb4f4091154ab8ed3fbb071171efd",
+    "genesis_tag_peels_to": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+    "working_tree": "clean",
+    "remote_verified": true
+  },
+
+  "why_main_moved_past_the_reviewed_commit": {
+    "explanation": "main fast-forwarded to 0373e08 exactly, then ONE further commit (94c2f75) added evidence and harness only.",
+    "added_after_review": [
+      "proof/evidence/RUORA-DISPOSITION-001.md — the disposition receipt",
+      "proof/check_disposition.py — condition 11, externally driven",
+      "proof/evidence/E3-EXTENSION-VERIFIED.sha256 — 42-file extension manifest",
+      "proof/evidence/e3-extension-gate.txt — the post-merge gate run",
+      "proof/gate.py, proof/run_all.py — suite registration for the disposition check"
+    ],
+    "guarantee": "No file under kernel/, contract/ or db/ changed after 0373e08. proof/check_disposition.py enforces this on every gate run and FAILS if the authority core moves after the reviewed commit.",
+    "verify": "git diff --name-only 0373e08 94c2f75 -- kernel contract db  ->  empty"
+  },
+
+  "condition_11_mechanism": {
+    "status": "SATISFIED by external authority record",
+    "how": "proof/check_disposition.py confirms the disposition record exists, carries verdict PASSED, names a commit reachable from HEAD, and that the authority core is unchanged since review.",
+    "explicit_limit": "It cannot verify that the review was competent, or that it happened. Its authority is external and the record is a receipt, not a proof. Recorded this way rather than as a boolean in gate.py so the distinction stays visible: the gate reports what an authority decided, it does not decide."
+  },
+
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "main",
+    "source_commit": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+    "tag": "e3-extension-verified-v0.1",
+    "baseline": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+    "baseline_tag": "self-integrity-verified-v0.1",
+    "merged_to_main": true,
+    "feature_branch_retained_at": "0373e086ae059a7852e645fe1dcf5ccfc80b747d"
+  },
+
+  "resolvable_references": {
+    "extension_delta_from_genesis": "https://github.com/situaedmilly/conscious-conversation/compare/1f246be...94c2f75",
+    "post_review_delta": "https://github.com/situaedmilly/conscious-conversation/compare/0373e08...94c2f75",
+    "surgical_authenticity_delta": "https://github.com/situaedmilly/conscious-conversation/compare/72070ab...0373e08",
+    "extension_manifest": {
+      "path": "proof/evidence/E3-EXTENSION-VERIFIED.sha256",
+      "files_covered": 42,
+      "root_digest": "624894066556ad963334c5673a5efbf316b0c2102d5c0ea055fd6f95fd7981b7",
+      "describes_tree_at": "94c2f75",
+      "recorded_in": "annotated tag e3-extension-verified-v0.1"
+    },
+    "genesis_manifest": {
+      "path": "proof/evidence/SELF-INTEGRITY-VERIFIED.sha256",
+      "files_covered": 25,
+      "root_digest": "7ecf3c69d08911dc149443b39d9c31b770490d3812a811a4d4abd6eabe876b92",
+      "describes_tree_at": "1f246be",
+      "note": "Still describes 1f246be and nothing else. It correctly reports the declared delta files as changed at 94c2f75; that is the mechanism working, not a failure."
+    }
+  },
+
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "self_integrity_conditions_met": "11/11",
+    "e3_extension": "VERIFIED EXTENSION",
+    "e3_conditions_met": "13/13",
+    "ruora_review": "PASSED",
+    "authenticity": "INV-E3-CANDIDATE-AUTHENTICITY HELD",
+    "merged": true,
+    "tagged": true
+  },
+
+  "result": {
+    "assertions_total": 211,
+    "suites": {
+      "baseline_integrity": "6/6", "laws": "27/27", "journey": "26/26",
+      "schema": "30/30", "adversarial_p0": "18/18", "sql": "5 migrations parsed",
+      "live_postgres": "32/32", "e3_adversarial": "24/24", "e3_wiring": "13/13",
+      "e3_authenticity": "12/12", "e3_live_postgres": "23/23",
+      "e3_disposition": "PASS"
+    },
+    "adversarial_specimens": 109,
+    "live_postgres": "PostgreSQL 16.14",
+    "gate_evidence": "proof/evidence/e3-extension-gate.txt",
+    "gate_exit_code": 0
+  },
+
+  "capability_now_established": "ConsciousConversation can witness behaviour occurring inside conversation, reconstruct the detector event from authoritative persisted evidence, and admit it at E3 — without allowing either the detector or its candidate object to manufacture the fact it claims to have observed. It is no longer limited to what the SELFnode reports about a life.",
+
+  "constraints_observed": [
+    "Genesis tag self-integrity-verified-v0.1 preserved permanently at 1f246be. Not moved, not reused.",
+    "Fast-forward only; no merge commit interposed an unreviewed tree.",
+    "No kernel/, contract/ or db/ file changed after the reviewed commit.",
+    "Tunables unchanged: K_ADMISSION, depth thresholds, cost weights, P(a|h), STRUCTURAL_GAIN.",
+    "CONTRADICTION remains BLOCKED. E3 verification was not treated as licence to reopen it.",
+    "kernel/laws.py still byte-identical to its genesis digest ad35dcd0e1838da6."
+  ],
+
+  "unresolved": [
+    { "id": "U-010", "item": "Cross-layer coupling: db/005 knows E3D-004 is the exceptional structural rule permitted to have no lexical span. Introducing another structural rule requires the migration and policy surface to evolve with it.", "status": "OPEN — accepted by RUORA as deliberate, non-blocking debt" },
+    { "id": "U-011", "item": "Replay assumes detector rule definitions are immutable for a given detector_id. A rule set edited without a version bump would make historical adjudications unreplayable. No rule-set digest is pinned.", "status": "OPEN" },
+    { "id": "U-002", "item": "E3D-007 (ANSWERS_DIFFERENT_QUESTION) unimplemented; fails closed at adjudication.", "status": "OPEN" },
+    { "id": "U-003", "item": "Detector rules E3D-001..006 are deterministic regex over verbatim; coverage and false-negative rate unmeasured.", "status": "OPEN" },
+    { "id": "U-004", "item": "Unvalidated tunables remain unfalsified. cc.probe_instances records predicted_partition vs observed_answer_class to enable it; no falsification run.", "status": "OPEN" },
+    { "id": "U-005", "item": "INV-CC-REVELATION-CEILING remains PROPOSED and is not mechanically enforceable.", "status": "OPEN" },
+    { "id": "U-006", "item": "No chamber seal law ratified. Both manifests are integrity snapshots, not doctrinal SELF seals.", "status": "OPEN" },
+    { "id": "U-007", "item": "Multi-node/cross-session: RLS, durable idempotency keys, identity drift unwritten.", "status": "OPEN" },
+    { "id": "U-008", "item": "VERIFIED is not reproducible from the repository alone; after a clone the live suites report UNAVAILABLE and the verdict falls back to HOLD. By design.", "status": "BY DESIGN" },
+    { "id": "U-009", "item": "INV-ISX-REVIEW-RESOLVABILITY is adopted for this channel but not mechanically enforced — no emitter check refuses a review-transferring INSELFACTION with a null remote.", "status": "OPEN" },
+    { "id": "U-012", "item": "E3 is verified as an authority boundary, not as a useful detector. Nothing here shows the rules fire on real conversation at a useful rate.", "status": "OPEN" }
+  ],
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Select the next frontier. E3 is closed; no authority act is pending on it.",
+    "candidate_frontiers": [
+      "Detector coverage — measure E3D-001..006 firing and false-negative rate against real transcripts (U-003, U-012).",
+      "Rule-set version pinning — digest the rule definitions so historical adjudications stay replayable (U-011).",
+      "Tunable falsification — run predicted_partition vs observed_answer_class against real probes (U-004).",
+      "Chamber seal law — ratify whether an integrity manifest may become a doctrinal SELF seal (U-006).",
+      "Projection surface — the Bubble/HTML body, now that the kernel gate has held through two review cycles."
+    ],
+    "note": "The RC-0001 item (ISA-20260813-RC0001-CR003-001, next authority MILASOPHAHR) remains separately open and is not superseded by this transmission."
+  }
+}

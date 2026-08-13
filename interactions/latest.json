@@ -1,60 +1,62 @@
 {
   "schema": "interaction-pointer.v0.2",
-  "updated_at": "2026-08-13T21:28:00Z",
+  "updated_at": "2026-08-13T22:06:00Z",
   "session": "CONVORUNTIME",
   "latest_inselfaction": {
-    "id": "ISA-20260813-E3-AUTHENTICITY-003",
-    "path": "inselfactions/ISA-20260813-E3-AUTHENTICITY-003.json",
-    "title": "E3 candidate authenticity \u2014 RUORA review blocker closed",
-    "supersedes": "ISA-20260813-E3-INGESTION-002"
+    "id": "ISA-20260813-E3-EXTENSION-VERIFIED-004",
+    "path": "inselfactions/ISA-20260813-E3-EXTENSION-VERIFIED-004.json",
+    "title": "E3 EXTENSION VERIFIED \u2014 merged and tagged",
+    "supersedes": "ISA-20260813-E3-AUTHENTICITY-003"
   },
   "source": {
     "repository": "conscious-conversation",
     "source_remote": "situaedmilly/conscious-conversation",
     "visibility": "PRIVATE",
     "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
-    "branch": "feature/e3-candidate-adjudication",
-    "commit": "0373e086ae059a7852e645fe1dcf5ccfc80b747d",
+    "branch": "main",
+    "commit": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+    "tag": "e3-extension-verified-v0.1",
+    "reviewed_commit": "0373e086ae059a7852e645fe1dcf5ccfc80b747d",
     "baseline_tag": "self-integrity-verified-v0.1",
     "baseline_commit": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
-    "delta_compare": "https://github.com/situaedmilly/conscious-conversation/compare/1f246be...0373e08",
-    "merged_to_main": false,
-    "prior_reviewed_commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
-    "surgical_delta_since_review": "https://github.com/situaedmilly/conscious-conversation/compare/72070ab...0373e08"
+    "extension_delta": "https://github.com/situaedmilly/conscious-conversation/compare/1f246be...94c2f75",
+    "merged_to_main": true
   },
   "standing": {
     "kernel_gate": "OPEN",
     "self_integrity": "VERIFIED",
-    "e3_extension": "OUTSIDE SEAL",
-    "ruora_review": "AWAITING RE-REVIEW",
+    "e3_extension": "VERIFIED EXTENSION",
+    "ruora_review": "PASSED",
+    "authenticity": "INV-E3-CANDIDATE-AUTHENTICITY HELD",
     "assertions": 211,
-    "blocking": "E3 condition 11 \u2014 baseline delta explicitly reviewed (not machine-satisfiable)"
+    "blocking": null
   },
   "next_authority": {
-    "selfsystem": "RUORA",
-    "act_required": "Surgical re-review of 72070ab...0373e08 against INV-E3-CANDIDATE-AUTHENTICITY"
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Select the next frontier. E3 is closed; no authority act is pending on it."
   },
   "open_items": [
     {
-      "inselfaction": "ISA-20260813-E3-AUTHENTICITY-003",
+      "inselfaction": "ISA-20260813-E3-EXTENSION-VERIFIED-004",
       "subject": "ConsciousConversation E3 extension",
-      "next_authority": "RUORA",
-      "act_required": "Surgical re-review of 72070ab...0373e08, then disposition on E3 condition 11",
-      "status": "AWAITING RE-REVIEW"
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Select the next frontier",
+      "status": "CLOSED \u2014 VERIFIED EXTENSION, merged and tagged"
     },
     {
       "inselfaction": "ISA-20260813-RC0001-CR003-001",
       "subject": "RC-0001 SemanticProgram v0.3 cold review",
       "next_authority": "MILASOPHAHR",
       "act_required": "Authorise or decline a bounded SP-R04 revision",
-      "status": "CHANGES_REQUIRED \u2014 NOT superseded by pointer succession"
+      "status": "CHANGES_REQUIRED \u2014 STILL OPEN, not superseded by pointer succession"
     }
   ],
   "history": [
     "ISA-20260813-E3-INGESTION-001",
     "ISA-20260813-RC0001-CR003-001",
     "ISA-20260813-E3-INGESTION-002",
-    "ISA-20260813-E3-AUTHENTICITY-003"
+    "ISA-20260813-E3-AUTHENTICITY-003",
+    "ISA-20260813-E3-EXTENSION-VERIFIED-004"
   ],
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission \u2014 it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
   "channel_invariants": [
