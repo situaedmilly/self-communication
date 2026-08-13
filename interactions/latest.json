@@ -1,0 +1,40 @@
+{
+  "schema": "interaction-pointer.v0.1",
+  "updated_at": "2026-08-13T19:41:00Z",
+  "session": "CONVORUNTIME",
+
+  "latest_inselfaction": {
+    "id": "ISA-20260813-E3-INGESTION-001",
+    "path": "inselfactions/ISA-20260813-E3-INGESTION-001.json",
+    "title": "Wire _witness() into the E3 observation ledger"
+  },
+
+  "source": {
+    "repository": "conscious-conversation",
+    "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
+    "branch": "feature/e3-candidate-adjudication",
+    "commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
+    "baseline_tag": "self-integrity-verified-v0.1",
+    "baseline_commit": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+    "merged_to_main": false
+  },
+
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "e3_extension": "OUTSIDE SEAL",
+    "assertions": 195,
+    "blocking": "E3 condition 11 — baseline delta explicitly reviewed (not machine-satisfiable)"
+  },
+
+  "next_authority": {
+    "selfsystem": "RUORA",
+    "act_required": "Founder review of the declared baseline delta"
+  },
+
+  "history": [
+    "ISA-20260813-E3-INGESTION-001"
+  ],
+
+  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor."
+}

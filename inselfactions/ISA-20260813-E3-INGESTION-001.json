@@ -1,0 +1,238 @@
+{
+  "inselfaction_id": "ISA-20260813-E3-INGESTION-001",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T19:41:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+
+  "operation": {
+    "title": "Wire _witness() into the E3 observation ledger",
+    "phase": "E3 candidate detection, adjudication, and ingestion",
+    "intent": "Make witnessed in-session runtime events observable to E3 without granting _witness() any new epistemic authority.",
+    "authority_principle": "Detection may observe. Detection may propose. Detection may never confer E3."
+  },
+
+  "source": {
+    "repository": "conscious-conversation",
+    "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
+    "remote": null,
+    "remote_note": "Local-only chamber. Parent RUORA .gitignore excludes projects/; this chamber has its own git repository with zero remotes.",
+    "branch": "feature/e3-candidate-adjudication",
+    "commit": "72070ab59b8bd654899863bed71845d4fc29c33d",
+    "commit_short": "72070ab",
+    "commit_message_subject": "e3: wire _witness() into the observation ledger (declared baseline delta)",
+    "working_tree": "clean",
+    "parent_commit": "39d673f",
+    "baseline_commit": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+    "baseline_tag": "self-integrity-verified-v0.1",
+    "main_branch_head": "1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+    "merged_to_main": false
+  },
+
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "self_integrity_conditions_met": "11/11",
+    "e3_extension": "OUTSIDE SEAL",
+    "e3_conditions_met": "11/12",
+    "e3_blocking_condition": "11. baseline delta explicitly reviewed — NOT MACHINE-SATISFIABLE"
+  },
+
+  "result": {
+    "assertions_total": 195,
+    "suites": [
+      { "suite": "baseline_integrity", "result": "PASS", "assertions": "6/6", "file": "proof/test_baseline_integrity.py" },
+      { "suite": "laws", "result": "PASS", "assertions": "27/27", "file": "proof/test_laws.py" },
+      { "suite": "journey", "result": "PASS", "assertions": "26/26", "file": "proof/test_journey.py" },
+      { "suite": "schema", "result": "PASS", "assertions": "30/30", "file": "proof/test_schema.py" },
+      { "suite": "adversarial_p0", "result": "PASS", "assertions": "18/18", "file": "proof/test_adversarial_p0.py" },
+      { "suite": "sql", "result": "PASS", "assertions": "4 migrations parsed", "file": "proof/check_sql.py" },
+      { "suite": "live_postgres", "result": "PASS", "assertions": "32/32", "file": "proof/test_live_postgres.py" },
+      { "suite": "e3_adversarial", "result": "PASS", "assertions": "24/24", "file": "proof/test_e3_adversarial.py" },
+      { "suite": "e3_wiring", "result": "PASS", "assertions": "13/13", "file": "proof/test_e3_wiring.py" },
+      { "suite": "e3_live_postgres", "result": "PASS", "assertions": "19/19", "file": "proof/test_e3_live_postgres.py" }
+    ],
+    "adversarial_specimens": 74,
+    "gate_evidence": "proof/evidence/e3-wiring-gate.txt",
+    "gate_exit_code": 0
+  },
+
+  "deltas": {
+    "framing": "The original baseline is preserved as a Git object and tag. This branch contains an explicitly declared delta from that baseline. The manifest proof/evidence/SELF-INTEGRITY-VERIFIED.sha256 describes the tree at 1f246be and nothing else; on this branch it correctly reports the modified files below as changed.",
+    "declaration_document": "proof/evidence/BASELINE-DELTA.md",
+    "modified": [
+      {
+        "path": "kernel/journey.py",
+        "class": "AUTHORITY CORE",
+        "change": "+119 / -1",
+        "reason": "Wire persisted WITNESS events into the E3 observation ledger.",
+        "authority_effect": "Additive provenance emission only.",
+        "specifics": [
+          "Observation / ObservationLedger / record_observation relocated here from kernel/e3.py — where an event was witnessed is a runtime fact; the core must not depend on the extension.",
+          "Store.ledger added and included in Store.transaction() snapshot.",
+          "Journey.conversation_id added so ledger entries are built from authoritative Journey state.",
+          "_witness() mints a runtime-owned turn_id and appends one ledger record per persisted episode.",
+          "INTERNAL_FAULT added to ENVELOPE_CODES; invoke() now catches unexpected exceptions."
+        ]
+      },
+      {
+        "path": "contract/self-journey.v0.1.schema.json",
+        "class": "CONTRACT",
+        "change": "+1 / -1",
+        "reason": "INTERNAL_FAULT added to the failure_code enum. A failure code outside the published contract is itself a contract breach, so emitting it required declaring it."
+      },
+      {
+        "path": "proof/gate.py",
+        "class": "PROOF HARNESS — NOT AUTHORITY",
+        "change": "+43 / -1",
+        "reason": "Suite registration and E3_DONE_CONDITIONS. The eleven sealed reopening conditions and self_integrity() are untouched."
+      },
+      {
+        "path": "proof/run_all.py",
+        "class": "PROOF HARNESS — NOT AUTHORITY",
+        "change": "+9",
+        "reason": "Registered baseline_integrity, e3_adversarial, e3_wiring, e3_live_postgres."
+      }
+    ],
+    "added": [
+      "kernel/e3.py",
+      "db/004_e3.sql",
+      "contract/e3-candidate.v0.1.schema.json",
+      "proof/test_baseline_integrity.py",
+      "proof/test_e3_adversarial.py",
+      "proof/test_e3_wiring.py",
+      "proof/test_e3_live_postgres.py",
+      "proof/evidence/BASELINE-DELTA.md",
+      "proof/evidence/e3-phase-gate.txt",
+      "proof/evidence/e3-wiring-gate.txt"
+    ],
+    "schema_change_to_sealed_table": {
+      "statement": "alter table cc.episodes add column if not exists session_id uuid;",
+      "migration": "db/004_e3.sql",
+      "rationale": "E3 is first-hand observation and 'first-hand' is only meaningful within a session. cc.episodes carried conversation_id and selfnode_id but not session_id, so the same-session requirement could only have been checked against the candidate's own claim about itself — exactly the provenance a candidate must not be trusted to supply.",
+      "safety": "Additive, in a new migration, nullable. Pre-existing episodes get NULL, and `is distinct from` treats NULL as a mismatch, so they cannot support an E3 candidate. Correct failure direction."
+    },
+    "unchanged_verified": {
+      "kernel/laws.py": {
+        "status": "byte-identical to sealed digest",
+        "sha256_prefix": "ad35dcd0e1838da6"
+      }
+    }
+  },
+
+  "proof": {
+    "manifest": {
+      "path": "proof/evidence/SELF-INTEGRITY-VERIFIED.sha256",
+      "files_covered": 25,
+      "root_digest": "7ecf3c69d08911dc149443b39d9c31b770490d3812a811a4d4abd6eabe876b92",
+      "describes_tree_at": "1f246be"
+    },
+    "extension_invariant": {
+      "id": "INV-E3-OBSERVATION-ATOMICITY",
+      "status": "UNRATIFIED extension invariant",
+      "statement": "For a WITNESS invocation eligible for observation recording, persistence of the canonical episode and its observation-ledger entry is atomic.",
+      "proven_by": ["E3-WIRE-004", "E3-WIRE-005"],
+      "note": "E3-WIRE-005 forces failure after episode insertion and before ledger completion — the same seam where the earlier shadow-copy bug lived. Held on the same footing as INV-CC-REVELATION-CEILING."
+    },
+    "authority_audit": {
+      "question": "Did this delta merely make witnessed runtime events observable to E3, or did it accidentally give _witness() new epistemic authority?",
+      "method": "Line-level diff of kernel/journey.py against tag self-integrity-verified-v0.1.",
+      "changed_lines_by_authority_surface": {
+        "TRANSITIONS": 0,
+        "MUTATION_WHITELIST": 0,
+        "check_legality": 0,
+        "recompute_standing": 0,
+        "EDGE_LEGALITY": 0,
+        "declared_standing": 0,
+        "enacted_standing": 0,
+        "SEAL_REQUIRED_CHAIN": 0,
+        "attach(": 0
+      },
+      "e3_mentions_in_delta": "Two lines of docstring prose describing why the ledger outranks a candidate's self-declared provenance. No code path.",
+      "behavioural_evidence": [
+        "E3-WIRE-008: ledger insertion creates no evidence edge and no standing",
+        "E3-WIRE-008a: the Observation record has no behaviour/meaning/evidence-class/standing field",
+        "E3-WIRE-008b: WITNESS emits no E3 candidate and names none in its mutations",
+        "E3-WIRE-003: a payload naming its own selfnode/session/conversation/source is ignored in favour of Journey state"
+      ],
+      "verdict": "Observable only. No new epistemic authority conferred on _witness(). Submitted for human review; not self-certified."
+    },
+    "live_postgres": {
+      "server": "PostgreSQL 16.14 (Debian 16.14-1.pgdg13+1, aarch64)",
+      "runtime": "Colima (Docker Desktop not installed on this host)",
+      "container": "cc-postgres, port 54329, stopped and preserved after the run",
+      "migrations_executed": ["db/001_core.sql", "db/002_invariants.sql", "db/003_roles.sql", "db/004_e3.sql"],
+      "method": "All privilege assertions executed under SET ROLE; a superuser session would bypass the thing under test."
+    }
+  },
+
+  "findings": [
+    {
+      "id": "F-001",
+      "severity": "reconciliation",
+      "finding": "The prior chat handoff stated source commit 2a55d0c. The actual commit is 72070ab59b8bd654899863bed71845d4fc29c33d. No command had produced 2a55d0c; it was asserted, not read.",
+      "disposition": "Corrected in this record. 72070ab is authoritative. This is the reason reconciliation against actual repository state precedes transmission."
+    },
+    {
+      "id": "F-002",
+      "severity": "real defect, fixed",
+      "finding": "An unexpected exception inside a primitive handler escaped invoke() entirely, returning no Response to the caller. State rollback was already correct; the envelope was not.",
+      "discovered_by": "E3-WIRE-005 (atomicity specimen)",
+      "disposition": "invoke() now catches broadly and returns INTERNAL_FAULT, declared in ENVELOPE_CODES and in contract/self-journey.v0.1.schema.json."
+    },
+    {
+      "id": "F-003",
+      "severity": "architecture, fixed",
+      "finding": "Observation/ObservationLedger were defined in kernel/e3.py, which would have made the authority core import the extension — the wrong dependency direction.",
+      "disposition": "Relocated to kernel/journey.py; kernel/e3.py now consumes them."
+    },
+    {
+      "id": "F-004",
+      "severity": "process",
+      "finding": "proof/test_baseline_integrity.py refused to pass three times during this operation, each time correctly. Twice the declaration parser failed to recognise the format used in BASELINE-DELTA.md (### headings; multiple backticked paths on one line); once a genuinely undeclared modification (proof/run_all.py) was present.",
+      "disposition": "Parser now collects every backticked path on any declaration line and counts only paths that exist on disk, so prose cannot accidentally authorise a change. No check was weakened."
+    }
+  ],
+
+  "constraints_observed": [
+    "Tunables frozen and unchanged: K_ADMISSION, REVELATION_DEPTH_D, REVELATION_BUDGET_R, EXTRACT_ONLY_LIMIT, cost weights w1..w5, P(a|h), STRUCTURAL_GAIN.",
+    "CONTRADICTION remains BLOCKED in the capability table and in DDL. E3 does not solve affect intensity or rapport, and richer evidence was not treated as licence to reopen that objective.",
+    "kernel/laws.py not modified.",
+    "Not merged into main. main remains at 1f246be with tag self-integrity-verified-v0.1 intact.",
+    "E3 verdict kept separate from SELF INTEGRITY so unproven extension work cannot inherit the baseline's standing.",
+    "No Supabase chamber assigned to ConsciousConversation; no Supabase project was touched. Routing law forbids inventing one."
+  ],
+
+  "unresolved": [
+    {
+      "id": "U-001",
+      "item": "E3 condition 11 — baseline delta explicitly reviewed",
+      "status": "BLOCKING E3 EXTENSION",
+      "note": "Not machine-satisfiable. Requires human review of the three diffs against tag self-integrity-verified-v0.1: kernel/journey.py; proof/gate.py + proof/run_all.py; db + contract + kernel."
+    },
+    { "id": "U-002", "item": "E3D-007 (ANSWERS_DIFFERENT_QUESTION) has no implementation — requires a structurally known target question.", "status": "OPEN" },
+    { "id": "U-003", "item": "Detector rules E3D-001..006 are deterministic regex over verbatim text. Shallow by design; coverage unmeasured.", "status": "OPEN" },
+    { "id": "U-004", "item": "Unvalidated tunables listed under constraints remain unvalidated. cc.probe_instances records predicted_partition vs observed_answer_class so they can be falsified; no falsification has been run.", "status": "OPEN" },
+    { "id": "U-005", "item": "INV-CC-REVELATION-CEILING remains PROPOSED and cannot be mechanically enforced — it is a property of natural language.", "status": "OPEN" },
+    { "id": "U-006", "item": "No chamber seal law is ratified for conscious-conversation. proof/evidence/BASELINE.md is an integrity snapshot, not a doctrinal SELF seal.", "status": "OPEN" },
+    { "id": "U-007", "item": "Multi-node/cross-session: RLS policies, durable idempotency keys, and identity drift over time are unwritten.", "status": "OPEN" },
+    { "id": "U-008", "item": "SELF INTEGRITY: VERIFIED is not reproducible from the repository alone. After a clone the live suites report UNAVAILABLE, which is not PASS, so the verdict correctly falls back to HOLD until PostgreSQL is stood up.", "status": "BY DESIGN" }
+  ],
+
+  "next_authority": {
+    "selfsystem": "RUORA",
+    "act_required": "Founder review of the declared baseline delta (E3 condition 11).",
+    "review_artifacts": [
+      "proof/evidence/BASELINE-DELTA.md",
+      "git diff self-integrity-verified-v0.1...HEAD -- kernel/journey.py",
+      "git diff self-integrity-verified-v0.1...HEAD -- proof/gate.py proof/run_all.py",
+      "git diff self-integrity-verified-v0.1...HEAD -- db contract kernel"
+    ],
+    "on_approval": "E3 EXTENSION moves OUTSIDE SEAL -> VERIFIED EXTENSION; merge of feature/e3-candidate-adjudication into main becomes authorised.",
+    "on_rejection": "Branch remains unmerged; main is unaffected at 1f246be.",
+    "rationale": "ConsciousConversation doctrine is held in ~/RUORA/doctrine/ and founder dispositions are recorded in the RUORA governance corpus. No chamber-level ratifying authority exists for this project."
+  },
+
+  "transmission_note": "Repository situaedmilly/self-communication did not exist at transmission time and was created PRIVATE under the authenticated account to fulfil the explicit push instruction. Nothing was published publicly."
+}
