@@ -1,0 +1,257 @@
+{
+  "inselfaction_id": "ISA-20260813-RC0001-SPR04-002",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-13T22:20:00Z",
+  "session": "MOBILECHALL",
+  "immutable": true,
+  "supersedes": null,
+  "continues": "ISA-20260813-RC0001-CR003-001",
+
+  "routing": {
+    "originating_selfsystem": "CLAUDESELF",
+    "target_selfsystem": "MILASOPHAHR",
+    "continuation_eligible": ["CHATGPTSELF", "CLAUDESELF"],
+    "note": "SP-R04 was the act ISA-20260813-RC0001-CR003-001 requested authority for. That authority was granted and is now discharged. The next act is Cold Review 004, which requires its own separate founder authorisation exactly as CR-001, CR-002 and CR-003 each did."
+  },
+
+  "review_resolvability": {
+    "invariant": "INV-ISX-REVIEW-RESOLVABILITY",
+    "review_status": "BLOCKED_SOURCE_UNRESOLVABLE",
+    "reason": "The RC-0001 governance corpus is UNTRACKED in the RUORA repository. It is contained in no commit, on no remote, and therefore cannot be exposed through a receiver-resolvable immutable reference. RUORA's only remote is the SSH alias selfpi:mirrors/RUORA.git, which is a local mirror rather than a receiver-resolvable host, and its main is at 4bbeeb58 — a different commit from the working tree's 7387fe4 — and would not contain these files in any case.",
+    "what_a_receiver_can_verify_today": "Nothing remotely. Every artifact is addressable ONLY by the SHA-256 digests recorded in this packet, against files in the local working tree.",
+    "how_to_clear_it": "Founder authorisation to commit the RC-0001 corpus and expose it through a receiver-resolvable remote. That authorisation has never been given: every movement in this cascade has expressly forbidden staging and commit, and this movement did not take it upon itself to change that.",
+    "declared_rather_than_worked_around": true
+  },
+
+  "operation": {
+    "title": "SP-R04 — bounded repair of Cold Review 003 findings; RC-0001 SemanticProgram v0.4",
+    "phase": "OURSELF Reality Compilation Protocol RC-0001 · Dual-Substrate Semantic Preservation · SemanticProgram revision",
+    "intent": "Repair what Cold Review 003 actually proved broken, with CR3-B01 controlling the gate, and refuse to improve the SemanticProgram outside that evidentiary boundary.",
+    "governing_criterion": "A repair counts only if the normative representation either makes the defect IMPOSSIBLE or makes it EXPLICITLY DETECTABLE.",
+    "standing_rule": "Changing the description of a defect is not repairing the mechanism that permits it.",
+    "architectural_constraint_observed": "Capability resolution became more visible to proof without becoming permission to reinterpret semantic law. The Operator gate was NOT restored; begin/record/complete retain state-and-content-only preconditions; SP-153 keeps capability decision outside transition permission; SP-105 still forbids any transition evaluation from reading a T-fact."
+  },
+
+  "source": {
+    "repository": "RUORA",
+    "path": "/Users/millysituated/RUORA",
+    "remote": "selfpi:mirrors/RUORA.git",
+    "remote_note": "Local mirror, not receiver-resolvable. See review_resolvability.",
+    "branch": "main",
+    "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
+    "working_tree": "0 staged; 0 tracked-modified in governance/",
+    "artifacts_tracked_in_git": false
+  },
+
+  "baseline": {
+    "revision_subject": {
+      "artifact": "RC-0001 SemanticProgram v0.3",
+      "path": "governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.3-CANDIDATE.md",
+      "sha256": "55c590ead44e38248a7f97405c8cb23740018df4bd9b154a8a0fd3df99dd7f8e",
+      "status": "PRESERVED BYTE-UNCHANGED — remains the exact subject of Cold Review 003"
+    },
+    "repair_mandate": {
+      "artifact": "Cold Review 003",
+      "path": "governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.3-LINEAGE-INDEPENDENT-COLD-REVIEW-003.md",
+      "sha256": "d9afbcb47f9813430ea763126f80aa25e617012ef80aa6996e0c03d33dc848b1",
+      "verdict": "CHANGES_REQUIRED · 1 BLOCKING · 13 MATERIAL · 5 MINOR · 3/16 threshold lines met"
+    },
+    "controlling_source": "L1 raw founder record, outside the RUORA boundary, read-only",
+    "l1_container_sha256": "cee97abe168b011e8cc2bf1d69009d755f8c744998302c76743ac432a7d81ebe",
+    "l1_pins": [
+      { "pin": "P-L1-A", "ordinal": 59, "text_sha256": "4cfd687b2ea9cdbcf366c29a60b124e76cf0f9cce9fb4de897d812b69b3f4bb5" },
+      { "pin": "P-L1-B", "ordinal": 72, "text_sha256": "796a3588fbd8fbc611b62f6bba2267d462dd42f92f865a876f82e3387190e221" },
+      { "pin": "P-L1-C", "ordinal": 85, "text_sha256": "e951c1bc4f3fdb0fdfe4f133624acfd521dfedb7240bbdb80a0fe4147d82b8e3" }
+    ],
+    "l1_extraction_method": "jq -j 'select(.ordinal==N) | .payload.content | map(.text) | join(\"\\n\")' <container> — LF-joined, no terminal LF",
+    "hbc_baseline": {
+      "repository": "/Users/millysituated/RUORA/projects/hbc-html",
+      "commit": "e350205f12c140b8216090b935f874cbbc454dee",
+      "status": "INTACT — 30 tracked, 0 tracked-modified, 0 staged"
+    }
+  },
+
+  "material_delta": {
+    "files_created": 1,
+    "created": [
+      {
+        "path": "/Users/millysituated/RUORA/governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.4-CANDIDATE.md",
+        "sha256": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
+        "lines": 1074,
+        "class": "CANDIDATE — NORMATIVE, UNRATIFIED"
+      }
+    ],
+    "files_modified": 0,
+    "method": "v0.4 was created as a byte copy of v0.3 and edited in place, so every clause not named below is byte-identical to v0.3. Retyping was deliberately avoided: CR3-05 penalised exactly the drift that retyping introduces.",
+    "rows_added": 12,
+    "rows_added_ids": ["SP-095","SP-096","SP-155","SP-156","SP-157","SP-158","SP-159","SP-162","SP-163","SP-164","SP-165","SP-166"],
+    "rows_changed": 21,
+    "rows_changed_ids": ["SP-004","SP-005","SP-010","SP-032","SP-041","SP-043","SP-046","SP-050","SP-055","SP-071","SP-091","SP-092","SP-094","SP-102","SP-112","SP-113","SP-150","SP-151","SP-152","SP-153","SP-161"],
+    "rows_removed": 0,
+    "unmarked_changed_rows": 0,
+    "unmarked_check": "Mechanically verified by the embedded auditor's diff mode against v0.3: UNMARKED_CHANGED_ROWS 0 -> NONE.",
+    "git_actions": "NONE in RUORA. Nothing staged, committed, pushed, or sealed."
+  },
+
+  "blocking_repair": {
+    "finding": "CR3-B01",
+    "severity": "BLOCKING",
+    "root_cause": "The derived illegal-transition count had an increment rule, monotonicity and append-only-ness, but no scope, no initial value and no reset point. SP-094's initial condition could not name it, because the count is a T-fact and SP-103 makes the L-fact and T-fact classes disjoint.",
+    "why_it_was_a_regression": "v0.2 scoped the count 'over the supplied trace' in both SP-043 and SP-102. v0.3 deleted that phrase from both while presenting the surrounding edit as a repair. v0.2 was sound on this coordinate; v0.3 was not.",
+    "attack_it_permitted": "On day 2 of a Durable *Daily* Ritual Ledger, a run reaches SP-094's stated initial condition (idle, empty durable history, empty pending) carrying illegal_transition_count = 1 from an earlier DaySlot, and fails the founder's sealed acceptance predicate illegal_transition_count = 0 while violating no clause.",
+    "minimum_structural_repair": [
+      "SP-102 — the T-fact set is scoped to one presented sequence and begins empty for each; monotonic within it, never across.",
+      "SP-043 — the count is derived over one presented sequence and has no existence outside it: zero at the first element, incremented only by an INVALID_TRANSITION within that sequence.",
+      "SP-094 — the required vector IS a complete presented sequence, all six acceptance values are evaluated over it and no other, and a proper suffix of a longer presented sequence is expressly not the required vector however closely its L-facts resemble the stated initial condition."
+    ],
+    "repair_mode": "IMPOSSIBLE",
+    "why_not_blocked_by_founder_or_source": "The repair required no change to founder-sealed meaning, no commission amendment, and no founder decision. The scoping phrase v0.3 deleted was authored in v0.2 and is restored on authored grounds. BLOCKED_BY_FOUNDER_OR_SOURCE_DECISION is therefore NOT returned.",
+    "counterexample_rerun": "FT-14 presents the CR-003 day-2 trace as two presented sequences and falsifies any accumulation across them, any nonzero count in the DaySlot-2 observation, and any attempt to satisfy SP-094 by pointing at a suffix.",
+    "claim_status": {
+      "CR3_B01_REPAIR_IMPLEMENTED": true,
+      "AUTHOR_SIDE_COUNTEREXAMPLE": "PASS",
+      "INDEPENDENT_CLOSURE": "NOT YET ESTABLISHED",
+      "note": "CR3-B01 CLOSED is NOT claimed and may not be inferred. Closure is an adjudication; no author-side movement can perform it."
+    }
+  },
+
+  "other_repairs": [
+    { "finding": "CR3-04 + CR-003 §3.5", "mode": "IMPOSSIBLE", "change": "CAPABILITY_DEGRADED withdrawn — it denoted nothing SP-153's binary could distinguish, had no assignment rule and no coverage. One non-ADMITTED disposition remains, carrying a declared loss class, and SP-152 now compares the loss class. CR-003's G′/H′ pair — capacity loss versus canonical-ordering loss — compared EQUAL under v0.3 and now diverges at presented index 3. P-L1-B law 3 requires capability loss to be typed; v0.3 achieved explicit and stopped short of typed.", "clauses": ["SP-150","SP-151","SP-152","FT-13"] },
+    { "finding": "CR3-01", "mode": "IMPOSSIBLE", "change": "SP-091 reduced to the founder's sentence alone; the authored comparison rule split into SP-095. The phrase 'presented sequence' occurs 0 times across all three L1 pins, so a FOUNDER_SEALED_L1 row was being parameterized by an AUTHOR-PROPOSED clause. The SP-090/SP-094 technique applied one row down.", "clauses": ["SP-091","SP-095"] },
+    { "finding": "CR3-08", "mode": "EXPLICITLY_DETECTABLE", "change": "SP-155 makes a disposition record that misdescribes its substrate nonconforming — without it, two embodiments could conform by both misreporting. SP-096 declares the singleton required-vector domain rather than concealing it.", "clauses": ["SP-155","SP-096"] },
+    { "finding": "CR3-06 / CR3-07 / CR3-13", "mode": "IMPOSSIBLE", "change": "SP-157 separates presented index from admission ordinal, killing both readings of the position ambiguity. SP-162 fixes content presence as supply rather than non-emptiness, supplying SP-160 step 2's missing antecedent. SP-156 makes ADMITTED the only lawful disposition for a discontinuity boundary, resolving the SP-150/SP-050 conflict.", "clauses": ["SP-157","SP-162","SP-156","FT-15","FT-16"] },
+    { "finding": "CR3-09", "mode": "IMPOSSIBLE", "change": "SP-041 reduced to reproduction of L1's two separate registers; the operation-to-edge mapping and the active—record→active self-loop moved to SP-163 as AUTHOR-PROPOSED, since L1's chain has two arrows and the self-loop appears in no pin. SP-161's justification narrowed to the invalid-transition law's EXISTENCE, which is what P-L1-A actually seals.", "clauses": ["SP-041","SP-163","SP-161"] },
+    { "finding": "CR3-11 / CR3-12", "mode": "IMPOSSIBLE", "change": "L1 constitutional laws 2 and 5 had no operative surface at all — 'originate' occurred zero times in v0.3 while it legislated about vectors. SP-164 reproduces law 2 and SP-165 forbids a vector whose expectations are read off an implementation. SP-158 reproduces law 5 and SP-159 forbids invented adaptation, substitution, approximation or accommodating reorder. Gates S-08 and S-09 added.", "clauses": ["SP-164","SP-165","SP-158","SP-159"] },
+    { "finding": "CR3-05", "mode": "IMPOSSIBLE", "change": "Normative text restored to SP-050, SP-071 and SP-113; SP-112 repaired — v0.3's edit had made it FALSE. Four section headers that asserted verbatim preservation over edited text corrected. §16.6 change register added. The remedy is not a better assurance but a check that fails: the auditor's diff mode FAILs on any changed row lacking a marker.", "clauses": ["SP-050","SP-071","SP-112","SP-113"] },
+    { "finding": "CR3-03", "mode": "IMPOSSIBLE", "change": "§17.3 no longer names a regex 'the authoritative enumeration' of ORTHOGONAL. Every ORTHOGONAL row is hand-justified against the test 'satisfiable or not without affecting any L1 proposition'. SP-010 and SP-055 reclassified to ELABORATES on that re-audit — SP-010 restates the founder's 'no auth' exclusion and SP-055 carries law 3 content directly. ORTHOGONAL 9 → 7.", "clauses": ["SP-010","SP-055"] },
+    { "finding": "CR3-15 / CR3-16 / CR3-14 / CR3-02 / CR3-10", "mode": "IMPOSSIBLE / EXPLICITLY_DETECTABLE", "change": "Founder wording restored to SP-004 (P-L1-C rendered as its own semicolon bullet list, added article removed), SP-005 (all four comparanda of the founder's chain), SP-046 (authored 'contemplated' scope removed), SP-092 (the founder's 'apps'). §10's twelfth EXACT reclassified. SP-018's two misuses withdrawn. §7.1's false observation law restated. §11.1's sixth value re-derived from the SP-013 witness stream rather than from view, whose codomain cannot contain it.", "clauses": ["SP-004","SP-005","SP-046","SP-092"] },
+    { "finding": "CR3-18", "mode": "EXPLICITLY_DETECTABLE, with a declared limit", "change": "Three of FT-11's four falsifiers withdrawn as duplicative or unevaluable; the discriminating one kept. §12.2 downgraded CLOSED → PARTIALLY_CLOSED. §14 Q14's unsupported FT-11 citation withdrawn. The residual is NAMED: SP-003's prohibition on presenting ledger completion as world evidence is not witness-falsifiable, because SP-114 bounds the witness to view(n) and the T-fact stream and SP-002 excludes presentation from the program's meaning. CR-003's embodiment X remains undetectable at this layer.", "clauses": ["FT-11","§12.2","§14"] },
+    { "finding": "CR3-19", "mode": "EXPLICITLY_DETECTABLE", "change": "SP-166 states that no clause enforces the founder exclusion register at this layer and why. Gate S-06 marked PASS as REPRODUCED, not as ENFORCED. §13.2 discloses that A-08 is open BY INERTNESS — no clause depends on the difference because no clause depends on the register at all.", "clauses": ["SP-166"] },
+    { "finding": "CR-001 CR-09 (REGRESSED component)", "mode": "IMPOSSIBLE", "change": "v0.3 deleted the CR-09-mandated rename and the disclaimer 'This audit proves row grammar and nothing else' while simultaneously introducing a global AUDIT_RESULT verdict token v0.2 never had. Both restored, and the disclaimer moved INSIDE the program so output and bound cannot be separated. AUDIT_RESULT renamed SHAPE_AUDIT_RESULT.", "clauses": ["§16.4"] }
+  ],
+
+  "docket": {
+    "before": { "OPEN": 2, "PARTIALLY_DECIDED": 1, "OPERATIVELY_DECIDED": 5 },
+    "after":  { "OPEN": 3, "PARTIALLY_DECIDED": 0, "OPERATIVELY_DECIDED": 5 },
+    "classifier_repair": "v0.3 deleted the conjunct 'NO for others' from the PARTIALLY_DECIDED branch while sharpening the admissibility filter, which made OPEN and PARTIALLY_DECIDED overlap. The conjunct is restored and the three branches are a partition again. The criterion's two readings are resolved: the assertion reading governs.",
+    "A-03": "Reclassified PARTIALLY_DECIDED → OPEN. Adm = {A, B}; SP-026 states both models are normatively admitted and SP-140 voids any FT row discriminating them, so T is YES for every admissible member — the OPEN branch. PARTIALLY_DECIDED was reachable only under v0.2's superseded rule. The label survived the repair; the rule that generated it did not.",
+    "A-02": "Label unchanged (OPEN); justification corrected — alternative C is inadmissible under the assertion reading.",
+    "A-07": "Label unchanged; disclosed that no alternative ACCOUNTING scheme is enumerated anywhere in the corpus, so the OPERATIVELY_DECIDED verdict is earned on the gate question alone.",
+    "A-08": "Label unchanged (OPEN). v0.3's third alternative was withdrawn as extensionally identical to the first — the intersection of {all AI} and {generative AI} is {generative AI}. Three labels, two extents.",
+    "integrity_statement": "No normative clause was changed to move a docket label. A-03's reclassification WIDENS declared founder freedom rather than narrowing it. The docket describes semantic freedom; it does not create it."
+  },
+
+  "preserved_unchanged": {
+    "statement": "A fourth revision must not become an excuse to churn previously proven surfaces. Each mechanism below is carried forward on an explicit Cold Review 003 verdict.",
+    "items": [
+      "L-fact / T-fact partition and T→L non-interference — CR-003 returned 'holds'; a proposed BLOCKING breach was KILLED by the reviewer itself (capability resolution is a common cause, not a T-fact read).",
+      "Ordered admission (SP-071, SP-120, SP-121) — CR-05 CLOSED. Only SP-071's deleted element domain restored.",
+      "view(n) purity (SP-110, SP-111, SP-114) — CR-07 CLOSED. SP-112/SP-113 repaired for CR3-05, not redesigned.",
+      "FT-03 neutrality and SP-140 — CR-03 CLOSED.",
+      "Assertion / Adjudication / Establishment prohibition — CR-01 CLOSED, 'no Operator is reachable'. NOT reintroduced.",
+      "Deterministic refusal precedence — SP-160 TOTAL, 18/18 EXACTLY_ONE enumerated twice. SP-160's precedence text untouched.",
+      "The capability barrier's core mechanism — B.1-F1 CLOSED; the compared-surface basis is unchanged, only the compared tuple is extended with the loss class.",
+      "L1-governs-L3 lineage."
+    ]
+  },
+
+  "proof": {
+    "embedded_auditor": {
+      "location": "v0.4 §16.4, runnable; output at §16.5",
+      "regenerated_to_fixpoint": true,
+      "byte_reproduces": "The embedded §16.5 block is byte-identical to a fresh run of the embedded script against the file — verified after every edit, which is what CR3-17 showed v0.3's hand-rewrapped block did not do.",
+      "cr003_probes_now_failing_that_previously_passed": [
+        "PROBE-A2 empty file: PASS → FAIL (positive structure checks)",
+        "PROBE-A5 second '## 17.' heading truncating the envelope: PASS → FAIL (ENVELOPE_HEADINGS must be exactly 1)",
+        "PROBE-5 clause row smuggled past the boundary: PASS → FAIL (ROWS_OUTSIDE_ENVELOPE, with no false positive on §17's own SP-shaped tables)",
+        "fence injection: a row-shaped line inside the code fence is no longer ingested as a founder-sealed clause",
+        "PROBE-A3 honest CONFLICTS relabel: FAIL → PASS with DISCLOSED_CONFLICTS — a gate that punished candour selected for concealment",
+        "PROBE-A9 ontology PROHIBITS verdict derived from the word 'no'/'not': verdict withdrawn entirely; ONTOLOGY_ROWS lists IDs only",
+        "adjacent duplicate field tokens: now caught (lookahead so a match cannot consume the next match's delimiter)",
+        "non-UTF-8 locale crash and missing argv guard: fixed",
+        "CR3-05 unmarked clause edits: now mechanically detected by diff mode"
+      ],
+      "author_found_defect_in_own_repair": "The rebuilt auditor initially reported FT_ROWS 17 against 16 actual trace rows: a §16.3 table cell beginning '| FT-03 neutrality' matched the trace-row pattern. The pattern was tightened to the suite's '·' separator and the evidence regenerated. Reported because an uncorrected miscount here would have been the same defect class as CR-002 B-F8.",
+      "bound": "SHAPE_AUDIT_RESULT PASS on v0.2 is STILL PASS. The auditor cannot detect the six defects Cold Review 002 confirmed in that document and does not claim to. v0.3's claim that the auditor 'detects the defect it was built to prevent, on the document that had it' is WITHDRAWN: the program printed two numbers and a human compared them to prose."
+    },
+    "final_evidence": {
+      "ENVELOPE_HEADINGS": 1,
+      "NORMATIVE_SP_ROWS": 102,
+      "UNIQUE_IDS": 102,
+      "DUPLICATE_IDS": "NONE",
+      "SHAPE_VIOLATIONS": "NONE",
+      "ROWS_OUTSIDE_ENVELOPE": "NONE",
+      "REL_DIST": { "EXACT": 11, "ELABORATES": 84, "ORTHOGONAL": 7 },
+      "FT_ROWS": 16,
+      "Q_ROWS": 16,
+      "DOCKET_ITEMS": 8,
+      "TRAILING_WHITESPACE": 0,
+      "STRUCTURE_FAILURES": "NONE",
+      "SHAPE_AUDIT_RESULT": "PASS",
+      "UNMARKED_CHANGED_ROWS": "NONE"
+    },
+    "exact_claims": {
+      "count": 11,
+      "rows": ["SP-001","SP-004","SP-005","SP-158","SP-018","SP-041","SP-046","SP-090","SP-091","SP-092","SP-164"],
+      "note": "Nine carried from v0.3's set, six of them repaired here after a named successful attack. Two are new and are verbatim reproductions of founder constitutional laws v0.3 carried no surface for. Every EXACT row was re-audited against bytes extracted from the L1 container by the documented method, not against the candidate's own quotation of the founder."
+    }
+  },
+
+  "constraints_observed": [
+    "Bounded to Cold Review 003's findings. No general redesign.",
+    "No founder decision resolved by authorship — A-08 preserved as OPEN with both founder phrasings verbatim.",
+    "No finding CR-003 confirmed closed was reopened.",
+    "No commission amendment, no protocol or F-05 mutation, no implementation, no HBC mutation.",
+    "Nothing staged, committed, pushed or sealed in RUORA.",
+    "v0.3 and the entire prior lineage byte-preserved and re-verified at close.",
+    "The L1 container was read read-only and never imported, copied or written to.",
+    "No secret-bearing material read, printed or requested.",
+    "No source code mirrored into SELF-COMMUNICATION; artifacts referenced by path and digest."
+  ],
+
+  "unresolved": [
+    { "id": "U-001", "item": "Cold Review 004 has not been authorised. v0.4 has received no independent review of any kind.", "status": "BLOCKING the next gate" },
+    { "id": "U-002", "item": "SP-003's external-claim prohibition is not witness-falsifiable; CR-003's embodiment X remains undetectable at the SemanticProgram layer. Not repairable without presentation semantics, which §15 forbids.", "status": "DECLARED RESIDUAL" },
+    { "id": "U-003", "item": "The shape auditor still passes v0.2. Structural checking cannot reach semantic defects.", "status": "DECLARED RESIDUAL" },
+    { "id": "U-004", "item": "The required-vector set is a singleton (SP-096), so the SP-152 barrier is never exercised against the reference trace.", "status": "DECLARED RESIDUAL" },
+    { "id": "U-005", "item": "No FT row witnesses recorded-intent-versus-accepted-fact now that FT-11's unsupported citation is withdrawn; commission §6.8 is clause-answered and trace-untested.", "status": "DECLARED RESIDUAL" },
+    { "id": "U-006", "item": "A-07's accounting half rests on unenumerated alternatives; a founder cannot decide against alternatives nobody has listed.", "status": "DECLARED RESIDUAL" },
+    { "id": "U-007", "item": "The 7 ORTHOGONAL and 84 ELABORATES relations are author judgments. §17.3 now argues each ORTHOGONAL row, but an argument is not an adjudication.", "status": "DECLARED RESIDUAL" },
+    { "id": "U-008", "item": "SP-155's veridicality obligation is not mechanically checkable from the conformance record alone.", "status": "DECLARED RESIDUAL" },
+    { "id": "U-009", "item": "Founder adjudication of A-01…A-08 remains unperformed; 3 OPEN, 5 OPERATIVELY_DECIDED, all FOUNDER_DECISION_REQUIRED.", "status": "BLOCKED" },
+    { "id": "U-010", "item": "The RC-0001 corpus is untracked and receiver-unresolvable. See review_resolvability.", "status": "OPEN — CUSTODY RISK" }
+  ],
+
+  "requested_next_action": {
+    "action": "Founder authorisation of Cold Review 004 — a lineage-independent adversarial review of v0.4.",
+    "why_not_already_done": "Every cold review in this cascade required its own explicit founder act. CR-003 was not launched until authorised, and CR-004 will not be either.",
+    "what_a_reviewer_should_be_told_to_attack_first": [
+      "Whether the T-fact scoping actually closes CR3-B01 or relocates it — in particular whether any acceptance predicate can still be satisfied by a suffix, and what happens when a presented sequence legitimately spans a DaySlot boundary.",
+      "Whether the declared loss class is genuinely comparable, or merely a second undefined token: SP-151 draws it from an embodiment's published capability declaration, and nothing in the SemanticProgram constrains that vocabulary.",
+      "Whether SP-155's veridicality obligation is enforceable at all, or is prose.",
+      "Whether SP-162's content-presence choice (a supplied empty value IS present) creates any new divergence downstream.",
+      "The 21 changed and 12 added rows, individually.",
+      "Whether the rebuilt auditor's new positive checks can themselves be gamed."
+    ],
+    "secondary_option": "Founder adjudication of A-01…A-08 could in principle proceed in parallel, since the docket is now accurate by the candidate's own rule — but CR-003's own standard was that even a PASS means only READY_FOR_FOUNDER_ADJUDICATION, and v0.4 has no review at all."
+  },
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Authorise (or decline) Cold Review 004 against v0.4.",
+    "review_artifacts": [
+      "governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.4-CANDIDATE.md §0.5 (repair register), §16.2 (per-finding disposition), §18 (exit gate), §18.2 (declared residuals)",
+      "governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.3-LINEAGE-INDEPENDENT-COLD-REVIEW-003.md — the mandate this movement discharged"
+    ],
+    "on_authorisation": "v0.4 is byte-frozen as the review subject; a fresh lineage-independent reviewer receives artifacts and mandate only, with no author-side account of whether any repair is good.",
+    "on_decline": "v0.4 stands as an unreviewed candidate. Nothing downstream becomes available."
+  },
+
+  "independence_limitation": "Authored by the session that authored v0.2, v0.3, SLR-01 and SLR-01-R1. Not cold, not blind, not lineage-independent. Cold Review 003 was lineage-independent but NOT model-independent and recorded that its negative results are weaker than its positive ones. Nothing in this candidate has been externally reviewed. Every line of §18 is an author-side claim.",
+
+  "source_paths": {
+    "corpus_root": "/Users/millysituated/RUORA/governance/",
+    "l1_container": "/Users/millysituated/.codex/sessions/2026/08/12/rollout-2026-08-12T17-43-58-019ff7ee-9e35-7101-915e-74a0aae7d677.jsonl",
+    "hbc": "/Users/millysituated/RUORA/projects/hbc-html"
+  }
+}
