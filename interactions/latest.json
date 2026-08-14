@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T01:47:00Z",
+  "updated_at": "2026-08-14T02:24:22Z",
   "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
   "session": "CONVORUNTIME",
   "latest_inselfaction": {
-    "id": "ISA-20260814-CC-RUNTIME-PILOT-009",
-    "path": "inselfactions/ISA-20260814-CC-RUNTIME-PILOT-009.json",
-    "title": "CC-RUNTIME-PILOT-001 — the session runtime that generates its own distribution",
+    "id": "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
+    "path": "inselfactions/ISA-20260814-CC-PILOT-DISPOSITIONS-010.json",
+    "title": "Three dispositions implemented — and the first session handed over unrun",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -33,14 +33,14 @@
       "visibility": "PRIVATE — receiver-resolvable to an authorized receiver",
       "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
       "branch": "feature/cc-runtime-pilot",
-      "commit": "6f57e90c23eb7e0dc45b383e103c16b5b7fdd255",
+      "commit": "2d990bda9bf7cf2bde45ea4da554ebd41fbd9e33",
       "commit_verified": "Present in conscious-conversation and pushed to origin.",
-      "based_on": "7c88a2bb078af6203a2ca65105cef7a024de8746",
+      "based_on": "6f57e90c23eb7e0dc45b383e103c16b5b7fdd255",
       "based_on_tag": "e3-extension-verified-v0.1",
       "merged_to_main": false,
       "artifacts_tracked_in_git": true,
       "review_status": "REVIEWABLE",
-      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/7c88a2b...6f57e90"
+      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/6f57e90...2d990bd"
     }
   },
   "transport": {
@@ -53,10 +53,8 @@
     "blocks": "EXTERNAL review only — the one rung of the independence ladder this cascade has never reached."
   },
   "standing": {
-    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 28/28 · CORPUS NOT YET GENERATED",
+    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 37/37 · CORPUS NOT YET GENERATED",
     "kernel_gate": "OPEN",
-    "self_integrity": "HOLD — reopening conditions 10 and 11 NOT PERFORMED",
-    "e3_extension": "OUTSIDE SEAL as observed this session — Colima is not running, PostgreSQL is unreachable, and both live suites report NOT PERFORMED. VERIFIED EXTENSION (13/13) at ISA-004 is PRIOR RECORDED HISTORY, not re-observed today. Nothing regressed in code: the suites did not fail an assertion, they did not run. UNAVAILABLE is not PASS and is not FAIL.",
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
     "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
     "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED",
@@ -76,26 +74,36 @@
     "seal": "NOT GRANTED",
     "implementation": "NOT AUTHORISED",
     "sp_r05": "NOT AUTHORISED",
-    "assertions": 231
+    "assertions": 231,
+    "sealed_baseline_self_integrity": "VERIFIED — derived from the SEALED TREE, 25/25 at self-integrity-verified-v0.1 (1f246be)",
+    "sealed_e3_extension": "VERIFIED EXTENSION — derived from the SEALED TREE, 42/42 at e3-extension-verified-v0.1 (94c2f75)",
+    "current_branch_revalidation": "HOLD — live PostgreSQL conditions 10-11 not rerun (Colima not running)"
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Three independent decisions are pending: (1) authorise or decline SP-R05 bounded to CR004, noting CR4-01 may not be repairable without a founder decision on the loss-class vocabulary; (2) run a real ConsciousConversation session — `python3 runtime/pilot.py --node <SELFNODE_ID>` is the whole act, and everything downstream is blocked on it; (3) decide F-002, whether signal genesis gets a primitive in the frozen Journey contract."
+    "act_required": "Run the first ConsciousConversation session: `python3 runtime/pilot.py --node <SELFNODE_ID>`. Answer naturally — no deliberate corrections, refusals or detector bait. If E3 sees nothing, nothing is valid data. Also pending: SP-R05 authorisation (CR004), and F-006 cohort separation."
   },
   "open_items": [
     {
-      "inselfaction": "ISA-20260814-CC-RUNTIME-PILOT-009",
-      "subject": "ConsciousConversation session runtime",
+      "inselfaction": "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
+      "subject": "First ConsciousConversation session",
       "next_authority": "MILASOPHAHR",
-      "act_required": "Use the runtime with a real SELFnode. The instrument and the runtime that generates its operating distribution are both built and verified; what is missing is use, not a component.",
-      "status": "RUNTIME EXECUTES · 28/28 · CORPUS NOT YET GENERATED"
+      "act_required": "Run it. Requires a human SELFnode; an agent answering the probes would fabricate a corpus wearing REAL_TRANSCRIPT provenance.",
+      "status": "NOT RUN — pipeline built, interlocked and proven; nothing has run on real material"
     },
     {
-      "inselfaction": "ISA-20260814-CC-RUNTIME-PILOT-009",
+      "inselfaction": "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
+      "subject": "F-006 — coverage/harness.py has no cohort awareness",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Decide whether the harness gains cohort separation before two cohorts are ever measured together. Contained meanwhile by a separate ondist corpus root.",
+      "status": "OPEN — CONTAINED BY CORPUS LAYOUT, NOT FIXED"
+    },
+    {
+      "inselfaction": "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
       "subject": "F-002 — signal genesis has no primitive",
       "next_authority": "MILASOPHAHR",
-      "act_required": "Decide whether signal genesis gets a primitive in the frozen Journey contract, or stays a declared and recorded gap. Contained in runtime/selfstate.py meanwhile; every occurrence is logged into the transcript.",
-      "status": "OPEN — CONTRACT GAP, CONTAINED AND MEASURABLE"
+      "act_required": "none — DISPOSITIONED: no new Journey primitive. Genesis becomes a runtime-internal consequence behind its own gate (extraction proposes, ontology validation adjudicates). Direct seeding is declared scaffolding and now carries the successor architecture in every record it writes.",
+      "status": "DISPOSITIONED — scaffolding declared, successor architecture recorded, not yet implemented"
     },
     {
       "inselfaction": "ISA-20260814-RC0001-CR004-004",
@@ -146,7 +154,8 @@
     "ISA-20260814-E3-COVERAGE-BASELINE-007",
     "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
     "ISA-20260814-RC0001-CR004-004",
-    "ISA-20260814-CC-RUNTIME-PILOT-009"
+    "ISA-20260814-CC-RUNTIME-PILOT-009",
+    "ISA-20260814-CC-PILOT-DISPOSITIONS-010"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
@@ -157,8 +166,10 @@
     "INV-E3-COVERAGE-NO-RETROFIT — an evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation.",
     "INV-E3-CORPUS-MINIMIZATION — a coverage corpus may preserve only the content required to determine whether an observable E3 event occurred and whether the detector recognized it; privacy reduction must not alter the event-bearing language.",
     "INV-CC-PILOT-SHADOW-DEFERRAL — no detector output may exist for a conversation before that conversation's transcript is frozen and digested. Causal order, not policy.",
+    "INV-CC-PILOT-BLIND-ORDER — labels for a conversation must be frozen before any detector output for that conversation exists, and a detector run must refuse until they are. Enforced from both ends: annotation refuses if a shadow record exists; shadow refuses until labels are frozen.",
     "INV-CC-PILOT-SHADOW-INERT — the module naming the detector is unreachable from the session; a live session process never loads kernel.e3 at all.",
     "INV-CC-PILOT-TRANSCRIPT-BINDING — a downstream artifact must carry its transcript's digest, and that digest must still verify against the transcript's own bytes.",
-    "INV-CC-PILOT-ANNOTATION-DEFERRED — the pilot may emit spans. It may not label them, partition them, or admit them to a cohort."
+    "INV-CC-PILOT-ANNOTATION-DEFERRED — the pilot may emit spans. It may not label them, partition them, or admit them to a cohort.",
+    "INV-SEALED-VS-BRANCH — a sealed verdict is a property of tagged history, derived from the sealed tree; branch revalidation is a property of one branch on one machine. Reporting them under one label lets an environment outage read as a loss of integrity."
   ]
 }

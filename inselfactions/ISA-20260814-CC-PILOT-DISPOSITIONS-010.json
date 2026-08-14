@@ -1,0 +1,172 @@
+{
+  "inselfaction_id": "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T02:24:22Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260814-CC-RUNTIME-PILOT-009",
+  "operation": {
+    "title": "Three dispositions implemented — and the first session handed over unrun",
+    "authority_exercised": "MILASOPHAHR: (1) F-002 takes no new Journey primitive; direct seeding is declared scaffolding only. (2) The first session is corpus genesis — blind annotation precedes shadow, discovery cohort, no detector steering. (3) Report sealed standing separately from branch revalidation.",
+    "not_done": [
+      "THE FIRST REAL SESSION WAS NOT RUN — see refusal below",
+      "no detector change — kernel/e3.py byte-identical",
+      "no RULES change, no ONTOLOGY change",
+      "no harness change — coverage/harness.py untouched",
+      "no new Journey primitive",
+      "no annotation performed, no labels frozen, no coverage computed",
+      "no edit to kernel/ contract/ db/ coverage/"
+    ]
+  },
+  "refusal": {
+    "what": "The first real ConsciousConversation session was not run by this agent.",
+    "why": "It requires a human SELFnode answering naturally. Were I to answer the probes, the transcript would be stamped HUMAN_SELFNODE and emitted as REAL_TRANSCRIPT — a fabricated corpus wearing the provenance of a real one. That is worse than no corpus, because it would look like data and would then flow through annotation into a coverage number.",
+    "structural_note": "The runtime already distinguishes responder_kind, but only between HUMAN_SELFNODE and SCRIPTED_REPLAY. An agent typing answers into the human path is not a case the type system can catch. The guarantee here is a refusal, not a mechanism — stated plainly so it is not mistaken for one.",
+    "consequence": "ON_DISTRIBUTION_SAMPLE_INSUFFICIENT is unchanged. Everything downstream of the session is built, interlocked and proven; none of it has run on real material."
+  },
+  "dispositions": {
+    "F-002": {
+      "ruling": "NO NEW JOURNEY PRIMITIVE",
+      "reasoning_recorded": "AWAKEN..INTEGRATE describes the EPISTEMIC JOURNEY. A Signal is not necessarily an intentional node act within it. Making CREATE_SIGNAL another state transition would mix the conversation FSM with SELFgraph construction — two different things that must not share a state machine.",
+      "successor_architecture": [
+        "WITNESS",
+        "episode persisted",
+        "signal candidate extraction",
+        "ontology validation",
+        "SIGNAL GENESIS",
+        "evidence may reference signal"
+      ],
+      "gate_placement": "Extraction PROPOSES; ontology validation ADJUDICATES; only then may a signal exist. The same shape as the E3 boundary — the half that looks at conversation has no power, and the half with power looks only at validated structure. Asserted by PILOT-34, which checks the ordering rather than trusting the prose.",
+      "scaffolding_made_structural": "The successor architecture and the disposition are now carried in the ARTIFACT, not only in prose. Every GenesisRecord written by the scaffolding carries scaffolding=true, the disposition string, and the six-step successor pipeline, and those records are written into every transcript. A future reader finds the authorized design attached to each record the scaffolding produced, so 'we always did it this way' cannot quietly become the architecture (PILOT-33).",
+      "standing": "OPEN — contained, declared, and now self-documenting. Not fixed, and not pretending to be."
+    },
+    "BLIND_ORDER": {
+      "ruling": "Blind annotation precedes shadow. Do not inspect detector output before annotation.",
+      "defect_in_prior_design": "ISA-009 shipped shadow runnable immediately after transcript freeze. Deferral proved that detector output could not exist DURING a conversation, but nothing stopped it existing BEFORE annotation — which is the ordering that actually protects the measurement. Blindness was left to discipline.",
+      "INV-CC-PILOT-BLIND-ORDER": "Labels for a conversation must be frozen before any detector output for that conversation exists, and a detector run must refuse until they are.",
+      "interlock": {
+        "runtime/annotate.py": "REFUSES if a shadow record already exists for the conversation",
+        "runtime/shadow.py": "REFUSES until frozen labels exist for the conversation",
+        "effect": "Exactly one order is reachable. Blindness is not enforced by asking an annotator not to look; it is enforced by there being nothing to look at yet.",
+        "reachability": "annotate.py imports neither kernel.e3 nor runtime.shadow — it CANNOT display detector output. Covered by the same AST sweep that polices the session modules.",
+        "proof": "PILOT-29, PILOT-30, PILOT-31"
+      },
+      "scripted_exemption": "A SCRIPTED_REPLAY transcript is exempt. Not a loophole: its spans are SYNTHETIC_FIXTURE, the coverage loader refuses them, and a transcript that can never be measured has no measurement to protect. Requiring annotation of a fixture would only mean fabricating labels.",
+      "cohort_and_partition": "ON_DISTRIBUTION, partition discovery — permanently. First sessions inevitably influence architectural decisions, so they may never later serve as independent validation (INV-E3-COVERAGE-NO-RETROFIT)."
+    },
+    "SEALED_VS_BRANCH": {
+      "ruling": "Report sealed standing separately from branch revalidation, so extension-environment availability cannot semantically degrade a historical verified seal.",
+      "implementation": "proof/check_sealed_baseline.py derives sealed verdicts from the SEALED TREE via `git cat-file blob <tag>:<path>` — never from the working tree. A branch may add, edit and delete freely; none of it reaches into a tag's tree.",
+      "anti_forgery": "The recorded verdict is read from the SEALED copy of the gate evidence, which is itself covered by the manifest. Editing the working-tree copy of final-seal-gate.txt to read VERIFIED proves nothing, because the script never reads that file from disk. Asserted by PILOT-37.",
+      "verified_now": {
+        "self-integrity-verified-v0.1 (1f246be)": "25/25 manifest files verify against the sealed tree; recorded gate SELF INTEGRITY: VERIFIED",
+        "e3-extension-verified-v0.1 (94c2f75)": "42/42 manifest files verify against the sealed tree; recorded gate E3 EXTENSION: VERIFIED EXTENSION"
+      },
+      "rendered_standing": [
+        "SEALED BASELINE SELF INTEGRITY   VERIFIED             self-integrity-verified-v0.1 (1f246be)",
+        "VERIFIED EXTENSION E3            VERIFIED EXTENSION   e3-extension-verified-v0.1  (94c2f75)",
+        "CURRENT BRANCH REVALIDATION      HOLD",
+        "  L 10. SQL migrations execute against live PostgreSQL — NOT PERFORMED",
+        "  L 11. Postgres privilege + trigger behaviour adversarially tested — NOT PERFORMED"
+      ],
+      "third_verdict_class": "UNRESOLVED — the tag or repository is unavailable. Deliberately neither pass nor failure: the question could not be asked. COMPROMISED is reserved for a sealed tree that disagrees with its own manifest, which is a real integrity failure and does not clear by rerunning."
+    }
+  },
+  "findings": [
+    {
+      "id": "F-006",
+      "severity": "MEASUREMENT DEFECT, CONTAINED NOT FIXED",
+      "title": "coverage/harness.py has no cohort awareness",
+      "statement": "cohorts.json is inert data that nothing reads. `report()` computes per-rule tallies over EVERY span it loaded. The two-cohort law — 'their metrics are never combined' — is currently upheld only by the corpus happening to contain a single cohort. The moment a second cohort enters corpus/discovery/, the merge is silent.",
+      "containment": "On-distribution labels go to coverage/corpus/ondist/ — a SEPARATE corpus root, not a folder inside the existing one. `load_corpus(<root>)` already takes a base path, so the cohorts measure independently with NO harness change, which is the correct move while the measurement apparatus is frozen. Asserted by PILOT-32.",
+      "not_fixed": "Making the harness cohort-aware is a change to the measurement apparatus and was not authorized. Recorded so the containment is not mistaken for a solution.",
+      "authority_required": "MILASOPHAHR — whether the harness gains cohort separation before the on-distribution cohort is ever measured alongside another."
+    },
+    {
+      "id": "F-007",
+      "severity": "AUTHOR ERROR IN AN IMMUTABLE ARCHIVE, CORRECTED FORWARD",
+      "title": "ISA-009 asserted proof/gate.py was unchanged; that is now false",
+      "statement": "ISA-20260814-CC-RUNTIME-PILOT-009 stated 'proof/gate.py is UNCHANGED by this phase.' True when written. The standing-report repair then changed it: render_standing() was added, and two verdict lines were relabelled to SELF INTEGRITY (BRANCH REVALIDATION) and E3 EXTENSION (BRANCH REVALIDATION).",
+      "unchanged": "MANDATORY_SUITES, STATIC_CONDITIONS, E3_DONE_CONDITIONS, gate_open(), self_integrity() and e3_status() are arithmetically untouched. Only two labels and one additive renderer.",
+      "handling": "ISA-009 is immutable and was NOT edited. The correction is declared in proof/evidence/BASELINE-DELTA.md and carried here. A superseding archive is the only legitimate way to correct a transmitted statement."
+    }
+  ],
+  "the_authorized_pipeline": {
+    "order": [
+      "1. python3 runtime/pilot.py --node <SELFNODE_ID>            a real session",
+      "2. python3 runtime/emit_corpus.py runtime/transcripts/<id>.json   privacy-safe spans",
+      "3. python3 runtime/annotate.py <conversation_id>            BLIND labels, then frozen",
+      "4. python3 runtime/shadow.py runtime/transcripts/<id>.json  the detector, last",
+      "5. coverage result — measured against the ondist root alone"
+    ],
+    "interlocked": "Steps 3 and 4 refuse to run out of order. Step 4 is unreachable before step 3 completes.",
+    "separate_processes": "pilot.py PRINTS the next command rather than calling it. That is what keeps kernel.e3 out of the session process entirely, and it is worth more than the saved keystroke.",
+    "session_guidance_recorded": "The node answers naturally. No deliberate corrections, refusals or detector bait. If E3 sees nothing, nothing is valid data."
+  },
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "feature/cc-runtime-pilot",
+    "source_commit": "2d990bda9bf7cf2bde45ea4da554ebd41fbd9e33",
+    "based_on": "6f57e90c23eb7e0dc45b383e103c16b5b7fdd255",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/6f57e90...2d990bd",
+    "repo_binding_note": "This hash belongs to the conscious-conversation repository (INV-ISX-SOURCE-BINDING)."
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "kernel_e3_py": "FROZEN — verified byte-identical (PILOT-26)",
+    "RULES": "FROZEN",
+    "ONTOLOGY": "FROZEN",
+    "coverage_harness": "UNCHANGED — F-006 contained by corpus layout, not by editing the apparatus",
+    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED",
+    "historical_control_cohort": "PRESERVED — 122 spans",
+    "frozen_trees_unchanged": "kernel/ contract/ db/ coverage/ — zero tracked modifications (PILOT-28)",
+    "declared_deltas": "proof/run_all.py and proof/gate.py — both already covered by BASELINE-DELTA.md as proof-harness, not authority. proof/check_sealed_baseline.py is additive and unsealed."
+  },
+  "proof": {
+    "cc_runtime_pilot": "37/37",
+    "sealed_baseline": "PASS — 25/25 and 42/42 against the sealed trees",
+    "baseline_integrity": "6/6",
+    "journey": "26/26",
+    "schema": "30/30",
+    "adversarial_p0": "18/18",
+    "sql": "137 statements across 5 migrations",
+    "e3_adversarial": "24/24",
+    "e3_wiring": "13/13",
+    "e3_authenticity": "12/12",
+    "e3_coverage_harness": "20/20",
+    "kernel_gate": "OPEN"
+  },
+  "standing_observed_this_session": {
+    "SEALED BASELINE SELF INTEGRITY": "VERIFIED — derived from the sealed tree, 25/25",
+    "VERIFIED EXTENSION E3": "VERIFIED EXTENSION — derived from the sealed tree, 42/42",
+    "CURRENT BRANCH REVALIDATION": "HOLD — live PostgreSQL conditions 10-11 not rerun (Colima not running)",
+    "KERNEL GATE": "OPEN",
+    "CC-RUNTIME-PILOT-001": "RUNTIME EXECUTES · 37/37 · CORPUS NOT YET GENERATED",
+    "E3 COVERAGE": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: ON_DISTRIBUTION_SAMPLE_INSUFFICIENT"
+  },
+  "what_this_does_and_does_not_tell_us": {
+    "established": [
+      "The authorized pipeline exists end to end and refuses to run out of order.",
+      "Blindness is structural: the annotation tool cannot reach detector output, and the detector refuses to speak before labels are frozen.",
+      "The sealed verdicts are properties of tagged history and survive a branch with declared deltas and an unreachable database.",
+      "The F-002 scaffolding now carries its own successor architecture in every record it writes."
+    ],
+    "not_established": [
+      "Anything at all about what E3 can see. No human has used the runtime.",
+      "Whether the probe templates elicit speech the E3 event classes describe.",
+      "Whether the annotation prompts are usable by a human at volume — the tool has never been run against real spans by a real annotator.",
+      "Whether being asked these questions is worth a person's time. The pilot proves machinery, not worth."
+    ]
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Run the first session. `python3 runtime/pilot.py --node <SELFNODE_ID>`. Answer naturally; no deliberate corrections, refusals or detector bait. If E3 sees nothing, nothing is valid data.",
+    "secondary": "F-006 — decide whether coverage/harness.py gains cohort separation before two cohorts are ever measured together.",
+    "standing_position": "Everything that could be built without a conversation has been built. What remains is not a component, and it is not something an agent can supply on your behalf."
+  }
+}
