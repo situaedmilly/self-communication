@@ -1,0 +1,203 @@
+{
+  "inselfaction_id": "ISA-20260814-REALRAP01-FOUNDER-REVIEW-HANDOFF-001",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T02:46:32Z",
+  "session": "MILASOPHAHR",
+  "immutable": true,
+  "supersedes": null,
+  "operation": {
+    "title": "REALRAP-01 — Founder review handoff for repaired A-I proof",
+    "operation_type": "FOUNDER_REVIEW_OF_REPAIRED_A_I_PROOF",
+    "function": "Create a governed INSELFACTION handoff into Founder adjudication. This record does not perform Founder review, does not seal REALRAP-01, and does not authorize a repository mutation.",
+    "handoff_authority": "MILASOPHAHR instruction to force an INSELFACTION boundary before Founder review proceeds.",
+    "not_done": [
+      "no Founder review verdict was issued in this INSELFACTION",
+      "no seal was granted",
+      "no seal eligibility was adjudicated",
+      "no REALRAP repository mutation was performed",
+      "no schema was designed",
+      "no semantic hashing was ratified or performed",
+      "no SELFgraph integration was authorized",
+      "no SOVEREIGNSELF6 implementation was authorized",
+      "no REALRAP-02 gate was opened",
+      "no A-I specimen was regenerated, improved, or reinterpreted"
+    ]
+  },
+  "protocol_boundary": {
+    "chat_receipt": "ROUTING_ONLY",
+    "inselfaction": "CUSTODY_HANDOFF_ONLY",
+    "founder_review": "NOT_PERFORMED_BY_THIS_RECORD",
+    "seal": "NOT_GRANTED",
+    "seal_eligibility": "NOT_ADJUDICATED",
+    "laws": [
+      "CHAT_RECEIPT != INSELFACTION",
+      "INSELFACTION != FOUNDER_REVIEW",
+      "FOUNDER_REVIEW != SEAL",
+      "SEAL_ELIGIBILITY != SEAL_AUTHORITY",
+      "TRANSMISSION != VALIDATION",
+      "TRANSMISSION != ADJUDICATION",
+      "TRANSMISSION != AUTHORITY",
+      "TRANSMISSION != ACCEPTANCE",
+      "TRANSMISSION != CANONICALIZATION"
+    ]
+  },
+  "input_object": {
+    "identity": "REALRAP-01 repaired A-I proof chamber",
+    "input_disposition": "PROVISIONAL_PASS",
+    "integrity_statement": "The repaired A-I chamber is carried forward as the input object exactly as dispositioned before this INSELFACTION gate. This record preserves the proof state for review custody and does not improve, rerun, reinterpret, or canonicalize the specimens.",
+    "incoming_state": {
+      "A_I_RERUN_REPAIRED": "PROVISIONAL_PASS",
+      "SEAL_STATUS": "NOT_READY",
+      "THEORY_EXPANSION": "FROZEN",
+      "NEXT_GATE": "FOUNDER_REVIEW_OF_REPAIRED_A_I_PROOF"
+    },
+    "authority_ceiling": {
+      "REALRAP_00_SOVEREIGN_MEANING_TARGET": "SEALED",
+      "REALRAP_01": "PROVISIONAL_A_I_PROOF_ONLY",
+      "REPOSITORY_MUTATION": "NOT_AUTHORIZED",
+      "SCHEMA_DESIGN": "NOT_AUTHORIZED",
+      "SEMANTIC_HASHING": "NOT_RATIFIED",
+      "SELFGRAPH_INTEGRATION": "NOT_AUTHORIZED",
+      "SOVEREIGNSELF6_IMPLEMENTATION": "NOT_AUTHORIZED",
+      "THEORY_EXPANSION": "FROZEN"
+    }
+  },
+  "review_authority": {
+    "required_authority_ref": "FOUNDER / MILASOPHAHR authority for Founder review disposition",
+    "authority_status_in_this_record": "REQUIRED_NOT_EXERCISED",
+    "acceptance_authority_status": "NOT_EXERCISED",
+    "seal_authority_status": "NOT_GRANTED",
+    "law": [
+      "ACCEPTANCE_AUTHORITY != ACCEPTANCE_DISPOSITION",
+      "FOUNDER_REVIEW_PASS != SEAL",
+      "SEAL_ELIGIBILITY != SEAL_AUTHORITY"
+    ]
+  },
+  "review_question": {
+    "question": "Does the repaired A-I proof chamber demonstrate that the current REALRAP-01 Meaning Mutation Calculus can preserve the required separations without forcing unsupported identity closure?",
+    "separations_under_review": [
+      "MUTATION_EVIDENCE != ACCEPTED_CLASSIFICATION",
+      "SURFACE_CLASSIFICATION != IDENTITY_DISPOSITION",
+      "LEXICAL / REPRESENTATIONAL / REFERENTIAL / SEMANTIC / PRAGMATIC / NORMATIVE / ONTOLOGICAL mutation surfaces remain distinguishable",
+      "IDENTITY_CONTINUITY != SEMANTIC_CONTINUITY",
+      "IDENTITY_CONTINUITY != REPRESENTATION_CONTINUITY",
+      "REVISION_ADVANCEMENT != IDENTITY_CONTINUATION",
+      "IDENTITY_DISPOSITION != DEPENDENCY_INHERITANCE",
+      "REVIEW_PRESSURE != ADJUDICATED_INVALIDATION",
+      "INVALIDATION_DISPOSITION != ACCEPTANCE_DISPOSITION",
+      "ACCEPTANCE_AUTHORITY != ACCEPTANCE",
+      "UNRESOLVED != FAILURE",
+      "UNRESOLVED != PERMISSION_TO_INVENT_CLOSURE"
+    ],
+    "special_attention": [
+      "B remains unresolved where representation identity authority is insufficient.",
+      "H remains unresolved where semantic and representation identity authority is insufficient.",
+      "I remains unresolved where term identity authority is insufficient.",
+      "Unresolved status is not a defect merely because a more aesthetically complete answer could be invented."
+    ]
+  },
+  "evidence_scope": {
+    "scope": "A-I repaired proof only",
+    "excluded": [
+      "no J specimen",
+      "no REALRAP-02",
+      "no new theorem",
+      "no additional axes",
+      "no schema inference",
+      "no repository evidence beyond this INSELFACTION handoff"
+    ],
+    "unresolved_state_policy": "Preserve unresolved states as unresolved. Do not treat unresolved as failure, permission, acceptance, rejection, invalidation, or closure."
+  },
+  "proof_state_summary": {
+    "A": {
+      "surface": "Delta L",
+      "standing": "Delta L did not become Delta S.",
+      "unsupported_identity_closure": "NOT_FORCED"
+    },
+    "B": {
+      "surface": "Delta R",
+      "standing": "Representation format transition did not become semantic mutation.",
+      "unsupported_identity_closure": "DEMOTED_TO_UNRESOLVED_OR_CANDIDATE"
+    },
+    "C": {
+      "surface": "Delta Ref",
+      "standing": "Reference change did not become new semantic identity.",
+      "unsupported_identity_closure": "NOT_FORCED"
+    },
+    "D": {
+      "surface": "Delta S",
+      "standing": "Semantic surface change did not become acceptance.",
+      "unsupported_identity_closure": "NOT_FORCED"
+    },
+    "E": {
+      "surface": "Delta P",
+      "standing": "Clean pragmatic specimen: context/use changed while meaning and normative force did not.",
+      "unsupported_identity_closure": "NOT_FORCED"
+    },
+    "F": {
+      "surface": "Delta N",
+      "standing": "Clean normative specimen: permission/requirement consequence changed.",
+      "unsupported_identity_closure": "NOT_FORCED"
+    },
+    "G": {
+      "surface": "Delta O",
+      "standing": "Clean ontological specimen: kind-of-thing changed.",
+      "unsupported_identity_closure": "NOT_FORCED"
+    },
+    "H": {
+      "surface": "Delta R plus Delta S with same lexeme",
+      "standing": "Same lexeme did not preserve semantics; successor identity was not overclaimed.",
+      "unsupported_identity_closure": "DEMOTED_TO_UNRESOLVED_OR_CANDIDATE"
+    },
+    "I": {
+      "surface": "Delta L plus Delta Ref with Delta S false",
+      "standing": "Lexeme/reference movement did not manufacture semantic change; term successor status was not inferred.",
+      "unsupported_identity_closure": "DEMOTED_TO_UNRESOLVED"
+    }
+  },
+  "founder_review": {
+    "status": "PENDING",
+    "allowed_dispositions": [
+      "FOUNDER_REVIEW_PASS",
+      "CHANGES_REQUIRED",
+      "REJECTED",
+      "UNRESOLVED"
+    ],
+    "pass_consequence_if_later_adjudicated": {
+      "REALRAP_01_A_I_FOUNDER_REVIEW": "PASS",
+      "REALRAP_01_SEAL_ELIGIBILITY": "ELIGIBLE",
+      "seal_status": "NOT_SEALED_BY_REVIEW_PASS"
+    },
+    "current_disposition": "NOT_ADJUDICATED"
+  },
+  "next_gate": {
+    "eligible_now": "FOUNDER_REVIEW_OF_REPAIRED_A_I_PROOF",
+    "not_eligible_now": [
+      "REALRAP-01 seal",
+      "REALRAP-02",
+      "repository mutation",
+      "schema design",
+      "semantic hashing",
+      "SELFgraph integration",
+      "SOVEREIGNSELF6 implementation"
+    ],
+    "lawful_sequence": [
+      "A-I proof",
+      "INSELFACTION",
+      "Founder review",
+      "review disposition",
+      "possible seal eligibility",
+      "separate seal authorization if granted later"
+    ]
+  },
+  "integrity": {
+    "files_created_by_this_movement": 1,
+    "files_modified_by_this_movement": 0,
+    "latest_pointer_modified_by_this_movement": false,
+    "prior_inselfactions_edited": false,
+    "realrap_repository_mutated": false,
+    "staged": false,
+    "committed": false,
+    "reason_latest_pointer_not_updated": "The current worktree already contained unrelated modifications to interactions/latest.json and an untracked RC0001 INSELFACTION. This movement was scoped to one immutable REALRAP handoff record and did not overwrite or reorder existing channel state."
+  }
+}
