@@ -1,0 +1,122 @@
+{
+  "inselfaction_id": "ISA-20260814-RC0001-CAPTOPO01-007",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T07:15:00Z",
+  "session": "MOBILECHALL",
+  "immutable": true,
+  "supersedes": null,
+  "continues": "ISA-20260814-RC0001-CR005-006",
+
+  "operation": {
+    "title": "CAP-TOPOLOGY-01 — semantic obligation subject topology, a discovery adjudication",
+    "authority": "Discovery only. No repair, no schema ratified, no clause authored, no docket item created. SP-R06 remains held. T(A)/CR5-B03 untouched — DOCKET-01 is a separate organ per founder direction.",
+    "question_put": "For each RC-0001 semantic requirement: WHAT is obligated? Not: which element should we attach it to.",
+    "artifact": {
+      "path": "/Users/millysituated/RUORA/governance/OURSELF-RCP-RC0001-CAP-TOPOLOGY-01-SEMANTIC-OBLIGATION-SUBJECT-ADJUDICATION.md",
+      "sha256": "c39286218db5b26fdefe8c96b5c5f03c33ccddda2686d39bd4e3e7ab61029ba8",
+      "lines": 273
+    }
+  },
+
+  "headline": {
+    "clauses_examined": 111,
+    "substrate_obligations": 90,
+    "not_substrate_obligations_at_all": 21,
+    "element_subject_obligations": "16 of 90 = 17.8%",
+    "kill_test_fires": "74 of 90",
+    "subject_classes_required": "7, one of them outside the founder's probe list",
+    "verdict": "ELEMENT is not the universal semantic subject of capability obligation, and is not even the majority case. It is the minimal subject for roughly one obligation in six."
+  },
+
+  "mandated_counterexamples": {
+    "relational": {
+      "construction": "record(\"A\"), record(\"B\") both supported individually; actual ordering B -> A.",
+      "requirement_failed": "SP-024 canonical history order; SP-044 if the inversion occurs at history join; SP-045 if the order is not total.",
+      "every_element_individually_succeeds": "YES — both records satisfy SP-032, SP-162, SP-037, SP-038; complete satisfies SP-034.",
+      "the_arbitrariness_proof": "If one insists on attaching the failure to an element, ask WHICH. Attach to record(\"B\")? Its own admission satisfied every clause; A's position moved. Attach to record(\"A\")? It was admitted first and correctly. Attach to complete? Only available under SP-044 if the inversion happens at history join. THE REPRESENTATION FORCES A CHOICE FOR WHICH NO CLAUSE SUPPLIES A PRINCIPLE. Two embodiments could localize the same semantic failure to different elements and diverge under SP-152 while behaving identically. SP-045 closes the escape entirely: non-totality is a property of the order, and there is no element at which totality is evaluated.",
+      "kill_test": "YES"
+    },
+    "boundary": {
+      "construction": "record(\"A\") supported, Entry exists; restart; after restart the Entry is missing.",
+      "requirement_failed": "SP-046, SP-174, SP-084, SP-049.",
+      "every_element_individually_succeeds": "YES — record(\"A\") succeeded and the Entry existed.",
+      "structurally_inexpressible_not_merely_arbitrary": "The only element in the neighbourhood is the boundary, and SP-156 makes ADMITTED its ONLY lawful disposition. Under v0.5 there exists NO element to which this failure may lawfully attach. Cold Review 005 recorded the consequence as CR5-09 (SP-155 ∧ SP-156 ∧ SP-150 jointly unsatisfiable); this adjudication reaches the same wall from the other side and identifies the cause — a boundary-span obligation given an element-indexed representation.",
+      "kill_test": "YES"
+    },
+    "what_the_pair_establishes": "operation support ≠ semantic requirement satisfaction. An embodiment may support every operation it is asked to perform and still fail RC-0001, because RC-0001's obligations are not all obligations ABOUT operations."
+  },
+
+  "why_sp168_could_not_have_been_completed": {
+    "of_the_19_clauses_the_table_invokes": "9 are ELEMENT-subject and correctly attached; 6 are BOUNDARY, 3 are RELATION, 1 is ENTITY — all attached to an element anyway.",
+    "omitted_element_subject_obligations": "7 — SP-055, SP-060, SP-072, SP-080, SP-081, SP-160, SP-161.",
+    "three_distinct_defects": {
+      "1_omission": "7 element-subject obligations missing. FILLABLE.",
+      "2_category_error": "10 of the 19 rows attach a non-element-subject obligation to an element. NOT FILLABLE — adding rows of this kind adds more category errors.",
+      "3_unreachability": "71 further obligations have subjects the representation has no slot for. NOT FILLABLE AT ALL."
+    },
+    "conclusion": "'SP-168 needs more rows' is the wrong diagnosis, exactly as the founder anticipated. The table is not an incomplete instance of a correct design; it is a complete-as-possible instance of a design that expresses one subject class, applied to a corpus that has seven."
+  },
+
+  "discovered_topology": {
+    "PROGRAM": "35 (31.5%) — standing properties of the embodiment, true or false before any element is presented. SP-013's witness observability and SP-110's totality of view are lacked at every position and none in particular.",
+    "NON_OBLIGATION": "21 (18.9%) — nothing a substrate can fail: scope statements, founder reproductions, explicit non-decisions (SP-026, SP-027, SP-047), and the repair's own machinery clauses.",
+    "ELEMENT": "16 (14.4%) — success conditions, refusal law, atomicity, distinguishability, refusal precedence, content presence. These and only these have the shape v0.5's representation assumes.",
+    "RELATION": "12 (10.8%) — order and correspondence among elements or entries. SP-021 is definitional: an Entry's identity IS its position, so identity is relational and cannot be a property of the record act that created it.",
+    "BOUNDARY": "9 (8.1%) — ordered pairs of L-fact sets separated by a discontinuity.",
+    "TRACE": "9 (8.1%) — whole presented sequences. NOTE: SP-043, the clause CR3-B01 was fought over, already has a sequence subject. The topology discovered here was PARTLY DISCOVERED IN v0.4 AND NOT GENERALISED.",
+    "ENTITY": "5 (4.5%) — an Entry or Ledger over its lifetime. SP-025 obliges immutability INCLUDING AT MOMENTS WHEN NO ELEMENT IS PRESENTED: a substrate rewriting Entry content during idle background compaction violates it with no operation in flight. No element-indexed representation can witness a failure that occurs between elements.",
+    "EMBODIMENT_PAIR": "4 (3.6%) — OTHER_DISCOVERED, outside the probe list. See below."
+  },
+
+  "the_discovered_class": {
+    "members": "SP-091, SP-114, SP-152, SP-173",
+    "finding": "These obligations have NO SINGLE-EMBODIMENT LOCUS AT ALL. SP-091 is a three-way equality — reference trace = normalized Web trace = normalized iOS trace. No single embodiment can satisfy or fail it. SP-152 obliges TWO embodiments to agree; SP-173 fixes the target cardinality at two; SP-114 is the witness's cross-substrate comparison.",
+    "structural_consequence": "A capability record is emitted BY ONE EMBODIMENT ABOUT ITSELF. These four can never lawfully appear in any failed-requirement set — not because the invocation table omits them, but because there is no embodiment to which they could be predicated.",
+    "self_reference_hazard": "SP-152 is the comparison rule itself. Under SP-167 it is a member of its own requirement set, and under SP-169 an embodiment could name it as a requirement it 'cannot honor' — a self-referential absurdity the current design does not exclude."
+  },
+
+  "second_finding_running_opposite_to_CR5_B01": {
+    "finding": "SP-167 sets the requirement set to all 111 normative clauses. Roughly a fifth of that set — 21 clauses — can never be a member of any failed-requirement set under ANY substrate whatsoever.",
+    "significance": "The requirement set is simultaneously OVER-INCLUSIVE (here) and UNDER-REACHABLE (CR5-B01). Both follow from defining the requirement set by DOCUMENT POSITION rather than by WHAT IS OBLIGATED — which is precisely the question CAP-TOPOLOGY-01 was authorised to ask."
+  },
+
+  "implications_for_representation_stated_not_ratified": {
+    "on_the_founders_RequirementResult_sketch": [
+      "`subject` cannot be a single type — seven classes with different cardinalities and temporal extents; the discriminator belongs to the requirement's own declaration, not to the run.",
+      "Subject identity must be constructible: RELATION needs to name the tuple, BOUNDARY the two sides, ENTITY the Entry plus an interval. ELEMENT subjects are the only ones a presented index alone identifies.",
+      "EMBODIMENT-PAIR obligations must be excluded from self-reported results BY CONSTRUCTION, not by omission from a table.",
+      "NON-OBLIGATION clauses must be excluded from the requirement set, or SP-169's exactness is defined over members that can never be failed."
+    ],
+    "explicit_non_solution": "CR5-B02's collision defect — U′ and V′ both publishing {SP-020} — is NOT repaired by any of this. Clause identity under-distinguishes because one clause can bundle several obligations (SP-020 binds correspondence, content equality and status). Subject topology and OBLIGATION GRANULARITY are two different problems; this adjudication addresses only the first. A later movement must not treat CR5-B02 as collaterally solved."
+  },
+
+  "what_this_does_not_decide": [
+    "It repairs nothing; v0.5 is unmodified and its digest is recomputed unchanged.",
+    "It ratifies no schema, including RequirementResult.",
+    "It does not touch T(A), CR5-B03, or any docket item — DOCKET-01 is a separate organ with a different pathology.",
+    "It does not decide obligation granularity (CR5-B02).",
+    "It does not claim the seven classes are exhaustive; the probe list was deliberately not treated as doctrine.",
+    "It does not establish that a correct representation exists — only what one would have to express."
+  ],
+
+  "self_limitation": "The classification is AUTHOR-SIDE JUDGMENT by the same lineage that authored v0.5, mechanical only in its bookkeeping. A lineage-independent reviewer could reasonably reclassify individual rows, most plausibly at the PROGRAM/ELEMENT margin and at RELATION/ENTITY where SP-021's positional identity reads either way. Such reclassification would move the percentages but not the conclusion, which rests on the two counterexamples (constructions, not classifications) and on the EMBODIMENT-PAIR argument (structural, about what a single embodiment can predicate of itself).",
+
+  "integrity": {
+    "v0_5": "4612455287015d81812f50aff98b5d3e12f1e9d10ca71add0350ecd9e50c8f98 — UNMODIFIED, recomputed",
+    "cold_review_005": "5369d4152647083f9cdc9cb884f14475ff0bb9b60ff33b8f5ecaeaf5d7be384b — UNMODIFIED",
+    "files_created": 1,
+    "files_modified": 0,
+    "clauses_authored": 0,
+    "docket_items_created": 0,
+    "cross_check": "All 111 SP identifiers cited in the adjudication resolve to normative rows in v0.5; zero dangling references — the check v0.5's own SP-006 failed.",
+    "ruora": "nothing staged by this movement. NOTE: RUORA HEAD is observed at 1dd3ccd, advanced from 7387fe4 by a concurrent session's commit, not by this movement. Bound to the observed value rather than asserted from memory.",
+    "l1": "not read this movement; no founder source reinterpreted",
+    "secrets": "none read, printed or requested",
+    "boundary": "not expanded beyond /Users/millysituated/RUORA"
+  },
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Decide whether the discovered topology is accepted as the basis for representation design; decide whether DOCKET-01 proceeds in parallel; SP-R06 remains held pending both"
+  }
+}

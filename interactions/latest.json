@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T03:38:22Z",
+  "updated_at": "2026-08-14T07:15:00Z",
   "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
-  "session": "CONVORUNTIME",
+  "session": "HBCAGENT",
   "latest_inselfaction": {
-    "id": "ISA-20260814-CC-F008-CLOSED-014",
-    "path": "inselfactions/ISA-20260814-CC-F008-CLOSED-014.json",
-    "title": "F-008 closed — the pre-contact bridge is complete",
+    "id": "ISA-20260814-RC0001-CAPTOPO01-007",
+    "path": "inselfactions/ISA-20260814-RC0001-CAPTOPO01-007.json",
+    "title": "CAP-TOPOLOGY-01 — ELEMENT is the minimal subject of only 16 of 90 obligations; seven subject classes discovered",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -41,6 +41,18 @@
       "artifacts_tracked_in_git": true,
       "review_status": "REVIEWABLE",
       "delta": "https://github.com/situaedmilly/conscious-conversation/compare/e37f775...54f1f83"
+    },
+    "hbc_html": {
+      "repository": "hbc-html",
+      "source_remote": null,
+      "visibility": "LOCAL ONLY - no Git remote configured",
+      "path": "/Users/millysituated/RUORA/projects/hbc-html",
+      "branch": "main",
+      "commit": "4792500b1b579b85454ec0e76a07d7cf1a2c9e83",
+      "commit_verified": "Present in hbc-html. Observed HEAD, message 'Add HBC command transit workflow'.",
+      "artifacts_tracked_in_git": true,
+      "review_status": "LOCAL_RECONCILIATION_REQUIRED",
+      "authority_caveat": "Feature implementation authority was granted. Staging and commit authority were not explicitly separated before execution. Remote publication is not authorized."
     }
   },
   "transport": {
@@ -84,26 +96,40 @@
     "rcp_derivation": "PERMITTED_BY_RCP — not REQUIRED. INV-RC-CAP-1 is misapplied and adverse. v0.5 §2.0 overstates its grounding",
     "a07_split": "COSMETIC — overruled; Cold Review 004 PARTIALLY_DECIDED for A-07 STANDS",
     "publication_integrity": "independently reproduced PASS; negative control caught 8 mutation classes, missed 3 — and the published DIFF BLOCK IS FALSE (says 5/5, actual 9/13), CR4-03 class recurring inside the carve-out",
-    "sp_r06": "NOT AUTHORISED"
+    "sp_r06": "HELD — pending acceptance of the discovered topology and DOCKET-01",
+    "hbc_command_transit": "HBC_COMMAND_TRANSIT_V0 · TECHNICAL PASS · local commit 4792500b1b579b85454ec0e76a07d7cf1a2c9e83 · implementation realized · tests/proof pass · commit authority reconciliation required · remote absent · push not authorized",
+    "hbc_command_transit_scope": "COMMAND_TRANSIT_SURFACE ONLY. Captures argv, resolved project-local command references, stdout/stderr, exit code, Git/tree before-after, filesystem deltas, and GitHub context when present. Does not claim ALL_INPUTS, ALL_OUTPUTS, or TOTAL_CAUSALITY.",
+    "hbc_github_workflow": "STRUCTURALLY PRESENT IN LOCAL COMMIT · NOT PUBLISHED · NOT EXECUTED BY GITHUB",
+    "cap_topology_01": "COMPLETE · artifact c39286218db5b26fdefe8c96b5c5f03c33ccddda2686d39bd4e3e7ab61029ba8 · 7 subject classes · ELEMENT is minimal subject for 16 of 90 obligations (17.8%) · kill test fires for 74 of 90",
+    "docket_01": "SEPARATE ORGAN / REQUIRED — CR5-B03 authority laundering; NOT touched by CAP-TOPOLOGY-01",
+    "element_subject_refuted": "ELEMENT is not the universal semantic subject of capability obligation. Both mandated counterexamples fire the kill test; the boundary case is structurally inexpressible because SP-156 compels ADMITTED",
+    "discovered_class": "EMBODIMENT-PAIR (SP-091, SP-114, SP-152, SP-173) — no single-embodiment locus exists, so these can never lawfully appear in any self-reported failed-requirement set"
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Authorise or decline Cold Review 005 against v0.5"
+    "act_required": "Adjudicate HBC local commit authority discrepancy; separately authorize or decline remote creation/publication; resume SELF TRAIL --institution as its own gate. RC-0001 CR005 remains separately pending in open_items."
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260814-RC0001-CAPTOPO01-007",
+      "subject": "RC-0001 semantic obligation subject topology",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Accept or reject the discovered topology as the basis for representation design; decide whether DOCKET-01 proceeds in parallel",
+      "status": "DISCOVERY COMPLETE — no repair performed, no schema ratified, SP-R06 still held"
+    },
+    {
+      "inselfaction": "ISA-20260814-HBC-TRANSIT-RECONCILIATION-015",
+      "subject": "HBC command transit v0 local commit authority reconciliation",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Decide whether local commit 4792500b1b579b85454ec0e76a07d7cf1a2c9e83 is accepted, amended by successor, or otherwise dispositioned; separately authorize or decline any GitHub remote/publication.",
+      "status": "TECHNICAL PASS · LOCAL_COMMIT REALIZED · COMMIT_AUTHORITY RECONCILIATION REQUIRED · REMOTE ABSENT · PUSH NOT AUTHORIZED"
+    },
     {
       "inselfaction": "ISA-20260814-CC-F008-CLOSED-014",
       "subject": "First contact",
       "next_authority": "MILASOPHAHR",
       "act_required": "python3 runtime/pilot.py --node <SELFNODE_ID>. The next evidence must come from MILASOPHAHR-as-SELFnode, not another fixture.",
       "status": "READY — no blocker remains; engineering stopped"
-    },
-    {
-      "inselfaction": "ISA-20260814-RC0001-CR005-006",
-      "subject": "RC-0001 SemanticProgram v0.5 — Cold Review 005 outcome",
-      "next_authority": "MILASOPHAHR",
-      "act_required": "Authorise or decline SP-R06 bounded to CR005; decide whether T(A) domain may change; decide whether clause-identity individuation survives CR5-B01",
-      "status": "CHANGES_REQUIRED — 3 BLOCKING · CR4-01 NOT_CLOSED · CR3-B01 remains closed"
     },
     {
       "inselfaction": "ISA-20260814-CC-F008-CLOSED-014",
@@ -188,6 +214,13 @@
       "next_authority": "MILASOPHAHR",
       "act_required": "none — Cold Review 005 was authorised and executed",
       "status": "DISCHARGED by ISA-20260814-RC0001-CR005-006"
+    },
+    {
+      "inselfaction": "ISA-20260814-RC0001-CR005-006",
+      "subject": "RC-0001 SemanticProgram v0.5 cold review",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "none — CAP-TOPOLOGY-01 was authorised and executed in place of SP-R06",
+      "status": "CR5-B01 root cause established by ISA-20260814-RC0001-CAPTOPO01-007; CR5-B02 and CR5-B03 remain OPEN"
     }
   ],
   "history": [
@@ -210,7 +243,9 @@
     "ISA-20260814-CC-F013-BLOCKING-012",
     "ISA-20260814-CC-F013-CLEARED-013",
     "ISA-20260814-RC0001-CR005-006",
-    "ISA-20260814-CC-F008-CLOSED-014"
+    "ISA-20260814-CC-F008-CLOSED-014",
+    "ISA-20260814-HBC-TRANSIT-RECONCILIATION-015",
+    "ISA-20260814-RC0001-CAPTOPO01-007"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
@@ -226,6 +261,7 @@
     "INV-CC-PILOT-TRANSCRIPT-BINDING — a downstream artifact must carry its transcript's digest, and that digest must still verify against the transcript's own bytes.",
     "INV-CC-PILOT-ANNOTATION-DEFERRED — the pilot may emit spans. It may not label them, partition them, or admit them to a cohort.",
     "INV-SEALED-VS-BRANCH — a sealed verdict is a property of tagged history, derived from the sealed tree; branch revalidation is a property of one branch on one machine. Reporting them under one label lets an environment outage read as a loss of integrity.",
-    "INV-CC-QUOTE-ANCHOR — a quote is the byte-exact persisted verbatim of an ACTIVE episode supporting the TARGET signal; it confers no standing; and where no quote exists SELF emits a labelled reference rather than inventing one. QUOTE, REVELATION and PROBE never blur into one sentence."
+    "INV-CC-QUOTE-ANCHOR — a quote is the byte-exact persisted verbatim of an ACTIVE episode supporting the TARGET signal; it confers no standing; and where no quote exists SELF emits a labelled reference rather than inventing one. QUOTE, REVELATION and PROBE never blur into one sentence.",
+    "INV-HBC-COMMAND-TRANSIT-SCOPE — captured command transit is not total execution causality. A transit record may witness declared/project-observable inputs, command streams, Git/tree conditions and filesystem deltas, but may not claim ALL_INPUTS, ALL_OUTPUTS or TOTAL_CAUSALITY without a separate containment model."
   ]
 }
