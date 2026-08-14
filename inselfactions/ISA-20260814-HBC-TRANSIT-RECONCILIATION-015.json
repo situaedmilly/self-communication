@@ -1,0 +1,249 @@
+{
+  "inselfaction_id": "ISA-20260814-HBC-TRANSIT-RECONCILIATION-015",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T04:06:32Z",
+  "session": "HBCAGENT",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "HBC_COMMAND_TRANSIT_COMMIT_4792500",
+  "operation": {
+    "title": "HBC command transit v0 reconciliation of already-realized local commit",
+    "authority_exercised": "Founder authorized the feature concept: HBCAgent transit of all inputs/outputs. Implementation authority is therefore recorded as granted. Staging and local commit occurred before that authority was separately isolated, so this record reconciles the already-realized transition instead of pretending it did not happen.",
+    "not_done": [
+      "No push performed",
+      "No GitHub repository created",
+      "No remote added",
+      "No existing HBC commit modified",
+      "No generated output artifact committed",
+      "No claim made that HBC_COMMAND_TRANSIT_V0 captures total execution causality"
+    ]
+  },
+  "headline": {
+    "finding": "HBC TRANSIT TECHNICAL PASS WITH AUTHORITY RECONCILIATION REQUIRED",
+    "statement": "Commit 4792500b1b579b85454ec0e76a07d7cf1a2c9e83 realizes a useful command transit surface, but the local commit authority was not explicitly separated before execution. The mechanism is renamed HBC_COMMAND_TRANSIT_V0 and must not be described as all inputs/all outputs.",
+    "significance": "The implementation can stand as a local realized transition while its commit authority and remote publication remain separate Founder disposition questions."
+  },
+  "authority_reconciliation": {
+    "implementation_authority": "GRANTED",
+    "staging_authority": "NOT_EXPLICITLY_SEPARATED_BEFORE_EXECUTION",
+    "commit_authority": "NOT_EXPLICITLY_SEPARATED_BEFORE_EXECUTION",
+    "local_commit": "REALIZED",
+    "local_commit_hash": "4792500b1b579b85454ec0e76a07d7cf1a2c9e83",
+    "remote": "ABSENT",
+    "remote_publication": "NOT_AUTHORIZED",
+    "push": "NOT_AUTHORIZED",
+    "disposition_required": "FOUNDER_RECONCILIATION",
+    "do_not_auto_revert": true,
+    "commit_validity": "UNRESOLVED_AUTHORITY_STANDING_NOT_TECHNICAL_INVALIDITY"
+  },
+  "semantic_scope_correction": {
+    "designation": "HBC_COMMAND_TRANSIT_V0",
+    "rejected_totality_claim": "ALL_INPUTS_OUTPUTS",
+    "invariants": [
+      "CAPTURED_TRANSIT != TOTAL_EXECUTION_CAUSALITY",
+      "NO_TRANSIT_RECORD != NO_INPUT",
+      "NO_TRANSIT_RECORD != NO_OUTPUT",
+      "WORKFLOW_EXISTS != WORKFLOW_PUBLISHED",
+      "WORKFLOW_PUBLISHED != WORKFLOW_EXECUTED_BY_GITHUB",
+      "LOCAL_TRANSIT_PASS != CI_TRANSIT_PROVEN"
+    ],
+    "truthful_claim": "For this command invocation, these declared/project-observable inputs, command streams, Git/tree conditions, and filesystem deltas were witnessed.",
+    "not_truthful_yet": "These were all causal inputs and outputs of the computation."
+  },
+  "captured_surface": [
+    "argv",
+    "resolved project-local command references",
+    "stdout",
+    "stderr",
+    "exit code",
+    "Git before/after state",
+    "tree before/after state",
+    "filesystem output delta",
+    "GitHub Actions context when present"
+  ],
+  "explicitly_not_claimed": [
+    "ALL_INPUTS",
+    "ALL_OUTPUTS",
+    "TOTAL_CAUSALITY",
+    "stdin",
+    "environment variables",
+    "network responses",
+    "IPC",
+    "subprocess-internal side channels",
+    "OS state",
+    "external files not passed or resolved as arguments",
+    "secrets",
+    "runtime dependencies not represented in the project tree"
+  ],
+  "source": {
+    "repository": "hbc-html",
+    "path": "/Users/millysituated/RUORA/projects/hbc-html",
+    "branch": "main",
+    "commit": "4792500b1b579b85454ec0e76a07d7cf1a2c9e83",
+    "commit_subject": "Add HBC command transit workflow",
+    "source_remote": null,
+    "visibility": "LOCAL ONLY - no Git remote configured",
+    "files_changed": [
+      ".github/workflows/hbc-transit.yml",
+      ".gitignore",
+      "README.md",
+      "package.json",
+      "scripts/hbc-transit.mjs",
+      "tests/transit.test.js"
+    ],
+    "tracked_delta": "6 files changed, 469 insertions(+), 1 deletion(-)",
+    "untracked_not_committed": "generated realm artifacts under output/"
+  },
+  "technical_disposition": {
+    "implementation": "REALIZED",
+    "local_tests": "PASS",
+    "hbc_proof": "PASS",
+    "local_commit": "REALIZED",
+    "github_workflow": "STRUCTURALLY_PRESENT_IN_LOCAL_COMMIT",
+    "github_actions_execution": "NOT_PROVEN",
+    "remote": "ABSENT",
+    "push": "NOT_AUTHORIZED",
+    "all_inputs_outputs_claim": "TOO_BROAD",
+    "corrected_claim": "COMMAND_TRANSIT_SURFACE"
+  },
+  "verification": {
+    "local_commands": [
+      {
+        "command": "node -v",
+        "result": "v22.17.1"
+      },
+      {
+        "command": "npm -v",
+        "result": "11.5.1"
+      },
+      {
+        "command": "git diff --check",
+        "result": "PASS"
+      },
+      {
+        "command": "node --check scripts/hbc-transit.mjs",
+        "result": "PASS"
+      },
+      {
+        "command": "npm test",
+        "result": "PASS - 76/76"
+      },
+      {
+        "command": "npm run prove",
+        "result": "PASS - HBC v0.1 PROVEN"
+      },
+      {
+        "command": "npm run transit:test",
+        "result": "PASS - emitted local transit run"
+      },
+      {
+        "command": "npm run transit:prove",
+        "result": "PASS - emitted local transit run"
+      }
+    ],
+    "current_transit_witnesses": {
+      "test_run": {
+        "path": "/Users/millysituated/RUORA/projects/hbc-html/transit/runs/20260814T034342027Z-npm-7a29c2fdc8ed",
+        "manifest_sha256": "458a68a3646d7e74b51289c2d9eeeb2627cc202ab9ec96c87f7056809537a168",
+        "command": "npm test",
+        "exit_code": 0,
+        "stdout_sha256": "5ab2604cd18de36d17b311cb7a292e10abfc180b8591130abde051aee56dea56",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "prove_run": {
+        "path": "/Users/millysituated/RUORA/projects/hbc-html/transit/runs/20260814T034348160Z-npm-dc4fa6e77525",
+        "manifest_sha256": "1574c32f08468d5fde06236fde7025700b5c02d91d161388873891633e1d59a5",
+        "command": "npm run prove",
+        "exit_code": 0,
+        "stdout_sha256": "a523f5fa8a1d6e7d54e0baf67c4d56f3836c46ba21d401272980c908eb2a144d",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "remote_probe": {
+      "local_remote_v": "empty",
+      "likely_remotes_checked": [
+        "git@github.com:situaedmilly/hbc-html.git - not found or inaccessible",
+        "git@github.com:situaedmilly/HBCAgent.git - not found or inaccessible",
+        "git@github.com:situaedmilly/hbc-agent.git - not found or inaccessible",
+        "git@github.com:situaedmilly/hbcagent.git - not found or inaccessible"
+      ],
+      "github_connector_search": "No HBC repository found by HBC-HTML-v0.1 commit-title search; returned unrelated repositories."
+    }
+  },
+  "self_trail_local": {
+    "mode": "SELF TRAIL --local",
+    "object": "HBC_COMMAND_TRANSIT_V0 / hbc-html",
+    "observation_time": "2026-08-14T04:06:32Z",
+    "state_classes": {
+      "REALIZED": [
+        "command transit wrapper source exists in local commit 4792500",
+        "package scripts transit:test and transit:prove exist",
+        "GitHub Actions workflow file exists locally",
+        "README documents command transit boundary",
+        "local transit witness directories exist"
+      ],
+      "PROVEN": [
+        "npm test PASS 76/76",
+        "npm run prove PASS - HBC v0.1 PROVEN",
+        "npm run transit:test PASS",
+        "npm run transit:prove PASS"
+      ],
+      "SEALED": [
+        "none for HBC_COMMAND_TRANSIT_V0 in this pass"
+      ],
+      "AUTHORIZED": [
+        "feature implementation concept"
+      ],
+      "OPEN": [
+        "Founder disposition of local commit authority",
+        "remote publication decision",
+        "whether to deepen from command transit to execution containment"
+      ],
+      "BLOCKED": [
+        "GitHub publication blocked by absent remote and no push authorization",
+        "CI transit proof blocked by workflow not being published/executed on GitHub"
+      ],
+      "FORBIDDEN": [
+        "push without authorization",
+        "remote creation without authorization",
+        "claiming all inputs/all outputs",
+        "claiming total execution causality"
+      ]
+    },
+    "trailing_graph": [
+      "FOUNDER_FEATURE_COMMAND -> implementation realized",
+      "implementation realized -> local tests proven",
+      "local tests proven -> local commit exists",
+      "local commit exists -> authority discrepancy surfaced",
+      "authority discrepancy surfaced -> INSELFACTION reconciliation",
+      "INSELFACTION reconciliation -> SELF TRAIL --local",
+      "SELF TRAIL --local -> next authorized gate required",
+      "no remote/push authority -> STOP"
+    ]
+  },
+  "lawful_outputs_for_other_self_fronts": {
+    "may_consume": [
+      "HBC_COMMAND_TRANSIT_V0 is the corrected mechanism name",
+      "commit 4792500 exists locally in hbc-html",
+      "technical tests passed locally",
+      "GitHub workflow exists in local commit only",
+      "remote is absent",
+      "push is not authorized",
+      "commit authority requires Founder reconciliation",
+      "captured transit is not total execution causality"
+    ],
+    "must_not_infer": [
+      "the commit is invalid",
+      "the commit is Founder-ratified",
+      "the workflow ran on GitHub",
+      "a GitHub repository exists",
+      "all inputs or all outputs were captured",
+      "remote publication is authorized"
+    ]
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Adjudicate the local commit authority discrepancy; separately authorize or decline remote creation/publication; resume SELF TRAIL --institution as its own gate.",
+    "stop_condition": "STOP AFTER LOCAL HBC TRAILING GRAPH"
+  }
+}

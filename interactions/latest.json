@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T07:15:00Z",
+  "updated_at": "2026-08-14T04:39:52Z",
   "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
   "session": "HBCAGENT",
   "latest_inselfaction": {
-    "id": "ISA-20260814-RC0001-CAPTOPO01-007",
-    "path": "inselfactions/ISA-20260814-RC0001-CAPTOPO01-007.json",
-    "title": "CAP-TOPOLOGY-01 — ELEMENT is the minimal subject of only 16 of 90 obligations; seven subject classes discovered",
+    "id": "ISA-20260814-CC-FIRSTCONTACT-READY-015",
+    "path": "inselfactions/ISA-20260814-CC-FIRSTCONTACT-READY-015.json",
+    "title": "F-018 repaired, custody taken — first contact source commit pinned",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -33,14 +33,15 @@
       "visibility": "PRIVATE — receiver-resolvable to an authorized receiver",
       "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
       "branch": "feature/cc-runtime-pilot",
-      "commit": "54f1f8353d5506ffecf9a9e16e8d588dedd2f6ff",
+      "commit": "cd05bd2b1dfa8210989bed3176428c4779328ea2",
       "commit_verified": "Present in conscious-conversation and pushed to origin.",
-      "based_on": "e37f77550c63091dce60e00ac156e6a69dce6928",
+      "based_on": "54f1f8353d5506ffecf9a9e16e8d588dedd2f6ff",
       "based_on_tag": "e3-extension-verified-v0.1",
       "merged_to_main": false,
       "artifacts_tracked_in_git": true,
       "review_status": "REVIEWABLE",
-      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/e37f775...54f1f83"
+      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/54f1f83...cd05bd2",
+      "worktree_clean": true
     },
     "hbc_html": {
       "repository": "hbc-html",
@@ -65,7 +66,7 @@
     "blocks": "EXTERNAL review only — the one rung of the independence ladder this cascade has never reached."
   },
   "standing": {
-    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 49/49 · CORPUS NOT YET GENERATED",
+    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 50/50 · CORPUS NOT YET GENERATED",
     "kernel_gate": "OPEN",
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
     "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
@@ -89,7 +90,7 @@
     "cc_felt_architecture": "F-008 CLOSED (verbatim referential anchor; 8 frozen specimens) · F-009 · F-010 · F-013 · F-015 · F-016 all closed · F-017 observation by construction · F-006 and F-014 open",
     "cold_review_005": "CHANGES_REQUIRED · artifact 5369d4152647083f9cdc9cb884f14475ff0bb9b60ff33b8f5ecaeaf5d7be384b · 3 BLOCKING · 10 MATERIAL · 4 MINOR · 6/15",
     "capability_vocabulary": "NONE INVENTED · RCP §5.3 NOT INSTALLED · R-04 record schema RESERVED (docket A-10)",
-    "first_contact": "PRE-CONTACT BRIDGE COMPLETE — engineering stopped as instructed",
+    "first_contact": "AUTHORIZED AND SOURCE-PINNED at cd05bd2, worktree clean. Awaiting MILASOPHAHR at a TTY — the reviewer's shell has none, and running it there would write a zero-turn HUMAN_SELFNODE transcript.",
     "cr5_b01": "BLOCKING — SP-168 invokes 19 of 111 clauses; ~92 requirements permanently unfailable; naming authority returns by omission",
     "cr5_b02": "BLOCKING — clause identity under-distinguishes; INV-RC-KERNEL-4 forbids over-distinction and is silent on under-distinction, so SP-170 is a non sequitur",
     "cr5_b03": "BLOCKING — the T(A) self-reference hazard affects SIX of eleven docket items, not A-09 alone; proved by v0.5 own metadata columns. Corrupts the founder decision surface",
@@ -125,11 +126,11 @@
       "status": "TECHNICAL PASS · LOCAL_COMMIT REALIZED · COMMIT_AUTHORITY RECONCILIATION REQUIRED · REMOTE ABSENT · PUSH NOT AUTHORIZED"
     },
     {
-      "inselfaction": "ISA-20260814-CC-F008-CLOSED-014",
+      "inselfaction": "ISA-20260814-CC-FIRSTCONTACT-READY-015",
       "subject": "First contact",
       "next_authority": "MILASOPHAHR",
-      "act_required": "python3 runtime/pilot.py --node <SELFNODE_ID>. The next evidence must come from MILASOPHAHR-as-SELFnode, not another fixture.",
-      "status": "READY — no blocker remains; engineering stopped"
+      "act_required": "python3 runtime/pilot.py --node MILASOPHAHR in a terminal with a TTY, from source commit cd05bd2. Then hand back the transcript path.",
+      "status": "AUTHORIZED — source-pinned, worktree clean, awaiting the SELFnode"
     },
     {
       "inselfaction": "ISA-20260814-CC-F008-CLOSED-014",
@@ -245,7 +246,8 @@
     "ISA-20260814-RC0001-CR005-006",
     "ISA-20260814-CC-F008-CLOSED-014",
     "ISA-20260814-HBC-TRANSIT-RECONCILIATION-015",
-    "ISA-20260814-RC0001-CAPTOPO01-007"
+    "ISA-20260814-RC0001-CAPTOPO01-007",
+    "ISA-20260814-CC-FIRSTCONTACT-READY-015"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
