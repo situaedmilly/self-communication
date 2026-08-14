@@ -1,0 +1,164 @@
+{
+  "inselfaction_id": "ISA-20260814-E3-COVERAGE-BASELINE-007",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T01:20:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260813-E3-COVERAGE-PROTOCOL-006",
+  "operation": {
+    "title": "First real E3 coverage baseline",
+    "authority_exercised": "Corpus derivation and annotation, per MILASOPHAHR authorization.",
+    "not_authorized_and_not_done": [
+      "E3D rule changes",
+      "event-ontology expansion",
+      "validation/holdout use",
+      "authority-core modification"
+    ]
+  },
+  "headline": {
+    "finding": "e3detector.v0.1 fired ZERO times across 122 real spans.",
+    "recall": "0/5 on labelled licensed events (E3D-002 fn=1, E3D-006 fn=4).",
+    "precision": "UNDEFINED \u2014 no positive was produced, so there is nothing to be wrong about. 0 false activations across 110 NONE spans is therefore NOT evidence of precision.",
+    "interpretation": "This is a measurement of the detector against THIS corpus, and the corpus is off-distribution: governance/engineering dialogue, not identity conversation."
+  },
+  "corpus": {
+    "partition": "discovery only",
+    "spans": 122,
+    "conversations": 16,
+    "unit": "sentence-level utterance span",
+    "unit_deviation_declared": "The directing threshold said 'node turns'. This owner's median turn is 3379 chars; a 4000-char architectural essay is not the minimum span necessary to label an observable event, and whole-turn spans made faithful annotation impossible. Parent turns and conversations are both reported.",
+    "sampling": "RANDOM over all sentences in all sampled conversations. Never keyword-seeded \u2014 seeding on phrases the detector looks for would guarantee recall and make precision meaningless.",
+    "sampling_defect_found_and_corrected": "An initial 12-600 char whole-turn filter captured only the shortest 9% of turns \u2014 precisely where terse corrections live. It would have inflated recall by construction. Widened after measuring the actual distribution (p25 1948, p50 3379, p75 6090).",
+    "source": "Owner's own Claude conversation transcripts (~/.claude/projects), 315 sessions available."
+  },
+  "privacy": {
+    "law": "INV-E3-CORPUS-MINIMIZATION",
+    "mechanism": "A regex denylist gate runs BEFORE any corpus is written; on breach nothing is written. A privacy layer that is merely believed to work is not a privacy layer.",
+    "leaks_caught_by_the_gate": [
+      "'Milasophahr' survived scrubbing because the source contained the typo 'thMilasophahr' \u2014 no word boundary, so \\b never matched. Verified against raw source that scrubbing did NOT corrupt the text; the typo is original.",
+      "A bare '@' in the denylist flagged '@everyone', a Discord mention. Tightened to email-shaped regex."
+    ],
+    "text_integrity": "No event-bearing language was paraphrased. Substitutions are counted per span and auditable.",
+    "source_refs": "opaque_src_* -> real location map stored OUTSIDE the chamber and never committed."
+  },
+  "annotation": {
+    "frozen_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80",
+    "frozen_before_detector_ran": true,
+    "verified_unchanged_after_run": true,
+    "labelling_rule": "Conservative \u2014 a span was labelled only when the span ALONE makes the event observable.",
+    "independence_defect": "STATED, NOT MITIGATED. The annotator is the same model family that authored the detector rules and knows their patterns. Procedural blindness (label, freeze, then run) is enforced and verifiable. Annotator independence is not, and cannot be by me. Every number here is PROVISIONAL until a human blind annotator re-labels these spans and inter-annotator agreement is measured.",
+    "distribution": {
+      "NONE": 110,
+      "OVERRIDES_SYSTEM_FRAMING": 4,
+      "RETRACTS_PRIOR_CLAIM": 1,
+      "OBSERVED_BUT_UNLICENSED_EVENT": 7
+    }
+  },
+  "coverage_topology": {
+    "E3D-001": "UNMEASURED \u2014 no positives labelled, no fires",
+    "E3D-002": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": null,
+      "recall": 0.0
+    },
+    "E3D-003": "UNMEASURED",
+    "E3D-004": "UNMEASURED",
+    "E3D-005": "UNMEASURED",
+    "E3D-006": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "precision": null,
+      "recall": 0.0
+    },
+    "E3D-007": "UNMEASURED \u2014 no replay procedure exists; fails closed by design",
+    "no_global_score": "intentional"
+  },
+  "ontology_gap_observed": {
+    "form": "Prohibition directive aimed at the system \u2014 'Do not X'.",
+    "count": 7,
+    "recurrence": "the single recurrent unlicensed form in this corpus",
+    "disposition": "RECORDED, NO RULE CREATED. Marked DELIBERATE_NON_INFERENCE: a prohibition is neither a refusal (the node is not declining) nor a correction. Whether E3 should represent it at all is an ontology question for authority, not a regex to add.",
+    "law_observed": "UNLICENSED-ACCUMULATES \u2014 one corpus is not recurrence across corpora."
+  },
+  "harness_defects_found_by_first_contact": [
+    {
+      "id": "F-014",
+      "finding": "The observed_but_unlicensed bucket counted every label lacking a rule_family, which NONE always lacks \u2014 inflating it to 117/122.",
+      "disposition": "Corrected to test the event class explicitly. Frozen label digest unchanged."
+    },
+    {
+      "id": "F-015",
+      "finding": "COV-04 asserted the chamber holds no transcript spans. True when written, false once the corpus existed.",
+      "disposition": "Superseded by an assertion that the corpus is present, REAL_TRANSCRIPT, and fully labelled. A test asserting a fact that has stopped being one is worse than no test."
+    }
+  ],
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "analysis/e3-real-transcript-coverage",
+    "source_commit": "dae5fda9c1072afab448b2aaf20bbdca20e16485",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/98b5d39...dae5fda"
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "verified": "kernel/e3.py byte-identical to the verified tag throughout (COV-01/COV-02)."
+  },
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "e3_extension": "VERIFIED EXTENSION",
+    "e3_coverage": "MEASURED \u2014 PROVISIONAL, OFF-DISTRIBUTION CORPUS",
+    "coverage_harness_assertions": "20/20"
+  },
+  "unresolved": [
+    {
+      "id": "U-017",
+      "item": "The corpus is governance/engineering dialogue, not ConsciousConversation identity dialogue. External validity to the intended domain is UNESTABLISHED. Recall 0.0 here may say more about the corpus than the detector.",
+      "status": "BLOCKING any conclusion about the detector's real-world usefulness"
+    },
+    {
+      "id": "U-014",
+      "item": "Annotator independence. All numbers PROVISIONAL until a human blind annotator re-labels and agreement is measured.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-018",
+      "item": "Only 5 licensed positives were found in 122 spans. Recall estimated from 5 events is not a rate. More positives are required before any per-rule recall figure means anything.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-019",
+      "item": "Precision is undefined, not good. Zero false activations across 110 NONE spans cannot distinguish a precise detector from an inert one.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-015",
+      "item": "The harness scores single spans; E3D-004 (multi-turn) remains unmeasurable by it.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-016",
+      "item": "MIN_TURNS=100 / MIN_CONVERSATIONS=10 are authority judgement, not a derived statistic.",
+      "status": "OPEN"
+    }
+  ],
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Decide what the zero-fire result means before anything is changed.",
+    "options": [
+      "Accept that this corpus is off-distribution and supply/authorize ConsciousConversation-domain transcripts, where corrections and refusals actually occur.",
+      "Authorize a human blind re-annotation of these 122 spans to test the independence defect.",
+      "Authorize expanding the discovery corpus for more positives (U-018) before any rule change.",
+      "Authorize an ontology question on prohibition directives (7 recurrences, currently unlicensed).",
+      "Decline all of the above and treat E3D-001..006 as adequate for a domain not yet sampled."
+    ],
+    "explicitly_not_requested": "Authority to change detector rules. The correct response to recall 0.0 on an off-distribution corpus is NOT to widen regexes \u2014 that would be tuning against the wrong distribution."
+  }
+}

@@ -1,11 +1,11 @@
 {
   "schema": "interaction-pointer.v0.2",
-  "updated_at": "2026-08-14T00:05:00Z",
+  "updated_at": "2026-08-14T01:20:00Z",
   "session": "MOBILECHALL",
   "latest_inselfaction": {
-    "id": "ISA-20260813-E3-COVERAGE-PROTOCOL-006",
-    "path": "inselfactions/ISA-20260813-E3-COVERAGE-PROTOCOL-006.json",
-    "title": "E3 coverage protocol hardened \u2014 corpus still absent",
+    "id": "ISA-20260814-E3-COVERAGE-BASELINE-007",
+    "path": "inselfactions/ISA-20260814-E3-COVERAGE-BASELINE-007.json",
+    "title": "First real E3 coverage baseline \u2014 detector fired zero times",
     "supersedes": null
   },
   "source": {
@@ -14,7 +14,7 @@
     "visibility": "LOCAL MIRROR \u2014 NOT RECEIVER-RESOLVABLE",
     "path": "/Users/millysituated/RUORA",
     "branch": "main",
-    "commit": "98b5d39945e4474bd045396da4152b0317d9407c",
+    "commit": "dae5fda9c1072afab448b2aaf20bbdca20e16485",
     "artifacts_tracked_in_git": false,
     "review_status": "BLOCKED_SOURCE_UNRESOLVABLE",
     "custody_warning": "The RC-0001 corpus is UNTRACKED \u2014 contained in no commit, on no remote. Artifacts are addressable only by SHA-256 against the local working tree. Clearing this requires founder authorisation to commit the corpus, which every movement in this cascade has expressly withheld.",
@@ -37,19 +37,20 @@
     "reality_compiler": "NOT PROVEN",
     "seal": "NOT GRANTED",
     "implementation": "NOT AUTHORISED",
-    "assertions": 231
+    "assertions": 231,
+    "e3_coverage": "MEASURED \u2014 PROVISIONAL, OFF-DISTRIBUTION CORPUS"
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Supply a real transcript corpus, or authorise derivation from a named source, or select a different frontier"
+    "act_required": "Decide what the zero-fire result means before anything is changed"
   },
   "open_items": [
     {
-      "inselfaction": "ISA-20260813-E3-COVERAGE-PROTOCOL-006",
+      "inselfaction": "ISA-20260814-E3-COVERAGE-BASELINE-007",
       "subject": "E3 coverage measurement",
       "next_authority": "MILASOPHAHR",
-      "act_required": "Supply or authorise a real transcript corpus",
-      "status": "BLOCKED \u2014 no corpus supplied, no derivation authority granted, none fabricated"
+      "act_required": "Interpret the zero-fire baseline; corpus is off-distribution",
+      "status": "MEASURED \u2014 PROVISIONAL"
     },
     {
       "inselfaction": "ISA-20260813-RC0001-CR003-001",
@@ -75,12 +76,14 @@
     "ISA-20260813-RC0001-SPR04-002",
     "ISA-20260813-E3-COVERAGE-OPENED-005",
     "ISA-20260813-RC0001-BLOCKCLASS-003",
-    "ISA-20260813-E3-COVERAGE-PROTOCOL-006"
+    "ISA-20260813-E3-COVERAGE-PROTOCOL-006",
+    "ISA-20260814-E3-COVERAGE-BASELINE-007"
   ],
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission \u2014 it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
   "channel_invariants": [
     "INV-ISX-REVIEW-RESOLVABILITY \u2014 an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: review_status = BLOCKED_SOURCE_UNRESOLVABLE.",
     "INV-E3-CANDIDATE-AUTHENTICITY \u2014 an adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations. Candidate metadata may identify a detection result; it may never prove one occurred.",
-    "INV-E3-COVERAGE-NO-RETROFIT \u2014 an evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation."
+    "INV-E3-COVERAGE-NO-RETROFIT \u2014 an evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation.",
+    "INV-E3-CORPUS-MINIMIZATION \u2014 a coverage corpus may preserve only the content required to determine whether an observable E3 event occurred and whether the detector recognized it; privacy reduction must not alter the event-bearing language."
   ]
 }
