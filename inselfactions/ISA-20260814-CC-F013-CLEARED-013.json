@@ -1,0 +1,110 @@
+{
+  "inselfaction_id": "ISA-20260814-CC-F013-CLEARED-013",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T03:19:56Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260814-CC-F013-BLOCKING-012",
+  "operation": {
+    "title": "F-013 cleared and taken into custody — first contact is no longer blocked",
+    "authority_exercised": "MILASOPHAHR: repair F-013, then commit/custody it. Custody performed; the repair was independently verified before committing.",
+    "not_done": [
+      "F-008 untouched — no quotation policy introduced",
+      "no detector, RULES, ONTOLOGY, harness, kernel, contract or db change",
+      "THE FIRST HUMAN SESSION WAS NOT RUN — it requires a human SELFnode"
+    ]
+  },
+  "headline": {
+    "finding": "F-013 CLEARED",
+    "statement": "Coverage now advances on contexts ASKED (proposed_life_context) rather than contexts PLACED. The failing path yields 5 distinct RECURRENCE questions of 5 asked, where it previously yielded 1 of 5.",
+    "significance": "The blocking objection to first contact is discharged. The remaining objection to first contact is not technical."
+  },
+  "verification": {
+    "method": "Re-ran the reported suite, re-ran the full gate, re-ran the original F-013 reproduction, and then attacked the repair on three axes the report did not cover.",
+    "cc_runtime_pilot": "41/41 — confirmed",
+    "full_gate": "KERNEL GATE OPEN; baseline_integrity 6/6, laws PASS, journey 26/26, schema 30/30, adversarial_p0 18/18, sql PASS, e3 suites 24/24 · 13/13 · 12/12 · 20/20; PILOT-28 no frozen file moved; sealed verdicts VERIFIED / VERIFIED EXTENSION from the sealed trees",
+    "original_reproduction": "unplaced-answer path: 5 distinct RECURRENCE questions of 5 asked (was 1 of 5)",
+    "adversarial_checks": {
+      "policy_memory_must_not_reach_evidence": {
+        "question": "Does asked-context memory change what counts as evidence?",
+        "result": "NO. Standing is the identical verdict before and after the repair on both scenarios: every-answer-unplaced -> DECLARED, counted contexts {THIS_CONVERSATION}, identity_admissible False; one-WORK-placement-rest-unplaced -> CORROBORATED via ADMISSION_RULE_SATISFIED on {THIS_CONVERSATION, WORK}, identity_admissible still False.",
+        "conclusion": "Asked-memory changed which question comes next and nothing about what counts. The separation the repair claims is real."
+      },
+      "exhaustion": {
+        "question": "What happens once every openable context has been asked for a signal?",
+        "result": "No RECURRENCE probe is generated, no other objective is licensed, and the conversation ends on NO_LEGAL_OBJECTIVE.",
+        "conclusion": "Honest termination rather than a loop or an invented probe — the same failure direction the coverage harness uses when it reports NO_CORPUS."
+      },
+      "unseen_questions_must_not_burn_a_context": {
+        "question": "Can a context be marked asked when the node never saw the question?",
+        "result": "NO. PROVOKE_REFUSED records neither signal_id nor proposed_life_context, and asked_contexts() requires both to be present.",
+        "conclusion": "Correct by construction rather than by intent. A question that was never presented cannot consume a life domain."
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "F-015",
+      "severity": "RESIDUAL — not a regression, and not a coverage defect",
+      "title": "Remaining repeated questions are cross-signal, and indistinguishable to the node",
+      "observed": "In a long unplaced run, 10 RECURRENCE probes yielded 8 distinct sentences. The two repeats are FAMILY_OF_ORIGIN and INTIMATE, each asked once for sig_0001 and once for sig_0002.",
+      "assessment": "Semantically correct. Probing a DIFFERENT pattern in the same life domain is a genuinely different question, and asked-memory is correctly scoped per signal.",
+      "the_actual_problem": "The sentence is byte-identical — 'Does that same thing show up in the family you grew up in?' — with nothing indicating WHICH same thing. The node hears the identical question twice and cannot tell that it refers to a different pattern.",
+      "attribution": "This is F-008 surfacing, not a defect in the F-013 repair. No probe names the pattern it is probing, because no probe quotes the node.",
+      "consequence": "F-008 is now the load-bearing open item. It was previously described as a quality gap and a detector-reachability gap; it is now also the reason a correct behaviour reads as a bug."
+    }
+  ],
+  "custody": {
+    "action": "The repair was committed and pushed, attributed to the MILASOPHAHR disposition, satisfying INV-ISX-REVIEW-RESOLVABILITY.",
+    "commit": "e37f77550c63091dce60e00ac156e6a69dce6928",
+    "note": "No behaviour was altered in the act of committing. This is the second consecutive repair delivered uncommitted; custody is being performed on receipt rather than assumed."
+  },
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "feature/cc-runtime-pilot",
+    "source_commit": "e37f77550c63091dce60e00ac156e6a69dce6928",
+    "based_on": "df7ff8923896467ae5e8a9a1367c12e786dea372",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/df7ff89...e37f775",
+    "repo_binding_note": "This hash belongs to the conscious-conversation repository (INV-ISX-SOURCE-BINDING)."
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "kernel_e3_py": "FROZEN",
+    "RULES": "FROZEN",
+    "ONTOLOGY": "FROZEN",
+    "coverage_harness": "UNCHANGED",
+    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED"
+  },
+  "standing_observed_this_session": {
+    "SEALED BASELINE SELF INTEGRITY": "VERIFIED — 25/25 against the sealed tree",
+    "VERIFIED EXTENSION E3": "VERIFIED EXTENSION — 42/42 against the sealed tree",
+    "CURRENT BRANCH REVALIDATION": "HOLD — live PostgreSQL conditions 10-11 not rerun (Colima not running)",
+    "KERNEL GATE": "OPEN",
+    "CC-RUNTIME-PILOT-001": "RUNTIME EXECUTES · 41/41 · CORPUS NOT YET GENERATED",
+    "F-009": "REPAIRED AND VERIFIED",
+    "F-010": "REPAIRED AND VERIFIED",
+    "F-013": "CLEARED AND VERIFIED",
+    "F-008": "OPEN — now load-bearing",
+    "F-014": "OPEN — the fixture places context on every answer, so the proof run still cannot reach the default human path across cycles",
+    "F-006": "OPEN — harness has no cohort awareness; contained by a separate ondist corpus root"
+  },
+  "first_contact_readiness": {
+    "technical_blockers": "NONE REMAINING. The pipeline executes, refuses to run out of order, speaks back through authorized revelation only, lets the node own context placement, and no longer repeats a probe within a signal.",
+    "what_is_not_a_blocker_but_should_be_weighed": [
+      "F-008 — SELF still never quotes the node. A person will hear the same sentence for two different patterns (F-015), and the two most-developed E3 rules remain structurally unprovokable, so any recall measured from this session will be a fact about the probe policy.",
+      "F-014 — the fixture never exercises the default human path across cycles, so what the proof run certifies and what a human will meet are still different paths."
+    ],
+    "the_one_session_argument": "The first session happens once and permanently joins the discovery partition, so it can never later serve as independent validation. Whatever the probe policy is on the day, that is what the first on-distribution corpus records."
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Run the first ConsciousConversation session, or first decide F-008. There is no longer a technical reason to wait; there is a judgement about whether the first and permanently-discovery corpus should be produced by a runtime that never says the node's words back.",
+    "the_command": "python3 runtime/pilot.py --node <SELFNODE_ID>",
+    "reviewer_position": "The refusal stands: this agent cannot be the SELFnode. Answering the probes would stamp fabricated speech HUMAN_SELFNODE and emit it as REAL_TRANSCRIPT."
+  }
+}
