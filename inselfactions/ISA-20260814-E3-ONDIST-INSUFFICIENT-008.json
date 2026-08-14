@@ -1,0 +1,140 @@
+{
+  "inselfaction_id": "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T02:05:00Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260814-E3-COVERAGE-BASELINE-007",
+  "operation": {
+    "title": "On-distribution corpus search \u2014 sample insufficient",
+    "authority_exercised": "Second corpus authorization: domain-semantic selection over authorized transcripts.",
+    "not_done": [
+      "no conversation manufactured",
+      "no detector tuning",
+      "no rule/ontology change",
+      "no validation/holdout use"
+    ]
+  },
+  "headline": {
+    "finding": "ON_DISTRIBUTION_SAMPLE_INSUFFICIENT",
+    "statement": "The ecosystem has not generated ConsciousConversation interactions. Across 311 sessions and 11,988,965 characters of owned user text, ZERO conversations reach 3 of 8 identity-domain marker families. Only 6 reach 2.",
+    "significance": "This is a fact about the corpus, not a result about the detector. No on-distribution coverage matrix exists and none was fabricated."
+  },
+  "method": {
+    "markers": [
+      "self_description",
+      "identity",
+      "pattern",
+      "belief",
+      "relationship",
+      "emotion",
+      "goal",
+      "reflection"
+    ],
+    "contamination_guard": "Disjointness between every marker pattern and every E3D pattern is asserted PROGRAMMATICALLY before scoring. Selecting on correction or refusal phrasing would enrich the corpus for known detector hits and contaminate prevalence.",
+    "robustness": "Re-run with no turn-length filter, no harness-artefact exclusion, and no minimum-turn requirement. The null holds under all of them.",
+    "target": ">=10 qualifying conversations / >=100 node turns, treated as a sampling target, not a validity threshold.",
+    "actual": {
+      ">=5 families": 0,
+      ">=4": 0,
+      ">=3": 0,
+      ">=2": 6,
+      "best_candidate": "2 families / 5 total hits"
+    }
+  },
+  "cohorts": {
+    "law": "Two cohorts answer DIFFERENT questions. Their metrics are never combined.",
+    "OFF_DISTRIBUTION_GOVERNANCE_CONTROL": {
+      "question": "Does E3 remain quiet where its event classes are absent?",
+      "spans": 122,
+      "conversations": 16,
+      "preserved": true,
+      "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80",
+      "digest_preserved_how": "Cohort membership was written to a SEPARATE corpus/cohorts.json rather than added as a field, so the annotated corpus stays byte-identical and the freeze survives.",
+      "control_caveat": "NOT a clean negative control. Annotation found 5 licensed events inside it (E3D-002 x1, E3D-006 x4), all missed. The quiet-where-absent property is established for its 110 NONE spans ONLY, not for the corpus as a whole."
+    },
+    "ON_DISTRIBUTION": {
+      "question": "Can E3 see witnessed behaviour where ConsciousConversation operates?",
+      "spans": 0,
+      "status": "ON_DISTRIBUTION_SAMPLE_INSUFFICIENT",
+      "answerable": false
+    }
+  },
+  "what_this_does_and_does_not_tell_us": {
+    "established": "E3D-001..006 did not false-fire across 110 spans annotated NONE in governance dialogue.",
+    "not_established": [
+      "Whether E3 can see anything in its intended domain. Unanswerable without on-distribution material.",
+      "Whether recall 0/5 in the control cohort indicates detector narrowness or domain mismatch. Both remain live.",
+      "Precision. Still undefined \u2014 the detector produced no positive to be wrong about."
+    ]
+  },
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "analysis/e3-real-transcript-coverage",
+    "source_commit": "7c88a2bb078af6203a2ca65105cef7a024de8746",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/dae5fda...7c88a2b"
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "kernel_e3_py": "FROZEN",
+    "RULES": "FROZEN",
+    "ONTOLOGY": "FROZEN",
+    "verified": "byte-identical to the verified tag throughout"
+  },
+  "standing": {
+    "kernel_gate": "OPEN",
+    "self_integrity": "VERIFIED",
+    "e3_extension": "VERIFIED EXTENSION",
+    "e3_coverage_off_distribution": "MEASURED \u2014 PROVISIONAL",
+    "e3_coverage_on_distribution": "ON_DISTRIBUTION_SAMPLE_INSUFFICIENT"
+  },
+  "unresolved": [
+    {
+      "id": "U-020",
+      "item": "No ConsciousConversation interactions exist to measure against. The runtime has never been run against a SELFnode in its intended mode.",
+      "status": "BLOCKING on-distribution coverage"
+    },
+    {
+      "id": "U-017",
+      "item": "External validity of the governance cohort to the intended domain: UNESTABLISHED.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-014",
+      "item": "Annotator independence. All labels PROVISIONAL until a human blind annotator re-labels.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-018",
+      "item": "5 licensed positives is not a rate. No per-rule recall figure is meaningful yet.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-019",
+      "item": "Precision undefined, not good.",
+      "status": "OPEN"
+    },
+    {
+      "id": "U-015",
+      "item": "Harness scores single spans; E3D-004 remains unmeasurable.",
+      "status": "OPEN"
+    }
+  ],
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Decide how ConsciousConversation interactions come to exist, since none do.",
+    "the_actual_question": "This is no longer a measurement problem. The instrument is built, verified, and frozen, and there is nothing in its domain to point it at. The next move is generative, not analytical.",
+    "options": [
+      "Run ConsciousConversation against a real SELFnode and accumulate genuine interactions \u2014 the runtime executes headlessly today.",
+      "Authorize import of identity-domain conversations from a source outside the Claude transcript store, if one exists and is legitimately accessible.",
+      "Accept that the detector cannot be validated yet and freeze the coverage phase until interactions exist.",
+      "Reconsider whether E3D-001..006, derived from imagined conversation, are the right classes at all \u2014 that question is now open and cannot be settled by data."
+    ],
+    "explicitly_not_requested": "Detector tuning authority. Recall 0/5 on an off-distribution corpus is not evidence that the regexes are too narrow."
+  }
+}
