@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T04:39:52Z",
-  "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
-  "session": "HBCAGENT",
+  "updated_at": "2026-08-14T21:37:08Z",
+  "updated_at_note": "True wall clock, observed via `date -u` in session ESMBG. Later than every prior stamp in this channel, including the two written ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z). Chain order remains `history`, never a timestamp comparison. No archive is edited to reconcile clocks.",
+  "session": "ESMBG",
   "latest_inselfaction": {
-    "id": "ISA-20260814-CC-FIRSTCONTACT-READY-015",
-    "path": "inselfactions/ISA-20260814-CC-FIRSTCONTACT-READY-015.json",
-    "title": "F-018 repaired, custody taken — first contact source commit pinned",
+    "id": "ISA-20260814-CC-WORKFLOW-CUSTODY-016",
+    "path": "inselfactions/ISA-20260814-CC-WORKFLOW-CUSTODY-016.json",
+    "title": "WORKFLOW CC-FIRSTCONTACT-TO-LAUNCH-001 in custody; first-contact pin independently re-verified",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -69,8 +69,10 @@
     "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 50/50 · CORPUS NOT YET GENERATED",
     "kernel_gate": "OPEN",
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
-    "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
-    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED",
+    "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73 — RE-VERIFIED by recomputation 2026-08-14T21:37Z (ISA-016)",
+    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED · RE-VERIFIED by recomputation over 122 spans 2026-08-14T21:37Z (ISA-016)",
+    "cc_launch_workflow": "CC-FIRSTCONTACT-TO-LAUNCH-001 · IN CUSTODY (ISA-016) · runway CC-FIRST-CONTACT-001 → CC-DISCOVERY-CORPUS-001 → CC-ONDIST-COVERAGE-001 → CC-RUNTIME-VALIDATION-001 → CC-LIMITED-LAUNCH-001 → CC-GENERAL-LAUNCH-001 · currently at CC-FIRST-CONTACT-001",
+    "frozen_tags": "UNMOVED — self-integrity-verified-v0.1 -> 1f246be, e3-extension-verified-v0.1 -> 94c2f75; both re-derived by dereferencing the annotated tag objects 2026-08-14T21:37Z (ISA-016)",
     "semanticprogram": "v0.5 · CHANGES_REQUIRED — NOT RATIFIABLE",
     "candidate_sha256": "4612455287015d81812f50aff98b5d3e12f1e9d10ca71add0350ecd9e50c8f98",
     "cold_review_003": "CHANGES_REQUIRED — DISCHARGED by SP-R04",
@@ -90,7 +92,7 @@
     "cc_felt_architecture": "F-008 CLOSED (verbatim referential anchor; 8 frozen specimens) · F-009 · F-010 · F-013 · F-015 · F-016 all closed · F-017 observation by construction · F-006 and F-014 open",
     "cold_review_005": "CHANGES_REQUIRED · artifact 5369d4152647083f9cdc9cb884f14475ff0bb9b60ff33b8f5ecaeaf5d7be384b · 3 BLOCKING · 10 MATERIAL · 4 MINOR · 6/15",
     "capability_vocabulary": "NONE INVENTED · RCP §5.3 NOT INSTALLED · R-04 record schema RESERVED (docket A-10)",
-    "first_contact": "AUTHORIZED AND SOURCE-PINNED at cd05bd2, worktree clean. Awaiting MILASOPHAHR at a TTY — the reviewer's shell has none, and running it there would write a zero-turn HUMAN_SELFNODE transcript.",
+    "first_contact": "AUTHORIZED AND SOURCE-PINNED at cd05bd2, worktree clean — RE-VERIFIED against live machine state 2026-08-14T21:37Z (ISA-016). STILL NOT PERFORMED: runtime/transcripts/ does not exist, so no session has ever been frozen. Awaiting MILASOPHAHR at a TTY — the reviewing shells have none, and running it there would write a zero-turn HUMAN_SELFNODE transcript.",
     "cr5_b01": "BLOCKING — SP-168 invokes 19 of 111 clauses; ~92 requirements permanently unfailable; naming authority returns by omission",
     "cr5_b02": "BLOCKING — clause identity under-distinguishes; INV-RC-KERNEL-4 forbids over-distinction and is silent on under-distinction, so SP-170 is a non sequitur",
     "cr5_b03": "BLOCKING — the T(A) self-reference hazard affects SIX of eleven docket items, not A-09 alone; proved by v0.5 own metadata columns. Corrupts the founder decision surface",
@@ -108,7 +110,7 @@
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Adjudicate HBC local commit authority discrepancy; separately authorize or decline remote creation/publication; resume SELF TRAIL --institution as its own gate. RC-0001 CR005 remains separately pending in open_items."
+    "act_required": "FIRST: run first contact — python3 runtime/pilot.py --node MILASOPHAHR at a TTY, from cd05bd2, then hand back the transcript path. It is the only act no agent can perform and the whole CC runway is blocked behind it. Separately and independently: adjudicate the HBC local commit authority discrepancy; authorize or decline remote creation/publication; resume SELF TRAIL --institution as its own gate. RC-0001 CR005 remains separately pending in open_items."
   },
   "open_items": [
     {
@@ -126,11 +128,13 @@
       "status": "TECHNICAL PASS · LOCAL_COMMIT REALIZED · COMMIT_AUTHORITY RECONCILIATION REQUIRED · REMOTE ABSENT · PUSH NOT AUTHORIZED"
     },
     {
-      "inselfaction": "ISA-20260814-CC-FIRSTCONTACT-READY-015",
-      "subject": "First contact",
+      "inselfaction": "ISA-20260814-CC-WORKFLOW-CUSTODY-016",
+      "subject": "First contact — CC-FIRST-CONTACT-001, under WORKFLOW CC-FIRSTCONTACT-TO-LAUNCH-001",
       "next_authority": "MILASOPHAHR",
-      "act_required": "python3 runtime/pilot.py --node MILASOPHAHR in a terminal with a TTY, from source commit cd05bd2. Then hand back the transcript path.",
-      "status": "AUTHORIZED — source-pinned, worktree clean, awaiting the SELFnode"
+      "act_required": "cd ~/RUORA/projects/conscious-conversation && python3 runtime/pilot.py --node MILASOPHAHR — in a terminal with a TTY, from source commit cd05bd2. Then hand back the transcript path.",
+      "status": "AUTHORIZED — source-pinned, worktree clean, frozen surfaces re-verified by recomputation, corpus still empty, awaiting the SELFnode",
+      "carries_forward": "ISA-20260814-CC-FIRSTCONTACT-READY-015 — the same single pending act, not a second one. The readiness archive stands unedited; this entry supersedes it in the pointer only, so open_items does not list first contact twice.",
+      "custody_resumes_at": "Workflow step 2 TRANSCRIPT CUSTODY — verify responder_kind, source commit and digest, preserve raw provenance, emit the privacy-safe discovery artifact. Annotation and shadow come strictly later."
     },
     {
       "inselfaction": "ISA-20260814-CC-F008-CLOSED-014",
@@ -247,7 +251,8 @@
     "ISA-20260814-CC-F008-CLOSED-014",
     "ISA-20260814-HBC-TRANSIT-RECONCILIATION-015",
     "ISA-20260814-RC0001-CAPTOPO01-007",
-    "ISA-20260814-CC-FIRSTCONTACT-READY-015"
+    "ISA-20260814-CC-FIRSTCONTACT-READY-015",
+    "ISA-20260814-CC-WORKFLOW-CUSTODY-016"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",

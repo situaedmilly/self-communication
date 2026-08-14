@@ -1,0 +1,157 @@
+{
+  "inselfaction_id": "ISA-20260814-CC-WORKFLOW-CUSTODY-016",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T21:37:08Z",
+  "emitted_at_note": "True wall clock, observed via `date -u`. Later than ISA-015's 04:39:52Z. Chain order remains the pointer `history` array, never a timestamp comparison.",
+  "session": "ESMBG",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260814-CC-FIRSTCONTACT-READY-015",
+  "operation": {
+    "title": "WORKFLOW CC-FIRSTCONTACT-TO-LAUNCH-001 taken into custody; first-contact pin independently re-verified",
+    "authority_exercised": "MILASOPHAHR issued a standing operating command covering the whole runway from FIRST CONTACT to GENERAL LAUNCH, and directed that it be given to ClaudeSELF as the new operating command.",
+    "what_this_session_was_asked_to_do": "Accept the workflow, not execute the pilot. Step 1 of the workflow is explicitly a WAIT on MILASOPHAHR.",
+    "what_this_session_did": "Re-derived the source pin from machine state rather than inheriting it from ISA-015, re-verified the frozen surfaces by recomputing their digests, confirmed the FIRST CONTACT command starts, confirmed the corpus is still empty, and stopped at the workflow's own stop condition.",
+    "why_re_verification_rather_than_inheritance": "ISA-015 asserted the pin at 04:39:52Z. This session runs ~17 hours later. A pin is a claim about present machine state, and the channel's discipline is that a digest no command printed in THIS session is an assertion, not evidence. Nothing was assumed to have held."
+  },
+  "headline": {
+    "finding": "WORKFLOW IN CUSTODY · FIRST CONTACT STILL AUTHORIZED, STILL NOT PERFORMED",
+    "source_commit": "cd05bd2b1dfa8210989bed3176428c4779328ea2",
+    "worktree": "CLEAN — git status --porcelain empty",
+    "corpus": "EMPTY — runtime/transcripts/ does not exist on disk",
+    "statement": "Nothing has changed in the chamber since ISA-015. The runway is longer and named, but the next act is unchanged and is not mine."
+  },
+  "workflow_received": {
+    "id": "CC-FIRSTCONTACT-TO-LAUNCH-001",
+    "authority": "MILASOPHAHR",
+    "doctrine": "DO NOT build → assume → launch. DO build → FIRST CONTACT → OBSERVE → PROVE → REVALIDATE → LAUNCH.",
+    "relationship_to_prior_order": "It does not contradict the seven-step order recorded in ISA-015 as `the_order_that_still_binds`. It CONTAINS that order as steps 1-5 and extends it through repair discipline, corpus accumulation, a validation gate, current-branch revalidation, merge/tag, limited launch, and a general launch gate.",
+    "milestone_runway": [
+      "CC-FIRST-CONTACT-001      <- CURRENT · READY · next actor MILASOPHAHR",
+      "CC-DISCOVERY-CORPUS-001",
+      "CC-ONDIST-COVERAGE-001",
+      "CC-RUNTIME-VALIDATION-001",
+      "CC-LIMITED-LAUNCH-001",
+      "CC-GENERAL-LAUNCH-001"
+    ],
+    "invariants_accepted": [
+      "Human provenance cannot be synthesized by an agent.",
+      "Detection proposes; adjudication confers.",
+      "Revelation cannot exceed evidence standing.",
+      "Quotes must remain verbatim and source-bound.",
+      "Asked-context memory does not count as evidence.",
+      "Corpus privacy reduction cannot alter event-bearing language.",
+      "Discovery examples cannot validate their own repairs.",
+      "Mutable INSELFACTION pointers never replace immutable archive/source evidence.",
+      "A green suite cannot upgrade an unavailable mandatory proof to PASS.",
+      "No source commit may be invented or inferred."
+    ]
+  },
+  "observed_this_session": {
+    "method": "Every value below was printed by a command run in this session against the live working tree. Nothing here is copied forward from ISA-015.",
+    "repo_toplevel": "/Users/millysituated/RUORA/projects/conscious-conversation",
+    "branch": "feature/cc-runtime-pilot",
+    "head": "cd05bd2b1dfa8210989bed3176428c4779328ea2",
+    "head_subject": "fix(runtime): reprompt invalid context placement",
+    "head_author_date": "2026-08-14 00:39:39 -0400",
+    "worktree_status": "CLEAN — `git status --porcelain` produced no output",
+    "remote_sync": "origin/feature/cc-runtime-pilot == cd05bd2 — pushed and receiver-resolvable",
+    "remote": "git@github.com:situaedmilly/conscious-conversation.git",
+    "frozen_tags_unmoved": {
+      "self-integrity-verified-v0.1": "annotated tag 0cbef8614ebeb4f4091154ab8ed3fbb071171efd -> commit 1f246be2b1c4b99bb0d15c16d46da14fbc860694",
+      "e3-extension-verified-v0.1": "annotated tag 9b359a52f700f643c322ea61da202c14a142789a -> commit 94c2f75f8ce5cce76221463f3d7d958dfc477e45",
+      "agreement": "Both dereference EXACTLY to the commits ISA-015 and the v0.3 pointer record. Neither frozen tag has moved."
+    },
+    "detector_digest_recomputed": {
+      "value": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+      "method": "shasum -a 256 kernel/e3.py, compared against DETECTOR_DIGEST_AT_TAG restated in runtime/shadow.py",
+      "verdict": "MATCH — e3detector.v0.1 bytes unchanged"
+    },
+    "frozen_label_digest_recomputed": {
+      "value": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80",
+      "method": "shasum -a 256 coverage/corpus/discovery/spans.annotated.jsonl, compared against coverage/annotations/FROZEN.md",
+      "span_count": "122 lines — matches the 122 SPANS declared in FROZEN.md",
+      "verdict": "MATCH — discovery labels preserved"
+    },
+    "frozen_surfaces_match_pin": "`git diff --stat HEAD -- kernel coverage/annotations coverage/corpus` produced no output. The frozen surfaces on disk are byte-identical to the pinned commit.",
+    "corpus_state": "runtime/transcripts/ DOES NOT EXIST. ISA-015's housekeeping claim ('cleared of scripted fixture output, so the next file written there is unambiguously first contact') holds. Transcript.write() calls mkdir(parents=True), so the directory's absence is expected and not a defect.",
+    "ondist_root_state": "coverage/corpus/ondist/ DOES NOT EXIST — the F-006 containment root is created on first corpus emission by runtime/annotate.py. Consistent with a zero-size on-distribution corpus.",
+    "first_contact_command_starts": {
+      "checked": "python3 runtime/pilot.py --help",
+      "why_help_and_not_a_session": "--help exercises every import on the session path (runtime.session, runtime.transcript, kernel.laws) and exits before any responder is constructed. It proves the command will START without opening a conversation, writing a transcript, or touching the corpus.",
+      "python": "Python 3.14.6 (Clang 21.0.0)",
+      "result": "Imports resolve; usage printed; no session opened; no file written."
+    },
+    "shadow_separation_is_structural_at_the_pin": "runtime/pilot.py imports neither kernel.e3 nor runtime.shadow. Read directly at the pinned bytes, not inferred from the prior handoff. INV-CC-PILOT-SHADOW-INERT holds by construction, and runtime/proof/test_runtime_pilot.py asserts 'kernel.e3' never enters sys.modules during a subprocess session.",
+    "delta_from_based_on": "54f1f83..cd05bd2 is exactly 1 commit — the F-018 reprompt repair. Verified by git rev-list --count."
+  },
+  "inherited_not_reobserved": {
+    "why_this_block_exists": "The workflow forbids a green suite upgrading an unavailable proof to PASS. These values are recorded in ISA-015 and the v0.3 pointer. This session did NOT rerun them and does not restate them as its own observations.",
+    "cc_runtime_pilot_suite": "50/50 — per ISA-015, NOT rerun here",
+    "full_kernel_gate": "KERNEL GATE OPEN, with the suite counts recorded in ISA-015 — NOT rerun here",
+    "sealed_baseline_self_integrity": "VERIFIED 25/25 at self-integrity-verified-v0.1 — a property of the sealed tree, per INV-SEALED-VS-BRANCH. NOT rerun here.",
+    "sealed_e3_extension": "VERIFIED EXTENSION 42/42 at e3-extension-verified-v0.1 — NOT rerun here",
+    "current_branch_revalidation": "HOLD — live PostgreSQL conditions 10-11 not rerun. This session did not start Colima and did not attempt them. The HOLD is unchanged, and remains workflow step 9's obligation before any launch disposition.",
+    "reason_no_suites_were_run": "Running the gate was not the act requested, and a passing gate would not change the disposition: the blocker is the absence of a human at a TTY, which no test can discharge."
+  },
+  "standing_refusal_reaffirmed": {
+    "cannot_be_the_selfnode": "Independent of environment. Supplying answers to the probes would stamp fabricated speech HUMAN_SELFNODE and emit it as REAL_TRANSCRIPT, violating the workflow's first invariant.",
+    "no_tty_in_this_session": "runtime/session.py HumanResponder reads via input() and catches EOFError, returning an empty string. In a non-interactive shell the first probe would take EMPTY_RESPONSE, the session would end, and the runtime would FREEZE AND WRITE a zero-turn transcript stamped HUMAN_SELFNODE. First contact would be burned on an empty artifact carrying REAL_TRANSCRIPT provenance. This is the same mechanical reason ISA-015 recorded, re-derived from the source in this session rather than inherited.",
+    "consequence": "The pilot was NOT run in any form. No transcript exists. No corpus was emitted. No detector was run."
+  },
+  "register_observations": {
+    "class": "NON-BLOCKING · RECORD HYGIENE · no artifact edited",
+    "sequence_collision": "ISA-20260814-CC-FIRSTCONTACT-READY-015 and ISA-20260814-HBC-TRANSIT-RECONCILIATION-015 share sequence 015 on the same date. Sequence appears to be per-stream (the CC stream runs 009-015; RC0001 runs 004-007; REALRAP01 runs 001-002), so cross-stream reuse is by construction, and full ids remain unique. Flagged as ambiguity, not corruption. This archive continues the CC stream at 016.",
+    "based_on_tag_reads_ambiguously": "ISA-015's source block pairs `based_on: 54f1f83...` with `based_on_tag: e3-extension-verified-v0.1`. That tag does not point at 54f1f83; it points at 94c2f75. Verified lineage: 94c2f75 (tag) is an ancestor of 54f1f83 (based_on), which is the parent of cd05bd2. So `based_on_tag` names the LINEAGE tag, not the based_on commit. The archive is immutable and is not edited; this successor records the precise relation so no reader infers that 54f1f83 is the sealed extension commit.",
+    "annotated_tag_read_hazard": "`git for-each-ref --format=%(objectname) refs/tags` returns the TAG OBJECT sha for an annotated tag, not the commit. Read naively it makes both frozen tags look moved. %(*objectname) or `<tag>^{commit}` is required. Recorded because a false 'the seals moved' finding is exactly the kind of alarm this channel must not raise."
+  },
+  "open_findings_carried_forward": {
+    "F-006": "OPEN — coverage/harness.py has no cohort awareness. Contained by a separate ondist corpus root, which does not yet exist on disk. Containment is by layout, not repair.",
+    "F-014": "OPEN — the scripted fixture places context on every answer. Confirmed at the pinned source this session: pilot.py SCRIPT_CONTEXTS supplies an explicit LifeContext for all six scripted answers, so ScriptedResponder never returns None from place_context and the Enter -> THIS_CONVERSATION / NEUTRAL_FALLBACK branch is never exercised headlessly. Consequence for the runway: FIRST CONTACT is the first execution of the default-placement path in a real session.",
+    "F-017": "OBSERVATION — correction-as-pattern remains by construction. The workflow directs that it be observed in real material before any redesign. Recorded so it is not mistaken for a defect to repair pre-contact."
+  },
+  "the_order_that_still_binds": [
+    "1. REAL SESSION            python3 runtime/pilot.py --node MILASOPHAHR   (TTY REQUIRED)",
+    "2. FREEZE TRANSCRIPT       automatic on session end",
+    "3. CORPUS EMISSION         python3 runtime/emit_corpus.py <transcript>",
+    "4. BLIND ANNOTATION        python3 runtime/annotate.py",
+    "5. FREEZE LABELS           automatic on annotation completion",
+    "6. SHADOW E3               python3 runtime/shadow.py — REFUSES until step 5",
+    "7. FIRST ON-DISTRIBUTION FINDING"
+  ],
+  "shadow_will_not_be_run": "Confirmed again, and this session read the interlock rather than trusting it: runtime/shadow.py refuses a transcript whose responder_kind is not HUMAN_SELFNODE and asserts the detector digest before evaluating; runtime/annotate.py refuses a conversation that already carries detector output. No detector output was produced or read in this session.",
+  "sources": {
+    "conscious_conversation": {
+      "repository": "conscious-conversation",
+      "source_remote": "situaedmilly/conscious-conversation",
+      "visibility": "PRIVATE — receiver-resolvable to an authorized receiver",
+      "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
+      "branch": "feature/cc-runtime-pilot",
+      "commit": "cd05bd2b1dfa8210989bed3176428c4779328ea2",
+      "commit_verified": "Observed as HEAD in this session; equal to origin/feature/cc-runtime-pilot.",
+      "based_on": "54f1f8353d5506ffecf9a9e16e8d588dedd2f6ff",
+      "lineage_tag": "e3-extension-verified-v0.1 -> 94c2f75f8ce5cce76221463f3d7d958dfc477e45, an ancestor of based_on",
+      "merged_to_main": false,
+      "worktree_clean": true,
+      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/54f1f83...cd05bd2",
+      "repo_binding_note": "This hash belongs to the conscious-conversation repository (INV-ISX-SOURCE-BINDING). RUORA is many repositories; the same hash is not resolvable in the RUORA doctrine repo."
+    }
+  },
+  "transport": {
+    "review_status": "REVIEWABLE",
+    "note": "The reviewed source is pushed to a private remote and resolvable by an authorized receiver. Per the workflow's COMMUNICATION clause, MILASOPHAHR is not required to relay terminal output for anything above; every value is re-derivable from the pinned commit."
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "cd ~/RUORA/projects/conscious-conversation && python3 runtime/pilot.py --node MILASOPHAHR — in a terminal with a TTY. Then hand back the transcript path.",
+    "stop_condition_invoked": "WORKFLOW CC-FIRSTCONTACT-TO-LAUNCH-001 STOP CONDITIONS: 'human input is required'. Authority returns to MILASOPHAHR undischarged.",
+    "in_session_guidance_recorded": "Answer naturally. Do not help SELF pass its tests. If the wording irritates you, say so. If the context is wrong, replace it. If SELF's revelation is false, reject it. If a question deserves no, say no in your own language. Do not manufacture E3 events — silence from E3 is legitimate evidence.",
+    "input_semantics_at_first_contact": {
+      "at_a_question_prompt": "Enter with no answer ends the cycle (EMPTY_RESPONSE) and the conversation.",
+      "at_a_context_prompt": "yes/y/confirm takes the proposal; a context name in any case is explicit; Enter is explicit neutral (THIS_CONVERSATION, NEUTRAL_FALLBACK); anything else RE-PROMPTS.",
+      "the_remaining_asymmetry": "Enter means 'end' at a question and 'neutral' at a context prompt — one turn apart. Accepted for first contact because it is explicit and documented, not silent corruption.",
+      "F_017_reminder": "If you answer a probe with a correction, the runtime may track that correction as the pattern and quote it back. Do not accommodate it; correct SELF again. The behaviour is declared, and first contact is where it becomes observable."
+    },
+    "what_happens_after_you_hand_back_the_path": "Custody resumes at workflow step 2 (TRANSCRIPT CUSTODY): verify responder_kind == HUMAN_SELFNODE, verify the source commit, verify the digest, preserve the raw transcript as restricted provenance, and emit the privacy-safe discovery artifact — before any annotation and long before any detector run."
+  }
+}
