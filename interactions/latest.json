@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T05:30:00Z",
+  "updated_at": "2026-08-14T03:38:22Z",
   "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
   "session": "CONVORUNTIME",
   "latest_inselfaction": {
-    "id": "ISA-20260814-RC0001-CR005-006",
-    "path": "inselfactions/ISA-20260814-RC0001-CR005-006.json",
-    "title": "Cold Review 005 — CHANGES_REQUIRED; CR4-01 NOT_CLOSED; 3 BLOCKING including a docket-classification hazard across six items",
+    "id": "ISA-20260814-CC-F008-CLOSED-014",
+    "path": "inselfactions/ISA-20260814-CC-F008-CLOSED-014.json",
+    "title": "F-008 closed — the pre-contact bridge is complete",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -33,14 +33,14 @@
       "visibility": "PRIVATE — receiver-resolvable to an authorized receiver",
       "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
       "branch": "feature/cc-runtime-pilot",
-      "commit": "e37f77550c63091dce60e00ac156e6a69dce6928",
+      "commit": "54f1f8353d5506ffecf9a9e16e8d588dedd2f6ff",
       "commit_verified": "Present in conscious-conversation and pushed to origin.",
-      "based_on": "df7ff8923896467ae5e8a9a1367c12e786dea372",
+      "based_on": "e37f77550c63091dce60e00ac156e6a69dce6928",
       "based_on_tag": "e3-extension-verified-v0.1",
       "merged_to_main": false,
       "artifacts_tracked_in_git": true,
       "review_status": "REVIEWABLE",
-      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/df7ff89...e37f775"
+      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/e37f775...54f1f83"
     }
   },
   "transport": {
@@ -53,7 +53,7 @@
     "blocks": "EXTERNAL review only — the one rung of the independence ladder this cascade has never reached."
   },
   "standing": {
-    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 41/41 · CORPUS NOT YET GENERATED",
+    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 49/49 · CORPUS NOT YET GENERATED",
     "kernel_gate": "OPEN",
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
     "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
@@ -74,10 +74,10 @@
     "sealed_baseline_self_integrity": "VERIFIED — derived from the SEALED TREE, 25/25 at self-integrity-verified-v0.1 (1f246be)",
     "sealed_e3_extension": "VERIFIED EXTENSION — derived from the SEALED TREE, 42/42 at e3-extension-verified-v0.1 (94c2f75)",
     "current_branch_revalidation": "HOLD — live PostgreSQL conditions 10-11 not rerun (Colima not running)",
-    "cc_felt_architecture": "F-009 REPAIRED · F-010 REPAIRED · F-013 CLEARED (coverage advances on contexts ASKED; policy memory verified not to reach evidence) · F-008 OPEN AND NOW LOAD-BEARING · F-014 OPEN · F-006 OPEN",
+    "cc_felt_architecture": "F-008 CLOSED (verbatim referential anchor; 8 frozen specimens) · F-009 · F-010 · F-013 · F-015 · F-016 all closed · F-017 observation by construction · F-006 and F-014 open",
     "cold_review_005": "CHANGES_REQUIRED · artifact 5369d4152647083f9cdc9cb884f14475ff0bb9b60ff33b8f5ecaeaf5d7be384b · 3 BLOCKING · 10 MATERIAL · 4 MINOR · 6/15",
     "capability_vocabulary": "NONE INVENTED · RCP §5.3 NOT INSTALLED · R-04 record schema RESERVED (docket A-10)",
-    "first_contact": "NO TECHNICAL BLOCKERS REMAINING — the remaining question is a judgement about F-008",
+    "first_contact": "PRE-CONTACT BRIDGE COMPLETE — engineering stopped as instructed",
     "cr5_b01": "BLOCKING — SP-168 invokes 19 of 111 clauses; ~92 requirements permanently unfailable; naming authority returns by omission",
     "cr5_b02": "BLOCKING — clause identity under-distinguishes; INV-RC-KERNEL-4 forbids over-distinction and is silent on under-distinction, so SP-170 is a non sequitur",
     "cr5_b03": "BLOCKING — the T(A) self-reference hazard affects SIX of eleven docket items, not A-09 alone; proved by v0.5 own metadata columns. Corrupts the founder decision surface",
@@ -92,6 +92,13 @@
   },
   "open_items": [
     {
+      "inselfaction": "ISA-20260814-CC-F008-CLOSED-014",
+      "subject": "First contact",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "python3 runtime/pilot.py --node <SELFNODE_ID>. The next evidence must come from MILASOPHAHR-as-SELFnode, not another fixture.",
+      "status": "READY — no blocker remains; engineering stopped"
+    },
+    {
       "inselfaction": "ISA-20260814-RC0001-CR005-006",
       "subject": "RC-0001 SemanticProgram v0.5 — Cold Review 005 outcome",
       "next_authority": "MILASOPHAHR",
@@ -99,11 +106,11 @@
       "status": "CHANGES_REQUIRED — 3 BLOCKING · CR4-01 NOT_CLOSED · CR3-B01 remains closed"
     },
     {
-      "inselfaction": "ISA-20260814-CC-F013-CLEARED-013",
+      "inselfaction": "ISA-20260814-CC-F008-CLOSED-014",
       "subject": "F-008 — no probe quotes the node (now load-bearing)",
       "next_authority": "MILASOPHAHR",
-      "act_required": "Decide before or after first contact. Three consequences now: the two most-developed E3 rules stay structurally unprovokable; a person hears the identical sentence for two different patterns (F-015); and the first corpus joins discovery permanently, so whatever the policy is that day is what it records.",
-      "status": "OPEN — the only remaining argument against running the first session"
+      "act_required": "none — CLOSED. Every signal-targeting probe names the statement it means in the node's exact words. Four boundaries enforced by eight frozen specimens. F-015 closed at the same seam.",
+      "status": "CLOSED by ISA-20260814-CC-F008-CLOSED-014"
     },
     {
       "inselfaction": "ISA-20260814-CC-F013-CLEARED-013",
@@ -202,7 +209,8 @@
     "ISA-20260814-RC0001-SPR05-005",
     "ISA-20260814-CC-F013-BLOCKING-012",
     "ISA-20260814-CC-F013-CLEARED-013",
-    "ISA-20260814-RC0001-CR005-006"
+    "ISA-20260814-RC0001-CR005-006",
+    "ISA-20260814-CC-F008-CLOSED-014"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
@@ -217,6 +225,7 @@
     "INV-CC-PILOT-SHADOW-INERT — the module naming the detector is unreachable from the session; a live session process never loads kernel.e3 at all.",
     "INV-CC-PILOT-TRANSCRIPT-BINDING — a downstream artifact must carry its transcript's digest, and that digest must still verify against the transcript's own bytes.",
     "INV-CC-PILOT-ANNOTATION-DEFERRED — the pilot may emit spans. It may not label them, partition them, or admit them to a cohort.",
-    "INV-SEALED-VS-BRANCH — a sealed verdict is a property of tagged history, derived from the sealed tree; branch revalidation is a property of one branch on one machine. Reporting them under one label lets an environment outage read as a loss of integrity."
+    "INV-SEALED-VS-BRANCH — a sealed verdict is a property of tagged history, derived from the sealed tree; branch revalidation is a property of one branch on one machine. Reporting them under one label lets an environment outage read as a loss of integrity.",
+    "INV-CC-QUOTE-ANCHOR — a quote is the byte-exact persisted verbatim of an ACTIVE episode supporting the TARGET signal; it confers no standing; and where no quote exists SELF emits a labelled reference rather than inventing one. QUOTE, REVELATION and PROBE never blur into one sentence."
   ]
 }

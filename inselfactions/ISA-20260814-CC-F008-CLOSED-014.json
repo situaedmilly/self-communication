@@ -1,0 +1,118 @@
+{
+  "inselfaction_id": "ISA-20260814-CC-F008-CLOSED-014",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T03:38:22Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260814-CC-F013-CLEARED-013",
+  "operation": {
+    "title": "F-008 closed — the quote is a referential anchor. The pre-contact bridge is complete.",
+    "authority_exercised": "MILASOPHAHR: close F-008 before first contact; four boundaries; keep QUOTE, REVELATION and PROBE separate; freeze six adversarial specimens; rerun --scripted against one referential criterion; do not tune eloquence.",
+    "not_done": [
+      "eloquence NOT tuned — the criterion was referential, not aesthetic",
+      "no detector, RULES, ONTOLOGY, harness, kernel, contract or db change",
+      "THE FIRST HUMAN SESSION WAS NOT RUN — it requires a human SELFnode"
+    ]
+  },
+  "headline": {
+    "finding": "F-008 CLOSED",
+    "statement": "Every probe targeting an existing signal now names, in the node's exact words, which statement it means. Two signals probed in the same life context produce distinct questions, closing F-015 at the same seam.",
+    "criterion_met": "Can I always tell which of my own statements SELF is talking about? Yes — asserted as F008-08 over generated probes, and read end to end in a scripted run."
+  },
+  "the_separation": {
+    "law": "QUOTE = what the node actually said. REVELATION = what SELF is authorized to say the evidence implies. PROBE = what SELF asks next.",
+    "why_it_matters": "Blurring them yields 'You said you always take control...' when the node said 'I ended up running the meeting' — manufacturing the very correction E3 would later congratulate itself for detecting.",
+    "how_it_is_enforced": "The quote is interpolated verbatim and never paraphrased, so that sentence is not constructible. The revelation remains a separate transcript turn emitted only through check_revelation(), which renders life_context_count rather than context_count."
+  },
+  "boundaries": {
+    "1_verbatim_only": "Quote is the byte-exact verbatim of the episode it names. No truncation, no ellipsis, no case or punctuation repair. Specimen F008-02.",
+    "2_provenance_belongs_to_target": "The anchor is drawn from graph.supports(signal_id), so borrowing a memorable sentence from another signal is not expressible. Specimen F008-01.",
+    "3_confers_zero_standing": "Generating probes and rendering references leaves the graph deep-equal and every standing identical. Specimen F008-04.",
+    "4_graceful_degradation": "With no quotable statement, SELF emits a PROPOSITION_REFERENCE explicitly labelled 'not as a quote', and invents nothing. Specimen F008-05."
+  },
+  "frozen_specimens": [
+    "F008-01 wrong-signal quote — refused",
+    "F008-02 non-verbatim quote — refused",
+    "F008-03 quote-after-supersession — anchor moves to a surviving statement",
+    "F008-04 quote changes standing — refused",
+    "F008-05 no-quote fallback — labelled reference, nothing invented",
+    "F008-06 two signals in the same context remain referentially distinct",
+    "F008-07 invented life domain — refused (F-016)",
+    "F008-08 every signal-targeting probe carries a referent — the criterion"
+  ],
+  "findings": [
+    {
+      "id": "F-016",
+      "severity": "DEFECT, REPAIRED — found BY the anchor",
+      "title": "SELF named a life domain the evidence did not support",
+      "observed": "_home_context fell back to OPENABLE_CONTEXTS[0] when a signal had no placed domain. In the first anchored run SELF quoted a statement made about 'something you make' and then asked for an occasion 'in your work'.",
+      "why_it_was_invisible": "While probes had no referent, the question said 'that happened' with nothing to compare the domain against. Putting the node's own sentence beside the domain name made the contradiction legible in a single reading.",
+      "repair": "Naming a domain the evidence does not support is the same defect as inventing a quote, so it is refused the same way: _home_context returns None rather than guessing, and the domain clause is omitted.",
+      "significance": "The anchor did diagnostic work immediately. This is evidence that F-008 was structural rather than cosmetic."
+    },
+    {
+      "id": "F-017",
+      "severity": "OBSERVATION — by construction, not a defect",
+      "title": "A correction offered as an answer is quoted back as the signal's anchor",
+      "statement": "If a node answers a probe with a correction rather than an answer, the runtime records it as the answer and will quote it back as the tracked pattern.",
+      "why_it_is_not_repaired": "Distinguishing a correction from an answer is inference, and this runtime has no inference layer — that absence is the property making its corpus worth measuring. Detecting corrections is precisely what E3 does LATER, in shadow, after the transcript is frozen.",
+      "consequence": "Real sessions will contain these cases, and that is desirable: they are exactly the material an on-distribution corpus needs and the events E3D-001/002 describe.",
+      "for_the_node": "Worth knowing before first contact that SELF will echo a correction as though it were a pattern. It cannot yet tell the difference, and saying so is more honest than hiding it."
+    }
+  ],
+  "verification": {
+    "cc_runtime_pilot": "49/49 — 8 new F-008 specimens, all previously frozen assertions still held",
+    "full_gate": "KERNEL GATE OPEN; baseline_integrity 6/6, laws PASS, journey 26/26, schema 30/30, adversarial_p0 18/18, sql PASS, e3 suites 24/24 · 13/13 · 12/12 · 20/20; PILOT-28 no frozen file moved",
+    "sealed_verdicts": "SEALED BASELINE SELF INTEGRITY VERIFIED (25/25) · VERIFIED EXTENSION E3 VERIFIED EXTENSION (42/42), both derived from the sealed trees",
+    "scripted_read_end_to_end": "Every signal-targeting probe carries the node's exact words. Both signals probe FAMILY_OF_ORIGIN without collision. The phantom 'in your work' clause is gone."
+  },
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "feature/cc-runtime-pilot",
+    "source_commit": "54f1f8353d5506ffecf9a9e16e8d588dedd2f6ff",
+    "based_on": "e37f77550c63091dce60e00ac156e6a69dce6928",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/e37f775...54f1f83",
+    "repo_binding_note": "This hash belongs to the conscious-conversation repository (INV-ISX-SOURCE-BINDING)."
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "kernel_e3_py": "FROZEN",
+    "RULES": "FROZEN",
+    "ONTOLOGY": "FROZEN",
+    "coverage_harness": "UNCHANGED",
+    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED"
+  },
+  "standing_observed_this_session": {
+    "SEALED BASELINE SELF INTEGRITY": "VERIFIED — 25/25 against the sealed tree",
+    "VERIFIED EXTENSION E3": "VERIFIED EXTENSION — 42/42 against the sealed tree",
+    "CURRENT BRANCH REVALIDATION": "HOLD — live PostgreSQL conditions 10-11 not rerun",
+    "KERNEL GATE": "OPEN",
+    "CC-RUNTIME-PILOT-001": "RUNTIME EXECUTES · 49/49 · CORPUS NOT YET GENERATED",
+    "F-008": "CLOSED", "F-009": "REPAIRED", "F-010": "REPAIRED",
+    "F-013": "CLEARED", "F-015": "CLOSED with F-008", "F-016": "REPAIRED",
+    "F-017": "OBSERVATION — by construction",
+    "F-006": "OPEN — harness cohort awareness, contained by a separate ondist root",
+    "F-014": "OPEN — the fixture still places context on every answer",
+    "F-002": "DISPOSITIONED — scaffolding declared, successor architecture recorded"
+  },
+  "pre_contact_bridge": {
+    "status": "COMPLETE",
+    "what_closed": "The loop speaks back only what law authorizes (F-009), the node owns where their answer belongs (F-010), coverage advances on what was asked (F-013), and every probe names the statement it means in the node's own words (F-008).",
+    "what_remains_open_and_is_not_a_bridge": [
+      "F-006 — the harness has no cohort awareness; contained, not fixed",
+      "F-014 — the fixture places context on every answer, so the proof run still cannot reach the default human path across cycles"
+    ],
+    "the_one_session_argument": "The first session joins the discovery partition permanently and can never later serve as independent validation."
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Run first contact. python3 runtime/pilot.py --node <SELFNODE_ID>",
+    "reviewer_position": "The refusal stands: this agent cannot be the SELFnode. Answering the probes would stamp fabricated speech HUMAN_SELFNODE and emit it as REAL_TRANSCRIPT. The next evidence must come from MILASOPHAHR-as-SELFnode, not another fixture.",
+    "stop_engineering": "Recorded as instructed. Engineering stops here."
+  }
+}
