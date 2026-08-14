@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T02:39:22Z",
+  "updated_at": "2026-08-14T03:10:00Z",
   "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
   "session": "CONVORUNTIME",
   "latest_inselfaction": {
-    "id": "ISA-20260814-CC-FELT-ARCHITECTURE-011",
-    "path": "inselfactions/ISA-20260814-CC-FELT-ARCHITECTURE-011.json",
-    "title": "Felt-architecture inspection — five findings the 37 assertions cannot reach",
+    "id": "ISA-20260814-RC0001-SPR05-005",
+    "path": "inselfactions/ISA-20260814-RC0001-SPR05-005.json",
+    "title": "SP-R05 — SemanticProgram v0.5; CR4-01 classified SOURCE_SUFFICIENT_WITH_DERIVATION and repaired without inventing vocabulary",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -25,7 +25,7 @@
       "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
       "commit_verified": "Present in RUORA. Observed HEAD, message 'chore(governance): exclude chambers/ runtime infrastructure from doctrine repo'.",
       "artifacts_tracked_in_git": false,
-      "candidate_binding_caveat": "Whether this tree corresponds to the reviewed v0.4 candidate is UNVERIFIED and is not asserted here. The candidate remains addressable only by SHA-256 7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f against the local working tree."
+      "candidate_binding_caveat": "The reviewed candidate is now v0.5, SHA-256 4612455287015d81812f50aff98b5d3e12f1e9d10ca71add0350ecd9e50c8f98, addressable only against the local working tree. v0.4 (7c680b02…2cf48f) is preserved unmodified as the exact subject of Cold Review 004. Whether this commit's tree corresponds to either is UNVERIFIED and is not asserted."
     },
     "conscious_conversation": {
       "repository": "conscious-conversation",
@@ -58,33 +58,41 @@
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
     "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
     "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED",
-    "semanticprogram": "v0.4 · CHANGES_REQUIRED — NOT RATIFIABLE",
-    "candidate_sha256": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
+    "semanticprogram": "v0.5 · CANDIDATE_READY_FOR_COLD_REVIEW_005 — NOT RATIFIABLE",
+    "candidate_sha256": "4612455287015d81812f50aff98b5d3e12f1e9d10ca71add0350ecd9e50c8f98",
     "cold_review_003": "CHANGES_REQUIRED — DISCHARGED by SP-R04",
-    "cold_review_004": "CHANGES_REQUIRED · artifact 7ce5feac4bc20c7dd7987e368e397912db0627203e85a5705d5144fff96d1a50",
-    "cr3_b01": "CLOSED — established independently by Cold Review 004, not claimed by the author",
-    "cr4_01": "BLOCKING — the loss-class vocabulary is embodiment-authored and uncalibrated; CR-003 §3.5 reconstructs; §16.2's IMPOSSIBLE rating is falsified",
-    "cr4_03": "MATERIAL — the §16.4 auditor as published does not execute (SyntaxError, document line 781); body duplicated with a divergent FT regex. §16.5's tallies are nonetheless byte-accurate. Author-side defect, introduced in SP-R04.",
-    "finding_counts": "1 BLOCKING · 11 MATERIAL · 5 MINOR — note that CR004's own headline and §10 verdict block misreport MATERIAL as 7; §4 carries CR4-02…CR4-12",
-    "cr003_regression": "13 CLOSED · 6 PARTIALLY_CLOSED · 1 NOT_CLOSED (CR3-04) · 0 REGRESSED",
-    "pass_threshold": "8 of 15 lines met",
-    "docket": "reviewer-derived 3 OPEN · 1 PARTIALLY_DECIDED (A-07) · 4 OPERATIVELY_DECIDED — candidate claims 3 · 0 · 5",
+    "cold_review_004": "CHANGES_REQUIRED — DISCHARGED by SP-R05 · artifact 7ce5feac…d1a50 preserved unedited",
+    "cr3_b01": "CLOSED — established by Cold Review 004; PRESERVED, not reopened, and never claimed by the author",
+    "cr4_01": "REPAIR IMPLEMENTED · AUTHOR-SIDE COUNTEREXAMPLE PASS · INDEPENDENT CLOSURE NOT ESTABLISHED",
+    "cr4_03": "REPAIRED BY RULE — shipped auditor executes from extracted artifact bytes; PUBLICATION_INTEGRITY PASS; v0.4 FAILs the new auditor",
+    "finding_counts": "CR004: 1 BLOCKING · 11 MATERIAL · 5 MINOR — all dispositioned. CR004 own headline misreports MATERIAL as 7; review left unedited",
+    "docket": "11 items · 5 OPEN · 0 PARTIALLY_DECIDED · 6 OPERATIVELY_DECIDED · new founder decisions 0 (A-09/A-10/A-11 disclose pre-existing ones)",
     "independence_reached": "LINEAGE-INDEPENDENT · MODEL-INDEPENDENT not reached · EXTERNAL not reached",
     "reality_compiler": "NOT PROVEN",
     "seal": "NOT GRANTED",
     "implementation": "NOT AUTHORISED",
-    "sp_r05": "NOT AUTHORISED",
+    "sp_r05": "COMPLETE — STATE 1",
     "assertions": 231,
     "sealed_baseline_self_integrity": "VERIFIED — derived from the SEALED TREE, 25/25 at self-integrity-verified-v0.1 (1f246be)",
     "sealed_e3_extension": "VERIFIED EXTENSION — derived from the SEALED TREE, 42/42 at e3-extension-verified-v0.1 (94c2f75)",
     "current_branch_revalidation": "HOLD — live PostgreSQL conditions 10-11 not rerun (Colima not running)",
-    "cc_felt_architecture": "IMPECCABLE EPISTEMOLOGY UNDER A QUESTIONNAIRE — the revealing half (check_revelation) is implemented in law and has no call site in runtime/; no probe quotes the node; life_context is asserted by the probe, not confirmed by the node"
+    "cc_felt_architecture": "IMPECCABLE EPISTEMOLOGY UNDER A QUESTIONNAIRE — the revealing half (check_revelation) is implemented in law and has no call site in runtime/; no probe quotes the node; life_context is asserted by the probe, not confirmed by the node",
+    "cold_review_005": "NOT AUTHORISED",
+    "cr4_01_repairability": "B · SOURCE_SUFFICIENT_WITH_DERIVATION — adjudicated before repair; grounded in RCP §5.2/§5.3, INV-RC-CAP-1, INV-RC-KERNEL-4, P-L1-C Semantic Source Map, F-05 INV-OBS-PER-2",
+    "capability_vocabulary": "NONE INVENTED · RCP §5.3 NOT INSTALLED · R-04 record schema RESERVED (docket A-10)"
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Decide whether probe policy is repaired BEFORE first contact (quote the node · speak the finding · let the node place the context) or whether the first session runs against current policy and the repairs are motivated by real material. The first session happens once, so both are not available."
+    "act_required": "Authorise or decline Cold Review 005 against v0.5"
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260814-RC0001-SPR05-005",
+      "subject": "RC-0001 SemanticProgram v0.5 — SP-R05 outcome",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Authorise or decline Cold Review 005 against v0.5",
+      "status": "STATE 1 — CANDIDATE_READY_FOR_COLD_REVIEW_005 · CR4-01 repaired without inventing vocabulary · CR3-B01 preserved closed"
+    },
     {
       "inselfaction": "ISA-20260814-CC-FELT-ARCHITECTURE-011",
       "subject": "Probe policy — repair before or after first contact",
@@ -114,13 +122,6 @@
       "status": "DISPOSITIONED — scaffolding declared, successor architecture recorded, not yet implemented"
     },
     {
-      "inselfaction": "ISA-20260814-RC0001-CR004-004",
-      "subject": "RC-0001 SemanticProgram v0.4 — Cold Review 004 outcome",
-      "next_authority": "MILASOPHAHR",
-      "act_required": "Authorise or decline SP-R05, bounded to CR004; decide whether the loss-class vocabulary is a founder decision; decide whether the count's scoping is docketed (CR4-07)",
-      "status": "CHANGES_REQUIRED — CR3-B01 CLOSED, one new BLOCKING finding (CR4-01)"
-    },
-    {
       "inselfaction": "ISA-20260814-CC-RUNTIME-PILOT-009",
       "subject": "RC-0001 candidate source binding",
       "next_authority": "MILASOPHAHR",
@@ -147,6 +148,13 @@
       "next_authority": "MILASOPHAHR",
       "act_required": "none — SP-R04 was authorised and executed",
       "status": "DISCHARGED by ISA-20260813-RC0001-SPR04-002"
+    },
+    {
+      "inselfaction": "ISA-20260814-RC0001-CR004-004",
+      "subject": "RC-0001 SemanticProgram v0.4 cold review",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "none — SP-R05 was authorised and executed",
+      "status": "DISCHARGED by ISA-20260814-RC0001-SPR05-005"
     }
   ],
   "history": [
@@ -164,7 +172,8 @@
     "ISA-20260814-RC0001-CR004-004",
     "ISA-20260814-CC-RUNTIME-PILOT-009",
     "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
-    "ISA-20260814-CC-FELT-ARCHITECTURE-011"
+    "ISA-20260814-CC-FELT-ARCHITECTURE-011",
+    "ISA-20260814-RC0001-SPR05-005"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",

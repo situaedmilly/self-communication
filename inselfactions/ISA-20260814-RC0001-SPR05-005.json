@@ -1,0 +1,157 @@
+{
+  "inselfaction_id": "ISA-20260814-RC0001-SPR05-005",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T03:10:00Z",
+  "session": "MOBILECHALL",
+  "immutable": true,
+  "supersedes": null,
+  "continues": "ISA-20260814-RC0001-CR004-004",
+
+  "operation": {
+    "title": "SP-R05 — bounded blocker-resolution pass against Cold Review 004, producing SemanticProgram v0.5",
+    "authority": "Bounded to CR004. Primary target CR4-01. Not authority to invent a capability vocabulary, amend L1 / the commission / RCP / F-05, create RealityIR, implement a capability resolver, mutate HBC, stage, commit or seal.",
+    "required_first_output": "A CR4-01 repairability classification. Only A or B authorize repair in the same movement; C, D or E require STOP and report."
+  },
+
+  "cr4_01_repairability": {
+    "classification": "B · SOURCE_SUFFICIENT_WITH_DERIVATION",
+    "question": "Can capability loss be made mechanically typed without inventing semantic vocabulary that neither L1 nor the admitted source lineage authorizes?",
+    "answer": "YES. The individuating basis already exists in admitted, digest-verified source. The founder's proposed direction — individuate loss by the semantic obligation being lost rather than by an invented capability taxonomy — is not merely the cleaner option; it is what the admitted lineage already requires, and v0.4 had authored a parallel scheme instead while citing the RCP capability vocabulary zero times.",
+    "grounding": {
+      "RCP_5_2": "Capability Resolver OUTPUT is 'a CapabilityDecision per semantic requirement'; SEMANTIC SOURCE MAP obligation is 'every decision references the RealityIR requirement it answers'.",
+      "RCP_5_3": "A CLOSED five-member decision vocabulary already exists: SUPPORTED, SUBSTITUTED, DEGRADED, ABSENT, REFUSED.",
+      "INV_RC_CAP_1": "Totality — 'Every semantic requirement receives exactly one decision. A requirement with no decision is a compilation error, not a default.'",
+      "INV_RC_KERNEL_4": "Injective distinction — 'No admitted construct may encode a distinction already encoded by another admitted construct.' THIS IS THE CALIBRATION CR4-01 SAID WAS MISSING, and it was already admitted.",
+      "P_L1_C": "Founder-sealed Semantic Source Map traces CapabilityDecision -> RealityIR transition -> SemanticProgram rule, under TRACEABILITY REQUIREMENT.",
+      "F_05_v0_2_INV_OBS_PER_2": "Same pattern already adjudicated one layer over — 'A substrate that cannot SHALL say so at the named tier rather than satisfying the requirement at a lower tier silently.'"
+    },
+    "provenance_of_grounding": "RCP v0.1 draft SHA-256 1aa3698c29ca9d471390d8943ab64afd7e5a5d943645062fe64451ba0938c776 — RECOMPUTED this movement and matching byte-for-byte the digest the authoring commission names as a GOVERNING RECORD. Admitted lineage, not a document reached for because it was convenient.",
+    "why_not_A": "'Semantic requirement' is named by RCP as a RealityIR entity. Identifying it with this document's clause identities is a derivation, disclosed at SP-167 rather than presented as source.",
+    "why_not_C": "No founder decision must be made for the repair to be lawful. The repair REMOVES an authored vocabulary and substitutes references into a set the document already publishes. It is a narrowing and creates no new semantic terms.",
+    "why_not_D": "The genuinely protocol-level objects — RCP §5.3's decision vocabulary and the CapabilityDecision record schema reserved to R-04 — are NOT installed, extended or pre-empted. SP-171 declines them; docket A-10 records the reconciliation as reserved. v0.5 supplies only the requirement identities a decision is taken per, which is a precondition of R-04 rather than an encroachment on it.",
+    "why_not_E": "No source contradiction found; RCP §5, P-L1-C's source map and F-05's precedent all point the same way.",
+    "red_line_observed": "No capability ontology was authored. No enum of substrate limitations — STORAGE_LIMITATION, UI_DEGRADATION, NETWORK_RESTRICTION or any sibling — exists anywhere in v0.5. Had individuation required inventing such a set, BLOCKED_BY_FOUNDER_OR_SOURCE_DECISION was the correct return and would have been returned."
+  },
+
+  "cr4_01_repair": {
+    "mechanism": "The embodiment is removed from the naming role entirely. A CAPABILITY_UNSUPPORTED disposition no longer carries a declared loss class; it names a FAILED-REQUIREMENT SET of SP clause identities.",
+    "clauses": {
+      "SP-167": "Semantic requirement identity — the requirement set IS this document's normative clause set inside the SP-006 envelope: closed, enumerated, fixed at the candidate's digest. No embodiment may name a requirement the document does not state.",
+      "SP-168": "Invocation is computed, not declared — each presented element invokes a determinate requirement set, a function of the element and the presented-sequence prefix only, published as a table at §2.0.1 and derivable by any reader.",
+      "SP-169": "The failed-requirement set and its two-sided exactness — maximality (every invoked requirement it cannot honor is named) and minimality (no requirement it can honor is named), non-empty by construction.",
+      "SP-170": "INV-RC-KERNEL-4 applied — two embodiments failing different requirements necessarily carry different sets, because the requirements ARE the distinctions. No coarser admissible name exists.",
+      "SP-171": "The protocol boundary declined — no capability decision vocabulary installed; RCP §5.3 and R-04 neither authored nor pre-empted.",
+      "SP-151_SP-152_SP-155": "Loss class withdrawn; SP-152 compares the failed-requirement set by clause identity; SP-155's veridicality becomes a two-sided test against the substrate."
+    },
+    "counterexample_rerun": "CR-003 §3.5's pair: G' cannot hold a second pending contribution and names { SP-022 }; H' preserves no canonical order and names { SP-024 }. Sets differ, so SP-152 diverges at presented index 3. FT-16 added to close the residual escape where both declare one coarse common label — now inexpressible under SP-167 and forbidden by SP-170.",
+    "author_claim_limit": "CR4-01 REPAIR IMPLEMENTED · AUTHOR-SIDE COUNTEREXAMPLE PASS · INDEPENDENT CLOSURE NOT ESTABLISHED. 'CR4-01 CLOSED' is not claimed and may not be inferred."
+  },
+
+  "cr3_b01_preserved": {
+    "status": "CLOSED — by Cold Review 004, cited and not re-earned by this document.",
+    "preservation": "No clause bearing on the count's derivation was reopened. SP-043 and SP-102 are byte-untouched. SP-094 changed only to pin the DaySlot ordinal per CR4-02, which adds an initial-condition coordinate and touches no part of the count's scoping."
+  },
+
+  "cr4_03_repair": {
+    "defect": "The auditor v0.4 published did not execute — SyntaxError at line 781, body duplicated with a divergent FT regex. True numbers, false provenance.",
+    "repair_is_a_rule_not_a_seam": "Per founder direction, the duplicate was not merely excised. The chain 'extract shipped bytes -> execute -> capture -> compare with published evidence' is installed as a machine check the program performs on itself.",
+    "checks": {
+      "FENCE_PARSE_FAILURES": "every python-tagged fence in the artifact is compile()d — a spliced or truncated payload cannot be published",
+      "FENCE_DUPLICATE_PAYLOADS": "every fence scanned for a contiguous run of >=5 substantial lines occurring twice — catches duplication that still parses",
+      "SHIPPED_BYTES_EXECUTED": "the running program re-extracts its own fence from the artifact and compares to the bytes it is executing; a nearby working copy cannot masquerade as the shipped program",
+      "PUBLISHED_EVIDENCE_MATCH": "the program compares its measurement block to the block published in §16.5, located by SECTION HEADING rather than a prose anchor that would match the script's own copy"
+    },
+    "hazards_removed_at_source": "The script never writes a literal triple-backtick (built as chr(96)*3), so its own body cannot terminate the fence carrying it. Every document anchor is a line-anchored regex rather than a bare string, so the script cannot match its own source and count itself.",
+    "proof": "v0.4 FAILS the new auditor: FENCE_PARSE_FAILURES [(665, 'unterminated string literal')], FENCE_DUPLICATE_PAYLOADS [(665, '50 duplicated lines')], SHAPE_AUDIT_RESULT FAIL. v0.5 PASSES with PUBLICATION_INTEGRITY PASS.",
+    "stated_limit": "PUBLICATION_INTEGRITY PASS proves the published bytes are the executed bytes and the published output is this program's output. It proves nothing about whether the measurements are the right measurements."
+  },
+
+  "other_findings_dispositioned": {
+    "CR4-02": "SP-094 pins a single fixed DaySlot ordinal for the whole vector.",
+    "CR4-04": "SP-005's authored conformance sentence split to SP-172 — the SP-090/SP-094 technique applied class-wide rather than row-locally.",
+    "CR4-05": "SP-091 restored to the founder's three-way equality verbatim; target-set cardinality carried by SP-173.",
+    "CR4-06": "SP-046's field enumeration and its 'might require' -> universal promotion split to SP-174 and declared authored, as SP-094 already declares for the identical promotion.",
+    "CR4-07": "Docketed as A-09 and flagged decided-by-installation; the underlying founder choice is NOT resolved by authorship.",
+    "CR4-08": "§13.0's branch rule restated over |Y| rather than quantifier prose; the vacuous 'NO for all but one' branch that fired on all five singletons is gone; an INCONSISTENT branch prevents a no-answer item collapsing into OPERATIVELY_DECIDED. Every existing label verified unchanged under the corrected rule.",
+    "CR4-09": "SP-019 gains the originating DaySlot ordinal; the enumeration no longer contradicts SP-053 and SP-075.",
+    "CR4-10": "SP-175 evaluates acceptance at the final presented index so the sole required vector finally witnesses post-restart state; §15's false 'neither is called position unqualified' claim corrected; residual coordinate vocabulary disclosed.",
+    "CR4-11": "SP-121's false justification replaced — sameness of admission order is a consequence of SP-152 conformance, not a property of the input.",
+    "CR4-12": "SP-029 gains the scope limiter its ORTHOGONAL neighbours carry; §17.3 argues scope instead of falsely denying L1 speaks to Adjudication.",
+    "minors": "CR4-M1 §17.1 tally corrected to six rows; CR4-M2 SP-158 quotation drift and the added connective removed; CR4-M3 Semantic Source Map absence now disclosed with a reason rather than omitted silently; CR4-M4 §16.1's rationale corrected for founder laws 1 and 6; CR4-M5 §15 binds entries, entries.count, entries[0], state and status for the first time."
+  },
+
+  "reviewer_record_evidence": {
+    "finding": "Cold Review 004's headline table and §10 verdict block both report 'NEW MATERIAL 7'. Its §4 carries twelve numbered findings — CR4-01 plus CR4-02…CR4-12, eleven MATERIAL — plus five MINOR.",
+    "handling": "The review is NOT edited. SP-R05 consumed the actual finding set and recorded the discrepancy at §16.2 as reviewer-record evidence, per founder direction.",
+    "note": "This is at reduced amplitude the same tally-inconsistency class the review itself records against v0.4 as CR4-M1."
+  },
+
+  "docket": {
+    "before": "8 items · 3 OPEN · 0 PARTIALLY_DECIDED · 5 OPERATIVELY_DECIDED",
+    "after": "11 items · 5 OPEN · 0 PARTIALLY_DECIDED · 6 OPERATIVELY_DECIDED",
+    "added": {
+      "A-09": "Over what is the illegal-transition count derived — one presented sequence or cumulatively? OPERATIVELY_DECIDED by this document's own installation, and flagged as such.",
+      "A-10": "How do RC-0001's two dispositions relate to RCP §5.3's closed vocabulary and R-04's record schema? OPEN, expressly reserved.",
+      "A-11": "By what scheme is capability loss accounted for? OPEN with an unenumerated admissible set."
+    },
+    "new_founder_decisions": 0,
+    "new_founder_decisions_note": "All three DISCLOSE pre-existing decisions. A-09 was operative in v0.3 and v0.4 undocketed; A-10 is the boundary SP-171 declines; A-11 is the half of A-07 that v0.4 §13.2 already admitted was an authored installation awaiting adjudication. None must be answered for this revision to be lawful.",
+    "a07_divergence": "CR004 derived PARTIALLY_DECIDED for A-07 against v0.4's OPERATIVELY_DECIDED. v0.5 SPLITS the compound question (gate -> A-07, accounting -> A-11) rather than overruling the reviewer, and states explicitly that if a reviewer rejects the split, CR004's PARTIALLY_DECIDED stands and this document is wrong on that row.",
+    "do_not_re_decide": "A-01, A-04, A-05, A-06 — CR004 reconfirmed each on grounds independent of SP-019's falsified exhaustiveness."
+  },
+
+  "candidate": {
+    "path": "/Users/millysituated/RUORA/governance/OURSELF-RCP-RC0001-DURABLE-DAILY-RITUAL-LEDGER-SEMANTICPROGRAM-v0.5-CANDIDATE.md",
+    "sha256": "4612455287015d81812f50aff98b5d3e12f1e9d10ca71add0350ecd9e50c8f98",
+    "lines": 1216,
+    "normative_sp_rows": 111,
+    "diff_vs_v0_4": "9 added (SP-167…SP-175) · 0 removed · 13 changed · 0 unmarked",
+    "audit": "SHAPE_AUDIT_RESULT PASS · STRUCTURE_FAILURES NONE · FENCE_PARSE_FAILURES NONE · FENCE_DUPLICATE_PAYLOADS NONE · SHIPPED_BYTES_EXECUTED IDENTICAL · PUBLISHED_EVIDENCE_MATCH IDENTICAL · PUBLICATION_INTEGRITY PASS",
+    "exit_state": "STATE 1 — v0.5 CANDIDATE_READY_FOR_COLD_REVIEW_005"
+  },
+
+  "integrity": {
+    "method": "Recomputed after the movement closed, not recalled.",
+    "artifacts_byte_unchanged": {
+      "v0.4_revision_subject": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
+      "v0.3": "55c590ead44e38248a7f97405c8cb23740018df4bd9b154a8a0fd3df99dd7f8e",
+      "v0.2": "611a782e7abdf323de6567497d4da372ff011142d44de16c6f53c2a9d1feb007",
+      "v0.1": "3e675d9ebd1e8bbb25193625ef9ca784146d8d639e57d5f5fe9dfaee46551537",
+      "cold_review_004": "7ce5feac4bc20c7dd7987e368e397912db0627203e85a5705d5144fff96d1a50 — unedited, including its arithmetic defect",
+      "cold_review_003": "d9afbcb47f9813430ea763126f80aa25e617012ef80aa6996e0c03d33dc848b1",
+      "authoring_commission": "9a04124a25ec3dc9c281d73a4f6bce7ecb7a0619a0d9890f9a51fd5ce5dcc04e",
+      "rcp_v0_1_draft": "1aa3698c29ca9d471390d8943ab64afd7e5a5d943645062fe64451ba0938c776 — read only, not amended",
+      "f05_v0_2": "56b1a56e676d862b77e3f33e… — read only, not amended"
+    },
+    "l1_container": "cee97abe168b011e8cc2bf1d69009d755f8c744998302c76743ac432a7d81ebe — all three pins re-extracted and byte-matching; read-only, never imported",
+    "files_created": 1,
+    "ruora": { "branch": "main", "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8", "staged": 0, "git_operations": "NONE" },
+    "hbc": "projects/hbc-html at e350205f12c140b8216090b935f874cbbc454dee — 30 tracked, 0 modified, 0 staged. Stated WITH its repository: this claim does not verify against the governance repo and CR004 nearly recorded it as a defect for that reason.",
+    "secrets": "none read, printed, staged or requested",
+    "repository_boundary": "not expanded beyond /Users/millysituated/RUORA"
+  },
+
+  "requested_next_action": {
+    "primary": "Authorise Cold Review 005 — lineage-independent, local, against v0.5. CR4-01's repair is author-side only and the cascade's record is that every self-reported success has contained defects: 9 in v0.1, 6 in v0.2, 19 in v0.3, 12 in v0.4 including a BLOCKING defect inside the repair v0.4 rated IMPOSSIBLE.",
+    "the_attack_to_commission_first": "Whether SP-168's invocation table is genuinely determinate, and whether SP-169's exactness can be evaded by an embodiment that fails a requirement not on the invoked list. If the table is incomplete, the naming role returns to the embodiment by omission.",
+    "second": "Whether identifying the requirement set with the clause set (SP-167) survives — it is the derivation that made this category B rather than D.",
+    "not_requested": "No seal, adjudication, implementation or extraction. v0.5 is not ratifiable and does not claim to be."
+  },
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Authorise or decline Cold Review 005 against v0.5; separately, adjudicate A-01…A-11 or defer"
+  },
+
+  "constraints_observed": [
+    "CR4-01 was adjudicated BEFORE any repair, as the required first output.",
+    "No capability vocabulary invented — zero new semantic terms; verified by grep for substrate-limitation enums.",
+    "RCP §5.3's vocabulary and R-04's record schema neither installed nor pre-empted.",
+    "CR3-B01 preserved closed; no clause bearing on the count's derivation reopened.",
+    "Cold Review 004 not edited; its arithmetic defect recorded, not corrected in place.",
+    "v0.4 and all predecessors byte-preserved and verified by recomputation.",
+    "L1, the commission, RCP and F-05 read only.",
+    "Nothing staged or committed in RUORA. HBC untouched.",
+    "No secret-bearing material read, printed, or requested."
+  ]
+}
