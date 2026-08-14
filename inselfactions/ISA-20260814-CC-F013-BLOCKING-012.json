@@ -1,0 +1,113 @@
+{
+  "inselfaction_id": "ISA-20260814-CC-F013-BLOCKING-012",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T03:03:48Z",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260814-CC-FELT-ARCHITECTURE-011",
+  "operation": {
+    "title": "F-009 and F-010 verified; F-013 found — unplaced answers stall coverage and the probe repeats verbatim",
+    "authority_exercised": "Independent verification of a repair reported by another movement, including the full gate that repair did not run.",
+    "not_done": [
+      "F-013 NOT FIXED — coverage ordering is probe policy and remains MILASOPHAHR's call",
+      "F-008 untouched — no quotation policy introduced",
+      "no detector, RULES, ONTOLOGY, harness, kernel, contract or db change"
+    ]
+  },
+  "headline": {
+    "finding": "F-013 BLOCKS FIRST CONTACT",
+    "statement": "RECURRENCE coverage is derived from where an answer was PLACED, but the question was ASKED regardless. F-010 made placement optional, so coverage can stall permanently. Reproduced: five identical RECURRENCE questions, verbatim, in one conversation.",
+    "why_it_was_missed": "The scripted fixture supplies an explicit placement for EVERY answer, so neither the proof run nor the 40 assertions exercise the default human path more than once. That path is the default: HumanResponder invites 'press enter for THIS_CONVERSATION'.",
+    "severity_note": "The first session happens once. On the default human path SELF would ask the same question up to max_cycles times."
+  },
+  "verification_of_the_reported_repair": {
+    "method": "Re-ran the reported suite and then the FULL gate, which the repair report explicitly did not run.",
+    "cc_runtime_pilot": "40/40 — confirmed",
+    "full_gate_not_run_by_the_repair": {
+      "kernel_gate": "OPEN",
+      "baseline_integrity": "6/6",
+      "laws": "PASS",
+      "journey": "26/26",
+      "schema": "30/30",
+      "adversarial_p0": "18/18",
+      "sql": "137 statements across 5 migrations",
+      "e3_adversarial": "24/24",
+      "e3_wiring": "13/13",
+      "e3_authenticity": "12/12",
+      "e3_coverage_harness": "20/20",
+      "PILOT-28": "no frozen file moved",
+      "sealed_verdicts": "VERIFIED / VERIFIED EXTENSION, derived from the sealed trees"
+    },
+    "conclusion": "Nothing regressed outside the runtime. The repair is sound in what it changed."
+  },
+  "what_the_repair_got_right": {
+    "revelation_renders_the_honest_count": "render_revelation uses life_context_count, NOT context_count. A signal CORROBORATED partly on the neutral fallback speaks 'across 1 life context(s)' rather than claiming two. This CLOSES the composition hazard between F-009 and F-010 that this movement set out to test — the standing may rest on the conversation itself, but the spoken claim does not inflate it. Better than what the reviewer would have proposed.",
+    "neutral_fallback_cannot_corroborate_alone": "Verified empirically: with every answer unplaced, context_count=1 and standing stays DECLARED (reason=E0_ONLY). The absence of placement can contribute to corroboration only alongside a real placement, and identity_admissible stays False even then. The ontology's own THIS_CONVERSATION guard (ATTACK 09) is doing real work.",
+    "placement_mechanism_verified": "'With my oldest friend too' now records proposed_life_context=INTIMATE, life_context=FRIENDSHIP, context_placement_source=NODE_EXPLICIT. F-010's false-context path is closed.",
+    "no_classifier_introduced": "Placement reads the responder channel only. No answer-content inference was added, so the property that makes the corpus worth measuring survives."
+  },
+  "findings": [
+    {
+      "id": "F-013",
+      "severity": "BLOCKING — first contact",
+      "title": "Unplaced answers stall context coverage; the recurrence probe repeats verbatim",
+      "mechanism": "runtime/probe.py `_supporting_contexts` computes RECURRENCE coverage from the life_context recorded on supporting episodes. F-010 made that value node-controlled and optional. Neutral fallback records THIS_CONVERSATION, correctly excluded from OPENABLE_CONTEXTS, so `_first_uncovered` returns the same context on every subsequent cycle.",
+      "reproduction": "PilotSession(selfnode_id='n', responder=ScriptedResponder(script=('A.','B.','C.','D.','E.','F.'), context_script=())).run(max_cycles=8) -> 1 distinct RECURRENCE question of 5 asked.",
+      "second_observation": "Even with ONE explicit placement among unplaced answers, the same repetition appears: the node answered about a friend and SELF asked about the family it had already asked about.",
+      "root_cause_stated_precisely": "Coverage must advance on contexts ASKED, not contexts PLACED. Those were the same value before F-010 and are now different values, and the coverage computation was not moved with the authority.",
+      "available_fix": "The runtime ALREADY records proposed_life_context on every cycle — that is the asked set. Excluding already-proposed contexts from `_first_uncovered` restores progress without touching placement authority. This is F-011 (per-conversation memory of what has been asked aloud) becoming load-bearing rather than cosmetic.",
+      "not_fixed_here": "Coverage ordering is probe policy. The reviewer stated in ISA-011 that probe policy is MILASOPHAHR's call and has not contradicted that on finding a defect in it.",
+      "authority_required": "MILASOPHAHR — fix before the first human session."
+    },
+    {
+      "id": "F-014",
+      "severity": "PROCESS",
+      "title": "The fixture places context on every answer, so the proof run cannot reach the default human path",
+      "statement": "SCRIPT_CONTEXTS supplies a non-null placement for all six scripted answers. Every assertion and every scripted confirmation therefore exercises NODE_EXPLICIT. PILOT-04b tests the neutral fallback for a single placement, not across cycles, which is where F-013 lives.",
+      "generalization": "A fixture that always takes the explicit path cannot test the default path. The scripted responder should exercise BOTH — some answers placed, some not — or the proof run will keep certifying a branch a human will rarely take.",
+      "not_fixed_here": "Changing the fixture changes what the proof run demonstrates, which is the same authority surface as the probe policy."
+    }
+  ],
+  "process_note": {
+    "repair_was_uncommitted": "The F-009/F-010 changes existed only in the working tree when reported. An INSELFACTION naming an uncommitted tree cannot satisfy INV-ISX-REVIEW-RESOLVABILITY — the receiver would have no object to resolve.",
+    "action_taken": "The verified repair was committed and pushed, attributed to the MILASOPHAHR disposition, so this finding has an addressable source. No behaviour was altered in the act of committing.",
+    "commit": "df7ff8923896467ae5e8a9a1367c12e786dea372"
+  },
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "feature/cc-runtime-pilot",
+    "source_commit": "df7ff8923896467ae5e8a9a1367c12e786dea372",
+    "based_on": "2d990bda9bf7cf2bde45ea4da554ebd41fbd9e33",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/2d990bd...df7ff89",
+    "repo_binding_note": "This hash belongs to the conscious-conversation repository (INV-ISX-SOURCE-BINDING)."
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "kernel_e3_py": "FROZEN",
+    "RULES": "FROZEN",
+    "ONTOLOGY": "FROZEN",
+    "coverage_harness": "UNCHANGED",
+    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED"
+  },
+  "standing_observed_this_session": {
+    "SEALED BASELINE SELF INTEGRITY": "VERIFIED — 25/25 against the sealed tree",
+    "VERIFIED EXTENSION E3": "VERIFIED EXTENSION — 42/42 against the sealed tree",
+    "CURRENT BRANCH REVALIDATION": "HOLD — live PostgreSQL conditions 10-11 not rerun",
+    "KERNEL GATE": "OPEN",
+    "CC-RUNTIME-PILOT-001": "RUNTIME EXECUTES · 40/40 · CORPUS NOT YET GENERATED",
+    "F-009": "REPAIRED AND VERIFIED",
+    "F-010": "REPAIRED AND VERIFIED",
+    "F-008": "OPEN — untouched by design",
+    "F-013": "OPEN — BLOCKS FIRST CONTACT"
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Fix F-013 before the first human session: advance RECURRENCE coverage on proposed_life_context (asked) rather than on recorded life_context (placed). Consider F-014 alongside it — the fixture should exercise both the explicit and the neutral path.",
+    "do_not": "Do not run the first human SELFnode session yet. It happens once, and on the default path SELF repeats the same question."
+  }
+}

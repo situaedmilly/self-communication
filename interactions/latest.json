@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T03:10:00Z",
+  "updated_at": "2026-08-14T03:03:48Z",
   "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
   "session": "CONVORUNTIME",
   "latest_inselfaction": {
-    "id": "ISA-20260814-RC0001-SPR05-005",
-    "path": "inselfactions/ISA-20260814-RC0001-SPR05-005.json",
-    "title": "SP-R05 — SemanticProgram v0.5; CR4-01 classified SOURCE_SUFFICIENT_WITH_DERIVATION and repaired without inventing vocabulary",
+    "id": "ISA-20260814-CC-F013-BLOCKING-012",
+    "path": "inselfactions/ISA-20260814-CC-F013-BLOCKING-012.json",
+    "title": "F-009/F-010 verified; F-013 blocks first contact",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -33,14 +33,14 @@
       "visibility": "PRIVATE — receiver-resolvable to an authorized receiver",
       "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
       "branch": "feature/cc-runtime-pilot",
-      "commit": "2d990bda9bf7cf2bde45ea4da554ebd41fbd9e33",
+      "commit": "df7ff8923896467ae5e8a9a1367c12e786dea372",
       "commit_verified": "Present in conscious-conversation and pushed to origin.",
-      "based_on": "6f57e90c23eb7e0dc45b383e103c16b5b7fdd255",
+      "based_on": "2d990bda9bf7cf2bde45ea4da554ebd41fbd9e33",
       "based_on_tag": "e3-extension-verified-v0.1",
       "merged_to_main": false,
       "artifacts_tracked_in_git": true,
       "review_status": "REVIEWABLE",
-      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/6f57e90...2d990bd"
+      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/2d990bd...df7ff89"
     }
   },
   "transport": {
@@ -53,7 +53,7 @@
     "blocks": "EXTERNAL review only — the one rung of the independence ladder this cascade has never reached."
   },
   "standing": {
-    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 37/37 · CORPUS NOT YET GENERATED",
+    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 40/40 · CORPUS NOT YET GENERATED",
     "kernel_gate": "OPEN",
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
     "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
@@ -76,7 +76,7 @@
     "sealed_baseline_self_integrity": "VERIFIED — derived from the SEALED TREE, 25/25 at self-integrity-verified-v0.1 (1f246be)",
     "sealed_e3_extension": "VERIFIED EXTENSION — derived from the SEALED TREE, 42/42 at e3-extension-verified-v0.1 (94c2f75)",
     "current_branch_revalidation": "HOLD — live PostgreSQL conditions 10-11 not rerun (Colima not running)",
-    "cc_felt_architecture": "IMPECCABLE EPISTEMOLOGY UNDER A QUESTIONNAIRE — the revealing half (check_revelation) is implemented in law and has no call site in runtime/; no probe quotes the node; life_context is asserted by the probe, not confirmed by the node",
+    "cc_felt_architecture": "F-009 REPAIRED (runtime speaks back through check_revelation, rendering the honest life_context_count) · F-010 REPAIRED (node places context; no answer-content classifier) · F-008 OPEN · F-013 OPEN AND BLOCKING FIRST CONTACT",
     "cold_review_005": "NOT AUTHORISED",
     "cr4_01_repairability": "B · SOURCE_SUFFICIENT_WITH_DERIVATION — adjudicated before repair; grounded in RCP §5.2/§5.3, INV-RC-CAP-1, INV-RC-KERNEL-4, P-L1-C Semantic Source Map, F-05 INV-OBS-PER-2",
     "capability_vocabulary": "NONE INVENTED · RCP §5.3 NOT INSTALLED · R-04 record schema RESERVED (docket A-10)"
@@ -86,6 +86,13 @@
     "act_required": "Authorise or decline Cold Review 005 against v0.5"
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260814-CC-F013-BLOCKING-012",
+      "subject": "F-013 — unplaced answers stall coverage; recurrence probe repeats verbatim",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Advance RECURRENCE coverage on proposed_life_context (asked) rather than recorded life_context (placed). Reproduced: 5 identical questions. The default human path — press enter for THIS_CONVERSATION — triggers it.",
+      "status": "OPEN — BLOCKS FIRST CONTACT; do not run the first human session yet"
+    },
     {
       "inselfaction": "ISA-20260814-RC0001-SPR05-005",
       "subject": "RC-0001 SemanticProgram v0.5 — SP-R05 outcome",
@@ -97,8 +104,8 @@
       "inselfaction": "ISA-20260814-CC-FELT-ARCHITECTURE-011",
       "subject": "Probe policy — repair before or after first contact",
       "next_authority": "MILASOPHAHR",
-      "act_required": "F-008 no probe quotes the node, so E3D-001/002 are unprovokable. F-009 revelation never invoked, so the loop is extractive. F-010 mis-filed life_context yields a false context set behind a correct standing. All three are policy; nothing frozen moves.",
-      "status": "OPEN — DECISION PRECEDES FIRST CONTACT"
+      "act_required": "F-009 and F-010 REPAIRED and independently verified, full gate included. F-008 (quote the node) remains OPEN by design and is still the open half of the decision.",
+      "status": "PARTIALLY DECIDED — F-009/F-010 done, F-008 open"
     },
     {
       "inselfaction": "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
@@ -173,7 +180,8 @@
     "ISA-20260814-CC-RUNTIME-PILOT-009",
     "ISA-20260814-CC-PILOT-DISPOSITIONS-010",
     "ISA-20260814-CC-FELT-ARCHITECTURE-011",
-    "ISA-20260814-RC0001-SPR05-005"
+    "ISA-20260814-RC0001-SPR05-005",
+    "ISA-20260814-CC-F013-BLOCKING-012"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
