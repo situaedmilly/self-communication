@@ -1,26 +1,51 @@
 {
-  "schema": "interaction-pointer.v0.2",
-  "updated_at": "2026-08-14T04:20:00Z",
-  "session": "MOBILECHALL",
+  "schema": "interaction-pointer.v0.3",
+  "updated_at": "2026-08-14T01:47:00Z",
+  "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
+  "session": "CONVORUNTIME",
   "latest_inselfaction": {
-    "id": "ISA-20260814-RC0001-CR004-004",
-    "path": "inselfactions/ISA-20260814-RC0001-CR004-004.json",
-    "title": "Cold Review 004 — CHANGES_REQUIRED; CR3-B01 independently CLOSED; one new BLOCKING finding",
+    "id": "ISA-20260814-CC-RUNTIME-PILOT-009",
+    "path": "inselfactions/ISA-20260814-CC-RUNTIME-PILOT-009.json",
+    "title": "CC-RUNTIME-PILOT-001 — the session runtime that generates its own distribution",
     "supersedes": null
   },
-  "source": {
-    "repository": "RUORA",
-    "source_remote": "selfpi:mirrors/RUORA.git",
-    "visibility": "LOCAL MIRROR — NOT RECEIVER-RESOLVABLE",
-    "path": "/Users/millysituated/RUORA",
-    "branch": "main",
-    "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
-    "artifacts_tracked_in_git": false,
-    "review_status_scope": "The transport key below describes the packet's ability to expose the subject to a REMOTE receiver. It is NOT a statement about founder sources, and no clause of v0.4 depends on it. See ISA-20260813-RC0001-BLOCKCLASS-003.",
-    "concurrent_source_note": "The E3 movement in this channel works from RUORA commit 7c88a2bb078af6203a2ca65105cef7a024de8746, based_on 94c2f75f8ce5cce76221463f3d7d958dfc477e45 (tag e3-extension-verified-v0.1), merged_to_main false. Preserved here verbatim so this rewrite loses nothing: the RC-0001 and E3 movements have different sources and this pointer carries one source block."
+  "schema_change_v0_2_to_v0_3": {
+    "what": "`source` was ONE object serving two movements. It is now `sources`, a map of NAMED REPOSITORY BINDINGS.",
+    "why": "v0.2's own `concurrent_source_note` read: 'The E3 movement in this channel works from RUORA commit 7c88a2bb078af6203a2ca65105cef7a024de8746.' That is not a RUORA commit. Verified live in /Users/millysituated/RUORA: `git cat-file -e 7c88a2b^{commit}` returns 'Not a valid object name'. It is a conscious-conversation commit. RUORA is many repositories; a hash without a repository is not an address, and one unnamed source block for two movements is what produced the collapse.",
+    "credit": "MOBILECHALL had already corrected the RUORA binding to 7387fe4 and flagged that one source block cannot carry two movements. This change completes that repair rather than reversing it.",
+    "correction_law": "This pointer is mutable and is corrected in place. No INSELFACTION is edited: ISA-008 carries its own correctly-bound `source` block naming repository 'conscious-conversation'. The defect lived only in the pointer."
+  },
+  "sources": {
+    "rc0001_semanticprogram": {
+      "repository": "RUORA",
+      "source_remote": "selfpi:mirrors/RUORA.git",
+      "visibility": "LOCAL MIRROR — NOT RECEIVER-RESOLVABLE",
+      "path": "/Users/millysituated/RUORA",
+      "branch": "main",
+      "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
+      "commit_verified": "Present in RUORA. Observed HEAD, message 'chore(governance): exclude chambers/ runtime infrastructure from doctrine repo'.",
+      "artifacts_tracked_in_git": false,
+      "candidate_binding_caveat": "Whether this tree corresponds to the reviewed v0.4 candidate is UNVERIFIED and is not asserted here. The candidate remains addressable only by SHA-256 7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f against the local working tree."
+    },
+    "conscious_conversation": {
+      "repository": "conscious-conversation",
+      "source_remote": "situaedmilly/conscious-conversation",
+      "visibility": "PRIVATE — receiver-resolvable to an authorized receiver",
+      "path": "/Users/millysituated/RUORA/projects/conscious-conversation",
+      "branch": "feature/cc-runtime-pilot",
+      "commit": "6f57e90c23eb7e0dc45b383e103c16b5b7fdd255",
+      "commit_verified": "Present in conscious-conversation and pushed to origin.",
+      "based_on": "7c88a2bb078af6203a2ca65105cef7a024de8746",
+      "based_on_tag": "e3-extension-verified-v0.1",
+      "merged_to_main": false,
+      "artifacts_tracked_in_git": true,
+      "review_status": "REVIEWABLE",
+      "delta": "https://github.com/situaedmilly/conscious-conversation/compare/7c88a2b...6f57e90"
+    }
   },
   "transport": {
     "review_status": "BLOCKED_SOURCE_UNRESOLVABLE",
+    "scope": "RC-0001 ONLY. The conscious-conversation movement is tracked, pushed and receiver-resolvable; this label does not apply to it.",
     "class": "CHANNEL CUSTODY / TRANSPORT ONLY",
     "custody_warning": "The RC-0001 corpus is UNTRACKED — contained in no commit, on no remote. Verified: 0 commits contain the v0.4 candidate. Artifacts are addressable only by SHA-256 against the local working tree. Clearing this requires founder authorisation to commit the corpus, which every movement in this cascade has expressly withheld.",
     "clauses_affected": 0,
@@ -28,6 +53,13 @@
     "blocks": "EXTERNAL review only — the one rung of the independence ladder this cascade has never reached."
   },
   "standing": {
+    "cc_runtime_pilot": "CC-RUNTIME-PILOT-001 · RUNTIME EXECUTES · 28/28 · CORPUS NOT YET GENERATED",
+    "kernel_gate": "OPEN",
+    "self_integrity": "HOLD — reopening conditions 10 and 11 NOT PERFORMED",
+    "e3_extension": "OUTSIDE SEAL as observed this session — Colima is not running, PostgreSQL is unreachable, and both live suites report NOT PERFORMED. VERIFIED EXTENSION (13/13) at ISA-004 is PRIOR RECORDED HISTORY, not re-observed today. Nothing regressed in code: the suites did not fail an assertion, they did not run. UNAVAILABLE is not PASS and is not FAIL.",
+    "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
+    "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED",
     "semanticprogram": "v0.4 · CHANGES_REQUIRED — NOT RATIFIABLE",
     "candidate_sha256": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
     "cold_review_003": "CHANGES_REQUIRED — DISCHARGED by SP-R04",
@@ -44,14 +76,27 @@
     "seal": "NOT GRANTED",
     "implementation": "NOT AUTHORISED",
     "sp_r05": "NOT AUTHORISED",
-    "assertions": 231,
-    "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT"
+    "assertions": 231
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Two independent decisions are pending: (1) authorise or decline SP-R05 bounded to CR004, noting CR4-01 may not be repairable without a founder decision on the loss-class vocabulary; (2) decide how ConsciousConversation interactions come to exist"
+    "act_required": "Three independent decisions are pending: (1) authorise or decline SP-R05 bounded to CR004, noting CR4-01 may not be repairable without a founder decision on the loss-class vocabulary; (2) run a real ConsciousConversation session — `python3 runtime/pilot.py --node <SELFNODE_ID>` is the whole act, and everything downstream is blocked on it; (3) decide F-002, whether signal genesis gets a primitive in the frozen Journey contract."
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260814-CC-RUNTIME-PILOT-009",
+      "subject": "ConsciousConversation session runtime",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Use the runtime with a real SELFnode. The instrument and the runtime that generates its operating distribution are both built and verified; what is missing is use, not a component.",
+      "status": "RUNTIME EXECUTES · 28/28 · CORPUS NOT YET GENERATED"
+    },
+    {
+      "inselfaction": "ISA-20260814-CC-RUNTIME-PILOT-009",
+      "subject": "F-002 — signal genesis has no primitive",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Decide whether signal genesis gets a primitive in the frozen Journey contract, or stays a declared and recorded gap. Contained in runtime/selfstate.py meanwhile; every occurrence is logged into the transcript.",
+      "status": "OPEN — CONTRACT GAP, CONTAINED AND MEASURABLE"
+    },
     {
       "inselfaction": "ISA-20260814-RC0001-CR004-004",
       "subject": "RC-0001 SemanticProgram v0.4 — Cold Review 004 outcome",
@@ -60,11 +105,18 @@
       "status": "CHANGES_REQUIRED — CR3-B01 CLOSED, one new BLOCKING finding (CR4-01)"
     },
     {
+      "inselfaction": "ISA-20260814-CC-RUNTIME-PILOT-009",
+      "subject": "RC-0001 candidate source binding",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Re-derive a verified RUORA commit for the RC-0001 candidate state, or confirm it has none. The v0.2 pointer named 7c88a2b as a RUORA commit; it is absent from RUORA. No replacement was invented.",
+      "status": "OPEN — CANDIDATE BINDING UNVERIFIED (digest-addressable only)"
+    },
+    {
       "inselfaction": "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
       "subject": "E3 coverage measurement",
       "next_authority": "MILASOPHAHR",
-      "act_required": "Generate ConsciousConversation interactions; none exist to measure",
-      "status": "ON_DISTRIBUTION_SAMPLE_INSUFFICIENT"
+      "act_required": "Superseded in practice by ISA-009: the generative act is now a single command.",
+      "status": "ON_DISTRIBUTION_SAMPLE_INSUFFICIENT — unchanged"
     },
     {
       "inselfaction": "ISA-20260813-RC0001-BLOCKCLASS-003",
@@ -93,13 +145,20 @@
     "ISA-20260813-E3-COVERAGE-PROTOCOL-006",
     "ISA-20260814-E3-COVERAGE-BASELINE-007",
     "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
-    "ISA-20260814-RC0001-CR004-004"
+    "ISA-20260814-RC0001-CR004-004",
+    "ISA-20260814-CC-RUNTIME-PILOT-009"
   ],
-  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
+  "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
+  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
   "channel_invariants": [
-    "INV-ISX-REVIEW-RESOLVABILITY — an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: transport.review_status = BLOCKED_SOURCE_UNRESOLVABLE. This is a transport property and must not be recorded inside `source`, where it reads as provenance.",
+    "INV-ISX-REVIEW-RESOLVABILITY — an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: transport.review_status = BLOCKED_SOURCE_UNRESOLVABLE. This is a transport property and must not be recorded inside a source binding, where it reads as provenance.",
+    "INV-ISX-SOURCE-BINDING — a commit reference MUST name the repository it belongs to, and that binding must be verifiable in that repository. RUORA is many repositories; an unbound hash is not an address. Raised by ISA-009 after the v0.2 pointer described a conscious-conversation commit as a RUORA commit.",
     "INV-E3-CANDIDATE-AUTHENTICITY — an adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations. Candidate metadata may identify a detection result; it may never prove one occurred.",
     "INV-E3-COVERAGE-NO-RETROFIT — an evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation.",
-    "INV-E3-CORPUS-MINIMIZATION — a coverage corpus may preserve only the content required to determine whether an observable E3 event occurred and whether the detector recognized it; privacy reduction must not alter the event-bearing language."
+    "INV-E3-CORPUS-MINIMIZATION — a coverage corpus may preserve only the content required to determine whether an observable E3 event occurred and whether the detector recognized it; privacy reduction must not alter the event-bearing language.",
+    "INV-CC-PILOT-SHADOW-DEFERRAL — no detector output may exist for a conversation before that conversation's transcript is frozen and digested. Causal order, not policy.",
+    "INV-CC-PILOT-SHADOW-INERT — the module naming the detector is unreachable from the session; a live session process never loads kernel.e3 at all.",
+    "INV-CC-PILOT-TRANSCRIPT-BINDING — a downstream artifact must carry its transcript's digest, and that digest must still verify against the transcript's own bytes.",
+    "INV-CC-PILOT-ANNOTATION-DEFERRED — the pilot may emit spans. It may not label them, partition them, or admit them to a cohort."
   ]
 }

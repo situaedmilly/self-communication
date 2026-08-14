@@ -1,0 +1,207 @@
+{
+  "inselfaction_id": "ISA-20260814-CC-RUNTIME-PILOT-009",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T01:43:54Z",
+  "emitted_at_note": "Wall clock. Predecessor ISA-008 carries the stamp 02:05:00Z, which is AHEAD of the true clock at its emission. Chain order is given by `history` in the pointer, not by comparing these timestamps. ISA-008 is immutable and is not edited to fix this.",
+  "session": "CONVORUNTIME",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
+  "concurrent_transmission_note": "While this movement was in flight, session MOBILECHALL emitted ISA-20260814-RC0001-CR004-004 (Cold Review 004: CHANGES_REQUIRED, CR3-B01 CLOSED). Independent movement, different subject. The pointer was MERGED onto its state, not overwritten with a stale read — the first read of latest.json in this session predated it.",
+  "pointer_defect_found": {
+    "id": "F-005",
+    "severity": "CUSTODY DEFECT IN THE CHANNEL, REPAIRED IN THE POINTER",
+    "statement": "interaction-pointer.v0.2 described commit 7c88a2bb078af6203a2ca65105cef7a024de8746 as a RUORA commit, in `source.concurrent_source_note`. It is not. Verified live: `git cat-file -e 7c88a2b^{commit}` in /Users/millysituated/RUORA returns 'Not a valid object name'. It is a conscious-conversation commit.",
+    "repair": "The pointer is mutable and was corrected: `source` became `sources`, a map of NAMED repository bindings, each verified in the repository it names. No INSELFACTION was edited — ISA-008 already bound that commit correctly to repository 'conscious-conversation'. The defect lived only in the pointer.",
+    "new_channel_invariant": "INV-ISX-SOURCE-BINDING — a commit reference MUST name the repository it belongs to, and that binding must be verifiable in that repository. RUORA is many repositories; an unbound hash is not an address.",
+    "not_repaired": "No RUORA commit for the RC-0001 candidate state was invented. That binding is recorded UNVERIFIED and raised as an open authority item."
+  },
+  "operation": {
+    "title": "CC-RUNTIME-PILOT-001 — the session runtime that generates its own distribution",
+    "authority_exercised": "MILASOPHAHR: close the historical-corpus search; manifest the minimum viable ConsciousConversation experience capable of producing genuine on-distribution interactions while E3 coverage runs silently in shadow.",
+    "not_done": [
+      "no detector change — kernel/e3.py byte-identical",
+      "no RULES change",
+      "no ONTOLOGY change",
+      "no change to the verified E3 authority path",
+      "no edit to kernel/ contract/ db/ coverage/",
+      "no annotation, no partition assignment, no cohort admission",
+      "no corpus generated — that requires real sessions with real SELFnodes",
+      "no conversation manufactured to populate a benchmark",
+      "no primitive added to the frozen Journey contract"
+    ]
+  },
+  "headline": {
+    "finding": "RUNTIME EXECUTES · 28/28 · CORPUS NOT YET GENERATED",
+    "statement": "The adaptive loop runs headlessly against the frozen kernel. A signal climbed DECLARED → CORROBORATED across four cycles purely through the FORM of the questions asked, with no inference layer anywhere in the runtime.",
+    "significance": "The reason the on-distribution sample was insufficient has been removed. The sample is still insufficient: that now requires an act of USE, not an act of engineering."
+  },
+  "the_loop": {
+    "shape": "SELF state → unknown/contested structure → legal objective → highest-value probe → node response → episode → signals/evidence → recomputed SELF → (repeat)",
+    "fsm_reconciliation": "The Journey FSM is fast-forward only and terminates at INTEGRATED, so the loop is NOT inside a journey. One cycle is one journey; a conversation is a sequence of journeys over one shared Store. The graph surviving between them IS the recomputed SELF the next probe is selected from. No kernel change was needed to make the loop close.",
+    "observed_run": [
+      "jrn_0001 DISCOVERY  → sig_0001 DECLARED",
+      "jrn_0002 EVIDENCE   → E1 (WORK)",
+      "jrn_0003 RECURRENCE → E1 (FAMILY_OF_ORIGIN)",
+      "jrn_0004 RECURRENCE → E1 (INTIMATE) — sig_0001 CORROBORATED"
+    ],
+    "climb_reason": "ADMISSION_RULE_SATISFIED — ≥3 E1 edges across ≥2 life contexts. Recomputed from the evidence graph, never asserted."
+  },
+  "the_interrogative_determines_the_evidence_class": {
+    "law": "Each probe template declares, BEFORE the answer exists, what kind of episode its answer will be witnessed as.",
+    "mapping": {
+      "'what do you generally do'": "UTTERANCE → LIFE → E0 → ceiling DECLARED",
+      "'tell me about one specific time'": "NARRATED → LIFE → E1 → ceiling CORROBORATED"
+    },
+    "why": "Choosing episode_type from the answer's CONTENT would be a classification judgement, and a classifier inside the runtime is an inference layer. The absence of that layer is the property that makes the corpus worth measuring. So the evidence ceiling is fixed by the form of the question and never by a post-hoc judgement about what was said.",
+    "consequence": "The pilot creates NO E3 or E4 edges at all (PILOT-19). E3 requires adjudication; adjudication is authority; authority must not move while a corpus is being generated.",
+    "probe_language": "Deterministic templates, not model-generated. A model writing the questions would be free to drift toward phrasings the detector happens to match, and coverage measured on the resulting corpus would be measuring the drift."
+  },
+  "coverage_shadow": {
+    "loop_prevented": "detector fires → runtime changes behaviour → changed behaviour produces detector-friendly data → coverage appears better",
+    "closed_by": "construction, in three independent ways. None is a promise about restraint.",
+    "INV-CC-PILOT-SHADOW-DEFERRAL": {
+      "statement": "Shadow refuses a transcript that is not FROZEN.",
+      "argument": "Detector output for a conversation cannot exist until that conversation has ended, so no turn in it can have been shaped by output about it. Causal order, not policy.",
+      "proof": "PILOT-11"
+    },
+    "INV-CC-PILOT-SHADOW-INERT": {
+      "statement": "runtime/shadow.py is the ONLY module under runtime/ that names kernel.e3, and nothing under runtime/ names shadow.",
+      "proof_dynamic": "PILOT-05 runs a COMPLETE session in a real subprocess and asserts 'kernel.e3' never appears in sys.modules. You cannot be influenced by a module you never loaded.",
+      "proof_static": "PILOT-07 asserts the same by AST walk, because a dynamic check alone would pass on a run that merely happened not to take the importing branch.",
+      "cost_accepted": "runtime/pilot.py PRINTS the shadow command rather than calling it. One saved keystroke is not worth reducing a structural guarantee to a promise."
+    },
+    "INV-CC-PILOT-TRANSCRIPT-BINDING": {
+      "statement": "Every downstream artifact carries the transcript digest, re-verified against the transcript's own bytes.",
+      "proof": "PILOT-12 (shadow refuses a tampered transcript), PILOT-13 (emission refuses the same one)"
+    },
+    "confers_nothing": "adjudicate() is never called. apply_adjudication() is never called. No Graph leaves the module. The record states effect_on_conversation=NONE, adjudicated=false, evidence_conferred=null, is_coverage_measurement=false (PILOT-10).",
+    "inertness_observed": "PILOT-09 — after shadow ran over the very conversation that produced the graph, both the graph and the policy's next question were unchanged."
+  },
+  "shadow_sees_what_the_span_harness_cannot": {
+    "rule": "E3D-004 REPEATS_SAME_CORRECTION",
+    "finding": "coverage/harness.run_detector holds ONE span at a time. E3D-004 is defined over a whole conversation, so it is structurally invisible there and its recall in the span harness can never be anything but zero.",
+    "what_changed": "Nothing in the detector. The same frozen detect() is called, given the conversation-level context its own rule requires — which on-distribution data is the first thing to provide.",
+    "handling": "Such findings are flagged cross_turn, because the annotation ontology has no counterpart for them yet (the schema has depends_on_prior_turns, but the harness cannot use it).",
+    "status": "OBSERVATION, not a coverage result."
+  },
+  "a_proof_run_cannot_become_a_measurement": {
+    "mechanism": "Provenance is READ OFF responder_kind, not chosen at emission.",
+    "HUMAN_SELFNODE": "REAL_TRANSCRIPT — eligible, after blind annotation",
+    "SCRIPTED_REPLAY": "SYNTHETIC_FIXTURE — refused by coverage/harness.load_corpus (COV-16)",
+    "durability": "PILOT-15 places scripted spans INSIDE a measured partition and the coverage loader still refuses them. The refusal belongs to the loader, so it holds no matter who moves the file later.",
+    "emission_stops_short": {
+      "location": "coverage/corpus/pending/ — NOT a partition; load_corpus never reads it (PILOT-18)",
+      "labels": "human_labels: [] — which COV-17 also refuses. A pending file is deliberately INVALID against the annotation schema and becomes valid the moment a human fills it in.",
+      "INV-CC-PILOT-ANNOTATION-DEFERRED": "The pilot may emit spans. It may not label them, partition them, or admit them to a cohort. All three are authority acts.",
+      "annotator_warning": "runtime/shadow_records/ exists and is readable. An annotator who reads it first is no longer blind, and the measurement collapses into agreement with the thing being measured."
+    },
+    "privacy": {
+      "reuse": "coverage/extract.py scrubbers + the mechanical denylist gate that refuses to WRITE when an identifier survives. A second privacy implementation would be a second thing to get wrong.",
+      "fidelity_checked_both_ways": "PILOT-17 asserts identifier-free node language comes through BYTE-IDENTICAL — otherwise privacy reduction would be altering the very text coverage is measured on.",
+      "raw_tier": "runtime/transcripts/ and runtime/shadow_records/ are gitignored. Raw transcripts are the restricted tier; only pseudonymized derived spans may become repository content."
+    }
+  },
+  "findings": [
+    {
+      "id": "F-002",
+      "severity": "CONTRACT GAP",
+      "title": "Signal genesis has no primitive",
+      "statement": "AWAKEN PROVOKE RESPOND WITNESS PROVE SEAL INTEGRATE is the complete mutating set. _witness creates Episodes. _prove creates Edges. NOTHING creates the Signal an Edge must point at — check_edge raises INV-CC-EDGE-REF for an unknown signal, so one must already exist. Every suite in proof/ works around this by assigning store.graph.signals[...] directly in test setup.",
+      "why_it_matters": "Fine in a test. Not fine in a runtime: the act that decides WHAT PROPOSITION IS BEING TRACKED ABOUT A PERSON has no primitive, no failure code, no mutation-whitelist entry, no transactional boundary of its own and no audit event. It is the one authority-bearing act in the loop the Journey contract does not model.",
+      "not_fixed_here": "Fixing it means adding a primitive to a frozen contract, which is an authority act, not an engineering one.",
+      "containment": "runtime/selfstate.py confines the workaround to one named place; refuses any standing at genesis (PILOT-21); refuses genesis while a journey sits SEALED-but-not-INTEGRATED, which would silently make the seal un-integrable (PILOT-22); and records every occurrence into the transcript so the gap is MEASURABLE instead of invisible (PILOT-23).",
+      "authority_required": "MILASOPHAHR — whether to add a genesis primitive to the Journey contract."
+    },
+    {
+      "id": "F-003",
+      "severity": "RUNTIME DEFECT, REPAIRED",
+      "title": "The loop kept provoking after the node went silent",
+      "statement": "The first implementation continued after a refused cycle. A responder that had simply stopped answering produced six identical EMPTY_RESPONSE cycles — six journeys, six provocations, zero turns.",
+      "repair": "A refusal now ends the conversation; a DECLINE continues only while something else is legal to ask. A loop that keeps asking after the node has gone quiet is not resilience, it is a runtime that cannot tell the conversation is over.",
+      "proof": "PILOT-25"
+    },
+    {
+      "id": "F-004",
+      "severity": "AUTHOR ERROR, CAUGHT BY OWN SUITE",
+      "title": "A fabricated digest constant",
+      "statement": "PILOT-27 was written with a full 64-character label digest when only the 16-character prefix 87b19478315d867f had ever been printed by any command. The suite failed on first run and the true value was read from disk.",
+      "significance": "Recorded because it is the same class as F-001 (a fabricated commit hash, ISA-002). A hash no command printed is an assertion, not evidence — including when the assertion is inside a test that will check it."
+    }
+  ],
+  "policy_narrower_than_law": {
+    "statement": "runtime/probe.py is POLICY. kernel/laws.py is LAW. Policy is strictly narrower and replaceable without touching the frozen core; every proposal it generates is re-adjudicated by _provoke against the authoritative graph.",
+    "worked_example": "INV-CC-OBJECTIVE-LICENSED permits EVIDENCE for ANY DECLARED signal. Left at that legal limit, EVIDENCE kept winning on structural gain and kept landing in the SAME life context, so context diversity never reached MIN_CONTEXTS and the signal was pinned at DECLARED forever. The policy asks for one instance and then hands over to RECURRENCE. The law did not change; the conversation policy did.",
+    "second_example": "DISCOVERY is proposed only when nothing is half-open. Otherwise DISCOVERY ties with EVIDENCE on structural gain and the loop opens new ground every cycle — breadth forever, depth never.",
+    "no_hypotheses_minted": "The pilot never mints a Hypothesis or a Mechanism on its own. Minting a hypothesis about a person is inference. DISAMBIGUATION and MECHANISM therefore remain unreachable until a human seeds them deliberately."
+  },
+  "source": {
+    "repository": "conscious-conversation",
+    "source_remote": "situaedmilly/conscious-conversation",
+    "visibility": "PRIVATE",
+    "branch": "feature/cc-runtime-pilot",
+    "source_commit": "6f57e90c23eb7e0dc45b383e103c16b5b7fdd255",
+    "based_on": "7c88a2bb078af6203a2ca65105cef7a024de8746",
+    "based_on_tag": "e3-extension-verified-v0.1",
+    "merged_to_main": false,
+    "delta": "https://github.com/situaedmilly/conscious-conversation/compare/7c88a2b...6f57e90",
+    "repo_binding_note": "This hash belongs to the conscious-conversation repository. RUORA is many repositories; a HEAD from one is a nonexistent commit in another."
+  },
+  "core_frozen": {
+    "detector_digest": "417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
+    "kernel_e3_py": "FROZEN — verified byte-identical (PILOT-26)",
+    "RULES": "FROZEN",
+    "ONTOLOGY": "FROZEN",
+    "verified_e3_authority_path": "UNTOUCHED",
+    "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80",
+    "label_digest_status": "PRESERVED (PILOT-27)",
+    "historical_control_cohort": "PRESERVED — 122 spans, cohorts.json unchanged",
+    "frozen_trees_unchanged": "kernel/ contract/ db/ coverage/ — zero tracked modifications (PILOT-28)",
+    "declared_delta": "proof/run_all.py only — additive suite registration, already covered by BASELINE-DELTA.md. proof/gate.py is UNCHANGED by this phase: cc_runtime_pilot has no verdict block and is not in MANDATORY_SUITES, so a green pilot can never read as a coverage result nor hold the kernel gate."
+  },
+  "proof": {
+    "cc_runtime_pilot": "28/28",
+    "baseline_integrity": "6/6",
+    "laws": "PASS",
+    "journey": "26/26",
+    "schema": "30/30",
+    "adversarial_p0": "18/18",
+    "sql": "137 statements parsed across 5 migrations",
+    "e3_adversarial": "24/24",
+    "e3_wiring": "13/13",
+    "e3_authenticity": "12/12",
+    "e3_coverage_harness": "20/20",
+    "kernel_gate": "OPEN",
+    "self_integrity": "HOLD"
+  },
+  "standing_observed_this_session": {
+    "KERNEL GATE": "OPEN",
+    "SELF INTEGRITY": "HOLD — conditions 10 and 11 NOT PERFORMED",
+    "E3 EXTENSION": "OUTSIDE SEAL — as observed in THIS session only",
+    "CC-RUNTIME-PILOT-001": "RUNTIME EXECUTES · 28/28 · CORPUS NOT YET GENERATED",
+    "E3 COVERAGE": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: ON_DISTRIBUTION_SAMPLE_INSUFFICIENT (unchanged)",
+    "environment_caveat": "Colima is not running, so PostgreSQL is unreachable and both live-Postgres suites report NOT PERFORMED. E3 EXTENSION was recorded VERIFIED EXTENSION (13/13) at ISA-004 against a live database; that standing is PRIOR RECORDED HISTORY and was NOT re-observed today. Nothing regressed in code — the two suites did not fail an assertion, they did not run. UNAVAILABLE is not PASS, and it is not FAIL either.",
+    "environment_note": "Proof dependencies (jsonschema, pglast) were absent from this machine's interpreter and were restored into a gitignored .venv so the gate could be evaluated at all. psycopg was deliberately left uninstalled rather than half-installed, so the live suites report the accurate verdict NOT PERFORMED instead of an import failure dressed as FAIL."
+  },
+  "what_this_does_and_does_not_tell_us": {
+    "established": [
+      "The complete AWAKEN→INTEGRATE cycle executes headlessly under a conversation driver, repeatedly, over one shared Store.",
+      "SELF state moves by the ontology's own admission rule under real protocol execution, not only in test fixtures.",
+      "A live session process never loads the detector — verified in a subprocess, not by inspection.",
+      "Shadow evaluation leaves neither the graph nor the next question changed.",
+      "A scripted proof run cannot enter a measured corpus, even if moved."
+    ],
+    "not_established": [
+      "Whether E3 can see anything in its intended domain. Still unanswerable — no human has used the runtime.",
+      "Whether the probe templates elicit the kind of speech the E3 event classes describe. Unknown until a real node answers them.",
+      "Whether the conversation is any good. The pilot proves the machinery runs; it says nothing about whether being asked these questions is worth a person's time.",
+      "Whether E3D-001..006 are the right event classes at all. That question is untouched and remains open."
+    ]
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Run a real session. `python3 runtime/pilot.py --node <SELFNODE_ID>` is the whole act. Everything downstream — shadow, emission, annotation, partitioning, cohort admission — is blocked on a conversation that has not happened.",
+    "secondary": "Decide F-002: whether signal genesis gets a primitive in the Journey contract, or stays a declared and recorded gap.",
+    "standing_position": "The instrument is built, verified and frozen. The runtime that generates its operating distribution is now built and verified too. What is missing is no longer a component. It is use."
+  }
+}
