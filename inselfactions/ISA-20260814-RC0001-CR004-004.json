@@ -1,0 +1,158 @@
+{
+  "inselfaction_id": "ISA-20260814-RC0001-CR004-004",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T04:20:00Z",
+  "session": "MOBILECHALL",
+  "immutable": true,
+  "supersedes": null,
+  "continues": "ISA-20260813-RC0001-BLOCKCLASS-003",
+
+  "operation": {
+    "title": "Cold Review 004 — lineage-independent local adversarial review of SemanticProgram v0.4 under BC-001-BOUNDARY",
+    "authority": "Founder-authorised, read-only against the corpus. No repair, revision, adjudication, seal or implementation was authorised or performed.",
+    "independence": {
+      "self_review": "NO — the reviewer received artifacts and mandate only, and was told explicitly it had been given no author-side account and must not seek one",
+      "lineage_independent": "YES",
+      "model_independent": "NO",
+      "external": "NO",
+      "transport_independent": "no claim required by mandate",
+      "local_source_sufficiency": "SATISFIED — every required semantic source resolved locally by digest"
+    }
+  },
+
+  "verdict": {
+    "cold_review_004": "CHANGES_REQUIRED",
+    "cr3_b01": "CLOSED",
+    "cr3_b01_significance": "First blocker closure in this cascade established by an independent reviewer rather than claimed by the author. The author has never been permitted to write CR3-B01 CLOSED and did not.",
+    "cr3_b01_decisive_test": "The Cold Review 003 counterexample, reconstructed from CR003's own register and re-run against v0.4's normative rows with the candidate's explanation set aside, now requires an embodiment to assert that a four-element sequence containing zero INVALID_TRANSITION elements has an illegal-transition count of 1 — a direct contradiction of SP-043. v0.3's SP-043 was an increment rule; v0.4's is a definition. Scope, initial value and reset point are supplied normatively. Six commissioned attacks, including the restart-spanning one, all failed to reopen it.",
+    "new_blocking": 1,
+    "new_material": 11,
+    "new_minor": 5,
+    "cr003_regression": "13 CLOSED · 6 PARTIALLY_CLOSED · 1 NOT_CLOSED (CR3-04) · 0 REGRESSED, plus the CR-09 regression and the four-item CR-002 residue CLOSED",
+    "pass_threshold": "8 of 15 lines met",
+    "not_blocked_because": "Every required semantic source was available locally. The transport-custody condition affects zero clauses and underwrote no finding, no disposition and no threshold determination.",
+    "artifact": {
+      "path": "/Users/millysituated/RUORA/governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.4-LINEAGE-INDEPENDENT-COLD-REVIEW-004.md",
+      "sha256": "7ce5feac4bc20c7dd7987e368e397912db0627203e85a5705d5144fff96d1a50",
+      "lines": 708
+    }
+  },
+
+  "controlling_finding": {
+    "id": "CR4-01",
+    "severity": "BLOCKING",
+    "title": "The loss class is embodiment-authored and uncalibrated; Cold Review 003 §3.5 reconstructs",
+    "mechanism": "SP-151 draws the loss class from THE EMBODIMENT'S OWN published capability declaration. No clause closes that vocabulary and no clause individuates 'capability'. SP-151's sentence 'Two embodiments lacking different capabilities therefore carry different loss classes' is an assertion about the world, not a constraint the program enforces.",
+    "reconstruction": "CR-003 §3.5's pair G′ (cannot hold a second pending contribution) and H′ (can hold two but cannot preserve canonical order) may each TRUTHFULLY publish the same coarse loss class — e.g. SECOND_RECORD_UNSUPPORTED. SP-155 veridicality is satisfied by both, because the declaration is true of both. SP-152 therefore compares them EQUAL, and the loss of canonical ordering — a member of P-L1-A's sealed scope list — is again invisible.",
+    "why_it_is_blocking": "v0.4 §16.2 rates the CR3-04 repair IMPOSSIBLE. It is not impossible; it is unenforced. This is the founder's own standard failing: 'A repair counts only if the normative representation either makes the defect impossible or makes it explicitly detectable.' The hole was moved from an undefined token to an uncalibrated vocabulary.",
+    "author_verification": "CONFIRMED INDEPENDENTLY BY THE AUTHOR-SIDE SELFSYSTEM. Searched v0.4 for individuat / granularity / which-capability — zero occurrences. Of 19 'loss class' lines, none enumerates or bounds the vocabulary."
+  },
+
+  "author_side_verification_of_the_review": {
+    "principle": "The reviewer's load-bearing claims were re-derived against machine state before relay. A review is not evidence merely because it is independent.",
+    "cr4_03_confirmed_and_owned": {
+      "claim": "The auditor published in v0.4 §16.4 does not execute, and its body is duplicated with a divergent copy.",
+      "verification": "Extracted the fenced block verbatim and ran it. `SyntaxError: unterminated string literal` at document line 781. The block contains the script TWICE: a complete correct copy at document lines 666–780, then a truncated second copy at 781–869 whose first line lost the prefix `norm_nofence = re.sub(r'^` at the splice seam. The two copies differ at exactly one point — the FT row regex, head `^\\| FT-\\d{2} · ` versus tail `^\\| FT-\\d{2} ` — which is the very defect the author had corrected, reintroduced by the duplicate.",
+      "ownership": "This defect is the author's, introduced during SP-R04, and is the SAME splice-boundary error class as the earlier §17 mis-cut in that movement. It recurred undetected because the author verified the auditor's OUTPUT and never verified that the PUBLISHED BYTES execute.",
+      "aggravating": "§16.5 states the block was 'Produced by running the §16.4 script against this file.' As published, that is false — no such run is possible. §16.5 exists because CR3-17 caught v0.3 mis-transcribing generated evidence; the successor defect is worse in kind, being a provenance claim rather than a formatting one."
+    },
+    "cr4_03_countervailing_fact": {
+      "claim": "§16.5's tallies are accurate.",
+      "verification": "Ran the head copy against v0.4 and byte-compared its stdout to the published block. BYTE-IDENTICAL: True. The diff-mode block against v0.3 also reproduces (ROWS_ADDED 12 · ROWS_REMOVED 0 · ROWS_CHANGED 21 · UNMARKED_CHANGED_ROWS NONE).",
+      "consequence": "The numbers are true; their stated provenance is not. Cold Review 003's overstatement finding does NOT recur. The repair is transcriptional, not arithmetical."
+    },
+    "cr4_02_confirmed": {
+      "claim": "The required vector does not determine its own reference trace on the DaySlot coordinate.",
+      "verification": "SP-094 pins three of SP-019's seven L-facts — state idle, empty durable Entry history, empty pending. Ledger identity, Ritual identity, canonical history order and the CURRENT DAYSLOT ORDINAL are unpinned. SP-023 declares the DaySlot ordinal SEMANTIC. Two conforming runs of the sole required vector at different DaySlot ordinals therefore fail SP-091 equality with no clause violated, and SP-093 normalization cannot erase a coordinate SP-023 made semantic."
+    },
+    "reviewer_arithmetic_corrected": {
+      "defect": "CR004's headline table and §10 verdict block both report 'NEW MATERIAL 7'.",
+      "truth": "§4 carries twelve numbered findings: CR4-01 BLOCKING plus CR4-02 through CR4-12 — ELEVEN MATERIAL — plus five MINOR (CR4-M1…M5). Counted mechanically: 12 matches for the §4.N finding heading pattern.",
+      "significance": "The verdict is unaffected — CHANGES_REQUIRED stands on the BLOCKING finding alone — but the founder is deciding against these counts, and the review commits at reduced amplitude the same tally-inconsistency class it records against v0.4 as CR4-M1. Cite 1 BLOCKING / 11 MATERIAL / 5 MINOR.",
+      "disclosure_note": "Reported rather than silently corrected in the artifact. The review is the reviewer's record and the author does not edit it."
+    }
+  },
+
+  "remaining_findings_summary": {
+    "material": {
+      "CR4-04": "SP-005 carries authored normative law inside a FOUNDER_SEALED_L1 / EXACT row",
+      "CR4-05": "SP-091 silently drops the founder's Web/iOS dual-substrate cardinality",
+      "CR4-06": "SP-046 promotes a hedged worked example ('might require') to unhedged universal law under an EXACT seal",
+      "CR4-07": "The count's presented-sequence scoping is a founder decision given operative force without docketing — this is the BC-001-FINDING, answered affirmatively",
+      "CR4-08": "§13.0's branch mapping is not a partition — vacuous-truth overlap on all five singletons — and v0.4 affirmatively asserts that it is",
+      "CR4-09": "SP-019's 'complete L-fact set' is falsified by SP-053's origin DaySlots and SP-075",
+      "CR4-10": "The CR3-06 coordinate separation was not propagated; `view`'s domain is specified three inconsistent ways and acceptance values are evaluated pre-restart",
+      "CR4-11": "SP-121's stated reason is false under the disposition regime",
+      "CR4-12": "§17.3's ORTHOGONAL justification for SP-029 rests on a premise L1 falsifies"
+    },
+    "class_observation": "CR4-04, CR4-05 and CR4-06 are RECURRENCES of the CR3-01 and CR3-15 classes at rows the SP-R04 repair did not reach. That is a scope failure in the repair, not a regression in method — the technique was sound and was applied to too few rows.",
+    "minor": "CR4-M1 §17.1 tally inconsistent · CR4-M2 SP-158 quotation drift, which its own stated falsifier catches · CR4-M3 the Semantic Source Map has zero surface and its omission is undisclosed · CR4-M4 §16.1's 9/9 rationale mischaracterises founder laws 1 and 6 · CR4-M5 §15 binds none of the founder's acceptance vocabulary"
+  },
+
+  "docket": {
+    "candidate_claim": "3 OPEN · 0 PARTIALLY_DECIDED · 5 OPERATIVELY_DECIDED",
+    "reviewer_derivation": "3 OPEN · 1 PARTIALLY_DECIDED · 4 OPERATIVELY_DECIDED",
+    "divergence": "A-07 moves to PARTIALLY_DECIDED via constructions α/β. The gate half is operatively decided; the accounting half is an authored installation against unenumerated alternatives, which v0.4 itself discloses at §5 A-07.",
+    "confirmed_open": "A-02, A-03, A-08. A-03's reclassification to OPEN was verified sound in BOTH directions.",
+    "confirmed_operatively_decided": "A-01, A-04, A-05, A-06 — each on grounds independent of SP-019's falsified exhaustiveness.",
+    "founder_guidance": "Do not re-decide A-01, A-04, A-05, A-06. CR004 did not demonstrate their classification false; it independently reconfirmed it."
+  },
+
+  "what_v04_got_right": "Recorded so the record is not one-sided. The blocker is genuinely closed by mechanism. §16.5's tallies are accurate and byte-reproducible. SP-090 is exact and survived all nine entailment attacks. CR3-09, CR3-13, CR3-16 and CR3-18 are mechanically closed. The EXACT set is fully enumerable and fully audited for the first time. §18.2's declared residuals are honest, and §12.2's refusal to overstate FT-11's closure is the right posture.",
+
+  "reviewer_self_limitation": {
+    "asymmetry": "The reviewer's POSITIVE results — the CR4-01 trace, the CR4-02 construction, the CR4-03 SyntaxError and byte-diff, the CR4-04/05 byte comparisons against extracted L1 — are re-verifiable by anyone in minutes and do not depend on its reasoning being sound. Its NEGATIVE results — six CR3-B01 attacks surviving, silent capability loss remaining impossible, capability ≠ permission preserved, L/T non-interference holding — are WEAK evidence, because it may share the author's blind spots.",
+    "consequence_for_cr3_b01": "CR3-B01 CLOSED is a negative result and therefore carries the weaker evidential weight. It is closed against everything a lineage-independent reviewer could construct. A model-independent or external review could plausibly break what this one could not.",
+    "not_tested": "RealityIR, emitter, oracle and target-layer questions; commission procedural conformance beyond cited clauses; exhaustive auditor mutation search; v0.1 and v0.2 beyond digests. The CR3-07 content-value-domain residual rests on positing a sentinel and was flagged rather than graded.",
+    "near_false_positive_disclosed": "The reviewer nearly recorded §18's HBC line as a defect because it fails against the governance repository. HBC is a separate child repository at projects/hbc-html where the claim verifies exactly — HEAD e350205f, 30 tracked, 0 modified, 0 staged. The finding was killed. RUORA nests many independent repositories; a HEAD from one looks like a nonexistent commit in another."
+  },
+
+  "integrity": {
+    "method": "Every digest below was recomputed by the author-side SELFSYSTEM after the review closed, not copied from the reviewer's block.",
+    "artifacts_unchanged": {
+      "v0.4_subject": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
+      "v0.3": "55c590ead44e38248a7f97405c8cb23740018df4bd9b154a8a0fd3df99dd7f8e",
+      "v0.2": "611a782e7abdf323de6567497d4da372ff011142d44de16c6f53c2a9d1feb007",
+      "v0.1": "3e675d9ebd1e8bbb25193625ef9ca784146d8d639e57d5f5fe9dfaee46551537",
+      "cold_review_001": "54de4a52ffa4f63086cbc19d30e7d7beb49b5c61cc1b37a2605da187e626276f",
+      "cold_review_002": "bdd8c218ade5e37f0b23605ec2f789ae6f72b74855aa036eb9905039fc46167e",
+      "cold_review_003": "d9afbcb47f9813430ea763126f80aa25e617012ef80aa6996e0c03d33dc848b1",
+      "slr_01_r1": "a506352ae82bd889034b5972dc2b090185aac3c6ac58f6bbc083f7d4614e68c6",
+      "source_custody_001": "0f61f7bb41ccdb74d00cb679f00df36b74d4221398835068bb4e5bf388734600",
+      "authoring_commission": "9a04124a25ec3dc9c281d73a4f6bce7ecb7a0619a0d9890f9a51fd5ce5dcc04e"
+    },
+    "l1_container": "cee97abe168b011e8cc2bf1d69009d755f8c744998302c76743ac432a7d81ebe — READ ONLY, never copied or imported",
+    "files_created_by_this_movement": 1,
+    "candidate_edited": false,
+    "prior_artifacts_edited": false,
+    "ruora": { "branch": "main", "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8", "staged": 0, "git_operations": "NONE" },
+    "hbc": "projects/hbc-html at e350205f12c140b8216090b935f874cbbc454dee — untouched",
+    "pre_existing_working_tree_note": "` M doctrine/self_axiom.md` is a tracked file outside governance/, mtime 2026-08-01, twelve days before v0.4 was authored. Not touched by this movement and bearing on no finding. Reported, not adjudicated.",
+    "secrets": "none read, printed, staged or requested",
+    "repository_boundary": "not expanded beyond /Users/millysituated/RUORA"
+  },
+
+  "requested_next_action": {
+    "primary": "Authorise SP-R05, bounded to Cold Review 004 exactly as SP-R04 was bounded to Cold Review 003. CR4-01 is controlling and must be repaired first, by mechanism.",
+    "the_hard_part": "CR4-01 may not be repairable without a founder decision. Calibrating the loss class requires either an enumerated vocabulary or a rule individuating capabilities, and L1 supplies neither. If the minimum structural repair requires inventing that vocabulary, that is authorship through a founder boundary and the correct return is BLOCKED_BY_FOUNDER_OR_SOURCE_DECISION — not a fifth authored installation.",
+    "immediate_and_cheap": "CR4-03 is a byte-level excision of the duplicated auditor tail at document lines 781–869 and a correction of §16.5's provenance sentence. It is not a semantic repair and should not be bundled with one.",
+    "docket": "CR4-07 asks whether the count's scoping belongs on the docket. That is a founder question, not an author question.",
+    "not_authorised_and_not_requested": "No seal, no implementation, no adjudication, no protocol mutation. v0.4 is not ratifiable."
+  },
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Authorise or decline SP-R05 bounded to CR004; decide whether the loss-class vocabulary is a founder decision; decide whether the count's scoping is docketed"
+  },
+
+  "constraints_observed": [
+    "Reviewer received artifacts and mandate only; no author-side account of why any repair should work.",
+    "The author never claimed CR3-B01 CLOSED. The closure is the reviewer's finding and is relayed as such.",
+    "The reviewer's load-bearing claims were re-derived against machine state before relay; three were confirmed by direct execution and one arithmetic error in the review was found and reported.",
+    "v0.4 not modified — verified by digest before and after.",
+    "No repair performed, no clause authored, no docket item created.",
+    "Nothing staged or committed in RUORA.",
+    "L1 container read read-only; never imported or copied.",
+    "No secret-bearing material read, printed, or requested."
+  ]
+}

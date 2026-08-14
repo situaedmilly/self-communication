@@ -1,50 +1,64 @@
 {
   "schema": "interaction-pointer.v0.2",
-  "updated_at": "2026-08-14T02:05:00Z",
+  "updated_at": "2026-08-14T04:20:00Z",
   "session": "MOBILECHALL",
   "latest_inselfaction": {
-    "id": "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
-    "path": "inselfactions/ISA-20260814-E3-ONDIST-INSUFFICIENT-008.json",
-    "title": "On-distribution sample insufficient \u2014 no ConsciousConversation interactions exist",
+    "id": "ISA-20260814-RC0001-CR004-004",
+    "path": "inselfactions/ISA-20260814-RC0001-CR004-004.json",
+    "title": "Cold Review 004 — CHANGES_REQUIRED; CR3-B01 independently CLOSED; one new BLOCKING finding",
     "supersedes": null
   },
   "source": {
     "repository": "RUORA",
     "source_remote": "selfpi:mirrors/RUORA.git",
-    "visibility": "LOCAL MIRROR \u2014 NOT RECEIVER-RESOLVABLE",
+    "visibility": "LOCAL MIRROR — NOT RECEIVER-RESOLVABLE",
     "path": "/Users/millysituated/RUORA",
     "branch": "main",
-    "commit": "7c88a2bb078af6203a2ca65105cef7a024de8746",
+    "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8",
     "artifacts_tracked_in_git": false,
+    "review_status_scope": "The transport key below describes the packet's ability to expose the subject to a REMOTE receiver. It is NOT a statement about founder sources, and no clause of v0.4 depends on it. See ISA-20260813-RC0001-BLOCKCLASS-003.",
+    "concurrent_source_note": "The E3 movement in this channel works from RUORA commit 7c88a2bb078af6203a2ca65105cef7a024de8746, based_on 94c2f75f8ce5cce76221463f3d7d958dfc477e45 (tag e3-extension-verified-v0.1), merged_to_main false. Preserved here verbatim so this rewrite loses nothing: the RC-0001 and E3 movements have different sources and this pointer carries one source block."
+  },
+  "transport": {
     "review_status": "BLOCKED_SOURCE_UNRESOLVABLE",
-    "custody_warning": "The RC-0001 corpus is UNTRACKED \u2014 contained in no commit, on no remote. Artifacts are addressable only by SHA-256 against the local working tree. Clearing this requires founder authorisation to commit the corpus, which every movement in this cascade has expressly withheld.",
-    "based_on": "94c2f75f8ce5cce76221463f3d7d958dfc477e45",
-    "based_on_tag": "e3-extension-verified-v0.1",
-    "merged_to_main": false,
-    "review_status_scope": "TRANSPORT CUSTODY ONLY \u2014 this label describes the packet's ability to expose the subject to a REMOTE receiver. It is not a statement about founder sources, and no clause of v0.4 depends on it. See ISA-20260813-RC0001-BLOCKCLASS-003."
+    "class": "CHANNEL CUSTODY / TRANSPORT ONLY",
+    "custody_warning": "The RC-0001 corpus is UNTRACKED — contained in no commit, on no remote. Verified: 0 commits contain the v0.4 candidate. Artifacts are addressable only by SHA-256 against the local working tree. Clearing this requires founder authorisation to commit the corpus, which every movement in this cascade has expressly withheld.",
+    "clauses_affected": 0,
+    "effect_on_cold_review_004": "NONE — CR004 resolved every required semantic source locally by digest and used transport custody as evidence for nothing, in either direction.",
+    "blocks": "EXTERNAL review only — the one rung of the independence ladder this cascade has never reached."
   },
   "standing": {
-    "semanticprogram": "v0.4 \u00b7 CANDIDATE_READY_FOR_COLD_REVIEW_004",
+    "semanticprogram": "v0.4 · CHANGES_REQUIRED — NOT RATIFIABLE",
     "candidate_sha256": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
-    "cold_review_003": "CHANGES_REQUIRED \u2014 DISCHARGED by SP-R04",
-    "cr3_b01": "REPAIR IMPLEMENTED \u00b7 AUTHOR-SIDE COUNTEREXAMPLE PASS \u00b7 INDEPENDENT CLOSURE NOT ESTABLISHED",
-    "cold_review_004": "NOT AUTHORISED \u2014 HELD pending blocker classification, now supplied",
-    "source_block_class": "CHANNEL CUSTODY / TRANSPORT \u2014 not founder source; 0 clauses depend on it",
-    "source_block_effect_on_cr3_b01": "ORTHOGONAL",
-    "local_review": "UNAFFECTED \u2014 CR-001/002/003 were all conducted this way",
-    "external_review": "BLOCKED until the corpus is committed to a receiver-resolvable remote",
-    "docket": "3 OPEN \u00b7 0 PARTIALLY_DECIDED \u00b7 5 OPERATIVELY_DECIDED \u2014 all FOUNDER_DECISION_REQUIRED",
+    "cold_review_003": "CHANGES_REQUIRED — DISCHARGED by SP-R04",
+    "cold_review_004": "CHANGES_REQUIRED · artifact 7ce5feac4bc20c7dd7987e368e397912db0627203e85a5705d5144fff96d1a50",
+    "cr3_b01": "CLOSED — established independently by Cold Review 004, not claimed by the author",
+    "cr4_01": "BLOCKING — the loss-class vocabulary is embodiment-authored and uncalibrated; CR-003 §3.5 reconstructs; §16.2's IMPOSSIBLE rating is falsified",
+    "cr4_03": "MATERIAL — the §16.4 auditor as published does not execute (SyntaxError, document line 781); body duplicated with a divergent FT regex. §16.5's tallies are nonetheless byte-accurate. Author-side defect, introduced in SP-R04.",
+    "finding_counts": "1 BLOCKING · 11 MATERIAL · 5 MINOR — note that CR004's own headline and §10 verdict block misreport MATERIAL as 7; §4 carries CR4-02…CR4-12",
+    "cr003_regression": "13 CLOSED · 6 PARTIALLY_CLOSED · 1 NOT_CLOSED (CR3-04) · 0 REGRESSED",
+    "pass_threshold": "8 of 15 lines met",
+    "docket": "reviewer-derived 3 OPEN · 1 PARTIALLY_DECIDED (A-07) · 4 OPERATIVELY_DECIDED — candidate claims 3 · 0 · 5",
+    "independence_reached": "LINEAGE-INDEPENDENT · MODEL-INDEPENDENT not reached · EXTERNAL not reached",
     "reality_compiler": "NOT PROVEN",
     "seal": "NOT GRANTED",
     "implementation": "NOT AUTHORISED",
+    "sp_r05": "NOT AUTHORISED",
     "assertions": 231,
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT"
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Decide how ConsciousConversation interactions come to exist \u2014 the next move is generative, not analytical"
+    "act_required": "Two independent decisions are pending: (1) authorise or decline SP-R05 bounded to CR004, noting CR4-01 may not be repairable without a founder decision on the loss-class vocabulary; (2) decide how ConsciousConversation interactions come to exist"
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260814-RC0001-CR004-004",
+      "subject": "RC-0001 SemanticProgram v0.4 — Cold Review 004 outcome",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Authorise or decline SP-R05, bounded to CR004; decide whether the loss-class vocabulary is a founder decision; decide whether the count's scoping is docketed (CR4-07)",
+      "status": "CHANGES_REQUIRED — CR3-B01 CLOSED, one new BLOCKING finding (CR4-01)"
+    },
     {
       "inselfaction": "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
       "subject": "E3 coverage measurement",
@@ -53,18 +67,18 @@
       "status": "ON_DISTRIBUTION_SAMPLE_INSUFFICIENT"
     },
     {
+      "inselfaction": "ISA-20260813-RC0001-BLOCKCLASS-003",
+      "subject": "RC-0001 SemanticProgram v0.4 — Cold Review 004 authority",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "none — the hold was discharged and CR004 was authorised and executed",
+      "status": "DISCHARGED by ISA-20260814-RC0001-CR004-004"
+    },
+    {
       "inselfaction": "ISA-20260813-RC0001-CR003-001",
       "subject": "RC-0001 SemanticProgram v0.3 cold review",
       "next_authority": "MILASOPHAHR",
-      "act_required": "none \u2014 SP-R04 was authorised and executed",
+      "act_required": "none — SP-R04 was authorised and executed",
       "status": "DISCHARGED by ISA-20260813-RC0001-SPR04-002"
-    },
-    {
-      "inselfaction": "ISA-20260813-RC0001-BLOCKCLASS-003",
-      "subject": "RC-0001 SemanticProgram v0.4 \u2014 Cold Review 004 authority",
-      "next_authority": "MILASOPHAHR",
-      "act_required": "Authorise or decline Cold Review 004 (local, lineage-independent)",
-      "status": "OPEN \u2014 blocker classified: transport custody, ORTHOGONAL to CR3-B01 and to every clause; CR004 is lawful"
     }
   ],
   "history": [
@@ -78,13 +92,14 @@
     "ISA-20260813-RC0001-BLOCKCLASS-003",
     "ISA-20260813-E3-COVERAGE-PROTOCOL-006",
     "ISA-20260814-E3-COVERAGE-BASELINE-007",
-    "ISA-20260814-E3-ONDIST-INSUFFICIENT-008"
+    "ISA-20260814-E3-ONDIST-INSUFFICIENT-008",
+    "ISA-20260814-RC0001-CR004-004"
   ],
-  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission \u2014 it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
+  "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending.",
   "channel_invariants": [
-    "INV-ISX-REVIEW-RESOLVABILITY \u2014 an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: review_status = BLOCKED_SOURCE_UNRESOLVABLE.",
-    "INV-E3-CANDIDATE-AUTHENTICITY \u2014 an adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations. Candidate metadata may identify a detection result; it may never prove one occurred.",
-    "INV-E3-COVERAGE-NO-RETROFIT \u2014 an evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation.",
-    "INV-E3-CORPUS-MINIMIZATION \u2014 a coverage corpus may preserve only the content required to determine whether an observable E3 event occurred and whether the detector recognized it; privacy reduction must not alter the event-bearing language."
+    "INV-ISX-REVIEW-RESOLVABILITY — an INSELFACTION that transfers review authority MUST expose the reviewed source through a receiver-resolvable immutable reference. If the source chamber has no accessible remote: transport.review_status = BLOCKED_SOURCE_UNRESOLVABLE. This is a transport property and must not be recorded inside `source`, where it reads as provenance.",
+    "INV-E3-CANDIDATE-AUTHENTICITY — an adjudicator may confer E3 only when the candidate's detector event is reconstructable from its persisted source observations. Candidate metadata may identify a detection result; it may never prove one occurred.",
+    "INV-E3-COVERAGE-NO-RETROFIT — an evaluation example may not be used both to motivate a detector mutation and to independently validate that mutation.",
+    "INV-E3-CORPUS-MINIMIZATION — a coverage corpus may preserve only the content required to determine whether an observable E3 event occurred and whether the detector recognized it; privacy reduction must not alter the event-bearing language."
   ]
 }
