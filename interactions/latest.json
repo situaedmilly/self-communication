@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-14T03:19:56Z",
+  "updated_at": "2026-08-14T05:30:00Z",
   "updated_at_note": "True wall clock. This is EARLIER than the predecessor stamp 04:20:00Z written by session MOBILECHALL, whose clock ran ahead. Chain order is `history`, never a timestamp comparison. No archive is edited to reconcile this.",
   "session": "CONVORUNTIME",
   "latest_inselfaction": {
-    "id": "ISA-20260814-CC-F013-CLEARED-013",
-    "path": "inselfactions/ISA-20260814-CC-F013-CLEARED-013.json",
-    "title": "F-013 cleared and taken into custody — first contact is no longer blocked",
+    "id": "ISA-20260814-RC0001-CR005-006",
+    "path": "inselfactions/ISA-20260814-RC0001-CR005-006.json",
+    "title": "Cold Review 005 — CHANGES_REQUIRED; CR4-01 NOT_CLOSED; 3 BLOCKING including a docket-classification hazard across six items",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -58,35 +58,46 @@
     "e3_coverage": "OFF-DIST: MEASURED PROVISIONAL / ON-DIST: SAMPLE_INSUFFICIENT — unchanged by this phase",
     "detector": "e3detector.v0.1 FROZEN · 417e62963619587645269022e8f6844931de92557094200413b0e8cf0fc2ef73",
     "frozen_label_digest": "87b19478315d867fc5aef1b6bf2d4b1fb13eb878ea2888df6fd60c47dd454c80 — PRESERVED",
-    "semanticprogram": "v0.5 · CANDIDATE_READY_FOR_COLD_REVIEW_005 — NOT RATIFIABLE",
+    "semanticprogram": "v0.5 · CHANGES_REQUIRED — NOT RATIFIABLE",
     "candidate_sha256": "4612455287015d81812f50aff98b5d3e12f1e9d10ca71add0350ecd9e50c8f98",
     "cold_review_003": "CHANGES_REQUIRED — DISCHARGED by SP-R04",
     "cold_review_004": "CHANGES_REQUIRED — DISCHARGED by SP-R05 · artifact 7ce5feac…d1a50 preserved unedited",
-    "cr3_b01": "CLOSED — established by Cold Review 004; PRESERVED, not reopened, and never claimed by the author",
-    "cr4_01": "REPAIR IMPLEMENTED · AUTHOR-SIDE COUNTEREXAMPLE PASS · INDEPENDENT CLOSURE NOT ESTABLISHED",
-    "cr4_03": "REPAIRED BY RULE — shipped auditor executes from extracted artifact bytes; PUBLICATION_INTEGRITY PASS; v0.4 FAILs the new auditor",
+    "cr3_b01": "REMAINS CLOSED — SP-043/SP-102 byte-identical v0.4 to v0.5; regression-tested, not reopened",
+    "cr4_01": "NOT_CLOSED — embodiment removed from the naming role, but naming authority moved to the AUTHOR, not the source",
     "finding_counts": "CR004: 1 BLOCKING · 11 MATERIAL · 5 MINOR — all dispositioned. CR004 own headline misreports MATERIAL as 7; review left unedited",
-    "docket": "11 items · 5 OPEN · 0 PARTIALLY_DECIDED · 6 OPERATIVELY_DECIDED · new founder decisions 0 (A-09/A-10/A-11 disclose pre-existing ones)",
+    "docket": "reviewer-derived 3 OPEN · 1 PARTIALLY_DECIDED · 5 OPERATIVELY_DECIDED · 1 UNCLASSIFIABLE — candidate claims 5 · 0 · 6",
     "independence_reached": "LINEAGE-INDEPENDENT · MODEL-INDEPENDENT not reached · EXTERNAL not reached",
     "reality_compiler": "NOT PROVEN",
     "seal": "NOT GRANTED",
     "implementation": "NOT AUTHORISED",
-    "sp_r05": "COMPLETE — STATE 1",
     "assertions": 231,
     "sealed_baseline_self_integrity": "VERIFIED — derived from the SEALED TREE, 25/25 at self-integrity-verified-v0.1 (1f246be)",
     "sealed_e3_extension": "VERIFIED EXTENSION — derived from the SEALED TREE, 42/42 at e3-extension-verified-v0.1 (94c2f75)",
     "current_branch_revalidation": "HOLD — live PostgreSQL conditions 10-11 not rerun (Colima not running)",
     "cc_felt_architecture": "F-009 REPAIRED · F-010 REPAIRED · F-013 CLEARED (coverage advances on contexts ASKED; policy memory verified not to reach evidence) · F-008 OPEN AND NOW LOAD-BEARING · F-014 OPEN · F-006 OPEN",
-    "cold_review_005": "NOT AUTHORISED",
-    "cr4_01_repairability": "B · SOURCE_SUFFICIENT_WITH_DERIVATION — adjudicated before repair; grounded in RCP §5.2/§5.3, INV-RC-CAP-1, INV-RC-KERNEL-4, P-L1-C Semantic Source Map, F-05 INV-OBS-PER-2",
+    "cold_review_005": "CHANGES_REQUIRED · artifact 5369d4152647083f9cdc9cb884f14475ff0bb9b60ff33b8f5ecaeaf5d7be384b · 3 BLOCKING · 10 MATERIAL · 4 MINOR · 6/15",
     "capability_vocabulary": "NONE INVENTED · RCP §5.3 NOT INSTALLED · R-04 record schema RESERVED (docket A-10)",
-    "first_contact": "NO TECHNICAL BLOCKERS REMAINING — the remaining question is a judgement about F-008"
+    "first_contact": "NO TECHNICAL BLOCKERS REMAINING — the remaining question is a judgement about F-008",
+    "cr5_b01": "BLOCKING — SP-168 invokes 19 of 111 clauses; ~92 requirements permanently unfailable; naming authority returns by omission",
+    "cr5_b02": "BLOCKING — clause identity under-distinguishes; INV-RC-KERNEL-4 forbids over-distinction and is silent on under-distinction, so SP-170 is a non sequitur",
+    "cr5_b03": "BLOCKING — the T(A) self-reference hazard affects SIX of eleven docket items, not A-09 alone; proved by v0.5 own metadata columns. Corrupts the founder decision surface",
+    "rcp_derivation": "PERMITTED_BY_RCP — not REQUIRED. INV-RC-CAP-1 is misapplied and adverse. v0.5 §2.0 overstates its grounding",
+    "a07_split": "COSMETIC — overruled; Cold Review 004 PARTIALLY_DECIDED for A-07 STANDS",
+    "publication_integrity": "independently reproduced PASS; negative control caught 8 mutation classes, missed 3 — and the published DIFF BLOCK IS FALSE (says 5/5, actual 9/13), CR4-03 class recurring inside the carve-out",
+    "sp_r06": "NOT AUTHORISED"
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
     "act_required": "Authorise or decline Cold Review 005 against v0.5"
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260814-RC0001-CR005-006",
+      "subject": "RC-0001 SemanticProgram v0.5 — Cold Review 005 outcome",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Authorise or decline SP-R06 bounded to CR005; decide whether T(A) domain may change; decide whether clause-identity individuation survives CR5-B01",
+      "status": "CHANGES_REQUIRED — 3 BLOCKING · CR4-01 NOT_CLOSED · CR3-B01 remains closed"
+    },
     {
       "inselfaction": "ISA-20260814-CC-F013-CLEARED-013",
       "subject": "F-008 — no probe quotes the node (now load-bearing)",
@@ -100,13 +111,6 @@
       "next_authority": "MILASOPHAHR",
       "act_required": "none — CLEARED. Verified: 5 distinct of 5 on the failing path; standing unchanged; exhaustion ends on NO_LEGAL_OBJECTIVE; an unpresented question cannot burn a context.",
       "status": "CLEARED by ISA-20260814-CC-F013-CLEARED-013"
-    },
-    {
-      "inselfaction": "ISA-20260814-RC0001-SPR05-005",
-      "subject": "RC-0001 SemanticProgram v0.5 — SP-R05 outcome",
-      "next_authority": "MILASOPHAHR",
-      "act_required": "Authorise or decline Cold Review 005 against v0.5",
-      "status": "STATE 1 — CANDIDATE_READY_FOR_COLD_REVIEW_005 · CR4-01 repaired without inventing vocabulary · CR3-B01 preserved closed"
     },
     {
       "inselfaction": "ISA-20260814-CC-FELT-ARCHITECTURE-011",
@@ -170,6 +174,13 @@
       "next_authority": "MILASOPHAHR",
       "act_required": "none — SP-R05 was authorised and executed",
       "status": "DISCHARGED by ISA-20260814-RC0001-SPR05-005"
+    },
+    {
+      "inselfaction": "ISA-20260814-RC0001-SPR05-005",
+      "subject": "RC-0001 SemanticProgram v0.5 authorship",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "none — Cold Review 005 was authorised and executed",
+      "status": "DISCHARGED by ISA-20260814-RC0001-CR005-006"
     }
   ],
   "history": [
@@ -190,7 +201,8 @@
     "ISA-20260814-CC-FELT-ARCHITECTURE-011",
     "ISA-20260814-RC0001-SPR05-005",
     "ISA-20260814-CC-F013-BLOCKING-012",
-    "ISA-20260814-CC-F013-CLEARED-013"
+    "ISA-20260814-CC-F013-CLEARED-013",
+    "ISA-20260814-RC0001-CR005-006"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",

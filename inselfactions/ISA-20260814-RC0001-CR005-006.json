@@ -1,0 +1,160 @@
+{
+  "inselfaction_id": "ISA-20260814-RC0001-CR005-006",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-14T05:30:00Z",
+  "session": "MOBILECHALL",
+  "immutable": true,
+  "supersedes": null,
+  "continues": "ISA-20260814-RC0001-SPR05-005",
+
+  "operation": {
+    "title": "Cold Review 005 — lineage-independent adversarial review of SemanticProgram v0.5",
+    "authority": "Founder-authorised, read-only. One file created; no repair, revision, adjudication, seal or implementation performed or authorised.",
+    "independence": {
+      "self_review": "NO — artifacts and mandate only; the reviewer was told it had been given no author-side account and must not seek one",
+      "lineage_independent": "YES",
+      "model_independent": "NO",
+      "external": "NO",
+      "local_source_sufficiency": "SATISFIED"
+    },
+    "evidence_set_correction": "The RCP v0.1 draft and F-05 v0.2 were ABSENT from the evidence sets of Cold Reviews 003 and 004, although the authoring commission names the RCP draft a GOVERNING RECORD at digest 1aa3698c…38c776. Both were supplied to CR005 because v0.5's central repair claims to derive from them. This omission was the author's scoping error and is disclosed rather than left for a reviewer to notice."
+  },
+
+  "verdict": {
+    "cold_review_005": "CHANGES_REQUIRED",
+    "counts": "3 BLOCKING · 10 MATERIAL · 4 MINOR",
+    "pass_threshold": "6 of 15 lines met",
+    "cr4_01": "NOT_CLOSED",
+    "cr4_01_reading": "The repair is a real advance and the reviewer says so: the EMBODIMENT is genuinely removed from the naming role. But naming authority moved to the AUTHOR, not to the source, and three independent constructions restore the structure CR4-01 names.",
+    "not_blocked_because": "Every defect is source-grounded-but-omitted, which the mandate's own SP-168 disposition rule maps explicitly to CHANGES_REQUIRED rather than BLOCKED.",
+    "cr3_b01": "REMAINS CLOSED — regression-tested, not reopened",
+    "artifact": {
+      "path": "/Users/millysituated/RUORA/governance/OURSELF-RCP-RC0001-SEMANTICPROGRAM-v0.5-LINEAGE-INDEPENDENT-COLD-REVIEW-005.md",
+      "sha256": "5369d4152647083f9cdc9cb884f14475ff0bb9b60ff33b8f5ecaeaf5d7be384b",
+      "lines": 705
+    }
+  },
+
+  "blocking_findings": {
+    "CR5-B01": {
+      "title": "SP-168 completeness FAILS — naming authority returns by omission",
+      "mechanism": "§2.0.1's four rows invoke only 19 of the document's 111 normative clauses. SP-167 fixes the requirement set at all 111; SP-169 confines failed sets to INVOKED requirements. Roughly 92 requirements are therefore permanently unfailable — among them SP-025 (Entry immutability), SP-043, SP-045, SP-071, SP-075, SP-160, SP-163 and SP-174.",
+      "constructions_one_per_element_class": {
+        "begin": "B′ cannot record the originating DaySlot ordinal — the member SP-019 gained under CR4-09 and SP-075 obliges. It honours SP-030/031/037/038, so its failed set is EMPTY and SP-150 compels ADMITTED.",
+        "record": "C′ orders by wall clock and cannot produce a total order on timestamp collision (SP-045, invoked nowhere). Failed set empty. P-L1-A seals '+ canonical ordering'.",
+        "complete": "D′ compacts and rewrites completed Entry content (SP-025, invoked nowhere) while satisfying every clause in the row at transition time.",
+        "boundary": "R′ cannot preserve pending contributions across a restart. SP-156 compels ADMITTED and the row is 'n/a for failure', so divergence surfaces later as an untyped, mislocalized outcome mismatch at complete — while P-L1-B law 3 requires loss be TYPED."
+      },
+      "author_verification": "CONFIRMED by recomputation. Union of the four §2.0.1 rows = 19 clause identities; 111 normative rows total; the remainder can never appear in any failed-requirement set."
+    },
+    "CR5-B02": {
+      "title": "Clause identity under-distinguishes — the collision the calibration test was meant to catch",
+      "mechanism": "SP-170 is a NON SEQUITUR. INV-RC-KERNEL-4 forbids OVER-distinction ('no admitted construct may encode a distinction already encoded by another'); it is silent on UNDER-distinction. The author cited it as though it supplied injectivity in the needed direction. It does not.",
+      "constructions": "U′ (truncates content) and V′ (in-memory, non-durable) both fail ONLY SP-020 — four distinct obligations under one identity — so both publish {SP-020} and compare FULLY CONFORMING to each other, though V′ loses '+ durability', a P-L1-A sealed member. P′ and Q′ likewise collide on {SP-037}. The converse also fails: SP-022 and SP-032 co-encode one distinction, so identical substrates may publish {SP-022} versus {SP-022, SP-032}.",
+      "significance": "This is the founder's own calibration standard failing in both directions at once: the representation neither distinguishes everything RC-0001 cares about nor collapses what it does not."
+    },
+    "CR5-B03": {
+      "title": "The T(A) self-reference hazard affects six of eleven docket items, not A-09 alone — and is worse than CR4-01",
+      "mechanism": "v0.5 states the limitation 'applies to A-09 alone among the eleven; the other ten are narrowed by SP-019's fact set or by source.' FALSE, and falsified by the document's own cross-reference columns. All six OPERATIVELY_DECIDED items — A-01, A-04, A-05, A-06, A-07, A-09 — have Y narrowed by an AUTHOR-PROPOSED clause, and in five of six the document's own Open-decision column names that item on that clause.",
+      "author_verification": "CONFIRMED by direct inspection of v0.5's metadata columns. SP-048 · AUTHOR-PROPOSED · Open-decision 'A-05, A-06' · self-described in its own text as 'an authored minimality choice, not a founder-sealed prohibition'. SP-130 · AUTHOR-PROPOSED · 'A-07'. SP-019 · AUTHOR-PROPOSED/DERIVED · 'A-01, A-03, A-04' — the very enumeration CR4-09 proved false. SP-040 · AUTHOR-PROPOSED · 'A-01'.",
+      "consequence": "T returns OPERATIVELY_DECIDED in this docket if and only if the author installed a clause settling the question. CR4-01 corrupted one comparison surface; this corrupts the FOUNDER'S DECISION SURFACE across six of eleven items. The founder's instinct that this could matter more than CR4-01 is upheld.",
+      "aggravating": "The author's own exculpatory sentence cited 'SP-019's fact set' as a non-authored ground. SP-019 is AUTHOR-PROPOSED and its exhaustiveness was falsified by CR4-09 in the immediately preceding review."
+    }
+  },
+
+  "rcp_derivation": {
+    "classification": "PERMITTED_BY_RCP — not REQUIRED_BY_RCP",
+    "clause_by_clause": {
+      "RCP_5_2": "PERMITS. Its referent is a RealityIR requirement; SP-167's identification with the clause set is a disclosed author derivation, not an entailment.",
+      "RCP_5_3": "INERT — v0.5 uses none of its five members.",
+      "P_L1_C_source_map": "SUPPORTS — the strongest citation of the set.",
+      "F_05_INV_OBS_PER_2": "COMPATIBLE PRECEDENT.",
+      "INV_RC_KERNEL_4": "NON-ENTAILMENT (see CR5-B02).",
+      "INV_RC_CAP_1": "MISAPPLIED AND ADVERSE. Its totality quantifies over REQUIREMENTS; SP-150's quantifies over ELEMENTS. Read strictly it CONDEMNS §2.0.1's ~92 undecided requirements as 'a compilation error, not a default'."
+    },
+    "consequence": "v0.5's §2.0 claim that the admitted lineage 'already requires' this representation OVERSTATES its grounding — recorded as CR5-04 and CR5-10. The classification B · SOURCE_SUFFICIENT_WITH_DERIVATION survives, but it never licensed the stronger claim, and the author made the stronger claim."
+  },
+
+  "a07_split": {
+    "ruling": "COSMETIC — the split is NOT semantically valid",
+    "reason": "A-11's admissible set is unenumerated by the document's own statement, so independence cannot be exhibited. Under normative SP law, A-07 = (a) together with SP-150/152/155/167–171 fixes Y(A-11) to a singleton — one conforming combination, not independent answers.",
+    "consequence": "COLD REVIEW 004'S PARTIALLY_DECIDED FOR A-07 STANDS. The author's split is overruled, exactly as v0.5 §13.1 said it should be if a reviewer rejected the split. The document's own conditional fires against it."
+  },
+
+  "publication_integrity": {
+    "independently_reproduced": "YES — the reviewer extracted the §16.4 fence itself (SHA-256 590b8eed…dc4a2), executed those exact bytes, and obtained SHIPPED_BYTES_EXECUTED IDENTICAL · PUBLISHED_EVIDENCE_MATCH IDENTICAL · PUBLICATION_INTEGRITY PASS, with the core block byte-identical to §16.5.",
+    "negative_control_caught": "8 mutation classes — a duplicated 12-line payload THAT PARSES CLEANLY, caught even under a self-consistent regenerating adversary (the model that defeated v0.4); truncated line prefix; altered core number; smuggled SP-999 row; unmarked SP-037 edit via diff mode; relation-label flip; in-fence comment edit; and v0.4 itself FAILs.",
+    "negative_control_missed": "3 — (1) CR5-05, MATERIAL: mutating a number inside the §16.5 DIFF block yields PASS, because the author excluded that region from comparison by design; (2) a duplicate FT identifier, because DUPLICATE_IDS covers SP rows only; (3) a 4-line duplicate, below the declared ≥5 floor.",
+    "CR5_05_the_hole_is_already_occupied": {
+      "finding": "The published diff block is FALSE. It reports ROWS_ADDED 5 / ROWS_CHANGED 5; the actual run reports 9 / 13, matching §16.6's hand-written prose.",
+      "author_verification": "CONFIRMED by direct extraction and execution. Published: ROWS_ADDED 5 -> [SP-167…SP-171], ROWS_CHANGED 5 -> [SP-095, SP-151, SP-152, SP-155, SP-159]. Actual: ROWS_ADDED 9 -> [SP-167…SP-175], ROWS_CHANGED 13.",
+      "cause": "The author's regeneration loop filled the diff block only on its first pass; subsequent passes refreshed the core and verification blocks only. The block froze in a pre-SP-172 state and was published under the sentence 'Produced by extracting the §16.4 block from this file and running the extracted bytes against this file.'",
+      "significance": "This is CR4-03's exact defect class recurring INSIDE the mechanism built to prevent it, in the one region the author carved out of the comparison. A carve-out from an integrity check is where the next integrity defect lands. The author built the check, exempted a region, and committed the defect in the exempted region."
+    }
+  },
+
+  "other_material_findings": {
+    "CR5-01": "SP-168 EXACTNESS fails — the clause defines invocation as a function of (element, prefix); §2.0.1 publishes a function of element alone. At `record` from idle, SP-160 step 1 halts evaluation before content, so SP-032's success clause, SP-022, SP-021, SP-024 and SP-162 are not engaged yet all five are named. Over-broad by five. SP-169's 'cannot honor' predicate is also undefined over vacuously-satisfied obligations, and the two admissible readings yield different failed sets for the same substrate.",
+    "CR5-02": "SP-167 scopes the requirement set by 'this document's SP-006 envelope'. SP-006 OCCURS ZERO TIMES in v0.5, v0.4 and v0.3 — CONFIRMED by the author: the single hit in v0.5 is that reference itself. The closure predicate of the entire repair is a dangling reference.",
+    "CR5-03": "The flagship demonstration is non-exact under SP-169. G′ must also fail SP-032; H′ must also fail SP-022 and SP-032. §2.0, FT-13, FT-16 and §18 all publish the two-element sets {SP-022} / {SP-024}.",
+    "CR5-04_and_CR5-10": "Grounding overstated; INV-RC-CAP-1 adverse (see rcp_derivation).",
+    "CR5-05": "Published diff block false (above).",
+    "CR5-06": "§13.0's four-branch rule is still not total — A-10 and A-11 have no Adm, receive no branch, and are labelled OPEN anyway; under the rule as written A-11's |Y|=1 gives OPERATIVELY_DECIDED.",
+    "CR5-07": "SP-175 falsifies §6.1 and FT-10; three `view` domains now coexist. CR4-10 is PARTIALLY_CLOSED, not closed.",
+    "CR5-08": "§17.3 justifies 7 ORTHOGONAL rows; the auditor reports 8. SP-171 HAS NO JUSTIFICATION ROW — CONFIRMED by the author: zero occurrences of SP-171 in §17.3. A relation awarded with no argument, in the section built to prevent exactly that.",
+    "CR5-09": "SP-155 ∧ SP-156 ∧ SP-150 are jointly unsatisfiable for a substrate that cannot honour a discontinuity."
+  },
+
+  "minor_findings": "CR5-M1 duplicate FT-16 identifier — CONFIRMED by the author, two rows share the ID, and the auditor cannot see it because DUPLICATE_IDS covers SP rows only · CR5-M2 §13.0 says 'five singletons' where six items are decided · CR5-M3 the ≥5 duplicate-line floor is undeclared · CR5-M4 A-04 versus SP-027.",
+
+  "cr004_disposition": "11 CLOSED · 4 PARTIALLY_CLOSED · 1 NOT_CLOSED · 0 outright REGRESSED.",
+
+  "docket": {
+    "candidate_claim": "5 OPEN · 0 PARTIALLY_DECIDED · 6 OPERATIVELY_DECIDED",
+    "reviewer_derivation": "3 OPEN · 1 PARTIALLY_DECIDED · 5 OPERATIVELY_DECIDED · 1 UNCLASSIFIABLE (A-11 folded back into A-07)",
+    "repeated_pattern": "The class v0.5 reports as 0 is again non-empty — verbatim what Cold Review 004 found against v0.4. Twice in succession the author has published PARTIALLY_DECIDED 0 and a reviewer has found the class occupied."
+  },
+
+  "cr3_b01_regression": {
+    "status": "REMAINS CLOSED",
+    "evidence": "SP-043 and SP-102 byte-identical v0.4 → v0.5. SP-094's sole delta is CR4-02's DaySlot pin in the initial condition; the count derivation, the proper-suffix denial and the all-ADMITTED requirement are untouched. SP-175 does not reach the count. Regression-tested, not philosophically reopened, per mandate."
+  },
+
+  "reviewer_evidence_quality": {
+    "strong_constructed_and_byte_verifiable": "All three BLOCKING findings; the SP-006 zero-occurrence sweep; the SP-168/§2.0.1 contradiction; the diff-block falsification; the ORTHOGONAL 7-versus-8 mismatch; the duplicate FT-16; the SP-155/156 unsatisfiability. The author independently re-derived six of these against machine state and every one held.",
+    "weak_attacks_that_failed": "All eleven EXACT rows survived all nine attacks; no L1 contradiction constructible; zero invented capability vocabulary confirmed; CR3-B01 unbreakable; the publication-integrity mechanism unbroken on its eight claimed classes. The reviewer flags the EXACT results as its weakest, because its container-extraction method is the one the pins document — a systematic extraction error would be invisible to reviewer and author alike, and it recommends a different reader re-run that section first.",
+    "near_false_positives_disclosed": "4 — (1) §0.6's 'no STORAGE_LIMITATION / UI_DEGRADATION / NETWORK_RESTRICTION' is literally self-falsifying, those strings occurring exactly once each inside that very sentence; mentioned, not used, so no finding. (2) A HARNESS BUG OF THE REVIEWER'S OWN initially showed SHIPPED_BYTES IDENTICAL on a fence edit; its replace had targeted the shebang and was a no-op. Rebuilt, the check catches it. It nearly published 'the shipped-bytes check misses an in-fence edit', which is false. (3) SP-091's 'for every required vector' is the founder's own text at pin 85:97, not an author addition. (4) CR4-10 downgraded from full regression to PARTIALLY_CLOSED."
+  },
+
+  "integrity": {
+    "method": "The author recomputed CR005's load-bearing claims against machine state before relay; six were re-derived independently and all six held.",
+    "artifacts_byte_unchanged": {
+      "v0.5_subject": "4612455287015d81812f50aff98b5d3e12f1e9d10ca71add0350ecd9e50c8f98",
+      "v0.4": "7c680b0286d79f8c6af162223bdfe62789f0123a5e28e28dcf855873df2cf48f",
+      "cold_review_005": "5369d4152647083f9cdc9cb884f14475ff0bb9b60ff33b8f5ecaeaf5d7be384b"
+    },
+    "reviewer_integrity_block": "All ten artifacts plus the three pin texts recomputed at close and identical to open; exactly one file created; zero modified; nothing staged; L1 container read-only and never copied; 13 mutants confined to the reviewer's scratch directory; no secret-bearing material read or requested; repository boundary not expanded.",
+    "ruora": { "branch": "main", "commit": "7387fe4083ea30558f4799f6ec48b3b0b6e64eb8", "staged": 0 }
+  },
+
+  "requested_next_action": {
+    "primary": "Authorise SP-R06, bounded to Cold Review 005, with CR5-B01 controlling. But see the caution below before doing so.",
+    "the_caution": "Three consecutive revisions have each closed the prior blocker and introduced or left a new one: SP-R04 closed CR3-B01 and shipped CR4-01; SP-R05 closed CR4-01's embodiment half and shipped CR5-B01/B02/B03. CR5-B03 in particular is not a defect in a mechanism but a defect in how this cascade decides what the founder has decided — and it was present in v0.3 and v0.4 unnoticed. Repairing it may require changing what T(A) ranges over, which no bounded repair mandate has yet authorised.",
+    "the_question_that_may_precede_repair": "Whether SP-168 can be completed at all. Completing it means declaring, for all ~111 clauses, which are invoked by which element — and CR5-B01's four constructions suggest the honest answer for several is 'this obligation is not element-indexed at all', which the failed-requirement-set representation cannot express. If so, clause-identity individuation is the wrong shape and no amount of table-filling repairs it.",
+    "not_requested": "No seal, adjudication, implementation or extraction. v0.5 is not ratifiable."
+  },
+
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Authorise or decline SP-R06 bounded to CR005; decide whether T(A)'s domain may be changed, which no bounded mandate has yet permitted; decide whether clause-identity individuation survives CR5-B01 at all"
+  },
+
+  "constraints_observed": [
+    "Reviewer received artifacts and mandate only; no author-side account.",
+    "RCP v0.1 draft and F-05 v0.2 added to the evidence set, with the prior omission disclosed as the author's error.",
+    "The reviewer's load-bearing claims were re-derived against machine state before relay; none was taken on trust.",
+    "The author does not contest any finding: CR5-B03 is proved by v0.5's own metadata columns, and CR5-05 by extracting and running the published program.",
+    "v0.5 not modified — verified by digest before and after. No repair performed.",
+    "Nothing staged or committed in RUORA. L1 read-only. No secret-bearing material touched."
+  ]
+}
