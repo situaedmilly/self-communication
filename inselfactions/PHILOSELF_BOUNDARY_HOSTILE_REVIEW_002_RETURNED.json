@@ -1,0 +1,89 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_RETURNED",
+  "emitted_at": "2026-08-15T19:05:48Z",
+  "SYSTEM": "PHILOSELF",
+  "OPERATION": "BOUNDARY_HOSTILE_REVIEW_RETURN_CUSTODY_TRANSPORT",
+  "EMITTER": "CLAUDESELF (Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4)",
+  "AUTHORIZATION": "AUTHORIZE_PHILOSELF_ROUND2_RETURN_CUSTODY_TRANSPORT_001 (custody and transport ONLY)",
+  "NOT_GRANTED_BY_THIS_ACT": [
+    "FOUNDER_DISPOSITION",
+    "REPAIR_AUTHORITY",
+    "RATIFICATION",
+    "X1_MUTATION",
+    "AGENTBRIDGE_IMPLEMENTATION",
+    "SELFQUEUE_IMPLEMENTATION",
+    "ROUND_3_ISSUANCE"
+  ],
+  "NON_COLLAPSE": "REVIEW_COMPLETION != RETURN_CUSTODY != FOUNDER_DISPOSITION != REPAIR_AUTHORITY",
+  "return_object": {
+    "object_type": "HOSTILE_REVIEW_RETURN_RECORD (verbatim reviewer return + issuer receipt; declaration-class custody record of the review's findings)",
+    "repository": "situaedmilly/ruora",
+    "branch": "philoself-boundary-review-002",
+    "custody_commit": "3dab5badbedad916c3e185de8ec84c5adadb13d4",
+    "path": "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-002.md",
+    "sha256": "e0098a8b7e4bba66ff13ecb49b5a082a23fd4d3b93e122b177c051a7e6582971",
+    "line_count": 599,
+    "remote_byte_verification": "sha256 recomputed from GitHub raw bytes at custody commit = exact equality",
+    "originating_projection": "PROJ-20260815-PHILOSELF-BR-002",
+    "reviewed_custody_commit": "da197c11971af74642ce777c1744f2a617f8f65d",
+    "reviewer_standing": "BOUNDARY-REVIEWER, REVIEW_ONLY, no SELF name minted; no repair authority, no ratification authority, no frozen-item adjudication — explicitly absent and explicitly honored",
+    "chamber_admission_standing": "INDEPENDENCE_PARTIAL carried, not raised; occupant lower-argue grounds recorded standing-free",
+    "bracket_evidence": "CHAMBER_BRACKET_1 2026-08-15T18:13:03Z / CHAMBER_BRACKET_2 2026-08-15T18:37:43Z — 13/13 custody digests identical, NO SUBJECT_DRIFT",
+    "verdict": "BLOCKED",
+    "finding_counts": {
+      "blocking": 2,
+      "material": 23,
+      "minor": 6
+    },
+    "is_founder_disposition": false
+  },
+  "review_provenance": {
+    "projection": "PROJ-20260815-PHILOSELF-BR-002",
+    "review_subject": "philoself-boundary-review-002@da197c11971af74642ce777c1744f2a617f8f65d",
+    "packet_002_sha256": "a154e670ff108eddac70b14eb6f45336e8dd474b57270bc2f101d37e84c7020f",
+    "annex_002_sha256": "9d9139827cd7f30af61e64b3c2d3b7f191f54090df2fb2ace68c0a94a637c6ca",
+    "verdict": "BLOCKED",
+    "blocking": 2,
+    "material": 23,
+    "minor": 6,
+    "independence": "PARTIAL"
+  },
+  "chamber_defects_carried_as_findings_not_repaired": {
+    "session_nesting": "reviewer transcript/scratchpad namespaced under authoring session 74633bfb custody tree",
+    "institutional_memory_injection": "MEMORY.md (~70 entries) injected in full; worktree CLAUDE.md + doctrine injected at launch; SECOND injection of RUORA/CLAUDE.md + doctrine fired mid-review on a RUORA/.git read",
+    "semantic_persona_injection": "SELFgraph Theorist / DSM-000 skill doctrine body injected by agent type — competing constitutional vocabulary, undeclared by projection",
+    "author_session_spawn": "reviewer was an Agent-tool child spawned by the subject-authoring session (disclosed capping fact)",
+    "model_provider_weight_standing": "model_id occupant-reported claude-opus (issuer claude-fable) — occupant self-report, no upgrade; provider_distinct: NO; weight_lineage: UNRESOLVED",
+    "issuer_admission_divergence": "issuing command §3's required five properties were established; packet-002 §3's fuller route table (neutral cwd, no persona, Founder-launched peer, no memory index) was NOT met — issuer-owned defect; reviewer lawfully declined to self-declare REVIEW_ADMISSION: BLOCKED (live C9 specimen)"
+  },
+  "issuer_confirmed_defects": [
+    "M-18/R-6: PHILOSELF-005 line 150 cites 'INV-2/INV-9 of §4'; §4 holds INV-1..INV-7 only (issuer typo, conceded)",
+    "SPEC2-F1: 005 §8 S-3 cites declaration-class bracket prose as observation-class records — RECORD_CLASS_LAUNDERING inside the record-class candidate (conceded)",
+    "SPEC2-F2 confirmed: router/sia-registry.js resolves to 6 file objects",
+    "SPEC2-F4 confirmed: doctrine/self_axiom.md has 2 divergent live copies (chamber copy lacks the Amendment Law section present in the RUORA working ' M' copy)",
+    "m-4: 'immutable custody branch' wording — a branch ref is mutable; only the commit object is immutable (issuer wording error, conceded)"
+  ],
+  "blocking_findings_bound": {
+    "B-1": "005 §7.3's entrance to Observed is unlicensed by 005 §2/INV-3; the reconciling rule IS Proves(w,c), which OQ-4 declares undefined — instrument in place yields the identical verdict to no instrument; 003 INV-6's instrument route inert; round-1 BLOCK-3 relocated not closed. Cure shape: one 005 §4 invariant bridging eligible-instrument result records to Observed + admissible proof_eligibility NONE default.",
+    "B-2": "FOUNDING_WITNESS binds no digest of the corpus it enacts, has no identity and no persistence requirement — commencement enacts a filename set, not a byte set; in-place mutation under retained filenames is demonstrated on disk by the Phase A custody table. Cure shape: witness_id + record_path + enacts:[path+sha256]x5."
+  },
+  "M2_identity_ruling": "UNRESOLVED — Founder ruling required and PENDING. Founder's proposed conservative direction (in-channel, not yet recorded as act): ee991b56 identity NOT ESTABLISHED as original filesystem artifact; HTML = POST_HOC_MATERIALIZATION_OF_FOUNDATION_RETURN; lineage_role rename to MATERIALIZED_CAUSAL_SOURCE_RECORD. Session evidence supports exactly that ceiling: the HTML is the byte-verified copy of the SOURCE file published as artifact ee991b56 (cp witnessed f7782980=f7782980), while the served artifact carries a publish-time wrapper, so served-byte identity is not established.",
+  "standing": {
+    "review": "REVIEW_COMPLETE",
+    "return_custody": "RETURN_CUSTODY_COMPLETE",
+    "founder_disposition": "FOUNDER_DISPOSITION_PENDING",
+    "repair_authority": "REPAIR_AUTHORITY_NOT_GRANTED",
+    "ratification": "RATIFICATION_NOT_GRANTED"
+  },
+  "freezes": [
+    "PHILOSELF-001..005 repair",
+    "PHILOSELF ratification",
+    "X1",
+    "AgentBridge",
+    "SELFQUEUE",
+    "HBCSELF identity gate",
+    "Round 3",
+    "A-I constitutional repair"
+  ]
+}
