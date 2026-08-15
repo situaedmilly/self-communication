@@ -1,0 +1,85 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001",
+  "emitted_at": "2026-08-15T04:34:55Z",
+  "SYSTEM": "SELFHTML",
+  "OPERATION": "HOSTILE_REVIEW_REQUEST",
+  "REVIEWER": "HBCSELF",
+  "SELFHTML_CANDIDATE": "REMOTELY_RESOLVABLE",
+  "HOSTILE_REVIEW": "READY_FOR_HBCSELF",
+  "NEXT_AUTHORITY": "HBCSELF",
+  "system": "SELFHTML",
+  "operation": "HOSTILE_REVIEW_REQUEST",
+  "reviewer": "HBCSELF",
+  "state": {
+    "selfhtml_candidate": "REMOTELY_RESOLVABLE",
+    "hostile_review": "READY_FOR_HBCSELF",
+    "candidate_verification": "NOT_VERIFIED",
+    "hostile_review_complete": false,
+    "self_approval": "NOT_GRANTED"
+  },
+  "source": {
+    "repository": "RUORA",
+    "source_chamber": "/Users/millysituated/RUORA",
+    "remote_repository": "situaedmilly/ruora",
+    "remote": "git@github.com:situaedmilly/ruora.git",
+    "remote_url": "https://github.com/situaedmilly/ruora",
+    "remote_visibility": "PUBLIC",
+    "branch": "selfhtml-semantics-v0.1-candidate",
+    "commit": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+    "baseline": "fcc163ce2b6b6dc769ec35e4f2d3626ccaf35010",
+    "candidate_paths": [
+      "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md"
+    ],
+    "supporting_source_paths": [
+      "governance/SELFHTML-FOUNDER-DISPOSITION-001-ANCESTOR-AND-TOPOLOGY.md",
+      "governance/SELFHTML-HBC-LINEAGE-ADOPTION-001-DOCTRINE.md",
+      "governance/SELFHTML-REALITY-CONTRACT-DESIGN-PACKET-001.md"
+    ],
+    "candidate_sha256": "dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82",
+    "candidate_github_url": "https://github.com/situaedmilly/ruora/blob/9451d5d71e4fe2de58513b4969a313f5f9b8b04d/governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+    "authoring_session": "bd059265",
+    "committed": true,
+    "pushed": true,
+    "receiver_resolvable": true,
+    "remote_accessible_to_designated_reviewer": true,
+    "working_tree_state": "DIRTY_UNRELATED: source commit contains the four SELFHTML governance files only; unrelated RUORA modified/untracked files remain outside the commit."
+  },
+  "review_scope": {
+    "target": "SELFHTML REALITY CONTRACT SEMANTICS 001 v0.1 CANDIDATE",
+    "required_review_type": "hostile review",
+    "scope_statement": "Review the SELFHTML semantics v0.1 candidate for semantic counterexamples, authority laundering, stratum collapse, relation/standing errors, proof-obligation defects, compiler-boundary overreach, and unsupported author-proposed clauses.",
+    "not_in_scope": [
+      "Do not mark the candidate VERIFIED.",
+      "Do not mark hostile review complete before HBCSELF returns findings.",
+      "Do not self-approve this review request.",
+      "Do not treat supporting source paths as reviewed targets except where needed to verify provenance and authority boundaries."
+    ],
+    "known_author_exposed_attack_surfaces": [
+      "RS-202 relation set necessity and sufficiency",
+      "RS-304 propagation law semantics for evidence capable of establishing a proposition",
+      "RS-801 minimum FORBIDDEN AUTHORITY cells",
+      "RS-103 coherence laws against constructed counterexamples"
+    ]
+  },
+  "AUTHOR_SESSION_INDEPENDENCE_REQUIRED": true,
+  "independence_reason": "Session bd059265 authored the candidate's [A] clauses and must not satisfy the independent hostile-review requirement.",
+  "proof": {
+    "source_commit_resolved_from_github": true,
+    "branch_head_resolved_from_github": true,
+    "candidate_path_resolved_from_github": true,
+    "source_parent_verified": "fcc163ce2b6b6dc769ec35e4f2d3626ccaf35010",
+    "commands": [
+      "git show --no-patch --format='%H%n%P%n%s%n%ci' HEAD",
+      "shasum -a 256 governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "git push -u github selfhtml-semantics-v0.1-candidate",
+      "gh api repos/situaedmilly/ruora/commits/9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+      "git ls-remote github refs/heads/selfhtml-semantics-v0.1-candidate",
+      "gh api 'repos/situaedmilly/ruora/contents/governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md?ref=9451d5d71e4fe2de58513b4969a313f5f9b8b04d'"
+    ]
+  },
+  "next_authority": {
+    "selfsystem": "HBCSELF",
+    "act_required": "Perform session-independent hostile review against RUORA branch selfhtml-semantics-v0.1-candidate at commit 9451d5d71e4fe2de58513b4969a313f5f9b8b04d and return findings/counterexamples through INSELFACTION."
+  }
+}
