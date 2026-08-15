@@ -1,0 +1,49 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "SELF_OBJECT_REALITY_FOUNDATION_001",
+  "emitted_at": "2026-08-15T23:40:50Z",
+  "SYSTEM": "SELFOBJECTREALITY (upstream of PHILOSELF — new foundational track)",
+  "OPERATION": "BOUNDED_FOUNDATIONAL_AUTHORING",
+  "EMITTER": "CLAUDESELF (session 74633bfb), SELFauto membrane",
+  "AUTHORIZATION": "AUTHORIZE_SELF_OBJECT_REALITY_FOUNDATION_001 — conversation-scope Founder act (MILASOPHAHR, 2026-08-15), captured BY INSTRUMENT from the harness transcript so the citation resolves to bytes in custody (Round-3 T2-M3 lesson applied at birth). Founder sequencing ruling embedded in the same act: the next act is NOT 'repair Round 3' — foundation first, hostile review second, PHILOSELF derivation third, repair last.",
+  "custody": {
+    "repository": "situaedmilly/ruora",
+    "branch": "philoself-boundary-review-002",
+    "commit_lineage_tail": "1db76b0 (return-003) -> dfe11eb (SOR foundation)",
+    "head_commit": "dfe11eba4c3b3905c89fdbce8f7e4a127becdf60",
+    "sor_000": "governance/SELFOBJECTREALITY-000-FOUNDATION-v0.1-CANDIDATE.md sha256 58a39d7d1473f546ca9df2680c0bb3883e85ddc1bbf4be75c9026dcfe9221c93 (521 ln)",
+    "founding_pressure_capture": "governance/SELFOBJECTREALITY-FOUNDING-PRESSURE-CAPTURE-001.md sha256 52205fb29c8feba72c10e3a07f17e66063f97953297d5ea37b3ee62664e3cbb5 (1359 ln; captured body sha256 3e417f3c9caefae2d35d84334242004a275a7a691240e8dd9bc3cee26f299a36, 1321 ln, instrument-extracted from the conversation transcript surface — CAPTURED_REPRESENTATION, not RawEmission, not a machine-signed grant)",
+    "receiver_verification": "both artifacts recomputed from GitHub contents API at dfe11eb — sha256 exact",
+    "custody_venue_note": "PHILOSELF custody branch is VENUE ONLY — the estate's sole receiver-resolvable governed surface today. Jurisdictionally SOR is upstream: PHILOSELF discovered the wound; it does not own the doctrine."
+  },
+  "doctrine": {
+    "name": "SELF OBJECT REALITY (SOR-000)",
+    "foundational_theorem": "A SELF Object is an invariant identity whose manifestations, states, authorities, observations, standings, and dispositions exist as governed relations over time rather than mutable properties of identity.",
+    "strengthened_split": "IDENTITY IS INTRINSIC. STATE IS RELATIONAL. State is not elsewhere in the object — state is not in the object at all.",
+    "door_law": "Freeze what the thing is. Record what happens to it. Prove what those records establish. Govern what may follow. Never confuse any of the four. (IDENTITY != EVENT != EVIDENCE != AUTHORITY)",
+    "architecture": "ObjectIdentity + ObjectVersion (frozen) vs the RealityLedger (StateAssertion / AuthorityGrant / Transition / Observation / Proof / Standing / Disposition / Lineage / Dependency / Projection / Memory) — OBJECT != LEDGER-ABOUT-OBJECT (non-containment, INV-SOR-3: serializing identity with its state arrays reinstalls the Round-3 wound in prettier YAML)",
+    "invariants": "INV-SOR-1..13 — split; relational state; non-containment; intrinsic state text is declaration-class; bitemporality (valid_time != record_time, append-only correction); HISTORY != MEMORY != CURRENT_STANDING; relation lifecycle by append; authority does not compose for free; writer authority per relation class; identity continuity = witnessed invariant preservation; proof-scope discipline; projection law (MODEL != SELF != PROJECTION != SUBSTRATE, now derived); single-use by uniqueness",
+    "representability_test": "EXECUTED per the authorizing act's acceptance gate: all 9 Round-3 blocking defects and all 5 FROZEN-BYTES/MUTABLE-STATUS SPLIT instances representable with ZERO identity mutation — PASS at the representation layer. Residuals disclosed, not laundered: grounding/bootstrap (OQ-SOR-1), writer grants unissued (OQ-SOR-2), ledger organ unrealized (OQ-SOR-3) — authority/realization questions, not representation failures.",
+    "self_application": "SOR-000's own lifecycle lives OUTSIDE its bytes from birth — its header status line is declared declaration-class; candidate → reviewed → disposed will be external records, never header edits. Authoring header carries a projection reference, NOT an AUTHOR_SELF identity claim (T1-M2 applied)."
+  },
+  "standings_unmerged": {
+    "SOR_000": "AUTHORED CANDIDATE — unreviewed, unratified, no standing beyond existence in custody",
+    "PHILOSELF_REPAIR": "DEFERRED by Founder sequencing ruling — foundation review precedes any derivation or repair; Round-3 triple-BLOCKED verdict and Round-2 BLOCKED verdict both STAND",
+    "PHILOSELF_CORPUS": "UNTOUCHED by this act — zero mutations to 001-005, machinery, or decision records",
+    "RATIFICATION": "NOT_GRANTED anywhere, including SOR-000; COMMENCEMENT NOT_AUTHORIZED; X1 FROZEN"
+  },
+  "frozen": [
+    "PHILOSELF repair (deferred pending SOR-000 review)",
+    "commencement",
+    "FOUNDING_WITNESS",
+    "ratification",
+    "seal",
+    "X1",
+    "AgentBridge",
+    "SELFQUEUE",
+    "HBCSELF identity gate",
+    "canonical merge",
+    "round-4"
+  ],
+  "NEXT_AUTHORITY": "MILASOPHAHR — decide issuance of the independent hostile review of SOR-000. Precondition carried from Round-3 advisory item 7: a lawful review chamber needs an instantiating record and a non-AffectedByBoundary admission party; SOR-000 §7's chamber shape is the form such an instantiation can take. The authoring projection (74633bfb) is AffectedByBoundary of SOR-000 and barred from adjudicating its standing. Trail after review: Founder disposition -> PHILOSELF derivation (separate authority) -> repair."
+}
