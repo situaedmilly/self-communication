@@ -1,0 +1,19 @@
+{
+  "schema": "inselfaction-correction.v0.1",
+  "id": "CORRECTION-PHILOSELF_PROOFRULE_AND_LINEAGE_REPAIR_001-001",
+  "emitted_at": "2026-08-15T20:54:15Z",
+  "CORRECTION_TYPE": "MALFORMED_DIGEST_BINDING",
+  "ORIGINAL_ARCHIVE": "PHILOSELF_PROOFRULE_AND_LINEAGE_REPAIR_001",
+  "original_archive_path": "inselfactions/PHILOSELF_PROOFRULE_AND_LINEAGE_REPAIR_001.json",
+  "original_archive_sha256": "f1ea2d72358dbd0d3693eba8e42a87582843afc3bf8dd19edd3c9fbe9954c9ce",
+  "ARCHIVE_CONTENT": "IMMUTABLE",
+  "CORRECTION": "APPEND_ONLY",
+  "HISTORICAL_STANDING": "ORIGINAL_ARCHIVE_REMAINS_VALID_WITH_DISCLOSED_BINDING_DEFECT",
+  "defect": "wave_artifacts entries for the two sovereign-record drafts carry malformed values — 16-char digest prefixes concatenated with the placeholder 'SEE_REMOTE' — bound by the emitter before full digests were captured. Malformed values are NOT silently replaced; they remain in the immutable archive with this appended correction.",
+  "corrected_bindings": {
+    "governance/ADMISSION-INSTRUMENT-CONSTITUTING-GRANT-001-DRAFT.md": "489891743bfd528c541fb9e1a4488e6728ae97a21a811f8d70be8cdc0d494140",
+    "governance/PROOFRULE-ACTIVATION-DIRECT-REMOTE-BYTE-OBSERVATION-001-DRAFT.md": "41de79f594b12c11ec576ea7fa9d48092d293e7fcc74d8c4fc45c97589336521"
+  },
+  "verification": "both full digests recomputed from GitHub raw bytes, commit-pinned at 68481acbf0d2b264597ba585dbc0c3f4b52d2b72, during pre-issuance resolution 2026-08-15",
+  "law": "prefix-only digests are rejected as authoritative addresses; a record never contains its own whole-file hash (SELF_DIGEST_PARADOX)"
+}

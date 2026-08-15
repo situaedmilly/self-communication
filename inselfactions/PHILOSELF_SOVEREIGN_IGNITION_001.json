@@ -1,0 +1,42 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "PHILOSELF_SOVEREIGN_IGNITION_001",
+  "emitted_at": "2026-08-15T20:54:15Z",
+  "SYSTEM": "PHILOSELF",
+  "OPERATION": "SOVEREIGN_RECORD_ISSUANCE_CUSTODY_TRANSPORT",
+  "EMITTER": "CLAUDESELF (session 74633bfb), SELFauto membrane",
+  "AUTHORIZATION": "FOUNDER_ISSUE_PHILOSELF_SOVEREIGN_RECORDS_001 (+two mid-execution Founder patches, applied as binding: SELF_DIGEST_PARADOX law; ADMISSION_INSTRUMENT_OUTPUT != ADMISSION_STANDING elevation chain)",
+  "NON_COLLAPSE": "FOUNDER_INTENT != AUTHORITY_RECORD != INSTRUMENT_EXECUTION; RULE_REGISTRATION != RULE_ACTIVATION != RULE_APPLICATION != PROOF; PROOF_PASS != VERIFIED; ADMISSION_INSTRUMENT_OUTPUT != ADMISSION_STANDING",
+  "custody": {
+    "repository": "situaedmilly/ruora",
+    "branch": "philoself-boundary-review-002",
+    "custody_note": "commit-pinned",
+    "commit_lineage_tail": "68481ac -> 1f9adec (sovereign ignition)",
+    "head_commit": "1f9adecfb6bb4e9f3f019333849a38ffb51cc3a6",
+    "receiver_verification": "all five new records + frozen corpus surfaces recomputed from GitHub raw bytes at head — exact; PHILOSELF-001..005 byte-unchanged (e937cd2b/cda443c9/32e3f4b5/b85fba87/742fa401)"
+  },
+  "standings_unmerged": {
+    "R6_ADMISSION_GRANT": "ISSUED — ADMISSION-INSTRUMENT-CONSTITUTING-GRANT-001-ISSUED.md sha256 ca7ccc57bccaff47252dbbd15b86e304213ebd24e4465a73faf310143e4f81d8 (issuer MILASOPHAHR, authority_class ADMISSION_AUTHORITY, draft byte-bound …4140)",
+    "ADMISSION_INSTRUMENT": "CONSTITUTED_NOT_EXECUTED — status record ADMISSION-INSTRUMENT-001-STATUS-RECORD-001.md sha256 a6b6c4f888e0011847a18f760ebdb0fbcfe30b683e9b2ed9c871e66b64aa7098 (lifecycle PROPOSED->CONSTITUTED, admission-side maintained; constituting candidate record unmutated 307dbb4e…)",
+    "PROOFRULE_REGISTRATION": "REGISTERED — PROOFRULE-REGISTRATION-DIRECT-REMOTE-BYTE-OBSERVATION-001.md sha256 1ebf368247a73f84c25a64c12d7ea1f6f5c9bed3b45adaa4a4947d9b2634fb41 (registry custody only; no standing authority)",
+    "R7_PROOFRULE_ACTIVATION": "ACTIVE — PROOFRULE-ACTIVATION-DIRECT-REMOTE-BYTE-OBSERVATION-001-ISSUED.md sha256 aa70bebbe13c080d0c163c84de6343ff59223c5e276d44361a55f1947b15a450 (ADJUDICATION_AUTHORITY, MILASOPHAHR; activation draft byte-bound …6521)",
+    "DIRECT_REMOTE_BYTE_RULE": "ACTIVE_BOUNDED — rule digest b02f91e6ab3a768f2c5a5f7c43786dee41e9f0126da23fc3229719717cde81d0 only; ACTIVE_RULE(r@A) != ACTIVE_RULE(r@B); VOID_FOR_NEW_DIGEST; standing FOUNDER_ACTIVATED_FOR_BOUNDED_CHAMBER_REALIZATION_USE; subject to hostile verification",
+    "CORRECTIVE_APPEND": "PUBLISHED — CORRECTION-PHILOSELF_PROOFRULE_AND_LINEAGE_REPAIR_001-001.json (original archive immutable, sha f1ea2d72…, REMAINS_VALID_WITH_DISCLOSED_BINDING_DEFECT; full …4140/…6521 digests bound)",
+    "CUSTODY": "COMPLETE at 1f9adec, GitHub-byte-verified; issuance record PHILOSELF-SOVEREIGN-ISSUANCE-RECORD-001.md sha256 2381516eed4178a260708795e5401f7f220f3430a83ec769b34ffa7ddcabce53",
+    "CHAMBER_REALIZATION": "NOT_RUN — EvaluateProof executable = TRUE, experiment FROZEN; representation only: AdmissionClaim + Witness + ACTIVE rule + Chamber -> EvaluateProof -> PASS|FAIL|INDETERMINATE + ceiling + scope -> (elevation chain) ADMISSION_STANDING"
+  },
+  "frozen": [
+    "CHAMBER_REALIZATION_PROOF",
+    "ROUND_3",
+    "COMMENCEMENT",
+    "FOUNDING_WITNESS",
+    "RATIFICATION",
+    "SEAL",
+    "X1",
+    "AGENTBRIDGE",
+    "SELFQUEUE",
+    "HBCSELF_IDENTITY_GATE",
+    "CANONICAL_MERGE"
+  ],
+  "NEXT_AUTHORITY": "MILASOPHAHR — authorize CHAMBER_REALIZATION_PROOF (the first machine-established chamber standing) or further disposition"
+}
