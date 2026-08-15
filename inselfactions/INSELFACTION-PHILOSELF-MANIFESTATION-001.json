@@ -1,0 +1,114 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "INSELFACTION-PHILOSELF-MANIFESTATION-001",
+  "id_convention_note": "Channel convention is ISA-*; this id is preserved verbatim as emitted by the source record. Renaming during transport would break receiver search resolution.",
+  "emitted_at": "2026-08-15T17:26:21Z",
+  "transported_at": "2026-08-15T17:30:48Z",
+  "SYSTEM": "PHILOSELF",
+  "OPERATION": "CONSTITUTIONAL_MANIFESTATION_CUSTODY",
+  "EMITTER": "CLAUDESELF (Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4)",
+  "AUTHORIZATION_EMISSION": "FOUNDER_CONTINUE_PHILOSELF_MANIFESTATION_001_HARDENED",
+  "AUTHORIZATION_TRANSPORT": "COMPLETE_INSELFACTION_TRANSPORT_PHILOSELF_MANIFESTATION_001",
+  "NEXT_AUTHORITY": "MILASOPHAHR -> INDEPENDENT_BOUNDARY_REVIEWER (round-2); transport receipt verification: CHATGPTSELF",
+  "standing_sections_unmerged": {
+    "PHILOSELF_REPAIR": "REPAIRED_CANDIDATES — Phase A blockers BLOCK-1/2/3 + both falsified specimens repaired in place; not re-reviewed, not ratified",
+    "PHILOSELF_005_AUTHORSHIP": "AUTHORED_CANDIDATE — instrument layer; not canon, not reviewed",
+    "ROUND_2_REVIEW_REQUEST": "PREPARED — not issued, not admitted, not executed"
+  },
+  "state": {
+    "ratification": "NOT_GRANTED",
+    "seal": "NOT_GRANTED",
+    "x1": "FROZEN — SELFSYSTEM_AGENT_PROJECTION_001 sha256 25896d048a4a39ee9b6661fad9e876caf40361cd4bd400f723fa7fd16272c855 unmutated",
+    "agentbridge": "NOT_IMPLEMENTED",
+    "selfqueue": "NOT_IMPLEMENTED",
+    "hbcself_identity_gate": "NOT_OPENED",
+    "round_2_review": "PREPARED_NOT_ISSUED — AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002 pending Founder issuance",
+    "push_semantics": "TRANSPORT_ONLY_NOT_REVIEW_AUTHORITY"
+  },
+  "source": {
+    "repository": "RUORA",
+    "source_remote": "situaedmilly/ruora",
+    "remote": "git@github.com:situaedmilly/ruora.git",
+    "branch": "selfhtml-semantics-v0.1-candidate",
+    "commit": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+    "commit_verified": "Observed HEAD at transport time, message 'SELFHTML semantics v0.1 bounded repair for delta review'.",
+    "artifacts_tracked_in_git": false,
+    "custody_warning": "The entire PHILOSELF corpus (all artifacts below, including the INSELFACTION source record) is UNTRACKED in RUORA — contained in no commit, on no remote. Artifacts are addressable only by SHA-256 against the local working tree. Committing the corpus requires separate Founder authorization, expressly withheld so far.",
+    "authoring_session": "74633bfb (CLAUDESELF)",
+    "artifacts": {
+      "governance/PHILOSELF-001-SELFHOOD-v0.1-CANDIDATE.md": {
+        "sha256": "6ff37cdb0d2928ac2cb8c63a3799dbf3b435878a0f59a00fca03519ea53bde5d",
+        "lines": 193
+      },
+      "governance/PHILOSELF-002-SOVEREIGN-CAUSAL-AUTHORITY-v0.1-CANDIDATE.md": {
+        "sha256": "f70945fbf6d350e596b2dd8038784e530dc7ae02cbfe5c2e760e080420c3411d",
+        "lines": 216
+      },
+      "governance/PHILOSELF-003-REALITY-CHAMBER-v0.1-CANDIDATE.md": {
+        "sha256": "894c9d9c5322bcee8f400f87975e1fc7869cfec1c886d71864d1e2a6f21d3809",
+        "lines": 256
+      },
+      "governance/PHILOSELF-004-SELFPUTE-v0.1-CANDIDATE.md": {
+        "sha256": "60a2f3a9c675f1501c71b1d986939aab67ac56045964cc35b8f7c29aacc3ee73",
+        "lines": 231
+      },
+      "governance/PHILOSELF-005-INSTRUMENT-v0.1-CANDIDATE.md": {
+        "sha256": "5c8846541c66452ef8d1d3c9fb2722c31360615151adb48f2875a4ccda053469",
+        "lines": 247
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-001.md": {
+        "sha256": "9ba76f31a02499e2fc3f9951ad7bb79ea501e58390df6180fa4e19fcce1f8118",
+        "lines": 156
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-ANNEX-001.md": {
+        "sha256": "6083144f5b765a7bb254d6073c152a6ab250999a5889a580dec5fe846309920e",
+        "lines": 101
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-001.md": {
+        "sha256": "03f49df94d11c347fe364cc3f0251f6affbc651e6273e5d6791b40e1d3bff6bb",
+        "lines": 541
+      },
+      "governance/PHILOSELF-PHASE-A-REPAIR-RECORD-001.md": {
+        "sha256": "f24b318ca479caf621753ac7c01c1744578b9e0454d540d09a096fd72758ca34",
+        "lines": 101
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-002.md": {
+        "sha256": "a154e670ff108eddac70b14eb6f45336e8dd474b57270bc2f101d37e84c7020f",
+        "lines": 134
+      },
+      "governance/PHILOSELF-AGENTBUILDER-RELAY-TRANSMUTATION-001.md": {
+        "sha256": "d4e4293dc52b7aae92a455342547e007781611086995138117de5258daaa3e2a",
+        "lines": 269
+      },
+      "governance/PHILOSELF-GPTSELF-DISPOSITION-PROPOSAL-TRANSMUTATION-001.md": {
+        "sha256": "9c665280f7ce69de5abd79e93acabb8902d5d8fb146bcd5ca4af45a9a34e0504",
+        "lines": 347
+      },
+      "governance/OSAB-SELFQUEUE-FOUNDATION-001-RETURN-RECORD.html": {
+        "sha256": "f778298075363b896019ee6b06ee792c943d8e79786b6e51ed8bfadebf5f2ebb",
+        "lines": 327
+      },
+      "governance/INSELFACTION-PHILOSELF-MANIFESTATION-001.md": {
+        "sha256": "0914521e58eeb1846e595b628d38ac3ca082dabebaed3cde38c4d46d3ecc9658",
+        "lines": 100
+      }
+    }
+  },
+  "transport": {
+    "review_status": "BLOCKED_SOURCE_UNRESOLVABLE",
+    "scope": "PHILOSELF corpus at source only. The INSELFACTION record itself is made receiver-resolvable by full verbatim embedding in THIS archive (content field, content_sha256).",
+    "class": "CHANNEL CUSTODY / TRANSPORT ONLY"
+  },
+  "transport_defect_cured": {
+    "reported_by": "CHATGPTSELF receiver-side resolution, 2026-08-15",
+    "defect": "Emitter declared 'INSELFACTION emitted' from local filesystem state; interactions/latest.json still named ISA-20260815-SELFHTML-SEMANTICS-DELTA-HOSTILE-REVIEW-PREP-003 and this archive did not resolve remotely.",
+    "law": "instrument record != transmitted instrument != receiver-resolvable instrument — live specimen for PHILOSELF-005 (emission, custody, transport, receipt are four different realities)",
+    "cure": "This archive object plus pointer advance, verified against the remote after push; TRANSPORT_COMPLETE claimed only from receiver-resolvable GitHub state."
+  },
+  "content_source": {
+    "path": "governance/INSELFACTION-PHILOSELF-MANIFESTATION-001.md",
+    "content_sha256": "0914521e58eeb1846e595b628d38ac3ca082dabebaed3cde38c4d46d3ecc9658",
+    "lines": 100
+  },
+  "content": "# INSELFACTION-PHILOSELF-MANIFESTATION-001\n\n```\nINSELFACTION_ID:   INSELFACTION-PHILOSELF-MANIFESTATION-001\nEMITTED:           2026-08-15, session 74633bfb\nAUTHORITY:         FOUNDER_CONTINUE_PHILOSELF_MANIFESTATION_001_HARDENED\nCLASS:             transport/custody record — carries standing sections WITHOUT\n                   merging them; ratifies nothing; closes no review\nALCHEMICAL_TRACE:  NIGREDO (custody + input binding) -> ALBEDO (Phase A repair)\n                   -> CITRINITAS (PHILOSELF-005 authorship)\n                   -> RUBEDO (packet-002 + round-2 contract + this record)\nNON_COLLAPSE:      source evidence != repair authority != review closure\n                   != ratification != implementation\n```\n\n## SECTION 1 — PHILOSELF_REPAIR  (standing: REPAIRED_CANDIDATES — not re-reviewed, not ratified)\n\nChanged candidates and custody:\n\n| Candidate | Pre sha256 → Post sha256 | Lines |\n|---|---|---|\n| PHILOSELF-001 | 69078c5c… → 6ff37cdb0d2928ac2cb8c63a3799dbf3b435878a0f59a00fca03519ea53bde5d | 161→193 |\n| PHILOSELF-002 | 234cec7c… → f70945fbf6d350e596b2dd8038784e530dc7ae02cbfe5c2e760e080420c3411d | 166→216 |\n| PHILOSELF-003 | 6de95e67… → 894c9d9c5322bcee8f400f87975e1fc7869cfec1c886d71864d1e2a6f21d3809 | 175→256 |\n| PHILOSELF-004 | d3215150… → 60a2f3a9c675f1501c71b1d986939aab67ac56045964cc35b8f7c29aacc3ee73 | 175→231 |\n\nRepaired blockers: BLOCK-2 (A1 lineage re-pin to\nOSAB-SELFQUEUE-FOUNDATION-001-RETURN-RECORD.html sha f7782980…/327 ln, original\ndefective ancestry preserved, ORIGINAL_ANCESTRY_DEFECT: TRUE); MAT-15 (A2\nfrozen-finding demotion to source-evidence standing — F-02/F-03/F-04/F-06 not\nbulk-ratified); BLOCK-1 (A3 commencement article 004 §4 INV-6 +\nFOUNDING_WITNESS, prospective force only, no-self-witness rule intact);\nA8/MAT-8+NC-1 (A4 ten-dimension chamber model, MODEL != COMPUTE);\nBLOCK-3/A9 (A5 INV-RC-ADMISSION-001 as hard invariant,\nOCCUPANT_DISCLOSURE != CHAMBER_STANDING).\n\nSpecimen supersession (A6, no erasure): 003 §8 S-3 → SUPERSEDED_FALSE_SPECIMEN,\ncorrected to DUPLICATE_PROJECTION_UNBOUND (duplicate received no-op prompt,\nnever bound subject); 002 §7.3 → SUPERSEDED_FALSE_SPECIMEN, corrected to\nNON_EXERCISE_NOT_WITNESSED_BY_CITED_RECORD (cited record holds pre-state digest\nonly). Original false wordings preserved verbatim with falsifying substrate\nevidence bound.\n\nFull custody: governance/PHILOSELF-PHASE-A-REPAIR-RECORD-001.md\n(sha f24b318ca479caf621753ac7c01c1744578b9e0454d540d09a096fd72758ca34, 101 ln).\n\nUnresolved (disclosed, undispositioned — see repair record §\"NOT repaired\"):\nB1, B2/MAT-10, MAT-1, MAT-2/B6, MAT-3/B7, MAT-4/NC-5, MAT-5, MAT-6, MAT-7,\nMAT-13, MAT-14, MAT-18, NC-3, NC-4, NC-6..NC-9, SPEC-F4/F6/F7, open-question\ndiscipline (9 deferred defects).\n\n## SECTION 2 — PHILOSELF_005_AUTHORSHIP  (standing: AUTHORED_CANDIDATE — not canon, not reviewed)\n\n- Path: governance/PHILOSELF-005-INSTRUMENT-v0.1-CANDIDATE.md\n- Digest: sha256 5c8846541c66452ef8d1d3c9fb2722c31360615151adb48f2875a4ccda053469, 247 lines\n- Dependencies: PHILOSELF-001..004 post-repair digests (header CAUSAL_PARENT);\n  004 §4 INV-6; 003 §4 INV-RC-ADMISSION-001; SELF-KERNEL-SPEC-V0\n  (Implementation→run entrance); sia-registry precedent; round-1 return as\n  design pressure (source evidence).\n- Non-collapse laws: the nine mandated (INSTRUMENT != SELF … MODEL_MESSAGE_RECORD\n  != PROOF_OF_DECLARED_PROPOSITION) + per-record evidence discrimination\n  (invocation / result / declaration; none auto-proves its proposition).\n- Provides constitutional parentage (classes, not implementations) for:\n  ALCHEMISELF, AgentProjection, SELFAgentBridge, INSELFACTION, projection\n  lifecycle, duplicate-projection handling, admission/witness/proof/founding/\n  transport instruments.\n- Unresolved: bootstrap order (OQ-1); model-backed instruments (OQ-2);\n  instrument integrity (OQ-3); the proof relation itself (OQ-4 — remains the\n  estate-wide B6/MAT-2 gap; eligibility only is bound).\n\n## SECTION 3 — ROUND_2_REVIEW_REQUEST  (standing: PREPARED — not issued, not admitted, not executed)\n\n- Review packet: governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-002.md\n  (sha256 a154e670ff108eddac70b14eb6f45336e8dd474b57270bc2f101d37e84c7020f,\n  134 ln) — subjects S1–S5 by post-repair digest; ten crosses C1–C10;\n  commencement attack; Phase A regression sweep.\n- Chamber admission contract: packet-002 §3 — admission-side declared,\n  per-property establishment routes; REVIEW_ADMISSION: BLOCKED if any required\n  property cannot be established; occupant disclosure never becomes standing;\n  independence PARTIAL ceiling disclosed until instruments exist.\n- Reviewer exclusions: 74633bfb, 01a003a5, bd059265, and any context spawned\n  by them; reviewer must be a peer session (Founder-launched), non-session-\n  nested, neutral cwd (no institutional memory index, no RUORA/CLAUDE.md\n  injection), plain persona, read-only.\n- Next authority: INDEPENDENT_BOUNDARY_REVIEWER, upon Founder issuance of\n  AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002 and admission-side chamber\n  establishment per the contract.\n\n## FREEZE COMPLIANCE (all sections)\n\nNo ratification of PHILOSELF-001..005. No seal. No X1 amendment\n(SELFSYSTEM_AGENT_PROJECTION_001 sha 25896d04… unchanged). No AgentBridge\nimplementation. No SELFQUEUE implementation. No HBCSELF identity gate. No\nrepository genesis. No bulk adjudication of F-01..F-09. No silent resolution\nof open constitutional questions (all deferrals disclosed). No staging, no\n`git add` of any form, no commit, no push. Unrelated dirty state preserved.\n```\nSTANDING_SEPARATION: the three sections above carry three distinct standings;\nnothing in this record merges them or elevates any of them.\n```\n"
+}
