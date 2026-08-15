@@ -1,0 +1,188 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001",
+  "emitted_at": "2026-08-15T04:56:20Z",
+  "SYSTEM": "ALCHEMISELF",
+  "OPERATION": "ROOT_RUNTIME_MUTATION",
+  "ALCHEMISELF": "ROOT_ACTIVE",
+  "METATENIC_MUTATION": "0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+  "TYPE_CONFUSION_PROOFS": 8,
+  "NEXT_AUTHORITY": "CHATGPTSELF",
+  "system": "ALCHEMISELF",
+  "operation": "ROOT_RUNTIME_MUTATION",
+  "state": {
+    "root_runtime": "ACTIVE",
+    "doctrine_seal": "NOT_SEALED_CANON",
+    "founder_authorization": "GRANTED",
+    "runtime_order": "LEXEME -> TYPE -> IDENTITY -> PROVENANCE -> STANDING -> AUTHORITY -> ACTION",
+    "memory_mutation": "PERSISTED_AD_HOC_NOTE",
+    "inselfaction_source_contract": "TYPED_REFERENCE_REQUIRED",
+    "raw_reference_downstream": "FORBIDDEN",
+    "canonical_specimen": "TYPE-CONFUSION-dd9da0b7-001"
+  },
+  "source": {
+    "reference_resolution": {
+      "raw_reference": "0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+      "candidate_types": [
+        "GIT_COMMIT",
+        "ARTIFACT_DIGEST",
+        "CONTENT_HASH",
+        "UNRESOLVED_TOKEN"
+      ],
+      "resolved_type": "GIT_COMMIT",
+      "canonical_identifier": "0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+      "owner": "RUORA",
+      "repository": "situaedmilly/ruora",
+      "remote": "git@github.com:situaedmilly/ruora.git",
+      "branch": "alchemiself-root-runtime-v0.1",
+      "path": null,
+      "digest": null,
+      "provenance": {
+        "parent_commit": "7cd4b9ee675af95113e9f74e1164a0081288a322",
+        "baseline": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+        "github_commit_resolved": true,
+        "github_branch_head_matches": true
+      },
+      "standing": "ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON",
+      "authority": "ROOT_RUNTIME_ENFORCEMENT",
+      "unresolved_dimensions": []
+    },
+    "artifacts": [
+      {
+        "reference_resolution": {
+          "raw_reference": "governance/ALCHEMISELF-ROOT-RUNTIME-v0.1.md",
+          "candidate_types": ["PATH", "DOCTRINE_RECORD", "ROOT_RUNTIME_SPEC", "UNRESOLVED_TOKEN"],
+          "resolved_type": "ROOT_RUNTIME_SPEC",
+          "canonical_identifier": "governance/ALCHEMISELF-ROOT-RUNTIME-v0.1.md@0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+          "owner": "RUORA",
+          "repository": "situaedmilly/ruora",
+          "path": "governance/ALCHEMISELF-ROOT-RUNTIME-v0.1.md",
+          "digest": {
+            "algorithm": "GIT_BLOB_SHA",
+            "value": "f29069bba2c2b75e8411529b0afee33b774b52ba"
+          },
+          "provenance": {
+            "source_commit": "0f578a27173fb1a379b42d8ea9d4c8538752fd63"
+          },
+          "standing": "ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON",
+          "authority": "ROOT_RUNTIME_ENFORCEMENT",
+          "unresolved_dimensions": []
+        }
+      },
+      {
+        "reference_resolution": {
+          "raw_reference": "governance/ALCHEMISELF-TYPE-CONFUSION-SPECIMENS-v0.1.json",
+          "candidate_types": ["PATH", "SPECIMEN_LEDGER", "JSON_ARTIFACT", "UNRESOLVED_TOKEN"],
+          "resolved_type": "SPECIMEN_LEDGER",
+          "canonical_identifier": "governance/ALCHEMISELF-TYPE-CONFUSION-SPECIMENS-v0.1.json@0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+          "owner": "RUORA",
+          "repository": "situaedmilly/ruora",
+          "path": "governance/ALCHEMISELF-TYPE-CONFUSION-SPECIMENS-v0.1.json",
+          "digest": {
+            "algorithm": "GIT_BLOB_SHA",
+            "value": "ae9803c15612b64a134611eff1486ab77d6c2875"
+          },
+          "provenance": {
+            "source_commit": "0f578a27173fb1a379b42d8ea9d4c8538752fd63"
+          },
+          "standing": "TYPE_CONFUSION_SPECIMENS_ACTIVE",
+          "authority": "REGRESSION_PROOF_INPUT",
+          "unresolved_dimensions": []
+        }
+      }
+    ]
+  },
+  "root_law": {
+    "prime_law": "Never act on a symbol before determining what kind of thing the symbol is.",
+    "required_order": [
+      "LEXEME",
+      "TYPE",
+      "IDENTITY",
+      "PROVENANCE",
+      "STANDING",
+      "AUTHORITY",
+      "ACTION"
+    ],
+    "alchemical_phases": [
+      "NIGREDO",
+      "ALBEDO",
+      "CITRINITAS",
+      "RUBEDO"
+    ],
+    "forbidden_collapses": [
+      "NAME != TYPE",
+      "TOKEN != ADDRESS",
+      "DIGEST != COMMIT",
+      "COMMIT != ARTIFACT",
+      "ARTIFACT != STANDING",
+      "STANDING != AUTHORITY",
+      "AUTHORITY != EXECUTION",
+      "REFERENCE != OBJECT",
+      "OBJECT != TYPE",
+      "TYPE != IDENTITY",
+      "IDENTITY != PROVENANCE",
+      "PROVENANCE != STANDING",
+      "AUTHORITY != CAPABILITY",
+      "CAPABILITY != ACTION",
+      "ACTION != SUCCESS",
+      "SUCCESS != PROOF",
+      "PROOF != ADJUDICATION",
+      "ADJUDICATION != CANON"
+    ]
+  },
+  "subsystems_identified": [
+    "INSELFACTION archives",
+    "interactions/latest.json",
+    "RUORA governance records",
+    "HBCSELF hostile-review handoffs",
+    "Git/GitHub resolution layer",
+    "memory and cross-session recall",
+    "tool invocation layer",
+    "review/repair lanes"
+  ],
+  "type_confusion_proofs": {
+    "count": 8,
+    "canonical_specimen": {
+      "id": "TYPE-CONFUSION-dd9da0b7-001",
+      "raw_reference": "dd9da0b7...",
+      "assumed_type": "GIT_COMMIT_PREFIX",
+      "actual_type": "ARTIFACT_DIGEST_PREFIX",
+      "missing_distinction": "DIGEST != COMMIT",
+      "source_commit": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+      "artifact_path": "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "artifact_sha256": "dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82"
+    }
+  },
+  "proof": {
+    "commands": [
+      "node tools/verify-alchemiself-root-runtime.mjs",
+      "node -e \"JSON.parse(require('fs').readFileSync('governance/ALCHEMISELF-TYPE-CONFUSION-SPECIMENS-v0.1.json','utf8')); console.log('json-ok')\"",
+      "git diff --check HEAD~4..HEAD",
+      "shasum -a 256 governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "git push -u github alchemiself-root-runtime-v0.1",
+      "gh api repos/situaedmilly/ruora/commits/0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+      "git ls-remote github refs/heads/alchemiself-root-runtime-v0.1"
+    ],
+    "observed_results": [
+      "ALCHEMISELF_ROOT_RUNTIME_PROOF=PASS",
+      "TYPE_CONFUSION_PROOFS=8",
+      "CANONICAL_SPECIMEN=TYPE-CONFUSION-dd9da0b7-001",
+      "json-ok",
+      "SELFHTML candidate SHA256 remained dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82"
+    ]
+  },
+  "memory_mutation": {
+    "status": "PERSISTED_AD_HOC_NOTE",
+    "path": "/Users/millysituated/.codex/memories/extensions/ad_hoc/notes/2026-08-15T04-53-05Z-alchemiself-root-runtime.md"
+  },
+  "constraints": [
+    "This packet does not seal doctrine as unsupersedable canon.",
+    "This packet does not repair or ratify SELFHTML v0.1.",
+    "This packet does not advance SELFHTML repository genesis.",
+    "Child repositories must adopt the root boundary at their next authorized mutation."
+  ],
+  "next_authority": {
+    "selfsystem": "CHATGPTSELF",
+    "act_required": "Enforce ALCHEMISELF ReferenceResolution before all future reference interpretation and action; route future SELFCLAUDE/HBCSELF handoffs through typed source references."
+  }
+}

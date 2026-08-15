@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-15T04:42:31Z",
-  "updated_at_note": "True wall clock observed via `date -u` in this session. Pointer advanced to the HBCSELF hostile-review disposition after preserving CHANGES_REQUIRED findings against the receiver-resolvable SELFHTML candidate. Chain order remains `history`, never timestamp comparison.",
+  "updated_at": "2026-08-15T04:56:20Z",
+  "updated_at_note": "True wall clock observed via `date -u` in this session. Pointer advanced to ALCHEMISELF root runtime mutation after typed ReferenceResolution proof and GitHub publication. Chain order remains `history`, never timestamp comparison.",
   "session": "ChatGPTSELF-Codex",
   "latest_inselfaction": {
-    "id": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
-    "path": "inselfactions/ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002.json",
-    "title": "HBCSELF hostile review complete; SELFHTML semantics v0.1 requires changes before ratification or repository genesis",
+    "id": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001",
+    "path": "inselfactions/ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001.json",
+    "title": "ALCHEMISELF root runtime active; type resolution precedes interpretation and action",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -85,6 +85,24 @@
       "pushed": true,
       "remote_accessible_to_designated_reviewer": true,
       "worktree_state": "DIRTY_UNRELATED: candidate files committed and pushed; unrelated RUORA modified/untracked files remain outside the source commit."
+    },
+    "alchemiself_root_runtime": {
+      "repository": "RUORA",
+      "source_remote": "situaedmilly/ruora",
+      "visibility": "PUBLIC - receiver-resolvable",
+      "path": "/Users/millysituated/RUORA-worktrees/alchemiself-root",
+      "branch": "alchemiself-root-runtime-v0.1",
+      "commit": "0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+      "commit_verified": "Resolved from GitHub by full SHA; branch head resolves to the same SHA; root runtime spec and specimen ledger resolve at the same SHA.",
+      "based_on": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+      "reference_resolution_required": true,
+      "root_runtime_status": "ROOT_ACTIVE",
+      "doctrine_seal": "NOT_SEALED_CANON",
+      "artifacts_tracked_in_git": true,
+      "pushed": true,
+      "type_confusion_proofs": 8,
+      "canonical_specimen": "TYPE-CONFUSION-dd9da0b7-001",
+      "memory_note": "/Users/millysituated/.codex/memories/extensions/ad_hoc/notes/2026-08-15T04-53-05Z-alchemiself-root-runtime.md"
     }
   },
   "transport": {
@@ -138,13 +156,21 @@
     "docket_01": "SEPARATE ORGAN / REQUIRED — CR5-B03 authority laundering; NOT touched by CAP-TOPOLOGY-01",
     "element_subject_refuted": "ELEMENT is not the universal semantic subject of capability obligation. Both mandated counterexamples fire the kill test; the boundary case is structurally inexpressible because SP-156 compels ADMITTED",
     "discovered_class": "EMBODIMENT-PAIR (SP-091, SP-114, SP-152, SP-173) — no single-embodiment locus exists, so these can never lawfully appear in any self-reported failed-requirement set",
-    "selfhtml_semantics": "v0.1 CANDIDATE_AUTHORED - REMOTELY_RESOLVABLE - HBCSELF HOSTILE_REVIEW_COMPLETE - CHANGES_REQUIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED - NOT VERIFIED - escalated question: standing != disposition"
+    "selfhtml_semantics": "v0.1 CANDIDATE_AUTHORED - REMOTELY_RESOLVABLE - HBCSELF HOSTILE_REVIEW_COMPLETE - CHANGES_REQUIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED - NOT VERIFIED - escalated question: standing != disposition",
+    "alchemiself_root_runtime": "ROOT_ACTIVE - PRE_INTERPRETATION ROOT RUNTIME - TYPE RESOLUTION REQUIRED BEFORE IDENTITY, PROVENANCE, STANDING, AUTHORITY, OR ACTION - TYPE_CONFUSION_PROOFS 8 - NOT SEALED CANON"
   },
   "next_authority": {
-    "selfsystem": "SELFCLAUDE + MILASOPHAHR",
-    "act_required": "Settle whether DEFERRED and REJECTED belong to epistemic standing or to a separate adjudication/disposition type, then authorize a bounded SELFHTML semantics repair if appropriate. Do not advance repository genesis."
+    "selfsystem": "CHATGPTSELF",
+    "act_required": "Enforce ALCHEMISELF ReferenceResolution before all future reference interpretation and action; route future SELFCLAUDE/HBCSELF handoffs through typed source references."
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001",
+      "subject": "ALCHEMISELF root runtime enforcement",
+      "next_authority": "CHATGPTSELF",
+      "act_required": "Apply LEXEME -> TYPE -> IDENTITY -> PROVENANCE -> STANDING -> AUTHORITY -> ACTION before repository lookup, tool invocation, review, mutation, proof, or INSELFACTION emission.",
+      "status": "ROOT_ACTIVE - ReferenceResolution required - canonical type-confusion specimen dd9da0b7 installed - 8 proofs pass"
+    },
     {
       "inselfaction": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
       "subject": "SELFHTML Reality Contract Semantics 001 v0.1 hostile review disposition",
@@ -293,7 +319,8 @@
     "ISA-20260814-CC-FIRSTCONTACT-READY-015",
     "ISA-20260814-CC-WORKFLOW-CUSTODY-016",
     "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001",
-    "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002"
+    "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
+    "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
