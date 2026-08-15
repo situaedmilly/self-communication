@@ -1,0 +1,40 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "PHILOSELF_ROUND_3_ISSUED",
+  "emitted_at": "2026-08-15T21:54:57Z",
+  "SYSTEM": "PHILOSELF",
+  "OPERATION": "ROUND_3_INVERSION_REVIEW_ISSUANCE",
+  "EMITTER": "CLAUDESELF (session 74633bfb), SELFauto membrane",
+  "AUTHORIZATION": "AUTHORIZE_PHILOSELF_ROUND_3 (Founder, 2026-08-15) — inversion doctrine: reviewer attacks constitution + machinery + the admission decision that admitted it; HBCSELF survival laws bound as governing frame",
+  "custody": {
+    "repository": "situaedmilly/ruora",
+    "branch": "philoself-boundary-review-002",
+    "custody_note": "commit-pinned",
+    "commit_lineage_tail": "125b502 -> 9c812b1 (packet-003) -> fb65257 (reviewer admission)",
+    "head_commit": "fb65257ad2f8feefe0205269e79335a6e71c8036",
+    "packet_003": "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-003.md sha256 5a84b69417f2d5a1573f7daaa438ca8c4a161d16c8fce2ec6b54eb671cec8619",
+    "reviewer_admission_record": "governance/PHILOSELF-ROUND3-REVIEWER-ADMISSION-RECORD-001.md sha256 a383f256e49bafaec3ca89435bc283dd51d732d2e8858d5f7e1cf653fc343cff",
+    "receiver_verification": "both recomputed from GitHub raw bytes at head — exact (one broken empty-fetch invocation detected by its empty-string digest and re-run; a failed instrument invocation is not a verification)"
+  },
+  "standings_unmerged": {
+    "PACKET_003": "ISSUED — three verdict lines (T1 CONSTITUTION / T2 MACHINERY / T3 ADMISSION_DECISION), never merged; survival laws §0 governing; subjects include the machinery records and the reviewer's own admission (D3)",
+    "REVIEWER_ADMISSION": "ADMITTED (BOUNDED) — the machinery's SECOND execution: RA1/RA2/RA3 PASS at exact digests under the active rule; RA4/RA5 INDETERMINATE fail-closed and carried (mutation-capability/memory/session); policy per proof-ledger §L2 precedent, itself subject T3",
+    "REVIEWER_PROJECTION": "PROJ-20260815-PHILOSELF-BR-003 COMPUTING — read-only toolset; charged to attack its own admission record and say so if the standing it operates inside was unlawfully produced",
+    "CUSTODY": "COMPLETE at fb65257, receiver-verified",
+    "ROUND_3": "ISSUED — verdict pending; CHAMBER_REALIZATION_PASS != ROUND_3_AUTHORIZATION was honored: issuance came only by explicit Founder act",
+    "RATIFICATION": "NOT_GRANTED; COMMENCEMENT NOT_AUTHORIZED; X1 FROZEN"
+  },
+  "frozen": [
+    "commencement",
+    "FOUNDING_WITNESS",
+    "ratification",
+    "seal",
+    "X1",
+    "AgentBridge",
+    "SELFQUEUE",
+    "HBCSELF identity gate",
+    "canonical merge",
+    "round-4"
+  ],
+  "NEXT_AUTHORITY": "PROJ-20260815-PHILOSELF-BR-003 (verdict) -> MILASOPHAHR (disposition)"
+}
