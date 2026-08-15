@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-15T19:05:48Z",
-  "updated_at_note": "True wall clock via `date -u`. Pointer advanced to Round-2 RETURN custody: verdict BLOCKED (2 blocking / 23 material / 6 minor, INDEPENDENCE_PARTIAL carried) transported as a custody record only — REVIEW_COMPLETION != RETURN_CUSTODY != FOUNDER_DISPOSITION != REPAIR_AUTHORITY. Chamber defects carried as findings, not repaired state. All freezes hold; next authority MILASOPHAHR for disposition; repair authority to be issued separately if at all.",
+  "updated_at": "2026-08-15T20:09:34Z",
+  "updated_at_note": "True wall clock via `date -u`. Pointer advanced to A-I state-establishment repair custody: v0.3+residual corpus at commit-pinned 33f08cf (receiver-verified from GitHub bytes). B-1/B-2 AUTHOR_CLAIMS_CURED under the Founder's four binding patches; review NOT closed; nothing ratified; round 3 not designed. Complete still-open ledger transported with the corpus.",
   "session": "CLAUDESELF-ClaudeCode-74633bfb",
   "latest_inselfaction": {
-    "id": "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_RETURNED",
-    "path": "inselfactions/PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_RETURNED.json",
-    "title": "PHILOSELF Round-2 hostile review RETURNED — BLOCKED; return in receiver-resolvable custody; Founder disposition pending",
+    "id": "PHILOSELF_STATE_ESTABLISHMENT_REPAIR_001",
+    "path": "inselfactions/PHILOSELF_STATE_ESTABLISHMENT_REPAIR_001.json",
+    "title": "PHILOSELF A-I constitutional repair in custody — B-1/B-2 author-claims-cured, three state machines authored, admission instrument specified unconstituted",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -137,8 +137,8 @@
       "visibility": "PUBLIC - receiver-resolvable (custody branch)",
       "path": "/Users/millysituated/RUORA",
       "branch": "philoself-boundary-review-002",
-      "commit": "3dab5badbedad916c3e185de8ec84c5adadb13d4",
-      "commit_verified": "Custody lineage 00aab1e -> 2521c8b -> da197c1 (review subject) -> 3dab5ba (return custody); remote head + return digest recomputed from GitHub raw bytes; candidates byte-unchanged at custody head.",
+      "commit": "33f08cfa9efc97fcaead105638ac26858fe02b71",
+      "commit_verified": "Lineage 00aab1e -> 2521c8b -> da197c1 (review subject) -> 3dab5ba (return custody) -> 389a327 (v0.3 repair) -> 33f08cf (residual ledger); head + spot digests recomputed from GitHub raw bytes.",
       "artifacts_tracked_in_git": true,
       "authoring_session": "74633bfb (CLAUDESELF)",
       "round_1_review": "BLOCKED — PROJ-20260815-PHILOSELF-BR-001, return sha256 03f49df94d11c347fe364cc3f0251f6affbc651e6273e5d6791b40e1d3bff6bb",
@@ -147,11 +147,12 @@
       "round_2_packet": "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-002.md sha256 a154e670ff108eddac70b14eb6f45336e8dd474b57270bc2f101d37e84c7020f",
       "ratification": "NOT_GRANTED",
       "x1": "FROZEN",
-      "review_status": "ROUND_2_RETURNED_BLOCKED",
+      "review_status": "ROUND_2_RETURNED_BLOCKED_REPAIR_APPLIED_AUTHOR_CLAIMS",
       "next_gate": "AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002",
       "source_status": "RECEIVER_RESOLVABLE",
       "annex_002": "governance/PHILOSELF-BOUNDARY-REVIEW-ANNEX-002.md sha256 9d9139827cd7f30af61e64b3c2d3b7f191f54090df2fb2ace68c0a94a637c6ca",
-      "round_2_return": "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-002.md sha256 e0098a8b7e4bba66ff13ecb49b5a082a23fd4d3b93e122b177c051a7e6582971 (599 ln) — verdict BLOCKED 2/23/6"
+      "round_2_return": "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-002.md sha256 e0098a8b7e4bba66ff13ecb49b5a082a23fd4d3b93e122b177c051a7e6582971 (599 ln) — verdict BLOCKED 2/23/6",
+      "v03_corpus": "001 e937cd2b / 002 ab1ec61d / 003 32e3f4b5 / 004 998f8480 / 005 5eecaf5b (+ worked admission record 307dbb4e, repair records c0c47f34, 2f0ec0e5)"
     }
   },
   "transport": {
@@ -207,19 +208,26 @@
     "discovered_class": "EMBODIMENT-PAIR (SP-091, SP-114, SP-152, SP-173) — no single-embodiment locus exists, so these can never lawfully appear in any self-reported failed-requirement set",
     "selfhtml_semantics": "v0.1 CANDIDATE_REPAIRED_BY_AUTHOR - REMOTELY_RESOLVABLE - DELTA HOSTILE REVIEW PREPARED_NOT_EXECUTED - HR-001/HR-002/HR-003 AUTHOR_CLAIMS_REPAIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED_PENDING_DELTA_REVIEW - NOT VERIFIED - theorem under attack: standing/disposition/witness/observation orthogonality",
     "alchemiself_root_runtime": "ROOT_ACTIVE - CHATGPTSELF ACCEPTED AS ACTIVE ROOT RUNTIME - ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON - DOCTRINE_SEAL NOT_SEALED_CANON - SELFHTML_REPAIR_AUTHORITY NOT_GRANTED_BY_THIS_ACT - TYPE_CONFUSION_PROOFS 8",
-    "philoself": "ROUND_2 RETURNED BLOCKED (2 blocking: B-1 Proves(w,c) bridge absent, B-2 FOUNDING_WITNESS binds no bytes; 23 material; 6 minor) · return in custody at 3dab5ba, GitHub-byte-verified · chamber defects carried as findings (session-nested, memory+persona injection, issuer admission divergence) · INDEPENDENCE_PARTIAL · M-2 ee991b56 identity UNRESOLVED pending Founder ruling · FOUNDER_DISPOSITION_PENDING · REPAIR_AUTHORITY_NOT_GRANTED · RATIFICATION NOT_GRANTED · X1 FROZEN · ROUND_3 NOT_AUTHORIZED"
+    "philoself": "A-I REPAIR IN CUSTODY at 33f08cf (author claims: B-1 Proves/EvaluateProof bridge + B-2 FOUNDING_WITNESS byte-binding CURED; chamber/projection/instrument-record-receiver state machines authored; 6 authority classes + ExecutionGrant/SELFauto; admission instrument SPECIFIED unconstituted) · ROUND_2 verdict BLOCKED stands unreviewed against v0.3 · complete still-open ledger transported · RATIFICATION NOT_GRANTED · ROUND_3 NOT_ISSUED · X1 FROZEN"
   },
   "next_authority": {
     "selfsystem": "MILASOPHAHR",
-    "act_required": "Founder disposition over the Round-2 BLOCKED return: rule on B-1/B-2 cure shapes, M-2 identity, occupant/admission-side definitions, ADMISSION_AUTHORITY sixth class, and the A-I constitutional repair scope — then issue repair authority SEPARATELY if at all. Custody of the return is complete and receiver-resolvable; custody is not disposition."
+    "act_required": "Disposition the transported still-open ledger (chiefly: self_axiom Amendment-Law dual-copy reconciliation; proof-rule registry ownership; commencement sequencing) and decide round-3 chamber realization. Repair is AUTHOR_CLAIMS_CURED only — an independent round 3 against v0.3 is the verification path; it is not yet designed or issued."
   },
   "open_items": [
+    {
+      "inselfaction": "PHILOSELF_STATE_ESTABLISHMENT_REPAIR_001",
+      "subject": "PHILOSELF v0.3 corpus — residual-question disposition + round-3 decision",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Rule on: self_axiom Amendment-Law reconciliation (two divergent live copies, disclosed in 004 §9); proof-rule registry (who authorizes rules r for EvaluateProof); commencement sequencing (FOUNDING_WITNESS now enactable — enacts[] byte-bindings specified). Then, if chosen, authorize round-3 chamber realization (admission instrument constituting grant + non-nested reviewer chamber).",
+      "status": "REPAIR IN CUSTODY (33f08cf, receiver-verified) · AUTHOR_CLAIMS_CURED · REVIEW NOT CLOSED · ALL FREEZES HOLD"
+    },
     {
       "inselfaction": "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_RETURNED",
       "subject": "PHILOSELF Round-2 BLOCKED verdict — Founder disposition",
       "next_authority": "MILASOPHAHR",
       "act_required": "Disposition B-1 (Proves(w,c) bridge + proof_eligibility default), B-2 (FOUNDING_WITNESS witness_id/record_path/enacts digest bindings), M-2 identity ruling, occupant + admission-side definitions, ADMISSION_AUTHORITY class, separation-of-duty invariant, then the three state models (chamber lifecycle, projection lifecycle, Proves contract). Repair authority is NOT granted by return custody and must be issued separately.",
-      "status": "RETURN IN CUSTODY (3dab5ba, byte-verified) · BLOCKED 2/23/6 · ALL FREEZES HOLD"
+      "status": "PARTIALLY DISCHARGED — Founder issued hardened repair authority; A-I + residual repairs applied and in custody (33f08cf) as AUTHOR_CLAIMS_CURED; verdict BLOCKED stands pending round-3 verification"
     },
     {
       "inselfaction": "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_ISSUED",
@@ -410,7 +418,8 @@
     "ISA-20260815-SELFHTML-SEMANTICS-DELTA-HOSTILE-REVIEW-PREP-003",
     "INSELFACTION-PHILOSELF-MANIFESTATION-001",
     "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_ISSUED",
-    "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_RETURNED"
+    "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_RETURNED",
+    "PHILOSELF_STATE_ESTABLISHMENT_REPAIR_001"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
