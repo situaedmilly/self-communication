@@ -1,0 +1,137 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_ISSUED",
+  "id_note": "Named exactly per the issuing Founder command.",
+  "emitted_at": "2026-08-15T18:17:27Z",
+  "SYSTEM": "PHILOSELF",
+  "OPERATION": "BOUNDARY_HOSTILE_REVIEW_ISSUANCE",
+  "EMITTER": "CLAUDESELF (Claude Code session 74633bfb-04bf-48c4-99aa-29d87a2eabb4)",
+  "AUTHORIZATION": "AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002 (review issuance only)",
+  "SELFAUTO_ADMISSION": {
+    "FOUNDER_ADMISSION": "GRANTED",
+    "SELFPUTE": "AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002",
+    "EXECUTOR": "CLAUDESELF (session 74633bfb)",
+    "EXECUTION_MODE": "SELFauto — autonomous execution without autonomous jurisdiction",
+    "EXECUTION_DISCRETION": "AUTONOMOUS_WITHIN_PLAN (sequencing, reads, verification, hashing, non-destructive retries)",
+    "SCOPE_EXPANSION": "NOT_GRANTED",
+    "REPAIR": "NOT_GRANTED",
+    "RATIFICATION": "NOT_GRANTED",
+    "membrane_rule": "any new state-transition proposal (X1 amendment, ratification, repair of a discovered defect) -> STOP, new Founder authority required"
+  },
+  "REVIEW_AUTHORITY": "REVIEW_ONLY — verdicts + findings only. EXPLICITLY ABSENT: repair authority, ratification authority, X1 amendment, AgentBridge/SELFQUEUE implementation, HBCSELF identity gate, merge, seal, F-01..F-09 bulk adjudication.",
+  "NEXT_AUTHORITY": "INDEPENDENT_BOUNDARY_REVIEWER (verdict), then MILASOPHAHR (disposition)",
+  "review_source": {
+    "repository": "situaedmilly/ruora",
+    "remote": "git@github.com:situaedmilly/ruora.git",
+    "branch": "philoself-boundary-review-002",
+    "commit": "da197c11971af74642ce777c1744f2a617f8f65d",
+    "commit_lineage": "00aab1e (7 subjects) -> 2521c8b (5 context objects) -> da197c1 (annex-002)",
+    "commit_verified": "Remote branch head resolved via GitHub API = da197c1…; every artifact digest below recomputed from GitHub raw bytes and matched.",
+    "artifacts_tracked_in_git": true,
+    "visibility": "PUBLIC - receiver-resolvable",
+    "subjects": {
+      "governance/PHILOSELF-001-SELFHOOD-v0.1-CANDIDATE.md": {
+        "sha256": "6ff37cdb0d2928ac2cb8c63a3799dbf3b435878a0f59a00fca03519ea53bde5d",
+        "lines": 193
+      },
+      "governance/PHILOSELF-002-SOVEREIGN-CAUSAL-AUTHORITY-v0.1-CANDIDATE.md": {
+        "sha256": "f70945fbf6d350e596b2dd8038784e530dc7ae02cbfe5c2e760e080420c3411d",
+        "lines": 216
+      },
+      "governance/PHILOSELF-003-REALITY-CHAMBER-v0.1-CANDIDATE.md": {
+        "sha256": "894c9d9c5322bcee8f400f87975e1fc7869cfec1c886d71864d1e2a6f21d3809",
+        "lines": 256
+      },
+      "governance/PHILOSELF-004-SELFPUTE-v0.1-CANDIDATE.md": {
+        "sha256": "60a2f3a9c675f1501c71b1d986939aab67ac56045964cc35b8f7c29aacc3ee73",
+        "lines": 231
+      },
+      "governance/PHILOSELF-005-INSTRUMENT-v0.1-CANDIDATE.md": {
+        "sha256": "5c8846541c66452ef8d1d3c9fb2722c31360615151adb48f2875a4ccda053469",
+        "lines": 247
+      }
+    },
+    "review_instruments": {
+      "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-002.md": {
+        "sha256": "a154e670ff108eddac70b14eb6f45336e8dd474b57270bc2f101d37e84c7020f",
+        "lines": 134,
+        "role": "governing packet C1-C10"
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-ANNEX-002.md": {
+        "sha256": "9d9139827cd7f30af61e64b3c2d3b7f191f54090df2fb2ace68c0a94a637c6ca",
+        "lines": 106,
+        "role": "attack instrument C11+C12 — chains under hostile test, NOT ratified"
+      }
+    },
+    "context_objects": {
+      "governance/SELFSYSTEM_AGENT_PROJECTION_001.md": {
+        "sha256": "25896d048a4a39ee9b6661fad9e876caf40361cd4bd400f723fa7fd16272c855",
+        "lines": 404,
+        "role": "X1 — C10 derivability target, FROZEN"
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-001.md": {
+        "sha256": "03f49df94d11c347fe364cc3f0251f6affbc651e6273e5d6791b40e1d3bff6bb",
+        "lines": 541,
+        "role": "R1 — round-1 findings / regression baseline"
+      },
+      "governance/OSAB-SELFQUEUE-FOUNDATION-001-RETURN-RECORD.html": {
+        "sha256": "f778298075363b896019ee6b06ee792c943d8e79786b6e51ed8bfadebf5f2ebb",
+        "lines": 327,
+        "role": "C1 — lineage source record"
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-001.md": {
+        "sha256": "9ba76f31a02499e2fc3f9951ad7bb79ea501e58390df6180fa4e19fcce1f8118",
+        "lines": 156,
+        "role": "round-1 instrument (historical)"
+      },
+      "governance/PHILOSELF-BOUNDARY-REVIEW-ANNEX-001.md": {
+        "sha256": "6083144f5b765a7bb254d6073c152a6ab250999a5889a580dec5fe846309920e",
+        "lines": 101,
+        "role": "round-1 annex + projection precedent"
+      }
+    }
+  },
+  "reviewer_projection": {
+    "projection_id": "PROJ-20260815-PHILOSELF-BR-002",
+    "role_label": "BOUNDARY-REVIEWER (no SELF name minted)",
+    "substrate": "Claude Code in-process subagent, fresh non-fork context, model claude-opus",
+    "chamber": "/Users/millysituated/RUORA-worktrees/philoself-round2 (dedicated worktree of the custody commit)",
+    "issued_by": "session 74633bfb (issuer = subject author — DISCLOSED)",
+    "status_at_emission": "COMPUTATION_RUNNING"
+  },
+  "chamber_admission": {
+    "admission_model": "PROPERTIES_NOT_TOPOLOGY (command §3)",
+    "required": {
+      "NON_AUTHORING": "ESTABLISHED — fresh non-fork child context; authored none of S1-S5, packets, or annexes",
+      "REVIEW_ONLY": "ESTABLISHED_BY_CAPABILITY (toolset Read/Grep/Glob — no Write/Edit/Bash) PLUS explicit grant; capability absence alone discharges nothing (PHILOSELF-005 §4 INV-7)",
+      "SOURCE_BINDINGS": "IMMUTABLE — GitHub commit da197c11971af74642ce777c1744f2a617f8f65d; worktree bracket hash 2026-08-15T18:13:03Z, 13/13 identical",
+      "SUBJECT_CUSTODY": "COMPLETE — 7 subjects at 00aab1e, GitHub-byte digest recompute 7/7",
+      "CONTEXT_CUSTODY": "COMPLETE — 5 context objects + annex-002 at da197c1, GitHub-byte digest recompute 6/6"
+    },
+    "recorded_exact_standings_not_upgraded": {
+      "execution_boundary": "DISTINCT_CHILD_EXECUTION (own task context)",
+      "session_boundary": "SESSION_NESTED_IN_ISSUER_CUSTODY — transcript inside issuer session tree; NOT isolated",
+      "memory_boundary": "INSTITUTIONAL_INJECTION_EXPECTED — reviewer carries mandatory standing-free disclosure duty",
+      "semantic_boundary": "DSM_SKILL_DOCTRINE_INJECTED_BY_AGENT_TYPE — competing vocabulary present, disclosed",
+      "authority_boundary": "REVIEW_ONLY grant; no repair, no ratification, no frozen-item adjudication",
+      "model_boundary": "model_id_distinct=YES (reviewer claude-opus vs issuer claude-fable); provider_distinct=NO; weight_lineage=UNRESOLVED",
+      "mutation_capability": "NONE (no Write/Edit/Bash tools)",
+      "reviewer_authoring_relationship": "SPAWNED_BY_AUTHOR_SESSION 74633bfb — disclosed capping fact",
+      "inherited_context_policy": "DISCLOSURE_REQUIRED_STANDING_FREE — OCCUPANT_DISCLOSURE != CHAMBER_STANDING"
+    },
+    "independence_class_carried": "INDEPENDENCE_PARTIAL (pre-declared; occupant may lower-argue, never raise)",
+    "declined_alternatives": "remote cloud agent (availability gated, env capabilities UNRESOLVED — more capped dimensions); Founder-launched peer session (reserved as round-3 option)"
+  },
+  "state": {
+    "round_2": "ISSUED",
+    "subject_custody": "COMPLETE",
+    "context_custody": "COMPLETE",
+    "ratification": "NOT_GRANTED",
+    "x1": "FROZEN (committed for custody at 25896d04…, byte-unmutated)",
+    "agentbridge": "NOT_IMPLEMENTED",
+    "selfqueue": "NOT_IMPLEMENTED",
+    "hbcself_identity_gate": "NOT_OPENED",
+    "merge": "NONE",
+    "seal": "NOT_GRANTED"
+  }
+}

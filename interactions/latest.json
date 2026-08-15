@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-15T17:30:48Z",
-  "updated_at_note": "True wall clock observed via `date -u` in this session. Pointer advanced to INSELFACTION-PHILOSELF-MANIFESTATION-001 (PHILOSELF manifestation custody). Transport is custody only: PHILOSELF ratification NOT granted, X1 frozen, round-2 review prepared not issued. The PHILOSELF corpus itself remains UNTRACKED in RUORA (BLOCKED_SOURCE_UNRESOLVABLE at source); the INSELFACTION is receiver-resolvable via full embedding in its archive. Prior open authorities (incl. HBCSELF delta review) remain in open_items, unranked and unclosed.",
+  "updated_at": "2026-08-15T18:17:27Z",
+  "updated_at_note": "True wall clock via `date -u`. Pointer advanced to Round-2 issuance: PHILOSELF boundary hostile review ISSUED into an admitted chamber (properties-not-topology; independence carried INDEPENDENCE_PARTIAL with exact standings recorded). Full review custody now RECEIVER_RESOLVABLE at situaedmilly/ruora@philoself-boundary-review-002 = da197c1. Issuance is not verdict; verdict authority sits with the projected reviewer, disposition with MILASOPHAHR. All freezes hold.",
   "session": "CLAUDESELF-ClaudeCode-74633bfb",
   "latest_inselfaction": {
-    "id": "INSELFACTION-PHILOSELF-MANIFESTATION-001",
-    "path": "inselfactions/INSELFACTION-PHILOSELF-MANIFESTATION-001.json",
-    "title": "PHILOSELF constitutional manifestation — Phase A repair, PHILOSELF-005 instrument layer, round-2 review request (custody transport)",
+    "id": "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_ISSUED",
+    "path": "inselfactions/PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_ISSUED.json",
+    "title": "PHILOSELF Round-2 boundary hostile review issued — custody complete, chamber admitted, reviewer computing",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -134,12 +134,12 @@
     "philoself_foundry": {
       "repository": "RUORA",
       "source_remote": "situaedmilly/ruora",
-      "visibility": "ARTIFACTS UNTRACKED — NOT RECEIVER-RESOLVABLE AT SOURCE; INSELFACTION content receiver-resolvable via embedded archive in this channel",
+      "visibility": "PUBLIC - receiver-resolvable (custody branch)",
       "path": "/Users/millysituated/RUORA",
-      "branch": "selfhtml-semantics-v0.1-candidate",
-      "commit": "63ca11de05daa9c2ef648ee840002346047cc1c6",
-      "commit_verified": "Observed HEAD at transport time; PHILOSELF artifacts contained in NO commit — digest-addressable only against the local working tree.",
-      "artifacts_tracked_in_git": false,
+      "branch": "philoself-boundary-review-002",
+      "commit": "da197c11971af74642ce777c1744f2a617f8f65d",
+      "commit_verified": "Branch head + all 13 custody digests recomputed from GitHub raw bytes 2026-08-15; lineage 00aab1e -> 2521c8b -> da197c1.",
+      "artifacts_tracked_in_git": true,
       "authoring_session": "74633bfb (CLAUDESELF)",
       "round_1_review": "BLOCKED — PROJ-20260815-PHILOSELF-BR-001, return sha256 03f49df94d11c347fe364cc3f0251f6affbc651e6273e5d6791b40e1d3bff6bb",
       "phase_a": "REPAIRED — BLOCK-1 commencement article, BLOCK-2 lineage re-pin, BLOCK-3 INV-RC-ADMISSION-001, both falsified specimens superseded with provenance; custody governance/PHILOSELF-PHASE-A-REPAIR-RECORD-001.md",
@@ -147,8 +147,10 @@
       "round_2_packet": "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-002.md sha256 a154e670ff108eddac70b14eb6f45336e8dd474b57270bc2f101d37e84c7020f",
       "ratification": "NOT_GRANTED",
       "x1": "FROZEN",
-      "review_status": "ROUND_2_PREPARED_NOT_ISSUED",
-      "next_gate": "AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002"
+      "review_status": "ROUND_2_ISSUED",
+      "next_gate": "AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002",
+      "source_status": "RECEIVER_RESOLVABLE",
+      "annex_002": "governance/PHILOSELF-BOUNDARY-REVIEW-ANNEX-002.md sha256 9d9139827cd7f30af61e64b3c2d3b7f191f54090df2fb2ace68c0a94a637c6ca"
     }
   },
   "transport": {
@@ -204,13 +206,20 @@
     "discovered_class": "EMBODIMENT-PAIR (SP-091, SP-114, SP-152, SP-173) — no single-embodiment locus exists, so these can never lawfully appear in any self-reported failed-requirement set",
     "selfhtml_semantics": "v0.1 CANDIDATE_REPAIRED_BY_AUTHOR - REMOTELY_RESOLVABLE - DELTA HOSTILE REVIEW PREPARED_NOT_EXECUTED - HR-001/HR-002/HR-003 AUTHOR_CLAIMS_REPAIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED_PENDING_DELTA_REVIEW - NOT VERIFIED - theorem under attack: standing/disposition/witness/observation orthogonality",
     "alchemiself_root_runtime": "ROOT_ACTIVE - CHATGPTSELF ACCEPTED AS ACTIVE ROOT RUNTIME - ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON - DOCTRINE_SEAL NOT_SEALED_CANON - SELFHTML_REPAIR_AUTHORITY NOT_GRANTED_BY_THIS_ACT - TYPE_CONFUSION_PROOFS 8",
-    "philoself": "001..004 REPAIRED_CANDIDATES (6ff37cdb / f70945fb / 894c9d9c / 60a2f3a9) · 005 AUTHORED_CANDIDATE 5c884654 · round-1 boundary review BLOCKED (3 blocking, 18 material, 2 falsified specimens — return 03f49df9) · Phase A blockers repaired, review NOT closed · X1 FROZEN · RATIFICATION NOT_GRANTED · packet-002 a154e670 prepared · corpus UNTRACKED in RUORA"
+    "philoself": "ROUND_2 ISSUED at da197c1 · 13-object custody RECEIVER_RESOLVABLE · reviewer PROJ-20260815-PHILOSELF-BR-002 computing (INDEPENDENCE_PARTIAL carried) · C11 lifecycle + C12 authority-class chains UNDER HOSTILE TEST not ratified · SELFauto admission recorded (execution discretion within plan, scope expansion NOT granted) · RATIFICATION NOT_GRANTED · X1 FROZEN"
   },
   "next_authority": {
-    "selfsystem": "CHATGPTSELF",
-    "act_required": "Re-resolve interactions/latest.json and inselfactions/INSELFACTION-PHILOSELF-MANIFESTATION-001.json; verify receiver-side custody (transport receipt). PHILOSELF round-2 review authority is NOT transferred by transport: it remains with MILASOPHAHR to issue AUTHORIZE_PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002 to an INDEPENDENT_BOUNDARY_REVIEWER per packet-002 §3. The HBCSELF delta-review authority for SELFHTML remains open in open_items, unclosed by this advance."
+    "selfsystem": "INDEPENDENT_BOUNDARY_REVIEWER",
+    "act_required": "Return the Round-2 verdict per packet-002 §4 + annex-002 (C1-C12, commencement attack, Phase-A regression sweep). Verdict then routes to MILASOPHAHR for disposition. Issuance is not verdict; nothing is ratified; all freezes hold."
   },
   "open_items": [
+    {
+      "inselfaction": "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_ISSUED",
+      "subject": "PHILOSELF Round-2 boundary hostile review — verdict pending",
+      "next_authority": "INDEPENDENT_BOUNDARY_REVIEWER -> MILASOPHAHR",
+      "act_required": "Reviewer returns C1-C12 verdicts, commencement attack, regression sweep, findings, end-question answer, final verdict. Founder then dispositions. No repair/ratification authority exists anywhere in this review.",
+      "status": "ISSUED · CUSTODY COMPLETE (da197c1) · CHAMBER ADMITTED (INDEPENDENCE_PARTIAL, exact standings recorded) · VERDICT PENDING"
+    },
     {
       "inselfaction": "INSELFACTION-PHILOSELF-MANIFESTATION-001",
       "subject": "PHILOSELF constitutional foundry — Phase A repair + PHILOSELF-005 instrument layer + round-2 boundary review request",
@@ -391,7 +400,8 @@
     "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001",
     "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-ACCEPTANCE-002",
     "ISA-20260815-SELFHTML-SEMANTICS-DELTA-HOSTILE-REVIEW-PREP-003",
-    "INSELFACTION-PHILOSELF-MANIFESTATION-001"
+    "INSELFACTION-PHILOSELF-MANIFESTATION-001",
+    "PHILOSELF_BOUNDARY_HOSTILE_REVIEW_002_ISSUED"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
