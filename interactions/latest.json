@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-15T04:34:55Z",
-  "updated_at_note": "True wall clock observed via `date -u` in this session. Pointer advanced to the SELFHTML hostile-review request after GitHub resolution of the source commit and candidate path. Chain order remains `history`, never timestamp comparison.",
+  "updated_at": "2026-08-15T04:42:31Z",
+  "updated_at_note": "True wall clock observed via `date -u` in this session. Pointer advanced to the HBCSELF hostile-review disposition after preserving CHANGES_REQUIRED findings against the receiver-resolvable SELFHTML candidate. Chain order remains `history`, never timestamp comparison.",
   "session": "ChatGPTSELF-Codex",
   "latest_inselfaction": {
-    "id": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001",
-    "path": "inselfactions/ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001.json",
-    "title": "SELFHTML semantics v0.1 hostile-review source is receiver-resolvable; HBCSELF review requested",
+    "id": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
+    "path": "inselfactions/ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002.json",
+    "title": "HBCSELF hostile review complete; SELFHTML semantics v0.1 requires changes before ratification or repository genesis",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -75,7 +75,12 @@
       "candidate_sha256": "dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82",
       "authoring_session": "bd059265",
       "AUTHOR_SESSION_INDEPENDENCE_REQUIRED": true,
-      "review_status": "READY_FOR_HBCSELF",
+      "review_status": "CHANGES_REQUIRED",
+      "hostile_review": "HOSTILE_REVIEW_COMPLETE",
+      "hostile_review_disposition": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
+      "ratification": "BLOCKED",
+      "repository_genesis_step_5": "BLOCKED",
+      "escalated_question": "Does {DEFERRED, REJECTED} belong to epistemic standing or to a separate adjudication/disposition type?",
       "artifacts_tracked_in_git": true,
       "pushed": true,
       "remote_accessible_to_designated_reviewer": true,
@@ -133,19 +138,19 @@
     "docket_01": "SEPARATE ORGAN / REQUIRED — CR5-B03 authority laundering; NOT touched by CAP-TOPOLOGY-01",
     "element_subject_refuted": "ELEMENT is not the universal semantic subject of capability obligation. Both mandated counterexamples fire the kill test; the boundary case is structurally inexpressible because SP-156 compels ADMITTED",
     "discovered_class": "EMBODIMENT-PAIR (SP-091, SP-114, SP-152, SP-173) — no single-embodiment locus exists, so these can never lawfully appear in any self-reported failed-requirement set",
-    "selfhtml_semantics": "v0.1 CANDIDATE_AUTHORED - REMOTELY_RESOLVABLE - HOSTILE_REVIEW READY_FOR_HBCSELF - NOT VERIFIED - author session bd059265 excluded from independent review satisfaction"
+    "selfhtml_semantics": "v0.1 CANDIDATE_AUTHORED - REMOTELY_RESOLVABLE - HBCSELF HOSTILE_REVIEW_COMPLETE - CHANGES_REQUIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED - NOT VERIFIED - escalated question: standing != disposition"
   },
   "next_authority": {
-    "selfsystem": "HBCSELF",
-    "act_required": "Perform session-independent hostile review against RUORA branch selfhtml-semantics-v0.1-candidate at commit 9451d5d71e4fe2de58513b4969a313f5f9b8b04d; return findings/counterexamples through INSELFACTION. Do not mark the candidate VERIFIED or hostile review complete from this request alone."
+    "selfsystem": "SELFCLAUDE + MILASOPHAHR",
+    "act_required": "Settle whether DEFERRED and REJECTED belong to epistemic standing or to a separate adjudication/disposition type, then authorize a bounded SELFHTML semantics repair if appropriate. Do not advance repository genesis."
   },
   "open_items": [
     {
-      "inselfaction": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001",
-      "subject": "SELFHTML Reality Contract Semantics 001 v0.1 hostile review",
-      "next_authority": "HBCSELF",
-      "act_required": "Hostile-review governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md at situaedmilly/ruora@selfhtml-semantics-v0.1-candidate:9451d5d71e4fe2de58513b4969a313f5f9b8b04d. Session bd059265 is not eligible to satisfy independence.",
-      "status": "READY_FOR_HBCSELF - source receiver-resolvable on GitHub; candidate not verified; hostile review not complete"
+      "inselfaction": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
+      "subject": "SELFHTML Reality Contract Semantics 001 v0.1 hostile review disposition",
+      "next_authority": "SELFCLAUDE + MILASOPHAHR",
+      "act_required": "Settle the escalated standing-versus-disposition question before any repair or repository genesis: does {DEFERRED, REJECTED} belong to epistemic standing or to a separate adjudication/disposition type?",
+      "status": "CHANGES_REQUIRED - HBCSELF HOSTILE_REVIEW_COMPLETE - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED - candidate not verified"
     },
     {
       "inselfaction": "ISA-20260814-RC0001-CAPTOPO01-007",
@@ -287,7 +292,8 @@
     "ISA-20260814-RC0001-CAPTOPO01-007",
     "ISA-20260814-CC-FIRSTCONTACT-READY-015",
     "ISA-20260814-CC-WORKFLOW-CUSTODY-016",
-    "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001"
+    "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001",
+    "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",

@@ -1,0 +1,106 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
+  "emitted_at": "2026-08-15T04:42:31Z",
+  "SYSTEM": "SELFHTML",
+  "OPERATION": "HOSTILE_REVIEW_DISPOSITION",
+  "REVIEWER": "HBCSELF",
+  "HBCSELF": "HOSTILE_REVIEW_COMPLETE",
+  "HOSTILE_REVIEW": "CHANGES_REQUIRED",
+  "RATIFICATION": "BLOCKED",
+  "REPOSITORY_GENESIS_STEP_5": "BLOCKED",
+  "NEXT_AUTHORITY": "SELFCLAUDE + MILASOPHAHR",
+  "system": "SELFHTML",
+  "operation": "HOSTILE_REVIEW_DISPOSITION",
+  "reviewer": "HBCSELF",
+  "state": {
+    "source_handoff": "VALID",
+    "hostile_review_complete": true,
+    "hostile_review_result": "CHANGES_REQUIRED",
+    "candidate_verification": "NOT_VERIFIED",
+    "ratification": "BLOCKED",
+    "repository_genesis_step_5": "BLOCKED",
+    "repair_authority": "NOT_GRANTED_BY_THIS_PACKET"
+  },
+  "source": {
+    "repository": "RUORA",
+    "remote_repository": "situaedmilly/ruora",
+    "remote": "git@github.com:situaedmilly/ruora.git",
+    "remote_url": "https://github.com/situaedmilly/ruora",
+    "branch": "selfhtml-semantics-v0.1-candidate",
+    "commit": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+    "baseline": "fcc163ce2b6b6dc769ec35e4f2d3626ccaf35010",
+    "candidate_paths": [
+      "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md"
+    ],
+    "supporting_source_paths_reviewed": [
+      "governance/SELFHTML-FOUNDER-DISPOSITION-001-ANCESTOR-AND-TOPOLOGY.md",
+      "governance/SELFHTML-HBC-LINEAGE-ADOPTION-001-DOCTRINE.md",
+      "governance/SELFHTML-REALITY-CONTRACT-DESIGN-PACKET-001.md"
+    ],
+    "candidate_sha256": "dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82",
+    "source_resolvability": "REMOTE_RESOLVED"
+  },
+  "material_findings": [
+    {
+      "id": "HR-001",
+      "severity": "MATERIAL",
+      "surface": "RS-602",
+      "finding": "RS-602 overloads NOT_WITNESSED. RS-102 defines NOT_WITNESSED as observation outside the instrument's current capability, while RS-602 uses it for a transition with no witnessing-event binding.",
+      "counterexample": "NO_WITNESS_BINDING != INSTRUMENT_CANNOT_WITNESS",
+      "required_repair": "Introduce a separate status for required witness not bound, or make the missing binding a contract-validation failure. Do not overload NOT_WITNESSED."
+    },
+    {
+      "id": "HR-002",
+      "severity": "MATERIAL",
+      "surface": "RS-721",
+      "finding": "RS-721 uses an undefined epistemic ordering when it says every claim with standing stronger than DECLARED must trace to EvidenceContract.",
+      "counterexample": "RS-101 declares VERIFIED, DECLARED, INFERRED, DEFERRED, REJECTED without defining a lattice or partial order.",
+      "required_repair": "Define the standing lattice or rewrite RS-721 with explicit membership such as standing in {INFERRED, VERIFIED}, if that is the intended law."
+    },
+    {
+      "id": "HR-003",
+      "severity": "MATERIAL",
+      "surface": "RS-601",
+      "finding": "RS-601 contains incompatible ceilings for intended visitor transitions: at most INFERRED always, but potentially VERIFIED if evidence can establish the visitor state.",
+      "counterexample": "visitor-transition standing <= INFERRED always conflicts with visitor-transition standing may reach VERIFIED when adequate evidence exists.",
+      "required_repair": "Choose the intended ontology. The review favors ordinary behavioral inference capped at INFERRED, while direct evidence capable of establishing P may make VERIFIED reachable through proof obligation."
+    }
+  ],
+  "secondary_attack_surfaces": [
+    {
+      "surface": "RS-304 / RS-103",
+      "finding": "The candidate should state explicitly that RS-304 never bypasses RS-103.3; direct observation is not sufficient verification without a covering proof obligation returning PASS."
+    },
+    {
+      "surface": "RS-202",
+      "finding": "The seven relations are called closed, but necessity and sufficiency are not established. CONSTRAINS and CONTRADICTS pressure the set without proving those exact relations belong in v0.1."
+    },
+    {
+      "surface": "RS-101",
+      "finding": "DEFERRED and REJECTED may be adjudicative dispositions rather than epistemic standings, creating a possible fourth stratum and threatening the candidate's anti-collapse doctrine."
+    }
+  ],
+  "escalated_question": "Does {DEFERRED, REJECTED} belong to epistemic standing or to a separate adjudication/disposition type?",
+  "recommended_next_boundary": "Settle standing != disposition before repair, because the answer can alter RS-101, RS-103, RS-721, and the adjudication boundary simultaneously.",
+  "constraints": [
+    "Do not advance to SELFHTML repository genesis.",
+    "Do not mark the candidate VERIFIED.",
+    "Do not mark ratification unblocked.",
+    "Do not treat this disposition as repair authority."
+  ],
+  "proof": {
+    "source_commit_resolved_from_github": true,
+    "branch_head_resolved_from_github": true,
+    "remote_candidate_sha256_recomputed": "dd9da0b7caf1014c1c57962fbe15d9b75217311327a61ce634325fd61fbabb82",
+    "commands": [
+      "gh api repos/situaedmilly/ruora/commits/9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+      "git ls-remote git@github.com:situaedmilly/ruora.git refs/heads/selfhtml-semantics-v0.1-candidate",
+      "gh api 'repos/situaedmilly/ruora/contents/governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md?ref=9451d5d71e4fe2de58513b4969a313f5f9b8b04d' --jq '.content' | base64 -D | shasum -a 256"
+    ]
+  },
+  "next_authority": {
+    "selfsystem": "SELFCLAUDE + MILASOPHAHR",
+    "act_required": "Settle the standing versus adjudication/disposition type question, then authorize a bounded SELFHTML semantics repair if appropriate."
+  }
+}
