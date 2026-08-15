@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-15T21:54:57Z",
-  "updated_at_note": "True wall clock via `date -u`. ROUND 3 ISSUED by explicit Founder act — the inversion round: the reviewer, admitted through the machinery's second execution (ADMITTED bounded, dims carried), attacks the constitution, the machinery, and its own admission. Three verdict lines, never merged. Verdict pending.",
+  "updated_at": "2026-08-15T23:05:27Z",
+  "updated_at_note": "True wall clock via `date -u`. ROUND 3 RETURNED — BR-003 died on a session limit before substantive work (classified, disclosed); successor BR-003B returned the inversion verdict: T1 BLOCKED / T2 BLOCKED / T3 BLOCKED, unmerged. The reviewer filed its own admission's defects as a BOUNDARY_BREACH_DISCLOSURE under 003 §4 INV-7(a). Return in custody at 1db76b0, receiver-verified; issuer spot-verification confirms every blocking finding against the issuer's own bytes. Verdict routes to MILASOPHAHR for disposition.",
   "session": "CLAUDESELF-ClaudeCode-74633bfb",
   "latest_inselfaction": {
-    "id": "PHILOSELF_ROUND_3_ISSUED",
-    "path": "inselfactions/PHILOSELF_ROUND_3_ISSUED.json",
-    "title": "Round 3 issued — inversion review from inside machine-admitted standing; verdict pending",
+    "id": "PHILOSELF_ROUND_3_RETURNED",
+    "path": "inselfactions/PHILOSELF_ROUND_3_RETURNED.json",
+    "title": "Round 3 returned — T1/T2/T3 all BLOCKED; FROZEN-BYTES/MUTABLE-STATUS SPLIT named; both chamber admissions under filed breach disclosure; Founder disposition pending",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -137,8 +137,8 @@
       "visibility": "PUBLIC - receiver-resolvable (custody branch)",
       "path": "/Users/millysituated/RUORA",
       "branch": "philoself-boundary-review-002",
-      "commit": "fb65257ad2f8feefe0205269e79335a6e71c8036",
-      "commit_verified": "Lineage …-> 125b502 -> 9c812b1 -> fb65257; packet-003 + reviewer-admission record recomputed from GitHub raw bytes.",
+      "commit": "1db76b026457ad0d55af9e3d66408a422a29d7cb",
+      "commit_verified": "Lineage …-> 125b502 -> 9c812b1 -> fb65257 -> 1db76b0; return-003 recomputed from GitHub contents API at 1db76b0 — sha256 exact.",
       "artifacts_tracked_in_git": true,
       "authoring_session": "74633bfb (CLAUDESELF)",
       "round_1_review": "BLOCKED — PROJ-20260815-PHILOSELF-BR-001, return sha256 03f49df94d11c347fe364cc3f0251f6affbc651e6273e5d6791b40e1d3bff6bb",
@@ -147,15 +147,16 @@
       "round_2_packet": "governance/PHILOSELF-BOUNDARY-REVIEW-PACKET-002.md sha256 a154e670ff108eddac70b14eb6f45336e8dd474b57270bc2f101d37e84c7020f",
       "ratification": "NOT_GRANTED",
       "x1": "FROZEN",
-      "review_status": "ROUND_2_RETURNED_BLOCKED_REPAIRS_AUTHOR_CLAIMS",
-      "next_gate": "PHILOSELF_ROUND_3_VERDICT_PENDING",
+      "review_status": "ROUND_3_RETURNED_BLOCKED_BLOCKED_BLOCKED",
+      "next_gate": "PHILOSELF_ROUND_3_FOUNDER_DISPOSITION_PENDING",
       "source_status": "RECEIVER_RESOLVABLE",
       "annex_002": "governance/PHILOSELF-BOUNDARY-REVIEW-ANNEX-002.md sha256 9d9139827cd7f30af61e64b3c2d3b7f191f54090df2fb2ace68c0a94a637c6ca",
       "round_2_return": "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-002.md sha256 e0098a8b7e4bba66ff13ecb49b5a082a23fd4d3b93e122b177c051a7e6582971 (599 ln) — verdict BLOCKED 2/23/6",
       "corpus_current": "001 e937cd2b / 002 cda443c9 / 003 32e3f4b5 / 004 b85fba87 / 005 742fa401 @ 68481ac",
       "sovereign_records": "R6 grant ISSUED ca7ccc57… · registration 1ebf3682… · R7 activation ISSUED aa70bebb… · instrument status a6b6c4f8… · issuance record 2381516e… · rule ACTIVE at b02f91e6… only",
       "chamber_realization": "ADMITTED (bounded) — ledger f8429199…, evaluation records c327b618…; unresolved dims carried: mutation-capability/memory/session; ADMITTED != CONSTITUTIONALLY_VALID",
-      "round_3": "ISSUED — packet-003 5a84b694…, reviewer admission a383f256… (machinery execution #2, ADMITTED bounded), projection BR-003 computing"
+      "round_3": "RETURNED — packet-003 5a84b694…, reviewer admission a383f256… (machinery execution #2, ADMITTED bounded, now under filed breach disclosure); projection BR-003 FAILED pre-work (session limit, classified), successor BR-003B returned the verdict",
+      "round_3_return": "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-003.md sha256 973ca7a37ed7bdae2c596c82e30a3501408283c5390ee6b97c8868feeb07546f (612 ln) — T1 BLOCKED 2/7/3 · T2 BLOCKED 3/3 · T3 BLOCKED 4/2, unmerged; root defect FROZEN-BYTES/MUTABLE-STATUS SPLIT (5 instances); T3-B1..B4 filed as BOUNDARY_BREACH_DISCLOSURE per 003 §4 INV-7(a); issuer spot-verification: all blocking byte-claims verified, two count variances disclosed"
     }
   },
   "transport": {
@@ -211,19 +212,26 @@
     "discovered_class": "EMBODIMENT-PAIR (SP-091, SP-114, SP-152, SP-173) — no single-embodiment locus exists, so these can never lawfully appear in any self-reported failed-requirement set",
     "selfhtml_semantics": "v0.1 CANDIDATE_REPAIRED_BY_AUTHOR - REMOTELY_RESOLVABLE - DELTA HOSTILE REVIEW PREPARED_NOT_EXECUTED - HR-001/HR-002/HR-003 AUTHOR_CLAIMS_REPAIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED_PENDING_DELTA_REVIEW - NOT VERIFIED - theorem under attack: standing/disposition/witness/observation orthogonality",
     "alchemiself_root_runtime": "ROOT_ACTIVE - CHATGPTSELF ACCEPTED AS ACTIVE ROOT RUNTIME - ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON - DOCTRINE_SEAL NOT_SEALED_CANON - SELFHTML_REPAIR_AUTHORITY NOT_GRANTED_BY_THIS_ACT - TYPE_CONFUSION_PROOFS 8",
-    "philoself": "ROUND_3 ISSUED at fb65257 (inversion: T1 constitution / T2 machinery / T3 admission-decision, unmerged) · reviewer machine-admitted (RA1-3 PASS, RA4/5 carried) · CHAMBER proof ADMITTED stands bounded · ROUND_2 BLOCKED verdict stands · COMMENCEMENT NOT_AUTHORIZED · RATIFICATION NOT_GRANTED · X1 FROZEN · verdict pending"
+    "philoself": "ROUND_3 RETURNED at 1db76b0 — T1 BLOCKED / T2 BLOCKED / T3 BLOCKED (unmerged) · root defect FROZEN-BYTES/MUTABLE-STATUS SPLIT · both chamber ADMITTED standings under filed 003 §4 INV-7(a) breach disclosure (re-adjudication obligated, non-AffectedByBoundary party not yet produced) · machinery can REFUSE and FAIL, cannot yet ESTABLISH · ROUND_2 BLOCKED stands · COMMENCEMENT NOT_AUTHORIZED · RATIFICATION NOT_GRANTED · X1 FROZEN · MILASOPHAHR disposition pending"
   },
   "next_authority": {
-    "selfsystem": "PROJ-20260815-PHILOSELF-BR-003",
-    "act_required": "Return the three-line verdict (T1/T2/T3, never merged) + author-claims verification table + survival table + the end question answered from evidence. Verdict then routes to MILASOPHAHR for disposition."
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Round-3 disposition over a triple-BLOCKED return. Reviewer's ordered advisory: (1) rule the FROZEN-BYTES/MUTABLE-STATUS SPLIT first — five instances, every repair rides on it; (2) dispose the D3 breach disclosure (003 §4 INV-7(a) re-adjudication — requires a non-AffectedByBoundary party); (3) rule whether RECORDED_UNRESOLVED_ACCEPTABLE is law; (4) type-rule 005 CAUSAL_PARENT (historical vs current-dependency); (5) constitute the ProofRuleRegistry or rule it unneeded; (6) bind invocation/result records into chambers by path+digest; (7) only then round-4 with a fixed reviewer chamber."
   },
   "open_items": [
+    {
+      "inselfaction": "PHILOSELF_ROUND_3_RETURNED",
+      "subject": "Round-3 inversion verdict — T1/T2/T3 all BLOCKED — Founder disposition",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Disposition the triple-BLOCKED return (custody 1db76b0, return sha 973ca7a3…, 612 ln). Priority per reviewer advisory: FROZEN-BYTES/MUTABLE-STATUS SPLIT ruling first; then the D3 breach-disclosure re-adjudication (003 §4 INV-7(a)); then RECORDED_UNRESOLVED_ACCEPTABLE lawfulness; then 005 CAUSAL_PARENT type ruling; registry constitution; invocation-record binding; round-4 only after the reviewer chamber is fixable. Repair authority is NOT granted by return custody and must be issued separately.",
+      "status": "RETURNED · CUSTODY RECEIVER-VERIFIED · ISSUER SPOT-VERIFICATION CONFIRMS ALL BLOCKING BYTE-CLAIMS · ALL FREEZES HOLD"
+    },
     {
       "inselfaction": "PHILOSELF_ROUND_3_ISSUED",
       "subject": "Round-3 inversion verdict — constitution + machinery + admission decision",
       "next_authority": "PROJ-20260815-PHILOSELF-BR-003 -> MILASOPHAHR",
-      "act_required": "Reviewer returns T1/T2/T3 verdicts, author-claims verification (VERIFIED_CURED|REFUTED|UNVERIFIABLE per round-2 cure), survival table, end-question answer. Founder then dispositions.",
-      "status": "ISSUED · REVIEWER COMPUTING IN MACHINE-ADMITTED CHAMBER · ALL FREEZES HOLD"
+      "act_required": "none — verdict returned by successor projection BR-003B (BR-003 FAILED pre-work on a session limit, classified and disclosed)",
+      "status": "DISCHARGED by PHILOSELF_ROUND_3_RETURNED — verdict BLOCKED/BLOCKED/BLOCKED delivered and in custody"
     },
     {
       "inselfaction": "PHILOSELF_CHAMBER_REALIZATION_PROOF_001",
@@ -454,7 +462,8 @@
     "PHILOSELF_PROOFRULE_AND_LINEAGE_REPAIR_001",
     "PHILOSELF_SOVEREIGN_IGNITION_001",
     "PHILOSELF_CHAMBER_REALIZATION_PROOF_001",
-    "PHILOSELF_ROUND_3_ISSUED"
+    "PHILOSELF_ROUND_3_ISSUED",
+    "PHILOSELF_ROUND_3_RETURNED"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",

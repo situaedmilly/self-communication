@@ -1,0 +1,61 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "PHILOSELF_ROUND_3_RETURNED",
+  "emitted_at": "2026-08-15T23:05:27Z",
+  "SYSTEM": "PHILOSELF",
+  "OPERATION": "ROUND_3_INVERSION_REVIEW_RETURN_CUSTODY",
+  "EMITTER": "CLAUDESELF (session 74633bfb), SELFauto membrane",
+  "AUTHORIZATION": "AUTHORIZE_PHILOSELF_ROUND_3 (Founder, 2026-08-15) + Founder continuation directive at the failed-projection juncture covering the declared at-receipt protocol: re-bracket, custody-record verbatim, issuer spot-verify, route to disposition. Custody of a return is not disposition of it.",
+  "projection_lifecycle": {
+    "BR_003": "FAILED_BEFORE_SUBSTANTIVE_WORK — infrastructure session limit; sole output one opening sentence; no reading, no findings, no verdict; nothing inherited",
+    "BR_003B": "successor projection, identical type/model/toolset, zero inheritance, predecessor failure disclosed in mission; launched 2026-08-15T22:44:39Z into a chamber re-verified byte-unchanged; verdict returned and receipted 23:05:27Z",
+    "brackets": "bracket 1 (pre-spawn) 22:44:39Z and bracket 2 (at receipt) 23:05:27Z both clean: HEAD fb65257ad2f8… unchanged across the review, worktree clean, packet-003 5a84b694… and admission a383f256… exact — the reviewer mutated nothing (toolset-excluded and witnessed)"
+  },
+  "verdict": {
+    "T1_CONSTITUTION": "BLOCKED — 2 blocking, 7 material, 3 minor",
+    "T2_MACHINERY": "BLOCKED — 3 blocking, 3 material",
+    "T3_ADMISSION_DECISION": "BLOCKED — 4 blocking, 2 material",
+    "lines_merged": false,
+    "named_root_defect": "FROZEN-BYTES / MUTABLE-STATUS SPLIT — one defect, five instances across all three lines: byte-frozen record identity (SELF_DIGEST_PARADOX, VOID_FOR_NEW_DIGEST, PATH != ARTIFACT) with mutable status still located INSIDE the frozen bytes (ProofRule.status, ProofRule.activation_grant_ref, constituting_grant_ref, FOUNDING_WITNESS.consumed_at, 005 CAUSAL_PARENT pins)",
+    "boundary_breach_disclosure": "T3-B1..T3-B4 filed by the reviewer as BOUNDARY_BREACH_DISCLOSURE under 003 §4 INV-7(a) — establishes nothing; obligates the admission side to re-adjudicate Standing(B) of BOTH chambers; re-adjudication requires a non-AffectedByBoundary party the estate has not yet produced",
+    "author_claims_table": "13 rows — 3 cleanly VERIFIED_CURED (R1 self_axiom ruling; MAT-18 INV-1 reword; M-18 INV-9); most others VERIFIED_CURED as text / REFUTED in operation (the law exists and the wave that authored it violated it); B-2 REFUTED outright (consumed_at is byte-mutating under 004 INV-6)",
+    "reviewer_pattern_sentence": "every law authored in this wave was violated by the wave that authored it — not hypocrisy, latency: the estate writes law faster than it builds the organs that make the law binding on its own next act",
+    "end_question_answer": "what survives is the estate's capacity to detect its own defects, and nothing it detected them about",
+    "reviewer_internal_count_note": "the return's §9 MATERIAL header reads (8) while its table carries 11 rows and per-line counts total 12 (T1-M7 detailed in §5 only) — custody is verbatim, defect preserved and disclosed here, not edited"
+  },
+  "custody": {
+    "repository": "situaedmilly/ruora",
+    "branch": "philoself-boundary-review-002",
+    "commit_lineage_tail": "9c812b1 (packet-003) -> fb65257 (reviewer admission) -> 1db76b0 (return-003)",
+    "head_commit": "1db76b026457ad0d55af9e3d66408a422a29d7cb",
+    "return_003": "governance/PHILOSELF-BOUNDARY-REVIEW-RETURN-003.md sha256 973ca7a37ed7bdae2c596c82e30a3501408283c5390ee6b97c8868feeb07546f (612 ln) — reviewer return verbatim",
+    "transport_encoding_normalization": "the agent-harness task notification HTML-escaped ASCII angle brackets (blockquote markers, '->' arrows); decoded to ASCII at custody write; disclosed here; no semantic edit; unicode arrows/symbols untouched",
+    "receiver_verification": "GitHub contents API at 1db76b0 returned bytes hashing to 973ca7a3… — exact match with local"
+  },
+  "issuer_spot_verification": {
+    "scope": "byte-level claims of all 9 blocking findings plus line counts, checked by the issuer (author of every subject) against its own files via grep/wc/shasum — a sample verification before relay, NOT a re-review and NOT adjudication",
+    "result": "ALL VERIFIED, including: activated rule bytes read status DRAFT / activation_grant_ref NONE / 'EvaluateProof MUST reject this rule' (T2-B1); grant clause 'never narrated through' at M1 ln 58 (T3-B1); RECORDED_UNRESOLVED_ACCEPTABLE occurs only in D1/D2/D3 — minted by the decision (T3-B1); 005 CAUSAL_PARENT pins 543e2ba1/067d0c59/f8725fc1/eaa27c32 at 198/298/323/274 ln vs current corpus 217/338/329/317 (T1-B1); all five candidates carry AUTHOR_SELF session 74633bfb (T1-M2); packet-002 ln 80 'Do not improvise independence' (T3-B2); 004 consumed_at 'set exactly once' + INV-6 NEW-BYTES law (T1-B2); 003 ln 159 'reaches the issuing parent' (T3-B4); ProofRuleRegistry occurs only inside 005, no constituting record anywhere (T2-B3); packet-002 = packet-003 = 134 ln (F4-1)",
+    "variances": "two occurrence-count variances, neither weakening any finding: RECORDED_UNRESOLVED_ACCEPTABLE appears x3 in D2 (reviewer said x2); PHILOSELF-PROOF-CHAMBER-001 appears x2, both within D1 (header + EV-C1's EvaluateProof call; reviewer said once, in D1's header) — the no-instantiating-record substance is unchanged",
+    "issuer_position": "the issuer does not contest any blocking finding; the findings that unseat the issuer's own machinery execution and admission decision verify against the issuer's own bytes"
+  },
+  "standings_unmerged": {
+    "ROUND_2": "BLOCKED verdict STANDS — round 3 moved nothing toward PASS",
+    "ROUND_3": "RETURNED — T1/T2/T3 all BLOCKED; return in custody, receiver-verified",
+    "CHAMBER_ADMISSIONS": "both ADMITTED results (proof chamber; reviewer chamber) now carry a filed BOUNDARY_BREACH_DISCLOSURE obligating re-adjudication under 003 §4 INV-7(a); the ADMITTED standings are challenged by the estate's own law, not erased by this transport — adjudication is the Founder's",
+    "MACHINERY": "capacity to REFUSE and to FAIL demonstrated (EV-C4/C5, RA4/5, EV-N1, EV-I1 — genuine, per reviewer); capacity to ESTABLISH refuted at every layer pending disposition of T2-B1/B2/B3",
+    "RATIFICATION": "NOT_GRANTED; COMMENCEMENT NOT_AUTHORIZED; X1 FROZEN"
+  },
+  "frozen": [
+    "commencement",
+    "FOUNDING_WITNESS",
+    "ratification",
+    "seal",
+    "X1",
+    "AgentBridge",
+    "SELFQUEUE",
+    "HBCSELF identity gate",
+    "canonical merge",
+    "round-4"
+  ],
+  "NEXT_AUTHORITY": "MILASOPHAHR — Round-3 disposition. Reviewer's ordered advisory (advisory only): (1) rule on the FROZEN-BYTES / MUTABLE-STATUS SPLIT before any other repair — every other repair rides on it; (2) dispose of the D3 BOUNDARY_BREACH_DISCLOSURE under 003 §4 INV-7(a); (3) rule whether RECORDED_UNRESOLVED_ACCEPTABLE is law (needs enactment outside the decision that uses it + an M1 successor grant); (4) type-rule 005 CAUSAL_PARENT (historical lineage vs current dependency — the corpus needs both slots and has one); (5) constitute the ProofRuleRegistry or rule registration registry-free; (6) bind invocation/result records into chambers by path + digest; (7) only then a round-4, and only with a fixed reviewer chamber (instantiating record + non-AffectedByBoundary admission party)."
+}
