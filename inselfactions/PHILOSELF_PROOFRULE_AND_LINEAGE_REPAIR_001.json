@@ -1,0 +1,51 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "PHILOSELF_PROOFRULE_AND_LINEAGE_REPAIR_001",
+  "emitted_at": "2026-08-15T20:40:16Z",
+  "SYSTEM": "PHILOSELF",
+  "OPERATION": "R1_R5_REPAIR_WAVE_CUSTODY_TRANSPORT",
+  "EMITTER": "CLAUDESELF (session 74633bfb), SELFauto membrane",
+  "AUTHORIZATION": "FOUNDER_AUTHORIZE_PHILOSELF_R1_R5_REPAIR_WAVE_001 (R1-R5 only; R6/R7 DRAFT_ONLY; SCOPE_EXPANSION NOT_GRANTED)",
+  "custody": {
+    "repository": "situaedmilly/ruora",
+    "branch": "philoself-boundary-review-002",
+    "custody_note": "commit-pinned; branch refs are mutable addresses",
+    "commit_lineage_tail": "33f08cf -> 68481ac (R1-R5 wave)",
+    "head_commit": "68481acbf0d2b264597ba585dbc0c3f4b52d2b72",
+    "receiver_verification": "remote head + all six changed-artifact digests recomputed from GitHub raw bytes = exact"
+  },
+  "standings_unmerged": {
+    "SELF_AXIOM_LINEAGE": "RESOLVED — Founder ruling at 004 §9: committed copy (6157819c…) = LAST_ESTABLISHED_VERSIONED_BASELINE; working Amendment-Law = UNADJUDICATED_CONSTITUTIONAL_AMENDMENT_CANDIDATE; retroactive self-authorization barred; prospective Founder amendment act is the only adoption path; neither copy deleted",
+    "PROOFRULE_REGISTRY": "CONSTITUTIONALIZED (candidate law) — REGISTRY instrument class + ProofRule 17-field object + non-total status discipline + five-way separation (AUTHORSHIP != REGISTRATION != ACTIVATION != APPLICATION != STANDING_ADJUDICATION) in 005; activation = domain-scoped ADJUDICATION_AUTHORITY in 002 (PROOF_RULE_AUTHORITY prohibited by name); evaluation-is-a-SELFPUTE in 004; INV-8 fail-closed extension (ACTIVE + grant-covers-ClaimType + chamber + witness + source, else REJECTED_UNEVALUATED)",
+    "CORPUS_REPAIR": "surfaces exactly 002/004/005 + three new drafts + wave record; 001/003 byte-unchanged; the five prior residuals UNTOUCHED at AUTHOR_CLAIMS_CURED_AWAITING_INDEPENDENT_VERIFICATION",
+    "INTERNAL_PROOF": "PASS (author-side only, != INDEPENDENT_VERIFICATION) — battery 2026-08-15T20:38:02Z: sections 10/10 x5; INV tails 6/8/8/8 + 005 INV-9 verified directly; forbidden-class term occurs only inside its own prohibition; mutation surface exact; cross-refs resolve",
+    "CUSTODY": "COMPLETE at 68481ac, GitHub-byte-verified",
+    "R6_DRAFT": "DRAFT_AWAITING_FOUNDER_ISSUANCE — ADMISSION-INSTRUMENT-CONSTITUTING-GRANT-001-DRAFT.md sha256 489891743bfd528c… (NO FORCE)",
+    "R7_DRAFT": "DRAFT_AWAITING_FOUNDER_ADJUDICATION_ACT — PROOFRULE-ACTIVATION-…-001-DRAFT.md sha256 41de79f594b12c11… binding rule digest b02f91e6ab3a768f… (rule status DRAFT, NOT REGISTERED, NOT ACTIVE; EvaluateProof rejects)"
+  },
+  "wave_artifacts": {
+    "governance/PHILOSELF-002-SOVEREIGN-CAUSAL-AUTHORITY-v0.1-CANDIDATE.md": "cda443c9cc2bd29909bd1210ea4726aa84ad0edaa6a031abc2ea623985e2cc65",
+    "governance/PHILOSELF-004-SELFPUTE-v0.1-CANDIDATE.md": "b85fba876fb44669a5c39123d77cd646cddf50c7c4987631ef507734c25de994",
+    "governance/PHILOSELF-005-INSTRUMENT-v0.1-CANDIDATE.md": "742fa401c1d9a1b43215adc649e4e4df44e934e5a111a67381f324c0684f0072",
+    "governance/PROOFRULE-DIRECT-REMOTE-BYTE-OBSERVATION-v0.1-DRAFT.md": "b02f91e6ab3a768f2c5a5f7c43786dee41e9f0126da23fc3229719717cde81d0",
+    "governance/ADMISSION-INSTRUMENT-CONSTITUTING-GRANT-001-DRAFT.md": "489891743bfd528cSEE_REMOTE",
+    "governance/PROOFRULE-ACTIVATION-DIRECT-REMOTE-BYTE-OBSERVATION-001-DRAFT.md": "41de79f594b12c11SEE_REMOTE",
+    "governance/PHILOSELF-R1-R5-WAVE-RECORD-001.md": "6c3169c8d56afd4cf1f55d3147db8d756a90eca5df3cf8da53c1b500eac25be5",
+    "unchanged": "001 e937cd2b… / 003 32e3f4b5…"
+  },
+  "pointer_repairs_this_transport": "next_gate stale value replaced; philoself_005 stale v0.1 digest replaced; specimens added: CURRENT_STATE != STALE_ROUTING_METADATA; VALID_POINTER_TARGET does not imply INTERNALLY_CONSISTENT_POINTER_METADATA",
+  "freezes": [
+    "commencement",
+    "FOUNDING_WITNESS instantiation",
+    "Chamber Realization Proof",
+    "Round 3",
+    "ratification",
+    "seal",
+    "X1",
+    "AgentBridge",
+    "SELFQUEUE",
+    "HBCSELF identity gate",
+    "canonical merge"
+  ],
+  "NEXT_AUTHORITY": "MILASOPHAHR — issue (or decline) the two sovereign records: R6 constituting grant and R7 rule registration+activation; then Chamber Realization Proof"
+}
