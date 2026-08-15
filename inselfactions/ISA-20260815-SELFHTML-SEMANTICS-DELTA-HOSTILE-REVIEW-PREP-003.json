@@ -1,0 +1,197 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "ISA-20260815-SELFHTML-SEMANTICS-DELTA-HOSTILE-REVIEW-PREP-003",
+  "emitted_at": "2026-08-15T05:22:51Z",
+  "SYSTEM": "SELFHTML",
+  "OPERATION": "DELTA_HOSTILE_REVIEW_PREPARATION",
+  "REVIEWER": "HBCSELF",
+  "REQUEST_TYPE": "DELTA_HOSTILE_REVIEW",
+  "AUTHORIZATION": "AUTHORIZE_SELFHTML_SEMANTICS_001_DELTA_HOSTILE_REVIEW_PREPARATION_003",
+  "ALCHEMISELF_REQUIRED": true,
+  "AUTHOR_SESSION_INDEPENDENCE_REQUIRED": true,
+  "AUTHOR_REPAIR": "NOT_REVIEW_CLOSURE",
+  "HOSTILE_REVIEW": "PENDING_DELTA_REVIEW",
+  "NEXT_AUTHORITY": "HBCSELF",
+  "state": {
+    "review_custody": "ESTABLISHED",
+    "transport": "ESTABLISHED",
+    "delta_review": "PENDING",
+    "candidate_verification": "NOT_VERIFIED",
+    "ratification": "BLOCKED",
+    "repository_genesis_readiness": "BLOCKED_PENDING_DELTA_REVIEW",
+    "selfhtml_repair_authority_here": "NONE",
+    "push_semantics": "TRANSPORT_ONLY_NOT_REVIEW_AUTHORITY"
+  },
+  "source": {
+    "repository": "situaedmilly/ruora",
+    "remote": "git@github.com:situaedmilly/ruora.git",
+    "branch": "selfhtml-semantics-v0.1-candidate",
+    "commit": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+    "candidate_paths": [
+      "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md"
+    ],
+    "baseline": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+    "authoring_session": "bd059265",
+    "review_scope": "Independent delta hostile review of repaired SELFHTML Semantics v0.1 candidate, limited to the repaired four-strata theorem and required attack surfaces; no review closure, ratification, repository genesis, YAMLSELF, HTML generation, HBC mutation, RealityIR, runtime realms, v0.2 expansion, evidence-admissibility expansion, or relation-algebra expansion.",
+    "reference_resolution": {
+      "raw_reference": "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "candidate_types": ["PATH", "ARTIFACT", "REVIEW_SUBJECT", "UNRESOLVED_TOKEN"],
+      "resolved_type": "REVIEW_SUBJECT_ARTIFACT",
+      "canonical_identifier": "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md@63ca11de05daa9c2ef648ee840002346047cc1c6",
+      "owner": "RUORA",
+      "repository": "situaedmilly/ruora",
+      "remote": "git@github.com:situaedmilly/ruora.git",
+      "branch": "selfhtml-semantics-v0.1-candidate",
+      "path": "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "digest": {
+        "algorithm": "SHA256",
+        "value": "46e09e63b856cd538819f89c43a213c105b988d5388317931fe952be4fecbc56"
+      },
+      "provenance": {
+        "baseline_commit": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+        "source_commit": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+        "line_count": 190,
+        "branch_head_verified": true,
+        "github_commit_resolved": true,
+        "remote_candidate_digest_recomputed": true
+      },
+      "standing": "CANDIDATE_BOUNDED_REPAIR_APPLIED_AWAITING_DELTA_REVIEW",
+      "authority": "DELTA_HOSTILE_REVIEW_TARGET_ONLY",
+      "unresolved_dimensions": []
+    }
+  },
+  "transport_git": {
+    "branch": "selfhtml-semantics-v0.1-candidate",
+    "head_before_commit": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+    "head_after_commit": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+    "remote": "github git@github.com:situaedmilly/ruora.git",
+    "remote_ref_before": "9451d5d71e4fe2de58513b4969a313f5f9b8b04d",
+    "remote_ref_after": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+    "exact_files_staged": [
+      "governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md"
+    ],
+    "commit_created": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+    "pushed_ref": "github/selfhtml-semantics-v0.1-candidate",
+    "unrelated_dirty_state_preserved": [
+      "doctrine/self_axiom.md",
+      "archives/agentbridge/",
+      "doctrine/CONSCIOUS-CONVERSATION-OBJECTIVE-ONTOLOGY-v0.1-DRAFT.md",
+      "doctrine/CONSCIOUS-CONVERSATION-ONTOLOGY-AMENDMENTS-001-PROPOSED.md",
+      "doctrine/CONSCIOUS-CONVERSATION-SELF-SIGNAL-ONTOLOGY-v0.1-DRAFT.md",
+      "doctrine/TREASURY-NODE-001-DOCTRINE-v0.1-DRAFT.md",
+      "doctrine/TREASURY-NODE-001-DOCTRINE-v0.2-DRAFT.md",
+      "doctrine/TREASURY-NODE-001-DOCTRINE-v0.3-DRAFT.md",
+      "multiple unrelated governance/OURSELF and governance/CONSTITUTIONAL untracked records",
+      "governance/SELFHTML-SEMANTICS-001-HOSTILE-REVIEW-DISPOSITION-002-POINTER.md"
+    ]
+  },
+  "review_target": {
+    "primary_theorem_under_attack": "EPISTEMIC_STANDING != DISPOSITION != WITNESS_STATE != OBSERVATION_STATUS",
+    "required_surfaces": [
+      "RS-101",
+      "RS-103.6",
+      "RS-103.7",
+      "RS-304.1",
+      "RS-502",
+      "RS-601",
+      "RS-602",
+      "RS-721",
+      "EPISTEMIC_STANDING",
+      "DISPOSITION",
+      "WITNESS_STATE",
+      "OBSERVATION_STATUS"
+    ],
+    "attacks_required": [
+      "A. Verify VERIFIED / DECLARED / INFERRED / UNCLAIMED form one coherent categorical standing axis without requiring a total ordering.",
+      "B. Attempt to construct a SELFHTML operation that requires an ordering the repaired contract cannot express.",
+      "C. Verify REJECTED / DEFERRED operate as dispositions without overwriting standing.",
+      "D. Replay VERIFIED + DEFERRED, VERIFIED + REJECTED, DECLARED + DEFERRED, INFERRED + REJECTED.",
+      "E. Attack the claimed illegality of UNCLAIMED + REJECTED and UNCLAIMED + DEFERRED; determine whether no claim exists is entailed by UNCLAIMED.",
+      "F. Verify BOUND / UNBOUND answers only whether a witness binding is declared and does not duplicate runtime observation status.",
+      "G. Replay RS-601 independently for exhaustiveness, mutual exclusivity, and derivation from RS-304.",
+      "H. Attack standing-transition authority != disposition-transition authority under RS-700 and RS-711.",
+      "I. Search the complete candidate for residual ordering language or hidden standing/disposition collapse beyond explicitly repaired clauses.",
+      "J. Verify RS-304.1 and RS-502 were directly necessitated repairs rather than unauthorized semantic expansion."
+    ],
+    "end_question": "DID THE REPAIR ACTUALLY CREATE FOUR ORTHOGONAL SEMANTIC STRATA, OR DID IT MERELY MOVE THE ORIGINAL OVERLOAD INTO NEW NAMES?"
+  },
+  "independence": {
+    "authoring_session": "bd059265",
+    "reviewer_session_identity": "PENDING_INDEPENDENT_REVIEWER",
+    "SESSION_INDEPENDENT": "PENDING_REVIEWER_DECLARATION",
+    "MODEL_INDEPENDENT": "UNRESOLVED",
+    "rule": "Reviewer MUST NOT be bd059265. A subagent spawned from the authoring session does not qualify merely because it has fresh context."
+  },
+  "required_return_template": {
+    "subject_digest": "46e09e63b856cd538819f89c43a213c105b988d5388317931fe952be4fecbc56",
+    "subject_line_count": 190,
+    "branch": "selfhtml-semantics-v0.1-candidate",
+    "HEAD": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+    "remote": "github git@github.com:situaedmilly/ruora.git",
+    "exact_files_staged": ["governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md"],
+    "commit_created": "63ca11de05daa9c2ef648ee840002346047cc1c6",
+    "pushed_ref": "github/selfhtml-semantics-v0.1-candidate",
+    "reviewer_session_identity": "PENDING_INDEPENDENT_REVIEWER",
+    "session_independence_status": "PENDING_REVIEWER_DECLARATION",
+    "model_independence_status": "UNRESOLVED",
+    "exact_delta_review_subject": "63ca11de05daa9c2ef648ee840002346047cc1c6^..63ca11de05daa9c2ef648ee840002346047cc1c6 on governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+    "standing_axis_verdict": "PENDING_DELTA_REVIEW",
+    "disposition_axis_verdict": "PENDING_DELTA_REVIEW",
+    "witness_axis_verdict": "PENDING_DELTA_REVIEW",
+    "observation_status_separation_verdict": "PENDING_DELTA_REVIEW",
+    "UNCLAIMED_combination_attack": "PENDING_DELTA_REVIEW",
+    "RS_601_replay": "PENDING_DELTA_REVIEW",
+    "authority_separation_attack": "PENDING_DELTA_REVIEW",
+    "residual_collapse_or_ordering_findings": "PENDING_DELTA_REVIEW",
+    "HR_001_disposition": "AUTHOR_CLAIMS_REPAIRED",
+    "HR_002_disposition": "AUTHOR_CLAIMS_REPAIRED",
+    "HR_003_disposition": "AUTHOR_CLAIMS_REPAIRED",
+    "delta_hostile_review_verdict": "PENDING_DELTA_REVIEW",
+    "repository_genesis_readiness": "BLOCKED_PENDING_DELTA_REVIEW",
+    "next_lawful_gate": "INDEPENDENT_DELTA_HOSTILE_REVIEW"
+  },
+  "absolute_exclusions": [
+    "NO repository genesis merely because transport succeeds.",
+    "NO YAMLSELF.",
+    "NO HTML generation.",
+    "NO HBC mutation.",
+    "NO RealityIR.",
+    "NO runtime realms.",
+    "NO screenshot ingestion.",
+    "NO v0.2 expansion.",
+    "NO evidence-admissibility expansion.",
+    "NO relation-algebra expansion.",
+    "NO closing author-repaired findings without independent review."
+  ],
+  "proof": {
+    "commands": [
+      "wc -l governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "shasum -a 256 governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "git branch --show-current",
+      "git rev-parse HEAD",
+      "git remote -v",
+      "git diff --cached --name-status",
+      "git add governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md",
+      "git diff --cached --name-status",
+      "git diff --check --cached",
+      "git show :governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md | wc -l",
+      "git show :governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md | shasum -a 256",
+      "git commit -m 'SELFHTML semantics v0.1 bounded repair for delta review'",
+      "git push github selfhtml-semantics-v0.1-candidate",
+      "gh api repos/situaedmilly/ruora/commits/63ca11de05daa9c2ef648ee840002346047cc1c6",
+      "git ls-remote github refs/heads/selfhtml-semantics-v0.1-candidate",
+      "gh api 'repos/situaedmilly/ruora/contents/governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md?ref=63ca11de05daa9c2ef648ee840002346047cc1c6' --jq '.content' | base64 -D | wc -l",
+      "gh api 'repos/situaedmilly/ruora/contents/governance/SELFHTML-REALITY-CONTRACT-SEMANTICS-001-v0.1-CANDIDATE.md?ref=63ca11de05daa9c2ef648ee840002346047cc1c6' --jq '.content' | base64 -D | shasum -a 256"
+    ]
+  },
+  "constraints": [
+    "AUTHOR_REPAIR != REVIEW_CLOSURE.",
+    "HR-001, HR-002, and HR-003 remain AUTHOR_CLAIMS_REPAIRED.",
+    "Transport does not confer PASS, CLOSED, VERIFIED, ratification, or repository genesis readiness.",
+    "This packet establishes durable review custody and transport only."
+  ],
+  "next_authority": {
+    "selfsystem": "HBCSELF",
+    "act_required": "Perform genuinely independent delta hostile review against the exact delta subject and return findings through INSELFACTION."
+  }
+}
