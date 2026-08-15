@@ -1,0 +1,84 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-ACCEPTANCE-002",
+  "emitted_at": "2026-08-15T05:12:42Z",
+  "SYSTEM": "ALCHEMISELF",
+  "OPERATION": "ROOT_RUNTIME_ACCEPTANCE",
+  "ALCHEMISELF": "ROOT_ACTIVE",
+  "REFERENCE_TYPE": "GIT_COMMIT",
+  "ROOT_LAW_STANDING": "ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON",
+  "TYPE_CONFUSION_PROOFS": 8,
+  "CANONICAL_SPECIMEN": "TYPE-CONFUSION-dd9da0b7-001",
+  "CHATGPTSELF_REVIEW": "ACCEPTED_AS_ACTIVE_ROOT_RUNTIME",
+  "DOCTRINE_SEAL": "NOT_SEALED_CANON",
+  "SELFHTML_REPAIR_AUTHORITY": "NOT_GRANTED_BY_THIS_ACT",
+  "NEXT_AUTHORITY": "MILASOPHAHR",
+  "system": "ALCHEMISELF",
+  "operation": "ROOT_RUNTIME_ACCEPTANCE",
+  "state": {
+    "root_runtime": "ROOT_ACTIVE",
+    "chatgptself_review": "ACCEPTED_AS_ACTIVE_ROOT_RUNTIME",
+    "root_law_standing": "ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON",
+    "doctrine_seal": "NOT_SEALED_CANON",
+    "selfhtml_repair_authority": "NOT_GRANTED_BY_THIS_ACT",
+    "canonical_specimen": "TYPE-CONFUSION-dd9da0b7-001",
+    "type_confusion_proofs": 8
+  },
+  "source": {
+    "reference_resolution": {
+      "raw_reference": "0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+      "candidate_types": [
+        "GIT_COMMIT",
+        "ARTIFACT_DIGEST",
+        "CONTENT_HASH",
+        "UNRESOLVED_TOKEN"
+      ],
+      "resolved_type": "GIT_COMMIT",
+      "canonical_identifier": "0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+      "owner": "RUORA",
+      "repository": "situaedmilly/ruora",
+      "remote": "git@github.com:situaedmilly/ruora.git",
+      "branch": "alchemiself-root-runtime-v0.1",
+      "path": null,
+      "digest": null,
+      "provenance": {
+        "branch_head_verified": true,
+        "github_commit_resolved": true,
+        "parent_commit": "7cd4b9ee675af95113e9f74e1164a0081288a322",
+        "root_runtime_spec_blob": "f29069bba2c2b75e8411529b0afee33b774b52ba"
+      },
+      "standing": "ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON",
+      "authority": "ACTIVE_ROOT_RUNTIME_ACCEPTANCE_ONLY",
+      "unresolved_dimensions": []
+    }
+  },
+  "accepted_root_law": {
+    "prime_law": "Never act on a symbol before determining what kind of thing the symbol is.",
+    "runtime_order": "LEXEME -> TYPE -> IDENTITY -> PROVENANCE -> STANDING -> AUTHORITY -> ACTION",
+    "standing": "ACTIVE_ROOT_RUNTIME",
+    "seal_boundary": "NOT_SEALED_CANON",
+    "selfhtml_boundary": "NO_REPAIR_AUTHORITY"
+  },
+  "proof": {
+    "commands": [
+      "gh api repos/situaedmilly/ruora/commits/0f578a27173fb1a379b42d8ea9d4c8538752fd63",
+      "git ls-remote git@github.com:situaedmilly/ruora.git refs/heads/alchemiself-root-runtime-v0.1",
+      "gh api 'repos/situaedmilly/ruora/contents/governance/ALCHEMISELF-ROOT-RUNTIME-v0.1.md?ref=0f578a27173fb1a379b42d8ea9d4c8538752fd63'"
+    ],
+    "observed_results": [
+      "source commit resolves from GitHub",
+      "branch head equals source commit",
+      "root runtime spec resolves at source commit"
+    ]
+  },
+  "constraints": [
+    "Acceptance as active runtime is not doctrine seal.",
+    "Acceptance does not grant SELFHTML repair authority.",
+    "Acceptance does not ratify SELFHTML v0.1.",
+    "Acceptance does not advance SELFHTML repository genesis."
+  ],
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Hold next authority over doctrine seal, supersession, or any downstream SELFHTML repair authorization."
+  }
+}

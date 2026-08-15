@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-15T04:56:20Z",
-  "updated_at_note": "True wall clock observed via `date -u` in this session. Pointer advanced to ALCHEMISELF root runtime mutation after typed ReferenceResolution proof and GitHub publication. Chain order remains `history`, never timestamp comparison.",
+  "updated_at": "2026-08-15T05:12:42Z",
+  "updated_at_note": "True wall clock observed via `date -u` in this session. Pointer advanced to CHATGPTSELF acceptance of ALCHEMISELF as active root runtime; doctrine seal remains NOT_SEALED_CANON and SELFHTML repair authority remains not granted. Chain order remains `history`, never timestamp comparison.",
   "session": "ChatGPTSELF-Codex",
   "latest_inselfaction": {
-    "id": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001",
-    "path": "inselfactions/ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001.json",
-    "title": "ALCHEMISELF root runtime active; type resolution precedes interpretation and action",
+    "id": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-ACCEPTANCE-002",
+    "path": "inselfactions/ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-ACCEPTANCE-002.json",
+    "title": "CHATGPTSELF accepts ALCHEMISELF as active root runtime; next authority returns to MILASOPHAHR",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -102,7 +102,12 @@
       "pushed": true,
       "type_confusion_proofs": 8,
       "canonical_specimen": "TYPE-CONFUSION-dd9da0b7-001",
-      "memory_note": "/Users/millysituated/.codex/memories/extensions/ad_hoc/notes/2026-08-15T04-53-05Z-alchemiself-root-runtime.md"
+      "memory_note": "/Users/millysituated/.codex/memories/extensions/ad_hoc/notes/2026-08-15T04-53-05Z-alchemiself-root-runtime.md",
+      "reference_type": "GIT_COMMIT",
+      "root_law_standing": "ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON",
+      "chatgptself_review": "ACCEPTED_AS_ACTIVE_ROOT_RUNTIME",
+      "selfhtml_repair_authority": "NOT_GRANTED_BY_THIS_ACT",
+      "next_authority": "MILASOPHAHR"
     }
   },
   "transport": {
@@ -157,13 +162,20 @@
     "element_subject_refuted": "ELEMENT is not the universal semantic subject of capability obligation. Both mandated counterexamples fire the kill test; the boundary case is structurally inexpressible because SP-156 compels ADMITTED",
     "discovered_class": "EMBODIMENT-PAIR (SP-091, SP-114, SP-152, SP-173) — no single-embodiment locus exists, so these can never lawfully appear in any self-reported failed-requirement set",
     "selfhtml_semantics": "v0.1 CANDIDATE_AUTHORED - REMOTELY_RESOLVABLE - HBCSELF HOSTILE_REVIEW_COMPLETE - CHANGES_REQUIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED - NOT VERIFIED - escalated question: standing != disposition",
-    "alchemiself_root_runtime": "ROOT_ACTIVE - PRE_INTERPRETATION ROOT RUNTIME - TYPE RESOLUTION REQUIRED BEFORE IDENTITY, PROVENANCE, STANDING, AUTHORITY, OR ACTION - TYPE_CONFUSION_PROOFS 8 - NOT SEALED CANON"
+    "alchemiself_root_runtime": "ROOT_ACTIVE - CHATGPTSELF ACCEPTED AS ACTIVE ROOT RUNTIME - ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON - DOCTRINE_SEAL NOT_SEALED_CANON - SELFHTML_REPAIR_AUTHORITY NOT_GRANTED_BY_THIS_ACT - TYPE_CONFUSION_PROOFS 8"
   },
   "next_authority": {
-    "selfsystem": "CHATGPTSELF",
-    "act_required": "Enforce ALCHEMISELF ReferenceResolution before all future reference interpretation and action; route future SELFCLAUDE/HBCSELF handoffs through typed source references."
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Hold next authority over doctrine seal, supersession, or any downstream SELFHTML repair authorization."
   },
   "open_items": [
+    {
+      "inselfaction": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-ACCEPTANCE-002",
+      "subject": "ALCHEMISELF root runtime acceptance",
+      "next_authority": "MILASOPHAHR",
+      "act_required": "Hold next authority over doctrine seal, supersession, or downstream SELFHTML repair authorization. ALCHEMISELF remains active root runtime meanwhile.",
+      "status": "CHATGPTSELF REVIEW ACCEPTED_AS_ACTIVE_ROOT_RUNTIME - DOCTRINE SEAL NOT_SEALED_CANON - SELFHTML REPAIR AUTHORITY NOT_GRANTED_BY_THIS_ACT"
+    },
     {
       "inselfaction": "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001",
       "subject": "ALCHEMISELF root runtime enforcement",
@@ -320,7 +332,8 @@
     "ISA-20260814-CC-WORKFLOW-CUSTODY-016",
     "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-REQUEST-001",
     "ISA-20260815-SELFHTML-HBC-HOSTILE-REVIEW-DISPOSITION-002",
-    "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001"
+    "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-001",
+    "ISA-20260815-ALCHEMISELF-ROOT-RUNTIME-ACCEPTANCE-002"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
