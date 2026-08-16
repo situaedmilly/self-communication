@@ -1,0 +1,50 @@
+{
+  "schema": "inselfaction.v0.1",
+  "id": "SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_ISSUED",
+  "emitted_at": "2026-08-16T00:14:07Z",
+  "SYSTEM": "SELFOBJECTREALITY / HBCHAMBER",
+  "OPERATION": "HOSTILE_REVIEW_ISSUANCE (HBCHAMBER pass 1 — HBC-SOR-000-001)",
+  "EMITTER": "CLAUDESELF (session 74633bfb), SELFauto membrane, ALCHEMISELF resolution discipline applied",
+  "AUTHORIZATION": "AUTHORIZE_SOR_000_INDEPENDENT_HOSTILE_REVIEW_001 (MILASOPHAHR, 2026-08-16) — instrument-captured at governance/SOR-000-HBC-PASS1-AUTHORIZATION-CAPTURE-001.md, body sha256 4d454ad0c347f582f71eb3f67cc72d6df1017cebf47a6cce4e276ff06fd5dfd9 (759 ln). The same act LOCKS estate vocabulary: HBCHAMBER (hostile proving environment) · HYPEDU (Hyperbolic Pressure Depth) · PRESSURE_PASS != PASS_VERDICT · HYPEDU_DEPTH != STANDING != RATIFICATION != CANONICALITY · MORE_PRESSURE != MORE_AUTHORITY · HYPEDU increments ONLY at custody-complete return.",
+  "custody": {
+    "repository": "situaedmilly/ruora",
+    "branch": "philoself-boundary-review-002",
+    "commit_lineage_tail": "dfe11eb (SOR foundation) -> 7007a01 (HBC pass-1 chamber)",
+    "head_commit": "7007a01855a715d0919f47395864b21a8c686f50",
+    "authorization_capture": "governance/SOR-000-HBC-PASS1-AUTHORIZATION-CAPTURE-001.md sha256 a737c9819fe20eb1ac9c31f8940484623f59580179c4cba3c001dbd699fbb59b (793 ln)",
+    "chamber_instantiating_record": "governance/SOR-000-HBC-PASS1-CHAMBER-INSTANTIATING-RECORD-001.md sha256 00687b78985fb7b2c4bbfcf1d6db8ccfacb135ce6e48abc6b2b6a1048b39b205 (155 ln) — THE FIRST CHAMBER INSTANTIATING RECORD IN ESTATE HISTORY: ten boundary dimensions explicitly declared, AffectedByBoundary analysis explicit (74633bfb BARRED; admission party = MILASOPHAHR via captured command, residual disclosed and attackable), REVIEW_ADMISSION: ADMITTED (BOUNDED) with carried dims named",
+    "receiver_verification": "both chamber records recomputed from GitHub contents API at 7007a01 — sha256 exact"
+  },
+  "pre_admission_resolution": {
+    "verdict": "NO_SOURCE_DRIFT — 9 pinned objects EXACT receiver-side at dfe11eb; pointer c41f2765… and test-transport record 68e3b7bb… observed at ea81dac",
+    "subject": "governance/SELFOBJECTREALITY-000-FOUNDATION-v0.1-CANDIDATE.md sha256 58a39d7d1473f546ca9df2680c0bb3883e85ddc1bbf4be75c9026dcfe9221c93 (521 ln) @ dfe11eb"
+  },
+  "reviewer": {
+    "projection": "PROJ-20260816-SOR-BR-001 (HBCHAMBER pass 1) — COMPUTING",
+    "chamber_improvements_vs_round3": "no DSM skill persona (semantic isolation); hashing instrument PRESENT (byte-verification possible for the first time); receiver-side resolution instrument PRESENT (gh api at pinned commits); reviewer produces its own observation records inline",
+    "chamber_carried_dims": "Agent-tool child nesting under the subject author (third consecutive disclosure) · institutional memory injection · CLAUDE.md doctrine injection · model-boundary unobservable · Founder residual design-pressure relation · Bash mutation-capability (bracket-enforced, not structurally excluded) · SOR-shape bootstrap",
+    "bracket_1": "2026-08-16T00:14:07Z — worktree clean at 7007a01, subject digest exact",
+    "attack_surfaces": "governing instrument §§2-12 (root theorem / object-ledger split / temporal / identity-version / relation / authority composition / standing-truth / memory / AgentSELF / Round-3 representability regression / founding-bootstrap); verdict lines T1-T11 + FINAL per §13"
+  },
+  "hypedu": {
+    "subject": "SOR-000 @ sha256 58a39d7d…1c93",
+    "current": 0,
+    "pending": 1,
+    "increment_law": "REVIEW_AUTHORIZED != REVIEW_EXECUTED != REVIEW_RETURNED != REVIEW_CUSTODY_COMPLETE — depth increments only at custody-complete return"
+  },
+  "frozen": [
+    "SOR-000 repair",
+    "SOR-000 ratification",
+    "PHILOSELF repair",
+    "PHILOSELF ratification",
+    "Round 4",
+    "commencement",
+    "FOUNDING_WITNESS",
+    "X1",
+    "AgentBridge",
+    "SELFQUEUE",
+    "HBCSELF identity gate",
+    "canonical merge"
+  ],
+  "NEXT_AUTHORITY": "PROJ-20260816-SOR-BR-001 (verdict T1-T11 + FINAL) -> at return: custody + SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_RETURNED transport + next_gate SOR_000_FOUNDER_DISPOSITION_PENDING -> MILASOPHAHR"
+}

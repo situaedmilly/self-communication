@@ -1,12 +1,12 @@
 {
   "schema": "interaction-pointer.v0.3",
-  "updated_at": "2026-08-15T23:40:50Z",
-  "updated_at_note": "True wall clock via `date -u`. SELF OBJECT REALITY FOUNDED (candidate): Founder ruled the Round-3 disposition sequence — the next act is NOT 'repair Round 3'; extract the general failure class first. SOR-000 v0.1 CANDIDATE authored under AUTHORIZE_SELF_OBJECT_REALITY_FOUNDATION_001 (act captured by instrument), custody dfe11eb receiver-verified. Representability test EXECUTED: 9/9 Round-3 blocking defects + 5/5 SPLIT instances representable with zero identity mutation. PHILOSELF untouched; repair deferred pending SOR review. Trail: foundation -> hostile review -> standing -> PHILOSELF derivation -> repair.",
+  "updated_at": "2026-08-16T00:14:07Z",
+  "updated_at_note": "True wall clock via `date -u`. HBCHAMBER PASS 1 OVER SOR-000 ISSUED (HBC-SOR-000-001) under AUTHORIZE_SOR_000_INDEPENDENT_HOSTILE_REVIEW_001 (instrument-captured, incl. the HYPEDU vocabulary lock: PRESSURE_PASS != PASS_VERDICT; MORE_PRESSURE != MORE_AUTHORITY; depth increments only at custody-complete return). §0 pre-admission resolution: NO_SOURCE_DRIFT (9 pinned objects EXACT receiver-side). FIRST chamber instantiating record in estate history committed at 7007a01: ten dimensions explicit, AffectedByBoundary analysis explicit, admission party = MILASOPHAHR via captured command, ADMITTED (BOUNDED). Reviewer PROJ-20260816-SOR-BR-001 computing — first reviewer equipped with hashing + receiver-side resolution. Verdict lines T1-T11 + FINAL pending. SOR-000 HYPEDU: 0, pending 1.",
   "session": "CLAUDESELF-ClaudeCode-74633bfb",
   "latest_inselfaction": {
-    "id": "SELF_OBJECT_REALITY_FOUNDATION_001",
-    "path": "inselfactions/SELF_OBJECT_REALITY_FOUNDATION_001.json",
-    "title": "SELF OBJECT REALITY founded (SOR-000 v0.1 CANDIDATE) — identity intrinsic, state relational; representability test PASS; PHILOSELF repair deferred pending independent review of the foundation",
+    "id": "SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_ISSUED",
+    "path": "inselfactions/SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_ISSUED.json",
+    "title": "HBCHAMBER pass 1 over SOR-000 issued — first chamber instantiating record in estate history; reviewer computing with hashing + receiver-side instruments; verdict T1-T11 + FINAL pending",
     "supersedes": null
   },
   "schema_change_v0_2_to_v0_3": {
@@ -172,10 +172,14 @@
       "jurisdiction": "UPSTREAM of PHILOSELF — custody on the PHILOSELF branch is VENUE ONLY; PHILOSELF discovered the wound, does not own the doctrine",
       "sor_000": "governance/SELFOBJECTREALITY-000-FOUNDATION-v0.1-CANDIDATE.md sha256 58a39d7d1473f546ca9df2680c0bb3883e85ddc1bbf4be75c9026dcfe9221c93 (521 ln) — foundational theorem, IDENTITY-INTRINSIC/STATE-RELATIONAL, RealityLedger non-containment, INV-SOR-1..13, reversed mathematics, repaired shapes as unapplied specimens, representability test EXECUTED (PASS: 9/9 blockers + 5/5 SPLIT instances, zero identity mutation; residuals OQ-SOR-1..3 disclosed)",
       "founding_pressure_capture": "governance/SELFOBJECTREALITY-FOUNDING-PRESSURE-CAPTURE-001.md sha256 52205fb29c8feba72c10e3a07f17e66063f97953297d5ea37b3ee62664e3cbb5 (1359 ln; body sha256 3e417f3c9caefae2d35d84334242004a275a7a691240e8dd9bc3cee26f299a36, 1321 ln, instrument-extracted) — CAPTURED_REPRESENTATION of the Founder act + relayed HBCSELF emission; not a machine-signed grant (organ gap disclosed)",
-      "review_status": "CANDIDATE_AUTHORED_UNREVIEWED",
-      "hostile_review": "NOT_ISSUED — next authority decision",
+      "review_status": "HBCHAMBER_PASS_1_IN_FLIGHT",
+      "hostile_review": "HBC-SOR-000-001 ISSUED 2026-08-16T00:14:07Z — reviewer PROJ-20260816-SOR-BR-001 computing; chamber @ 7007a01",
+      "hbc_authorization_capture": "governance/SOR-000-HBC-PASS1-AUTHORIZATION-CAPTURE-001.md sha256 a737c9819fe20eb1ac9c31f8940484623f59580179c4cba3c001dbd699fbb59b (793 ln; body 4d454ad0…, 759 ln, instrument-extracted)",
+      "hbc_chamber_record": "governance/SOR-000-HBC-PASS1-CHAMBER-INSTANTIATING-RECORD-001.md sha256 00687b78985fb7b2c4bbfcf1d6db8ccfacb135ce6e48abc6b2b6a1048b39b205 (155 ln) — FIRST chamber instantiating record in estate history; ten dimensions explicit; ADMITTED (BOUNDED)",
+      "hypedu": "0 (pending 1 — increments only at custody-complete return; PRESSURE_PASS != PASS_VERDICT)",
+      "next_gate": "SOR_000_REVIEW_VERDICT_PENDING",
       "ratification": "NOT_GRANTED",
-      "next_authority": "MILASOPHAHR"
+      "next_authority": "PROJ-20260816-SOR-BR-001 -> MILASOPHAHR"
     }
   },
   "transport": {
@@ -232,19 +236,27 @@
     "selfhtml_semantics": "v0.1 CANDIDATE_REPAIRED_BY_AUTHOR - REMOTELY_RESOLVABLE - DELTA HOSTILE REVIEW PREPARED_NOT_EXECUTED - HR-001/HR-002/HR-003 AUTHOR_CLAIMS_REPAIRED - RATIFICATION BLOCKED - REPOSITORY_GENESIS_STEP_5 BLOCKED_PENDING_DELTA_REVIEW - NOT VERIFIED - theorem under attack: standing/disposition/witness/observation orthogonality",
     "alchemiself_root_runtime": "ROOT_ACTIVE - CHATGPTSELF ACCEPTED AS ACTIVE ROOT RUNTIME - ROOT_BEHAVIORAL_LAW_ACTIVE_NOT_SEALED_CANON - DOCTRINE_SEAL NOT_SEALED_CANON - SELFHTML_REPAIR_AUTHORITY NOT_GRANTED_BY_THIS_ACT - TYPE_CONFUSION_PROOFS 8",
     "philoself": "ROUND_3 RETURNED at 1db76b0 — T1 BLOCKED / T2 BLOCKED / T3 BLOCKED (unmerged) · root defect FROZEN-BYTES/MUTABLE-STATUS SPLIT · both chamber ADMITTED standings under filed 003 §4 INV-7(a) breach disclosure (re-adjudication obligated, non-AffectedByBoundary party not yet produced) · machinery can REFUSE and FAIL, cannot yet ESTABLISH · ROUND_2 BLOCKED stands · COMMENCEMENT NOT_AUTHORIZED · RATIFICATION NOT_GRANTED · X1 FROZEN · Founder sequencing ruling received: REPAIR DEFERRED pending SOR-000 review",
-    "self_object_reality": "SOR-000 v0.1 CANDIDATE AUTHORED at dfe11eb (521 ln, sha 58a39d7d…) under AUTHORIZE_SELF_OBJECT_REALITY_FOUNDATION_001 (act instrument-captured, sha 3e417f3c…) · IDENTITY IS INTRINSIC / STATE IS RELATIONAL · OBJECT != LEDGER-ABOUT-OBJECT · INV-SOR-1..13 · representability test PASS (9/9 Round-3 blockers + 5/5 SPLIT instances, zero identity mutation; OQ-SOR-1..3 residuals disclosed) · self-applied at birth (own lifecycle external to own bytes) · UNREVIEWED · UNRATIFIED · hostile review NOT_ISSUED · upstream of PHILOSELF/SELFgraph/HTMLSELF/SELFprotocol/AgentBridge/SELFQUEUE"
+    "self_object_reality": "SOR-000 v0.1 CANDIDATE (sha 58a39d7d… @ dfe11eb) · HBCHAMBER PASS 1 IN FLIGHT (HBC-SOR-000-001, chamber @ 7007a01, reviewer computing with hashing + receiver-side instruments) · HYPEDU 0 pending 1 · attack surfaces: root theorem / object-ledger split / temporal / identity-version / relation / authority composition / standing-truth / memory / AgentSELF / Round-3 representability regression / bootstrap · verdict T1-T11 + FINAL pending · UNRATIFIED · repair + ratification FROZEN · upstream of PHILOSELF/SELFgraph/HTMLSELF/SELFprotocol/AgentBridge/SELFQUEUE",
+    "hbchamber_vocabulary": "LOCKED by Founder 2026-08-16 (in the captured authorization): HBCHAMBER = hostile proving environment · HYPEDU = Hyperbolic Pressure Depth (increments ONLY at custody-complete return) · PRESSURE_PASS != PASS_VERDICT · HYPEDU_DEPTH != STANDING != RATIFICATION != CANONICALITY · NUMBER_OF_REVIEWS != TRUTH · MORE_PRESSURE != MORE_AUTHORITY — the chamber deepens evidence, never manufactures jurisdiction"
   },
   "next_authority": {
-    "selfsystem": "MILASOPHAHR",
-    "act_required": "Decide issuance of the INDEPENDENT HOSTILE REVIEW of SOR-000 (the foundation must survive attack before anything derives from it). Precondition carried from Round-3 advisory item 7: a lawful review chamber needs an instantiating record and a non-AffectedByBoundary admission party — SOR-000 §7's chamber shape is the form such an instantiation can take; the authoring projection 74633bfb is barred from adjudicating SOR-000's standing. The Round-3 advisory items (SPLIT ruling, D3 breach disposition, RECORDED_UNRESOLVED_ACCEPTABLE, CAUSAL_PARENT typing, registry, invocation-record binding) now route THROUGH the SOR trail: foundation review -> Founder disposition -> PHILOSELF derivation -> repair."
+    "selfsystem": "PROJ-20260816-SOR-BR-001",
+    "act_required": "Return the eleven verdict lines (T1 root theorem / T2 object-ledger split / T3 temporal / T4 identity-version / T5 relation / T6 authority / T7 proof-standing / T8 memory / T9 AgentSELF / T10 Round-3 representability regression / T11 bootstrap) + FINAL, with counterexample attempts, findings, own observation records, and occupant disclosures. At return: custody per §15 (return-only commit, receiver-verify, SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_RETURNED transport, next_gate SOR_000_FOUNDER_DISPOSITION_PENDING, HYPEDU 0->1). Then MILASOPHAHR dispositions."
   },
   "open_items": [
+    {
+      "inselfaction": "SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_ISSUED",
+      "subject": "HBCHAMBER pass 1 over SOR-000 — verdict pending",
+      "next_authority": "PROJ-20260816-SOR-BR-001 -> MILASOPHAHR",
+      "act_required": "Reviewer returns T1-T11 + FINAL with findings and counterexample attempts; issuer then executes §15 custody + RETURNED transport + next_gate SOR_000_FOUNDER_DISPOSITION_PENDING; HYPEDU increments to 1 at custody-complete. Founder then dispositions.",
+      "status": "ISSUED · CHAMBER INSTANTIATED (first instantiating record in estate history, ADMITTED BOUNDED) · NO_SOURCE_DRIFT · REVIEWER COMPUTING · ALL FREEZES HOLD"
+    },
     {
       "inselfaction": "SELF_OBJECT_REALITY_FOUNDATION_001",
       "subject": "SOR-000 foundation candidate — independent hostile review issuance",
       "next_authority": "MILASOPHAHR",
-      "act_required": "Decide issuance of the independent hostile review of SOR-000 (custody dfe11eb, sha 58a39d7d…, 521 ln). The reviewer chamber must satisfy Round-3 advisory item 7: instantiating record + non-AffectedByBoundary admission party (SOR-000 §7 chamber shape available as the form). Authoring projection 74633bfb is AffectedByBoundary and barred. Only after the foundation survives review does PHILOSELF derivation authority become issuable.",
-      "status": "CANDIDATE AUTHORED · CUSTODY RECEIVER-VERIFIED · REPRESENTABILITY TEST PASS · UNREVIEWED · UNRATIFIED · ALL FREEZES HOLD"
+      "act_required": "none — review issued by explicit Founder act AUTHORIZE_SOR_000_INDEPENDENT_HOSTILE_REVIEW_001",
+      "status": "DISCHARGED by SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_ISSUED"
     },
     {
       "inselfaction": "PHILOSELF_ROUND_3_RETURNED",
@@ -491,7 +503,8 @@
     "PHILOSELF_CHAMBER_REALIZATION_PROOF_001",
     "PHILOSELF_ROUND_3_ISSUED",
     "PHILOSELF_ROUND_3_RETURNED",
-    "SELF_OBJECT_REALITY_FOUNDATION_001"
+    "SELF_OBJECT_REALITY_FOUNDATION_001",
+    "SOR_000_INDEPENDENT_HOSTILE_REVIEW_001_ISSUED"
   ],
   "history_is_authoritative_order": "Chain order is this array, NOT the emitted_at stamps. Two sessions have now written stamps ahead of wall clock (ISA-008 at 02:05Z, the v0.2 pointer at 04:20Z) while ISA-009 carries the true 01:43:54Z. Immutable archives are not edited to reconcile clocks.",
   "law": "This pointer is mutable. The INSELFACTION it names is not. A correction appends a successor archive; it never edits a predecessor. `latest_inselfaction` names only the most RECENT transmission — it does not close, supersede or rank the others. Open authority items are enumerated in `open_items`, which is the field to read before assuming nothing is pending. Every source binding names its REPOSITORY alongside its commit, because a hash without a repository is not an address.",
