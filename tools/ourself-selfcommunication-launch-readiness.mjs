@@ -3376,6 +3376,7 @@ export function recomputeG6CurrentStanding({
 
 export function createSyntheticT2Receipt({
   launchTarget = "SELFCOMMUNICATION_LIVE_V0",
+  launchSubjectIdentity = null,
   patientZeroMatterRef = "5464975482",
   participationRef = "P_CLAUDE_LAUNCH_READINESS"
 } = {}) {
@@ -3384,6 +3385,7 @@ export function createSyntheticT2Receipt({
     object_type: "T2_PREDECESSOR_RECEIPT_SYNTHETIC_FIXTURE",
     receipt_exists: true,
     subject_binding: launchTarget,
+    subject_identity_binding: launchSubjectIdentity,
     patient_zero_binding: patientZeroMatterRef,
     participation_binding: participationRef,
     observation_occurrence: "ESTABLISHED",
@@ -3398,31 +3400,50 @@ export function createSyntheticT2Receipt({
 export function adjudicateT2Predecessor({
   t2Receipt = buildLocalT2PredecessorEvidence(),
   launchTarget = "SELFCOMMUNICATION_LIVE_V0",
+  launchSubjectIdentity = null,
   patientZeroMatterRef = "5464975482",
   participationRef = "P_CLAUDE_LAUNCH_READINESS"
 } = {}) {
+  const requiredBindingStandings = t2Receipt?.required_binding_standings ?? null;
+  const requiredBindingsEstablished = requiredBindingStandings
+    ? [
+      "T2_SUBJECT_BINDING",
+      "T2_PATIENT_ZERO_BINDING",
+      "T2_PARTICIPATION_BINDING",
+      "T2_OBSERVATION_OCCURRENCE",
+      "T2_STANDING_CEILING"
+    ].every((bindingRef) => requiredBindingStandings[bindingRef] === "ESTABLISHED")
+    : true;
+  const subjectNameBinds = t2Receipt?.subject_binding === launchTarget;
+  const subjectIdentityBinds = launchSubjectIdentity
+    ? t2Receipt?.subject_identity_binding === launchSubjectIdentity
+    : true;
   const checks = {
     t2_receipt_exists: t2Receipt?.receipt_exists === true,
-    t2_subject_binding: t2Receipt?.subject_binding === launchTarget,
+    t2_subject_binding: subjectNameBinds && subjectIdentityBinds,
     t2_patient_zero_binding: t2Receipt?.patient_zero_binding === patientZeroMatterRef,
     t2_participation_binding: t2Receipt?.participation_binding === participationRef,
     t2_observation_occurrence: t2Receipt?.observation_occurrence === "ESTABLISHED",
-    t2_standing_ceiling: t2Receipt?.standing_ceiling === "LOAD_BEARING_PREDECESSOR_ONLY"
+    t2_standing_ceiling: t2Receipt?.standing_ceiling === "LOAD_BEARING_PREDECESSOR_ONLY",
+    t2_required_bindings_established: requiredBindingsEstablished
   };
   const satisfied = Object.values(checks).every(Boolean);
   const result = {
     schema: SELFCOMMUNICATION_LAUNCH_READINESS_SCHEMA,
     object_type: "T2_PREDECESSOR_GATE_RESULT",
     launch_target: launchTarget,
+    launch_subject_identity: launchSubjectIdentity,
     patient_zero_matter_ref: patientZeroMatterRef,
     participation_ref: participationRef,
     receipt_identity: t2Receipt?.receipt_identity ?? null,
     t2_receipt_exists: checks.t2_receipt_exists,
     t2_subject_binding: t2Receipt?.subject_binding ?? "MISSING",
+    t2_subject_identity_binding: t2Receipt?.subject_identity_binding ?? "MISSING",
     t2_patient_zero_binding: t2Receipt?.patient_zero_binding ?? "MISSING",
     t2_participation_binding: t2Receipt?.participation_binding ?? "MISSING",
     t2_observation_occurrence: t2Receipt?.observation_occurrence ?? "MISSING",
     t2_standing_ceiling: t2Receipt?.standing_ceiling ?? "MISSING",
+    required_binding_standings: requiredBindingStandings,
     t2_evidence_exists_not_t2_gate_dominates_launch: true,
     t2_not_truth_authority_effect_or_launch_readiness: true,
     checks,
@@ -3796,7 +3817,7 @@ export function buildSelfcommunicationLaunchReadinessReport({
     launchSubjectIdentity,
     requiredAttackCoverage: attackBattery.minimum_highest_power_subset
   });
-  const t2GateResult = adjudicateT2Predecessor({ t2Receipt });
+  const t2GateResult = adjudicateT2Predecessor({ t2Receipt, launchSubjectIdentity });
   const g6CurrentStandingResult = recomputeG6CurrentStanding({ t2GateResult });
   const blockerSemanticsResult = buildBlockerSemanticsResult();
   const launchDecisionSensitivityTests = runLaunchDecisionSensitivityTests();
