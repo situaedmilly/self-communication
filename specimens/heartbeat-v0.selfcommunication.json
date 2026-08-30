@@ -1,0 +1,193 @@
+{
+  "schema": "selfcommunication.event.v0.1-candidate",
+  "event_id": "SCE-20260829-MILASOPHAHR-HTMLSELF-LAUNCH-001",
+  "artifact_status": "LOCAL_WITNESS_CANDIDATE_NOT_CANONICAL_SCHEMA",
+  "created_at": "2026-08-29T08:00:26Z",
+  "source_actor_ref": "SELF:MILASOPHAHR",
+  "target_actor_ref": "SELF:OURSELF",
+  "matter_ref": {
+    "matter_id": "M1",
+    "content": "MORPH HTMLSELF UNTIL LAUNCH.",
+    "encoding": "utf8",
+    "identity": "sha256:1445d5d7fd4f86d0ce6d4bd78881ad3ec7e3cddb294c98b4b82e9683bb42feb1",
+    "expression_identity": {
+      "sha256": "1445d5d7fd4f86d0ce6d4bd78881ad3ec7e3cddb294c98b4b82e9683bb42feb1",
+      "byte_length": 28,
+      "encoding": "utf8"
+    },
+    "manifestation": ["linguistic"]
+  },
+  "darkmatterbox": {
+    "box_id": "DMB-HEARTBEAT-V0-001",
+    "role": "BOUNDED_POSSIBILITY_CHAMBER",
+    "status": "ADMITTED",
+    "possible_interpretations": [
+      {
+        "variant_id": "T1_EXACT",
+        "disposition": "ADMITTED",
+        "content": "MORPH HTMLSELF UNTIL LAUNCH.",
+        "identity": "sha256:1445d5d7fd4f86d0ce6d4bd78881ad3ec7e3cddb294c98b4b82e9683bb42feb1",
+        "derivation": "exact founder matter bytes"
+      },
+      {
+        "variant_id": "T2_TRUNCATED",
+        "disposition": "REJECTED",
+        "content": "MORPH HTMLSELF UNTIL LAUNCH",
+        "identity": "sha256:e25f8bf5750697da77ceecc5171f55bcb65d392a7d617676e7c50cb2cfa7c14d",
+        "derivation": "period removed"
+      },
+      {
+        "variant_id": "T3_REORDERED",
+        "disposition": "REJECTED",
+        "content": "LAUNCH HTMLSELF AFTER MORPH.",
+        "identity": "sha256:6d979a202efcbd75e529f2de5b7319d4ad396e9ef07f746b3c307f1e901bd901",
+        "derivation": "verb order changed"
+      },
+      {
+        "variant_id": "T4_SEMANTICALLY_TRANSFORMED",
+        "disposition": "REJECTED",
+        "content": "Create a generic HTMLSELF launch page.",
+        "identity": "sha256:20fa83af953ce6c7b7328ff76a82c501a6c91f9b16a7b0997a311762c1d82988",
+        "derivation": "founder morph authority collapsed into generic implementation request"
+      }
+    ],
+    "actual_observation_ref": "O1",
+    "admitted_variant_ref": "T1_EXACT",
+    "rejected_variant_refs": ["T2_TRUNCATED", "T3_REORDERED", "T4_SEMANTICALLY_TRANSFORMED"]
+  },
+  "observation_identity": {
+    "observation_id": "O1",
+    "observer_ref": "SELF:CODEXSELF",
+    "observed_matter_identity": "sha256:1445d5d7fd4f86d0ce6d4bd78881ad3ec7e3cddb294c98b4b82e9683bb42feb1",
+    "observed_variant_ref": "T1_EXACT",
+    "observation_disposition": "OBSERVED"
+  },
+  "admission_identity": {
+    "admission_id": "AD1",
+    "admitted_variant_ref": "T1_EXACT",
+    "disposition": "ADMITTED",
+    "meaning": "Form a bounded local SELFCommunicationEvent witness before any broader transport or runtime claim."
+  },
+  "authority_identity": {
+    "authority_id": "AUTH1",
+    "authority_ref": "MILASOPHAHR_SESSION_SIGNAL_2026-08-29",
+    "disposition": "AUTHORIZED",
+    "scope": "local candidate doctrine, schema specimen, CLI witness, and tests only"
+  },
+  "effect_identity": {
+    "effect_id": "E1",
+    "disposition": "EFFECTED",
+    "effect": "local witness specimen created and validator can reconstruct the event lineage"
+  },
+  "trajectory": [
+    {
+      "stage": "EXPRESSED",
+      "disposition": "ESTABLISHED",
+      "identity_ref": "sha256:1445d5d7fd4f86d0ce6d4bd78881ad3ec7e3cddb294c98b4b82e9683bb42feb1",
+      "note": "Founder Matter M1 expressed."
+    },
+    {
+      "stage": "TRANSMITTED",
+      "disposition": "ESTABLISHED",
+      "identity_ref": "sha256:1445d5d7fd4f86d0ce6d4bd78881ad3ec7e3cddb294c98b4b82e9683bb42feb1",
+      "note": "This event records the exact text bytes as the local transmitted matter."
+    },
+    {
+      "stage": "OBSERVED",
+      "disposition": "OBSERVED",
+      "identity_ref": "O1",
+      "note": "CODEXSELF observation bound to T1_EXACT."
+    },
+    {
+      "stage": "UNDERSTOOD",
+      "disposition": "OBSERVED",
+      "identity_ref": "DMB-HEARTBEAT-V0-001",
+      "note": "Possible branches preserved before admission."
+    },
+    {
+      "stage": "ADMITTED",
+      "disposition": "ADMITTED",
+      "identity_ref": "AD1",
+      "note": "Only T1_EXACT is admitted for the local witness."
+    },
+    {
+      "stage": "AUTHORIZED",
+      "disposition": "AUTHORIZED",
+      "identity_ref": "AUTH1",
+      "note": "Authority is limited to local candidate witness files and validation."
+    },
+    {
+      "stage": "EFFECTED",
+      "disposition": "EFFECTED",
+      "identity_ref": "E1",
+      "note": "Effect is the bounded local witness, not an HTMLSELF launch."
+    }
+  ],
+  "reality_dispositions": {
+    "EXPRESSED": "ESTABLISHED",
+    "TRANSMITTED": "ESTABLISHED",
+    "OBSERVED": "OBSERVED",
+    "UNDERSTOOD": "OBSERVED",
+    "ADMITTED": "ADMITTED",
+    "AUTHORIZED": "AUTHORIZED",
+    "EFFECTED": "EFFECTED"
+  },
+  "ack": {
+    "ack_id": "ACK1",
+    "kind": "ACK",
+    "claim": "WHAT_I_RECEIVED",
+    "observed_matter_identity": "sha256:1445d5d7fd4f86d0ce6d4bd78881ad3ec7e3cddb294c98b4b82e9683bb42feb1",
+    "observed_variant_ref": "T1_EXACT",
+    "authority_disposition": "NONE",
+    "proof_disposition": "NOT_PROOF_OF_AUTHORITY"
+  },
+  "hollaback": {
+    "hollaback_id": "HB1",
+    "kind": "HOLLABACK",
+    "claim": "WHAT_HAPPENED_BECAUSE_OF_IT",
+    "effect_ref": "E1",
+    "effect_disposition": "EFFECTED",
+    "proof_disposition": "NOT_PROOF_OF_ACK"
+  },
+  "witness_refs": [
+    "tools/ourself-communicate.mjs",
+    "test/ourself-communicate.test.mjs"
+  ],
+  "relation_refs": [
+    "M1 -> O1",
+    "O1 -> ACK1",
+    "ACK1 -> AD1",
+    "AD1 -> AUTH1",
+    "AUTH1 -> E1",
+    "E1 -> HB1"
+  ],
+  "residue_refs": [
+    "canonical schema remains NOT_RATIFIED",
+    "network transport remains NOT_AUTHORIZED",
+    "HTMLSELF launch remains outside this effect"
+  ],
+  "reconciliation_status": "LOCAL_WITNESS_RECONSTRUCTABLE",
+  "non_collapse": [
+    "COMMUNICATED_MATTER != ADMITTED_MEANING",
+    "ADMITTED_MEANING != AUTHORIZED_EFFECT",
+    "ACK != HOLLABACK",
+    "HOLLABACK != PROOF_OF_ACK",
+    "ACK != AUTHORITY",
+    "AUTHORITY != SUCCESSFUL_EFFECT",
+    "POSSIBILITY != REALITY",
+    "TRANSPORT != PROOF"
+  ],
+  "authority_ceiling": {
+    "canonical_schema": "NOT_RATIFIED",
+    "structural_transport": "NOT_AUTHORIZED",
+    "network_transport": "NOT_AUTHORIZED",
+    "multi_node_exchange": "NOT_AUTHORIZED",
+    "aethernet_exchange": "NOT_AUTHORIZED",
+    "SELFgraph_promotion": "NOT_AUTHORIZED",
+    "runtime_mutation": "NOT_AUTHORIZED",
+    "autonomous_reconciliation": "FORBIDDEN",
+    "autonomous_mutation": "FORBIDDEN",
+    "commit_authority": "NOT_EXERCISED",
+    "push_authority": "NOT_EXERCISED"
+  }
+}

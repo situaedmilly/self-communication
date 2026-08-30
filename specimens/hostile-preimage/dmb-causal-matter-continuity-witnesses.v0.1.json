@@ -1,0 +1,316 @@
+{
+  "schema": "dmb-causal-matter-continuity-witnesses.v0.1-candidate",
+  "artifact_status": "STATIC_HOSTILE_WITNESS_FIXTURES_NOT_SCHEMA_NOT_PROOF",
+  "created_at": "2026-08-29T08:33:58Z",
+  "operation": "HOSTILE_REVERSE_COMPILE_CAUSAL_MATTER_CONTINUITY",
+  "candidate_under_attack": {
+    "name": "CausalMatterContinuity(T)",
+    "terms": [
+      "MatterEquivalenceWitness",
+      "BoundedCausalLink",
+      "TransmissionOccurrence != ObservationOccurrence",
+      "ReceiptDisposition != ProducedReturnRelation",
+      "RecontactableCustody",
+      "ContradictionPreservation",
+      "ParticipantDistinctness"
+    ]
+  },
+  "primitive_dispositions": [
+    {
+      "term": "MatterEquivalenceWitness",
+      "disposition": "NECESSARY",
+      "witness": "Without bounded equivalence/divergence decidability, sent and observed Matter remain compatible as exact, divergent, or unrelated."
+    },
+    {
+      "term": "BoundedCausalLink",
+      "disposition": "NECESSARY",
+      "witness": "Without parent/produced-by/response-to relation, HOLLABACK collapses into unrelated later Matter."
+    },
+    {
+      "term": "TransmissionOccurrence != ObservationOccurrence",
+      "disposition": "DERIVABLE_AS_SPECIES",
+      "witness": "Pair is required as an instance, but derives from CausalRoleNonCollapse."
+    },
+    {
+      "term": "ReceiptDisposition != ProducedReturnRelation",
+      "disposition": "DERIVABLE_AS_SPECIES",
+      "witness": "Pair is required as an instance, but derives from CausalRoleNonCollapse."
+    },
+    {
+      "term": "RecontactableCustody",
+      "disposition": "NECESSARY",
+      "witness": "Digest-only survival with missing bytes prevents renewed equivalence testing after source disappearance."
+    },
+    {
+      "term": "ContradictionPreservation",
+      "disposition": "NECESSARY_CONDITIONAL",
+      "witness": "If conflict entered the trajectory, overwrite prevents accountable reconstruction."
+    },
+    {
+      "term": "ParticipantDistinctness",
+      "disposition": "WRONG_ABSTRACTION",
+      "witness": "Role-bound attribution can prevent collapse without a durable participant identity ontology."
+    }
+  ],
+  "removal_witnesses": [
+    {
+      "removed": "MatterEquivalenceWitness",
+      "result": "UNDERDETERMINED",
+      "smallest_witness": "M_sent exists as label; M_observed exists as label; no equivalence/divergence witness survives.",
+      "failure": "Observed representation cannot be classified as exact, truncated, transformed, or unrelated."
+    },
+    {
+      "removed": "BoundedCausalLink",
+      "result": "NECESSARY",
+      "smallest_witness": "M1 exists; M2 exists; M2 occurs later; no parent/produced-by/response-to link survives.",
+      "failure": "Produced return collapses into unrelated later Matter."
+    },
+    {
+      "removed": "TransmissionOccurrence != ObservationOccurrence",
+      "result": "DERIVABLE_AS_SPECIES",
+      "smallest_witness": "One occurrence is allowed to satisfy both transmitted and observed.",
+      "survives_if": "CausalRoleNonCollapse preserves transmission and observation as distinct roles."
+    },
+    {
+      "removed": "ReceiptDisposition != ProducedReturnRelation",
+      "result": "DERIVABLE_AS_SPECIES",
+      "smallest_witness": "One return object is allowed to serve as both receipt claim and produced response.",
+      "survives_if": "CausalRoleNonCollapse preserves receipt disposition and produced return as distinct roles."
+    },
+    {
+      "removed": "RecontactableCustody",
+      "result": "NECESSARY",
+      "smallest_witness": "Digest remains; original bytes disappear; derived summary remains; later contradiction appears.",
+      "failure": "Original Matter cannot be reobserved, equivalence cannot be retested, and contradiction cannot be adjudicated against source bytes."
+    },
+    {
+      "removed": "ContradictionPreservation",
+      "result": "NECESSARY_CONDITIONAL",
+      "smallest_witness": "O1 asserts X; O2 asserts Y; X != Y; later witness W favors Y; conflict is overwritten.",
+      "failure": "Accountable history becomes retroactive coherence when conflict entered the trajectory."
+    },
+    {
+      "removed": "ParticipantDistinctness",
+      "result": "WRONG_ABSTRACTION",
+      "smallest_witness": "Emit and observe occurrences are distinct, Matter identities and causal links survive, but no durable participant identity object survives.",
+      "survives_as": "RoleBoundAttributionSufficiency"
+    }
+  ],
+  "derivation_relations": [
+    {
+      "from": "TransmissionOccurrence != ObservationOccurrence",
+      "to": "CausalRoleNonCollapse",
+      "condition": "roles are TRANSMISSION and OBSERVATION"
+    },
+    {
+      "from": "ReceiptDisposition != ProducedReturnRelation",
+      "to": "CausalRoleNonCollapse",
+      "condition": "roles are RECEIPT_DISPOSITION and PRODUCED_RETURN_RELATION"
+    },
+    {
+      "from": "ParticipantDistinctness",
+      "to": "RoleBoundAttributionSufficiency",
+      "condition": "role attribution prevents collapse without endpoint identity ontology"
+    },
+    {
+      "from": "MatterEquivalenceWitness",
+      "to": "BoundedMatterEquivalenceDecidability",
+      "condition": "bounded property requires exact/divergent/unresolved decidability"
+    },
+    {
+      "from": "RecontactableCustody",
+      "to": "RecontactableEvidenceAvailability",
+      "condition": "evidence must be recontactable without requiring a specific storage technology"
+    }
+  ],
+  "genus_species_findings": {
+    "OccurrenceDistinctness": {
+      "disposition": "UNDERDETERMINED_TOO_NARROW",
+      "reason": "It covers occurrence separation but not the disposition/relation split between receipt and produced return."
+    },
+    "CausalRoleNonCollapse": {
+      "disposition": "NEWLY_DISCOVERED_PRESSURE",
+      "derives": [
+        "TransmissionOccurrence != ObservationOccurrence",
+        "ReceiptDisposition != ProducedReturnRelation"
+      ],
+      "standing": "CANDIDATE_PRESSURE_ONLY"
+    }
+  },
+  "custody_findings": {
+    "minimum_continuity_property": "RecontactableEvidenceAvailability plus identity binding plus lineage sufficient for the bounded equivalence test",
+    "not_minimum_continuity_properties": [
+      "file exists",
+      "custody authority",
+      "specific storage technology",
+      "Git",
+      "database",
+      "append-only ledger"
+    ],
+    "digest_without_bytes": {
+      "possible_claims": [
+        "SOME_PRIOR_IDENTITY_CLAIM_EXISTED",
+        "SUMMARY_EXISTED",
+        "CONTRADICTION_APPEARED"
+      ],
+      "impossible_claims": [
+        "ORIGINAL_BYTES_REOBSERVED",
+        "SUMMARY_EQUIVALENT_TO_ORIGINAL",
+        "ACK_EXACT_REESTABLISHED",
+        "CONTRADICTION_ADJUDICATED_AGAINST_ORIGINAL_BYTES"
+      ]
+    }
+  },
+  "contradiction_findings": {
+    "case": "O1 asserts X; O2 asserts Y; X != Y; later witness W favors Y",
+    "A_preserve_all": [
+      "O1 occurred",
+      "O2 occurred",
+      "O1 conflicted with O2",
+      "W later favored Y",
+      "current standing can be Y without falsifying historical conflict"
+    ],
+    "B_overwrite_O1": [
+      "current representation says Y",
+      "O1-as-X audit is lost",
+      "conflict reconstruction is impossible"
+    ],
+    "C_only_current_Y": [
+      "current standing Y is visible",
+      "causal and epistemic history are unreconstructable"
+    ],
+    "pressure": [
+      "RESOLVED_CONTRADICTION != ERASED_CONTRADICTION",
+      "RECONSTRUCTION != RETROACTIVE_COHERENCE"
+    ]
+  },
+  "non_communication_corridor_matrix": [
+    {
+      "corridor": "L5_FILESYSTEM_MUTATION",
+      "result": "SATISFIES_IF_CUSTODIED",
+      "matter": "pre/post filesystem facts or payload evidence",
+      "occurrences": ["observe", "mutate", "observe-after"],
+      "must_survive": ["before/after evidence", "bounded causal link from mutation occurrence"]
+    },
+    {
+      "corridor": "L6_GIT_COMMIT_TREE_TRANSITION",
+      "result": "SATISFIES_IF_OBJECTS_RECONTACTABLE",
+      "matter": "commit/tree/blob identities and parent relation",
+      "occurrences": ["parent state", "commit creation", "child state"],
+      "must_survive": ["object availability", "parent/child link", "conflict visibility"]
+    },
+    {
+      "corridor": "L7_TEST_EXECUTION_RESULT",
+      "result": "SATISFIES_IF_RUN_SURFACE_CUSTODIED",
+      "matter": "command, source state, stdout/stderr, exit status",
+      "occurrences": ["run start", "result observation"],
+      "must_survive": ["source/run/output custody", "causal link from command to result"]
+    },
+    {
+      "corridor": "L8_CONTROL_REFUSAL_NO_TRANSFORMATION",
+      "result": "SATISFIES",
+      "matter": "input Matter and refusal Matter",
+      "occurrences": ["request observed", "refusal produced"],
+      "must_survive": ["refusal relation", "absence of transformation as bounded effect disposition"]
+    },
+    {
+      "corridor": "L9_PROCESS_CRASH_BEFORE_RETURN",
+      "result": "UNDERDETERMINED_WITHOUT_CRASH_WITNESS",
+      "matter": "input Matter, partial runtime state, crash evidence",
+      "occurrences": ["launch", "partial execution", "crash"],
+      "must_survive": ["crash witness", "bounded no-return evidence"]
+    },
+    {
+      "corridor": "L10_FOREIGN_STATE_DISAPPEARS",
+      "result": "SATISFIES_IF_OBSERVATION_CUSTODIED",
+      "matter": "observed foreign state representation",
+      "occurrences": ["foreign observation", "source disappearance"],
+      "must_survive": ["original observation custody", "source disappearance not rewritten as source never existed"]
+    }
+  ],
+  "concurrency_witness": {
+    "events": [
+      {
+        "id": "E1",
+        "clock_time": "2026-08-29T08:33:58Z"
+      },
+      {
+        "id": "E2",
+        "clock_time": "2026-08-29T08:33:58Z"
+      }
+    ],
+    "log_order": ["E1", "E2"],
+    "causal_link": "NONE_ESTABLISHED",
+    "allowed_claim": "LOG_RECORDED_E1_BEFORE_E2",
+    "forbidden_claim": "E1_CAUSED_E2"
+  },
+  "unauthorized_trajectory_witness": {
+    "trajectory": ["M1_TRANSMITTED", "O1_OBSERVED_M1", "E1_EXECUTED_WITHOUT_AUTHORITY", "F1_EFFECT_OCCURRED", "H1_RETURNED"],
+    "continuity_result": "CAUSAL_TRAJECTORY_RECONSTRUCTABLE",
+    "lawfulness_result": "ACTION_UNAUTHORIZED",
+    "authority_disposition": "NOT_NECESSARY_INSIDE_T"
+  },
+  "rejected_primitives": [
+    "TransmissionOccurrenceObservationPair_AS_PRIMITIVE_NAME",
+    "ReceiptHolllabackPair_AS_PRIMITIVE_NAME",
+    "ParticipantDistinctness_AS_IDENTITY_ONTOLOGY",
+    "EndpointIdentity_AS_SELFIdentity",
+    "ClockTime",
+    "LamportClock",
+    "FileExists_AS_CUSTODY",
+    "CustodyAuthority_INSIDE_CONTINUITY"
+  ],
+  "surviving_primitives": [
+    "BoundedMatterEquivalenceDecidability",
+    "BoundedCausalLink",
+    "CausalRoleNonCollapse",
+    "RecontactableEvidenceAvailability",
+    "ConflictResiduePreservation",
+    "RoleBoundAttributionSufficiency"
+  ],
+  "newly_discovered_pressures": [
+    "CausalRoleNonCollapse",
+    "RoleBoundAttributionSufficiency",
+    "RecontactableEvidenceAvailability",
+    "ConflictResiduePreservation",
+    "PossibilityResidue",
+    "CustodyAuthority != ContinuityCustody",
+    "Record != Occurrence"
+  ],
+  "contradictions": [
+    "T claimed ParticipantDistinctness, but L4 continuity can survive participant death if role-bound occurrence attribution survives.",
+    "T named two communication-specific non-collapse pairs, but non-communication corridors require a genus capable of preserving other causal role distinctions."
+  ],
+  "residue": [
+    "ProtocolCompetence remains outside T.",
+    "Authority remains outside T.",
+    "ApplicableControl remains outside T.",
+    "Semantic equivalence beyond byte identity remains unresolved.",
+    "PossibilityResidue remains candidate-only.",
+    "Conflict preservation may be a facet of epistemic history, but cannot be removed from accountable continuity when conflict entered the trajectory."
+  ],
+  "smallest_surviving_t": [
+    "BoundedMatterEquivalenceDecidability",
+    "BoundedCausalLink",
+    "CausalRoleNonCollapse",
+    "RecontactableEvidenceAvailability",
+    "ConflictResiduePreservation",
+    "RoleBoundAttributionSufficiency"
+  ],
+  "theorem_disposition": "CAUSAL_MATTER_CONTINUITY_RETAINED_AS_RENAMED_ATTACK_TARGET_T_INPUT_REDUCED_TO_T2_NOT_RATIFIED",
+  "authority_ceiling": {
+    "implementation": "NOT_AUTHORIZED",
+    "canonical_schema": "NOT_RATIFIED",
+    "protocol_promotion": "NOT_GRANTED",
+    "boot_projection_spread": "NOT_PERFORMED",
+    "SELF_membership_claim": "FORBIDDEN",
+    "commit_authority": "NOT_EXERCISED",
+    "push_authority": "NOT_EXERCISED"
+  },
+  "next_founder_decision_surface": [
+    "CausalRoleNonCollapse as the genus replacing communication-specific pairs.",
+    "RecontactableEvidenceAvailability as the minimum custody requirement.",
+    "ConflictResiduePreservation / PossibilityResidue boundary.",
+    "GovernedParticipation as the separate lawfulness layer."
+  ]
+}

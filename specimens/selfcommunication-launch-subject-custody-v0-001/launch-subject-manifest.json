@@ -1,0 +1,556 @@
+{
+  "current_launch_standing": "NO_LAUNCH",
+  "custody_election": {
+    "c1": "GIT_BASED_CUSTODY_FOR_REPOSITORY_NATIVE_MATTER",
+    "c2": "CONTENT_ADDRESSED_CUSTODY_FOR_BOUNDED_EXTERNAL_EVIDENCE",
+    "c3": "DETERMINISTIC_LAUNCH_SUBJECT_MANIFEST",
+    "c4": "INSELFACTION_CUSTODY_BOUNDARY_RECEIPT"
+  },
+  "entries": [
+    {
+      "content_identity": "sha256:e263d1139b365576249d28b2001c039ba0990315e9b1d8fcd2c9f7441ef32c12",
+      "custody_ref": "git:blob:84e236f8f36d89aa63d9f89b746306ffdaf71b1e",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "LAUNCH_AUTHORITY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:AGENTS.md",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "APPLICABLE_LAW_RECONTACT"
+      ],
+      "role": "CODEXSELF_BOOT_ORIENTATION",
+      "subject_entry_id": "C1:AGENTS.md",
+      "supports": [
+        "CODEXSELF_BOOT_NON_COLLAPSE_LAW"
+      ]
+    },
+    {
+      "content_identity": "sha256:66b8fba4d58442db885784aa5b88f55b867494b571e9dc719157a3618eb3df8b",
+      "custody_ref": "git:blob:9974abe7079d1a4d5733671f781b42525d29acd4",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "CLAUDE_ENDPOINT_OBSERVATION"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:CLAUDE.md",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "APPLICABLE_LAW_RECONTACT",
+        "CLAUDESELF_BOUNDARY_RECONTACT"
+      ],
+      "role": "CLAUDESELF_BOOT_ORIENTATION",
+      "subject_entry_id": "C1:CLAUDE.md",
+      "supports": [
+        "CLAUDESELF_BOOT_NON_COLLAPSE_LAW"
+      ]
+    },
+    {
+      "content_identity": "sha256:9ff4fdb09fd64f9aebcaef50e00de65ca569f74e9230e7c034d3bb4a88a7e215",
+      "custody_ref": "git:blob:59b7a649361569e45afea5d9722b23c59a88e05d",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "T2_LAUNCH_SUBJECT_BINDING",
+        "T2_OBSERVATION_OCCURRENCE"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:doctrine/DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-v0.1-CANDIDATE.md",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "T2_REBIND_ATTEMPT"
+      ],
+      "role": "T2_CANDIDATE_PREDECESSOR_SOURCE",
+      "subject_entry_id": "C1:doctrine/DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-v0.1-CANDIDATE.md",
+      "supports": [
+        "T2_CANDIDATE_REDUCTION"
+      ]
+    },
+    {
+      "content_identity": "sha256:ff4a45fdcc69dabf335643d968840abd57872d26a2b1bf66db7d15fa929cc5ba",
+      "custody_ref": "git:blob:ed4b1de0db950ed4d95f39ee42ba202afb2b3ede",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "RATIFICATION",
+        "LAUNCH_AUTHORITY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:doctrine/OURSELF-BOOTSTRAP-SELFCOMMUNICATION-CONTRACT-v0.1-CANDIDATE.md",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "APPLICABLE_LAW_RECONTACT"
+      ],
+      "role": "BOOTSTRAP_CONTRACT_CANDIDATE",
+      "subject_entry_id": "C1:doctrine/OURSELF-BOOTSTRAP-SELFCOMMUNICATION-CONTRACT-v0.1-CANDIDATE.md",
+      "supports": [
+        "OBSERVATION_ESTABLISHMENT_NON_COLLAPSE",
+        "AUTHORITY_CEILING"
+      ]
+    },
+    {
+      "content_identity": "sha256:8f94788200295e76aef549641ab06e3bbf9b7514852eadf6acd0cc6eec995c6f",
+      "custody_ref": "git:blob:bbd10eb7b2b2f054c81a53acf37c396e82d303cb",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "NETWORK_TRANSPORT_AUTHORITY",
+        "CANONICAL_SCHEMA_PROMOTION"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:doctrine/OURSELF-COMMUNICATION-ECOSYSTEM-v0.1-CANDIDATE.md",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LAUNCH_SUBJECT_SEMANTIC_PREIMAGE"
+      ],
+      "role": "SELFCOMMUNICATION_CANDIDATE_DOCTRINE",
+      "subject_entry_id": "C1:doctrine/OURSELF-COMMUNICATION-ECOSYSTEM-v0.1-CANDIDATE.md",
+      "supports": [
+        "COMMUNICATED_MATTER_ADMITTED_MEANING_NON_COLLAPSE",
+        "CUSTODY_PLANE"
+      ]
+    },
+    {
+      "content_identity": "sha256:0333b4dbf03161f8643b9b89f60588584db15df32e8a52e49f31c38c4aacb701",
+      "custody_ref": "git:blob:ffc3f1b16d330ece21a48abcca7f5acc778587f2",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "T2_LOAD_BEARING_PREDECESSOR_ESTABLISHMENT"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:inselfactions/ISA-20260829-DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-001.json",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "T2_REBIND_ATTEMPT"
+      ],
+      "role": "T2_CANDIDATE_PREDECESSOR_RECEIPT",
+      "subject_entry_id": "C1:inselfactions/ISA-20260829-DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-001.json",
+      "supports": [
+        "T_INPUT_REDUCED_TO_T2_CANDIDATE_PRESSURE"
+      ]
+    },
+    {
+      "content_identity": "sha256:bcc5b838d8062b1405f08b069a5a8d5773f81de53175855ac45c87b7a6d31084",
+      "custody_ref": "git:blob:a4bae0ee74162f60ad434802e820d1de835df843",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "COMMIT_AUTHORITY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:package.json",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "ADJUDICATION_REPRODUCTION",
+        "VALIDATION_REPRODUCTION"
+      ],
+      "role": "LOCAL_VALIDATION_COMMAND_SURFACE",
+      "subject_entry_id": "C1:package.json",
+      "supports": [
+        "NODE_TEST_VALIDATION_ENTRYPOINTS"
+      ]
+    },
+    {
+      "content_identity": "sha256:e3910992cadc5dd13e0288a8c3f00980c2fac8681288c0c4eac6d86650b73e53",
+      "custody_ref": "git:blob:333b5519e5d28b15714fcefbd6b8e6f5d920c96b",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "LAUNCH_AUTHORITY",
+        "CANONICAL_SCHEMA_PROMOTION"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:README.md",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "BOOTSTRAP_RECONTACT",
+        "VALIDATION_REPRODUCTION"
+      ],
+      "role": "BOOTSTRAP_PROJECTION_VALIDATION_SURFACE",
+      "subject_entry_id": "C1:README.md",
+      "supports": [
+        "CONTROLLING_REPOSITORY_BOOT_POINTERS"
+      ]
+    },
+    {
+      "content_identity": "sha256:a56c8caa027832a7e0aa5e25ce071912781a5d57a7a6a26ae292d7ec6420222c",
+      "custody_ref": "git:blob:52528f7501ec29629c22a61cef69ab362c8c09a9",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "CANONICAL_SCHEMA_PROMOTION"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:schemas/selfcommunication.event.v0.1-candidate.schema.json",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LOCAL_COMMUNICATION_WITNESS_REPRODUCTION"
+      ],
+      "role": "CANDIDATE_EVENT_SCHEMA",
+      "subject_entry_id": "C1:schemas/selfcommunication.event.v0.1-candidate.schema.json",
+      "supports": [
+        "SELFCommunicationEvent_FIELD_CONTRACT"
+      ]
+    },
+    {
+      "content_identity": "sha256:13564ea5a1a2dc6a0283bbc3f328867c5257cea770ef7f50ba75d7d63bd0fb9e",
+      "custody_ref": "git:blob:a8025fa328a9dcf53dff2c651859b91741aa1021",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "HTMLSELF_LAUNCH"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:specimens/heartbeat-v0.selfcommunication.json",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LOCAL_COMMUNICATION_WITNESS_REPRODUCTION"
+      ],
+      "role": "LOCAL_COMMUNICATION_HEARTBEAT_SPECIMEN",
+      "subject_entry_id": "C1:specimens/heartbeat-v0.selfcommunication.json",
+      "supports": [
+        "ACK_HOLLABACK_NON_COLLAPSE_FIXTURE"
+      ]
+    },
+    {
+      "content_identity": "sha256:eda4a97a904e0a853c81bc46a414ff0cab033711502c0bf3093d2dbedb294c02",
+      "custody_ref": "git:blob:a5e3d036c2f3410340e06728950f7dbc8ea5e45f",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "T2_LAUNCH_SUBJECT_BINDING"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:specimens/hostile-preimage/dmb-causal-matter-continuity-witnesses.v0.1.json",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "T2_REBIND_ATTEMPT"
+      ],
+      "role": "T2_CANDIDATE_STATIC_WITNESS_FIXTURE",
+      "subject_entry_id": "C1:specimens/hostile-preimage/dmb-causal-matter-continuity-witnesses.v0.1.json",
+      "supports": [
+        "CAUSAL_MATTER_CONTINUITY_ATTACK_FIXTURES"
+      ]
+    },
+    {
+      "content_identity": "sha256:2e245368365e04c4c402bbeba9c149df1b6f7efb4d34ebb0105b909e8b4689ac",
+      "custody_ref": "git:blob:d1b77d0552e4ca9ecce2b0dd596bbf0d5342a586",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "FREEZE",
+        "LAUNCH"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:specimens/selfcommunication-launch-readiness-001.report.json",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "ADJUDICATION_REPRODUCTION",
+        "GATE_STANDING_RECONTACT"
+      ],
+      "role": "DERIVED_LAUNCH_READINESS_RECEIPT",
+      "subject_entry_id": "C1:specimens/selfcommunication-launch-readiness-001.report.json",
+      "supports": [
+        "NO_LAUNCH_CURRENT_STANDING",
+        "GATE_IDENTITY_MAP",
+        "BLOCKER_SEMANTICS_TYPED"
+      ]
+    },
+    {
+      "content_identity": "sha256:29f26af5d3da158140c94460fb0961221100a58b57e018c75ef8e517f7fdfbee",
+      "custody_ref": "git:blob:920871c29fe78b1426f354708da7919b4c6b4ad3",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "LAUNCH_AUTHORITY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:test/bootstrap-contract.test.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "VALIDATION_REPRODUCTION"
+      ],
+      "role": "BOOTSTRAP_PROJECTION_TEST",
+      "subject_entry_id": "C1:test/bootstrap-contract.test.mjs",
+      "supports": [
+        "BOOTSTRAP_VERIFIER_NEGATIVE_CONTROLS"
+      ]
+    },
+    {
+      "content_identity": "sha256:5123416c69b7d3534b96c5f0594a2d66fa3bb961792875ec519412e417274426",
+      "custody_ref": "git:blob:d482cec5dbb3e6e7308ee72b85a63490499e0316",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "CANONICAL_SCHEMA_PROMOTION"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:test/ourself-communicate.test.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "VALIDATION_REPRODUCTION"
+      ],
+      "role": "COMMUNICATION_WITNESS_TEST",
+      "subject_entry_id": "C1:test/ourself-communicate.test.mjs",
+      "supports": [
+        "COMMUNICATION_NON_COLLAPSE_NEGATIVE_CONTROLS"
+      ]
+    },
+    {
+      "content_identity": "sha256:43382c240acda48dfffeb747d4e5202369e3e83a1d3e4acf6d790801655b2c1e",
+      "custody_ref": "git:blob:a6e28c8b3d8011540226f0e16949fb5293fd012a",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "R4_EXECUTION"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:test/ourself-selfcommunication-launch-readiness.test.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "VALIDATION_REPRODUCTION"
+      ],
+      "role": "LAUNCH_READINESS_COMPILER_TESTS",
+      "subject_entry_id": "C1:test/ourself-selfcommunication-launch-readiness.test.mjs",
+      "supports": [
+        "BLOCKER_SEMANTICS_FIXTURES",
+        "LAUNCH_DECISION_SENSITIVITY"
+      ]
+    },
+    {
+      "content_identity": "sha256:488e3a1f11b6328a664353dd530d93d15796cc1012da0e78ac0d73c42d379fe8",
+      "custody_ref": "git:blob:8f7ab252f84908b358163c99f0169675a91c4c2b",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "DURABLE_GIT_REACHABILITY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:test/ourself-selfcommunication-launch-subject-custody.test.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "VALIDATION_REPRODUCTION"
+      ],
+      "role": "CUSTODY_FORMATION_TESTS",
+      "subject_entry_id": "C1:test/ourself-selfcommunication-launch-subject-custody.test.mjs",
+      "supports": [
+        "CONTENT_ADDRESSED_EVIDENCE_AND_MANIFEST_DETERMINISM"
+      ]
+    },
+    {
+      "content_identity": "sha256:5f9cecbd2fa03c96b6246a8200e2b6bfb511959566f1bd9365061506d6f824ea",
+      "custody_ref": "git:blob:afc6bf6b82a61d4bb2914bb67e9c7a196a342a75",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "CLAUDE_WAKE_AUTHORITY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/ourself-commline-observation-gap.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LAUNCH_COMPILER_EXECUTION",
+        "ADJUDICATION_REPRODUCTION"
+      ],
+      "role": "COMMLINE_OBSERVATION_GAP_PREDECESSOR",
+      "subject_entry_id": "C1:tools/ourself-commline-observation-gap.mjs",
+      "supports": [
+        "PATIENT_ZERO_BOUNDARY",
+        "OBSERVATION_GAP_DERIVATION"
+      ]
+    },
+    {
+      "content_identity": "sha256:7cacc79e3a136a2a7fe538f8ff2f4260a11d34d010c4206f9cd668aa7f4c5e57",
+      "custody_ref": "git:blob:a64041b6310b131198d255a568340e20bdfbb83d",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "NETWORK_TRANSPORT"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/ourself-communicate.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LOCAL_COMMUNICATION_WITNESS_REPRODUCTION"
+      ],
+      "role": "LOCAL_COMMUNICATION_VALIDATOR",
+      "subject_entry_id": "C1:tools/ourself-communicate.mjs",
+      "supports": [
+        "HEARTBEAT_SPECIMEN_VALIDATION"
+      ]
+    },
+    {
+      "content_identity": "sha256:5e0e882dbf5a498b02e98c9a82f16e2ae0b7471a7261e3ad3d8c966a399870a3",
+      "custody_ref": "git:blob:d03f5b3568f9c43b9391c85243aebd5335a945cd",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "CUSTODY_AUTHORITY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/ourself-communication-matter.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LAUNCH_COMPILER_EXECUTION",
+        "ADJUDICATION_REPRODUCTION"
+      ],
+      "role": "MATTER_IDENTITY_AND_DIGEST_HELPER",
+      "subject_entry_id": "C1:tools/ourself-communication-matter.mjs",
+      "supports": [
+        "DETERMINISTIC_OBJECT_DIGESTS"
+      ]
+    },
+    {
+      "content_identity": "sha256:fb3bee4a74de67a9a0ed3cce653150923b5487c118e7ded3e0a8f4d2ce9355ac",
+      "custody_ref": "git:blob:4ab94b989ef17302c5c4083d05bdec7d32853f73",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "ENDPOINT_IDENTITY_ONTOLOGY"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/ourself-observation-authorship.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LAUNCH_COMPILER_EXECUTION",
+        "ADJUDICATION_REPRODUCTION"
+      ],
+      "role": "OBSERVATION_AUTHORSHIP_PREDECESSOR",
+      "subject_entry_id": "C1:tools/ourself-observation-authorship.mjs",
+      "supports": [
+        "AUTHORSHIP_GATE_PREIMAGE"
+      ]
+    },
+    {
+      "content_identity": "sha256:da504fa335821a4d5975e31ee9126c54b2595d92c68818b3f09456d7120ec123",
+      "custody_ref": "git:blob:df842269689cacec718fa117dd6319c2a97a70b7",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "LAUNCH_AUTHORITY",
+        "R4_EXECUTION"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/ourself-selfcommunication-launch-readiness.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LAUNCH_ADJUDICATION_REPRODUCTION"
+      ],
+      "role": "LAUNCH_READINESS_COMPILER",
+      "subject_entry_id": "C1:tools/ourself-selfcommunication-launch-readiness.mjs",
+      "supports": [
+        "TYPED_GATE_SEMANTICS",
+        "G5_INSTRUMENTATION",
+        "T2_PREDECESSOR_GATE",
+        "G6_RECOMPUTATION"
+      ]
+    },
+    {
+      "content_identity": "sha256:19f63f5150850e9920fbdd7086f72a12699e8838363730bb30b61ca52247b968",
+      "custody_ref": "git:blob:71e200088d12653c0a4d8af28c4e9dba20c4ad69",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "COMMIT_AUTHORITY",
+        "FREEZE"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "CUSTODY_REPRODUCTION"
+      ],
+      "role": "CUSTODY_FORMATION_TOOL",
+      "subject_entry_id": "C1:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+      "supports": [
+        "C1_C2_C3_C4_MECHANICAL_FORMATION"
+      ]
+    },
+    {
+      "content_identity": "sha256:2004c3c7cd61fd5269413a78a5cc91cad096dcd5bc72a0ee7dff313929021bb1",
+      "custody_ref": "git:blob:cf2edc836fcd08f8e36549930f3d7afa7ed8cc80",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "CURRENT_LAUNCH_OBSERVED_STANDING"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/ourself-transport-independent-roundtrip.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "LAUNCH_COMPILER_IMPORT_CLOSURE"
+      ],
+      "role": "TRANSPORT_INDEPENDENCE_PREDECESSOR",
+      "subject_entry_id": "C1:tools/ourself-transport-independent-roundtrip.mjs",
+      "supports": [
+        "TRANSPORT_PROOF_NON_COLLAPSE_FIXTURE"
+      ]
+    },
+    {
+      "content_identity": "sha256:718420203f1ba4710d01ce78bc1e5c4796d9ff95ecef014940d1fb211c0daf40",
+      "custody_ref": "git:blob:cd2a03a5ba46745df448f277ad9ea0fbf38d1193",
+      "custody_species": "GIT_BLOB_OBJECT_CUSTODY_PENDING_DURABLE_ROOT",
+      "does_not_support": [
+        "SEMANTIC_STANDING_PROOF"
+      ],
+      "independently_recontactable": false,
+      "load_bearing": true,
+      "locator": "git-worktree:tools/verify-bootstrap-contract.mjs",
+      "matter_species": "REPOSITORY_NATIVE_MATTER",
+      "required_for": [
+        "BOOTSTRAP_VALIDATION_REPRODUCTION"
+      ],
+      "role": "BOOTSTRAP_PROJECTION_VERIFIER",
+      "subject_entry_id": "C1:tools/verify-bootstrap-contract.mjs",
+      "supports": [
+        "AGENTS_CLAUDE_BOOT_POINTER_CHECK"
+      ]
+    },
+    {
+      "content_identity": "sha256:af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738",
+      "custody_ref": "content-addressed-local-file:specimens/selfcommunication-launch-subject-custody-v0-001/external-session-context-evidence.af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738.json#sha256:af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738",
+      "custody_species": "CONTENT_ADDRESSED_LOCAL_FILE",
+      "does_not_support": [
+        "OURSELF_OBSERVATION",
+        "CLAUDE_GOCHECKIT_OCCURRENCE",
+        "T2_OBSERVATION_OCCURRENCE",
+        "LAUNCH_AUTHORITY",
+        "R4_RECEIPT"
+      ],
+      "independently_recontactable": true,
+      "load_bearing": true,
+      "locator": "local-file:specimens/selfcommunication-launch-subject-custody-v0-001/external-session-context-evidence.af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738.json",
+      "matter_species": "BOUNDED_EXTERNAL_EVIDENCE",
+      "required_for": [
+        "SESSION_FILE_UNION_CONTEXT_LAUNDERING_ATTACK",
+        "T1_PATIENT_ZERO_CONTEXT_CENSUS"
+      ],
+      "role": "BOUNDED_EXTERNAL_SESSION_CONTEXT_PREIMAGE",
+      "subject_entry_id": "C2:EXTERNAL_SESSION_CONTEXT",
+      "supports": [
+        "SESSION_FILE_UNION_CONTEXT_LAUNDERING_RISK_CENSUS",
+        "PATIENT_ZERO_MARKER_CONTEXT_PRESENT"
+      ]
+    }
+  ],
+  "every_required_manifest_member_recontactable": false,
+  "identity_law": {
+    "content_identity_not_custody": true,
+    "implementation_not_launch_subject": true,
+    "manifest_identity_excludes_incidental_wall_clock_metadata": true,
+    "manifest_identity_not_launch_subject_identity": true
+  },
+  "launch_decision": "NO_LAUNCH",
+  "launch_readiness_report_identity": "sha256:3ca2a7af861646fb64aa607110d792c07f8e81ad1a1caf278a2063ccf4f04839",
+  "launch_subject_custody": "NOT_ESTABLISHED",
+  "launch_subject_identity": "NOT_ESTABLISHED",
+  "launch_subject_manifest_identity": "sha256:258f1b10b4179433e7ff5274f3a7949d96cee24f53c060a820d2c078e56d626f",
+  "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+  "object_type": "LAUNCH_SUBJECT_MANIFEST",
+  "required_theorem": "ResolveCustody(E.custody_ref) -> exact E.content_identity for every load-bearing manifest entry",
+  "schema": "ourself.selfcommunication-launch-subject-custody.v0.1"
+}

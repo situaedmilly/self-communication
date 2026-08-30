@@ -1,0 +1,30 @@
+{
+  "name": "self-communication",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify:bootstrap": "node tools/verify-bootstrap-contract.mjs",
+    "validate:heartbeat": "node tools/ourself-communicate.mjs validate specimens/heartbeat-v0.selfcommunication.json",
+    "peer:heartbeat": "node tools/a2a-peer-heartbeat.mjs --live",
+    "gptself:heartbeat": "node tools/gptself-heartbeat.mjs --live",
+    "morph:heartbeat": "node tools/ourself-morph-heartbeat.mjs --live",
+    "living:runtime": "node tools/ourself-living-runtime.mjs --live",
+    "runtime:jurisdiction": "node tools/ourself-runtime-jurisdiction.mjs --from specimens/living-ourself-a2a-runtime-001.report.json",
+    "runtime:resurrection": "node tools/ourself-runtime-resurrection.mjs --from specimens/living-ourself-a2a-runtime-001.report.json",
+    "manirun:bounded": "node tools/ourself-bounded-manirun.mjs --live --journal specimens/bounded-living-manirun-001.journal.jsonl --out specimens/bounded-living-manirun-001.report.json",
+    "operating:runtime": "node tools/ourself-operating-runtime.mjs --live --root specimens/operating-runtime-v0-001 --out specimens/ourself-bounded-operating-runtime-v0-001.report.json",
+    "reality:runtime": "node tools/ourself-available-reality-runtime.mjs --live --root specimens/available-reality-runtime-v0-001 --out specimens/ourself-available-reality-runtime-v0-001.report.json",
+    "field:runtime": "node tools/ourself-living-reality-field.mjs --live --root specimens/living-reality-field-v0-002 --out specimens/ourself-living-reality-field-v0-002.report.json",
+    "communication:foundation": "node tools/ourself-communication-matter.mjs --out specimens/communication-matter-foundation-001.report.json",
+    "communication:live": "node tools/ourself-live-communication-custody.mjs --out specimens/live-communication-custody-001.report.json",
+    "communication:transport": "node tools/ourself-transport-independent-roundtrip.mjs --out specimens/transport-independent-roundtrip-001.report.json",
+    "communication:commline": "node tools/ourself-commline-observation-gap.mjs --out specimens/commline-observation-gap-001.report.json",
+    "communication:authorship": "node tools/ourself-observation-authorship.mjs --out specimens/observation-authorship-asymmetry-001.report.json",
+    "communication:launch-readiness": "node tools/ourself-selfcommunication-launch-readiness.mjs --out specimens/selfcommunication-launch-readiness-001.report.json --claude-session-file /Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+    "communication:launch-subject-custody": "node tools/ourself-selfcommunication-launch-subject-custody.mjs",
+    "communication:current-gpt": "node tools/ourself-current-gptself-roundtrip.mjs",
+    "semantic:projection": "node tools/ourself-semantic-projection.mjs",
+    "test": "node --test"
+  }
+}

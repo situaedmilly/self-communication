@@ -1,0 +1,59 @@
+{
+  "does_not_support": [
+    "OURSELF_OBSERVATION",
+    "CLAUDE_GOCHECKIT_OCCURRENCE",
+    "T2_OBSERVATION_OCCURRENCE",
+    "LAUNCH_AUTHORITY",
+    "R4_RECEIPT"
+  ],
+  "evidence_id": "EXTERNAL_SESSION_CONTEXT_219be5a6_5464975482_ROUTE_ADJUDICATION_PROBE_V0",
+  "evidence_identity": "sha256:5ff6527450dc71a618fe3b3b96f18de33116f6992b4894c82a428eb653eaa737",
+  "interpretation_context": {
+    "context_present_not_authority": true,
+    "context_present_not_observation": true,
+    "gate": "g7_SESSION_FILE_UNION_CONTEXT_LAUNDERING_ATTACK",
+    "launch_target": "SELFCOMMUNICATION_LIVE_V0"
+  },
+  "marker_findings": [
+    {
+      "count": 160,
+      "first_index": 353393,
+      "marker": "5464975482",
+      "present": true
+    },
+    {
+      "count": 39,
+      "first_index": 361452,
+      "marker": "ROUTE_ADJUDICATION_PROBE",
+      "present": true
+    }
+  ],
+  "object_type": "BOUNDED_EXTERNAL_SESSION_CONTEXT_EVIDENCE",
+  "provenance": {
+    "external_session_context_not_ourself_observation": true,
+    "extracted_by": "CODEXSELF",
+    "extraction_not_promotion": true,
+    "local_recontact_path": "/Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+    "source_species": "EXTERNAL_CLAUDE_SESSION_FILE"
+  },
+  "role": "BOUNDED_EXTERNAL_SESSION_CONTEXT_PREIMAGE",
+  "schema": "ourself.selfcommunication-launch-subject-custody.v0.1",
+  "source_byte_count": 2892275,
+  "source_identity": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0",
+  "source_locator": "/Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+  "source_range_or_exact_extraction_rule": {
+    "encoding": "utf8",
+    "extraction_species": "MARKER_PRESENCE_CENSUS",
+    "markers": [
+      "5464975482",
+      "ROUTE_ADJUDICATION_PROBE"
+    ],
+    "operation": "full source decoded as utf8; record marker present/count/first_index only",
+    "raw_source_bytes_copied": false
+  },
+  "summary_not_source_preimage": true,
+  "supports": [
+    "SESSION_FILE_UNION_CONTEXT_LAUNDERING_RISK_CENSUS",
+    "PATIENT_ZERO_MARKER_CONTEXT_PRESENT"
+  ]
+}

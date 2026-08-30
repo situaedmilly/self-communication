@@ -1,0 +1,108 @@
+{
+  "inselfaction_id": "ISA-20260829-DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-001",
+  "schema": "inselfaction.v0.1",
+  "emitted_at": "2026-08-29T08:33:58Z",
+  "session": "CODEXSELF",
+  "immutable": true,
+  "supersedes": null,
+  "relates_to": "DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-v0.1-CANDIDATE",
+  "operation": {
+    "title": "DARKMATTERBOX hostile reverse compile pass over CausalMatterContinuity(T)",
+    "authority_exercised": "MILASOPHAHR signal: DARKMATTERBOX CONTINUES; attack T, do not protect it, create hostile doctrine/specimen witnesses only, no implementation, no ratification, no AGENTS/CLAUDE mutation, no commit, no push.",
+    "implementation_scope": "Doctrine-only attack report, static witness fixture, and append-only action record inside self-communication.",
+    "not_done": [
+      "No implementation",
+      "No new validator",
+      "No new schema",
+      "No AGENTS.md mutation",
+      "No CLAUDE.md mutation",
+      "No boot projection spread",
+      "No protocol promotion",
+      "No canonical schema promotion",
+      "No SELF membership claim",
+      "No SELFgraph write",
+      "No network transport",
+      "No interactions/latest.json pointer rewrite",
+      "No commit",
+      "No push"
+    ]
+  },
+  "headline": {
+    "finding": "T_INPUT REDUCED TO T2 AS CANDIDATE PRESSURE",
+    "statement": "CausalMatterContinuity remains a renamed attack target, but the input T was reduced: communication-specific pairs derive from CausalRoleNonCollapse, ParticipantDistinctness is replaced by RoleBoundAttributionSufficiency, and custody/contradiction pressures survive.",
+    "report": "doctrine/DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-v0.1-CANDIDATE.md",
+    "fixtures": "specimens/hostile-preimage/dmb-causal-matter-continuity-witnesses.v0.1.json"
+  },
+  "primitive_dispositions": {
+    "MatterEquivalenceWitness": "NECESSARY",
+    "BoundedCausalLink": "NECESSARY",
+    "TransmissionOccurrence_not_ObservationOccurrence": "DERIVABLE_AS_SPECIES",
+    "ReceiptDisposition_not_ProducedReturnRelation": "DERIVABLE_AS_SPECIES",
+    "RecontactableCustody": "NECESSARY",
+    "ContradictionPreservation": "NECESSARY_CONDITIONAL",
+    "ParticipantDistinctness": "WRONG_ABSTRACTION"
+  },
+  "smallest_surviving_t": [
+    "BoundedMatterEquivalenceDecidability",
+    "BoundedCausalLink",
+    "CausalRoleNonCollapse",
+    "RecontactableEvidenceAvailability",
+    "ConflictResiduePreservation",
+    "RoleBoundAttributionSufficiency"
+  ],
+  "rejected_primitives": [
+    "TransmissionOccurrenceObservationPair_AS_PRIMITIVE_NAME",
+    "ReceiptHolllabackPair_AS_PRIMITIVE_NAME",
+    "ParticipantDistinctness_AS_IDENTITY_ONTOLOGY",
+    "EndpointIdentity_AS_SELFIdentity",
+    "ClockTime",
+    "LamportClock",
+    "FileExists_AS_CUSTODY",
+    "CustodyAuthority_INSIDE_CONTINUITY"
+  ],
+  "newly_discovered_pressures": [
+    "CausalRoleNonCollapse",
+    "RoleBoundAttributionSufficiency",
+    "RecontactableEvidenceAvailability",
+    "ConflictResiduePreservation",
+    "PossibilityResidue",
+    "CustodyAuthority != ContinuityCustody",
+    "Record != Occurrence"
+  ],
+  "theorem_disposition": {
+    "CausalMatterContinuity": "RETAINED_AS_RENAMED_ATTACK_TARGET",
+    "T_INPUT": "REDUCED_TO_T2",
+    "standing": "NOT_RATIFIED"
+  },
+  "validation": {
+    "truth_ceiling": "Validation can prove artifact presence, JSON syntax, existing lane checks, and diff hygiene. It cannot prove CausalMatterContinuity true.",
+    "expected_commands": [
+      "node -e \"for (const file of ['specimens/hostile-preimage/dmb-causal-matter-continuity-witnesses.v0.1.json','inselfactions/ISA-20260829-DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-001.json']) JSON.parse(require('fs').readFileSync(file, 'utf8')); console.log('JSON parse PASS')\"",
+      "test -f doctrine/DMB-CAUSAL-MATTER-CONTINUITY-ATTACK-REPORT-v0.1-CANDIDATE.md",
+      "git diff --check",
+      "npm run verify:bootstrap",
+      "npm test",
+      "npm run validate:heartbeat"
+    ]
+  },
+  "authority_ceiling": {
+    "CausalMatterContinuity": "CANDIDATE_ATTACK_TARGET_ONLY",
+    "T2": "CANDIDATE_REDUCTION_ONLY",
+    "GovernedParticipation": "OUT_OF_SCOPE_CANDIDATE_LAYER",
+    "implementation": "NOT_AUTHORIZED",
+    "canonical_schema": "NOT_RATIFIED",
+    "protocol_promotion": "NOT_GRANTED",
+    "AGENTS_mutation": "NOT_PERFORMED",
+    "CLAUDE_mutation": "NOT_PERFORMED",
+    "boot_projection_spread": "NOT_PERFORMED",
+    "SELF_membership_claim": "FORBIDDEN",
+    "SELFgraph_write": "NOT_AUTHORIZED",
+    "network_transport": "NOT_AUTHORIZED",
+    "commit_authority": "NOT_EXERCISED",
+    "push_authority": "NOT_EXERCISED"
+  },
+  "next_authority": {
+    "selfsystem": "MILASOPHAHR",
+    "act_required": "Choose one next attack target: CausalRoleNonCollapse, RecontactableEvidenceAvailability, ConflictResiduePreservation / PossibilityResidue, or GovernedParticipation."
+  }
+}
