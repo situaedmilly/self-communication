@@ -10,18 +10,11 @@ import {
   CURRENT_STRUCTURAL_IDENTITY_CLAIM,
   DEFAULT_MANIFEST_PATH,
   DEFAULT_PREIMAGE_PATH,
-  STALE_REMOTE_BLOCKER_STRING
+  STALE_REMOTE_BLOCKER_STRING,
+  verifyFreshRemoteClone
 } from "../tools/ourself-selfcommunication-proof-closure-custody.mjs";
 
 const REPO_ROOT = process.cwd();
-const REQUIRED_CUSTODY_PATHS = Object.freeze([
-  "tools/ourself-selfcommunication-proof-closure-custody.mjs",
-  "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
-  "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
-  "test/ourself-selfcommunication-t2-predecessor-binding.test.mjs",
-  DEFAULT_PREIMAGE_PATH,
-  DEFAULT_MANIFEST_PATH
-]);
 
 const custodyOnlyReport = buildProofClosureCustodyReport({
   sourceMode: "custody-only",
@@ -105,15 +98,20 @@ function createRemoteFixture({ omitPath = null, mutatePath = null } = {}) {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "selfcommunication-remote-derivation-"));
   const workDir = path.join(tempDir, "work");
   const bareDir = path.join(tempDir, "remote.git");
-  fs.mkdirSync(workDir, { recursive: true });
-  gitIn(workDir, ["init", "--quiet"]);
+  execFileSync("git", ["clone", "--quiet", REPO_ROOT, workDir], {
+    stdio: ["ignore", "pipe", "pipe"]
+  });
   gitIn(workDir, ["config", "user.name", "SELFCOMMUNICATION Test"]);
   gitIn(workDir, ["config", "user.email", "selfcommunication@example.test"]);
 
-  for (const relativePath of REQUIRED_CUSTODY_PATHS) {
-    if (relativePath === omitPath) continue;
+  const requiredCustodyPaths = custodyOnlyReport.EXACT_PATH_SET;
+  for (const relativePath of requiredCustodyPaths) {
     const source = path.join(REPO_ROOT, relativePath);
     const target = path.join(workDir, relativePath);
+    if (relativePath === omitPath) {
+      fs.rmSync(target, { force: true });
+      continue;
+    }
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.copyFileSync(source, target);
     if (relativePath === mutatePath) {
@@ -121,10 +119,10 @@ function createRemoteFixture({ omitPath = null, mutatePath = null } = {}) {
     }
   }
 
-  gitIn(workDir, ["add", ...REQUIRED_CUSTODY_PATHS.filter((entry) => entry !== omitPath)]);
-  gitIn(workDir, ["commit", "--quiet", "-m", "remote evidence fixture"]);
+  gitIn(workDir, ["add", "-A", ...requiredCustodyPaths]);
+  gitIn(workDir, ["commit", "--quiet", "--allow-empty", "-m", "remote evidence fixture"]);
   gitIn(workDir, ["init", "--bare", "--quiet", bareDir]);
-  gitIn(workDir, ["remote", "add", "origin", bareDir]);
+  gitIn(workDir, ["remote", "set-url", "origin", bareDir]);
   gitIn(workDir, ["push", "--quiet", "origin", "HEAD:refs/heads/main"]);
 
   return {
@@ -151,6 +149,7 @@ function freezeFromFixture(fixture, overrides = {}) {
     preimage: readJson(DEFAULT_PREIMAGE_PATH),
     recomputation: custodyOnlyReport.DURABLE_CUSTODY_RECOMPUTATION,
     durableCustodyCommit: fixture.commit,
+    remoteUrl: fixture.bareDir,
     remoteCustodyRef: "refs/heads/main",
     ...overrides
   });
@@ -183,6 +182,7 @@ test("freeze boundary derives remote custody instead of accepting receipt-shaped
     });
 
     assert.equal(forgedFreeze.SUCCESSOR_FREEZE, "NOT_MINTED");
+    assert.equal(forgedFreeze.PROOF_CLOSURE_DERIVATION.CALLER_SUPPLIED_RECOMPUTATION_ADMITTED, false);
     assert.equal(forgedFreeze.REMOTE_CUSTODY_DERIVATION.CALLER_SUPPLIED_RECEIPT_ADMITTED, false);
     assert.equal(forgedFreeze.REMOTE_CUSTODY_DERIVATION.REMOTE_CUSTODY_STANDING, "NOT_ESTABLISHED");
   } finally {
@@ -217,22 +217,50 @@ test("remote evidence derivation closure fails closed across hostile custody wor
   }
 
   const missingObjectFixture = createRemoteFixture({
-    omitPath: "test/ourself-selfcommunication-proof-closure-custody.test.mjs"
+    omitPath: "tools/ourself-selfcommunication-launch-readiness.mjs"
   });
   try {
     const missingObject = freezeFromFixture(missingObjectFixture);
     assert.equal(missingObject.SUCCESSOR_FREEZE, "NOT_MINTED");
+    assert.equal(
+      missingObject.REMOTE_CUSTODY_DERIVATION.REMOTE_RECONTACT_RECEIPT.REMOTE_REQUIRED_OBJECTS_RECONTACTABLE,
+      false
+    );
   } finally {
     missingObjectFixture.cleanup();
   }
 
   const wrongManifestFixture = createRemoteFixture({
-    mutatePath: DEFAULT_MANIFEST_PATH
+    mutatePath: "tools/ourself-selfcommunication-launch-readiness.mjs"
   });
   try {
     const wrongManifest = freezeFromFixture(wrongManifestFixture);
     assert.equal(wrongManifest.SUCCESSOR_FREEZE, "NOT_MINTED");
+    assert.equal(
+      wrongManifest.PROOF_CLOSURE_DERIVATION.CALLER_SUPPLIED_RECOMPUTATION_ADMITTED,
+      false
+    );
   } finally {
     wrongManifestFixture.cleanup();
+  }
+});
+
+test("fresh remote clone is the admitted byte source for remote custody", () => {
+  const fixture = createRemoteFixture();
+  try {
+    const verified = verifyFreshRemoteClone({
+      rootDir: fixture.workDir,
+      commit: fixture.commit,
+      remoteUrl: fixture.bareDir,
+      manifest: custodyOnlyReport.PROOF_CARRYING_MANIFEST,
+      preimage: readJson(DEFAULT_PREIMAGE_PATH)
+    });
+
+    assert.equal(verified.DISPOSITION, "FRESH_REMOTE_CLONE_SUPPLIES_REQUIRED_BYTES");
+    assert.equal(verified.REMOTE_RECONTACT_RECEIPT.REMOTE_OBJECT_STORE_ACQUIRED, true);
+    assert.equal(verified.REMOTE_RECONTACT_RECEIPT.LOCAL_OBJECT_DATABASE_USED_FOR_REMOTE_EVIDENCE, false);
+    assert.equal(verified.REMOTE_RECONTACT_RECEIPT.RECONTACT_RESULT, "PASS");
+  } finally {
+    fixture.cleanup();
   }
 });

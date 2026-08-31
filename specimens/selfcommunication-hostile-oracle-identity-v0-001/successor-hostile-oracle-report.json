@@ -1,0 +1,4814 @@
+{
+  "BLOCKERS": [],
+  "CALIBRATOR_A_RESULT": {
+    "ATTACK_SEMANTIC_RESULT_EQUIVALENT": true,
+    "ATTACK_SEMANTIC_RESULT_after": {
+      "CURRENT_LAUNCH_STANDING": "NO_LAUNCH",
+      "MANIFEST_CONTENT_IDENTITIES_MATCH": false,
+      "RECONTACT_RESULT": "PASS",
+      "REMOTE_CUSTODY_STANDING": "NOT_ESTABLISHED",
+      "SUCCESSOR_FREEZE": "NOT_MINTED",
+      "SUCCESSOR_FREEZE_ELIGIBLE": false,
+      "root_dir_was_disposable": true
+    },
+    "ATTACK_SEMANTIC_RESULT_before": {
+      "CURRENT_LAUNCH_STANDING": "NO_LAUNCH",
+      "MANIFEST_CONTENT_IDENTITIES_MATCH": false,
+      "RECONTACT_RESULT": "PASS",
+      "REMOTE_CUSTODY_STANDING": "NOT_ESTABLISHED",
+      "SUCCESSOR_FREEZE": "NOT_MINTED",
+      "SUCCESSOR_FREEZE_ELIGIBLE": false,
+      "root_dir_was_disposable": true
+    },
+    "CALIBRATOR": "A_OBSERVER_STABILITY",
+    "INCIDENTAL_VCS_ADMINISTRATIVE_STATE_CHANGED": true,
+    "INDEX_IDENTITY_after": "sha256:9138d42cb6cfb35b7c756202f40cf2953a744cbba815bb9c2f5c8a00b5b38b1b",
+    "INDEX_IDENTITY_before": "sha256:5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+    "ORACLE_CONTENT_IDENTITY_after": "sha256:155cfd072c44c877f6fe7819901e62d3ca9f2a68d8e6e9c19b814d5eed9c67ad",
+    "ORACLE_CONTENT_IDENTITY_before": "sha256:155cfd072c44c877f6fe7819901e62d3ca9f2a68d8e6e9c19b814d5eed9c67ad",
+    "RESULT": "PASS",
+    "SEMANTIC_MATTER_UNCHANGED": true,
+    "after_seed": {
+      "disposable_copy_only": true,
+      "seeded": true,
+      "seeded_index_identity": "sha256:5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+      "source": "corpus/atk-C/.git/index",
+      "target": "corpus/atk-F/.git/index"
+    },
+    "before_seed": {
+      "disposable_copy_only": true,
+      "seeded": true,
+      "seeded_index_identity": "sha256:5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+      "source": "corpus/atk-C/.git/index",
+      "target": "corpus/atk-F/.git/index"
+    },
+    "operation": "git status --short",
+    "operation_root": "DISPOSABLE_COPY:corpus/atk-F",
+    "operation_stdout": "M tools/ourself-selfcommunication-launch-readiness.mjs"
+  },
+  "CALIBRATOR_B_RESULT": {
+    "CALIBRATOR": "B_SEMANTIC_SENSITIVITY",
+    "ORACLE_CONTENT_IDENTITY_after": "sha256:d83b02030caf6027f1bf90dfde33dc9342ed4ffc50bb626772dd426f523caba4",
+    "ORACLE_CONTENT_IDENTITY_before": "sha256:155cfd072c44c877f6fe7819901e62d3ca9f2a68d8e6e9c19b814d5eed9c67ad",
+    "RESULT": "PASS",
+    "mutated_path": "corpus/atk-F/tools/ourself-selfcommunication-proof-closure-custody.mjs",
+    "mutation_root": "DISPOSABLE_COPY"
+  },
+  "CALIBRATOR_C_RESULT": {
+    "APPLICABLE": false,
+    "CALIBRATOR": "C_STATE_PRECONDITION_SENSITIVITY",
+    "RESULT": "NO_CURRENT_STATE_PRECONDITION_CALIBRATOR",
+    "state_precondition_entry_count": 0
+  },
+  "CALIBRATOR_D_RESULT": {
+    "CALIBRATOR": "D_CLASSIFICATION_LAUNDERING",
+    "RESULT": "PASS",
+    "classification_laundering_detected": true,
+    "guard_result": "FAIL",
+    "laundered_claim": {
+      "CONTENT_IDENTITY_FOR_ATTACK_IDS": [],
+      "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+        "F"
+      ],
+      "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+    },
+    "laundered_path": "corpus/atk-F/tools/ourself-selfcommunication-proof-closure-custody.mjs",
+    "mechanism_preventing_identity_blindness": "The guard rederives species and attack-relative participation from the legacy manifest path/role plus actual bytes, then computes identities from the derived relation set rather than trusting caller-supplied classification fields.",
+    "mutation_root": "DISPOSABLE_COPY",
+    "semantic_content_mismatch_detected": true
+  },
+  "CLASSIFICATION_EVIDENCE": {
+    "classification_claim_is_not_identity_participation_established": true,
+    "evidence_ref_required_for_identity_relevant_entries": true,
+    "manifest_self_certification_admitted": false,
+    "successor_guard_rederives_path_species_and_participation": true
+  },
+  "CURRENT_LAUNCH_STANDING": "NO_LAUNCH",
+  "FULL_A_B_C_RESULT": "PASS",
+  "IDENTITY_PARTICIPATION_MODEL": {
+    "foundational_relation": "IdentityParticipation(M,Q) iff a difference in M can change the adjudication preimage of proposition Q.",
+    "no_global_boolean_participation": true,
+    "non_collapses": [
+      "ENTRY_EXISTS_IN_CORPUS != ENTRY_PARTICIPATES_IN_IDENTITY",
+      "ENVIRONMENT_MEMBERSHIP != CONTENT_IDENTITY_PARTICIPATION",
+      "CONTENT_IDENTITY_PARTICIPATION != STATE_PRECONDITION_PARTICIPATION",
+      "STATE_PRECONDITION(A) != STATE_PRECONDITION(B)",
+      "OBSERVATION_SIDE_EFFECT != SEMANTIC_SUBJECT_CHANGE"
+    ],
+    "promotion_scope": "HOSTILE_ORACLE_REPAIR_ONLY"
+  },
+  "ORACLE_CONTENT_IDENTITY": "sha256:155cfd072c44c877f6fe7819901e62d3ca9f2a68d8e6e9c19b814d5eed9c67ad",
+  "ORACLE_ENVIRONMENT_PREIMAGE": {
+    "entries": [
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 371,
+        "CONTENT_SHA256": "c06ca92d6e0458905d65ad8d61b58aa639aaa3f9764ff911c18e93ec18931618",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-C/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "C"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "C"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-C/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 371,
+        "CONTENT_SHA256": "c06ca92d6e0458905d65ad8d61b58aa639aaa3f9764ff911c18e93ec18931618",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 494,
+        "CONTENT_SHA256": "343c4c69b9779cdc27bf9a94a7d63b7d0514a47ee8571cf0a37cd27312d8ab91",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D2/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D2"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D2/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-D3/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "D3"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "D3"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-D3/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-E/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "E"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "E"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-E/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "86b1623c390f9209ed515a1a3330d664dc87d730cf9e03211d02205650718bf2",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-F2/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "F2"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "F2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-F2/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-G/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "G"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "G"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-G/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 371,
+        "CONTENT_SHA256": "c06ca92d6e0458905d65ad8d61b58aa639aaa3f9764ff911c18e93ec18931618",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/atk-H/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "H"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "H"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/atk-H/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 111,
+        "CONTENT_SHA256": "3c5cc3e72b5473d08433171d50fc687ac3aa2a6a3f4c20b97f5b66f581b0fec9",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/attacker.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 183,
+        "CONTENT_SHA256": "ee59b18e2fe372e41cc5568497a63a1bd10690778f72ed47922c8d455ce1f7d1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/objects/75/67a7577f51cc5089b9c6feb0323306976b4c0b",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 179,
+        "CONTENT_SHA256": "294434ffe2bd33329f35bfbe53b73cb105abbf9baad34b7847e1151f0787ff9e",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/objects/bd/3a41abe0d855ab5241ff17b5b1395e38e381c1",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/refs/heads/decoy",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/attacker.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/g7clone/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "SHARED_FIXTURE"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/g7clone/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-1/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P1"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P1"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-1/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 316,
+        "CONTENT_SHA256": "606e35eb0e41768c9fc7f3bdad67f8371a42daae098ec277095fbe9351e6b347",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/config",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 73,
+        "CONTENT_SHA256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/description",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 21,
+        "CONTENT_SHA256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 478,
+        "CONTENT_SHA256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/applypatch-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 896,
+        "CONTENT_SHA256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 4726,
+        "CONTENT_SHA256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/fsmonitor-watchman.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 189,
+        "CONTENT_SHA256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/post-update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 424,
+        "CONTENT_SHA256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/pre-applypatch.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 1649,
+        "CONTENT_SHA256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/pre-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 416,
+        "CONTENT_SHA256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/pre-merge-commit.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 1374,
+        "CONTENT_SHA256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/pre-push.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 4898,
+        "CONTENT_SHA256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/pre-rebase.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 544,
+        "CONTENT_SHA256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/pre-receive.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 1492,
+        "CONTENT_SHA256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/prepare-commit-msg.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 2783,
+        "CONTENT_SHA256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/push-to-checkout.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 2308,
+        "CONTENT_SHA256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/sendemail-validate.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 3650,
+        "CONTENT_SHA256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": true,
+        "PATH": "corpus/pr-2/.git/hooks/update.sample",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 10349,
+        "CONTENT_SHA256": "5a1b09e950bca6c6b325d3759c43cc127c6b5b6df47de1130c28572b9677315d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/index",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 240,
+        "CONTENT_SHA256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/info/exclude",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/logs/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/logs/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 191,
+        "CONTENT_SHA256": "7996b6c7464ee12b3cf8c8aa78a50a3519b5246d3f2b193299bca3480dfbba6d",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/logs/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 10172,
+        "CONTENT_SHA256": "594dd3e19ff69e564a4ead1ef0c483a3a584eb5eadb7f432fa5f09e61e141b00",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.idx",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 485802,
+        "CONTENT_SHA256": "dd2d4b225337e12f7a57942a07f8892170ddc89daaf10a3ab4aa14c027e00320",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.pack",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 1352,
+        "CONTENT_SHA256": "9a611d57d5ea17763762590aee9c6ccf8363c59578904d93993c4c749274698b",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/objects/pack/pack-f611698dac3675c47b8a5bd33aca1badadb40512.rev",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 112,
+        "CONTENT_SHA256": "7f91a942d0f56ed7f5de1908e7ea9694992cfaf591e12df6ef71218de70c031f",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/packed-refs",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 41,
+        "CONTENT_SHA256": "51a9eb10f57727b7c9bd49d771133cee397ab9c8f0ae05c2fa934cab335c24a3",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/refs/heads/main",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      },
+      {
+        "ATTACK_IDS": [
+          "P2"
+        ],
+        "BYTE_SIZE": 30,
+        "CONTENT_SHA256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+        "ENVIRONMENT_PREIMAGE_FOR_ATTACK_IDS": [
+          "P2"
+        ],
+        "EXECUTABLE_BIT": false,
+        "PATH": "corpus/pr-2/.git/refs/remotes/origin/HEAD",
+        "SPECIES": "VCS_ADMINISTRATIVE_STATE"
+      }
+    ],
+    "environment_snapshot_identity_not_replay_sufficiency": true,
+    "exact_environment_bytes_not_semantic_content_identity": true,
+    "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+    "object_type": "ORACLE_ENVIRONMENT_PREIMAGE_REPRESENTATION",
+    "representation_species": "ATTACK_RELATIVE_ENVIRONMENT_ENTRY_SET",
+    "schema": "ourself.selfcommunication-hostile-oracle-identity.v0.1"
+  },
+  "ORACLE_ENVIRONMENT_PREIMAGE_IDENTITY": "sha256:b5d8aaed170d0b9edae2c937afde92aafc6e6cb8d8cb11c15522c971a9edfc1f",
+  "PAUSED_REPAIR_AFFECTEDNESS": {
+    "focused_proof_closure_tests_prior": "7/7 PASS",
+    "full_a_b_c_hostile_acceptance": "NOT_YET_PASS",
+    "repair_surfaces_recontact_required_before_hostile_acceptance": true,
+    "syntax_checks_prior": "PASS"
+  },
+  "REPORT_IDENTITY": "sha256:a769db435b310c56b2f435e85f4fe882831f845cb4ae095cfddb6a1a922bfd63",
+  "RESIDUE": [
+    "Legacy all-corpus identity remains historical Matter.",
+    "Legacy identity guard remains over-inclusive for mutable Git administrative state.",
+    "Environment preimage identity is a representation, not replay sufficiency by itself.",
+    "No current state-precondition calibrator was established unless an attack explicitly consumes mutable state."
+  ],
+  "STATE_PRECONDITION_IDENTITIES": [],
+  "SUCCESSOR_MANIFEST": "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-manifest.json",
+  "SUCCESSOR_ORACLE_MANIFEST_IDENTITY": "sha256:2b5cde6bf093968f4a1a96ea6ee1a0bf7a3c7c3507d461a456ec79b6a0c94d9b",
+  "SUCCESSOR_ORACLE_VERIFICATION": {
+    "CLASSIFICATION_EVIDENCE": {
+      "classification_claim_is_not_identity_participation_established": true,
+      "evidence_ref_required_for_identity_relevant_entries": true,
+      "manifest_self_certification_admitted": false,
+      "successor_guard_rederives_path_species_and_participation": true
+    },
+    "CLASSIFICATION_LAUNDERING_DETECTED": false,
+    "CLASSIFICATION_MISMATCHES": [],
+    "CONTENT_IDENTITY_MISMATCHES": [],
+    "DERIVED_MANIFEST_IDENTITY_RECOMPUTED": "sha256:2b5cde6bf093968f4a1a96ea6ee1a0bf7a3c7c3507d461a456ec79b6a0c94d9b",
+    "DERIVED_SUCCESSOR_ORACLE_MANIFEST_IDENTITY": "sha256:2b5cde6bf093968f4a1a96ea6ee1a0bf7a3c7c3507d461a456ec79b6a0c94d9b",
+    "MISSING_EVIDENCE_REF": [],
+    "ORACLE_CONTENT_IDENTITY": "sha256:155cfd072c44c877f6fe7819901e62d3ca9f2a68d8e6e9c19b814d5eed9c67ad",
+    "ORACLE_ENVIRONMENT_PREIMAGE_IDENTITY": "sha256:b5d8aaed170d0b9edae2c937afde92aafc6e6cb8d8cb11c15522c971a9edfc1f",
+    "SOURCE_LEGACY_CORPUS_IDENTITY": "sha256:ef15db5c51c6b1a83329f270e13e48de383b4e4f7462b001c4f052c0f0d06002",
+    "STATE_PRECONDITION_IDENTITIES": [],
+    "STATE_PRECONDITION_MISMATCHES": [],
+    "SUCCESSOR_ORACLE": "ESTABLISHED",
+    "SUCCESSOR_ORACLE_MANIFEST_IDENTITY": "sha256:2b5cde6bf093968f4a1a96ea6ee1a0bf7a3c7c3507d461a456ec79b6a0c94d9b",
+    "SUCCESSOR_ORACLE_VERIFICATION_IDENTITY": "sha256:b3276365278332e70bbd653c0df11db51e9ccabe6de1bb8e67a051f05f993af1",
+    "SUPPLIED_MANIFEST_IDENTITY_RECOMPUTED": "sha256:2b5cde6bf093968f4a1a96ea6ee1a0bf7a3c7c3507d461a456ec79b6a0c94d9b",
+    "current_launch_standing": "NO_LAUNCH",
+    "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+    "mechanism_preventing_identity_blindness": "The guard rederives species and attack-relative participation from the legacy manifest path/role plus actual bytes, then computes identities from the derived relation set rather than trusting caller-supplied classification fields.",
+    "object_type": "SUCCESSOR_HOSTILE_ORACLE_IDENTITY_VERIFICATION",
+    "schema": "ourself.selfcommunication-hostile-oracle-identity.v0.1"
+  },
+  "TERMINAL_DISPOSITION": "SUCCESSOR_ORACLE_ESTABLISHED_AND_A+B+C_PASS",
+  "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+  "object_type": "SUCCESSOR_HOSTILE_ORACLE_IDENTITY_FORMATION_REPORT",
+  "schema": "ourself.selfcommunication-hostile-oracle-identity.v0.1"
+}

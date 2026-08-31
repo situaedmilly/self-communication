@@ -1,0 +1,530 @@
+{
+  "SUCCESSOR_ORACLE_CUSTODY_MANIFEST_IDENTITY": "sha256:0e9469d6e783444517c243a9434be93d98558f19a15e5cefb3f518e5b5076d27",
+  "current_launch_standing": "NO_LAUNCH",
+  "custody_self_binding": {
+    "identity_algorithm": "digestObject over stable key-sorted JSON excluding the identity field",
+    "identity_field": "SUCCESSOR_ORACLE_CUSTODY_MANIFEST_IDENTITY",
+    "path": "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-manifest.json"
+  },
+  "diagnostic_report_path": "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-report.json",
+  "exact_path_set": [
+    "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-manifest.json",
+    "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-report.json",
+    "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+    "specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json",
+    "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-manifest.json",
+    "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-report.json",
+    "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs",
+    "test/ourself-selfcommunication-hostile-oracle-identity.test.mjs",
+    "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+    "test/ourself-selfcommunication-successor-oracle-custody.test.mjs",
+    "tools/ourself-commline-observation-gap.mjs",
+    "tools/ourself-communication-matter.mjs",
+    "tools/ourself-observation-authorship.mjs",
+    "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+    "tools/ourself-selfcommunication-launch-readiness.mjs",
+    "tools/ourself-selfcommunication-launch-subject-custody.mjs",
+    "tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+    "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+    "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+    "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+    "tools/ourself-transport-independent-roundtrip.mjs"
+  ],
+  "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+  "minimum_durable_custody_set": [
+    {
+      "CONTENT_IDENTITY": "sha256:d2a9ba594be36340432f69d115c43972c95cc34ab4cf01062b0b030423e6da20",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q1:SUCCESSOR_ORACLE_IDENTITIES",
+        "Q2:CALIBRATORS_A_B_C_D",
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q5:CLASSIFICATION_COMPILER_DRIFT"
+      ],
+      "ENTRY_ID": "FILE:specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-manifest.json",
+      "EXISTS": true,
+      "PATH": "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-manifest.json",
+      "PROOF_ROLE": "SUCCESSOR_ORACLE_IDENTITY_TOPOLOGY",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "ADDED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:865c4d6313d930294afd01239605b9f99ec2e95da3d9c008d5798c43d810e96d",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q1:SUCCESSOR_ORACLE_IDENTITIES",
+        "Q2:CALIBRATORS_A_B_C_D",
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q5:CLASSIFICATION_COMPILER_DRIFT"
+      ],
+      "ENTRY_ID": "FILE:specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-report.json",
+      "EXISTS": true,
+      "PATH": "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-report.json",
+      "PROOF_ROLE": "SUCCESSOR_ORACLE_EXECUTION_RECEIPT_NOT_CONTROL_AUTHORITY",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "ADDED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:ae037cf1c5368bcdac11c5ea94def492c1b4d3b782c4f6bf92df1986ac889534",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+      "EXISTS": true,
+      "PATH": "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+      "PROOF_ROLE": "A+B+C_REPAIR_PROOF_CLOSURE_MANIFEST",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "MODIFIED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:471b68a01db4d4255a6aec3a5c9db108d938f8b76934780bc137a9e6158930de",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json",
+      "EXISTS": true,
+      "PATH": "specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json",
+      "PROOF_ROLE": "A+B+C_REPAIR_PROOF_PREIMAGE",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:8627a08775203e42ae91f16c3205797df570486275c3995d9c6e000d825582c3",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE"
+      ],
+      "ENTRY_ID": "FILE:test/ourself-selfcommunication-abc-repair-acceptance.test.mjs",
+      "EXISTS": true,
+      "PATH": "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs",
+      "PROOF_ROLE": "A+B+C_HOSTILE_ACCEPTANCE_ASSERTION_SURFACE",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "ADDED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:11c275a1a5bb0504bc3319b62799d91bb98e82a74a83a7ceb1df89704e65841d",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q1:SUCCESSOR_ORACLE_IDENTITIES",
+        "Q2:CALIBRATORS_A_B_C_D",
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q5:CLASSIFICATION_COMPILER_DRIFT"
+      ],
+      "ENTRY_ID": "FILE:test/ourself-selfcommunication-hostile-oracle-identity.test.mjs",
+      "EXISTS": true,
+      "PATH": "test/ourself-selfcommunication-hostile-oracle-identity.test.mjs",
+      "PROOF_ROLE": "CALIBRATOR_ASSERTION_SURFACE",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "ADDED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:ede6cafc310cf0dccc53202b1761ffa6dddc0e66afe526f77a6d61c33bceda04",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+      "EXISTS": true,
+      "PATH": "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+      "PROOF_ROLE": "PROOF_CLOSURE_REGRESSION_ASSERTION_SURFACE",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "MODIFIED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:83aecf6713bb11c371a8bbfeafdd3d2d8eea704448ee4399b6b6a877e738764b",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q6:PROOF_CARRYING_CUSTODY"
+      ],
+      "ENTRY_ID": "FILE:test/ourself-selfcommunication-successor-oracle-custody.test.mjs",
+      "EXISTS": true,
+      "PATH": "test/ourself-selfcommunication-successor-oracle-custody.test.mjs",
+      "PROOF_ROLE": "CUSTODY_CLOSURE_ASSERTION_SURFACE",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "ADDED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:5f9cecbd2fa03c96b6246a8200e2b6bfb511959566f1bd9365061506d6f824ea",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-commline-observation-gap.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-commline-observation-gap.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:5e0e882dbf5a498b02e98c9a82f16e2ae0b7471a7261e3ad3d8c966a399870a3",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-communication-matter.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-communication-matter.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:fb3bee4a74de67a9a0ed3cce653150923b5487c118e7ded3e0a8f4d2ce9355ac",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-observation-authorship.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-observation-authorship.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:3314248f510e4b939fa118cceba0fd56ff4dfde03a0833233e00b50e3ff75f6e",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q1:SUCCESSOR_ORACLE_IDENTITIES",
+        "Q2:CALIBRATORS_A_B_C_D",
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q5:CLASSIFICATION_COMPILER_DRIFT"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+      "PROOF_ROLE": "IDENTITY_PARTICIPATION_COMPILER",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "ADDED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:734de72bc70a10264db038fda24856094f8e62e17f9f088392778d4c1c4eaf1b",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-launch-readiness.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-selfcommunication-launch-readiness.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:19f63f5150850e9920fbdd7086f72a12699e8838363730bb30b61ca52247b968",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-selfcommunication-launch-subject-custody.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:4f58f40e8a53208f388bc6a0ce8c15efb32858660b58976c7f5b763deb8d56f2",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:6c9c13773baaed3645dbccb480e3af0bc0635400abf62e11999bf533e1a19c0c",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "MODIFIED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:623445ea34cb16120d05b6926cd2e91e041f785c4ab7fe965b87d4f8c40b71c8",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q6:PROOF_CARRYING_CUSTODY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+      "PROOF_ROLE": "PROOF_CARRYING_CUSTODY_COMPILER",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "ADDED_REQUIRED"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:42b38c5c8cbf4fc7004ed9d406de7977de203dbb74abb46c0b5f76bb578818aa",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:2004c3c7cd61fd5269413a78a5cc91cad096dcd5bc72a0ee7dff313929021bb1",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
+      "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
+      "DEPENDENTS": [
+        "Q4:A+B+C_REPAIR_PROOF_CLOSURE"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-transport-independent-roundtrip.mjs",
+      "EXISTS": true,
+      "PATH": "tools/ourself-transport-independent-roundtrip.mjs",
+      "PROOF_ROLE": "A+B+C_REPAIR_RECOMPUTATION_LOGIC",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "STANDING_CEILING": "PROOF_CARRYING_CUSTODY_ONLY",
+      "WORKTREE_STATUS": "TRACKED_CLEAN"
+    }
+  ],
+  "object_type": "SUCCESSOR_ORACLE_AND_ABC_PROOF_CARRYING_CUSTODY_MANIFEST",
+  "proof_closure_exact_path_set": [
+    "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+    "specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json",
+    "tools/ourself-commline-observation-gap.mjs",
+    "tools/ourself-communication-matter.mjs",
+    "tools/ourself-observation-authorship.mjs",
+    "tools/ourself-selfcommunication-launch-readiness.mjs",
+    "tools/ourself-selfcommunication-launch-subject-custody.mjs",
+    "tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+    "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+    "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+    "tools/ourself-transport-independent-roundtrip.mjs"
+  ],
+  "purpose": "SUCCESSOR_ORACLE_AND_ABC_PROOF_CUSTODY",
+  "report_label_not_recomputable_standing": true,
+  "schema": "ourself.selfcommunication-successor-oracle-proof-carrying-custody.v0.1",
+  "status_partition": {
+    "ALREADY_TRACKED_LOAD_BEARING": [
+      "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-manifest.json",
+      "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-report.json",
+      "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+      "specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json",
+      "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-manifest.json",
+      "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-report.json",
+      "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs",
+      "test/ourself-selfcommunication-hostile-oracle-identity.test.mjs",
+      "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+      "test/ourself-selfcommunication-successor-oracle-custody.test.mjs",
+      "tools/ourself-commline-observation-gap.mjs",
+      "tools/ourself-communication-matter.mjs",
+      "tools/ourself-observation-authorship.mjs",
+      "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+      "tools/ourself-selfcommunication-launch-readiness.mjs",
+      "tools/ourself-selfcommunication-launch-subject-custody.mjs",
+      "tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+      "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+      "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+      "tools/ourself-transport-independent-roundtrip.mjs"
+    ],
+    "EXCLUDED_DIRTY_UNTRACKED": [
+      " M package.json",
+      "?? doctrine/DMB-HOSTILE-PREIMAGE-REPORT-v0.1-CANDIDATE.md",
+      "?? doctrine/DMB-RECONCILIATION-PREIMAGE-v0.1-CANDIDATE.md",
+      "?? doctrine/DMB-ROLE-RESIDUE-GENUS-ATTACK-REPORT-v0.1-CANDIDATE.md",
+      "?? doctrine/DMB-UNRESOLVED-MATTER-SELFALCHEMY-ATTACK-REPORT-v0.1-CANDIDATE.md",
+      "?? inselfactions/ISA-20260814-ESM-UNIFIED-BASELINE-SEAL-001-HOLD.json",
+      "?? inselfactions/ISA-20260829-BOOTSTRAP-SELFCOMMUNICATION-CONTRACT-001.json",
+      "?? inselfactions/ISA-20260829-DMB-HOSTILE-PREIMAGE-REPORT-001.json",
+      "?? inselfactions/ISA-20260829-DMB-RECONCILIATION-PREIMAGE-001.json",
+      "?? inselfactions/ISA-20260829-DMB-ROLE-RESIDUE-GENUS-ATTACK-REPORT-001.json",
+      "?? inselfactions/ISA-20260829-DMB-UNRESOLVED-MATTER-SELFALCHEMY-ATTACK-REPORT-001.json",
+      "?? inselfactions/ISA-20260829-OURSELF-COMMUNICATION-ECOSYSTEM-001.json",
+      "?? specimens/available-reality-runtime-v0-001/",
+      "?? specimens/bounded-living-manirun-001.journal.jsonl",
+      "?? specimens/bounded-living-manirun-001.report.json",
+      "?? specimens/commline-observation-gap-001.report.json",
+      "?? specimens/communication-matter-foundation-001.report.json",
+      "?? specimens/current-gptself-roundtrip-001.pending.json",
+      "?? specimens/current-gptself-roundtrip-001.report.json",
+      "?? specimens/current-gptself-roundtrip-002.pending.json",
+      "?? specimens/current-gptself-roundtrip-002.report.json",
+      "?? specimens/hostile-preimage/dmb-hostile-preimage-witnesses.v0.1.json",
+      "?? specimens/hostile-preimage/dmb-role-residue-genus-witnesses.v0.1.json",
+      "?? specimens/hostile-preimage/dmb-unresolved-matter-selfalchemy-witnesses.v0.1.json",
+      "?? specimens/live-communication-custody-001.report.json",
+      "?? specimens/living-ourself-a2a-runtime-001.report.json",
+      "?? specimens/living-reality-field-v0-001/",
+      "?? specimens/living-reality-field-v0-002/",
+      "?? specimens/novel-reality-attack-001/",
+      "?? specimens/observation-authorship-asymmetry-001.report.json",
+      "?? specimens/operating-runtime-v0-001/",
+      "?? specimens/ourself-available-reality-runtime-v0-001.report.json",
+      "?? specimens/ourself-bounded-operating-runtime-v0-001.report.json",
+      "?? specimens/ourself-living-reality-field-v0-001.report.json",
+      "?? specimens/ourself-living-reality-field-v0-002.report.json",
+      "?? specimens/ourself-morph-heartbeat-001.report.json",
+      "?? specimens/ourself-runtime-jurisdiction-001.report.json",
+      "?? specimens/ourself-runtime-resurrection-001.report.json",
+      "?? specimens/selfcommunication-g7-open-binding-custody-v0-001/",
+      "?? specimens/selfcommunication-launch-freeze-v0-001/",
+      "?? specimens/selfcommunication-proof-carrying-succession-v0-001/",
+      "?? specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-custody-report.local.json",
+      "?? specimens/selfcommunication-t2-predecessor-binding-v0-001/",
+      "?? specimens/semantic-projection-v0-001/",
+      "?? specimens/transport-independent-roundtrip-001.report.json",
+      "?? test/a2a-peer-heartbeat.test.mjs",
+      "?? test/gptself-heartbeat.test.mjs",
+      "?? test/ourself-available-reality-runtime.test.mjs",
+      "?? test/ourself-bounded-manirun.test.mjs",
+      "?? test/ourself-commline-observation-gap.test.mjs",
+      "?? test/ourself-communication-matter.test.mjs",
+      "?? test/ourself-current-gptself-roundtrip.test.mjs",
+      "?? test/ourself-living-reality-field.test.mjs",
+      "?? test/ourself-living-runtime.test.mjs",
+      "?? test/ourself-morph-heartbeat.test.mjs",
+      "?? test/ourself-observation-authorship.test.mjs",
+      "?? test/ourself-operating-runtime.test.mjs",
+      "?? test/ourself-runtime-jurisdiction.test.mjs",
+      "?? test/ourself-runtime-resurrection.test.mjs",
+      "?? test/ourself-selfcommunication-g7-open-binding-custody.test.mjs",
+      "?? test/ourself-semantic-projection.test.mjs",
+      "?? test/ourself-transport-independent-roundtrip.test.mjs",
+      "?? tools/a2a-peer-heartbeat.mjs",
+      "?? tools/gptself-heartbeat.mjs",
+      "?? tools/ourself-available-reality-runtime.mjs",
+      "?? tools/ourself-bounded-manirun.mjs",
+      "?? tools/ourself-current-gptself-roundtrip.mjs",
+      "?? tools/ourself-live-communication-custody.mjs",
+      "?? tools/ourself-living-reality-field.mjs",
+      "?? tools/ourself-living-runtime.mjs",
+      "?? tools/ourself-morph-heartbeat.mjs",
+      "?? tools/ourself-operating-runtime.mjs",
+      "?? tools/ourself-relational-matter-perception.mjs",
+      "?? tools/ourself-runtime-jurisdiction.mjs",
+      "?? tools/ourself-runtime-resurrection.mjs",
+      "?? tools/ourself-selfcommunication-g7-open-binding-custody.mjs",
+      "?? tools/ourself-semantic-projection.mjs"
+    ],
+    "MODIFIED_REQUIRED": [
+      "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+      "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+      "tools/ourself-selfcommunication-proof-closure-custody.mjs"
+    ],
+    "STAGED_PATH_SET": [
+      "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-manifest.json",
+      "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-report.json",
+      "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+      "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-manifest.json",
+      "specimens/selfcommunication-successor-oracle-custody-v0-001/successor-oracle-proof-carrying-custody-report.json",
+      "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs",
+      "test/ourself-selfcommunication-hostile-oracle-identity.test.mjs",
+      "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+      "test/ourself-selfcommunication-successor-oracle-custody.test.mjs",
+      "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+      "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "tools/ourself-selfcommunication-successor-oracle-custody.mjs"
+    ],
+    "UNRELATED_STAGED": [],
+    "UNRELATED_STAGED_COUNT": 0,
+    "UNTRACKED_REQUIRED": []
+  },
+  "successor_oracle_proof_closure_graph": [
+    {
+      "DEPENDENCY_CLASSES": [
+        "LOAD_BEARING",
+        "DERIVED_REGENERABLE"
+      ],
+      "PROPOSITION": "Q1:SUCCESSOR_ORACLE_IDENTITIES",
+      "QUESTION": "Can a fresh seat recompute ORACLE_CONTENT_IDENTITY, ORACLE_ENVIRONMENT_PREIMAGE_IDENTITY, and SUCCESSOR_ORACLE_MANIFEST_IDENTITY without trusting report labels?",
+      "REQUIRES_COMPILER_IDENTITY": true
+    },
+    {
+      "CALIBRATOR_C_DISPOSITION": "NOT_APPLICABLE_CURRENT_CORPUS",
+      "DEPENDENCY_CLASSES": [
+        "LOAD_BEARING"
+      ],
+      "PROPOSITION": "Q2:CALIBRATORS_A_B_C_D",
+      "QUESTION": "Can the successor oracle discriminate observer bookkeeping drift, semantic mutation, state-precondition inapplicability, and classification laundering?"
+    },
+    {
+      "DEPENDENCY_CLASSES": [
+        "LOAD_BEARING"
+      ],
+      "PROPOSITION": "Q3:A+B+C_HOSTILE_ACCEPTANCE",
+      "QUESTION": "Can A+B+C reattack the quarantined repair through the successor oracle and remain fail-closed across known and novel hostile worlds?"
+    },
+    {
+      "DEPENDENCY_CLASSES": [
+        "LOAD_BEARING"
+      ],
+      "PROPOSITION": "Q4:A+B+C_REPAIR_PROOF_CLOSURE",
+      "QUESTION": "Can the already quarantined repair matter still recompute T2 successor, G6 successor standing, and changed structural identity?"
+    },
+    {
+      "DEPENDENCY_CLASSES": [
+        "LOAD_BEARING"
+      ],
+      "FUTURE_ATTACK_REQUIRED": true,
+      "PROPOSITION": "Q5:CLASSIFICATION_COMPILER_DRIFT",
+      "QUESTION": "Is the compiler deciding identity participation itself custodied as load-bearing proof matter?"
+    },
+    {
+      "DEPENDENCY_CLASSES": [
+        "LOAD_BEARING",
+        "DIAGNOSTIC"
+      ],
+      "PROPOSITION": "Q6:PROOF_CARRYING_CUSTODY",
+      "QUESTION": "Does the bounded custody set contain the mechanism and evidence needed to recompute the successor oracle and A+B+C pass?"
+    }
+  ],
+  "worktree_pass_not_committed_proof_pass": true
+}

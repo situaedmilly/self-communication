@@ -83,6 +83,12 @@ const T2_OBLIGATION_IDS = Object.freeze([
   "B_standing_ceiling"
 ]);
 
+const FREEZE_LOAD_BEARING_PROPOSITIONS = Object.freeze([
+  "P1:T2_SUCCESSOR_PASS",
+  "P2:G6_SUCCESSOR_STANDING",
+  "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+]);
+
 function sha256Buffer(buffer) {
   return crypto.createHash("sha256").update(buffer).digest("hex");
 }
@@ -103,6 +109,10 @@ function readJsonFile(filePath) {
 function writeStableJsonFile(filePath, value) {
   fs.mkdirSync(path.dirname(path.resolve(filePath)), { recursive: true });
   fs.writeFileSync(path.resolve(filePath), stableJson(value));
+}
+
+function resolveRootedPath(rootDir, candidatePath) {
+  return path.isAbsolute(candidatePath) ? candidatePath : path.join(rootDir, candidatePath);
 }
 
 function identityWithoutField(value, field) {
@@ -161,8 +171,8 @@ function normalizeRemoteRef(ref) {
   return ref;
 }
 
-function getRemoteHead(rootDir, { remote = "origin", ref = "refs/heads/main" } = {}) {
-  const remoteHead = tryGit(rootDir, ["ls-remote", remote, normalizeRemoteRef(ref)]);
+function getRemoteHead(rootDir, { remote = "origin", ref = "refs/heads/main", remoteUrl = null } = {}) {
+  const remoteHead = tryGit(rootDir, ["ls-remote", remoteUrl ?? remote, normalizeRemoteRef(ref)]);
   return remoteHead?.trim().split(/\s+/)[0] ?? null;
 }
 
@@ -170,15 +180,38 @@ function getRemoteUrl(rootDir, remote = "origin") {
   return tryGit(rootDir, ["remote", "get-url", remote])?.trim() ?? null;
 }
 
-function exactCustodyPathSet({ preimagePath = DEFAULT_PREIMAGE_PATH, manifestPath = DEFAULT_MANIFEST_PATH } = {}) {
-  return [
-    "tools/ourself-selfcommunication-proof-closure-custody.mjs",
-    "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
-    "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
-    "test/ourself-selfcommunication-t2-predecessor-binding.test.mjs",
-    preimagePath,
-    manifestPath
-  ];
+function loadBearingManifestEntries(manifest) {
+  return (manifest?.closure_entries ?? []).filter((entry) => (
+    (entry.DEPENDENTS ?? []).some((dependent) => FREEZE_LOAD_BEARING_PROPOSITIONS.includes(dependent))
+  ));
+}
+
+function postCustodyCommitPathFromRef(custodyRef) {
+  const prefix = "git-commit-path:POST_CUSTODY_COMMIT:";
+  const value = String(custodyRef ?? "");
+  if (!value.startsWith(prefix)) return null;
+  return value.slice(prefix.length).split("#")[0];
+}
+
+function exactCustodyPathSet({
+  manifest = null,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+} = {}) {
+  if (!manifest?.closure_entries) {
+    return [
+      "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+      preimagePath,
+      manifestPath
+    ].sort();
+  }
+  const paths = new Set([preimagePath, manifestPath]);
+  for (const entry of loadBearingManifestEntries(manifest)) {
+    const relativePath = postCustodyCommitPathFromRef(entry.CUSTODY_REF);
+    if (relativePath) paths.add(relativePath);
+  }
+  return [...paths].sort();
 }
 
 function expectedContentIdentityForPath({ rootDir, manifest, preimage, relativePath, preimagePath, manifestPath }) {
@@ -281,11 +314,155 @@ function recontactManifestAtCommit({ rootDir, commit, manifest, manifestPath = D
   };
 }
 
+function failedRequiredPathRecontact({
+  rootDir,
+  manifest,
+  preimage,
+  requiredPathSet,
+  reason,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+}) {
+  return requiredPathSet.map((relativePath) => ({
+    path: relativePath,
+    custody_ref: null,
+    recontactable: false,
+    resolved_content_identity: null,
+    expected_content_identity: expectedContentIdentityForPath({
+      rootDir,
+      manifest,
+      preimage,
+      relativePath,
+      preimagePath,
+      manifestPath
+    }),
+    content_identity_match: false,
+    passes: false,
+    failure_if_any: reason
+  }));
+}
+
+function failedManifestRecontact({ manifest, manifestPath = DEFAULT_MANIFEST_PATH, reason }) {
+  return {
+    path: manifestPath,
+    recontactable: false,
+    resolved_content_identity: null,
+    expected_content_identity: manifest
+      ? contentIdentityForBuffer(Buffer.from(stableJson(manifest), "utf8"))
+      : null,
+    resolved_manifest_identity: null,
+    expected_manifest_identity: manifest?.proof_closure_manifest_identity ?? null,
+    declared_manifest_identity: null,
+    passes: false,
+    failure_if_any: reason
+  };
+}
+
+function acquireFreshRemoteObjectStore({
+  rootDir,
+  cloneSource,
+  requiredCommit,
+  manifest,
+  preimage,
+  requiredPathSet,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+}) {
+  if (!cloneSource) {
+    return {
+      remote_object_store_acquired: false,
+      clone_result: "FAIL",
+      failure_if_any: "REMOTE_URL_NOT_RESOLVED",
+      pathRecontact: failedRequiredPathRecontact({
+        rootDir,
+        manifest,
+        preimage,
+        requiredPathSet,
+        reason: "REMOTE_URL_NOT_RESOLVED",
+        preimagePath,
+        manifestPath
+      }),
+      manifestCheck: failedManifestRecontact({
+        manifest,
+        manifestPath,
+        reason: "REMOTE_URL_NOT_RESOLVED"
+      })
+    };
+  }
+
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "selfcommunication-remote-recontact-"));
+  const clonePath = path.join(tempDir, "clone");
+  try {
+    execFileSync("git", ["clone", "--quiet", "--no-checkout", cloneSource, clonePath], {
+      stdio: ["ignore", "pipe", "pipe"]
+    });
+    const commitType = requiredCommit
+      ? tryGit(clonePath, ["cat-file", "-t", requiredCommit])?.trim() ?? null
+      : null;
+    const pathRecontact = commitType === "commit"
+      ? recontactRequiredPathsAtCommit({
+        rootDir: clonePath,
+        commit: requiredCommit,
+        manifest,
+        preimage,
+        requiredPathSet,
+        preimagePath,
+        manifestPath
+      })
+      : failedRequiredPathRecontact({
+        rootDir,
+        manifest,
+        preimage,
+        requiredPathSet,
+        reason: "REMOTE_COMMIT_OBJECT_NOT_ACQUIRED",
+        preimagePath,
+        manifestPath
+      });
+    const manifestCheck = commitType === "commit"
+      ? recontactManifestAtCommit({ rootDir: clonePath, commit: requiredCommit, manifest, manifestPath })
+      : failedManifestRecontact({
+        manifest,
+        manifestPath,
+        reason: "REMOTE_COMMIT_OBJECT_NOT_ACQUIRED"
+      });
+    return {
+      remote_object_store_acquired: commitType === "commit",
+      clone_result: commitType === "commit" ? "PASS" : "FAIL",
+      failure_if_any: commitType === "commit" ? null : "REMOTE_COMMIT_OBJECT_NOT_ACQUIRED",
+      pathRecontact,
+      manifestCheck
+    };
+  } catch (error) {
+    return {
+      remote_object_store_acquired: false,
+      clone_result: "FAIL",
+      failure_if_any: `REMOTE_OBJECT_ACQUISITION_FAILED:${error.message}`,
+      pathRecontact: failedRequiredPathRecontact({
+        rootDir,
+        manifest,
+        preimage,
+        requiredPathSet,
+        reason: "REMOTE_OBJECT_ACQUISITION_FAILED",
+        preimagePath,
+        manifestPath
+      }),
+      manifestCheck: failedManifestRecontact({
+        manifest,
+        manifestPath,
+        reason: "REMOTE_OBJECT_ACQUISITION_FAILED"
+      })
+    };
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+}
+
 export function buildRemoteRecontactReceipt({
   rootDir = process.cwd(),
   remote = "origin",
   ref = "refs/heads/main",
   requiredCommit = null,
+  remoteUrl = null,
   observedCommit,
   manifest = null,
   preimage = null,
@@ -298,26 +475,63 @@ export function buildRemoteRecontactReceipt({
 } = {}) {
   const root = path.resolve(rootDir);
   const resolvedObservedCommit = observedCommit === undefined
-    ? getRemoteHead(root, { remote, ref })
+    ? getRemoteHead(root, { remote, ref, remoteUrl })
     : observedCommit;
   const remoteRefFreshlyRecontacted = Boolean(resolvedObservedCommit);
   const remoteRefMatchesRequiredCommit = Boolean(requiredCommit) &&
     resolvedObservedCommit === requiredCommit;
-  const pathRecontact = requiredObjectRecontact ?? (
-    remoteRefFreshlyRecontacted
-      ? recontactRequiredPathsAtCommit({
+  const cloneSource = remoteUrl ?? getRemoteUrl(root, remote) ?? remote;
+  const acquisition = requiredObjectRecontact
+    ? {
+      remote_object_store_acquired: true,
+      clone_result: "CALLER_SUPPLIED_OBJECT_RECONTACT",
+      failure_if_any: null,
+      pathRecontact: requiredObjectRecontact,
+      manifestCheck: manifestMatch === true
+        ? {
+          path: manifestPath,
+          passes: true,
+          failure_if_any: null
+        }
+        : failedManifestRecontact({
+          manifest,
+          manifestPath,
+          reason: "CALLER_SUPPLIED_MANIFEST_MATCH_NOT_TRUE"
+        })
+    }
+    : remoteRefFreshlyRecontacted
+      ? acquireFreshRemoteObjectStore({
         rootDir: root,
-        commit: resolvedObservedCommit,
+        cloneSource,
+        requiredCommit: resolvedObservedCommit,
         manifest,
         preimage,
         requiredPathSet,
         preimagePath,
         manifestPath
       })
-      : []
-  );
+      : {
+        remote_object_store_acquired: false,
+        clone_result: "FAIL",
+        failure_if_any: "REMOTE_REF_UNRESOLVED",
+        pathRecontact: failedRequiredPathRecontact({
+          rootDir: root,
+          manifest,
+          preimage,
+          requiredPathSet,
+          reason: "REMOTE_REF_UNRESOLVED",
+          preimagePath,
+          manifestPath
+        }),
+        manifestCheck: failedManifestRecontact({
+          manifest,
+          manifestPath,
+          reason: "REMOTE_REF_UNRESOLVED"
+        })
+      };
+  const pathRecontact = acquisition.pathRecontact;
   const manifestCheck = manifestMatch === null
-    ? recontactManifestAtCommit({ rootDir: root, commit: resolvedObservedCommit, manifest, manifestPath })
+    ? acquisition.manifestCheck
     : {
       path: manifestPath,
       passes: manifestMatch === true,
@@ -328,6 +542,7 @@ export function buildRemoteRecontactReceipt({
   const remoteManifestContentMatch = manifestCheck.passes === true;
   const recontactPass = remoteRefFreshlyRecontacted &&
     remoteRefMatchesRequiredCommit &&
+    acquisition.remote_object_store_acquired === true &&
     requiredObjectsRecontactable &&
     remoteManifestContentMatch;
   const receipt = {
@@ -345,6 +560,16 @@ export function buildRemoteRecontactReceipt({
         : "REMOTE_REF_UNRESOLVED",
     REMOTE_REF_FRESHLY_RECONTACTED: remoteRefFreshlyRecontacted,
     REMOTE_REF_RESOLVES_TO_REQUIRED_CUSTODY_COMMIT: remoteRefMatchesRequiredCommit,
+    REMOTE_OBJECT_ACQUISITION: {
+      method: "git clone --no-checkout from adjudicated remote, then git show from fresh clone object store",
+      source_remote_url: cloneSource,
+      temporary_clone_path_recorded: false,
+      temporary_clone_reaped: true,
+      result: acquisition.clone_result,
+      failure_if_any: acquisition.failure_if_any
+    },
+    REMOTE_OBJECT_STORE_ACQUIRED: acquisition.remote_object_store_acquired === true,
+    LOCAL_OBJECT_DATABASE_USED_FOR_REMOTE_EVIDENCE: false,
     REQUIRED_OBJECT_RECONTACT: pathRecontact,
     REMOTE_REQUIRED_OBJECTS_RECONTACTABLE: requiredObjectsRecontactable,
     MANIFEST_MATCH: manifestCheck,
@@ -407,29 +632,30 @@ export function deriveRemoteCustodyStandingForFreeze({
   recomputation,
   durableCustodyCommit = null,
   remote = "origin",
+  remoteUrl: remoteUrlOverride = null,
   remoteCustodyRef = "refs/heads/main",
   preimagePath = DEFAULT_PREIMAGE_PATH,
   manifestPath = DEFAULT_MANIFEST_PATH
 } = {}) {
   const root = path.resolve(rootDir);
   const ref = normalizeRemoteRef(remoteCustodyRef);
-  const requiredPathSet = exactCustodyPathSet({ preimagePath, manifestPath });
-  const remoteUrl = getRemoteUrl(root, remote);
+  const requiredPathSet = exactCustodyPathSet({ manifest, preimagePath, manifestPath });
+  const resolvedRemoteUrl = remoteUrlOverride ?? getRemoteUrl(root, remote);
   const commitType = durableCustodyCommit
     ? tryGit(root, ["cat-file", "-t", durableCustodyCommit])?.trim() ?? null
     : null;
-  const receipt = buildRemoteRecontactReceipt({
+  const freshRemoteClone = verifyFreshRemoteClone({
     rootDir: root,
     remote,
-    ref,
-    requiredCommit: durableCustodyCommit,
+    remoteRef: ref,
+    remoteUrl: remoteUrlOverride,
+    commit: durableCustodyCommit,
     manifest,
     preimage,
-    requiredPathSet,
     preimagePath,
-    manifestPath,
-    observationSource: "ADMITTED_FREEZE_BOUNDARY_REMOTE_RECONTACT"
+    manifestPath
   });
+  const receipt = freshRemoteClone.REMOTE_RECONTACT_RECEIPT;
   const proofClosurePass = Object.values(recomputation?.proposition_results ?? {})
     .every((entry) => entry === "PASS");
   const subjectFit = {
@@ -464,19 +690,24 @@ export function deriveRemoteCustodyStandingForFreeze({
     CALLER_SUPPLIED_STANDING_ADMITTED: false,
     REPOSITORY_IDENTITY: {
       local_git_dir: tryGit(root, ["rev-parse", "--git-dir"])?.trim() ?? null,
-      origin_url: remoteUrl
+      origin_url: resolvedRemoteUrl
     },
     REMOTE_IDENTITY: {
       remote,
       ref,
-      remote_url: remoteUrl
+      remote_url: resolvedRemoteUrl
     },
     RECONTACT_OPERATION_PROVENANCE: {
       remote_ref_command: ["git", "ls-remote", remote, ref],
-      object_recontact_operation: "git show <observed_commit>:<required_path>",
+      object_recontact_operation:
+        "verifyFreshRemoteClone -> git clone --no-checkout remote -> git show <observed_commit>:<required_path> inside fresh clone",
       manifest_identity_operation: "parse manifest bytes and recompute proof_closure_manifest_identity",
       execution_derived_not_caller_supplied: true
     },
+    VERIFY_FRESH_REMOTE_CLONE_DISPOSITION: freshRemoteClone.DISPOSITION,
+    LOCAL_OBJECT_DATABASE_USED_FOR_REMOTE_EVIDENCE: false,
+    REMOTE_BYTES_DERIVED_FROM_FRESH_REMOTE_ACQUISITION:
+      receipt.REMOTE_OBJECT_STORE_ACQUIRED === true,
     LOCAL_CUSTODY_ESTABLISHED: localCustodyEstablished,
     LOCAL_CUSTODY_COMMIT_TYPE: commitType,
     PROOF_CLOSURE_PASS: proofClosurePass,
@@ -1118,9 +1349,158 @@ function structuralSubjectCore({ manifest, custodyDeltaIdentity = null }) {
   };
 }
 
-function verifyCustodyObjectIdentities({ preimage, manifest }) {
+function extractIdentityFromCustodyRef(custodyRef) {
+  const match = String(custodyRef ?? "").match(/#(sha256:[a-f0-9]{64})$/);
+  return match ? match[1] : null;
+}
+
+function predecessorCommitPathFromRef(custodyRef) {
+  const match = String(custodyRef ?? "").match(/^git-commit-path:([a-f0-9]{40}):(.+)$/);
+  return match ? { commit: match[1], relativePath: match[2] } : null;
+}
+
+function adjudicatedIdentityForManifestEntry({
+  rootDir,
+  preimage,
+  entry,
+  preimagePath = DEFAULT_PREIMAGE_PATH
+}) {
+  if (entry.ENTRY_ID?.startsWith("EXTRACT:")) {
+    const extract = preimage?.historical_extracts?.find((candidate) => (
+      candidate.EXTRACT_IDENTITY === extractIdentityFromCustodyRef(entry.CUSTODY_REF) ||
+      candidate.ENTRY_ID === entry.ENTRY_ID
+    ));
+    return {
+      adjudicated_content_identity: extract?.EXTRACT_CONTENT_IDENTITY ?? null,
+      source_relation: extract ? "PREIMAGE_HISTORICAL_EXTRACT" : "PREIMAGE_EXTRACT_NOT_FOUND",
+      binding_identity: extract?.EXTRACT_IDENTITY ?? null,
+      binding_identity_matches: extract?.EXTRACT_IDENTITY === extractIdentityFromCustodyRef(entry.CUSTODY_REF)
+    };
+  }
+
+  const postCustodyPath = postCustodyCommitPathFromRef(entry.CUSTODY_REF);
+  if (postCustodyPath) {
+    if (postCustodyPath === preimagePath) {
+      return {
+        adjudicated_content_identity: contentIdentityForBuffer(Buffer.from(stableJson(preimage), "utf8")),
+        source_relation: "PROOF_PREIMAGE_OBJECT_BYTES",
+        binding_identity: null,
+        binding_identity_matches: true
+      };
+    }
+    const absolutePath = path.join(rootDir, postCustodyPath);
+    return {
+      adjudicated_content_identity: fs.existsSync(absolutePath) ? contentIdentityForFile(absolutePath) : null,
+      source_relation: "WORKTREE_LOAD_BEARING_FILE_BYTES",
+      binding_identity: null,
+      binding_identity_matches: true
+    };
+  }
+
+  const predecessorRef = predecessorCommitPathFromRef(entry.CUSTODY_REF);
+  if (predecessorRef) {
+    return {
+      adjudicated_content_identity: gitContentIdentityAt(rootDir, predecessorRef.commit, predecessorRef.relativePath),
+      source_relation: "PREDECESSOR_GIT_COMMIT_PATH_BYTES",
+      binding_identity: null,
+      binding_identity_matches: true
+    };
+  }
+
+  if (entry.ENTRY_ID === "SEMANTIC:SUCCESSOR_SUBJECT_REF") {
+    return {
+      adjudicated_content_identity: digestObject({ subject_ref: SUCCESSOR_SUBJECT_REF }),
+      source_relation: "SEMANTIC_SUBJECT_REF_REDERIVED",
+      binding_identity: null,
+      binding_identity_matches: true
+    };
+  }
+
+  if (entry.ENTRY_ID === "SEMANTIC:DELTA_IDENTITY") {
+    return {
+      adjudicated_content_identity: preimage?.delta_identity ?? null,
+      source_relation: "SUCCESSOR_DELTA_IDENTITY_REDERIVED_IN_PREIMAGE",
+      binding_identity: null,
+      binding_identity_matches: true
+    };
+  }
+
+  return {
+    adjudicated_content_identity: null,
+    source_relation: "UNADJUDICATED_MANIFEST_ENTRY_SPECIES",
+    binding_identity: null,
+    binding_identity_matches: false
+  };
+}
+
+function adjudicateManifestContentIdentities({
+  rootDir,
+  preimage,
+  manifest,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+}) {
+  const entries = loadBearingManifestEntries(manifest).map((entry) => {
+    const adjudication = adjudicatedIdentityForManifestEntry({
+      rootDir,
+      preimage,
+      entry,
+      preimagePath,
+      manifestPath
+    });
+    const contentMatches = Boolean(entry.CONTENT_IDENTITY) &&
+      adjudication.adjudicated_content_identity === entry.CONTENT_IDENTITY &&
+      adjudication.binding_identity_matches !== false;
+    return {
+      ENTRY_ID: entry.ENTRY_ID,
+      WHY_LOAD_BEARING: entry.DEPENDENTS ?? [],
+      CONTENT_IDENTITY: entry.CONTENT_IDENTITY ?? null,
+      ADJUDICATED_CONTENT_IDENTITY: adjudication.adjudicated_content_identity,
+      REMOTE_DERIVATION: postCustodyCommitPathFromRef(entry.CUSTODY_REF)
+        ? "POST_CUSTODY_REMOTE_RECONTACT_REQUIRED"
+        : predecessorCommitPathFromRef(entry.CUSTODY_REF)
+          ? "PREDECESSOR_COMMIT_RECONTACT_REQUIRED"
+          : "EMBEDDED_OR_DERIVED_SEMANTIC_MATTER",
+      MANIFEST_BINDING: contentMatches ? "MATCH" : "MISMATCH",
+      RECONTACT_RESULT: contentMatches ? "PASS" : "FAIL",
+      SOURCE_RELATION: adjudication.source_relation,
+      failure_if_any: contentMatches ? null : "MANIFEST_DECLARED_CONTENT_IDENTITY_NOT_ADJUDICATED"
+    };
+  });
+  const manifestSelfIdentity = identityWithoutField(manifest, "proof_closure_manifest_identity");
+  return {
+    object_type: "MANIFEST_CONTENT_IDENTITY_ADJUDICATION",
+    preimage_path: preimagePath,
+    manifest_path: manifestPath,
+    load_bearing_entry_count: entries.length,
+    load_bearing_entries: entries,
+    manifest_identity_recomputed: manifestSelfIdentity,
+    manifest_identity_declared: manifest?.proof_closure_manifest_identity ?? null,
+    manifest_identity_matches: manifestSelfIdentity === manifest?.proof_closure_manifest_identity,
+    all_load_bearing_content_identities_match:
+      entries.length > 0 &&
+      entries.every((entry) => entry.RECONTACT_RESULT === "PASS") &&
+      manifestSelfIdentity === manifest?.proof_closure_manifest_identity,
+    manifest_declared_content_identity_is_not_adjudicated_content_identity: true
+  };
+}
+
+function verifyCustodyObjectIdentities({
+  rootDir,
+  preimage,
+  manifest,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+}) {
   const preimageIdentity = identityWithoutField(preimage, "preimage_identity");
   const manifestIdentity = identityWithoutField(manifest, "proof_closure_manifest_identity");
+  const manifestContentIdentityAdjudication = adjudicateManifestContentIdentities({
+    rootDir,
+    preimage,
+    manifest,
+    preimagePath,
+    manifestPath
+  });
   const checks = {
     preimage_identity_recomputed: preimageIdentity,
     preimage_identity_declared: preimage.preimage_identity ?? null,
@@ -1131,12 +1511,14 @@ function verifyCustodyObjectIdentities({ preimage, manifest }) {
     manifest_binds_preimage_identity:
       manifest.proof_preimage?.preimage_identity === preimage.preimage_identity,
     manifest_binds_preimage_content_identity:
-      Boolean(manifest.proof_preimage?.content_identity)
+      Boolean(manifest.proof_preimage?.content_identity),
+    manifest_content_identity_adjudication: manifestContentIdentityAdjudication
   };
   checks.all_identity_checks_pass = checks.preimage_identity_matches &&
     checks.manifest_identity_matches &&
     checks.manifest_binds_preimage_identity &&
-    checks.manifest_binds_preimage_content_identity;
+    checks.manifest_binds_preimage_content_identity &&
+    manifestContentIdentityAdjudication.all_load_bearing_content_identities_match;
   return checks;
 }
 
@@ -1225,7 +1607,9 @@ export function recomputeSuccessorStandingFromCustody({
   preimage,
   manifest,
   availableEntryIds = null,
-  predecessorRecontact: suppliedPredecessorRecontact = null
+  predecessorRecontact: suppliedPredecessorRecontact = null,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
 } = {}) {
   const allEntryIds = new Set([
     ...manifest.closure_entries.map((entry) => entry.ENTRY_ID),
@@ -1236,7 +1620,13 @@ export function recomputeSuccessorStandingFromCustody({
   const p1Requirements = requiredEntryIdsForProposition("P1:T2_SUCCESSOR_PASS");
   const p2Requirements = requiredEntryIdsForProposition("P2:G6_SUCCESSOR_STANDING");
   const p3Requirements = requiredEntryIdsForProposition("P3:SUCCESSOR_STRUCTURAL_IDENTITY");
-  const custodyIdentityChecks = verifyCustodyObjectIdentities({ preimage, manifest });
+  const custodyIdentityChecks = verifyCustodyObjectIdentities({
+    rootDir,
+    preimage,
+    manifest,
+    preimagePath,
+    manifestPath
+  });
   const custodyIdentitiesPass = custodyIdentityChecks.all_identity_checks_pass === true;
   const predecessorRecontact = suppliedPredecessorRecontact ??
     recontactPredecessorLaunchSubjectFromCommit({ rootDir });
@@ -1423,23 +1813,101 @@ function minimumDurableCustodySet({ manifest, subtractiveResults }) {
     }));
 }
 
+function buildLoadBearingDependencyGraph({ manifest }) {
+  const entriesById = new Map((manifest?.closure_entries ?? []).map((entry) => [entry.ENTRY_ID, entry]));
+  return (manifest?.proof_closure_graph ?? [])
+    .filter((proposition) => FREEZE_LOAD_BEARING_PROPOSITIONS.includes(proposition.PROPOSITION))
+    .map((proposition) => ({
+      PROPOSITION: proposition.PROPOSITION,
+      QUESTION: proposition.QUESTION,
+      DEPENDENCIES: (proposition.DEPENDENCIES ?? []).map((dependencyId) => {
+        const entry = entriesById.get(dependencyId);
+        return {
+          ENTRY_ID: dependencyId,
+          WHY_LOAD_BEARING: entry?.PROOF_ROLE ?? "UPSTREAM_PROPOSITION",
+          CONTENT_IDENTITY: entry?.CONTENT_IDENTITY ?? null,
+          CUSTODY_REF: entry?.CUSTODY_REF ?? null,
+          NECESSITY_CLASS: entry?.NECESSITY_CLASS ?? "DERIVED_PROPOSITION"
+        };
+      })
+    }));
+}
+
+function buildVerifiedClosureSet({
+  manifest,
+  requiredPathSet,
+  manifestContentIdentityAdjudication,
+  remoteRecontactReceipt
+}) {
+  const remoteByPath = new Map((remoteRecontactReceipt?.REQUIRED_OBJECT_RECONTACT ?? []).map((entry) => [
+    entry.path,
+    entry
+  ]));
+  return {
+    object_type: "VERIFIED_CLOSURE_SET",
+    LOAD_BEARING_SET: loadBearingManifestEntries(manifest).map((entry) => entry.ENTRY_ID),
+    REMOTE_REQUIRED_PATH_SET: requiredPathSet,
+    LOAD_BEARING_SET_SUBSET_VERIFIED_CLOSURE_SET:
+      manifestContentIdentityAdjudication?.all_load_bearing_content_identities_match === true &&
+      (remoteRecontactReceipt?.REQUIRED_OBJECT_RECONTACT ?? []).every((entry) => entry.passes === true),
+    entries: loadBearingManifestEntries(manifest).map((entry) => {
+      const postCustodyPath = postCustodyCommitPathFromRef(entry.CUSTODY_REF);
+      const manifestAdjudication = manifestContentIdentityAdjudication?.load_bearing_entries
+        ?.find((candidate) => candidate.ENTRY_ID === entry.ENTRY_ID);
+      const remoteEntry = postCustodyPath ? remoteByPath.get(postCustodyPath) : null;
+      return {
+        ENTRY_ID: entry.ENTRY_ID,
+        WHY_LOAD_BEARING: entry.DEPENDENTS ?? [],
+        CONTENT_IDENTITY: entry.CONTENT_IDENTITY ?? null,
+        REMOTE_DERIVATION: manifestAdjudication?.REMOTE_DERIVATION ?? "UNRESOLVED",
+        MANIFEST_BINDING: manifestAdjudication?.MANIFEST_BINDING ?? "UNRESOLVED",
+        RECONTACT_RESULT: remoteEntry
+          ? (remoteEntry.passes ? "PASS" : "FAIL")
+          : manifestAdjudication?.RECONTACT_RESULT ?? "UNRESOLVED"
+      };
+    })
+  };
+}
+
 export function buildSuccessorFreeze({
   rootDir = process.cwd(),
   manifest,
   preimage,
   recomputation,
   durableCustodyCommit = null,
+  remoteUrl = null,
   remoteCustodyRef = "refs/heads/main",
   preimagePath = DEFAULT_PREIMAGE_PATH,
   manifestPath = DEFAULT_MANIFEST_PATH
 } = {}) {
-  const pass = Object.values(recomputation.proposition_results).every((entry) => entry === "PASS");
+  const derivedRecomputation = manifest && preimage
+    ? recomputeSuccessorStandingFromCustody({
+      rootDir,
+      preimage,
+      manifest,
+      preimagePath,
+      manifestPath
+    })
+    : null;
+  const proofClosureDerivation = {
+    object_type: "PROOF_CLOSURE_DERIVATION_MODEL",
+    CALLER_SUPPLIED_RECOMPUTATION_PRESENT: Boolean(recomputation),
+    CALLER_SUPPLIED_RECOMPUTATION_ADMITTED: false,
+    CALLER_SUPPLIED_RECOMPUTATION_IDENTITY: recomputation?.recomputation_identity ?? (
+      recomputation ? digestObject(recomputation) : null
+    ),
+    INTERNAL_RECOMPUTATION_IDENTITY: derivedRecomputation?.recomputation_identity ?? null,
+    INTERNAL_RECOMPUTATION_REQUIRED_FOR_FREEZE: true
+  };
+  const pass = Object.values(derivedRecomputation?.proposition_results ?? {})
+    .every((entry) => entry === "PASS");
   const remoteCustodyDerivation = deriveRemoteCustodyStandingForFreeze({
     rootDir,
     manifest,
     preimage,
-    recomputation,
+    recomputation: derivedRecomputation,
     durableCustodyCommit,
+    remoteUrl,
     remoteCustodyRef,
     preimagePath,
     manifestPath
@@ -1451,6 +1919,7 @@ export function buildSuccessorFreeze({
       SUCCESSOR_FREEZE: "NOT_MINTED",
       SUCCESSOR_FREEZE_IDENTITY: "NOT_MINTED",
       SUCCESSOR_FREEZE_ELIGIBLE: false,
+      PROOF_CLOSURE_DERIVATION: proofClosureDerivation,
       REMOTE_CUSTODY_DERIVATION: remoteCustodyDerivation,
       reason: "DURABLE_RECONTACT_OR_REMOTE_CUSTODY_INCOMPLETE"
     };
@@ -1460,24 +1929,25 @@ export function buildSuccessorFreeze({
     object_type: "PROOF_CARRYING_SUCCESSOR_FREEZE",
     launch_target: LAUNCH_TARGET,
     SUCCESSOR_SUBJECT_REF: SUCCESSOR_SUBJECT_REF,
-    STRUCTURAL_IDENTITY: recomputation.successor_structural_identity,
+    STRUCTURAL_IDENTITY: derivedRecomputation.successor_structural_identity,
     PREDECESSOR_SUBJECT_REF: DEFAULT_LAUNCH_SUBJECT_IDENTITY,
     DELTA_IDENTITY: manifest.delta_identity,
-    CUSTODY_DELTA_IDENTITY: recomputation.custody_delta_identity,
+    CUSTODY_DELTA_IDENTITY: derivedRecomputation.custody_delta_identity,
     DURABLE_CUSTODY_COMMIT: durableCustodyCommit,
     REMOTE_CUSTODY_REF:
       `${remoteCustodyDerivation.REMOTE_IDENTITY.remote}/${remoteCustodyDerivation.REMOTE_IDENTITY.ref}`,
     REMOTE_CUSTODY_DERIVATION: remoteCustodyDerivation,
     REMOTE_RECONTACT_RECEIPT: remoteCustodyDerivation.REMOTE_RECONTACT_RECEIPT,
+    PROOF_CLOSURE_DERIVATION: proofClosureDerivation,
     PROOF_CLOSURE_MANIFEST_IDENTITY: manifest.proof_closure_manifest_identity,
     T2_SUCCESSOR_DISPOSITION: "T2_SUCCESSOR_PASS",
-    G6_SUCCESSOR_STANDING: recomputation.g6_successor_standing.current_standing,
+    G6_SUCCESSOR_STANDING: derivedRecomputation.g6_successor_standing.current_standing,
     CARRIED_EVIDENCE: ["B_patient_zero", "B_participation", "B_observation_occurrence", "B_standing_ceiling"],
     REVALIDATED_EVIDENCE: ["B_subject"],
     INVALIDATED_EVIDENCE: [],
     CURRENT_GATE_VECTOR: {
-      t2_causal_matter_predecessor: recomputation.t2_successor_gate.control_disposition,
-      g6_claude_gap_disposition: recomputation.g6_successor_standing.control_disposition,
+      t2_causal_matter_predecessor: derivedRecomputation.t2_successor_gate.control_disposition,
+      g6_claude_gap_disposition: derivedRecomputation.g6_successor_standing.control_disposition,
       g5_independent_hostile_pass: LAUNCH_CONTROL_DISPOSITIONS.BLOCKED
     },
     STANDING_CEILING: "NO_LAUNCH",
@@ -1503,32 +1973,37 @@ export function buildProofClosureCustodyReport({
   sourceMode = "local",
   writeArtifacts = true,
   durableCustodyCommit = null,
+  remoteUrl = null,
   remoteCustodyRef = null
 } = {}) {
   const root = path.resolve(rootDir);
-  const preimage = sourceMode === "custody-only" && fs.existsSync(path.join(root, preimagePath))
-    ? readJsonFile(path.join(root, preimagePath))
+  const resolvedPreimagePath = resolveRootedPath(root, preimagePath);
+  const resolvedManifestPath = resolveRootedPath(root, manifestPath);
+  const resolvedReportPath = resolveRootedPath(root, reportPath);
+  const preimage = sourceMode === "custody-only" && fs.existsSync(resolvedPreimagePath)
+    ? readJsonFile(resolvedPreimagePath)
     : buildLocalT2SuccessorProofPreimage();
   if (writeArtifacts && sourceMode !== "custody-only") {
-    writeStableJsonFile(path.join(root, preimagePath), preimage);
+    writeStableJsonFile(resolvedPreimagePath, preimage);
   }
-  const manifest = sourceMode === "custody-only" && fs.existsSync(path.join(root, manifestPath))
-    ? readJsonFile(path.join(root, manifestPath))
+  const manifest = sourceMode === "custody-only" && fs.existsSync(resolvedManifestPath)
+    ? readJsonFile(resolvedManifestPath)
     : buildProofClosureManifest({ rootDir: root, preimage, preimagePath });
   if (writeArtifacts && sourceMode !== "custody-only") {
-    writeStableJsonFile(path.join(root, manifestPath), manifest);
+    writeStableJsonFile(resolvedManifestPath, manifest);
   }
   const subtractiveMinimalityResults = runSubtractiveMinimality({ rootDir: root, preimage, manifest });
   const minimumSet = minimumDurableCustodySet({ manifest, subtractiveResults: subtractiveMinimalityResults });
   const recomputation = recomputeSuccessorStandingFromCustody({ rootDir: root, preimage, manifest });
   const currentHead = tryGit(root, ["rev-parse", "HEAD"])?.trim() ?? null;
-  const exactPathSet = exactCustodyPathSet({ preimagePath, manifestPath });
+  const exactPathSet = exactCustodyPathSet({ manifest, preimagePath, manifestPath });
   const freeze = buildSuccessorFreeze({
     rootDir: root,
     manifest,
     preimage,
     recomputation,
     durableCustodyCommit,
+    remoteUrl,
     remoteCustodyRef,
     preimagePath,
     manifestPath
@@ -1539,6 +2014,14 @@ export function buildProofClosureCustodyReport({
     ? null
     : remoteRecontactReceipt.OBSERVED_COMMIT;
   const remoteCustodyStanding = remoteCustodyDerivation.REMOTE_CUSTODY_STANDING;
+  const manifestContentIdentityAdjudication =
+    recomputation.custody_object_identity_checks.manifest_content_identity_adjudication;
+  const verifiedClosureSet = buildVerifiedClosureSet({
+    manifest,
+    requiredPathSet: exactPathSet,
+    manifestContentIdentityAdjudication,
+    remoteRecontactReceipt
+  });
   const freezeBlockers = [
     ...(durableCustodyCommit ? [] : ["LOCAL_CUSTODY_COMMIT_NOT_SUPPLIED"]),
     ...(remoteCustodyDerivation.LOCAL_CUSTODY_ESTABLISHED ? [] : ["LOCAL_CUSTODY_COMMIT_NOT_RECONTACTABLE"]),
@@ -1591,13 +2074,20 @@ export function buildProofClosureCustodyReport({
     }],
     Q_REMOTE_EVIDENCE_CONTRACT: remoteCustodyDerivation.QUESTION,
     DERIVATION_AUTHORITY: remoteCustodyDerivation.DERIVATION_AUTHORITY,
+    VERIFY_FRESH_REMOTE_CLONE_DISPOSITION: remoteCustodyDerivation.VERIFY_FRESH_REMOTE_CLONE_DISPOSITION,
     FREEZE_API_SEAM: {
       raw_remote_receipt_objects_accepted_as_freeze_proof: false,
       caller_controlled_semantic_pass_fields_accepted: false,
-      freeze_constructor_derives_q_remote: true
+      caller_supplied_recomputation_admitted: false,
+      freeze_constructor_derives_q_remote: true,
+      freeze_constructor_derives_proof_closure: true
     },
     SUBJECT_FIT_MODEL: remoteCustodyDerivation.SUBJECT_FIT,
+    LOAD_BEARING_DEPENDENCY_GRAPH: buildLoadBearingDependencyGraph({ manifest }),
     PROOF_CLOSURE_GRAPH: manifest.proof_closure_graph,
+    VERIFIED_CLOSURE_SET: verifiedClosureSet,
+    MANIFEST_CONTENT_IDENTITY_ADJUDICATION: manifestContentIdentityAdjudication,
+    PROOF_CLOSURE_DERIVATION_MODEL: freeze.PROOF_CLOSURE_DERIVATION,
     MINIMUM_DURABLE_CUSTODY_SET: minimumSet,
     SUBTRACTIVE_MINIMALITY_RESULTS: subtractiveMinimalityResults,
     HISTORICAL_EXTRACTS: preimage.historical_extracts,
@@ -1648,53 +2138,85 @@ export function buildProofClosureCustodyReport({
     CURRENT_LAUNCH_STANDING: "NO_LAUNCH"
   };
   report.REPORT_IDENTITY = identityWithoutField(report, "REPORT_IDENTITY");
-  if (writeArtifacts) writeStableJsonFile(path.join(root, reportPath), report);
+  if (writeArtifacts) writeStableJsonFile(resolvedReportPath, report);
   return report;
 }
 
 export function verifyFreshRemoteClone({
   rootDir = process.cwd(),
   commit,
+  remote = "origin",
   remoteRef = "refs/heads/main",
-  remoteUrl = null
+  remoteUrl = null,
+  manifest = null,
+  preimage = null,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
 } = {}) {
   const source = path.resolve(rootDir);
-  const cloneSource = remoteUrl ?? tryGit(source, ["remote", "get-url", "origin"])?.trim();
-  if (!cloneSource) {
+  const resolvedPreimage = preimage ?? (
+    fs.existsSync(path.join(source, preimagePath)) ? readJsonFile(path.join(source, preimagePath)) : null
+  );
+  const resolvedManifest = manifest ?? (
+    fs.existsSync(path.join(source, manifestPath)) ? readJsonFile(path.join(source, manifestPath)) : null
+  );
+  const requiredPathSet = exactCustodyPathSet({
+    manifest: resolvedManifest,
+    preimagePath,
+    manifestPath
+  });
+  const cloneSource = remoteUrl ?? tryGit(source, ["remote", "get-url", remote])?.trim();
+  if (!cloneSource || !resolvedPreimage || !resolvedManifest) {
+    const receipt = buildRemoteRecontactReceipt({
+      rootDir: source,
+      remote,
+      ref: remoteRef,
+      requiredCommit: commit,
+      remoteUrl: cloneSource,
+      observedCommit: null,
+      manifest: resolvedManifest,
+      preimage: resolvedPreimage,
+      requiredPathSet,
+      preimagePath,
+      manifestPath,
+      observationSource: "VERIFY_FRESH_REMOTE_CLONE"
+    });
     return {
-      fresh_clone_path: null,
+      object_type: "VERIFY_FRESH_REMOTE_CLONE_RESULT",
       source_remote_url: null,
       source_root_used_as_git_remote_only: false,
       producing_workspace_filesystem_not_read_for_evidence: true,
-      result: null,
-      failure: "ORIGIN_REMOTE_URL_NOT_RESOLVED"
+      REQUIRED_PATH_SET: requiredPathSet,
+      REMOTE_RECONTACT_RECEIPT: receipt,
+      DISPOSITION: "FRESH_REMOTE_CLONE_NOT_ESTABLISHED",
+      failure: !cloneSource ? "ORIGIN_REMOTE_URL_NOT_RESOLVED" : "PREIMAGE_OR_MANIFEST_NOT_RESOLVED"
     };
   }
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "selfcommunication-proof-closure-"));
-  const clonePath = path.join(tempDir, "clone");
-  try {
-    execFileSync("git", ["clone", "--quiet", cloneSource, clonePath], {
-      stdio: ["ignore", "pipe", "pipe"]
-    });
-    const commitToVerify = commit ?? git(clonePath, ["rev-parse", "HEAD"]).trim();
-    if (commitToVerify) git(clonePath, ["checkout", "--quiet", commitToVerify]);
-    const report = buildProofClosureCustodyReport({
-      rootDir: clonePath,
-      sourceMode: "custody-only",
-      writeArtifacts: false,
-      durableCustodyCommit: commitToVerify,
-      remoteCustodyRef: remoteRef
-    });
-    return {
-      fresh_clone_path: clonePath,
-      source_remote_url: cloneSource,
-      source_root_used_as_git_remote_only: false,
-      producing_workspace_filesystem_not_read_for_evidence: true,
-      result: report
-    };
-  } finally {
-    fs.rmSync(tempDir, { recursive: true, force: true });
-  }
+  const receipt = buildRemoteRecontactReceipt({
+    rootDir: source,
+    remote,
+    ref: remoteRef,
+    requiredCommit: commit,
+    remoteUrl,
+    manifest: resolvedManifest,
+    preimage: resolvedPreimage,
+    requiredPathSet,
+    preimagePath,
+    manifestPath,
+    observationSource: "VERIFY_FRESH_REMOTE_CLONE"
+  });
+  return {
+    object_type: "VERIFY_FRESH_REMOTE_CLONE_RESULT",
+    source_remote_url: cloneSource,
+    source_root_used_as_git_remote_only: false,
+    producing_workspace_filesystem_not_read_for_evidence: true,
+    REQUIRED_PATH_SET: requiredPathSet,
+    REMOTE_RECONTACT_RECEIPT: receipt,
+    DISPOSITION: receipt.RECONTACT_RESULT === "PASS"
+      ? "FRESH_REMOTE_CLONE_SUPPLIES_REQUIRED_BYTES"
+      : "FRESH_REMOTE_CLONE_DOES_NOT_SUPPLY_REQUIRED_BYTES",
+    failure: receipt.RECONTACT_RESULT === "PASS" ? null : receipt.REMOTE_OBJECT_ACQUISITION.failure_if_any
+  };
 }
 
 function main() {
@@ -1704,6 +2226,7 @@ function main() {
   const reportPath = valueAfter(process.argv, "--out") ?? DEFAULT_REPORT_PATH;
   const durableCustodyCommit = valueAfter(process.argv, "--durable-custody-commit");
   const remoteCustodyRef = valueAfter(process.argv, "--remote-custody-ref");
+  const remoteUrl = valueAfter(process.argv, "--remote-url");
   const sourceMode = hasFlag(process.argv, "--custody-only") ? "custody-only" : "local";
   const writeArtifacts = !hasFlag(process.argv, "--no-write");
   const report = buildProofClosureCustodyReport({
@@ -1714,6 +2237,7 @@ function main() {
     sourceMode,
     writeArtifacts,
     durableCustodyCommit,
+    remoteUrl,
     remoteCustodyRef
   });
   console.log(JSON.stringify(report, null, 2));
