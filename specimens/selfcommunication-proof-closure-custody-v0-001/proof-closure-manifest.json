@@ -143,7 +143,7 @@
       "STANDING_CEILING": "EXACT_BOUNDED_MATTER_IDENTITY_ONLY"
     },
     {
-      "CONTENT_IDENTITY": "sha256:125445c55c4cbb9d63246054a75dc5a998edb169545868672970ac2b45e713b5",
+      "CONTENT_IDENTITY": "sha256:2a5a2712cd5b395eda2f6f94fbcecadc5b892bab7c3f008fe7e7bb8a69c885f6",
       "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-selfcommunication-proof-closure-custody.mjs",
       "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
       "DEPENDENTS": [
@@ -506,7 +506,7 @@
       "THREAT_CONTEXT": "Display residue must not become control authority."
     }
   ],
-  "proof_closure_manifest_identity": "sha256:7a77cd575960cf3a1e47d347eabf5f5d9ef963335608daa4da08a61559ed536a",
+  "proof_closure_manifest_identity": "sha256:9d9f69600e018d77876496919b4fafbf6ba9b7befc5abc9a80c0a26d0fa1e9cf",
   "proof_preimage": {
     "content_identity": "sha256:471b68a01db4d4255a6aec3a5c9db108d938f8b76934780bc137a9e6158930de",
     "path": "specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json",

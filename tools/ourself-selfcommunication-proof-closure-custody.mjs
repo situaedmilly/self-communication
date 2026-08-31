@@ -166,6 +166,10 @@ function getRemoteHead(rootDir, { remote = "origin", ref = "refs/heads/main" } =
   return remoteHead?.trim().split(/\s+/)[0] ?? null;
 }
 
+function getRemoteUrl(rootDir, remote = "origin") {
+  return tryGit(rootDir, ["remote", "get-url", remote])?.trim() ?? null;
+}
+
 function exactCustodyPathSet({ preimagePath = DEFAULT_PREIMAGE_PATH, manifestPath = DEFAULT_MANIFEST_PATH } = {}) {
   return [
     "tools/ourself-selfcommunication-proof-closure-custody.mjs",
@@ -364,6 +368,129 @@ function remoteRecontactEstablishesCustody({ durableCustodyCommit, remoteReconta
     remoteRecontactReceipt?.REMOTE_REF_RESOLVES_TO_REQUIRED_CUSTODY_COMMIT === true &&
     remoteRecontactReceipt?.REMOTE_REQUIRED_OBJECTS_RECONTACTABLE === true &&
     remoteRecontactReceipt?.REMOTE_MANIFEST_CONTENT_MATCH === true;
+}
+
+function buildQRemoteEvidenceContract({ requiredPathSet }) {
+  return {
+    PROPOSITION_ID: "Q_REMOTE",
+    QUESTION:
+      "The required successor subject is independently recontactable from the specified remote custody surface at the required subject preimage.",
+    MINIMUM_EVIDENCE: [
+      "REPOSITORY_IDENTITY",
+      "REMOTE_IDENTITY",
+      "REF",
+      "OBSERVED_REMOTE_COMMIT",
+      "REQUIRED_CUSTODY_COMMIT",
+      "SUBJECT_REF",
+      "SUBJECT_STRUCTURAL_IDENTITY",
+      "PROOF_CLOSURE_MANIFEST_IDENTITY",
+      "REQUIRED_OBJECT_SET",
+      "RECONTACT_OPERATION_PROVENANCE"
+    ],
+    REQUIRED_OBJECT_SET: requiredPathSet,
+    NON_SUFFICIENT_INPUTS: [
+      "REMOTE_REF_LABEL",
+      "REMOTE_RECONTACT_RECEIPT_SHAPE",
+      "RECEIPT_BOOLEAN",
+      "ADJUDICATED_LABEL",
+      "CALLER_AUTHORED_FRESHNESS_CLAIM"
+    ],
+    FIELD_EQUALITY_NOT_BINDING_ESTABLISHED: true,
+    MORE_FIELDS_NOT_MORE_PROOF: true
+  };
+}
+
+export function deriveRemoteCustodyStandingForFreeze({
+  rootDir = process.cwd(),
+  manifest,
+  preimage,
+  recomputation,
+  durableCustodyCommit = null,
+  remote = "origin",
+  remoteCustodyRef = "refs/heads/main",
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+} = {}) {
+  const root = path.resolve(rootDir);
+  const ref = normalizeRemoteRef(remoteCustodyRef);
+  const requiredPathSet = exactCustodyPathSet({ preimagePath, manifestPath });
+  const remoteUrl = getRemoteUrl(root, remote);
+  const commitType = durableCustodyCommit
+    ? tryGit(root, ["cat-file", "-t", durableCustodyCommit])?.trim() ?? null
+    : null;
+  const receipt = buildRemoteRecontactReceipt({
+    rootDir: root,
+    remote,
+    ref,
+    requiredCommit: durableCustodyCommit,
+    manifest,
+    preimage,
+    requiredPathSet,
+    preimagePath,
+    manifestPath,
+    observationSource: "ADMITTED_FREEZE_BOUNDARY_REMOTE_RECONTACT"
+  });
+  const proofClosurePass = Object.values(recomputation?.proposition_results ?? {})
+    .every((entry) => entry === "PASS");
+  const subjectFit = {
+    SUBJECT_REF: SUCCESSOR_SUBJECT_REF,
+    SUBJECT_REF_SPECIES: "ASSIGNED_REFERENCE",
+    STRUCTURAL_IDENTITY: recomputation?.successor_structural_identity ?? "UNRESOLVED",
+    PROOF_CLOSURE_MANIFEST_IDENTITY: manifest?.proof_closure_manifest_identity ?? "UNRESOLVED",
+    REQUIRED_CUSTODY_COMMIT: durableCustodyCommit ?? "UNSPECIFIED",
+    observed_commit_matches_required_commit:
+      receipt.OBSERVED_COMMIT === durableCustodyCommit && receipt.COMPARISON === "MATCH",
+    manifest_identity_matches:
+      receipt.MANIFEST_MATCH?.resolved_manifest_identity === manifest?.proof_closure_manifest_identity &&
+      receipt.MANIFEST_MATCH?.declared_manifest_identity === manifest?.proof_closure_manifest_identity,
+    every_required_path_matches_subject_preimage:
+      receipt.REQUIRED_OBJECT_RECONTACT.every((entry) => entry.passes === true)
+  };
+  const localCustodyEstablished = commitType === "commit";
+  const remoteCustodyEstablished = proofClosurePass &&
+    localCustodyEstablished &&
+    remoteRecontactEstablishesCustody({
+      durableCustodyCommit,
+      remoteRecontactReceipt: receipt
+    }) &&
+    subjectFit.observed_commit_matches_required_commit &&
+    subjectFit.manifest_identity_matches &&
+    subjectFit.every_required_path_matches_subject_preimage;
+  const derivation = {
+    object_type: "REMOTE_CUSTODY_STANDING_DERIVATION",
+    QUESTION: buildQRemoteEvidenceContract({ requiredPathSet }),
+    DERIVATION_AUTHORITY: "FREEZE_BOUNDARY_LIVE_REMOTE_RECONTACT",
+    CALLER_SUPPLIED_RECEIPT_ADMITTED: false,
+    CALLER_SUPPLIED_STANDING_ADMITTED: false,
+    REPOSITORY_IDENTITY: {
+      local_git_dir: tryGit(root, ["rev-parse", "--git-dir"])?.trim() ?? null,
+      origin_url: remoteUrl
+    },
+    REMOTE_IDENTITY: {
+      remote,
+      ref,
+      remote_url: remoteUrl
+    },
+    RECONTACT_OPERATION_PROVENANCE: {
+      remote_ref_command: ["git", "ls-remote", remote, ref],
+      object_recontact_operation: "git show <observed_commit>:<required_path>",
+      manifest_identity_operation: "parse manifest bytes and recompute proof_closure_manifest_identity",
+      execution_derived_not_caller_supplied: true
+    },
+    LOCAL_CUSTODY_ESTABLISHED: localCustodyEstablished,
+    LOCAL_CUSTODY_COMMIT_TYPE: commitType,
+    PROOF_CLOSURE_PASS: proofClosurePass,
+    SUBJECT_FIT: subjectFit,
+    REMOTE_RECONTACT_RECEIPT: receipt,
+    REMOTE_CUSTODY_STANDING: remoteCustodyEstablished ? "REMOTE_REPLICATED" : "NOT_ESTABLISHED",
+    FREEZE_ELIGIBLE_REMOTE_CUSTODY: remoteCustodyEstablished,
+    REPRESENTATION_NOT_CAUSATION: true
+  };
+  derivation.REMOTE_CUSTODY_DERIVATION_IDENTITY = identityWithoutField(
+    derivation,
+    "REMOTE_CUSTODY_DERIVATION_IDENTITY"
+  );
+  return derivation;
 }
 
 function fileEntry(rootDir, relativePath, role, necessityClass, dependents = []) {
@@ -1297,21 +1424,34 @@ function minimumDurableCustodySet({ manifest, subtractiveResults }) {
 }
 
 export function buildSuccessorFreeze({
+  rootDir = process.cwd(),
   manifest,
+  preimage,
   recomputation,
   durableCustodyCommit = null,
-  remoteRecontactReceipt = null
+  remoteCustodyRef = "refs/heads/main",
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
 } = {}) {
   const pass = Object.values(recomputation.proposition_results).every((entry) => entry === "PASS");
-  const remoteCustodyEstablished = remoteRecontactEstablishesCustody({
+  const remoteCustodyDerivation = deriveRemoteCustodyStandingForFreeze({
+    rootDir,
+    manifest,
+    preimage,
+    recomputation,
     durableCustodyCommit,
-    remoteRecontactReceipt
+    remoteCustodyRef,
+    preimagePath,
+    manifestPath
   });
+  const remoteCustodyEstablished =
+    remoteCustodyDerivation.FREEZE_ELIGIBLE_REMOTE_CUSTODY === true;
   if (!pass || !durableCustodyCommit || !remoteCustodyEstablished) {
     return {
       SUCCESSOR_FREEZE: "NOT_MINTED",
       SUCCESSOR_FREEZE_IDENTITY: "NOT_MINTED",
       SUCCESSOR_FREEZE_ELIGIBLE: false,
+      REMOTE_CUSTODY_DERIVATION: remoteCustodyDerivation,
       reason: "DURABLE_RECONTACT_OR_REMOTE_CUSTODY_INCOMPLETE"
     };
   }
@@ -1325,8 +1465,10 @@ export function buildSuccessorFreeze({
     DELTA_IDENTITY: manifest.delta_identity,
     CUSTODY_DELTA_IDENTITY: recomputation.custody_delta_identity,
     DURABLE_CUSTODY_COMMIT: durableCustodyCommit,
-    REMOTE_CUSTODY_REF: `${remoteRecontactReceipt.REMOTE}/${remoteRecontactReceipt.REF}`,
-    REMOTE_RECONTACT_RECEIPT: remoteRecontactReceipt,
+    REMOTE_CUSTODY_REF:
+      `${remoteCustodyDerivation.REMOTE_IDENTITY.remote}/${remoteCustodyDerivation.REMOTE_IDENTITY.ref}`,
+    REMOTE_CUSTODY_DERIVATION: remoteCustodyDerivation,
+    REMOTE_RECONTACT_RECEIPT: remoteCustodyDerivation.REMOTE_RECONTACT_RECEIPT,
     PROOF_CLOSURE_MANIFEST_IDENTITY: manifest.proof_closure_manifest_identity,
     T2_SUCCESSOR_DISPOSITION: "T2_SUCCESSOR_PASS",
     G6_SUCCESSOR_STANDING: recomputation.g6_successor_standing.current_standing,
@@ -1348,6 +1490,7 @@ export function buildSuccessorFreeze({
     SUCCESSOR_FREEZE: "MINTED",
     SUCCESSOR_FREEZE_IDENTITY: freeze.FREEZE_IDENTITY,
     SUCCESSOR_FREEZE_ELIGIBLE: true,
+    REMOTE_CUSTODY_DERIVATION: remoteCustodyDerivation,
     freeze
   };
 }
@@ -1379,32 +1522,26 @@ export function buildProofClosureCustodyReport({
   const minimumSet = minimumDurableCustodySet({ manifest, subtractiveResults: subtractiveMinimalityResults });
   const recomputation = recomputeSuccessorStandingFromCustody({ rootDir: root, preimage, manifest });
   const currentHead = tryGit(root, ["rev-parse", "HEAD"])?.trim() ?? null;
-  const remoteRef = normalizeRemoteRef(remoteCustodyRef);
-  const remoteHead = getRemoteHead(root, { remote: "origin", ref: remoteRef });
   const exactPathSet = exactCustodyPathSet({ preimagePath, manifestPath });
-  const remoteRecontactReceipt = buildRemoteRecontactReceipt({
+  const freeze = buildSuccessorFreeze({
     rootDir: root,
-    remote: "origin",
-    ref: remoteRef,
-    requiredCommit: durableCustodyCommit,
-    observedCommit: remoteHead,
     manifest,
     preimage,
-    requiredPathSet: exactPathSet,
+    recomputation,
+    durableCustodyCommit,
+    remoteCustodyRef,
     preimagePath,
     manifestPath
   });
-  const freeze = buildSuccessorFreeze({
-    manifest,
-    recomputation,
-    durableCustodyCommit,
-    remoteRecontactReceipt
-  });
-  const remoteCustodyStanding = remoteRecontactReceipt.RECONTACT_RESULT === "PASS"
-    ? "REMOTE_REPLICATED"
-    : "NOT_ESTABLISHED";
+  const remoteCustodyDerivation = freeze.REMOTE_CUSTODY_DERIVATION;
+  const remoteRecontactReceipt = remoteCustodyDerivation.REMOTE_RECONTACT_RECEIPT;
+  const remoteHead = remoteRecontactReceipt.OBSERVED_COMMIT === "UNRESOLVED"
+    ? null
+    : remoteRecontactReceipt.OBSERVED_COMMIT;
+  const remoteCustodyStanding = remoteCustodyDerivation.REMOTE_CUSTODY_STANDING;
   const freezeBlockers = [
     ...(durableCustodyCommit ? [] : ["LOCAL_CUSTODY_COMMIT_NOT_SUPPLIED"]),
+    ...(remoteCustodyDerivation.LOCAL_CUSTODY_ESTABLISHED ? [] : ["LOCAL_CUSTODY_COMMIT_NOT_RECONTACTABLE"]),
     ...(remoteRecontactReceipt.REMOTE_REF_FRESHLY_RECONTACTED ? [] : ["REMOTE_REF_NOT_FRESHLY_RECONTACTED"]),
     ...(remoteHead === currentHead ? [] : ["REMOTE_REF_NOT_AT_LOCAL_HEAD"]),
     ...(remoteRecontactReceipt.REMOTE_REF_RESOLVES_TO_REQUIRED_CUSTODY_COMMIT
@@ -1432,8 +1569,34 @@ export function buildProofClosureCustodyReport({
       remote_ref_label_is_not_custody: true,
       remote_ref_observation_required: true,
       durable_remote_recontact_required: true,
-      successful_push_is_not_remote_recontact: true
+      successful_push_is_not_remote_recontact: true,
+      receipt_shape_not_remote_recontact_evidence: true,
+      freeze_boundary_requires_derivation_not_representation: true
     },
+    FREEZE_TRUST_BOUNDARY_GRAPH: [{
+      PATH_ID: "FREEZE_BOUNDARY_Q_REMOTE",
+      ENTRYPOINT: "buildSuccessorFreeze",
+      CALLER_CONTROLLED_INPUTS: ["rootDir", "durableCustodyCommit", "remoteCustodyRef"],
+      EXECUTION_DERIVED_INPUTS: ["REMOTE_CUSTODY_DERIVATION"],
+      RECONTACTED_INPUTS: [
+        "git ls-remote origin refs/heads/main",
+        "git show <observed_commit>:<required_path>",
+        "manifest identity recomputation"
+      ],
+      DERIVED_STANDING: ["REMOTE_CUSTODY_STANDING"],
+      FREEZE_CONSUMED_VALUES: ["REMOTE_CUSTODY_DERIVATION", "PROOF_CLOSURE_PASS"],
+      TRUST_BOUNDARY: "CALLER_REPRESENTATION_TO_EXECUTION_DERIVATION",
+      BYPASS_POSSIBLE: false,
+      CALLERS: ["buildProofClosureCustodyReport", "direct API callers"]
+    }],
+    Q_REMOTE_EVIDENCE_CONTRACT: remoteCustodyDerivation.QUESTION,
+    DERIVATION_AUTHORITY: remoteCustodyDerivation.DERIVATION_AUTHORITY,
+    FREEZE_API_SEAM: {
+      raw_remote_receipt_objects_accepted_as_freeze_proof: false,
+      caller_controlled_semantic_pass_fields_accepted: false,
+      freeze_constructor_derives_q_remote: true
+    },
+    SUBJECT_FIT_MODEL: remoteCustodyDerivation.SUBJECT_FIT,
     PROOF_CLOSURE_GRAPH: manifest.proof_closure_graph,
     MINIMUM_DURABLE_CUSTODY_SET: minimumSet,
     SUBTRACTIVE_MINIMALITY_RESULTS: subtractiveMinimalityResults,
@@ -1454,6 +1617,7 @@ export function buildProofClosureCustodyReport({
       remote_custody_standing: remoteCustodyStanding,
       push_custody_not_release: true
     },
+    REMOTE_CUSTODY_DERIVATION: remoteCustodyDerivation,
     REMOTE_RECONTACT_RECEIPT: remoteRecontactReceipt,
     DURABLE_CUSTODY_RECOMPUTATION: recomputation,
     DURABLE_RECONTACT_RESULT: recomputation.proposition_results,
