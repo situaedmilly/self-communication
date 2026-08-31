@@ -1,0 +1,464 @@
+{
+  "current_structural_identity_claim": "sha256:b0652e62b8eeb2f3cdb19f8e235b43548ba1dc118ca0f220d6189e8997754074",
+  "delta": {
+    "ADDED": [
+      "SUBJECT_REF assigned-reference field",
+      "STRUCTURAL_IDENTITY deterministic field",
+      "CONTENT_ROOTS separated from subject reference",
+      "CUSTODY_ROOTS separated by durability species",
+      "DELTA_IDENTITY",
+      "EVIDENCE_DEPENDENCY_MAP",
+      "HEAD_PIN_FINDINGS"
+    ],
+    "CHANGED": [
+      "a20e63ee primary species from implicit identity to assigned reference unless recomputed",
+      "T2 transfer from automatic predecessor PASS to delta-sensitive adjudication",
+      "content-addressed local filenames from durable custody claim to WORKTREE_ONLY unless Git or remote recontact proves otherwise",
+      "G7 eligibility from label carry to subject/custody/evidence predicate"
+    ],
+    "DELTA_IDENTITY": "sha256:d255e7000557bdbcb0848e76fef19522dcb18a4ae57fd0480986d66df4ff904b",
+    "RELATION_CHANGED": [
+      "T2 predecessor relation must bind to successor subject preimage before carry",
+      "HEAD equality is not evidence validity unless HEAD is a required preimage member"
+    ],
+    "REMOVED": [
+      "single opaque launch_subject_identity as simultaneous content/structural/founder/freeze/successor identity"
+    ],
+    "S1": "PREDECESSOR_OVERLOADED_SUBJECT_MODEL",
+    "S2": "PROOF_CARRYING_SUCCESSOR_SUBJECT_MODEL",
+    "UNCHANGED": [
+      "launch target remains SELFCOMMUNICATION_LIVE_V0",
+      "current launch standing remains NO_LAUNCH",
+      "historical d49c remains missing",
+      "G5 remains blocked without valid R4 receipt",
+      "G7 is not rerun"
+    ]
+  },
+  "delta_identity": "sha256:d255e7000557bdbcb0848e76fef19522dcb18a4ae57fd0480986d66df4ff904b",
+  "durable_only_structural_recomputation": "sha256:8f6a3a3cdd453d4b94cf0f691842b1412d3271928ea664724df682915f82d4df",
+  "historical_extracts": [
+    {
+      "CLAIMS_NOT_SUPPORTED": [
+        "Successor launch authority",
+        "Claude re-observation"
+      ],
+      "CLAIMS_SUPPORTED": [
+        "Patient Zero was false through T1/T1.5 in the same T2 predecessor trajectory."
+      ],
+      "ENTRY_ID": "EXTRACT:T2_T1_T15_PRE_STATE",
+      "EXTRACTION_RULE": "Parse Claude JSONL by newline, select exact line_number plus uuid/tool_use_id, then extract the named content field without reauthoring the occurrence.",
+      "EXTRACT_AUTHENTICITY_REQUIRES_SOURCE_SELECTOR_AND_EXTRACT": true,
+      "EXTRACT_CONTENT": "F1 determinism: true\nPZ obs count: 0 | claude PZ count: 0\nT1 final: PASS\nT1.5 final: PASS\nT1 required_false_holds (execution-derived bool): true\nT0 matrix: present | class1 result: true",
+      "EXTRACT_CONTENT_IDENTITY": "sha256:eb773e7ed01006bcbb7c973357cd5fffd8a542a77193372095db9672e43f381e",
+      "EXTRACT_IDENTITY": "sha256:4afd6dc1ed2c0876abaf6ccc36c726c0cc11da1db8f3472de193f2a3a9fa2048",
+      "EXTRACT_IDENTITY_NOT_SOURCE_IDENTITY": true,
+      "PROOF_GENUS": "BINDING",
+      "QUESTION_SUPPORTED": "B_participation",
+      "SELECTOR_SPECIES": "CLAUDE_JSONL_LINE_UUID_AND_CONTENT_FIELD",
+      "SOURCE_LOCATOR": "/Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+      "SOURCE_OBJECT_IDENTITY": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0",
+      "SOURCE_RANGE_OR_SELECTOR": {
+        "field": "message.content[].content",
+        "line_number": 736,
+        "selector_species": "CLAUDE_JSONL_LINE_UUID_AND_CONTENT_FIELD",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "uuid": "7078ceb3-5946-4fd2-99f8-bb915a32be87"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY",
+      "TEMPORAL_RELATION": "PREDECESSOR_T2_PRE_STATE"
+    },
+    {
+      "CLAIMS_NOT_SUPPORTED": [
+        "Patient Zero truth",
+        "Retroactive successor authorship"
+      ],
+      "CLAIMS_SUPPORTED": [
+        "The T2 predecessor occurrence issued the GitHub comment recontact command."
+      ],
+      "ENTRY_ID": "EXTRACT:T2_TOOL_USE_COMMAND",
+      "EXTRACTION_RULE": "Parse Claude JSONL by newline, select exact line_number plus uuid/tool_use_id, then extract the named content field without reauthoring the occurrence.",
+      "EXTRACT_AUTHENTICITY_REQUIRES_SOURCE_SELECTOR_AND_EXTRACT": true,
+      "EXTRACT_CONTENT": "cd /private/tmp/claude-501/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926/scratchpad\necho \"=== T2 GOCHECKIT: independent authoritative recontact of Patient Zero 5464975482 ===\"\ngh api repos/situaedmilly/self-communication/issues/comments/5464975482 > pz_t2.json 2>&1 && echo \"RECONTACT_OK\" || { echo \"RECONTACT_FAIL\"; cat pz_t2.json; }\npython3 -c \"\nimport json, hashlib, datetime\nd=json.load(open('pz_t2.json'))\nbody=d['body']\nbh=hashlib.sha256(body.encode()).hexdigest()\nprint('observation_occurrence:')\nprint('  observer: PO_interactive (CLAUDESELF_CHAMBER_219be5a6, opus-4-8), admitted GitHub capability (gh, principal situaedmilly)')\nprint('  comment_id:', d['id'])\nprint('  node_id:', d['node_id'])\nprint('  author(login):', d['user']['login'])\nprint('  created_at:', d['created_at'])\nprint('  observed_body_bytes:', len(body.encode()))\nprint('  observed_content_identity (independently computed at this endpoint): sha256:'+bh)\nprint('  recontact_time_utc:', datetime.datetime.now(datetime.timezone.utc).isoformat())\n# faithful excerpt to prove authoritative content actually observed (not substituted)\nprint('  first_line:', body.splitlines()[0] if body else '(empty)')\nprint('  contains ROUTE_ADJUDICATION_PROBE marker:', 'ROUTE_ADJUDICATION_PROBE' in body)\n\"",
+      "EXTRACT_CONTENT_IDENTITY": "sha256:0f490e08417e69df67a92663a5dc78a539d4dea7350904d998ec762c19d752dd",
+      "EXTRACT_IDENTITY": "sha256:23efe7dae91eb0b0fc3486e66b92525b17933349cd33e25059cd793080819051",
+      "EXTRACT_IDENTITY_NOT_SOURCE_IDENTITY": true,
+      "PROOF_GENUS": "OBSERVATION",
+      "QUESTION_SUPPORTED": "B_observation_occurrence",
+      "SELECTOR_SPECIES": "CLAUDE_JSONL_LINE_UUID_TOOL_USE_ID_AND_INPUT_COMMAND",
+      "SOURCE_LOCATOR": "/Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+      "SOURCE_OBJECT_IDENTITY": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0",
+      "SOURCE_RANGE_OR_SELECTOR": {
+        "field": "message.content[].input.command",
+        "line_number": 740,
+        "selector_species": "CLAUDE_JSONL_LINE_UUID_TOOL_USE_ID_AND_INPUT_COMMAND",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+        "uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY",
+      "TEMPORAL_RELATION": "PREDECESSOR_T2_OBSERVATION_ATTEMPT"
+    },
+    {
+      "CLAIMS_NOT_SUPPORTED": [
+        "New observation by this successor",
+        "G7 closure"
+      ],
+      "CLAIMS_SUPPORTED": [
+        "The T2 predecessor result reported exact Patient Zero recontact output."
+      ],
+      "ENTRY_ID": "EXTRACT:T2_TOOL_RESULT_CONTENT",
+      "EXTRACTION_RULE": "Parse Claude JSONL by newline, select exact line_number plus uuid/tool_use_id, then extract the named content field without reauthoring the occurrence.",
+      "EXTRACT_AUTHENTICITY_REQUIRES_SOURCE_SELECTOR_AND_EXTRACT": true,
+      "EXTRACT_CONTENT": "=== T2 GOCHECKIT: independent authoritative recontact of Patient Zero 5464975482 ===\nRECONTACT_OK\nobservation_occurrence:\n  observer: PO_interactive (CLAUDESELF_CHAMBER_219be5a6, opus-4-8), admitted GitHub capability (gh, principal situaedmilly)\n  comment_id: 5464975482\n  node_id: IC_kwDOT3unqM8AAAABRbzoeg\n  author(login): situaedmilly\n  created_at: 2026-08-29T21:26:03Z\n  observed_body_bytes: 133\n  observed_content_identity (independently computed at this endpoint): sha256:9bbc97aa41d7566d522d51912078ab5e419fd4ec3ed47f3591ae84c337415d98\n  recontact_time_utc: 2026-08-30T01:59:02.573496+00:00\n  first_line: ROUTE_ADJUDICATION_PROBE\n  contains ROUTE_ADJUDICATION_PROBE marker: True\nShell cwd was reset to /Users/millysituated",
+      "EXTRACT_CONTENT_IDENTITY": "sha256:e57b634a89ef4af64d9643f8117d9b654094a410158b0e7a7729ab27a0c5b599",
+      "EXTRACT_IDENTITY": "sha256:2105ffa3181b0bea1cabc56927015198d4cf262f14436abcd9ac8c5c387978de",
+      "EXTRACT_IDENTITY_NOT_SOURCE_IDENTITY": true,
+      "PROOF_GENUS": "OBSERVATION",
+      "QUESTION_SUPPORTED": "B_observation_occurrence",
+      "SELECTOR_SPECIES": "CLAUDE_JSONL_LINE_PARENT_UUID_TOOL_USE_ID_AND_RESULT_CONTENT",
+      "SOURCE_LOCATOR": "/Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+      "SOURCE_OBJECT_IDENTITY": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0",
+      "SOURCE_RANGE_OR_SELECTOR": {
+        "field": "message.content[].content",
+        "line_number": 746,
+        "parent_uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e",
+        "selector_species": "CLAUDE_JSONL_LINE_PARENT_UUID_TOOL_USE_ID_AND_RESULT_CONTENT",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "source_tool_assistant_uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e",
+        "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+        "uuid": "4ffa98b6-ea25-4291-84a5-d72dfe2d2c76"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY",
+      "TEMPORAL_RELATION": "PREDECESSOR_T2_OBSERVATION_RESULT"
+    },
+    {
+      "CLAIMS_NOT_SUPPORTED": [
+        "Truth",
+        "Agreement",
+        "Authority",
+        "Effect",
+        "Launch readiness"
+      ],
+      "CLAIMS_SUPPORTED": [
+        "The predecessor T2 standing ceiling is observation-only under T0."
+      ],
+      "ENTRY_ID": "EXTRACT:T2_RECEIPT_TEXT",
+      "EXTRACTION_RULE": "Parse Claude JSONL by newline, select exact line_number plus uuid/tool_use_id, then extract the named content field without reauthoring the occurrence.",
+      "EXTRACT_AUTHENTICITY_REQUIRES_SOURCE_SELECTOR_AND_EXTRACT": true,
+      "EXTRACT_CONTENT": "# CLAUDESELF_PATIENT_ZERO_T2_CALIBRATION_RECEIPT — `T2 = PASS`\n\n**`Observed(PO_interactive, 5464975482): FALSE → TRUE`** — by one fresh, independent, attributable observation occurrence from this participation. Patient Zero held dark through six cycles and every counterfeit; the repair is real, so the actual observer turned the light on.\n\n## PREIMAGE_VERIFICATION — all predecessors independently verified (not inherited from Codex's summary)\n- **REPORT_IDENTITY:** `sha256:c123d2e9…` — matched embedded; report now **deterministic** (F1 repaired: two builds identical).\n- **T1 execution-derived:** `required_false_holds` computed from an observation-event scan (not literal) → PASS.\n- **T1.5 execution-derived:** activation-denied path → PASS.\n- **PATIENT_ZERO_EVENT_COUNT:** 0 pre-observation (preserved through all synthetic calibration).\n- **CLASS-1 execution-derived + BIND repair:** my reported counterexample (attacker-own-key) is **closed** — verified independently: attacker-own-key → REJECTED with 7 reasons (BIND: `claimed key is not the registered occurrence key`; ATTR: `endpoint signature verification failed`). The gate resolves **Occurrence→RegisteredKey** from a canonical birth-established registry (verified on the graded path, incl. the main PO observation path at line 2569), no longer trusting an observation-supplied key. Lawful key-replacement rejected via register-once + birth-match (C4).\n- **RESIDUE (latent, non-blocking):** a hand-built **registry-substitution** and the `keyRegistry=null → auto-register` default both pass *in isolation*, but neither is reachable on the graded path (the registry is canonical and always supplied; lawful injection goes through register-once). These are **registry-integrity** questions — who may write the canonical registry — mapping to T0's `does_not_exclude` (same-host/shared-state compromise), not class-1 admitted-surface bypasses. Logged for R4.\n\n## THE T2 ACT\n- **PATIENT_ZERO_PRE_STATE:** `Observed(PO_interactive, 5464975482) = FALSE`\n- **ACTIVATION_ADMISSION:** GRANTED (Founder → this interactive participation, for 5464975482 only)\n- **GOCHECKIT_ACT:** performed through my admitted capability (`gh api …/comments/5464975482`)\n- **AUTHORITATIVE_RECONTACT:** comment `5464975482`, node `IC_kwDOT3unqM8AAAABRbzoeg`, created `2026-08-29T21:26:03Z`, 133 bytes — fetched directly, first line `ROUTE_ADJUDICATION_PROBE` (confirms authoritative, not substituted)\n- **OBSERVATION_OCCURRENCE:** fresh, by `PO_interactive` (`CLAUDESELF_CHAMBER_219be5a6`, opus-4-8) at `2026-08-30T01:59:02Z`; custodied at `scratchpad/pz_t2.json`\n- **REGISTERED_KEY_BINDING:** model attribution resolves this occurrence to its registered key against the canonical registry (mechanism verified); the real act is my own turn's tool call, recorded in this occurrence's transcript\n- **ATTRIBUTION_EVIDENCE:** content identity **independently computed at this endpoint** = `sha256:9bbc97aa41d7566d522d51912078ab5e419fd4ec3ed47f3591ae84c337415d98`; no supplied value accepted\n- **T0_FIT:** SUFFICIENT under T0 — attributable to this occurrence against the excluded counterfeit classes\n- **PATIENT_ZERO_POST_STATE:** `Observed(PO_interactive, 5464975482) = TRUE`\n- **OBSERVED_STANDING:** `OBSERVED_EXACT`\n\n## STANDING_CEILING\n`ATTRIBUTION_ESTABLISHED_UNDER_T0` — **OBSERVATION only.** This establishes **not** truth, **not** agreement, **not** authority, **not** effect, **not** launch readiness. The observation was made through the shared `situaedmilly` principal, so the ceiling explicitly does not exclude same-host/privileged/provider compromise. The light is on; it illuminates that this occurrence recontacted the Matter — nothing beyond.\n\n## DISPOSITIONS\n- **T2_DISPOSITION:** PASS\n- **SOURCE_MUTATION_COUNT:** 0 (HEAD `409c7bb5`, status `e43c7e24` unchanged; only recontact + scratchpad custody)\n- **G7_DISPOSITION:** **STILL OPEN** — T2 establishes observation standing, not context provenance. The session-file union / in-context provenance question is orthogonal and unaddressed by this act; it remains `UNKNOWN_IN_CONTEXT_PROVENANCE`, requiring its own disposition.\n- **R4_ELIGIBILITY:** **NOT YET.** T2 PASS satisfies one gate, but R4 requires *all three*: T2 PASS ✓ · **G7 disposition non-blocking (open)** · **source freeze (not yet performed)**. R4 remains a separate fresh hostile seat, ineligible until G7 is disposed and the repair source is frozen — both Founder acts.\n\n## AFTER T2 (holding the boundary)\nI did not design, repair, launch, or seat R4. The registry-substitution / auto-register residues are reported, not fixed. `CURRENT_LAUNCH_STANDING = NO_LAUNCH` (calibration green ≠ launch).\n\nPatient Zero stayed dark through every counterfeit and turned on only for the occurrence that actually recontacted it — the observer that could not be forged because it did the observing. That is the whole proof the trajectory was built to earn: not that the light *can* be on, but that only the real observer can turn it on. **RETURN. STOP.**",
+      "EXTRACT_CONTENT_IDENTITY": "sha256:65b0aea37152f5cb18965e15fa8fa61cdc29dba01b7cf9c107a2e860aafbbd7b",
+      "EXTRACT_IDENTITY": "sha256:76043d0c80aa922a7cfa11d53f8f039dd7972bd656840a790997613cdb508d7a",
+      "EXTRACT_IDENTITY_NOT_SOURCE_IDENTITY": true,
+      "PROOF_GENUS": "OBSERVATION",
+      "QUESTION_SUPPORTED": "B_standing_ceiling",
+      "SELECTOR_SPECIES": "CLAUDE_JSONL_LINE_UUID_TEXT_RECEIPT",
+      "SOURCE_LOCATOR": "/Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+      "SOURCE_OBJECT_IDENTITY": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0",
+      "SOURCE_RANGE_OR_SELECTOR": {
+        "field": "message.content[].text",
+        "line_number": 755,
+        "selector_species": "CLAUDE_JSONL_LINE_UUID_TEXT_RECEIPT",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "uuid": "f547269a-65a5-450d-badf-34bfc7a0d5d5"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY",
+      "TEMPORAL_RELATION": "PREDECESSOR_T2_RECEIPT"
+    },
+    {
+      "CLAIMS_NOT_SUPPORTED": [
+        "Truth of the comment body",
+        "Launch authority"
+      ],
+      "CLAIMS_SUPPORTED": [
+        "The observed GitHub comment Matter is exactly 5464975482 with the recorded body identity."
+      ],
+      "ENTRY_ID": "EXTRACT:PATIENT_ZERO_JSON_FIELDS",
+      "EXTRACTION_RULE": "Parse Patient Zero JSON and preserve only identity, authorship, timestamp, and body fields needed by T2 binding.",
+      "EXTRACT_AUTHENTICITY_REQUIRES_SOURCE_SELECTOR_AND_EXTRACT": true,
+      "EXTRACT_CONTENT": {
+        "api_url": "https://api.github.com/repos/situaedmilly/self-communication/issues/comments/5464975482",
+        "author_association": "OWNER",
+        "author_login": "situaedmilly",
+        "body": "ROUTE_ADJUDICATION_PROBE\nseat_claim=CODEXSELF\nprobe_id=CL001-CODEX-ROUTE-001\nno_command_authority=true\nno_continuation_authority=true",
+        "body_byte_count": 133,
+        "body_content_identity": "sha256:9bbc97aa41d7566d522d51912078ab5e419fd4ec3ed47f3591ae84c337415d98",
+        "comment_id": 5464975482,
+        "created_at": "2026-08-29T21:26:03Z",
+        "first_line": "ROUTE_ADJUDICATION_PROBE",
+        "html_url": "https://github.com/situaedmilly/self-communication/issues/1#issuecomment-5464975482",
+        "issue_url": "https://api.github.com/repos/situaedmilly/self-communication/issues/1",
+        "matter_ref": "5464975482",
+        "matter_species": "GITHUB_ISSUE_COMMENT",
+        "node_id": "IC_kwDOT3unqM8AAAABRbzoeg",
+        "source_identity": "sha256:7f7c7b4905cccd1e133ee5e859b1f3a26c5f95b96b42e39d63a5b350ec65a5de",
+        "source_locator": "/private/tmp/claude-501/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926/scratchpad/pz_t2.json",
+        "updated_at": "2026-08-29T21:26:03Z"
+      },
+      "EXTRACT_CONTENT_IDENTITY": "sha256:e2acf82e781b7ca3145c5ed5e80c9c18e49cc37d1ec7d175221285e12c23e8a3",
+      "EXTRACT_IDENTITY": "sha256:d50489b943714cb15ed6a35c768723bf56e151d7c77d3b322b0aae57c6cc5d5f",
+      "EXTRACT_IDENTITY_NOT_SOURCE_IDENTITY": true,
+      "PROOF_GENUS": "DETERMINATION",
+      "QUESTION_SUPPORTED": "B_patient_zero",
+      "SELECTOR_SPECIES": "JSON_FIELD_SET",
+      "SOURCE_LOCATOR": "/private/tmp/claude-501/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926/scratchpad/pz_t2.json",
+      "SOURCE_OBJECT_IDENTITY": "sha256:7f7c7b4905cccd1e133ee5e859b1f3a26c5f95b96b42e39d63a5b350ec65a5de",
+      "SOURCE_RANGE_OR_SELECTOR": {
+        "fields": [
+          "url",
+          "html_url",
+          "issue_url",
+          "id",
+          "node_id",
+          "user.login",
+          "author_association",
+          "created_at",
+          "updated_at",
+          "body"
+        ],
+        "selector_species": "JSON_FIELD_SET"
+      },
+      "STANDING_CEILING": "EXACT_BOUNDED_MATTER_IDENTITY_ONLY",
+      "TEMPORAL_RELATION": "PATIENT_ZERO_MATTER_PREDECESSOR_SOURCE"
+    }
+  ],
+  "historical_source_reduction": {
+    "pre_r4_report_excluded_by_subtractive_minimality": true,
+    "semantic_regeneration_not_historical_recovery": true,
+    "whole_claude_session_not_archived_by_default": true,
+    "whole_patient_zero_scratch_json_not_required_after_extract": true
+  },
+  "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+  "no_new_observation": {
+    "claude_reactivation": false,
+    "patient_zero_reobservation_by_claude": false,
+    "retrospective_successor_binding_not_retroactive_authorship": true
+  },
+  "object_type": "T2_SUCCESSOR_PROOF_PREIMAGE",
+  "predecessor_subject_ref": "sha256:a20e63ee234f6564703e38e0b6da0682901b92469e6854821901ce8a5269cade",
+  "predecessor_subject_ref_species": "ASSIGNED_REFERENCE",
+  "preimage_identity": "sha256:4e67ce80a1f0137e93fab7976f9b13075a383dc5c014b1e657d0bacc22456d69",
+  "schema": "ourself.selfcommunication-proof-closure-custody.v0.1",
+  "stale_residue_fixture": {
+    "display_residue_not_control_matter": true,
+    "historical_residual_blocker_string": "REMOTE_REPLICATED_CUSTODY_NOT_ESTABLISHED",
+    "semantic_current_standing": "REMOTE_REPLICATED"
+  },
+  "subject_ref": "SELFCOMMUNICATION_LIVE_V0:PROOF_CARRYING_SUCCESSOR:20260830:001",
+  "t2_bounded_evidence": {
+    "does_not_support": [
+      "TRUTH_OF_PATIENT_ZERO_BODY",
+      "AGREEMENT_WITH_PATIENT_ZERO_BODY",
+      "LAUNCH_AUTHORITY",
+      "G7_CONTEXT_PROVENANCE_CLOSURE",
+      "R4_RECEIPT",
+      "LAUNCH_READY"
+    ],
+    "evidence_id": "T2_PATIENT_ZERO_RECONTACT_219be5a6_5464975482_V0",
+    "evidence_identity": "sha256:b936032d309b1b3e26f3cb65c3b8965faf1aa42433596efed1bc3db8f05fff75",
+    "interpretation_context": {
+      "launch_subject_identity": "sha256:a20e63ee234f6564703e38e0b6da0682901b92469e6854821901ce8a5269cade",
+      "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+      "participation_ref": "P_CLAUDE_LAUNCH_READINESS",
+      "patient_zero_matter_ref": "5464975482",
+      "retrospective_binding_not_retroactive_authorship": true,
+      "t2_predecessor_not_launch_authority": true
+    },
+    "object_type": "BOUNDED_EXTERNAL_T2_PREDECESSOR_EVIDENCE",
+    "observation_output": {
+      "author_login": "situaedmilly",
+      "comment_id": "5464975482",
+      "contains_route_adjudication_probe_marker": true,
+      "created_at": "2026-08-29T21:26:03Z",
+      "first_line": "ROUTE_ADJUDICATION_PROBE",
+      "node_id": "IC_kwDOT3unqM8AAAABRbzoeg",
+      "observed_body_bytes": 133,
+      "observed_content_identity": "sha256:9bbc97aa41d7566d522d51912078ab5e419fd4ec3ed47f3591ae84c337415d98",
+      "observer": "PO_interactive (CLAUDESELF_CHAMBER_219be5a6, opus-4-8), admitted GitHub capability (gh, principal situaedmilly)",
+      "recontact_ok": true,
+      "recontact_time_utc": "2026-08-30T01:59:02.573496+00:00"
+    },
+    "patient_zero_matter": {
+      "api_url": "https://api.github.com/repos/situaedmilly/self-communication/issues/comments/5464975482",
+      "author_association": "OWNER",
+      "author_login": "situaedmilly",
+      "body": "ROUTE_ADJUDICATION_PROBE\nseat_claim=CODEXSELF\nprobe_id=CL001-CODEX-ROUTE-001\nno_command_authority=true\nno_continuation_authority=true",
+      "body_byte_count": 133,
+      "body_content_identity": "sha256:9bbc97aa41d7566d522d51912078ab5e419fd4ec3ed47f3591ae84c337415d98",
+      "comment_id": 5464975482,
+      "created_at": "2026-08-29T21:26:03Z",
+      "first_line": "ROUTE_ADJUDICATION_PROBE",
+      "html_url": "https://github.com/situaedmilly/self-communication/issues/1#issuecomment-5464975482",
+      "issue_url": "https://api.github.com/repos/situaedmilly/self-communication/issues/1",
+      "matter_ref": "5464975482",
+      "matter_species": "GITHUB_ISSUE_COMMENT",
+      "node_id": "IC_kwDOT3unqM8AAAABRbzoeg",
+      "source_identity": "sha256:7f7c7b4905cccd1e133ee5e859b1f3a26c5f95b96b42e39d63a5b350ec65a5de",
+      "source_locator": "/private/tmp/claude-501/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926/scratchpad/pz_t2.json",
+      "updated_at": "2026-08-29T21:26:03Z"
+    },
+    "pre_r4_t2_section": null,
+    "proof_jurisdiction": {
+      "no_evidence_crosses_proof_jurisdiction": true,
+      "observation_not_agreement": true,
+      "observation_not_authority": true,
+      "observation_not_effect": true,
+      "observation_not_launch_ready": true,
+      "observation_not_truth": true
+    },
+    "provenance": {
+      "external_session_context_not_ourself_observation": true,
+      "extracted_by": "CODEXSELF",
+      "extraction_not_promotion": true,
+      "patient_zero_reobservation_performed_in_this_phase": false,
+      "source_species": "EXTERNAL_CLAUDE_SESSION_FILE_PLUS_SCRATCHPAD_JSON",
+      "summary_not_source_preimage": true
+    },
+    "role": "BOUNDED_EXTERNAL_T2_OBSERVATION_PREIMAGE",
+    "schema": "ourself.selfcommunication-t2-predecessor-binding.v0.1",
+    "source_identity": {
+      "claude_session_file": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0",
+      "patient_zero_json": "sha256:7f7c7b4905cccd1e133ee5e859b1f3a26c5f95b96b42e39d63a5b350ec65a5de",
+      "pre_r4_report": null
+    },
+    "source_locator": {
+      "claude_session_file": "/Users/millysituated/.claude/projects/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926.jsonl",
+      "patient_zero_json": "/private/tmp/claude-501/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926/scratchpad/pz_t2.json",
+      "pre_r4_report": null
+    },
+    "source_range_or_exact_extraction_rule": {
+      "claude_jsonl_records": [
+        {
+          "content_type": "tool_result",
+          "line_number": 736,
+          "parent_uuid": "57df5ebd-93f6-4fcf-9ee7-e983e96f917f",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "text_identity": "sha256:eb773e7ed01006bcbb7c973357cd5fffd8a542a77193372095db9672e43f381e",
+          "tool_use_id": "toolu_016PAbXc3ckwu5YLJf7EtVjg",
+          "uuid": "7078ceb3-5946-4fd2-99f8-bb915a32be87"
+        },
+        {
+          "content_type": "tool_use",
+          "line_number": 740,
+          "parent_uuid": "24fb9acb-e2c3-476c-973a-b529f8cb99f8",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "text_identity": "sha256:0f490e08417e69df67a92663a5dc78a539d4dea7350904d998ec762c19d752dd",
+          "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+          "uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e"
+        },
+        {
+          "content_type": "tool_result",
+          "line_number": 746,
+          "parent_uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "text_identity": "sha256:e57b634a89ef4af64d9643f8117d9b654094a410158b0e7a7729ab27a0c5b599",
+          "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+          "uuid": "4ffa98b6-ea25-4291-84a5-d72dfe2d2c76"
+        },
+        {
+          "content_type": "text",
+          "line_number": 755,
+          "parent_uuid": "856c90c3-967a-4cd6-9540-63831c45a451",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "text_identity": "sha256:65b0aea37152f5cb18965e15fa8fa61cdc29dba01b7cf9c107a2e860aafbbd7b",
+          "tool_use_id": null,
+          "uuid": "f547269a-65a5-450d-badf-34bfc7a0d5d5"
+        }
+      ],
+      "extraction_species": "BOUNDED_T2_PATIENT_ZERO_OBSERVATION_PREIMAGE",
+      "patient_zero_json_fields": [
+        "url",
+        "html_url",
+        "issue_url",
+        "id",
+        "node_id",
+        "user.login",
+        "author_association",
+        "created_at",
+        "updated_at",
+        "body"
+      ],
+      "pre_r4_report_section": null,
+      "raw_provider_session_file_copied": false
+    },
+    "supports": [
+      "T2_PATIENT_ZERO_BINDING",
+      "T2_PARTICIPATION_BINDING",
+      "T2_OBSERVATION_OCCURRENCE",
+      "T2_STANDING_CEILING",
+      "T2_RETROSPECTIVE_LAUNCH_SUBJECT_PREDECESSOR_BINDING"
+    ],
+    "transcript_evidence": {
+      "receipt_text": {
+        "content_type": "text",
+        "cwd": "/Users/millysituated/self-communication",
+        "is_sidechain": false,
+        "line_number": 755,
+        "message_role": "assistant",
+        "parent_uuid": "856c90c3-967a-4cd6-9540-63831c45a451",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "source_tool_assistant_uuid": null,
+        "text_identity": "sha256:65b0aea37152f5cb18965e15fa8fa61cdc29dba01b7cf9c107a2e860aafbbd7b",
+        "tool_name": null,
+        "tool_use_id": null,
+        "type": "assistant",
+        "user_type": "external",
+        "uuid": "f547269a-65a5-450d-badf-34bfc7a0d5d5"
+      },
+      "receipt_text_content": "# CLAUDESELF_PATIENT_ZERO_T2_CALIBRATION_RECEIPT — `T2 = PASS`\n\n**`Observed(PO_interactive, 5464975482): FALSE → TRUE`** — by one fresh, independent, attributable observation occurrence from this participation. Patient Zero held dark through six cycles and every counterfeit; the repair is real, so the actual observer turned the light on.\n\n## PREIMAGE_VERIFICATION — all predecessors independently verified (not inherited from Codex's summary)\n- **REPORT_IDENTITY:** `sha256:c123d2e9…` — matched embedded; report now **deterministic** (F1 repaired: two builds identical).\n- **T1 execution-derived:** `required_false_holds` computed from an observation-event scan (not literal) → PASS.\n- **T1.5 execution-derived:** activation-denied path → PASS.\n- **PATIENT_ZERO_EVENT_COUNT:** 0 pre-observation (preserved through all synthetic calibration).\n- **CLASS-1 execution-derived + BIND repair:** my reported counterexample (attacker-own-key) is **closed** — verified independently: attacker-own-key → REJECTED with 7 reasons (BIND: `claimed key is not the registered occurrence key`; ATTR: `endpoint signature verification failed`). The gate resolves **Occurrence→RegisteredKey** from a canonical birth-established registry (verified on the graded path, incl. the main PO observation path at line 2569), no longer trusting an observation-supplied key. Lawful key-replacement rejected via register-once + birth-match (C4).\n- **RESIDUE (latent, non-blocking):** a hand-built **registry-substitution** and the `keyRegistry=null → auto-register` default both pass *in isolation*, but neither is reachable on the graded path (the registry is canonical and always supplied; lawful injection goes through register-once). These are **registry-integrity** questions — who may write the canonical registry — mapping to T0's `does_not_exclude` (same-host/shared-state compromise), not class-1 admitted-surface bypasses. Logged for R4.\n\n## THE T2 ACT\n- **PATIENT_ZERO_PRE_STATE:** `Observed(PO_interactive, 5464975482) = FALSE`\n- **ACTIVATION_ADMISSION:** GRANTED (Founder → this interactive participation, for 5464975482 only)\n- **GOCHECKIT_ACT:** performed through my admitted capability (`gh api …/comments/5464975482`)\n- **AUTHORITATIVE_RECONTACT:** comment `5464975482`, node `IC_kwDOT3unqM8AAAABRbzoeg`, created `2026-08-29T21:26:03Z`, 133 bytes — fetched directly, first line `ROUTE_ADJUDICATION_PROBE` (confirms authoritative, not substituted)\n- **OBSERVATION_OCCURRENCE:** fresh, by `PO_interactive` (`CLAUDESELF_CHAMBER_219be5a6`, opus-4-8) at `2026-08-30T01:59:02Z`; custodied at `scratchpad/pz_t2.json`\n- **REGISTERED_KEY_BINDING:** model attribution resolves this occurrence to its registered key against the canonical registry (mechanism verified); the real act is my own turn's tool call, recorded in this occurrence's transcript\n- **ATTRIBUTION_EVIDENCE:** content identity **independently computed at this endpoint** = `sha256:9bbc97aa41d7566d522d51912078ab5e419fd4ec3ed47f3591ae84c337415d98`; no supplied value accepted\n- **T0_FIT:** SUFFICIENT under T0 — attributable to this occurrence against the excluded counterfeit classes\n- **PATIENT_ZERO_POST_STATE:** `Observed(PO_interactive, 5464975482) = TRUE`\n- **OBSERVED_STANDING:** `OBSERVED_EXACT`\n\n## STANDING_CEILING\n`ATTRIBUTION_ESTABLISHED_UNDER_T0` — **OBSERVATION only.** This establishes **not** truth, **not** agreement, **not** authority, **not** effect, **not** launch readiness. The observation was made through the shared `situaedmilly` principal, so the ceiling explicitly does not exclude same-host/privileged/provider compromise. The light is on; it illuminates that this occurrence recontacted the Matter — nothing beyond.\n\n## DISPOSITIONS\n- **T2_DISPOSITION:** PASS\n- **SOURCE_MUTATION_COUNT:** 0 (HEAD `409c7bb5`, status `e43c7e24` unchanged; only recontact + scratchpad custody)\n- **G7_DISPOSITION:** **STILL OPEN** — T2 establishes observation standing, not context provenance. The session-file union / in-context provenance question is orthogonal and unaddressed by this act; it remains `UNKNOWN_IN_CONTEXT_PROVENANCE`, requiring its own disposition.\n- **R4_ELIGIBILITY:** **NOT YET.** T2 PASS satisfies one gate, but R4 requires *all three*: T2 PASS ✓ · **G7 disposition non-blocking (open)** · **source freeze (not yet performed)**. R4 remains a separate fresh hostile seat, ineligible until G7 is disposed and the repair source is frozen — both Founder acts.\n\n## AFTER T2 (holding the boundary)\nI did not design, repair, launch, or seat R4. The registry-substitution / auto-register residues are reported, not fixed. `CURRENT_LAUNCH_STANDING = NO_LAUNCH` (calibration green ≠ launch).\n\nPatient Zero stayed dark through every counterfeit and turned on only for the occurrence that actually recontacted it — the observer that could not be forged because it did the observing. That is the whole proof the trajectory was built to earn: not that the light *can* be on, but that only the real observer can turn it on. **RETURN. STOP.**",
+      "receipt_text_identity": "sha256:65b0aea37152f5cb18965e15fa8fa61cdc29dba01b7cf9c107a2e860aafbbd7b",
+      "t1_pre_state": {
+        "content_type": "tool_result",
+        "cwd": "/Users/millysituated/self-communication",
+        "is_sidechain": false,
+        "line_number": 736,
+        "message_role": "user",
+        "parent_uuid": "57df5ebd-93f6-4fcf-9ee7-e983e96f917f",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "source_tool_assistant_uuid": "57df5ebd-93f6-4fcf-9ee7-e983e96f917f",
+        "text_identity": "sha256:eb773e7ed01006bcbb7c973357cd5fffd8a542a77193372095db9672e43f381e",
+        "tool_name": null,
+        "tool_use_id": "toolu_016PAbXc3ckwu5YLJf7EtVjg",
+        "type": "user",
+        "user_type": "external",
+        "uuid": "7078ceb3-5946-4fd2-99f8-bb915a32be87"
+      },
+      "t1_pre_state_content": "F1 determinism: true\nPZ obs count: 0 | claude PZ count: 0\nT1 final: PASS\nT1.5 final: PASS\nT1 required_false_holds (execution-derived bool): true\nT0 matrix: present | class1 result: true",
+      "tool_result": {
+        "content_type": "tool_result",
+        "cwd": "/Users/millysituated",
+        "is_sidechain": false,
+        "line_number": 746,
+        "message_role": "user",
+        "parent_uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "source_tool_assistant_uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e",
+        "text_identity": "sha256:e57b634a89ef4af64d9643f8117d9b654094a410158b0e7a7729ab27a0c5b599",
+        "tool_name": null,
+        "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+        "type": "user",
+        "user_type": "external",
+        "uuid": "4ffa98b6-ea25-4291-84a5-d72dfe2d2c76"
+      },
+      "tool_result_content": "=== T2 GOCHECKIT: independent authoritative recontact of Patient Zero 5464975482 ===\nRECONTACT_OK\nobservation_occurrence:\n  observer: PO_interactive (CLAUDESELF_CHAMBER_219be5a6, opus-4-8), admitted GitHub capability (gh, principal situaedmilly)\n  comment_id: 5464975482\n  node_id: IC_kwDOT3unqM8AAAABRbzoeg\n  author(login): situaedmilly\n  created_at: 2026-08-29T21:26:03Z\n  observed_body_bytes: 133\n  observed_content_identity (independently computed at this endpoint): sha256:9bbc97aa41d7566d522d51912078ab5e419fd4ec3ed47f3591ae84c337415d98\n  recontact_time_utc: 2026-08-30T01:59:02.573496+00:00\n  first_line: ROUTE_ADJUDICATION_PROBE\n  contains ROUTE_ADJUDICATION_PROBE marker: True\nShell cwd was reset to /Users/millysituated",
+      "tool_result_content_identity": "sha256:e57b634a89ef4af64d9643f8117d9b654094a410158b0e7a7729ab27a0c5b599",
+      "tool_use": {
+        "content_type": "tool_use",
+        "cwd": "/Users/millysituated/self-communication",
+        "is_sidechain": false,
+        "line_number": 740,
+        "message_role": "assistant",
+        "parent_uuid": "24fb9acb-e2c3-476c-973a-b529f8cb99f8",
+        "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+        "source_tool_assistant_uuid": null,
+        "text_identity": "sha256:0f490e08417e69df67a92663a5dc78a539d4dea7350904d998ec762c19d752dd",
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+        "type": "assistant",
+        "user_type": "external",
+        "uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e"
+      },
+      "tool_use_command": "cd /private/tmp/claude-501/-Users-millysituated/219be5a6-1b6a-4212-90e2-2963de17b926/scratchpad\necho \"=== T2 GOCHECKIT: independent authoritative recontact of Patient Zero 5464975482 ===\"\ngh api repos/situaedmilly/self-communication/issues/comments/5464975482 > pz_t2.json 2>&1 && echo \"RECONTACT_OK\" || { echo \"RECONTACT_FAIL\"; cat pz_t2.json; }\npython3 -c \"\nimport json, hashlib, datetime\nd=json.load(open('pz_t2.json'))\nbody=d['body']\nbh=hashlib.sha256(body.encode()).hexdigest()\nprint('observation_occurrence:')\nprint('  observer: PO_interactive (CLAUDESELF_CHAMBER_219be5a6, opus-4-8), admitted GitHub capability (gh, principal situaedmilly)')\nprint('  comment_id:', d['id'])\nprint('  node_id:', d['node_id'])\nprint('  author(login):', d['user']['login'])\nprint('  created_at:', d['created_at'])\nprint('  observed_body_bytes:', len(body.encode()))\nprint('  observed_content_identity (independently computed at this endpoint): sha256:'+bh)\nprint('  recontact_time_utc:', datetime.datetime.now(datetime.timezone.utc).isoformat())\n# faithful excerpt to prove authoritative content actually observed (not substituted)\nprint('  first_line:', body.splitlines()[0] if body else '(empty)')\nprint('  contains ROUTE_ADJUDICATION_PROBE marker:', 'ROUTE_ADJUDICATION_PROBE' in body)\n\"",
+      "tool_use_command_identity": "sha256:0f490e08417e69df67a92663a5dc78a539d4dea7350904d998ec762c19d752dd"
+    }
+  }
+}

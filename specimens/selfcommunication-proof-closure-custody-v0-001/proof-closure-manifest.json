@@ -1,0 +1,535 @@
+{
+  "closure_entries": [
+    {
+      "CONTENT_IDENTITY": "sha256:eb773e7ed01006bcbb7c973357cd5fffd8a542a77193372095db9672e43f381e",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json#sha256:4afd6dc1ed2c0876abaf6ccc36c726c0cc11da1db8f3472de193f2a3a9fa2048",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS"
+      ],
+      "ENTRY_ID": "EXTRACT:T2_T1_T15_PRE_STATE",
+      "MATTER_SPECIES": "HISTORICAL_BOUNDED_EXTRACT",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "B_participation",
+      "QUESTION_GENUS": "BINDING",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_HISTORICAL_SOURCE_OR_CUSTODIED_EXTRACT",
+      "SOURCE_RELATION": {
+        "extract_identity": "sha256:4afd6dc1ed2c0876abaf6ccc36c726c0cc11da1db8f3472de193f2a3a9fa2048",
+        "selector": {
+          "field": "message.content[].content",
+          "line_number": 736,
+          "selector_species": "CLAUDE_JSONL_LINE_UUID_AND_CONTENT_FIELD",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "uuid": "7078ceb3-5946-4fd2-99f8-bb915a32be87"
+        },
+        "source_identity": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:0f490e08417e69df67a92663a5dc78a539d4dea7350904d998ec762c19d752dd",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json#sha256:23efe7dae91eb0b0fc3486e66b92525b17933349cd33e25059cd793080819051",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS"
+      ],
+      "ENTRY_ID": "EXTRACT:T2_TOOL_USE_COMMAND",
+      "MATTER_SPECIES": "HISTORICAL_BOUNDED_EXTRACT",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "B_observation_occurrence",
+      "QUESTION_GENUS": "OBSERVATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_HISTORICAL_SOURCE_OR_CUSTODIED_EXTRACT",
+      "SOURCE_RELATION": {
+        "extract_identity": "sha256:23efe7dae91eb0b0fc3486e66b92525b17933349cd33e25059cd793080819051",
+        "selector": {
+          "field": "message.content[].input.command",
+          "line_number": 740,
+          "selector_species": "CLAUDE_JSONL_LINE_UUID_TOOL_USE_ID_AND_INPUT_COMMAND",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+          "uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e"
+        },
+        "source_identity": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:e57b634a89ef4af64d9643f8117d9b654094a410158b0e7a7729ab27a0c5b599",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json#sha256:2105ffa3181b0bea1cabc56927015198d4cf262f14436abcd9ac8c5c387978de",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS"
+      ],
+      "ENTRY_ID": "EXTRACT:T2_TOOL_RESULT_CONTENT",
+      "MATTER_SPECIES": "HISTORICAL_BOUNDED_EXTRACT",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "B_observation_occurrence",
+      "QUESTION_GENUS": "OBSERVATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_HISTORICAL_SOURCE_OR_CUSTODIED_EXTRACT",
+      "SOURCE_RELATION": {
+        "extract_identity": "sha256:2105ffa3181b0bea1cabc56927015198d4cf262f14436abcd9ac8c5c387978de",
+        "selector": {
+          "field": "message.content[].content",
+          "line_number": 746,
+          "parent_uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e",
+          "selector_species": "CLAUDE_JSONL_LINE_PARENT_UUID_TOOL_USE_ID_AND_RESULT_CONTENT",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "source_tool_assistant_uuid": "65ff1d07-b9b9-44e0-9a69-1aa64739921e",
+          "tool_use_id": "toolu_01R5Udi2SjcSuuFkVECGNsmv",
+          "uuid": "4ffa98b6-ea25-4291-84a5-d72dfe2d2c76"
+        },
+        "source_identity": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:65b0aea37152f5cb18965e15fa8fa61cdc29dba01b7cf9c107a2e860aafbbd7b",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json#sha256:76043d0c80aa922a7cfa11d53f8f039dd7972bd656840a790997613cdb508d7a",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS"
+      ],
+      "ENTRY_ID": "EXTRACT:T2_RECEIPT_TEXT",
+      "MATTER_SPECIES": "HISTORICAL_BOUNDED_EXTRACT",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "B_standing_ceiling",
+      "QUESTION_GENUS": "OBSERVATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_HISTORICAL_SOURCE_OR_CUSTODIED_EXTRACT",
+      "SOURCE_RELATION": {
+        "extract_identity": "sha256:76043d0c80aa922a7cfa11d53f8f039dd7972bd656840a790997613cdb508d7a",
+        "selector": {
+          "field": "message.content[].text",
+          "line_number": 755,
+          "selector_species": "CLAUDE_JSONL_LINE_UUID_TEXT_RECEIPT",
+          "session_id": "219be5a6-1b6a-4212-90e2-2963de17b926",
+          "uuid": "f547269a-65a5-450d-badf-34bfc7a0d5d5"
+        },
+        "source_identity": "sha256:8c24fbb65ab312f661ad52eb26b3abdbe58e1627f2f26c6e6f9f076f0a1ca6a0"
+      },
+      "STANDING_CEILING": "LOAD_BEARING_PREDECESSOR_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:e2acf82e781b7ca3145c5ed5e80c9c18e49cc37d1ec7d175221285e12c23e8a3",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json#sha256:d50489b943714cb15ed6a35c768723bf56e151d7c77d3b322b0aae57c6cc5d5f",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS"
+      ],
+      "ENTRY_ID": "EXTRACT:PATIENT_ZERO_JSON_FIELDS",
+      "MATTER_SPECIES": "HISTORICAL_BOUNDED_EXTRACT",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "B_patient_zero",
+      "QUESTION_GENUS": "DETERMINATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_HISTORICAL_SOURCE_OR_CUSTODIED_EXTRACT",
+      "SOURCE_RELATION": {
+        "extract_identity": "sha256:d50489b943714cb15ed6a35c768723bf56e151d7c77d3b322b0aae57c6cc5d5f",
+        "selector": {
+          "fields": [
+            "url",
+            "html_url",
+            "issue_url",
+            "id",
+            "node_id",
+            "user.login",
+            "author_association",
+            "created_at",
+            "updated_at",
+            "body"
+          ],
+          "selector_species": "JSON_FIELD_SET"
+        },
+        "source_identity": "sha256:7f7c7b4905cccd1e133ee5e859b1f3a26c5f95b96b42e39d63a5b350ec65a5de"
+      },
+      "STANDING_CEILING": "EXACT_BOUNDED_MATTER_IDENTITY_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:00c6c2d03d86bc70c5120a506c92c909bad5b219fef744bd878acc53ff9d58e0",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:4f58f40e8a53208f388bc6a0ce8c15efb32858660b58976c7f5b763deb8d56f2",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:42b38c5c8cbf4fc7004ed9d406de7977de203dbb74abb46c0b5f76bb578818aa",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:734de72bc70a10264db038fda24856094f8e62e17f9f088392778d4c1c4eaf1b",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-selfcommunication-launch-readiness.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-launch-readiness.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:19f63f5150850e9920fbdd7086f72a12699e8838363730bb30b61ca52247b968",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:5e0e882dbf5a498b02e98c9a82f16e2ae0b7471a7261e3ad3d8c966a399870a3",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-communication-matter.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-communication-matter.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:5f9cecbd2fa03c96b6246a8200e2b6bfb511959566f1bd9365061506d6f824ea",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-commline-observation-gap.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-commline-observation-gap.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:fb3bee4a74de67a9a0ed3cce653150923b5487c118e7ded3e0a8f4d2ce9355ac",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-observation-authorship.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-observation-authorship.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:2004c3c7cd61fd5269413a78a5cc91cad096dcd5bc72a0ee7dff313929021bb1",
+      "CUSTODY_REF": "git-commit-path:POST_CUSTODY_COMMIT:tools/ourself-transport-independent-roundtrip.mjs",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED_AFTER_CUSTODY",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "FILE:tools/ourself-transport-independent-roundtrip.mjs",
+      "MATTER_SPECIES": "REPOSITORY_NATIVE_MATTER",
+      "NECESSITY_CLASS": "RECOMPUTATION_NECESSITY",
+      "PROOF_ROLE": "FROZEN_VERIFICATION_LOGIC",
+      "QUESTION_GENUS": "RECOMPUTATION",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_EXACT_BYTES",
+      "SOURCE_RELATION": "LOCAL_WORKTREE_BYTES_TO_BE_COMMIT_ROOTED",
+      "STANDING_CEILING": "RECOMPUTATION_PREIMAGE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:d7c20bcd012a9bfe224171c30c02383ac24ed8d94f18ed55a9f21b5b630074c9",
+      "CUSTODY_REF": "git-commit-path:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/launch-subject-manifest.json",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_RECONTACTABLE",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/launch-subject-manifest.json",
+      "GIT_OBJECT_ID": "186cb0d8fe91726e8a3c62b3e4ac501d7bfdf71b",
+      "MATTER_SPECIES": "PREDECESSOR_REPOSITORY_MATTER",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "PREDECESSOR_CUSTODY_RECONTACT_PREIMAGE",
+      "QUESTION_GENUS": "CUSTODY_RECONTACT",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_GIT_HISTORY",
+      "SOURCE_RELATION": "PREDECESSOR_COMMIT_REACHABILITY",
+      "STANDING_CEILING": "PREDECESSOR_CUSTODY_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:a38174ef3a4574773f88424160f903559b4b9d323745d27c64f00fa2dcf4352c",
+      "CUSTODY_REF": "git-commit-path:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:inselfactions/ISA-20260830-SELFCOMMUNICATION-LAUNCH-SUBJECT-CUSTODY-001.json",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_RECONTACTABLE",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:inselfactions/ISA-20260830-SELFCOMMUNICATION-LAUNCH-SUBJECT-CUSTODY-001.json",
+      "GIT_OBJECT_ID": "1dfd386e0b7c6128bdc208e459c177f7be825d52",
+      "MATTER_SPECIES": "PREDECESSOR_REPOSITORY_MATTER",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "PREDECESSOR_CUSTODY_RECONTACT_PREIMAGE",
+      "QUESTION_GENUS": "CUSTODY_RECONTACT",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_GIT_HISTORY",
+      "SOURCE_RELATION": "PREDECESSOR_COMMIT_REACHABILITY",
+      "STANDING_CEILING": "PREDECESSOR_CUSTODY_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738",
+      "CUSTODY_REF": "git-commit-path:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/external-session-context-evidence.af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738.json",
+      "CUSTODY_SPECIES": "GIT_COMMIT_PATH_RECONTACTABLE",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/external-session-context-evidence.af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738.json",
+      "GIT_OBJECT_ID": "f4855112f7e65e43772edb6b4119b866f6f5bec9",
+      "MATTER_SPECIES": "PREDECESSOR_REPOSITORY_MATTER",
+      "NECESSITY_CLASS": "EVIDENTIARY_NECESSITY",
+      "PROOF_ROLE": "PREDECESSOR_CUSTODY_RECONTACT_PREIMAGE",
+      "QUESTION_GENUS": "CUSTODY_RECONTACT",
+      "REGENERABILITY": "NOT_REGENERABLE_WITHOUT_GIT_HISTORY",
+      "SOURCE_RELATION": "PREDECESSOR_COMMIT_REACHABILITY",
+      "STANDING_CEILING": "PREDECESSOR_CUSTODY_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:6eb8d24dc89f1b313b5ef442937e64975deca2ae773c50a8412026de81031a78",
+      "CUSTODY_REF": "manifest-field:subject_ref",
+      "CUSTODY_SPECIES": "EMBEDDED_IN_PROOF_CLOSURE_MANIFEST",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "SEMANTIC:SUCCESSOR_SUBJECT_REF",
+      "MATTER_SPECIES": "ASSIGNED_REFERENCE",
+      "NECESSITY_CLASS": "SEMANTIC_NECESSITY",
+      "PROOF_ROLE": "SUCCESSOR_SUBJECT_ADDRESS",
+      "QUESTION_GENUS": "BINDING",
+      "REGENERABILITY": "ASSIGNED_REFERENCE_NOT_DERIVED_IDENTITY",
+      "SOURCE_RELATION": "FOUNDER_ASSIGNED_SUCCESSOR_SUBJECT_REF",
+      "STANDING_CEILING": "REFERENCE_ONLY"
+    },
+    {
+      "CONTENT_IDENTITY": "sha256:d255e7000557bdbcb0848e76fef19522dcb18a4ae57fd0480986d66df4ff904b",
+      "CUSTODY_REF": "function:buildSuccessorDelta",
+      "CUSTODY_SPECIES": "DERIVED_REGENERABLE_FROM_CUSTODIED_SUCCESSION_LOGIC",
+      "DEPENDENTS": [
+        "P1:T2_SUCCESSOR_PASS",
+        "P2:G6_SUCCESSOR_STANDING",
+        "P3:SUCCESSOR_STRUCTURAL_IDENTITY"
+      ],
+      "ENTRY_ID": "SEMANTIC:DELTA_IDENTITY",
+      "MATTER_SPECIES": "LINEAGE_IDENTITY",
+      "NECESSITY_CLASS": "SEMANTIC_NECESSITY",
+      "PROOF_ROLE": "SUCCESSOR_DELTA",
+      "QUESTION_GENUS": "BINDING",
+      "REGENERABILITY": "DERIVED_REGENERABLE",
+      "SOURCE_RELATION": "PROOF_CARRYING_SUCCESSION_DELTA",
+      "STANDING_CEILING": "LINEAGE_ONLY"
+    }
+  ],
+  "current_structural_identity_claim": "sha256:b0652e62b8eeb2f3cdb19f8e235b43548ba1dc118ca0f220d6189e8997754074",
+  "delta_identity": "sha256:d255e7000557bdbcb0848e76fef19522dcb18a4ae57fd0480986d66df4ff904b",
+  "durable_only_structural_recomputation": "sha256:8f6a3a3cdd453d4b94cf0f691842b1412d3271928ea664724df682915f82d4df",
+  "launch_target": "SELFCOMMUNICATION_LIVE_V0",
+  "object_type": "PROOF_CARRYING_CUSTODY_MANIFEST",
+  "predecessor_subject_ref": "sha256:a20e63ee234f6564703e38e0b6da0682901b92469e6854821901ce8a5269cade",
+  "predecessor_subject_ref_species": "ASSIGNED_REFERENCE",
+  "proof_closure_graph": [
+    {
+      "DEPENDENCIES": [
+        "EXTRACT:T2_T1_T15_PRE_STATE",
+        "EXTRACT:T2_TOOL_USE_COMMAND",
+        "EXTRACT:T2_TOOL_RESULT_CONTENT",
+        "EXTRACT:T2_RECEIPT_TEXT",
+        "EXTRACT:PATIENT_ZERO_JSON_FIELDS",
+        "FILE:tools/ourself-selfcommunication-proof-closure-custody.mjs",
+        "FILE:tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+        "FILE:tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+        "FILE:tools/ourself-selfcommunication-launch-readiness.mjs",
+        "FILE:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+        "FILE:tools/ourself-communication-matter.mjs",
+        "FILE:tools/ourself-commline-observation-gap.mjs",
+        "FILE:tools/ourself-observation-authorship.mjs",
+        "FILE:tools/ourself-transport-independent-roundtrip.mjs",
+        "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/launch-subject-manifest.json",
+        "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:inselfactions/ISA-20260830-SELFCOMMUNICATION-LAUNCH-SUBJECT-CUSTODY-001.json",
+        "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/external-session-context-evidence.af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738.json",
+        "SEMANTIC:SUCCESSOR_SUBJECT_REF",
+        "SEMANTIC:DELTA_IDENTITY"
+      ],
+      "DEPENDENCY_CLASSES": [
+        "SEMANTIC_NECESSITY",
+        "EVIDENTIARY_NECESSITY",
+        "RECOMPUTATION_NECESSITY"
+      ],
+      "EXCLUDED_CLASSES": [
+        "HISTORICAL_PROVENANCE",
+        "DIAGNOSTIC_CONVENIENCE",
+        "UNRELATED"
+      ],
+      "PROPOSITION": "P1:T2_SUCCESSOR_PASS",
+      "QUESTION": "Can the successor subject establish T2 after delta by carrying unaffected obligations and revalidating the subject relation?",
+      "THREAT_CONTEXT": "T0 bounded observation attribution; no Claude reactivation; no predecessor PASS copy."
+    },
+    {
+      "DEPENDENCIES": [
+        "P1:T2_SUCCESSOR_PASS",
+        "FILE:tools/ourself-selfcommunication-proof-closure-custody.mjs",
+        "FILE:tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+        "FILE:tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+        "FILE:tools/ourself-selfcommunication-launch-readiness.mjs",
+        "FILE:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+        "FILE:tools/ourself-communication-matter.mjs",
+        "FILE:tools/ourself-commline-observation-gap.mjs",
+        "FILE:tools/ourself-observation-authorship.mjs",
+        "FILE:tools/ourself-transport-independent-roundtrip.mjs",
+        "SEMANTIC:DELTA_IDENTITY"
+      ],
+      "DEPENDENCY_CLASSES": [
+        "SEMANTIC_NECESSITY",
+        "RECOMPUTATION_NECESSITY"
+      ],
+      "EXCLUDED_CLASSES": [
+        "DIAGNOSTIC_CONVENIENCE",
+        "UNRELATED"
+      ],
+      "PROPOSITION": "P2:G6_SUCCESSOR_STANDING",
+      "QUESTION": "Can current G6 project from a valid successor T2 disposition without rewriting historical G6?",
+      "THREAT_CONTEXT": "G6 current standing follows later observation fitness, not display residue."
+    },
+    {
+      "DEPENDENCIES": [
+        "FILE:tools/ourself-selfcommunication-proof-closure-custody.mjs",
+        "FILE:tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+        "FILE:tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+        "FILE:tools/ourself-selfcommunication-launch-readiness.mjs",
+        "FILE:tools/ourself-selfcommunication-launch-subject-custody.mjs",
+        "FILE:tools/ourself-communication-matter.mjs",
+        "FILE:tools/ourself-commline-observation-gap.mjs",
+        "FILE:tools/ourself-observation-authorship.mjs",
+        "FILE:tools/ourself-transport-independent-roundtrip.mjs",
+        "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/launch-subject-manifest.json",
+        "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:inselfactions/ISA-20260830-SELFCOMMUNICATION-LAUNCH-SUBJECT-CUSTODY-001.json",
+        "GIT:4357f7ace087db9b200dab6ebfe1b65fe1a46f17:specimens/selfcommunication-launch-subject-custody-v0-001/external-session-context-evidence.af223da4075caeb5107881cabe238f5dba22ae509b439008347290f11ad42738.json",
+        "SEMANTIC:SUCCESSOR_SUBJECT_REF",
+        "SEMANTIC:DELTA_IDENTITY"
+      ],
+      "DEPENDENCY_CLASSES": [
+        "SEMANTIC_NECESSITY",
+        "EVIDENTIARY_NECESSITY",
+        "RECOMPUTATION_NECESSITY"
+      ],
+      "EXCLUDED_CLASSES": [
+        "DIAGNOSTIC_CONVENIENCE",
+        "UNRELATED"
+      ],
+      "PROPOSITION": "P3:SUCCESSOR_STRUCTURAL_IDENTITY",
+      "QUESTION": "Can the successor structural identity be recomputed from the actual custody/proof closure rather than b065 by assertion?",
+      "THREAT_CONTEXT": "Custody formation may be identity-changing."
+    },
+    {
+      "DEPENDENCIES": [],
+      "DEPENDENCY_CLASSES": [
+        "DIAGNOSTIC_CONVENIENCE"
+      ],
+      "EXCLUDED_FROM_SEMANTIC_CONTROL": true,
+      "PROPOSITION": "RESIDUE:STALE_BLOCKER_FIREWALL",
+      "QUESTION": "Can the stale blocker string influence semantic launch control?",
+      "RESIDUE": "EMBEDDED_IN_PREIMAGE_RESIDUE_ONLY",
+      "THREAT_CONTEXT": "Display residue must not become control authority."
+    }
+  ],
+  "proof_closure_manifest_identity": "sha256:e27cceaaf839155dafe861471225f9de42de9ef3803bb2747945ab9fa9d72e3a",
+  "proof_preimage": {
+    "content_identity": "sha256:471b68a01db4d4255a6aec3a5c9db108d938f8b76934780bc137a9e6158930de",
+    "path": "specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json",
+    "preimage_identity": "sha256:4e67ce80a1f0137e93fab7976f9b13075a383dc5c014b1e657d0bacc22456d69"
+  },
+  "schema": "ourself.selfcommunication-proof-closure-custody.v0.1",
+  "stale_residue_firewall": {
+    "preserved_residue": {
+      "display_residue_not_control_matter": true,
+      "historical_residual_blocker_string": "REMOTE_REPLICATED_CUSTODY_NOT_ESTABLISHED",
+      "semantic_current_standing": "REMOTE_REPLICATED"
+    },
+    "residue_in_semantic_control_path": false,
+    "semantic_control_sources": [
+      "typed gate control_disposition",
+      "successor T2 receipt",
+      "G6 recomputation result"
+    ],
+    "stale_display_string_sources": [
+      "diagnostic report residue only"
+    ]
+  },
+  "subject_ref": "SELFCOMMUNICATION_LIVE_V0:PROOF_CARRYING_SUCCESSOR:20260830:001",
+  "subject_ref_species": "ASSIGNED_REFERENCE",
+  "wall_clock_metadata_in_identity": false
+}
