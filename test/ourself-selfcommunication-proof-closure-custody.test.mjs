@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  buildRemoteRecontactReceipt,
   buildProofClosureCustodyReport,
+  buildSuccessorFreeze,
   CURRENT_STRUCTURAL_IDENTITY_CLAIM,
   DEFAULT_MANIFEST_PATH,
   DEFAULT_PREIMAGE_PATH,
@@ -75,25 +77,78 @@ test("stale blocker residue is preserved but excluded from semantic control", ()
   );
 });
 
-test("freeze mints only when durable commit and remote custody ref are supplied", () => {
-  const blocked = buildProofClosureCustodyReport({
-    sourceMode: "custody-only",
-    writeArtifacts: false,
-    preimagePath: DEFAULT_PREIMAGE_PATH,
-    manifestPath: DEFAULT_MANIFEST_PATH
+function passingRemoteReceipt(overrides = {}) {
+  const requiredCommit = overrides.requiredCommit ?? "a".repeat(40);
+  return buildRemoteRecontactReceipt({
+    observationSource: "TEST_REMOTE_OBSERVATION",
+    requiredCommit,
+    observedCommit: requiredCommit,
+    requiredObjectRecontact: [{
+      path: "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+      recontactable: true,
+      content_identity_match: true,
+      passes: true,
+      failure_if_any: null
+    }],
+    manifestMatch: true,
+    ...overrides
   });
-  const minted = buildProofClosureCustodyReport({
-    sourceMode: "custody-only",
-    writeArtifacts: false,
-    preimagePath: DEFAULT_PREIMAGE_PATH,
-    manifestPath: DEFAULT_MANIFEST_PATH,
-    durableCustodyCommit: "a".repeat(40),
-    remoteCustodyRef: "origin/main"
-  });
+}
 
-  assert.equal(blocked.SUCCESSOR_FREEZE, "NOT_MINTED");
-  assert.equal(minted.SUCCESSOR_FREEZE, "MINTED");
-  assert.match(minted.SUCCESSOR_FREEZE_IDENTITY, /^sha256:[a-f0-9]{64}$/);
-  assert.equal(minted.G7_ELIGIBILITY, true);
-  assert.equal(minted.R4_ELIGIBILITY, false);
+function freezeFromReceipt(receipt, durableCustodyCommit = "a".repeat(40)) {
+  return buildSuccessorFreeze({
+    manifest: custodyOnlyReport.PROOF_CARRYING_MANIFEST,
+    recomputation: custodyOnlyReport.DURABLE_CUSTODY_RECOMPUTATION,
+    durableCustodyCommit,
+    remoteRecontactReceipt: receipt
+  });
+}
+
+test("remote custody freeze predicate is evidence-derived, not label-derived", () => {
+  const requiredCommit = "a".repeat(40);
+  const behindCommit = "b".repeat(40);
+  const wrongCommit = "c".repeat(40);
+
+  const noRemoteRef = freezeFromReceipt(passingRemoteReceipt({
+    requiredCommit,
+    observedCommit: null,
+    requiredObjectRecontact: [],
+    manifestMatch: false
+  }));
+  assert.equal(noRemoteRef.SUCCESSOR_FREEZE, "NOT_MINTED");
+
+  const remoteBehind = freezeFromReceipt(passingRemoteReceipt({
+    requiredCommit,
+    observedCommit: behindCommit
+  }));
+  assert.equal(remoteBehind.SUCCESSOR_FREEZE, "NOT_MINTED");
+
+  const wrongRemoteCommit = freezeFromReceipt(passingRemoteReceipt({
+    requiredCommit,
+    observedCommit: wrongCommit
+  }));
+  assert.equal(wrongRemoteCommit.SUCCESSOR_FREEZE, "NOT_MINTED");
+
+  const objectRecontactFailure = freezeFromReceipt(passingRemoteReceipt({
+    requiredCommit,
+    requiredObjectRecontact: [{
+      path: "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json",
+      recontactable: false,
+      content_identity_match: false,
+      passes: false,
+      failure_if_any: "REMOTE_PATH_NOT_RECONTACTABLE"
+    }]
+  }));
+  assert.equal(objectRecontactFailure.SUCCESSOR_FREEZE, "NOT_MINTED");
+
+  const successfulRemoteRecontact = freezeFromReceipt(passingRemoteReceipt({ requiredCommit }));
+  assert.equal(successfulRemoteRecontact.SUCCESSOR_FREEZE, "MINTED");
+  assert.match(successfulRemoteRecontact.SUCCESSOR_FREEZE_IDENTITY, /^sha256:[a-f0-9]{64}$/);
+
+  const staleSuccessfulReceipt = passingRemoteReceipt({
+    requiredCommit: behindCommit,
+    observedCommit: behindCommit
+  });
+  const staleReceiptAgainstNewSubject = freezeFromReceipt(staleSuccessfulReceipt, requiredCommit);
+  assert.equal(staleReceiptAgainstNewSubject.SUCCESSOR_FREEZE, "NOT_MINTED");
 });

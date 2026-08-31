@@ -156,9 +156,214 @@ function parseContentAddressedRef(custodyRef, locator = null) {
   };
 }
 
-function getRemoteHead(rootDir) {
-  const remote = tryGit(rootDir, ["ls-remote", "origin", "refs/heads/main"]);
-  return remote?.trim().split(/\s+/)[0] ?? null;
+function normalizeRemoteRef(ref) {
+  if (!ref || ref === "origin/main") return "refs/heads/main";
+  return ref;
+}
+
+function getRemoteHead(rootDir, { remote = "origin", ref = "refs/heads/main" } = {}) {
+  const remoteHead = tryGit(rootDir, ["ls-remote", remote, normalizeRemoteRef(ref)]);
+  return remoteHead?.trim().split(/\s+/)[0] ?? null;
+}
+
+function exactCustodyPathSet({ preimagePath = DEFAULT_PREIMAGE_PATH, manifestPath = DEFAULT_MANIFEST_PATH } = {}) {
+  return [
+    "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+    "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+    "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+    "test/ourself-selfcommunication-t2-predecessor-binding.test.mjs",
+    preimagePath,
+    manifestPath
+  ];
+}
+
+function expectedContentIdentityForPath({ rootDir, manifest, preimage, relativePath, preimagePath, manifestPath }) {
+  if (relativePath === preimagePath) {
+    return manifest?.proof_preimage?.content_identity ??
+      contentIdentityForBuffer(Buffer.from(stableJson(preimage), "utf8"));
+  }
+  if (relativePath === manifestPath) {
+    return contentIdentityForBuffer(Buffer.from(stableJson(manifest), "utf8"));
+  }
+  const manifestEntry = manifest?.closure_entries?.find((entry) => entry.ENTRY_ID === `FILE:${relativePath}`);
+  if (manifestEntry?.CONTENT_IDENTITY) return manifestEntry.CONTENT_IDENTITY;
+  const absolutePath = path.join(rootDir, relativePath);
+  return fs.existsSync(absolutePath) ? contentIdentityForFile(absolutePath) : null;
+}
+
+function recontactRequiredPathsAtCommit({
+  rootDir,
+  commit,
+  manifest,
+  preimage,
+  requiredPathSet,
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+}) {
+  return requiredPathSet.map((relativePath) => {
+    const bytes = commit ? tryGitBytesAt(rootDir, commit, relativePath) : null;
+    const expectedContentIdentity = expectedContentIdentityForPath({
+      rootDir,
+      manifest,
+      preimage,
+      relativePath,
+      preimagePath,
+      manifestPath
+    });
+    const resolvedContentIdentity = bytes ? contentIdentityForBuffer(bytes) : null;
+    const passes = Boolean(bytes) &&
+      Boolean(expectedContentIdentity) &&
+      resolvedContentIdentity === expectedContentIdentity;
+    return {
+      path: relativePath,
+      custody_ref: commit ? `git-commit-path:${commit}:${relativePath}` : null,
+      recontactable: Boolean(bytes),
+      resolved_content_identity: resolvedContentIdentity,
+      expected_content_identity: expectedContentIdentity,
+      content_identity_match: resolvedContentIdentity === expectedContentIdentity,
+      passes,
+      failure_if_any: passes
+        ? null
+        : bytes
+          ? "REMOTE_PATH_CONTENT_IDENTITY_MISMATCH"
+          : "REMOTE_PATH_NOT_RECONTACTABLE"
+    };
+  });
+}
+
+function recontactManifestAtCommit({ rootDir, commit, manifest, manifestPath = DEFAULT_MANIFEST_PATH }) {
+  const bytes = commit ? tryGitBytesAt(rootDir, commit, manifestPath) : null;
+  const expectedContentIdentity = manifest
+    ? contentIdentityForBuffer(Buffer.from(stableJson(manifest), "utf8"))
+    : null;
+  if (!bytes) {
+    return {
+      path: manifestPath,
+      recontactable: false,
+      resolved_content_identity: null,
+      expected_content_identity: expectedContentIdentity,
+      resolved_manifest_identity: null,
+      expected_manifest_identity: manifest?.proof_closure_manifest_identity ?? null,
+      declared_manifest_identity: null,
+      passes: false,
+      failure_if_any: "REMOTE_MANIFEST_NOT_RECONTACTABLE"
+    };
+  }
+  let parsed = null;
+  try {
+    parsed = JSON.parse(bytes.toString("utf8"));
+  } catch {
+    parsed = null;
+  }
+  const resolvedContentIdentity = contentIdentityForBuffer(bytes);
+  const resolvedManifestIdentity = parsed
+    ? identityWithoutField(parsed, "proof_closure_manifest_identity")
+    : null;
+  const expectedManifestIdentity = manifest?.proof_closure_manifest_identity ?? null;
+  const passes = Boolean(parsed) &&
+    resolvedContentIdentity === expectedContentIdentity &&
+    resolvedManifestIdentity === expectedManifestIdentity &&
+    parsed.proof_closure_manifest_identity === expectedManifestIdentity;
+  return {
+    path: manifestPath,
+    recontactable: true,
+    resolved_content_identity: resolvedContentIdentity,
+    expected_content_identity: expectedContentIdentity,
+    resolved_manifest_identity: resolvedManifestIdentity,
+    expected_manifest_identity: expectedManifestIdentity,
+    declared_manifest_identity: parsed?.proof_closure_manifest_identity ?? null,
+    passes,
+    failure_if_any: passes ? null : "REMOTE_MANIFEST_CONTENT_OR_IDENTITY_MISMATCH"
+  };
+}
+
+export function buildRemoteRecontactReceipt({
+  rootDir = process.cwd(),
+  remote = "origin",
+  ref = "refs/heads/main",
+  requiredCommit = null,
+  observedCommit,
+  manifest = null,
+  preimage = null,
+  requiredPathSet = [],
+  requiredObjectRecontact = null,
+  manifestMatch = null,
+  observationSource = "LIVE_GIT_LS_REMOTE",
+  preimagePath = DEFAULT_PREIMAGE_PATH,
+  manifestPath = DEFAULT_MANIFEST_PATH
+} = {}) {
+  const root = path.resolve(rootDir);
+  const resolvedObservedCommit = observedCommit === undefined
+    ? getRemoteHead(root, { remote, ref })
+    : observedCommit;
+  const remoteRefFreshlyRecontacted = Boolean(resolvedObservedCommit);
+  const remoteRefMatchesRequiredCommit = Boolean(requiredCommit) &&
+    resolvedObservedCommit === requiredCommit;
+  const pathRecontact = requiredObjectRecontact ?? (
+    remoteRefFreshlyRecontacted
+      ? recontactRequiredPathsAtCommit({
+        rootDir: root,
+        commit: resolvedObservedCommit,
+        manifest,
+        preimage,
+        requiredPathSet,
+        preimagePath,
+        manifestPath
+      })
+      : []
+  );
+  const manifestCheck = manifestMatch === null
+    ? recontactManifestAtCommit({ rootDir: root, commit: resolvedObservedCommit, manifest, manifestPath })
+    : {
+      path: manifestPath,
+      passes: manifestMatch === true,
+      failure_if_any: manifestMatch === true ? null : "REMOTE_MANIFEST_CONTENT_OR_IDENTITY_MISMATCH"
+    };
+  const requiredObjectsRecontactable = pathRecontact.length > 0 &&
+    pathRecontact.every((entry) => entry.passes === true);
+  const remoteManifestContentMatch = manifestCheck.passes === true;
+  const recontactPass = remoteRefFreshlyRecontacted &&
+    remoteRefMatchesRequiredCommit &&
+    requiredObjectsRecontactable &&
+    remoteManifestContentMatch;
+  const receipt = {
+    object_type: "REMOTE_RECONTACT_RECEIPT",
+    REMOTE: remote,
+    REF: ref,
+    OBSERVATION_SOURCE: observationSource,
+    OBSERVATION_ORDER: "REMOTE_RECONTACT_PRECEDES_FREEZE_ATTEMPT",
+    OBSERVED_COMMIT: resolvedObservedCommit ?? "UNRESOLVED",
+    REQUIRED_COMMIT: requiredCommit ?? "UNSPECIFIED",
+    COMPARISON: remoteRefMatchesRequiredCommit
+      ? "MATCH"
+      : remoteRefFreshlyRecontacted
+        ? "MISMATCH"
+        : "REMOTE_REF_UNRESOLVED",
+    REMOTE_REF_FRESHLY_RECONTACTED: remoteRefFreshlyRecontacted,
+    REMOTE_REF_RESOLVES_TO_REQUIRED_CUSTODY_COMMIT: remoteRefMatchesRequiredCommit,
+    REQUIRED_OBJECT_RECONTACT: pathRecontact,
+    REMOTE_REQUIRED_OBJECTS_RECONTACTABLE: requiredObjectsRecontactable,
+    MANIFEST_MATCH: manifestCheck,
+    REMOTE_MANIFEST_CONTENT_MATCH: remoteManifestContentMatch,
+    RECONTACT_RESULT: recontactPass ? "PASS" : "FAIL",
+    WALL_CLOCK_METADATA_IN_SEMANTIC_IDENTITY: false
+  };
+  receipt.REMOTE_RECONTACT_RECEIPT_IDENTITY = identityWithoutField(
+    receipt,
+    "REMOTE_RECONTACT_RECEIPT_IDENTITY"
+  );
+  return receipt;
+}
+
+function remoteRecontactEstablishesCustody({ durableCustodyCommit, remoteRecontactReceipt }) {
+  return Boolean(durableCustodyCommit) &&
+    remoteRecontactReceipt?.RECONTACT_RESULT === "PASS" &&
+    remoteRecontactReceipt?.REQUIRED_COMMIT === durableCustodyCommit &&
+    remoteRecontactReceipt?.OBSERVED_COMMIT === durableCustodyCommit &&
+    remoteRecontactReceipt?.REMOTE_REF_FRESHLY_RECONTACTED === true &&
+    remoteRecontactReceipt?.REMOTE_REF_RESOLVES_TO_REQUIRED_CUSTODY_COMMIT === true &&
+    remoteRecontactReceipt?.REMOTE_REQUIRED_OBJECTS_RECONTACTABLE === true &&
+    remoteRecontactReceipt?.REMOTE_MANIFEST_CONTENT_MATCH === true;
 }
 
 function fileEntry(rootDir, relativePath, role, necessityClass, dependents = []) {
@@ -1095,13 +1300,18 @@ export function buildSuccessorFreeze({
   manifest,
   recomputation,
   durableCustodyCommit = null,
-  remoteCustodyRef = null
+  remoteRecontactReceipt = null
 } = {}) {
   const pass = Object.values(recomputation.proposition_results).every((entry) => entry === "PASS");
-  if (!pass || !durableCustodyCommit || !remoteCustodyRef) {
+  const remoteCustodyEstablished = remoteRecontactEstablishesCustody({
+    durableCustodyCommit,
+    remoteRecontactReceipt
+  });
+  if (!pass || !durableCustodyCommit || !remoteCustodyEstablished) {
     return {
       SUCCESSOR_FREEZE: "NOT_MINTED",
       SUCCESSOR_FREEZE_IDENTITY: "NOT_MINTED",
+      SUCCESSOR_FREEZE_ELIGIBLE: false,
       reason: "DURABLE_RECONTACT_OR_REMOTE_CUSTODY_INCOMPLETE"
     };
   }
@@ -1115,7 +1325,8 @@ export function buildSuccessorFreeze({
     DELTA_IDENTITY: manifest.delta_identity,
     CUSTODY_DELTA_IDENTITY: recomputation.custody_delta_identity,
     DURABLE_CUSTODY_COMMIT: durableCustodyCommit,
-    REMOTE_CUSTODY_REF: remoteCustodyRef,
+    REMOTE_CUSTODY_REF: `${remoteRecontactReceipt.REMOTE}/${remoteRecontactReceipt.REF}`,
+    REMOTE_RECONTACT_RECEIPT: remoteRecontactReceipt,
     PROOF_CLOSURE_MANIFEST_IDENTITY: manifest.proof_closure_manifest_identity,
     T2_SUCCESSOR_DISPOSITION: "T2_SUCCESSOR_PASS",
     G6_SUCCESSOR_STANDING: recomputation.g6_successor_standing.current_standing,
@@ -1136,6 +1347,7 @@ export function buildSuccessorFreeze({
   return {
     SUCCESSOR_FREEZE: "MINTED",
     SUCCESSOR_FREEZE_IDENTITY: freeze.FREEZE_IDENTITY,
+    SUCCESSOR_FREEZE_ELIGIBLE: true,
     freeze
   };
 }
@@ -1166,18 +1378,62 @@ export function buildProofClosureCustodyReport({
   const subtractiveMinimalityResults = runSubtractiveMinimality({ rootDir: root, preimage, manifest });
   const minimumSet = minimumDurableCustodySet({ manifest, subtractiveResults: subtractiveMinimalityResults });
   const recomputation = recomputeSuccessorStandingFromCustody({ rootDir: root, preimage, manifest });
+  const currentHead = tryGit(root, ["rev-parse", "HEAD"])?.trim() ?? null;
+  const remoteRef = normalizeRemoteRef(remoteCustodyRef);
+  const remoteHead = getRemoteHead(root, { remote: "origin", ref: remoteRef });
+  const exactPathSet = exactCustodyPathSet({ preimagePath, manifestPath });
+  const remoteRecontactReceipt = buildRemoteRecontactReceipt({
+    rootDir: root,
+    remote: "origin",
+    ref: remoteRef,
+    requiredCommit: durableCustodyCommit,
+    observedCommit: remoteHead,
+    manifest,
+    preimage,
+    requiredPathSet: exactPathSet,
+    preimagePath,
+    manifestPath
+  });
   const freeze = buildSuccessorFreeze({
     manifest,
     recomputation,
     durableCustodyCommit,
-    remoteCustodyRef
+    remoteRecontactReceipt
   });
-  const currentHead = tryGit(root, ["rev-parse", "HEAD"])?.trim() ?? null;
-  const remoteHead = getRemoteHead(root);
+  const remoteCustodyStanding = remoteRecontactReceipt.RECONTACT_RESULT === "PASS"
+    ? "REMOTE_REPLICATED"
+    : "NOT_ESTABLISHED";
+  const freezeBlockers = [
+    ...(durableCustodyCommit ? [] : ["LOCAL_CUSTODY_COMMIT_NOT_SUPPLIED"]),
+    ...(remoteRecontactReceipt.REMOTE_REF_FRESHLY_RECONTACTED ? [] : ["REMOTE_REF_NOT_FRESHLY_RECONTACTED"]),
+    ...(remoteHead === currentHead ? [] : ["REMOTE_REF_NOT_AT_LOCAL_HEAD"]),
+    ...(remoteRecontactReceipt.REMOTE_REF_RESOLVES_TO_REQUIRED_CUSTODY_COMMIT
+      ? []
+      : ["REMOTE_REF_DOES_NOT_RESOLVE_TO_REQUIRED_CUSTODY_COMMIT"]),
+    ...(remoteRecontactReceipt.REMOTE_REQUIRED_OBJECTS_RECONTACTABLE
+      ? []
+      : ["REMOTE_REQUIRED_OBJECTS_NOT_RECONTACTABLE"]),
+    ...(remoteRecontactReceipt.REMOTE_MANIFEST_CONTENT_MATCH ? [] : ["REMOTE_MANIFEST_CONTENT_MISMATCH"]),
+    "FREEZE_NOT_MINTED_UNTIL_POST_PUSH_DURABLE_RECONTACT"
+  ];
   const report = {
     schema: PROOF_CLOSURE_CUSTODY_SCHEMA,
     object_type: "SELFCOMMUNICATION_LIVE_V0_PROOF_CLOSURE_CUSTODY_REPORT",
     launch_target: LAUNCH_TARGET,
+    FREEZE_PREDICATE: [
+      "LOCAL_CUSTODY_ESTABLISHED",
+      "REMOTE_REF_FRESHLY_RECONTACTED",
+      "REMOTE_REF_RESOLVES_TO_REQUIRED_CUSTODY_COMMIT",
+      "REMOTE_REQUIRED_OBJECTS_RECONTACTABLE",
+      "REMOTE_MANIFEST_CONTENT_MATCH",
+      "PROOF_CLOSURE_PASS"
+    ],
+    REMOTE_RECONTACT_MODEL: {
+      remote_ref_label_is_not_custody: true,
+      remote_ref_observation_required: true,
+      durable_remote_recontact_required: true,
+      successful_push_is_not_remote_recontact: true
+    },
     PROOF_CLOSURE_GRAPH: manifest.proof_closure_graph,
     MINIMUM_DURABLE_CUSTODY_SET: minimumSet,
     SUBTRACTIVE_MINIMALITY_RESULTS: subtractiveMinimalityResults,
@@ -1188,26 +1444,25 @@ export function buildProofClosureCustodyReport({
     CUSTODY_DELTA: recomputation.custody_delta,
     CUSTODY_DELTA_IDENTITY: recomputation.custody_delta_identity,
     EXACT_PATH_SET: [
-      "tools/ourself-selfcommunication-proof-closure-custody.mjs",
-      "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
-      "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
-      "test/ourself-selfcommunication-t2-predecessor-binding.test.mjs",
-      preimagePath,
-      manifestPath
+      ...exactPathSet
     ],
     CUSTODY_COMMIT: durableCustodyCommit ?? "NOT_YET_COMMITTED",
     REMOTE_REPLICATION: {
       local_head: currentHead,
       remote_main: remoteHead,
       remote_ref_result: remoteHead === currentHead ? "REMOTE_REF_MATCHES_LOCAL_HEAD" : "REMOTE_REF_NOT_AT_LOCAL_HEAD",
+      remote_custody_standing: remoteCustodyStanding,
       push_custody_not_release: true
     },
+    REMOTE_RECONTACT_RECEIPT: remoteRecontactReceipt,
     DURABLE_CUSTODY_RECOMPUTATION: recomputation,
     DURABLE_RECONTACT_RESULT: recomputation.proposition_results,
     T2_SUCCESSOR_PASS_RECOMPUTATION: recomputation.proposition_results["P1:T2_SUCCESSOR_PASS"],
     G6_SUCCESSOR_STANDING_RECOMPUTATION: recomputation.proposition_results["P2:G6_SUCCESSOR_STANDING"],
     STRUCTURAL_IDENTITY_RECOMPUTATION: recomputation.proposition_results["P3:SUCCESSOR_STRUCTURAL_IDENTITY"],
     SUCCESSOR_STRUCTURAL_IDENTITY: recomputation.successor_structural_identity,
+    REMOTE_CUSTODY_STANDING: remoteCustodyStanding,
+    SUCCESSOR_FREEZE_ELIGIBLE: freeze.SUCCESSOR_FREEZE_ELIGIBLE,
     SUCCESSOR_FREEZE: freeze.SUCCESSOR_FREEZE,
     SUCCESSOR_FREEZE_IDENTITY: freeze.SUCCESSOR_FREEZE_IDENTITY,
     CARRIED_EVIDENCE: ["B_patient_zero", "B_participation", "B_observation_occurrence", "B_standing_ceiling"],
@@ -1215,7 +1470,7 @@ export function buildProofClosureCustodyReport({
     INVALIDATED_EVIDENCE: [],
     BLOCKERS: freeze.SUCCESSOR_FREEZE === "MINTED"
       ? ["G7_NOT_EXECUTED", "R4_INELIGIBLE", "CURRENT_LAUNCH_STANDING_NO_LAUNCH"]
-      : ["FREEZE_NOT_MINTED_UNTIL_POST_PUSH_DURABLE_RECONTACT"],
+      : freezeBlockers,
     RESIDUE: [
       "b065 structural identity was not preserved because custody formation changes the canonical subject preimage.",
       "8f6 remains the durable-only divergence witness from the pre-custody incomplete subject.",
@@ -1236,26 +1491,40 @@ export function buildProofClosureCustodyReport({
 export function verifyFreshRemoteClone({
   rootDir = process.cwd(),
   commit,
-  remoteRef = "origin/main"
+  remoteRef = "refs/heads/main",
+  remoteUrl = null
 } = {}) {
   const source = path.resolve(rootDir);
+  const cloneSource = remoteUrl ?? tryGit(source, ["remote", "get-url", "origin"])?.trim();
+  if (!cloneSource) {
+    return {
+      fresh_clone_path: null,
+      source_remote_url: null,
+      source_root_used_as_git_remote_only: false,
+      producing_workspace_filesystem_not_read_for_evidence: true,
+      result: null,
+      failure: "ORIGIN_REMOTE_URL_NOT_RESOLVED"
+    };
+  }
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "selfcommunication-proof-closure-"));
   const clonePath = path.join(tempDir, "clone");
   try {
-    execFileSync("git", ["clone", "--quiet", source, clonePath], {
+    execFileSync("git", ["clone", "--quiet", cloneSource, clonePath], {
       stdio: ["ignore", "pipe", "pipe"]
     });
-    if (commit) git(clonePath, ["checkout", "--quiet", commit]);
+    const commitToVerify = commit ?? git(clonePath, ["rev-parse", "HEAD"]).trim();
+    if (commitToVerify) git(clonePath, ["checkout", "--quiet", commitToVerify]);
     const report = buildProofClosureCustodyReport({
       rootDir: clonePath,
       sourceMode: "custody-only",
       writeArtifacts: false,
-      durableCustodyCommit: commit ?? git(clonePath, ["rev-parse", "HEAD"]).trim(),
+      durableCustodyCommit: commitToVerify,
       remoteCustodyRef: remoteRef
     });
     return {
       fresh_clone_path: clonePath,
-      source_root_used_as_git_remote_only: true,
+      source_remote_url: cloneSource,
+      source_root_used_as_git_remote_only: false,
       producing_workspace_filesystem_not_read_for_evidence: true,
       result: report
     };
