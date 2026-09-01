@@ -212,7 +212,16 @@ export const REQUIRED_R4_ATTACK_COVERAGE = [
   "context inherited substituted for observed",
   "shared SELF_REF causing observation union",
   "shared SELF_REF causing notification leakage",
-  "authority inherited through context ancestry"
+  "authority inherited through context ancestry",
+  "family A remote evidence derivation closure",
+  "family B verification closure completeness",
+  "family C execution-derived acceptance",
+  "family D current standing projection custody",
+  "D3 starved remote fail-closed replay",
+  "N1 worktree self-binding mismatch detectability",
+  "N2 acceptance counterfeit rejection",
+  "N3 closure compiler self-inclusion",
+  "N4 verification logic fixed-point membership"
 ];
 
 export const REQUIRED_LAUNCH_GATE_REFS = [

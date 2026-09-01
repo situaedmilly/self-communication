@@ -34,6 +34,7 @@ import {
   inspectClaudeSessionUnion,
   LAUNCH_CONTROL_DISPOSITIONS,
   LAUNCH_INVARIANTS,
+  REQUIRED_R4_ATTACK_COVERAGE,
   recomputeG6CurrentStanding
 } from "../tools/ourself-selfcommunication-launch-readiness.mjs";
 import {
@@ -606,6 +607,44 @@ test("valid synthetic G5 and T2 inputs make LAUNCH_READY_BOUNDED reachable", () 
   assert.equal(g5.control_disposition, LAUNCH_CONTROL_DISPOSITIONS.SATISFIED);
   assert.equal(t2.control_disposition, LAUNCH_CONTROL_DISPOSITIONS.SATISFIED);
   assert.equal(decision.launch_decision, "LAUNCH_READY_BOUNDED");
+});
+
+test("R4 coverage includes operative proof closure families before G5 may pass", () => {
+  const subjectIdentity = "sha256:SYNTHETIC_LAUNCH_SUBJECT";
+  const priorCoverageOnly = [
+    "unauthorized obligation source",
+    "cross-occurrence obligation injection",
+    "two simultaneous forks claiming one occurrence ref",
+    "context inherited substituted for observed",
+    "shared SELF_REF causing observation union",
+    "shared SELF_REF causing notification leakage",
+    "authority inherited through context ancestry"
+  ];
+
+  for (const required of [
+    "family A remote evidence derivation closure",
+    "family B verification closure completeness",
+    "family C execution-derived acceptance",
+    "family D current standing projection custody",
+    "D3 starved remote fail-closed replay",
+    "N1 worktree self-binding mismatch detectability",
+    "N2 acceptance counterfeit rejection",
+    "N3 closure compiler self-inclusion",
+    "N4 verification logic fixed-point membership"
+  ]) {
+    assert.ok(REQUIRED_R4_ATTACK_COVERAGE.includes(required), required);
+  }
+
+  const partial = adjudicateG5IndependentHostileReceipt({
+    r4Receipt: createSyntheticR4Receipt({
+      launchSubjectIdentity: subjectIdentity,
+      attackCoverageRefs: priorCoverageOnly
+    }),
+    launchSubjectIdentity: subjectIdentity
+  });
+
+  assert.equal(partial.control_disposition, LAUNCH_CONTROL_DISPOSITIONS.BLOCKED);
+  assert.ok(partial.missing_attack_coverage.includes("family C execution-derived acceptance"));
 });
 
 test("gate identity map preserves G7 homonym instead of silently renaming it", () => {

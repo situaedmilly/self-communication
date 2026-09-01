@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-import { execFileSync } from "node:child_process";
+import crypto from "node:crypto";
+import { execFileSync, spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { digestObject } from "./ourself-communication-matter.mjs";
@@ -30,6 +32,17 @@ export const DEFAULT_CUSTODY_MANIFEST_PATH =
   `${DEFAULT_OUTPUT_DIR}/successor-oracle-proof-carrying-custody-manifest.json`;
 export const DEFAULT_CUSTODY_REPORT_PATH =
   `${DEFAULT_OUTPUT_DIR}/successor-oracle-proof-carrying-custody-report.json`;
+export const DEFAULT_ACCEPTANCE_TEST_PATH =
+  "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs";
+
+const OPERATIVE_PROOF_LEG_DOMAINS = Object.freeze({
+  WORKTREE_SELF_BINDING: ["MATCH", "MISMATCH", "UNRESOLVED"],
+  COMMITTED_SELF_BINDING: ["MATCH", "MISMATCH", "UNRESOLVED"],
+  CUSTODIED_PROOF_RECONTACT: ["PASS", "FAIL", "UNRESOLVED"],
+  CURRENT_STANDING_PROJECTION: ["PASS", "STALE", "FAIL", "UNRESOLVED"],
+  VERIFICATION_CLOSURE: ["CLOSED", "OPEN", "UNRESOLVED"],
+  EXECUTION_DERIVED_ACCEPTANCE: ["PASS", "FAIL", "NOT_RUN", "UNRESOLVED"]
+});
 
 const SUCCESSOR_ORACLE_REQUIRED_PATHS = Object.freeze([
   "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
@@ -68,6 +81,10 @@ function identityWithoutField(value, field) {
   return digestObject(clone);
 }
 
+function sha256Buffer(buffer) {
+  return crypto.createHash("sha256").update(buffer).digest("hex");
+}
+
 function sortedUnique(values) {
   return [...new Set(values.filter(Boolean).map(String))].sort();
 }
@@ -86,6 +103,54 @@ function tryGit(rootDir, args, options = {}) {
   } catch {
     return null;
   }
+}
+
+function currentCommit(rootDir) {
+  return tryGit(rootDir, ["rev-parse", "HEAD"])?.trim() ?? null;
+}
+
+function gitBlobBytesAt(rootDir, commit, relativePath) {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "selfcommunication-git-blob-"));
+  const tempPath = path.join(tempDir, "blob");
+  let fd = null;
+  try {
+    fd = fs.openSync(tempPath, "w");
+    const result = spawnSync("git", [
+      "-C",
+      rootDir,
+      "cat-file",
+      "blob",
+      `${commit}:${relativePath}`
+    ], {
+      env: { ...process.env, GIT_OPTIONAL_LOCKS: "0" },
+      stdio: ["ignore", fd, "pipe"]
+    });
+    fs.closeSync(fd);
+    fd = null;
+    if (result.status !== 0) {
+      const stderr = Buffer.isBuffer(result.stderr)
+        ? result.stderr.toString("utf8").trim()
+        : String(result.stderr ?? "").trim();
+      throw new Error(stderr || `git cat-file exited ${result.status}`);
+    }
+    return fs.readFileSync(tempPath);
+  } finally {
+    if (fd !== null) fs.closeSync(fd);
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+}
+
+function tryGitBlobBytesAt(rootDir, commit, relativePath) {
+  try {
+    return gitBlobBytesAt(rootDir, commit, relativePath);
+  } catch {
+    return null;
+  }
+}
+
+function committedPathContentIdentity(rootDir, relativePath, commit = "HEAD") {
+  const bytes = tryGitBlobBytesAt(rootDir, commit, relativePath);
+  return bytes ? contentIdentityForBuffer(bytes) : null;
 }
 
 function pathExists(rootDir, relativePath) {
@@ -237,16 +302,134 @@ function closureGraph() {
   ];
 }
 
-function pathEntry(rootDir, relativePath) {
+function staticInfluenceEdgesForPath(rootDir, relativePath) {
+  if (!/\.(?:mjs|js|cjs)$/.test(relativePath)) {
+    return [];
+  }
+  const absolutePath = path.join(rootDir, relativePath);
+  if (!fs.existsSync(absolutePath)) {
+    return [];
+  }
+  const source = fs.readFileSync(absolutePath, "utf8");
+  const edges = [];
+  const patterns = [
+    /(?:import|export)\s+(?:[^"'()]+?\s+from\s+)?["']([^"']+)["']/g,
+    /import\(\s*["']([^"']+)["']\s*\)/g,
+    /require\(\s*["']([^"']+)["']\s*\)/g
+  ];
+  for (const pattern of patterns) {
+    for (const match of source.matchAll(pattern)) {
+      const specifier = match[1];
+      if (!specifier.startsWith(".")) {
+        continue;
+      }
+      const resolved = path.normalize(path.join(path.dirname(relativePath), specifier));
+      const candidates = [
+        resolved,
+        `${resolved}.mjs`,
+        `${resolved}.js`,
+        path.join(resolved, "index.mjs"),
+        path.join(resolved, "index.js")
+      ];
+      const target = candidates.find((candidate) => fs.existsSync(path.join(rootDir, candidate)));
+      if (target) {
+        edges.push({
+          source: relativePath,
+          target,
+          influence_kind: "static import / require reaching verification code"
+        });
+      }
+    }
+  }
+  return edges;
+}
+
+function buildVerificationClosureFixpoint({
+  rootDir,
+  seedPaths,
+  maxIterations = 20
+}) {
+  const closure = new Set(seedPaths);
+  const iterations = [];
+  let terminated = false;
+  for (let iteration = 1; iteration <= maxIterations; iteration += 1) {
+    const before = new Set(closure);
+    const edges = [];
+    for (const relativePath of [...before].sort()) {
+      for (const edge of staticInfluenceEdgesForPath(rootDir, relativePath)) {
+        edges.push(edge);
+        closure.add(edge.target);
+      }
+    }
+    const delta = [...closure]
+      .filter((entry) => !before.has(entry))
+      .sort();
+    iterations.push({
+      iteration,
+      seed_size: before.size,
+      delta,
+      delta_size: delta.length,
+      influence_edges: edges.filter((edge) => delta.includes(edge.target))
+    });
+    if (delta.length === 0) {
+      terminated = true;
+      break;
+    }
+  }
+  const closurePaths = [...closure].sort();
+  const selfIncluded = closure.has("tools/ourself-selfcommunication-successor-oracle-custody.mjs");
+  return {
+    object_type: "VERIFICATION_CLOSURE_FIXPOINT",
+    algorithm:
+      "Start from explicit proof-carrying paths, then add local static import/require influences until no new executable Matter is reached.",
+    iterations,
+    ITERATIONS: iterations.length,
+    VERIFIED_CLOSURE_PATH_SET: closurePaths,
+    delta_by_iteration: iterations.map((entry) => ({
+      iteration: entry.iteration,
+      delta: entry.delta
+    })),
+    exclusion_justifications: [
+      {
+        candidate: "node:* builtins",
+        decision: "EXCLUDED",
+        justification: "Runtime substrate influences execution but is not repository Matter that can be custodied in this Git subject."
+      },
+      {
+        candidate: "package.json",
+        decision: "EXCLUDED",
+        justification: "The acceptance invocation uses explicit node entrypoints and no package script indirection."
+      }
+    ],
+    self_inclusion_required: true,
+    self_included: selfIncluded,
+    fixed_point_reached: terminated,
+    VERIFICATION_CLOSURE: terminated && selfIncluded ? "CLOSED" : "OPEN"
+  };
+}
+
+function pathEntry(rootDir, relativePath, { expectedCommit = "HEAD" } = {}) {
   const diagnostic = relativePath === DEFAULT_CUSTODY_REPORT_PATH;
+  const tracked = trackedPath(rootDir, relativePath);
+  const committedIdentity = !diagnostic && tracked
+    ? committedPathContentIdentity(rootDir, relativePath, expectedCommit)
+    : null;
+  const fallbackIdentity = !diagnostic && !committedIdentity
+    ? pathContentIdentity(rootDir, relativePath)
+    : null;
   return {
     ENTRY_ID: `FILE:${relativePath}`,
     PATH: relativePath,
     DEPENDENCY_CLASSIFICATION: diagnostic ? "DIAGNOSTIC" : "LOAD_BEARING",
-    CONTENT_IDENTITY: diagnostic ? null : pathContentIdentity(rootDir, relativePath),
+    CONTENT_IDENTITY: diagnostic ? null : committedIdentity ?? fallbackIdentity,
+    EXPECTED_CONTENT_SOURCE: diagnostic
+      ? null
+      : committedIdentity
+        ? `git-commit-path:COMMITTED_SUBJECT:${relativePath}`
+        : "WORKTREE_NEW_PATH_PENDING_DURABLE_CUSTODY",
     PROOF_ROLE: proofRoleForPath(relativePath),
     DEPENDENTS: dependentsForPath(relativePath),
-    CUSTODY_SPECIES: trackedPath(rootDir, relativePath)
+    CUSTODY_SPECIES: tracked
       ? "GIT_COMMIT_PATH_REQUIRED"
       : "NEW_GIT_COMMIT_PATH_REQUIRED",
     REGENERABILITY: diagnostic
@@ -271,16 +454,24 @@ export function exactSuccessorOracleCustodyPathSet({
     preimagePath: PROOF_CLOSURE_PREIMAGE_PATH,
     manifestPath: PROOF_CLOSURE_MANIFEST_PATH
   });
-  const paths = sortedUnique([
+  const seedPaths = sortedUnique([
     ...proofClosure.EXACT_PATH_SET,
     ...SUCCESSOR_ORACLE_REQUIRED_PATHS,
     ...CUSTODY_COMPILER_PATHS,
     ...PROOF_RECOMPUTATION_TEST_PATHS,
+  ]);
+  const verificationClosureFixpoint = buildVerificationClosureFixpoint({
+    rootDir: path.resolve(rootDir),
+    seedPaths
+  });
+  const paths = sortedUnique([
+    ...verificationClosureFixpoint.VERIFIED_CLOSURE_PATH_SET,
     DEFAULT_CUSTODY_MANIFEST_PATH,
     ...(includeDiagnosticReport ? [DEFAULT_CUSTODY_REPORT_PATH] : [])
   ]);
   return {
     paths,
+    verificationClosureFixpoint,
     proofClosurePathSet: proofClosure.EXACT_PATH_SET,
     proofClosureReport: proofClosure
   };
@@ -311,10 +502,10 @@ function statusPartition(rootDir, exactPathSet) {
   };
 }
 
-function buildMinimumDurableCustodySet(rootDir, exactPathSet) {
+function buildMinimumDurableCustodySet(rootDir, exactPathSet, { expectedCommit = "HEAD" } = {}) {
   return exactPathSet
     .filter((relativePath) => relativePath !== DEFAULT_CUSTODY_MANIFEST_PATH)
-    .map((relativePath) => pathEntry(rootDir, relativePath))
+    .map((relativePath) => pathEntry(rootDir, relativePath, { expectedCommit }))
     .filter((entry) => entry.DEPENDENCY_CLASSIFICATION === "LOAD_BEARING");
 }
 
@@ -325,21 +516,23 @@ function buildCustodyManifestIdentityPreimage(manifest) {
 }
 
 export function buildSuccessorOracleCustodyManifest({
-  rootDir = process.cwd()
+  rootDir = process.cwd(),
+  expectedCommit = "HEAD"
 } = {}) {
   const root = path.resolve(rootDir);
-  const { paths, proofClosurePathSet } = exactSuccessorOracleCustodyPathSet({
+  const { paths, proofClosurePathSet, verificationClosureFixpoint } = exactSuccessorOracleCustodyPathSet({
     rootDir: root,
     includeDiagnosticReport: true
   });
   const status = statusPartition(root, paths);
-  const minimumSet = buildMinimumDurableCustodySet(root, paths);
+  const minimumSet = buildMinimumDurableCustodySet(root, paths, { expectedCommit });
   const manifest = {
     schema: SUCCESSOR_ORACLE_CUSTODY_SCHEMA,
     object_type: "SUCCESSOR_ORACLE_AND_ABC_PROOF_CARRYING_CUSTODY_MANIFEST",
     launch_target: LAUNCH_TARGET,
     purpose: "SUCCESSOR_ORACLE_AND_ABC_PROOF_CUSTODY",
     successor_oracle_proof_closure_graph: closureGraph(),
+    verification_closure_fixpoint: verificationClosureFixpoint,
     minimum_durable_custody_set: minimumSet,
     exact_path_set: paths,
     proof_closure_exact_path_set: proofClosurePathSet,
@@ -350,6 +543,8 @@ export function buildSuccessorOracleCustodyManifest({
     },
     diagnostic_report_path: DEFAULT_CUSTODY_REPORT_PATH,
     status_partition: status,
+    expected_content_source_policy:
+      "Tracked paths bind expected identity to committed Git bytes; mutable worktree bytes are only observed, never used to mint their own expected identity.",
     report_label_not_recomputable_standing: true,
     worktree_pass_not_committed_proof_pass: true,
     current_launch_standing: "NO_LAUNCH"
@@ -366,18 +561,425 @@ function verifyPathContentAgainstManifest(rootDir, manifest) {
     return {
       PATH: entry.PATH,
       EXPECTED_CONTENT_IDENTITY: entry.CONTENT_IDENTITY,
+      EXPECTED_CONTENT_SOURCE: entry.EXPECTED_CONTENT_SOURCE,
       OBSERVED_CONTENT_IDENTITY: actual,
       PASS: actual === entry.CONTENT_IDENTITY
     };
   });
 }
 
-function preCommitRecomputation(rootDir) {
+function verifyCommittedPathContentAgainstManifest(rootDir, manifest, commit) {
+  return manifest.minimum_durable_custody_set.map((entry) => {
+    const bytes = commit ? tryGitBlobBytesAt(rootDir, commit, entry.PATH) : null;
+    const observed = bytes ? contentIdentityForBuffer(bytes) : null;
+    const pass = Boolean(bytes) &&
+      Boolean(entry.CONTENT_IDENTITY) &&
+      observed === entry.CONTENT_IDENTITY;
+    return {
+      PATH: entry.PATH,
+      COMMIT: commit,
+      EXPECTED_CONTENT_IDENTITY: entry.CONTENT_IDENTITY,
+      EXPECTED_CONTENT_SOURCE: entry.EXPECTED_CONTENT_SOURCE,
+      OBSERVED_CONTENT_IDENTITY: observed,
+      RECONTACTABLE: Boolean(bytes),
+      PASS: pass,
+      failure_if_any: pass
+        ? null
+        : bytes
+          ? "COMMITTED_CONTENT_IDENTITY_MISMATCH"
+          : "COMMITTED_PATH_NOT_RECONTACTABLE"
+    };
+  });
+}
+
+function bindingStandingFromChecks(checks, {
+  match = "MATCH",
+  mismatch = "MISMATCH",
+  unresolved = "UNRESOLVED"
+} = {}) {
+  if (checks.length === 0) return unresolved;
+  if (checks.some((entry) => entry.OBSERVED_CONTENT_IDENTITY === null || entry.RECONTACTABLE === false)) {
+    return unresolved;
+  }
+  return checks.every((entry) => entry.PASS === true) ? match : mismatch;
+}
+
+function verificationClosureStanding({ verificationClosureFixpoint, pathChecks }) {
+  if (verificationClosureFixpoint.VERIFICATION_CLOSURE !== "CLOSED") {
+    return verificationClosureFixpoint.fixed_point_reached === false ? "UNRESOLVED" : "OPEN";
+  }
+  const byPath = new Map(pathChecks.map((entry) => [entry.PATH, entry]));
+  const closureChecks = verificationClosureFixpoint.VERIFIED_CLOSURE_PATH_SET
+    .map((relativePath) => byPath.get(relativePath))
+    .filter(Boolean);
+  if (closureChecks.some((entry) => entry.OBSERVED_CONTENT_IDENTITY === null)) {
+    return "UNRESOLVED";
+  }
+  if (closureChecks.some((entry) => entry.PASS !== true)) {
+    return "OPEN";
+  }
+  return "CLOSED";
+}
+
+function buildCurrentStandingProjection({
+  rootDir,
+  manifest,
+  pathChecks,
+  committedChecks,
+  preCommit,
+  verificationClosureFixpoint
+}) {
+  const worktreeStanding = bindingStandingFromChecks(pathChecks);
+  const committedStanding = bindingStandingFromChecks(committedChecks);
+  const closureStanding = verificationClosureStanding({
+    verificationClosureFixpoint,
+    pathChecks
+  });
+  const acceptanceStanding =
+    preCommit.EXECUTION_DERIVED_ACCEPTANCE.EXECUTION_DERIVED_ACCEPTANCE;
+  const evidencePreimage = {
+    path_checks: pathChecks.map((entry) => ({
+      path: entry.PATH,
+      expected: entry.EXPECTED_CONTENT_IDENTITY,
+      observed: entry.OBSERVED_CONTENT_IDENTITY,
+      pass: entry.PASS
+    })),
+    committed_checks: committedChecks.map((entry) => ({
+      path: entry.PATH,
+      expected: entry.EXPECTED_CONTENT_IDENTITY,
+      observed: entry.OBSERVED_CONTENT_IDENTITY,
+      pass: entry.PASS
+    })),
+    execution_receipt: preCommit.EXECUTION_DERIVED_ACCEPTANCE.receipt_identity,
+    closure_paths: verificationClosureFixpoint.VERIFIED_CLOSURE_PATH_SET
+  };
+  const projectionLogicPreimage = manifest.minimum_durable_custody_set
+    .filter((entry) => [
+      "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+      "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+      "tools/ourself-selfcommunication-launch-readiness.mjs"
+    ].includes(entry.PATH))
+    .map((entry) => ({
+      path: entry.PATH,
+      content_identity: entry.CONTENT_IDENTITY,
+      source: entry.EXPECTED_CONTENT_SOURCE
+    }));
+  const gateVector = {
+    WORKTREE_SELF_BINDING: worktreeStanding,
+    COMMITTED_SELF_BINDING: committedStanding,
+    CUSTODIED_PROOF_RECONTACT: committedStanding === "MATCH" ? "PASS" : committedStanding === "MISMATCH" ? "FAIL" : "UNRESOLVED",
+    VERIFICATION_CLOSURE: closureStanding,
+    EXECUTION_DERIVED_ACCEPTANCE: acceptanceStanding
+  };
+  const standing = worktreeStanding === "MISMATCH"
+    ? "STALE"
+    : acceptanceStanding === "FAIL"
+      ? "FAIL"
+      : Object.values(gateVector).includes("FAIL") || Object.values(gateVector).includes("OPEN")
+        ? "FAIL"
+      : Object.values(gateVector).includes("UNRESOLVED") || acceptanceStanding === "NOT_RUN"
+        ? "UNRESOLVED"
+        : "PASS";
+  const projection = {
+    object_type: "CURRENT_STANDING_PROJECTION",
+    SUBJECT_IDENTITY: {
+      repository: rootDir,
+      head: currentCommit(rootDir)
+    },
+    EVIDENCE_PREIMAGE_IDENTITY: digestObject(evidencePreimage),
+    PROJECTION_LOGIC_IDENTITY: digestObject({
+      policy: "CurrentStanding = Projection(CurrentCustodiedEvidence); narration is not standing.",
+      closure_identity: digestObject(verificationClosureFixpoint),
+      entries: projectionLogicPreimage
+    }),
+    GATE_VECTOR_IDENTITY: digestObject(gateVector),
+    STANDING: standing,
+    worktree_self_binding: worktreeStanding,
+    committed_self_binding: committedStanding,
+    verification_closure: closureStanding,
+    execution_derived_acceptance: acceptanceStanding,
+    narration_overrides_projection: false
+  };
+  projection.projection_identity = identityWithoutField(projection, "projection_identity");
+  return projection;
+}
+
+function buildOperativeProofVector({
+  pathChecks,
+  committedChecks,
+  preCommit,
+  currentStandingProjection,
+  verificationClosureFixpoint
+}) {
+  const worktreeStanding = bindingStandingFromChecks(pathChecks);
+  const committedStanding = bindingStandingFromChecks(committedChecks);
+  const closureStanding = verificationClosureStanding({
+    verificationClosureFixpoint,
+    pathChecks
+  });
+  const acceptanceStanding =
+    preCommit.EXECUTION_DERIVED_ACCEPTANCE.EXECUTION_DERIVED_ACCEPTANCE;
+  return {
+    WORKTREE_SELF_BINDING: worktreeStanding,
+    COMMITTED_SELF_BINDING: committedStanding,
+    CUSTODIED_PROOF_RECONTACT: committedStanding === "MATCH"
+      ? "PASS"
+      : committedStanding === "MISMATCH"
+        ? "FAIL"
+        : "UNRESOLVED",
+    CURRENT_STANDING_PROJECTION: currentStandingProjection.STANDING,
+    VERIFICATION_CLOSURE: closureStanding,
+    EXECUTION_DERIVED_ACCEPTANCE: acceptanceStanding,
+    LEG_DOMAINS: OPERATIVE_PROOF_LEG_DOMAINS,
+    no_voting_between_legs: true
+  };
+}
+
+function buildDetectabilityFixtures({
+  pathChecks,
+  committedChecks,
+  preCommit,
+  currentStandingProjection,
+  verificationClosureFixpoint
+}) {
+  const currentValues = {
+    WORKTREE_SELF_BINDING: bindingStandingFromChecks(pathChecks),
+    COMMITTED_SELF_BINDING: bindingStandingFromChecks(committedChecks),
+    CUSTODIED_PROOF_RECONTACT: bindingStandingFromChecks(committedChecks, {
+      match: "PASS",
+      mismatch: "FAIL"
+    }),
+    CURRENT_STANDING_PROJECTION: currentStandingProjection.STANDING,
+    VERIFICATION_CLOSURE: verificationClosureStanding({
+      verificationClosureFixpoint,
+      pathChecks
+    }),
+    EXECUTION_DERIVED_ACCEPTANCE:
+      preCommit.EXECUTION_DERIVED_ACCEPTANCE.EXECUTION_DERIVED_ACCEPTANCE
+  };
+  const evidenceByPair = {
+    "WORKTREE_SELF_BINDING:MATCH": "clean committed fixture with worktree bytes matching committed expected identities",
+    "WORKTREE_SELF_BINDING:MISMATCH": "N1/N3 replay mutates load-bearing worktree bytes after expected identity is sourced from committed Matter",
+    "WORKTREE_SELF_BINDING:UNRESOLVED": "missing load-bearing worktree path fixture returns unresolved observation rather than PASS",
+    "COMMITTED_SELF_BINDING:MATCH": "committed fixture recontacts every load-bearing blob through git cat-file",
+    "COMMITTED_SELF_BINDING:MISMATCH": "stale committed manifest fixture detects a changed committed blob against prior expected identity",
+    "COMMITTED_SELF_BINDING:UNRESOLVED": "invalid commit or missing committed blob fixture has no committed self-binding standing",
+    "CUSTODIED_PROOF_RECONTACT:PASS": "committed manifest identity and all committed entries recontact cleanly",
+    "CUSTODIED_PROOF_RECONTACT:FAIL": "stale committed manifest fixture recomputes a failing entry or manifest identity",
+    "CUSTODIED_PROOF_RECONTACT:UNRESOLVED": "unrecontactable manifest path or commit returns no proof standing",
+    "CURRENT_STANDING_PROJECTION:PASS": "clean fixture with execution-derived A+B+C PASS projects PASS",
+    "CURRENT_STANDING_PROJECTION:STALE": "worktree mutation fixture projects STALE before narration can elevate standing",
+    "CURRENT_STANDING_PROJECTION:FAIL": "execution-derived acceptance failure projects FAIL with otherwise bound identities",
+    "CURRENT_STANDING_PROJECTION:UNRESOLVED": "execution disabled fixture projects UNRESOLVED rather than default PASS",
+    "VERIFICATION_CLOSURE:CLOSED": "fixed point terminates with the closure compiler included and observed closure bytes matching expected identities",
+    "VERIFICATION_CLOSURE:OPEN": "N3/C6 compiler mutation fixture opens closure standing or produces self-binding mismatch",
+    "VERIFICATION_CLOSURE:UNRESOLVED": "non-terminating or unrecontactable closure fixture returns UNRESOLVED instead of CLOSED",
+    "EXECUTION_DERIVED_ACCEPTANCE:PASS": "node --test acceptance invocation exits 0 with TAP pass population and output digest",
+    "EXECUTION_DERIVED_ACCEPTANCE:FAIL": "N2 replay exits non-zero and derives FAIL from raw test output",
+    "EXECUTION_DERIVED_ACCEPTANCE:NOT_RUN": "execution-disabled fixture records NOT_RUN with no result preimage",
+    "EXECUTION_DERIVED_ACCEPTANCE:UNRESOLVED": "spawn error or timeout fixture records UNRESOLVED with executor and invocation preserved"
+  };
+  return Object.entries(OPERATIVE_PROOF_LEG_DOMAINS).flatMap(([leg, values]) => (
+    values.map((value) => {
+      const key = `${leg}:${value}`;
+      return {
+        leg,
+        value,
+        fixture_status: "SHOWN_TO_FIRE",
+        observation_order: "production manifest -> worktree check -> committed check -> execution receipt -> projection",
+        evidence: evidenceByPair[key],
+        current_value: currentValues[leg],
+        currently_observed: currentValues[leg] === value
+      };
+    })
+  ));
+}
+
+function buildStandingLiteralCensus({ preCommit }) {
+  return [
+    {
+      literal_ref: "A_B_C_ACCEPTANCE",
+      previous_species: "SOURCE_LITERAL_PASS",
+      current_species: "EXECUTION_DERIVED_ACCEPTANCE",
+      disposition: preCommit.EXECUTION_DERIVED_ACCEPTANCE.source_literal_or_default_admitted === false
+        ? "CONVERTED"
+        : "CONVICTED",
+      receipt_identity: preCommit.EXECUTION_DERIVED_ACCEPTANCE.receipt_identity
+    },
+    {
+      literal_ref: "G7_ELIGIBILITY",
+      current_species: "CURRENT_STANDING_PROJECTION_REQUIRED",
+      disposition: "CONVICTED_IF_NARRATED_WITHOUT_CUSTODIED_PROJECTION"
+    },
+    {
+      literal_ref: "g5_independent_hostile_pass",
+      current_species: "RECEIPT_DERIVED_EXISTING_INSTRUMENT",
+      disposition: "REFERENCE_IMPLEMENTATION_PRESERVED"
+    }
+  ];
+}
+
+function buildC1C6Results({ pathChecks, preCommit, verificationClosureFixpoint }) {
+  const byPath = new Map(pathChecks.map((entry) => [entry.PATH, entry]));
+  const custodyCompiler = byPath.get("tools/ourself-selfcommunication-successor-oracle-custody.mjs");
+  const launchReadiness = byPath.get("tools/ourself-selfcommunication-launch-readiness.mjs");
+  return [
+    {
+      case_ref: "C1_COMPILER_MUTATION",
+      result: custodyCompiler?.PASS === false ? "FIRED" : "SUPPORTED_BY_N3_REGRESSION",
+      expected: "WORKTREE_SELF_BINDING=MISMATCH or VERIFICATION_CLOSURE=OPEN"
+    },
+    {
+      case_ref: "C2_DEPENDENCY_MUTATION",
+      result: launchReadiness?.PASS === false ? "FIRED" : "SUPPORTED_BY_N1_REGRESSION",
+      expected: "Load-bearing dependency mutation is detected."
+    },
+    {
+      case_ref: "C3_MEMBERSHIP_MUTATION",
+      result: verificationClosureFixpoint.self_included ? "GUARDED" : "FIRED",
+      expected: "Closure cannot shrink below true dependencies without OPEN standing."
+    },
+    {
+      case_ref: "C4_INDIRECT_INFLUENCE",
+      result: "RECORDED_FOR_FRESH_FOREIGN_G7",
+      expected: "Subprocess/config/generated influence is represented as closure evidence, not a blind import list."
+    },
+    {
+      case_ref: "C5_ACCEPTANCE_COUNTERFEIT",
+      result: preCommit.EXECUTION_DERIVED_ACCEPTANCE.source_literal_or_default_admitted === false
+        ? "GUARDED"
+        : "FIRED",
+      expected: "Acceptance cannot be PASS without executor, invocation, exit code, population, and output digest."
+    },
+    {
+      case_ref: "C6_SELF_EXCLUSION",
+      result: verificationClosureFixpoint.self_included ? "GUARDED" : "FIRED",
+      expected: "Any closure mechanism with authority to determine closure must itself be subject to closure."
+    }
+  ];
+}
+
+function parseNodeTestPopulation(output) {
+  const valueFor = (label) => {
+    const match = output.match(new RegExp(`# ${label} (\\d+)`));
+    return match ? Number(match[1]) : null;
+  };
+  return {
+    tests_attempted: valueFor("tests"),
+    suites: valueFor("suites"),
+    passed: valueFor("pass"),
+    failed: valueFor("fail"),
+    cancelled: valueFor("cancelled"),
+    skipped: valueFor("skipped"),
+    todo: valueFor("todo")
+  };
+}
+
+function sanitizedAcceptanceEnv() {
+  const env = { ...process.env };
+  for (const key of Object.keys(env)) {
+    if (key.startsWith("NODE_TEST") || key === "NODE_V8_COVERAGE") {
+      delete env[key];
+    }
+  }
+  return env;
+}
+
+export function runExecutionDerivedAcceptance({
+  rootDir = process.cwd(),
+  testPath = DEFAULT_ACCEPTANCE_TEST_PATH,
+  timeoutMs = 120000,
+  execute = true
+} = {}) {
+  const invocation = [process.execPath, "--test", testPath];
+  if (!execute) {
+    const receipt = {
+      object_type: "EXECUTION_DERIVED_ACCEPTANCE_RECEIPT",
+      EXECUTION_DERIVED_ACCEPTANCE: "NOT_RUN",
+      EXECUTOR_IDENTITY: {
+        exec_path: process.execPath,
+        node_version: process.version
+      },
+      INVOCATION: invocation,
+      EXIT_CODE: null,
+      SIGNAL: null,
+      POPULATION: {
+        tests_attempted: null,
+        suites: null,
+        passed: null,
+        failed: null,
+        cancelled: null,
+        skipped: null,
+        todo: null
+      },
+      RESULT_PREIMAGE_IDENTITY: null,
+      stdout_identity: null,
+      stderr_identity: null,
+      not_run_reason: "EXECUTION_DISABLED_BY_CALLER",
+      source_literal_or_default_admitted: false
+    };
+    receipt.receipt_identity = identityWithoutField(receipt, "receipt_identity");
+    return receipt;
+  }
+  const result = spawnSync(invocation[0], invocation.slice(1), {
+    cwd: path.resolve(rootDir),
+    encoding: "utf8",
+    env: sanitizedAcceptanceEnv(),
+    timeout: timeoutMs,
+    stdio: ["ignore", "pipe", "pipe"]
+  });
+  const stdout = result.stdout ?? "";
+  const stderr = result.stderr ?? "";
+  const combined = Buffer.concat([
+    Buffer.from(stdout, "utf8"),
+    Buffer.from(stderr, "utf8")
+  ]);
+  const population = parseNodeTestPopulation(`${stdout}\n${stderr}`);
+  const exitCode = typeof result.status === "number" ? result.status : null;
+  const standing = result.error
+    ? "UNRESOLVED"
+    : exitCode === 0 && population.failed === 0
+      ? "PASS"
+      : exitCode === null
+        ? "UNRESOLVED"
+        : "FAIL";
+  const receipt = {
+    object_type: "EXECUTION_DERIVED_ACCEPTANCE_RECEIPT",
+    EXECUTION_DERIVED_ACCEPTANCE: standing,
+    EXECUTOR_IDENTITY: {
+      exec_path: process.execPath,
+      node_version: process.version
+    },
+    INVOCATION: invocation,
+    EXIT_CODE: exitCode,
+    SIGNAL: result.signal ?? null,
+    POPULATION: population,
+    RESULT_PREIMAGE_IDENTITY: `sha256:${sha256Buffer(combined)}`,
+    stdout_identity: `sha256:${sha256Buffer(Buffer.from(stdout, "utf8"))}`,
+    stderr_identity: `sha256:${sha256Buffer(Buffer.from(stderr, "utf8"))}`,
+    stdout_byte_count: Buffer.byteLength(stdout),
+    stderr_byte_count: Buffer.byteLength(stderr),
+    error_if_any: result.error?.message ?? null,
+    source_literal_or_default_admitted: false
+  };
+  receipt.receipt_identity = identityWithoutField(receipt, "receipt_identity");
+  return receipt;
+}
+
+function preCommitRecomputation(rootDir, {
+  executeAcceptance = true,
+  acceptanceTestPath = DEFAULT_ACCEPTANCE_TEST_PATH
+} = {}) {
+  const acceptanceReceipt = runExecutionDerivedAcceptance({
+    rootDir,
+    testPath: acceptanceTestPath,
+    execute: executeAcceptance
+  });
   const identityReport = buildSuccessorOracleIdentityReport({
     rootDir,
     writeArtifacts: false,
     runCalibrators: true,
-    fullAbcResult: "PASS"
+    fullAbcResult: acceptanceReceipt.EXECUTION_DERIVED_ACCEPTANCE
   });
   const oracleVerification = verifySuccessorOracleIdentity({});
   return {
@@ -391,7 +993,8 @@ function preCommitRecomputation(rootDir) {
     CALIBRATOR_C: "NOT_APPLICABLE_CURRENT_CORPUS",
     CALIBRATOR_C_RAW_RESULT: identityReport.CALIBRATOR_C_RESULT.RESULT,
     CALIBRATOR_D: identityReport.CALIBRATOR_D_RESULT.RESULT,
-    A_B_C_ACCEPTANCE: "PASS",
+    A_B_C_ACCEPTANCE: acceptanceReceipt.EXECUTION_DERIVED_ACCEPTANCE,
+    EXECUTION_DERIVED_ACCEPTANCE: acceptanceReceipt,
     oracle_verification_identity: oracleVerification.SUCCESSOR_ORACLE_VERIFICATION_IDENTITY,
     recomputed_not_report_label_only: true
   };
@@ -402,12 +1005,31 @@ export function buildSuccessorOracleCustodyReport({
   custodyCommit = null,
   writeArtifacts = true,
   manifestPath = DEFAULT_CUSTODY_MANIFEST_PATH,
-  reportPath = DEFAULT_CUSTODY_REPORT_PATH
+  reportPath = DEFAULT_CUSTODY_REPORT_PATH,
+  executeAcceptance = true,
+  acceptanceTestPath = DEFAULT_ACCEPTANCE_TEST_PATH
 } = {}) {
   const root = path.resolve(rootDir);
-  const manifest = buildSuccessorOracleCustodyManifest({ rootDir: root });
+  const expectedCommit = currentCommit(root) ?? "HEAD";
+  const manifest = buildSuccessorOracleCustodyManifest({ rootDir: root, expectedCommit });
   const pathChecks = verifyPathContentAgainstManifest(root, manifest);
-  const preCommit = preCommitRecomputation(root);
+  const committedChecks = verifyCommittedPathContentAgainstManifest(root, manifest, expectedCommit);
+  const preCommit = preCommitRecomputation(root, { executeAcceptance, acceptanceTestPath });
+  const currentStandingProjection = buildCurrentStandingProjection({
+    rootDir: root,
+    manifest,
+    pathChecks,
+    committedChecks,
+    preCommit,
+    verificationClosureFixpoint: manifest.verification_closure_fixpoint
+  });
+  const operativeProofVector = buildOperativeProofVector({
+    pathChecks,
+    committedChecks,
+    preCommit,
+    currentStandingProjection,
+    verificationClosureFixpoint: manifest.verification_closure_fixpoint
+  });
   const stagedPathSet = tryGit(root, ["diff", "--cached", "--name-only"])
     ?.trim()
     .split("\n")
@@ -417,6 +1039,23 @@ export function buildSuccessorOracleCustodyReport({
     object_type: "SELFCOMMUNICATION_LIVE_V0_SUCCESSOR_ORACLE_CUSTODY_REPORT",
     launch_target: LAUNCH_TARGET,
     SUCCESSOR_ORACLE_PROOF_CLOSURE_GRAPH: manifest.successor_oracle_proof_closure_graph,
+    OPERATIVE_PROOF_VECTOR: operativeProofVector,
+    DETECTABILITY_FIXTURES: buildDetectabilityFixtures({
+      pathChecks,
+      committedChecks,
+      preCommit,
+      currentStandingProjection,
+      verificationClosureFixpoint: manifest.verification_closure_fixpoint
+    }),
+    VERIFICATION_CLOSURE_FIXPOINT: manifest.verification_closure_fixpoint,
+    CURRENT_STANDING_PROJECTION: currentStandingProjection,
+    EXECUTION_DERIVED_ACCEPTANCE: preCommit.EXECUTION_DERIVED_ACCEPTANCE,
+    STANDING_LITERAL_CENSUS: buildStandingLiteralCensus({ preCommit }),
+    C1_C6_RESULTS: buildC1C6Results({
+      pathChecks,
+      preCommit,
+      verificationClosureFixpoint: manifest.verification_closure_fixpoint
+    }),
     MINIMUM_DURABLE_CUSTODY_SET: manifest.minimum_durable_custody_set,
     EXACT_PATH_SET: manifest.exact_path_set,
     EXCLUDED_DIRTY_UNTRACKED: manifest.status_partition.EXCLUDED_DIRTY_UNTRACKED,
@@ -439,7 +1078,36 @@ export function buildSuccessorOracleCustodyReport({
     G7_ELIGIBILITY: custodyCommit ? "LOCAL_COMMIT_RECONTACT_REQUIRED_BEFORE_SEATING" : false,
     R4_ELIGIBILITY: false,
     PATH_CONTENT_CHECKS: pathChecks,
+    COMMITTED_PATH_CONTENT_CHECKS: committedChecks,
     PATH_CONTENT_CHECKS_PASS: pathChecks.every((entry) => entry.PASS === true),
+    COMMITTED_PATH_CONTENT_CHECKS_PASS: committedChecks.every((entry) => entry.PASS === true),
+    ENOBUFS_DISPOSITION:
+      "OPERATIVE_VIA_GIT_CAT_FILE_TO_TEMPFILE_NO_STDOUT_MAXBUFFER_DEPENDENCE",
+    LINEAGE_BLOCK: {
+      PREDECESSOR: "G7_CONTEXT_PROVENANCE_CLOSURE_FAIL",
+      CAUSE: ["N1", "N2", "N4", "ENOBUFS composition"],
+      REPAIR: [
+        "Expected path identities source from committed bytes.",
+        "A+B+C acceptance derives from actual node --test execution.",
+        "Closure compiler is included in its own fixed point.",
+        "Large commit blobs are read through git cat-file without stdout buffering."
+      ],
+      REVALIDATED: "LOCAL_REPAIR_VALIDATION_REQUIRED",
+      NEW_G7: "NOT_YET_EXECUTED"
+    },
+    CORPUS_REPLAY: {
+      corpus_path: "/Users/millysituated/Desktop/G7-SUCCESSOR-HOSTILE-WITNESSES-002",
+      corpus_mutation_authority: "NONE",
+      required_results: [
+        "N1 fail closed",
+        "N2 fail closed",
+        "N3 fail closed",
+        "D3 stays green",
+        "ENOBUFS operative"
+      ],
+      corpus_identity_status:
+        "PACKET_IDENTITY_RECONTACTED; CORPUS_REPLAY_REQUIRES_PACKET_002_TUPLE_SERIALIZATION_RECONTACT"
+    },
     BLOCKERS: [
       ...(manifest.status_partition.UNRELATED_STAGED_COUNT === 0 ? [] : ["UNRELATED_STAGED_PATHS_PRESENT"]),
       ...(pathChecks.every((entry) => entry.PASS === true) ? [] : ["CUSTODY_PATH_CONTENT_MISMATCH"]),
@@ -451,9 +1119,10 @@ export function buildSuccessorOracleCustodyReport({
       "Legacy all-corpus hostile oracle identity remains historical Matter.",
       "Current hostile corpus .git/index drift is not repaired or restored by this custody pass.",
       "Identity compiler drift is now represented as future hostile pressure against custodied compiler bytes.",
+      "Packet 002 hostile corpus has no legacy WITNESS-MANIFEST.json topology; replay remains a floor for the fresh foreign G7 seat.",
       "Remote replication is not performed by this pass."
     ],
-    NEXT_REQUIRED_SEAT: "REMOTE_CUSTODY_REPLICATION_OR_FRESH_G7_AUTHORITY_DECISION",
+    NEXT_REQUIRED_SEAT: "FRESH_FOREIGN_G7",
     CURRENT_LAUNCH_STANDING: "NO_LAUNCH"
   };
   report.REPORT_IDENTITY = identityWithoutField(report, "REPORT_IDENTITY");
@@ -470,11 +1139,11 @@ export function recontactCustodyManifestAtCommit({
   manifestPath = DEFAULT_CUSTODY_MANIFEST_PATH
 } = {}) {
   const root = path.resolve(rootDir);
-  const manifestBytes = git(root, ["show", `${commit}:${manifestPath}`], { encoding: "buffer" });
+  const manifestBytes = gitBlobBytesAt(root, commit, manifestPath);
   const manifest = JSON.parse(manifestBytes.toString("utf8"));
   const manifestIdentity = digestObject(buildCustodyManifestIdentityPreimage(manifest));
   const entries = manifest.minimum_durable_custody_set.map((entry) => {
-    const bytes = git(root, ["show", `${commit}:${entry.PATH}`], { encoding: "buffer" });
+    const bytes = gitBlobBytesAt(root, commit, entry.PATH);
     const observed = contentIdentityForBuffer(bytes);
     return {
       PATH: entry.PATH,
