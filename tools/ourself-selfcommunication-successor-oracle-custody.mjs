@@ -410,6 +410,44 @@ function staticInfluenceEdgesForPath(rootDir, relativePath) {
   return edges;
 }
 
+function declaredVerificationInfluenceEdgesForPath(relativePath) {
+  if (relativePath !== "tools/ourself-selfcommunication-successor-oracle-custody.mjs") {
+    return [];
+  }
+  return [
+    {
+      source: relativePath,
+      target: DEFAULT_ACCEPTANCE_TEST_PATH,
+      influence_kind: "subprocess invocation reaches EXECUTION_DERIVED_ACCEPTANCE standing",
+      evidence_ref: "runExecutionDerivedAcceptance"
+    },
+    {
+      source: relativePath,
+      target: PROOF_CLOSURE_MANIFEST_PATH,
+      influence_kind: "manifest bytes consumed by proof-closure custody standing",
+      evidence_ref: "buildProofClosureCustodyReport"
+    },
+    {
+      source: relativePath,
+      target: PROOF_CLOSURE_PREIMAGE_PATH,
+      influence_kind: "preimage bytes consumed by proof-closure custody standing",
+      evidence_ref: "buildProofClosureCustodyReport"
+    },
+    {
+      source: relativePath,
+      target: DEFAULT_SUCCESSOR_MANIFEST_PATH,
+      influence_kind: "manifest bytes consumed by successor oracle identity standing",
+      evidence_ref: "buildSuccessorOracleIdentityReport"
+    },
+    {
+      source: relativePath,
+      target: DEFAULT_SUCCESSOR_REPORT_PATH,
+      influence_kind: "report bytes consumed by successor oracle identity standing",
+      evidence_ref: "buildSuccessorOracleIdentityReport"
+    }
+  ];
+}
+
 function buildVerificationClosureFixpoint({
   rootDir,
   seedPaths,
@@ -422,7 +460,10 @@ function buildVerificationClosureFixpoint({
     const before = new Set(closure);
     const edges = [];
     for (const relativePath of [...before].sort()) {
-      for (const edge of staticInfluenceEdgesForPath(rootDir, relativePath)) {
+      for (const edge of [
+        ...staticInfluenceEdgesForPath(rootDir, relativePath),
+        ...declaredVerificationInfluenceEdgesForPath(relativePath)
+      ]) {
         edges.push(edge);
         closure.add(edge.target);
       }
@@ -435,6 +476,7 @@ function buildVerificationClosureFixpoint({
       seed_size: before.size,
       delta,
       delta_size: delta.length,
+      influence_edges_considered: edges,
       influence_edges: edges.filter((edge) => delta.includes(edge.target))
     });
     if (delta.length === 0) {
@@ -889,6 +931,9 @@ function buildC1C6Results({ pathChecks, preCommit, verificationClosureFixpoint }
   const byPath = new Map(pathChecks.map((entry) => [entry.PATH, entry]));
   const custodyCompiler = byPath.get("tools/ourself-selfcommunication-successor-oracle-custody.mjs");
   const launchReadiness = byPath.get("tools/ourself-selfcommunication-launch-readiness.mjs");
+  const nonStaticInfluenceRecorded = verificationClosureFixpoint.iterations
+    .flatMap((entry) => entry.influence_edges_considered ?? [])
+    .some((edge) => !edge.influence_kind.startsWith("static import"));
   return [
     {
       case_ref: "C1_COMPILER_MUTATION",
@@ -907,7 +952,7 @@ function buildC1C6Results({ pathChecks, preCommit, verificationClosureFixpoint }
     },
     {
       case_ref: "C4_INDIRECT_INFLUENCE",
-      result: "RECORDED_FOR_FRESH_FOREIGN_G7",
+      result: nonStaticInfluenceRecorded ? "GUARDED" : "OPEN",
       expected: "Subprocess/config/generated influence is represented as closure evidence, not a blind import list."
     },
     {

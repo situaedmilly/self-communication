@@ -63,7 +63,9 @@ function writeJsonFixture(rootDir, relativePath, value) {
 }
 
 test("successor oracle custody compiles the exact proof-carrying path set", () => {
-  const { paths } = exactSuccessorOracleCustodyPathSet({ rootDir: process.cwd() });
+  const { paths, verificationClosureFixpoint } = exactSuccessorOracleCustodyPathSet({
+    rootDir: process.cwd()
+  });
 
   for (const requiredPath of [
     "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
@@ -80,6 +82,12 @@ test("successor oracle custody compiles the exact proof-carrying path set", () =
   ]) {
     assert.ok(paths.includes(requiredPath), requiredPath);
   }
+  const consideredInfluenceEdges = verificationClosureFixpoint.iterations
+    .flatMap((entry) => entry.influence_edges_considered ?? []);
+  assert.ok(consideredInfluenceEdges.some((entry) => (
+    entry.target === "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs" &&
+    entry.influence_kind.includes("subprocess invocation")
+  )));
   assert.equal(paths.includes("package.json"), false);
 });
 
