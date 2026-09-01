@@ -34,6 +34,10 @@ export const DEFAULT_CUSTODY_REPORT_PATH =
   `${DEFAULT_OUTPUT_DIR}/successor-oracle-proof-carrying-custody-report.json`;
 export const DEFAULT_ACCEPTANCE_TEST_PATH =
   "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs";
+export const DEFAULT_PACKET_002_HOSTILE_ROOT =
+  "/Users/millysituated/Desktop/G7-SUCCESSOR-HOSTILE-WITNESSES-002";
+export const PACKET_002_HOSTILE_CORPUS_EXPECTED_SHA256 =
+  "669fc715486786098b9ae65159aab90d20efbf08d44022c3e8dd79764fe5c81b";
 
 const OPERATIVE_PROOF_LEG_DOMAINS = Object.freeze({
   WORKTREE_SELF_BINDING: ["MATCH", "MISMATCH", "UNRESOLVED"],
@@ -87,6 +91,68 @@ function sha256Buffer(buffer) {
 
 function sortedUnique(values) {
   return [...new Set(values.filter(Boolean).map(String))].sort();
+}
+
+function walkFiles(rootDir) {
+  const entries = [];
+  for (const name of fs.readdirSync(rootDir)) {
+    const absolutePath = path.join(rootDir, name);
+    const stat = fs.lstatSync(absolutePath);
+    if (stat.isDirectory()) {
+      entries.push(...walkFiles(absolutePath));
+    } else if (stat.isFile()) {
+      entries.push(absolutePath);
+    }
+  }
+  return entries;
+}
+
+export function computePacket002HostileCorpusIdentity({
+  corpusBundleRoot = process.env.SELFCOMMUNICATION_PACKET_002_CORPUS_ROOT ??
+    DEFAULT_PACKET_002_HOSTILE_ROOT
+} = {}) {
+  const root = path.resolve(corpusBundleRoot);
+  const corpusRoot = path.join(root, "corpus");
+  if (!fs.existsSync(corpusRoot)) {
+    return {
+      object_type: "PACKET_002_HOSTILE_CORPUS_IDENTITY",
+      corpus_bundle_root: root,
+      corpus_path: corpusRoot,
+      expected_sha256: PACKET_002_HOSTILE_CORPUS_EXPECTED_SHA256,
+      observed_sha256: null,
+      file_count: 0,
+      tuple_rule:
+        "RELATIVE_PATH_FROM_BUNDLE_ROOT\\0BYTE_SIZE\\0CONTENT_SHA256_HEX\\0EXECUTABLE_BIT_0_OR_1, sorted, concatenated with no row separator",
+      DIGEST_MATCH: false,
+      status: "UNRESOLVED_CORPUS_PATH_MISSING"
+    };
+  }
+  const tuples = walkFiles(corpusRoot)
+    .sort()
+    .map((absolutePath) => {
+      const stat = fs.statSync(absolutePath);
+      const bytes = fs.readFileSync(absolutePath);
+      const relativePath = path.relative(root, absolutePath).split(path.sep).join("/");
+      return [
+        relativePath,
+        String(stat.size),
+        sha256Buffer(bytes),
+        (stat.mode & 0o111) ? "1" : "0"
+      ].join("\0");
+    });
+  const observed = crypto.createHash("sha256").update(tuples.join("")).digest("hex");
+  return {
+    object_type: "PACKET_002_HOSTILE_CORPUS_IDENTITY",
+    corpus_bundle_root: root,
+    corpus_path: corpusRoot,
+    expected_sha256: PACKET_002_HOSTILE_CORPUS_EXPECTED_SHA256,
+    observed_sha256: observed,
+    file_count: tuples.length,
+    tuple_rule:
+      "RELATIVE_PATH_FROM_BUNDLE_ROOT\\0BYTE_SIZE\\0CONTENT_SHA256_HEX\\0EXECUTABLE_BIT_0_OR_1, sorted, concatenated with no row separator",
+    DIGEST_MATCH: observed === PACKET_002_HOSTILE_CORPUS_EXPECTED_SHA256,
+    status: observed === PACKET_002_HOSTILE_CORPUS_EXPECTED_SHA256 ? "MATCH" : "MISMATCH"
+  };
 }
 
 function git(rootDir, args, { encoding = "utf8" } = {}) {
@@ -1015,6 +1081,7 @@ export function buildSuccessorOracleCustodyReport({
   const pathChecks = verifyPathContentAgainstManifest(root, manifest);
   const committedChecks = verifyCommittedPathContentAgainstManifest(root, manifest, expectedCommit);
   const preCommit = preCommitRecomputation(root, { executeAcceptance, acceptanceTestPath });
+  const packet002CorpusIdentity = computePacket002HostileCorpusIdentity();
   const currentStandingProjection = buildCurrentStandingProjection({
     rootDir: root,
     manifest,
@@ -1096,7 +1163,8 @@ export function buildSuccessorOracleCustodyReport({
       NEW_G7: "NOT_YET_EXECUTED"
     },
     CORPUS_REPLAY: {
-      corpus_path: "/Users/millysituated/Desktop/G7-SUCCESSOR-HOSTILE-WITNESSES-002",
+      corpus_path: DEFAULT_PACKET_002_HOSTILE_ROOT,
+      corpus_identity: packet002CorpusIdentity,
       corpus_mutation_authority: "NONE",
       required_results: [
         "N1 fail closed",
@@ -1106,10 +1174,13 @@ export function buildSuccessorOracleCustodyReport({
         "ENOBUFS operative"
       ],
       corpus_identity_status:
-        "PACKET_IDENTITY_RECONTACTED; CORPUS_REPLAY_REQUIRES_PACKET_002_TUPLE_SERIALIZATION_RECONTACT"
+        packet002CorpusIdentity.DIGEST_MATCH
+          ? "MATCH"
+          : "MISMATCH_OR_UNRESOLVED_ACCEPTANCE_VOID"
     },
     BLOCKERS: [
       ...(manifest.status_partition.UNRELATED_STAGED_COUNT === 0 ? [] : ["UNRELATED_STAGED_PATHS_PRESENT"]),
+      ...(packet002CorpusIdentity.DIGEST_MATCH === true ? [] : ["PACKET_002_CORPUS_IDENTITY_MISMATCH"]),
       ...(pathChecks.every((entry) => entry.PASS === true) ? [] : ["CUSTODY_PATH_CONTENT_MISMATCH"]),
       ...(preCommit.SUCCESSOR_ORACLE_STANDING === "SUCCESSOR_ORACLE_ESTABLISHED_AND_A+B+C_PASS"
         ? []

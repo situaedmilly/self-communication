@@ -7,6 +7,7 @@ import test from "node:test";
 import {
   buildSuccessorOracleCustodyManifest,
   buildSuccessorOracleCustodyReport,
+  computePacket002HostileCorpusIdentity,
   DEFAULT_CUSTODY_MANIFEST_PATH,
   exactSuccessorOracleCustodyPathSet,
   recontactCustodyManifestAtCommit,
@@ -101,6 +102,18 @@ test("successor oracle custody manifest binds compiler identity as load-bearing 
   assert.equal(manifest.verification_closure_fixpoint.VERIFICATION_CLOSURE, "CLOSED");
 });
 
+test("Packet 002 hostile corpus identity is independently recomputed from tuple bytes", {
+  skip: fs.existsSync(PACKET_002_CORPUS_ROOT) ? false : "Packet 002 hostile corpus not present"
+}, () => {
+  const identity = computePacket002HostileCorpusIdentity({
+    corpusBundleRoot: PACKET_002_CORPUS_ROOT
+  });
+
+  assert.equal(identity.observed_sha256, "669fc715486786098b9ae65159aab90d20efbf08d44022c3e8dd79764fe5c81b");
+  assert.equal(identity.file_count, 23);
+  assert.equal(identity.DIGEST_MATCH, true);
+});
+
 test("successor oracle custody report preserves recomputable standing without package drift", () => {
   const fixture = createCommittedWorkingTreeFixture();
   try {
@@ -133,6 +146,7 @@ test("successor oracle custody report preserves recomputable standing without pa
     assert.equal(report.EXECUTION_DERIVED_ACCEPTANCE.EXIT_CODE, null);
     assert.equal(report.EXECUTION_DERIVED_ACCEPTANCE.RESULT_PREIMAGE_IDENTITY, null);
     assert.equal(report.STANDING_LITERAL_CENSUS.find((entry) => entry.literal_ref === "A_B_C_ACCEPTANCE").disposition, "CONVERTED");
+    assert.equal(report.CORPUS_REPLAY.corpus_identity.DIGEST_MATCH, true);
     assert.equal(report.EXACT_PATH_SET.includes("package.json"), false);
     assert.equal(report.BLOCKERS.includes("UNRELATED_STAGED_PATHS_PRESENT"), false);
     assert.equal(report.CURRENT_LAUNCH_STANDING, "NO_LAUNCH");
