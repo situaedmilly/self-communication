@@ -1,5 +1,5 @@
 {
-  "SUCCESSOR_ORACLE_CUSTODY_MANIFEST_IDENTITY": "sha256:e69bf63148edd58b2d51dbaad9d72152635073f39be35697b966230b707a0af4",
+  "SUCCESSOR_ORACLE_CUSTODY_MANIFEST_IDENTITY": "sha256:498744579344e3e942b3e935a408459e029c67e52d45973e65a349d0bac4cfc4",
   "current_launch_standing": "NO_LAUNCH",
   "custody_self_binding": {
     "identity_algorithm": "digestObject over stable key-sorted JSON excluding the identity field",
@@ -158,7 +158,7 @@
       "WORKTREE_STATUS": "TRACKED_CLEAN"
     },
     {
-      "CONTENT_IDENTITY": "sha256:f5780707c8e4c68248d12f8c93ffeaa4bb5870eddae2efc1a2c48e464bc9bd21",
+      "CONTENT_IDENTITY": "sha256:ca77f2ef31f9a64a9ae61a15660f1a06ff9de9f8e0c0eaa14c5e32617d8496d8",
       "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
       "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
       "DEPENDENTS": [
@@ -306,7 +306,7 @@
       "WORKTREE_STATUS": "TRACKED_CLEAN"
     },
     {
-      "CONTENT_IDENTITY": "sha256:fb316d726f7fc58beb571327038091e65ef070e2e8bb4c79b80b86e3a85b4598",
+      "CONTENT_IDENTITY": "sha256:a12772c01f3f2a90e6a1397b07ae095593ce2d9ed4344272ea1c5dcb7bf1eb1c",
       "CUSTODY_SPECIES": "GIT_COMMIT_PATH_REQUIRED",
       "DEPENDENCY_CLASSIFICATION": "LOAD_BEARING",
       "DEPENDENTS": [
@@ -578,6 +578,203 @@
         "delta": [],
         "delta_size": 0,
         "influence_edges": [],
+        "influence_edges_considered": [
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs",
+            "target": "tools/ourself-selfcommunication-proof-closure-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs",
+            "target": "tools/ourself-selfcommunication-hostile-oracle-identity.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "test/ourself-selfcommunication-hostile-oracle-identity.test.mjs",
+            "target": "tools/ourself-selfcommunication-hostile-oracle-identity.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "test/ourself-selfcommunication-proof-closure-custody.test.mjs",
+            "target": "tools/ourself-selfcommunication-proof-closure-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "test/ourself-selfcommunication-successor-oracle-custody.test.mjs",
+            "target": "tools/ourself-selfcommunication-successor-oracle-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "test/ourself-selfcommunication-successor-oracle-custody.test.mjs",
+            "target": "tools/ourself-selfcommunication-launch-subject-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-commline-observation-gap.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-observation-authorship.mjs",
+            "target": "tools/ourself-commline-observation-gap.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-observation-authorship.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+            "target": "tools/ourself-selfcommunication-launch-subject-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-hostile-oracle-identity.mjs",
+            "target": "tools/ourself-selfcommunication-proof-closure-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-launch-readiness.mjs",
+            "target": "tools/ourself-commline-observation-gap.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-launch-readiness.mjs",
+            "target": "tools/ourself-observation-authorship.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-launch-readiness.mjs",
+            "target": "tools/ourself-transport-independent-roundtrip.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-launch-readiness.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-launch-subject-custody.mjs",
+            "target": "tools/ourself-selfcommunication-launch-readiness.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-launch-subject-custody.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-proof-carrying-succession.mjs",
+            "target": "tools/ourself-selfcommunication-launch-subject-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+            "target": "tools/ourself-selfcommunication-launch-readiness.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+            "target": "tools/ourself-selfcommunication-launch-subject-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+            "target": "tools/ourself-selfcommunication-proof-carrying-succession.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-proof-closure-custody.mjs",
+            "target": "tools/ourself-selfcommunication-t2-predecessor-binding.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "tools/ourself-selfcommunication-launch-subject-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "tools/ourself-selfcommunication-proof-closure-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "tools/ourself-selfcommunication-hostile-oracle-identity.mjs"
+          },
+          {
+            "evidence_ref": "runExecutionDerivedAcceptance",
+            "influence_kind": "subprocess invocation reaches EXECUTION_DERIVED_ACCEPTANCE standing",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "test/ourself-selfcommunication-abc-repair-acceptance.test.mjs"
+          },
+          {
+            "evidence_ref": "buildProofClosureCustodyReport",
+            "influence_kind": "manifest bytes consumed by proof-closure custody standing",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "specimens/selfcommunication-proof-closure-custody-v0-001/proof-closure-manifest.json"
+          },
+          {
+            "evidence_ref": "buildProofClosureCustodyReport",
+            "influence_kind": "preimage bytes consumed by proof-closure custody standing",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "specimens/selfcommunication-proof-closure-custody-v0-001/t2-successor-proof-preimage.json"
+          },
+          {
+            "evidence_ref": "buildSuccessorOracleIdentityReport",
+            "influence_kind": "manifest bytes consumed by successor oracle identity standing",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-manifest.json"
+          },
+          {
+            "evidence_ref": "buildSuccessorOracleIdentityReport",
+            "influence_kind": "report bytes consumed by successor oracle identity standing",
+            "source": "tools/ourself-selfcommunication-successor-oracle-custody.mjs",
+            "target": "specimens/selfcommunication-hostile-oracle-identity-v0-001/successor-hostile-oracle-report.json"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+            "target": "tools/ourself-selfcommunication-launch-readiness.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+            "target": "tools/ourself-selfcommunication-launch-subject-custody.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-selfcommunication-t2-predecessor-binding.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          },
+          {
+            "influence_kind": "static import / require reaching verification code",
+            "source": "tools/ourself-transport-independent-roundtrip.mjs",
+            "target": "tools/ourself-communication-matter.mjs"
+          }
+        ],
         "iteration": 1,
         "seed_size": 19
       }
