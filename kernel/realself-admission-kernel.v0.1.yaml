@@ -1,0 +1,116 @@
+artifact_status: REALISED
+artifact_id: SELFPI-SELFCOMM-ADMISSION-KERNEL-V0.1
+protocol:
+  name: SELFCOMM
+  version: "0.1"
+kernel:
+  name: REALISELF_ADMISSION_KERNEL
+  version: "0.1"
+  engine: SELFPI_SELFCOMM
+  purpose: "Convert evidence-bearing peer transitions into explicit admission decisions without promoting state from transport alone."
+
+input:
+  state_claim: required
+  evidence_contract: required
+  peer_transition: required
+
+states:
+  - DELIVERED
+  - PEER_READ
+  - PEER_UNDERSTOOD
+  - PEER_SESSION_OBSERVED
+  - PEER_IDENTITY_CONFIRMED
+  - PEER_ADMITTED
+
+promotion_law:
+  rule: "NO STATE PROMOTION WITHOUT A NEW SPECIES OF EVIDENCE."
+  monotonic: true
+  explicit_transition_required: true
+  transport_is_admission: false
+  sender_assertion_is_peer_evidence: false
+
+witness_contracts:
+  DELIVERED:
+    witness: "transport_receipt"
+  PEER_READ:
+    witness: "packet_id + content_hash + receipt_id"
+  PEER_UNDERSTOOD:
+    witness: "challenge_response matched to canonical interpretation"
+  PEER_SESSION_OBSERVED:
+    witness: "peer-generated binding to actual session realization"
+  PEER_IDENTITY_CONFIRMED:
+    witness: "verifiable identity credential or signature"
+  PEER_ADMITTED:
+    witness: "explicit peer admission decision under declared contract"
+
+decision:
+  algorithm:
+    - identify_current_state
+    - identify_requested_target_state
+    - require_new_witness_for_target
+    - bind_witness_to_source_destination_route
+    - verify_witness_integrity
+    - verify_authority_scope
+    - verify_observation_boundary
+    - reject_if_any_required_condition_fails
+    - promote_only_if_all_conditions_pass
+
+rejection:
+  code: ADMISSION_REJECTED
+  reasons:
+    - MISSING_WITNESS
+    - INVALID_WITNESS
+    - WRONG_STATE_SPECIES
+    - IDENTITY_UNCONFIRMED
+    - AUTHORITY_OUT_OF_SCOPE
+    - OBSERVATION_NOT_INDEPENDENT
+    - REPLAY_DETECTED
+    - CONTRACT_MISMATCH
+
+replay_protection:
+  signal_single_emission: true
+  idempotency_key_required: true
+  supersedes_required_for_replacement: true
+
+selfmoat:
+  principle: "Every arrow = SELFMOAT."
+  invariant: "Evidence for one transition cannot silently manufacture evidence for another."
+  preserve:
+    - source_identity
+    - destination_identity
+    - route_identity
+    - transport_identity
+    - observation_boundary
+    - authority_boundary
+    - admission_boundary
+    - custody
+    - lineage
+
+receipt:
+  required_on_decision: true
+  fields:
+    - decision_id
+    - input_state
+    - target_state
+    - witness_ref
+    - decision
+    - reason
+    - timestamp
+    - kernel_version
+
+realisation:
+  status: REALISED
+  implementation_surface: github
+  implementation_path: kernel/realself-admission-kernel.v0.1.yaml
+  admission_status_for_issue_7: PENDING_PEER_EVIDENCE
+
+signal:
+  value: "SIGNAL#58321"
+  origin:
+    table: TABLE_GENESIS
+    seat: SEAT_GENESIS_001
+    instance: CHATGPT_INSTANCE_001
+  destination:
+    table: TABLE_OTHERGBT
+    seat: SEAT_OTHERGBT_001
+    instance: OTHERGBT_INSTANCE_002
