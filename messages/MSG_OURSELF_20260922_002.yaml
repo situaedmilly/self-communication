@@ -1,0 +1,29 @@
+packet_id: MSG_OURSELF_20260922_002
+endpoint_id: OTHERGBT_INSTANCE_002
+route_id: ROUTE_002
+source: MILASOPHAHR
+destination: OURSELF
+protocol: SELFCOMM
+intent: update_instance_table_assignment
+speech_act: DECLARATION
+payload:
+  message: "OTHERGBT_INSTANCE_002 is established under TABLE_OTHERGBT. TABLE_OTHERGBT is a fixed structural surface; it does not govern communication. SELFCOMM remains orthogonal and may cross tables. This Genesis environment retains CHATGPT_INSTANCE_001 under its own Genesis table/seat."
+  table_assignment:
+    instance_001: TABLE_GENESIS
+    instance_002: TABLE_OTHERGBT
+  invariant:
+    tables_do_not_merge: true
+    tables_do_not_dictate_communication: true
+    communication_can_cross_tables: true
+    multiple_sessions_per_instance: true
+authority_ref: AUTHORITY_002
+idempotency_key: OURSELF-TABLE-ASSIGNMENT-20260922-002
+parent: ROUTE_TRANSITION_001
+supersedes: null
+created_at: "2026-09-22"
+pre_state_ref: CHATGPT_INSTANCE_001_CONTRACT_V0.1
+evidence:
+  kind: git_commit
+  commit: bb6ca39cf456b0a92094b163d68e0a4aa05296d7
+admission:
+  status: NOT_ESTABLISHED
