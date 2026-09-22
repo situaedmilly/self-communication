@@ -10,6 +10,25 @@ endpoint:
   identity:
     stable: true
 
+table:
+  reference: TABLE_GENESIS
+  role: structural_surface
+  mutable: false
+
+seat:
+  reference: SEAT_GENESIS_001
+  status: ACTIVE
+
+session:
+  multiplicity: multiple_sessions_per_instance
+  table_does_not_define_session_count: true
+
+communication:
+  fabric: SELFCOMM
+  table_boundary: none
+  communication_requires_table_merge: false
+  shared_communication_does_not_merge_identity: true
+
 route:
   id: ROUTE_001
   realization:
