@@ -1,0 +1,95 @@
+artifact_status: CANDIDATE
+artifact_id: OTHERGBT-ENDPOINT-CONTRACT-002
+protocol:
+  name: SELFCOMM
+  version: "0.1"
+
+endpoint:
+  id: OTHERGBT_INSTANCE_002
+  kind: conversational-endpoint
+  identity:
+    stable: true
+
+table:
+  reference: TABLE_OTHERGBT
+  role: structural_surface
+  mutable: false
+
+seat:
+  reference: SEAT_OTHERGBT_001
+  status: ACTIVE
+
+session:
+  multiplicity: multiple_sessions_per_instance
+  table_does_not_define_session_count: true
+
+route:
+  id: ROUTE_002
+  realization:
+    kind: github
+    surface: repository
+    target: situaedmilly/self-communication
+    branch: endpoint/othergbt-instance-002-v0.1
+
+authority:
+  identity: AUTHORITY_002
+  actor: GPT_ACTION
+  scope: scoped-artifact-mutation
+  founder_authorization: granted_in_conversation
+  execution: authorized_for_this_scoped_mutation
+
+state:
+  artifact: ACTIVE
+  endpoint: DECLARED
+  route: REALIZED
+  transport: NOT_ESTABLISHED
+  admission: NOT_ESTABLISHED
+  execution: NOT_ESTABLISHED
+  effect: GIT_ARTIFACT_ONLY
+
+communication:
+  fabric: SELFCOMM
+  table_boundary: none
+  communication_requires_table_merge: false
+  shared_communication_does_not_merge_identity: true
+
+identity_separation:
+  endpoint_id: distinct
+  table_id: distinct
+  seat_id: distinct
+  session_id: distinct
+  route_id: distinct
+  transport_id: distinct
+  address: distinct
+  socket: distinct
+  execution_id: distinct
+  authority_id: distinct
+  realization_id: distinct
+
+admission:
+  rule: transport_or_receipt_does_not_equal_admission
+  required_fields:
+    - packet_id
+    - endpoint_id
+    - route_id
+    - source
+    - destination
+    - protocol
+    - intent
+    - speech_act
+    - payload
+    - authority_ref
+    - idempotency_key
+    - parent
+    - supersedes
+    - created_at
+    - pre_state_ref
+    - evidence
+
+transition:
+  id: ROUTE_TRANSITION_002
+  type: ROUTE_MUTATION
+  from_route: null
+  to_route: ROUTE_002
+  evidence: git_commit
+  effect: endpoint_contract_recorded
