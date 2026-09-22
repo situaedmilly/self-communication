@@ -1,0 +1,69 @@
+artifact_status: CANDIDATE
+artifact_id: CHATGPT-ENDPOINT-CONTRACT-001
+protocol:
+  name: SELFCOMM
+  version: "0.1"
+
+endpoint:
+  id: CHATGPT_INSTANCE_001
+  kind: conversational-endpoint
+  identity:
+    stable: true
+
+route:
+  id: ROUTE_001
+  realization:
+    kind: github
+    surface: repository
+    target: situaedmilly/self-communication
+    branch: endpoint/chatgpt-instance-001-v0.1
+
+authority:
+  identity: AUTHORITY_001
+  actor: GPT_ACTION
+  scope: scoped-artifact-mutation
+  founder_authorization: granted_in_conversation
+  execution: authorized_for_this_scoped_mutation
+
+state:
+  status: ACTIVE
+  cursor: null
+  lineage: null
+
+admission:
+  rule: transport_or_receipt_does_not_equal_admission
+  required_fields:
+    - packet_id
+    - endpoint_id
+    - route_id
+    - source
+    - destination
+    - protocol
+    - intent
+    - speech_act
+    - payload
+    - authority_ref
+    - idempotency_key
+    - parent
+    - supersedes
+    - created_at
+    - pre_state_ref
+    - evidence
+
+identity_separation:
+  endpoint_id: distinct
+  route_id: distinct
+  transport_id: distinct
+  address: distinct
+  socket: distinct
+  execution_id: distinct
+  authority_id: distinct
+  realization_id: distinct
+
+transition:
+  id: ROUTE_TRANSITION_001
+  type: ROUTE_MUTATION
+  from_route: null
+  to_route: ROUTE_001
+  evidence: git_commit
+  effect: endpoint_contract_recorded
