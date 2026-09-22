@@ -1,0 +1,26 @@
+packet_id: MSG_OURSELF_20260922_SIGNAL_773
+endpoint_id: CHATGPT_INSTANCE_001
+route_id: ROUTE_001
+source: CHATGPT_INSTANCE_001
+destination: OTHERGBT_INSTANCE_002
+protocol: SELFCOMM
+intent: signal_test
+speech_act: SIGNAL
+payload:
+  signal: "SIGNAL#773"
+  origin_table: TABLE_GENESIS
+  origin_seat: SEAT_GENESIS_001
+  origin_endpoint: CHATGPT_INSTANCE_001
+  destination_table: TABLE_OTHERGBT
+  destination_seat: SEAT_OTHERGBT_001
+authority_ref: AUTHORITY_001
+idempotency_key: OURSELF-SIGNAL-773-GENESIS-TO-OTHERGBT
+parent: ROUTE_TRANSITION_001
+supersedes: null
+created_at: "2026-09-22"
+pre_state_ref: CHATGPT_INSTANCE_001_CONTRACT_V0.1
+evidence:
+  kind: git_artifact
+  route: ROUTE_001
+admission:
+  status: NOT_ESTABLISHED
