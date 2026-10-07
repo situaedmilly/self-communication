@@ -1,0 +1,22 @@
+{
+  "record_type": "ALCHEMYGENESIS_CUSTODY_DECISION",
+  "decision": "GRANT",
+  "repo": "self-communication",
+  "mutation_role": "COMMUNICATION_AND_RECONTACT",
+  "preimage_head": "82ba015",
+  "role_binding": {
+    "witness_chain": [
+      "runtime/witness/WITNESS-ACTIONWORKAUTOMATION-GATE-20261007.md (addenda 1-4)",
+      "runtime/witness/GITHUB-CUSTODY-RECEIPT-ALCHEMYGENESIS-20261007.json"
+    ],
+    "recontact": "post-transition re-observation performed at every gate"
+  },
+  "decided_at": "2026-10-07",
+  "canonical_graph_id": "SELFGRAPH-ALCHEMYGENESIS-LAUNCH-001",
+  "canonical_graph_sha256": "fa1795dd604fbf59f28ca5dbeb73711e68dc521b37bb65514f56657d65ac575a",
+  "canonical_admission": "CANONICAL-ADMISSION-ALCHEMY-REVERSELF-20261007 (FOUNDER_DISPOSITION 2026-10-07T20:38:05Z)",
+  "primary_custody": "situaedmilly/Cognitive-Transmutation-Core @ alchemy/realself-runtime-v0.1 commit 93e4761",
+  "gguf_sha256": "16c9802111aa9ef3acde465188d6d601f8db128ee3d828ad983a5caca4135ecb",
+  "authority": "FOUNDER WORD: MICRO-SYMMETRICAL PIPEPORTAL custody frame, 2026-10-07",
+  "law": "decision != mutation != remote effect; additive only; seal bytes never rewritten"
+}
