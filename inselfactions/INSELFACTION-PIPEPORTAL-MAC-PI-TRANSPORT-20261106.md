@@ -37,3 +37,28 @@ MAC↔SELFPI cognition transport is restored and has a boot reconnect watchdog. 
 Independent root custodian / root public key / root key ID and independently verifiable signer evidence remain required before trust-bundle verification and host-admin preflight can proceed.
 
 This INSELFACTION is an append-only evidence handoff. It does not claim canonical custody, external effect, or an authority transition.
+
+
+## REVERSELF configuration implementation and verification (2026-11-06)
+
+Implemented on OURSELFMAC in `runtime/aetherbridge/`:
+
+- `config/pipeportal-reverself-config.v1.json`: explicit six-fact reconciliation contract and run-change ledger.
+- `portal-reverself-preflight.mjs`: live read-only verifier. It reads PipePortal `/healthz`, probes direct OURSELFMAC → OURSELFPIMAC TCP/22 independently of the reverse Ollama tunnel, and emits a six-fact JSON report.
+- Report path from this run: `/tmp/portal-rever-self-preflight.json` (ephemeral verification output, not authority evidence).
+
+Six facts observed independently:
+1. Independent PORTAL root: **NOT_CONFIGURED**.
+2. INPUTSELFTRUSTSELF bundle + authority lineage: **NOT_VERIFIED**.
+3. mTLS host-admin pipe: **NOT_CONFIGURED** (reason: `PORTAL_TRUST_UNVERIFIED`).
+4. Direct Mac → Pi TCP/22: **FILTERED_OR_UNREACHABLE** (connect timed out). This does not contradict the working reverse Ollama API tunnel.
+5. Firewall policy: **NO_CHANGE_BY_THIS_RUN**.
+6. New keys/root identities: **NONE_CREATED_BY_THIS_RUN**; no raw SSH shell tunnel created.
+
+Verification:
+- PipePortal health: `LIVE`, PID `6056`.
+- Preflight correctly returned `FAIL_CLOSED_TRUST_OR_HOST_ADMIN_PRECONDITIONS_UNSATISFIED` and exit code `2`; this is the expected negative result while independent trust evidence is absent.
+- Existing AetherBridge + host-admin tests: **45 passed, 0 failed**.
+- JavaScript syntax check: passed.
+
+No production trust values were fabricated. No launchd trust environment, service source, firewall, SSH policy, keys, or authority records were mutated. No default-branch update, PR, or merge was performed. Transport remains distinct from trust, admission, and host administration.
