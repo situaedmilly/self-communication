@@ -106,5 +106,8 @@
       "mode": "RUNTIME_ECOSYSTEM_MAP_BINDING",
       "status": "MANIFEST_PROJECTED"
     }
-  ]
+  ],
+  "runtime_boot_integrations": 6,
+  "runtime_boot_executed_locally": 6,
+  "projection_only_repositories": 10
 }
