@@ -14,10 +14,10 @@
 
 Runtime boot is implemented and locally tested in:
 - `self-communication`: registry verify and boot CLI
-- `self-protocol-suite`: digest-pinned registry loader and boot API
-- `ourself-agent-bridge-kernel`: server startup boot; health witness includes registry receipt
-- `FLOWACTIONSELFWORK`: GPTSELF-C seat startup boot
-- `OURPROCESSORSELF`: processor startup boot; boot receipt carries the 18-entry registry witness
+- `self-protocol-suite`: digest-pinned registry loader and boot API; boot invoked locally
+- `ourself-agent-bridge-kernel`: server startup boot; loopback `/health` returned the 18-entry registry receipt
+- `FLOWACTIONSELFWORK`: GPTSELF-C seat startup boot; receipt executed locally
+- `OURPROCESSORSELF`: processor startup boot; boot receipt carries the 18-entry registry witness and the VM boot passed
 
 Other repositories receive a digest-pinned registry projection and ecosystem
 runtime-map binding. Their local service entrypoints are not claimed to have
