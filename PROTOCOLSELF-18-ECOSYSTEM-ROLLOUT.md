@@ -49,3 +49,11 @@ or deploy a daemon.
 - SELFPI physical deployment is NOT_VERIFIED: the Mac has no `tailscale` executable, and SSH alias `selfpi` does not resolve. No Pi boot receipt is claimed.
 - `ourself-cloud-server-network` is a specification and instance-binding repository. No executable server entrypoint or deployed cloud instance was verified; do not start a listener from the specification alone.
 - PipePortal `/healthz` continues to report `portal_trust.configured=false` with missing independent root/signer/trust-bundle evidence. Protocol registry boot does not cure that separate trust boundary.
+
+## Remote substrate reachability check (2026-11-26)
+
+- OURSELFMAC Desktop Commander device is online.
+- `tailscale` is not installed/available in the Mac shell.
+- SSH host alias `selfpi` does not resolve; no SSH session or Pi-side command was executed.
+- Therefore physical SELFPI ProtocolSELF boot remains `NOT_VERIFIED`. No new tunnel route, DNS record, firewall rule, or credential transfer was attempted.
+- Highest-leverage dependency is a reachable, authenticated management path to the intended SELFPI host, with the target identity confirmed before provisioning.
