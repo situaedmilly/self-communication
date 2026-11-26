@@ -14,19 +14,19 @@
       "repository": "situaedmilly/self-communication",
       "pr": 10,
       "mode": "SOURCE_REGISTRY_AND_LOCAL_BOOT_CLI",
-      "status": "IMPLEMENTED_TESTED_LOCAL"
+      "status": "IMPLEMENTED_EXECUTED_LOCAL"
     },
     {
       "repository": "situaedmilly/self-protocol-suite",
       "pr": 4,
       "mode": "PINNED_LOADER_AND_BOOT_API",
-      "status": "IMPLEMENTED_TESTED"
+      "status": "IMPLEMENTED_EXECUTED_LOCAL"
     },
     {
       "repository": "situaedmilly/ourself-agent-bridge-kernel",
       "pr": 28,
       "mode": "SERVER_STARTUP_BOOT_AND_HEALTH_WITNESS",
-      "status": "IMPLEMENTED_TESTED_LOCAL"
+      "status": "IMPLEMENTED_EXECUTED_LOCAL"
     },
     {
       "repository": "situaedmilly/ourself-agent-bridge",
