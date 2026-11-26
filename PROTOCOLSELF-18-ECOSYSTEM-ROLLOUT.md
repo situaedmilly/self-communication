@@ -4,6 +4,8 @@
 - Source digest: `76a2a14c9bab0d0ded7ff05c80991141df53e9f1f15ec948443e0b950017508c`
 - Protocol identities: 18
 - Ecosystem repositories projected: 16
+- Runtime boot integrations executed locally: 6
+- Manifest/path-map-only consumer repositories: 10
 - Pull requests: 16 open, none merged by this rollout
 - Listener activation: DISABLED
 - External binding: PROHIBITED
