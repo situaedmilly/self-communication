@@ -61,8 +61,8 @@
     {
       "repository": "situaedmilly/OURPROCESSORSELF",
       "pr": 15,
-      "mode": "RUNTIME_ECOSYSTEM_MAP_BINDING",
-      "status": "MANIFEST_PROJECTED"
+      "mode": "PROCESSOR_STARTUP_BOOT_AND_RECEIPT",
+      "status": "IMPLEMENTED_EXECUTED_LOCAL"
     },
     {
       "repository": "situaedmilly/ALTONUMBUSELF",
