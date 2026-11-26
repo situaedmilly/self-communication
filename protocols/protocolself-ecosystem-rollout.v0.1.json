@@ -55,8 +55,8 @@
     {
       "repository": "situaedmilly/SELFCOMM-SIMPLE-V0.1",
       "pr": 1,
-      "mode": "BOUNDED_ROUNDTRIP_REGISTRY_PROJECTION_ONLY",
-      "status": "MANIFEST_PROJECTED_NO_PROTOCOL_HARDENING"
+      "mode": "SELFCOMM_PYTHON_REGISTRY_BOOT",
+      "status": "IMPLEMENTED_EXECUTED_LOCAL_REGISTRY_ONLY_NO_PROTOCOL_HARDENING"
     },
     {
       "repository": "situaedmilly/OURPROCESSORSELF",
