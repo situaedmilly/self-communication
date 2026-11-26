@@ -21,6 +21,7 @@ Runtime boot is implemented and locally tested in:
 - `FLOWACTIONSELFWORK`: GPTSELF-C seat startup boot; receipt executed locally
 - `OURPROCESSORSELF`: processor startup boot; boot receipt carries the 18-entry registry witness and the VM boot passed
 - `SELFCOMM-SIMPLE-V0.1`: SELFGRAPH tailer startup boot; 5/5 Python tests passed and the tailer emitted the 18-entry registry receipt
+- `Cognitive-Transmutation-Core`: digest-pinned registry boot API added alongside immutable SELFTHOUGHT; 7/7 focused tests passed
 - `ourself-core` local AETHERBRIDGE / PipePortal: LaunchAgent restarted; loopback `/healthz` returned LIVE with the 18-entry registry receipt; rollback backup and local SHA-256 receipt retained. The active PipePortal source remains local and is not yet represented in the GitHub branch.
 - `SELFCOMM-SIMPLE-V0.1`: separate Python registry-only boot executed and tested; existing SELFCOMM envelope validator remains unchanged
 
