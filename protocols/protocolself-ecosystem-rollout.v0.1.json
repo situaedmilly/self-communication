@@ -32,7 +32,7 @@
       "repository": "situaedmilly/ourself-agent-bridge",
       "pr": 2,
       "mode": "CONTROL_PLANE_REGISTRY_BINDING",
-      "status": "MANIFEST_PROJECTED"
+      "status": "CONTROL_PLANE_MANIFEST_PROJECTED_PR_OPEN_NOT_MERGED"
     },
     {
       "repository": "situaedmilly/ourself-core",
@@ -61,7 +61,8 @@
           "network_listeners_started": 0,
           "external_bindings_created": 0,
           "network_transport_authority": "NOT_GRANTED",
-          "tunnel_configuration_changed": false
+          "tunnel_configuration_changed": false,
+          "checked_at": "2026-11-26"
         }
       }
     },
@@ -75,7 +76,7 @@
       "repository": "situaedmilly/ourself-cloud-server-network",
       "pr": 2,
       "mode": "NETWORK_SPEC_AND_RUNTIME_MAP_BINDING",
-      "status": "SPEC_PROJECTED"
+      "status": "SPEC_ONLY_NO_EXECUTABLE_SERVER_ENTRYPOINT_VERIFIED"
     },
     {
       "repository": "situaedmilly/SELFCOMM-SIMPLE-V0.1",
@@ -132,7 +133,7 @@
       "status": "IMPLEMENTED_EXECUTED_LOCAL_7_TESTS_PASS"
     }
   ],
-  "runtime_boot_integrations": 6,
-  "runtime_boot_executed_locally": 6,
-  "projection_only_repositories": 10
+  "runtime_boot_integrations": 8,
+  "runtime_boot_executed_locally": 8,
+  "projection_only_repositories": 8
 }
