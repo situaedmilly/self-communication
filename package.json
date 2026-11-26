@@ -25,7 +25,7 @@
     "communication:launch-subject-custody": "node tools/ourself-selfcommunication-launch-subject-custody.mjs",
     "communication:current-gpt": "node tools/ourself-current-gptself-roundtrip.mjs",
     "semantic:projection": "node tools/ourself-semantic-projection.mjs",
-    "test": "node --test",
+    "test": "node --test test/*.test.mjs",
     "protocolself:verify": "node tools/protocolself-registry.mjs verify",
     "protocolself:boot": "node tools/protocolself-registry.mjs boot"
   }
