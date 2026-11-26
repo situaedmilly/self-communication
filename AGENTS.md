@@ -45,3 +45,10 @@ npm run verify:bootstrap
 npm test
 npm run validate:heartbeat
 ```
+
+## ProtocolSELF Registry
+
+Protocol identities and port metadata: `protocols/protocolself-18.v0.1.json`.
+Registry validation: `npm run protocolself:verify`.
+Registry-only boot: `npm run protocolself:boot`.
+Registry boot does not open network listeners or grant network transport authority.
