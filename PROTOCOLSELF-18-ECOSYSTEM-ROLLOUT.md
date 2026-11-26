@@ -17,6 +17,7 @@ Runtime boot is implemented and locally tested in:
 - `self-protocol-suite`: digest-pinned registry loader and boot API
 - `ourself-agent-bridge-kernel`: server startup boot; health witness includes registry receipt
 - `FLOWACTIONSELFWORK`: GPTSELF-C seat startup boot
+- `OURPROCESSORSELF`: processor startup boot; boot receipt carries the 18-entry registry witness
 
 Other repositories receive a digest-pinned registry projection and ecosystem
 runtime-map binding. Their local service entrypoints are not claimed to have
