@@ -14,7 +14,7 @@
       "repository": "situaedmilly/self-communication",
       "pr": 10,
       "mode": "SOURCE_REGISTRY_AND_LOCAL_BOOT_CLI",
-      "status": "IMPLEMENTED_EXECUTED_LOCAL"
+      "status": "IMPLEMENTED_EXECUTED_LOCAL_4_REGISTRY_TESTS_PASS"
     },
     {
       "repository": "situaedmilly/self-protocol-suite",
@@ -118,8 +118,8 @@
     {
       "repository": "situaedmilly/Cognitive-Transmutation-Core",
       "pr": 11,
-      "mode": "RUNTIME_ECOSYSTEM_MAP_BINDING",
-      "status": "MANIFEST_PROJECTED"
+      "mode": "DIGEST_PINNED_COGNITION_CORE_BOOT_API",
+      "status": "IMPLEMENTED_EXECUTED_LOCAL_7_TESTS_PASS"
     }
   ],
   "runtime_boot_integrations": 6,
