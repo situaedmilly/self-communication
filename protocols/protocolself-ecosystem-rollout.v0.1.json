@@ -52,7 +52,17 @@
         "network_transport_authority": "NOT_GRANTED",
         "source_sha256": "6ced71494ee1af67630a936fbd7192176c67b965dfcd6f93c1e043d1fc2d61ec",
         "receipt_path": "runtime/aetherbridge/logs/PIPEPORTAL-PROTOCOLSELF-18-BOOT-20261126.json",
-        "source_control_status": "LOCAL_WORKING_TREE_ONLY_NOT_PRESENT_IN_GITHUB_BRANCH"
+        "source_control_status": "LOCAL_WORKING_TREE_ONLY_NOT_PRESENT_IN_GITHUB_BRANCH",
+        "cloudflare_public_health_probe": {
+          "url": "https://voice.getsituated.online/healthz",
+          "result": "LIVE",
+          "registry_id": "OURSELFCOMM-PROTOCOLSELF-18",
+          "protocol_count": 18,
+          "network_listeners_started": 0,
+          "external_bindings_created": 0,
+          "network_transport_authority": "NOT_GRANTED",
+          "tunnel_configuration_changed": false
+        }
       }
     },
     {
