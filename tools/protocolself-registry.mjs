@@ -1,9 +1,16 @@
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 export const REGISTRY_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../protocols/protocolself-18.v0.1.json");
 export const EXPECTED_PROTOCOL_COUNT = 18;
-export function loadProtocolSelfRegistry(registryPath = REGISTRY_PATH) { return JSON.parse(fs.readFileSync(registryPath, "utf8")); }
+export const EXPECTED_REGISTRY_SHA256 = "76a2a14c9bab0d0ded7ff05c80991141df53e9f1f15ec948443e0b950017508c";
+export function loadProtocolSelfRegistry(registryPath = REGISTRY_PATH) {
+  const bytes = fs.readFileSync(registryPath);
+  const digest = createHash("sha256").update(bytes).digest("hex");
+  if (digest !== EXPECTED_REGISTRY_SHA256) throw new Error("PROTOCOLSELF_SOURCE_DIGEST_MISMATCH");
+  return JSON.parse(bytes.toString("utf8"));
+}
 export function validateProtocolSelfRegistry(registry) {
   const errors = [];
   if (registry?.schema !== "ourself.protocolself-registry.v0.1") errors.push("SCHEMA_MISMATCH");
