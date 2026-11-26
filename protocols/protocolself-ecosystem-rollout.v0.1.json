@@ -37,8 +37,23 @@
     {
       "repository": "situaedmilly/ourself-core",
       "pr": 22,
-      "mode": "ENDPOINT_AND_RUNTIME_MAP_BINDING",
-      "status": "MANIFEST_PROJECTED"
+      "mode": "ENDPOINT_MANIFEST_PROJECTION_PLUS_LOCAL_PIPEPORTAL_STARTUP_BOOT",
+      "status": "MANIFEST_PROJECTED_PIPEPORTAL_LOCAL_RUNTIME_BOOTED",
+      "runtime_evidence": {
+        "component": "AETHERBRIDGE_PIPEPORTAL",
+        "host": "OURSELFMAC.local",
+        "bind_host": "127.0.0.1",
+        "port": 49320,
+        "health": "LIVE",
+        "registry_status": "REGISTRY_BOOTED_LISTENERS_DISABLED",
+        "protocol_count": 18,
+        "network_listeners_started": 0,
+        "external_bindings_created": 0,
+        "network_transport_authority": "NOT_GRANTED",
+        "source_sha256": "6ced71494ee1af67630a936fbd7192176c67b965dfcd6f93c1e043d1fc2d61ec",
+        "receipt_path": "runtime/aetherbridge/logs/PIPEPORTAL-PROTOCOLSELF-18-BOOT-20261126.json",
+        "source_control_status": "LOCAL_WORKING_TREE_ONLY_NOT_PRESENT_IN_GITHUB_BRANCH"
+      }
     },
     {
       "repository": "situaedmilly/FLOWACTIONSELFWORK",
