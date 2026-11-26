@@ -25,8 +25,8 @@
     {
       "repository": "situaedmilly/ourself-agent-bridge-kernel",
       "pr": 28,
-      "mode": "SERVER_STARTUP_BOOT_AND_HEALTH_WITNESS",
-      "status": "IMPLEMENTED_EXECUTED_LOCAL"
+      "mode": "SERVER_STARTUP_BOOT_HEALTH_WITNESS_AND_FULL_TEST_SUITE",
+      "status": "IMPLEMENTED_EXECUTED_LOCAL_516_TESTS_PASS"
     },
     {
       "repository": "situaedmilly/ourself-agent-bridge",
@@ -55,8 +55,8 @@
     {
       "repository": "situaedmilly/SELFCOMM-SIMPLE-V0.1",
       "pr": 1,
-      "mode": "SELFCOMM_PYTHON_REGISTRY_BOOT",
-      "status": "IMPLEMENTED_EXECUTED_LOCAL_REGISTRY_ONLY_NO_PROTOCOL_HARDENING"
+      "mode": "SELFGRAPH_STARTUP_BOOT_AND_TESTED",
+      "status": "IMPLEMENTED_EXECUTED_LOCAL"
     },
     {
       "repository": "situaedmilly/OURPROCESSORSELF",
